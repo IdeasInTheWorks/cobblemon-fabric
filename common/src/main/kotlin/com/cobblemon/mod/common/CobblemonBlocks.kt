@@ -23,6 +23,7 @@ import com.cobblemon.mod.common.block.sign.CobblemonWallHangingSignBlock
 import com.cobblemon.mod.common.block.sign.CobblemonWallSignBlock
 import com.cobblemon.mod.common.block.general.HorizontalRotationCarpetBlock
 import com.cobblemon.mod.common.block.general.HorizontalRotationalBlock
+import com.cobblemon.mod.common.block.general.MintLitterBlock
 import com.cobblemon.mod.common.mixin.invoker.*
 import com.cobblemon.mod.common.platform.PlatformRegistry
 import com.cobblemon.mod.common.util.cobblemonResource
@@ -543,6 +544,31 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val POTTED_WHITE_APRICORN_SAPLING = this.create("potted_white_apricorn_sapling", BlocksInvoker.createFlowerPotBlock(WHITE_APRICORN_SAPLING))
     @JvmField
     val POTTED_SACCHARINE_SAPLING = this.create("potted_saccharine_sapling", BlocksInvoker.createFlowerPotBlock(SACCHARINE_SAPLING))
+
+    @JvmField
+    val RED_MINT_LEAF_LITTER = this.create("red_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_RED).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    @JvmField
+    val POTTED_RED_MINT = this.create("potted_red_mint", BlocksInvoker.createFlowerPotBlock(RED_MINT_LEAF_LITTER))
+    @JvmField
+    val BLUE_MINT_LEAF_LITTER = this.create("blue_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_BLUE).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    @JvmField
+    val POTTED_BLUE_MINT = this.create("potted_blue_mint", BlocksInvoker.createFlowerPotBlock(BLUE_MINT_LEAF_LITTER))
+    @JvmField
+    val CYAN_MINT_LEAF_LITTER = this.create("cyan_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_CYAN).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    @JvmField
+    val POTTED_CYAN_MINT = this.create("potted_cyan_mint", BlocksInvoker.createFlowerPotBlock(CYAN_MINT_LEAF_LITTER))
+    @JvmField
+    val PINK_MINT_LEAF_LITTER = this.create("pink_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_PINK).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    @JvmField
+    val POTTED_PINK_MINT = this.create("potted_pink_mint", BlocksInvoker.createFlowerPotBlock(PINK_MINT_LEAF_LITTER))
+    @JvmField
+    val GREEN_MINT_LEAF_LITTER = this.create("green_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_GREEN).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    @JvmField
+    val POTTED_GREEN_MINT = this.create("potted_green_mint", BlocksInvoker.createFlowerPotBlock(GREEN_MINT_LEAF_LITTER))
+    @JvmField
+    val WHITE_MINT_LEAF_LITTER = this.create("white_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.SNOW).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    @JvmField
+    val POTTED_WHITE_MINT = this.create("potted_white_mint", BlocksInvoker.createFlowerPotBlock(WHITE_MINT_LEAF_LITTER))
 
     @JvmField
     val HEARTY_GRAIN_BALE = this.create("hearty_grain_bale", BaleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sound(CobblemonSounds.HEARTY_GRAIN_BALE_SOUNDS)))

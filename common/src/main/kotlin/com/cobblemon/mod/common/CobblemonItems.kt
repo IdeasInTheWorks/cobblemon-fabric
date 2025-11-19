@@ -726,27 +726,27 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val RED_MINT_SEEDS = mintSeed("red", MintType.RED.getCropBlock())
     @JvmField
-    val RED_MINT_LEAF = mintLeaf("red", MintLeafItem(MintType.RED))
+    val RED_MINT_LEAF = compostableItemNameBlockItem("red_mint_leaf", CobblemonBlocks.RED_MINT_LEAF_LITTER, 0.50f)
     @JvmField
     val BLUE_MINT_SEEDS = mintSeed("blue", MintType.BLUE.getCropBlock())
     @JvmField
-    val BLUE_MINT_LEAF = mintLeaf("blue", MintLeafItem(MintType.BLUE))
+    val BLUE_MINT_LEAF = compostableItemNameBlockItem("blue_mint_leaf", CobblemonBlocks.BLUE_MINT_LEAF_LITTER, 0.50f)
     @JvmField
     val CYAN_MINT_SEEDS = mintSeed("cyan", MintType.CYAN.getCropBlock())
     @JvmField
-    val CYAN_MINT_LEAF = mintLeaf("cyan", MintLeafItem(MintType.CYAN))
+    val CYAN_MINT_LEAF = compostableItemNameBlockItem("cyan_mint_leaf", CobblemonBlocks.CYAN_MINT_LEAF_LITTER, 0.50f)
     @JvmField
     val PINK_MINT_SEEDS = mintSeed("pink", MintType.PINK.getCropBlock())
     @JvmField
-    val PINK_MINT_LEAF = mintLeaf("pink", MintLeafItem(MintType.PINK))
+    val PINK_MINT_LEAF = compostableItemNameBlockItem("pink_mint_leaf", CobblemonBlocks.PINK_MINT_LEAF_LITTER, 0.50f)
     @JvmField
     val GREEN_MINT_SEEDS = mintSeed("green", MintType.GREEN.getCropBlock())
     @JvmField
-    val GREEN_MINT_LEAF = mintLeaf("green", MintLeafItem(MintType.GREEN))
+    val GREEN_MINT_LEAF = compostableItemNameBlockItem("green_mint_leaf", CobblemonBlocks.GREEN_MINT_LEAF_LITTER, 0.50f)
     @JvmField
     val WHITE_MINT_SEEDS = mintSeed("white", MintType.WHITE.getCropBlock())
     @JvmField
-    val WHITE_MINT_LEAF = mintLeaf("white", MintLeafItem(MintType.WHITE))
+    val WHITE_MINT_LEAF = compostableItemNameBlockItem("white_mint_leaf", CobblemonBlocks.WHITE_MINT_LEAF_LITTER, 0.50f)
 
     val mints = mutableMapOf<String, MintItem>()
 
