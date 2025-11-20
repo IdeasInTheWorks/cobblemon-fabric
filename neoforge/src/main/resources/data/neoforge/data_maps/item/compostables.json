@@ -425,6 +425,9 @@
     },
     "cobblemon:yellow_apricorn_seed": {
       "chance": 0.3
+    },
+    "cobblemon:lobelia": {
+      "chance": 0.85
     }
   }
 }
