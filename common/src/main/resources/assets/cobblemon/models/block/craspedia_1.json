@@ -1,0 +1,161 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"texture_size": [64, 64],
+	"textures": {
+		"particle": "cobblemon:block/flowers/craspedia",
+		"flower": "cobblemon:block/flowers/craspedia"
+	},
+	"elements": [
+		{
+			"name": "stem",
+			"from": [5.5, 0, 7],
+			"to": [8.5, 11, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [0, 2.5, 0.75, 5], "texture": "#flower"},
+				"south": {"uv": [0, 2.25, 0.75, 5], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [7, 0, 5.5],
+			"to": [7, 11, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"east": {"uv": [0, 2.25, 0.75, 5], "texture": "#flower"},
+				"west": {"uv": [0, 2.25, 0.75, 5], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "flower",
+			"from": [4, 10.9875, 4],
+			"to": [10, 16.9875, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 11, 5]},
+			"faces": {
+				"north": {"uv": [7, 1.5, 8.5, 3], "texture": "#flower"},
+				"east": {"uv": [5.5, 1.5, 7, 3], "texture": "#flower"},
+				"south": {"uv": [10, 1.5, 11.5, 3], "texture": "#flower"},
+				"west": {"uv": [8.5, 1.5, 10, 3], "texture": "#flower"},
+				"up": {"uv": [8.5, 1.5, 7, 0], "texture": "#flower"},
+				"down": {"uv": [10, 0, 8.5, 1.5], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "fluff",
+			"from": [1.34315, 8.9875, 7],
+			"to": [12.65685, 18.9875, 7],
+			"rotation": {"angle": 45, "axis": "y", "origin": [7, 14, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 2.25], "texture": "#flower"},
+				"south": {"uv": [0, 0, 2, 2.25], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "fluff",
+			"from": [1.34315, 8.9875, 7],
+			"to": [12.65685, 18.9875, 7],
+			"rotation": {"angle": -45, "axis": "y", "origin": [7, 14, 7]},
+			"faces": {
+				"north": {"uv": [2, 0, 4, 2.25], "texture": "#flower"},
+				"south": {"uv": [2, 0, 4, 2.25], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [0.5, 0, 2],
+			"to": [3.5, 9, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 2]},
+			"faces": {
+				"north": {"uv": [0.75, 2.75, 1.5, 5], "texture": "#flower"},
+				"south": {"uv": [0.75, 2.75, 1.5, 5], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [2, 0, 0.5],
+			"to": [2, 9, 3.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 2]},
+			"faces": {
+				"east": {"uv": [0.75, 2.75, 1.5, 5], "texture": "#flower"},
+				"west": {"uv": [0.75, 2.75, 1.5, 5], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "flower",
+			"from": [0, 9, 0],
+			"to": [4, 13, 4],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 2]},
+			"faces": {
+				"north": {"uv": [7.5, 4, 8.5, 5], "texture": "#flower"},
+				"east": {"uv": [6.5, 4, 7.5, 5], "texture": "#flower"},
+				"south": {"uv": [9.5, 4, 10.5, 5], "texture": "#flower"},
+				"west": {"uv": [8.5, 4, 9.5, 5], "texture": "#flower"},
+				"up": {"uv": [8.5, 4, 7.5, 3], "texture": "#flower"},
+				"down": {"uv": [9.5, 3, 8.5, 4], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [11.5, 0, 9],
+			"to": [14.5, 5, 9],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [13, 0, 9]},
+			"faces": {
+				"north": {"uv": [1.5, 3.75, 2.25, 5], "texture": "#flower"},
+				"south": {"uv": [1.5, 3.75, 2.25, 5], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [13, 0, 7.5],
+			"to": [13, 5, 10.5],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [13, 0, 9]},
+			"faces": {
+				"east": {"uv": [1.5, 3.75, 2.25, 5], "texture": "#flower"},
+				"west": {"uv": [1.5, 3.75, 2.25, 5], "texture": "#flower"}
+			}
+		},
+		{
+			"name": "flower",
+			"from": [11, 5, 7],
+			"to": [15, 9, 11],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [13, -4, 9]},
+			"faces": {
+				"north": {"uv": [3.25, 3.25, 4.25, 4.25], "texture": "#flower"},
+				"east": {"uv": [2.25, 3.25, 3.25, 4.25], "texture": "#flower"},
+				"south": {"uv": [5.25, 3.25, 6.25, 4.25], "texture": "#flower"},
+				"west": {"uv": [4.25, 3.25, 5.25, 4.25], "texture": "#flower"},
+				"up": {"uv": [4.25, 3.25, 3.25, 2.25], "texture": "#flower"},
+				"down": {"uv": [5.25, 2.25, 4.25, 3.25], "texture": "#flower"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "one",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "flower",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [0, 1, 2, 3, 4]
+				},
+				{
+					"name": "flower",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [5, 6, 7]
+				},
+				{
+					"name": "flower",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [8, 9, 10]
+				}
+			]
+		}
+	]
+}
