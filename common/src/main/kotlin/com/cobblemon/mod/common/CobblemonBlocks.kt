@@ -16,6 +16,7 @@ import com.cobblemon.mod.common.block.MintBlock.MintType
 import com.cobblemon.mod.common.block.campfirepot.CampfirePotBlock
 import com.cobblemon.mod.common.block.chest.GildedChestBlock
 import com.cobblemon.mod.common.block.decor.CraspediaFlowerBlock
+import com.cobblemon.mod.common.block.decor.LobeliaFlowerBlock
 import com.cobblemon.mod.common.block.general.BaleBlock
 import com.cobblemon.mod.common.block.grower.SaccharineTreeGrower
 import com.cobblemon.mod.common.block.sign.CobblemonHangingSignBlock
@@ -572,7 +573,7 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val POTTED_WHITE_MINT = this.create("potted_white_mint", BlocksInvoker.createFlowerPotBlock(WHITE_MINT_LEAF_LITTER))
 
     @JvmField
-    val LOBELIA = this.create("lobelia", TallFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY))) //TODO Make it waterloggable
+    val LOBELIA = this.create("lobelia", LobeliaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY))) //TODO Make it waterloggable
     @JvmField
     val CRASPEDIA = this.create("craspedia", CraspediaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)))
 
