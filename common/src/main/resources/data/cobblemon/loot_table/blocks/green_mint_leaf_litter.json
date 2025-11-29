@@ -14,7 +14,7 @@
                   "block": "cobblemon:green_mint_leaf_litter",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "flower_amount": "2"
+                    "amount": "2"
                   }
                 }
               ],
@@ -28,7 +28,7 @@
                   "block": "cobblemon:green_mint_leaf_litter",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "flower_amount": "3"
+                    "amount": "3"
                   }
                 }
               ],
@@ -42,7 +42,7 @@
                   "block": "cobblemon:green_mint_leaf_litter",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "flower_amount": "4"
+                    "amount": "4"
                   }
                 }
               ],
