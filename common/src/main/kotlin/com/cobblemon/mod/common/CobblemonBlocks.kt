@@ -16,6 +16,7 @@ import com.cobblemon.mod.common.block.MintBlock.MintType
 import com.cobblemon.mod.common.block.campfirepot.CampfirePotBlock
 import com.cobblemon.mod.common.block.chest.GildedChestBlock
 import com.cobblemon.mod.common.block.decor.CraspediaFlowerBlock
+import com.cobblemon.mod.common.block.decor.HydrangeaFlowerBlock
 import com.cobblemon.mod.common.block.decor.LobeliaFlowerBlock
 import com.cobblemon.mod.common.block.general.BaleBlock
 import com.cobblemon.mod.common.block.grower.SaccharineTreeGrower
@@ -576,6 +577,8 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val LOBELIA = this.create("lobelia", LobeliaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)))
     @JvmField
     val CRASPEDIA = this.create("craspedia", CraspediaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)))
+    @JvmField
+    val HYDRANGEA = this.create("hydrangea",HydrangeaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).strength(0.2F).ignitedByLava().pushReaction(PushReaction.DESTROY)))
 
     @JvmField
     val HEARTY_GRAIN_BALE = this.create("hearty_grain_bale", BaleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sound(CobblemonSounds.HEARTY_GRAIN_BALE_SOUNDS)))

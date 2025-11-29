@@ -1462,6 +1462,8 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     val LOBELIA = compostableBlockItem("lobelia", CobblemonBlocks.LOBELIA, 0.85f)
     @JvmField
     val CRASPEDIA = compostableBlockItem("craspedia", CobblemonBlocks.CRASPEDIA, 0.85f)
+    @JvmField
+    val HYDRANGEA = compostableBlockItem("hydrangea", CobblemonBlocks.HYDRANGEA, 0.85f)
 
     private fun blockItem(name: String, block: Block, rarity: Rarity = Rarity.COMMON): BlockItem = this.create(name, BlockItem(block, Item.Properties().rarity(rarity)))
 
