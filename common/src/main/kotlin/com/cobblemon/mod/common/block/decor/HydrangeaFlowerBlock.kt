@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.state.BlockState
 import java.util.*
 
 //TODO: Allow it to dangle like VineBlock.class
+//TODO: Decide whether this flower requires shears (and if so, update loot table), or if some way to cause a loot drop when a blockstate becomes false is needed
 class HydrangeaFlowerBlock(properties: Properties?) : MultifaceBlock(properties), BonemealableBlock {
     val CODEC: MapCodec<HydrangeaFlowerBlock?> =
         simpleCodec<HydrangeaFlowerBlock?>({ properties: Properties? -> HydrangeaFlowerBlock(properties) })
