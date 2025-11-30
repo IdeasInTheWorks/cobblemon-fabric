@@ -13,14 +13,15 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.RandomSource
+import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.LevelReader
 import net.minecraft.world.level.block.BonemealableBlock
 import net.minecraft.world.level.block.MultifaceBlock
 import net.minecraft.world.level.block.MultifaceSpreader
 import net.minecraft.world.level.block.state.BlockState
+import java.util.*
 
-//TODO: Prevent it from being replaced if you interact on the block (like regular flowers, unlike lichen)
 //TODO: Allow it to dangle like VineBlock.class
 class HydrangeaFlowerBlock(properties: Properties?) : MultifaceBlock(properties), BonemealableBlock {
     val CODEC: MapCodec<HydrangeaFlowerBlock?> =
@@ -54,4 +55,11 @@ class HydrangeaFlowerBlock(properties: Properties?) : MultifaceBlock(properties)
         return this.spreader
     }
 
+    override fun canBeReplaced(state: BlockState, useContext: BlockPlaceContext?): Boolean {
+        return if (!useContext?.isSecondaryUseActive()!! && useContext?.itemInHand!!.`is`(this.asItem()) && hasAnyVacantFace(state)) true else false
+    }
+
+    private fun hasAnyVacantFace(state: BlockState): Boolean {
+        return Arrays.stream(DIRECTIONS).anyMatch { direction: Direction? -> !hasFace(state, direction) }
+    }
 }

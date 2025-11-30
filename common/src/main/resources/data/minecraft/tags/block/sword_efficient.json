@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-	"cobblemon:galarica_nut_bush"
+	"cobblemon:galarica_nut_bush",
+    "#cobblemon:oricorio_flowers"
   ]
 }

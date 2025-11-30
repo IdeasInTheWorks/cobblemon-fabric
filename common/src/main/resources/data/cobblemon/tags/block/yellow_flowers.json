@@ -3,6 +3,7 @@
   "values": [
     "minecraft:dandelion",
     "minecraft:sunflower",
+    "cobblemon:craspedia",
 	{
       "id": "biomesoplenty:goldenrod",
       "required": false
