@@ -15,9 +15,9 @@ import com.cobblemon.mod.common.block.LecternBlock
 import com.cobblemon.mod.common.block.MintBlock.MintType
 import com.cobblemon.mod.common.block.campfirepot.CampfirePotBlock
 import com.cobblemon.mod.common.block.chest.GildedChestBlock
-import com.cobblemon.mod.common.block.decor.CraspediaFlowerBlock
-import com.cobblemon.mod.common.block.decor.HydrangeaFlowerBlock
-import com.cobblemon.mod.common.block.decor.LobeliaFlowerBlock
+import com.cobblemon.mod.common.block.decor.PomohanaFlowerBlock
+import com.cobblemon.mod.common.block.decor.PauvillaFlowerBlock
+import com.cobblemon.mod.common.block.decor.LobaliaFlowerBlock
 import com.cobblemon.mod.common.block.general.BaleBlock
 import com.cobblemon.mod.common.block.grower.SaccharineTreeGrower
 import com.cobblemon.mod.common.block.sign.CobblemonHangingSignBlock
@@ -44,7 +44,6 @@ import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockSetType
-import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.LIT
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument
 import net.minecraft.world.level.block.state.properties.WoodType
@@ -574,11 +573,11 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val POTTED_WHITE_MINT = this.create("potted_white_mint", BlocksInvoker.createFlowerPotBlock(WHITE_MINT_LEAF_LITTER))
 
     @JvmField
-    val LOBELIA = this.create("lobelia", LobeliaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)))
+    val LOBALIA = this.create("lobalia", LobaliaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)))
     @JvmField
-    val CRASPEDIA = this.create("craspedia", CraspediaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)))
+    val POMOHANA = this.create("pomohana", PomohanaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)))
     @JvmField
-    val HYDRANGEA = this.create("hydrangea",HydrangeaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).strength(0.2F).ignitedByLava().pushReaction(PushReaction.DESTROY)))
+    val PAUVILLA = this.create("pauvilla",PauvillaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).strength(0.2F).ignitedByLava().pushReaction(PushReaction.DESTROY)))
 
     @JvmField
     val HEARTY_GRAIN_BALE = this.create("hearty_grain_bale", BaleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sound(CobblemonSounds.HEARTY_GRAIN_BALE_SOUNDS)))

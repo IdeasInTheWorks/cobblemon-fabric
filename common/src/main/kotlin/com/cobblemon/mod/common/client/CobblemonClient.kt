@@ -334,9 +334,10 @@ object CobblemonClient {
             CobblemonBlocks.WHITE_MINT_LEAF_LITTER,
             CobblemonBlocks.POTTED_WHITE_MINT,
 
-            CobblemonBlocks.LOBELIA,
-            CobblemonBlocks.CRASPEDIA,
-            CobblemonBlocks.HYDRANGEA
+            CobblemonBlocks.LOBALIA,
+            CobblemonBlocks.POMOHANA,
+            CobblemonBlocks.PAUVILLA
+            //,CobblemonBlocks.SENSERIA
         )
 
         this.createBoatModelLayers()

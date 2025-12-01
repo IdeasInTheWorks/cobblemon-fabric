@@ -9,7 +9,6 @@
 package com.cobblemon.mod.common.block.decor
 
 
-import com.cobblemon.mod.common.block.HeartyGrainsBlock
 import com.cobblemon.mod.common.block.HeartyGrainsBlock.Companion.WATERLOGGED
 import net.minecraft.core.BlockPos
 import net.minecraft.world.item.context.BlockPlaceContext
@@ -27,7 +26,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
 
-class LobeliaFlowerBlock(properties: Properties?) : TallFlowerBlock(properties), SimpleWaterloggedBlock {
+class LobaliaFlowerBlock(properties: Properties?) : TallFlowerBlock(properties), SimpleWaterloggedBlock {
 
     init {
         registerDefaultState(stateDefinition.any()

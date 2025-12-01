@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "cobblemon:block/lobalia_bottom"
+    },
+    "half=upper": {
+      "model": "cobblemon:block/lobalia_top"
+    }
+  }
+}

@@ -4,7 +4,7 @@
 	"ambientocclusion": false,
 	"textures": {
 		"particle": "#flower",
-		"flower": "cobblemon:block/flowers/lobelia_top"
+		"flower": "cobblemon:block/flowers/lobalia_top"
 	},
 	"elements": [
 		{

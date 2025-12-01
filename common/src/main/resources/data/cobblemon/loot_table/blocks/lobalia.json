@@ -13,18 +13,18 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "cobblemon:lobelia",
+              "block": "cobblemon:lobalia",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "half": "lower"
               }
             }
           ],
-          "name": "cobblemon:lobelia"
+          "name": "cobblemon:lobalia"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "cobblemon:blocks/lobelia"
+  "random_sequence": "cobblemon:blocks/lobalia"
 }
