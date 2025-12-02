@@ -1459,11 +1459,11 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
 
     // Plants, Flora, and Flowers
     @JvmField
-    val LOBALIA = compostableBlockItem("lobalia", CobblemonBlocks.LOBALIA, 0.85f)
+    val LOBAILA = compostableBlockItem("lobaila", CobblemonBlocks.LOBAILA, 0.85f)
     @JvmField
     val POMOHANA = compostableBlockItem("pomohana", CobblemonBlocks.POMOHANA, 0.85f)
     @JvmField
-    val PAUVILLA = compostableBlockItem("pauvilla", CobblemonBlocks.PAUVILLA, 0.85f)
+    val PAUVILLEA = compostableBlockItem("pauvillea", CobblemonBlocks.PAUVILLEA, 0.85f)
     //    @JvmField
     //    val SENSERIA = compostableBlockItem("senseria", CobblemonBlocks.SENSERIA, 0.85f)
 

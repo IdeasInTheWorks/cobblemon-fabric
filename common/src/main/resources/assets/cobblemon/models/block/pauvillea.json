@@ -1,9 +1,9 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"particle": "cobblemon:block/flowers/pauvilla_vine",
-		"vine": "cobblemon:block/flowers/pauvilla_vine",
-		"flowers": "cobblemon:block/flowers/pauvilla_flowers"
+		"particle": "cobblemon:block/flowers/pauvillea_vine",
+		"vine": "cobblemon:block/flowers/pauvillea_vine",
+		"flowers": "cobblemon:block/flowers/pauvillea_flowers"
 	},
 	"elements": [
 		{

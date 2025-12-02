@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
-		"particle": "cobblemon:block/flowers/lobalia_top",
-		"stem": "cobblemon:block/flowers/lobalia_bottom",
-		"detail": "cobblemon:block/flowers/lobalia_details"
+		"particle": "cobblemon:block/flowers/lobaila_top",
+		"stem": "cobblemon:block/flowers/lobaila_bottom",
+		"detail": "cobblemon:block/flowers/lobaila_details"
 	},
 	"elements": [
 		{

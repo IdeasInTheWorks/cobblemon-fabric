@@ -24,10 +24,10 @@ import java.util.*
 
 //TODO: Allow it to dangle like VineBlock.class
 //TODO: Decide whether this flower requires shears (and if so, update loot table), or if some way to cause a loot drop when a blockstate becomes false is needed
-class PauvillaFlowerBlock(properties: Properties?) : MultifaceBlock(properties), BonemealableBlock {
-    val CODEC: MapCodec<PauvillaFlowerBlock?> =
-        simpleCodec<PauvillaFlowerBlock?>({ properties: Properties? -> PauvillaFlowerBlock(properties) })
-    override fun codec(): MapCodec<PauvillaFlowerBlock?> {
+class PauvilleaFlowerBlock(properties: Properties?) : MultifaceBlock(properties), BonemealableBlock {
+    val CODEC: MapCodec<PauvilleaFlowerBlock?> =
+        simpleCodec<PauvilleaFlowerBlock?>({ properties: Properties? -> PauvilleaFlowerBlock(properties) })
+    override fun codec(): MapCodec<PauvilleaFlowerBlock?> {
         return CODEC
     }
 

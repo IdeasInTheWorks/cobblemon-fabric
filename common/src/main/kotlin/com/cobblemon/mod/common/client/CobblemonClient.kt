@@ -334,9 +334,9 @@ object CobblemonClient {
             CobblemonBlocks.WHITE_MINT_LEAF_LITTER,
             CobblemonBlocks.POTTED_WHITE_MINT,
 
-            CobblemonBlocks.LOBALIA,
+            CobblemonBlocks.LOBAILA,
             CobblemonBlocks.POMOHANA,
-            CobblemonBlocks.PAUVILLA
+            CobblemonBlocks.PAUVILLEA
             //,CobblemonBlocks.SENSERIA
         )
 
