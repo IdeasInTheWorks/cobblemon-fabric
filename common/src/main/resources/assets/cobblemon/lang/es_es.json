@@ -8816,7 +8816,7 @@
     "cobblemon.entity.variable.horizontal_wander_range.desc": "Distancia máxima a la que la entidad buscará un objetivo errante desde su posición inicial en los ejes X y Z.",
     "cobblemon.entity.variable.vertical_wander_range.name": "Rango de movimiento vertical",
     "cobblemon.entity.variable.vertical_wander_range.desc": "Distancia máxima a la que la entidad buscará un objetivo errante desde su posición inicial en el eje Y.",
-    "cobblemon.entity.variable.walk_speed.name": "Velocidad de movimiento",
+    "cobblemon.entity.variable.walk_speed.name": "Velocidad de caminata",
     "cobblemon.entity.variable.walk_speed.desc": "La velocidad a la que la entidad camina.",
     "cobblemon.entity.variable.can_float.name": "Flotar en fluidos",
     "cobblemon.entity.variable.can_float.desc": "Determina si la entidad flotará en la superficie sobre fluidos.",
