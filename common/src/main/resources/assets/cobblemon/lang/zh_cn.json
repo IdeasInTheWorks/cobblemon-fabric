@@ -5943,7 +5943,7 @@
     "cobblemon.fishing_bait_effects.gender_chance.tooltip": "%1$s%%-%2$s性别出现率",
     "cobblemon.fishing_bait_effects.level_raise.tooltip": "%1$s%% - 等级 +%3$s",
     "cobblemon.fishing_bait_effects.tera.tooltip": "%1$s%% - 吸引 %2$s 太晶属性",
-    "cobblemon.fishing_bait_effects.shiny_reroll.tooltip": "%1$s%% - 异色几率 ×%3$s",
+    "cobblemon.fishing_bait_effects.shiny_reroll.tooltip": "%1$s%% - 异色概率 ×%3$s",
     "cobblemon.fishing_bait_effects.ha_chance.tooltip": "%1$s%% - 隐藏特性出现率",
     "cobblemon.fishing_bait_effects.pokemon_chance.tooltip": "%1$s%% - 上钩一只宝可梦",
     "cobblemon.fishing_bait_effects.friendship.tooltip": "%1$s%% - 亲密度 +%3$s",
