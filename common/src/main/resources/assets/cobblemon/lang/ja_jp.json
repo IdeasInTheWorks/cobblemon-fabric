@@ -903,7 +903,7 @@
     "cobblemon.battle.switch_option": "ポケモンの入れ替え： ",
     "cobblemon.battle.your_team": "てもち：",
     "cobblemon.battle.must_switch": "交代する ポケモンを 選んで ください",
-    "cobblemon.battle.dragged_out": "%1$s 交代! 戻っておいで!",
+    "cobblemon.battle.dragged_out": "%1$sは 戦闘に 引きずり出された！",
     "cobblemon.battle.throw_pokeball_prompt": "今だ! ボールを投げて ゲットしよう!",
     "cobblemon.battle.run_prompt": "距離をとって 勝負を 切り上げよう!",
     "cobblemon.battle.resisted": "効果は 今ひとつのようだ......",
