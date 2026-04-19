@@ -9,10 +9,14 @@
 package com.cobblemon.mod.common.battles
 
 import com.cobblemon.mod.common.Cobblemon.LOGGER
-import com.cobblemon.mod.common.api.battles.interpreter.*
+import com.cobblemon.mod.common.api.battles.interpreter.BasicContext
+import com.cobblemon.mod.common.api.battles.interpreter.BattleContext
+import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage
+import com.cobblemon.mod.common.api.battles.interpreter.Effect
+import com.cobblemon.mod.common.api.battles.interpreter.InvalidInstructionException
+import com.cobblemon.mod.common.api.battles.interpreter.MissingContext
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor
-import com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor
 import com.cobblemon.mod.common.api.text.red
 import com.cobblemon.mod.common.api.text.yellow
 import com.cobblemon.mod.common.battles.dispatch.InstructionSet
@@ -22,21 +26,7 @@ import com.cobblemon.mod.common.battles.interpreter.instructions.*
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon
 import com.cobblemon.mod.common.util.battleLang
 import com.cobblemon.mod.common.util.runOnServer
-import net.minecraft.world.level.ClipContext
-import net.minecraft.world.phys.HitResult
-import net.minecraft.world.phys.Vec3
 import java.util.UUID
-import kotlin.collections.Iterator
-import kotlin.collections.filter
-import kotlin.collections.forEach
-import kotlin.collections.listOf
-import kotlin.collections.map
-import kotlin.collections.mutableListOf
-import kotlin.collections.mutableMapOf
-import kotlin.collections.set
-import kotlin.collections.toMutableList
-import kotlin.collections.toTypedArray
-import kotlin.time.measureTime
 
 @Suppress("KotlinPlaceholderCountMatchesArgumentCount", "UNUSED_PARAMETER")
 object ShowdownInterpreter {
@@ -141,7 +131,6 @@ object ShowdownInterpreter {
         // Note '-cureteam' is a legacy thing that is only used in generation 2 and 4 mods for heal bell and aromatherapy respectively as such we can just ignore that
     }
 
-
     fun interpretMessage(battleId: UUID, message: String) {
         // Check key map and use function if matching
         if (message.startsWith("{\"winner\":\"")) {
@@ -170,7 +159,6 @@ object ShowdownInterpreter {
         val instructionSet = InstructionSet()
         val battleMessages = mutableListOf<BattleMessage>()
 
-
         try {
             val lines = rawMessage.split("\n").toMutableList()
             if (lines[0] == "update") {
@@ -184,6 +172,7 @@ object ShowdownInterpreter {
                     val instruction = updateInstructionParser[id]?.invoke(battle, instructionSet, message, iterator) ?: UnknownInstruction(message)
                     instructionSet.instructions.add(instruction)
                 }
+                instructionSet.instructions.add(PostUpdateInstruction)
             }
             else if (lines[0] == "sideupdate") {
                 val showdownId = lines[1]
@@ -299,5 +288,35 @@ object ShowdownInterpreter {
             BasicContext(effectID, battle.turn, type, it.battlePokemon(0, battle))
         } ?:
         MissingContext()
+    }
+
+    /**
+     * Registers a new update instruction parser.
+     * @param id The ID of the instruction to register.
+     * @param callback The callback function to create the instruction.
+     */
+    @JvmStatic
+    fun registerUpdateInstructionParser(id: String, callback: (PokemonBattle, InstructionSet, BattleMessage, Iterator<BattleMessage>) -> InterpreterInstruction) {
+        updateInstructionParser[id] = callback
+    }
+
+    /**
+     * Registers a new split instruction parser.
+     * @param id The ID of the instruction to register.
+     * @param callback The callback function to create the instruction.
+     */
+    @JvmStatic
+    fun registerSplitInstructionParser(id: String, callback: (PokemonBattle, BattleActor, InstructionSet, BattleMessage, BattleMessage, Iterator<BattleMessage>) -> InterpreterInstruction) {
+        splitInstructionParser[id] = callback
+    }
+
+    /**
+     * Registers a new side instruction parser.
+     * @param id The ID of the instruction to register.
+     * @param callback The callback function to create the instruction.
+     */
+    @JvmStatic
+    fun registerSideInstructionParser(id: String, callback: (PokemonBattle, BattleActor, InstructionSet, BattleMessage) -> InterpreterInstruction) {
+        sideInstructionParser[id] = callback
     }
 }
