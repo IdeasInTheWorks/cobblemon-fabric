@@ -3,7 +3,7 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.pikachu_fluff_alola_bias_male",
+				"identifier": "geometry.pikachu_cap_male",
 				"texture_width": 128,
 				"texture_height": 64,
 				"visible_bounds_width": 4,
@@ -12,12 +12,12 @@
 			},
 			"bones": [
 				{
-					"name": "pikachu",
+					"name": "pikachu_alola_bias",
 					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "locator_root",
-					"parent": "pikachu",
+					"parent": "pikachu_alola_bias",
 					"pivot": [0, 0, 0],
 					"locators": {
 						"root": [0, 0, 0]
@@ -25,7 +25,7 @@
 				},
 				{
 					"name": "locator_top",
-					"parent": "pikachu",
+					"parent": "pikachu_alola_bias",
 					"pivot": [0, 22, 0],
 					"locators": {
 						"top": [0, 22, 0]
@@ -33,7 +33,7 @@
 				},
 				{
 					"name": "body",
-					"parent": "pikachu",
+					"parent": "pikachu_alola_bias",
 					"pivot": [0, 4, 0]
 				},
 				{
@@ -95,14 +95,22 @@
 					]
 				},
 				{
-					"name": "fluff",
+					"name": "cap",
 					"parent": "head_angle",
-					"pivot": [0.5, 19.5, -3],
-					"rotation": [-40, 62.5, 0],
+					"pivot": [0, 18.1, 0],
 					"cubes": [
-						{"origin": [0.5, 17.5, -7], "size": [0, 2, 4], "uv": [26, 40]},
-						{"origin": [0.5, 17, -6], "size": [0, 1, 2], "inflate": -0.01, "pivot": [0.5, 18, -4], "rotation": [27.5, 0, 0], "uv": [26, 45]},
-						{"origin": [0.5, 18.5, -5], "size": [0, 1, 2], "inflate": -0.01, "pivot": [0.5, 19.5, -3], "rotation": [-37.5, 0, 0], "uv": [26, 44]}
+						{"origin": [-4.5, 18.1, -4.5], "size": [9, 4, 9], "inflate": 0.01, "uv": [91, 1]},
+						{"origin": [-1, 21.1, -4.52], "size": [2, 1, 0], "uv": [119, 3]},
+						{"origin": [-1, 20.6, -4.52], "size": [4, 1, 0], "uv": [119, 1]},
+						{"origin": [4.5, 22.1, 4.5], "size": [-9, -4, -2], "uv": [113, 21]}
+					]
+				},
+				{
+					"name": "cap_brim",
+					"parent": "cap",
+					"pivot": [0.1, 16.85, -4.75],
+					"cubes": [
+						{"origin": [-4.5, 18.1, -8.5], "size": [9, 0, 4], "uv": [77, 5]}
 					]
 				},
 				{
@@ -483,7 +491,7 @@
 					"parent": "ears",
 					"pivot": [-3.5, 18.5, -0.25],
 					"cubes": [
-						{"origin": [-5, 18.5, -0.25], "size": [4, 5, 0], "uv": [52, 58]}
+						{"origin": [-5, 18.5, -0.25], "size": [4, 5, 0], "uv": [33, 58]}
 					]
 				},
 				{
@@ -491,7 +499,7 @@
 					"parent": "ear_right",
 					"pivot": [-3.5, 23.5, -0.25],
 					"cubes": [
-						{"origin": [-5, 23.5, -0.25], "size": [4, 5, 0], "uv": [52, 52]}
+						{"origin": [-5, 23.5, -0.25], "size": [4, 5, 0], "uv": [33, 52]}
 					]
 				},
 				{
@@ -499,7 +507,7 @@
 					"parent": "ears",
 					"pivot": [3.5, 18.5, -0.25],
 					"cubes": [
-						{"origin": [1, 18.5, -0.25], "size": [4, 5, 0], "uv": [61, 58]}
+						{"origin": [1, 18.5, -0.25], "size": [4, 5, 0], "uv": [42, 58]}
 					]
 				},
 				{
@@ -507,7 +515,7 @@
 					"parent": "ear_left",
 					"pivot": [3.5, 23.5, -0.25],
 					"cubes": [
-						{"origin": [1, 23.5, -0.25], "size": [4, 5, 0], "uv": [61, 52]}
+						{"origin": [1, 23.5, -0.25], "size": [4, 5, 0], "uv": [42, 52]}
 					]
 				},
 				{
@@ -540,7 +548,7 @@
 					"parent": "tail2",
 					"pivot": [0, 11.99, 11],
 					"cubes": [
-						{"origin": [0, 12, 6], "size": [0, 7, 13], "uv": [101, 28]}
+						{"origin": [0, 12, 6], "size": [0, 7, 13], "uv": [101, 43]}
 					]
 				},
 				{
