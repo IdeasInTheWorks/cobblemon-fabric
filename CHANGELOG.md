@@ -60,69 +60,97 @@
 - Archeops
 
 ### Pokémon Added
-- Pancham (+ Cosmetic with Black Glasses)
-- Pangoro (+ Cosmetic with Black Glasses)
-- Skitty
-- Delcatty
 - Wurmple
 - Silcoon
 - Beautifly
 - Cascoon
 - Dustox
+- Skitty
+- Delcatty
+
+- Seviper
+- Zangoose
+- Cherubi
+- Cherrim
+- Stunky
+- Skuntank
+
 - Audino
+- Pawniard
+- Bisharp
+- Kingambit
+
+- Pancham (+ Cosmetic with Black Glasses)
+- Pangoro (+ Cosmetic with Black Glasses)
+
 - Rockruff
 - Lycanroc
+
 - Snom
 - Frosmoth
+
+- Duraludon
+- Archaludon
+
 - Applin
 - Flapple
 - Appletun
 - Dipplin
 - Hydrapple
+
+- Nymble
+- Lokix
+
+#### Regional Forms
 - Sandshrew (Alolan)
 - Sandslash (Alolan)
-- Seviper
-- Zangoose
-- Stunky
-- Skuntank
-- Pawniard
-- Bisharp
-- Kingambit
+- Avalugg (Hisuian)
 
 ### Model updates for the following Pokémon
-- Goomy
-- Sliggoo
-- Goodra
-- Porygon
-- Porygon2
-- Porygon-Z
-- Zubat
-- Golbat
-- Crobat
+
 - Pidgey
 - Pidgeotto
 - Pidgeot
 - Sandslash
 - Nidoking
-- Sableye
-- Mawile
-- Nacli
-- Naclestack
-- Garganacl
+- Zubat
+- Golbat
+- Crobat
+- Porygon
+- Porygon2
+- Porygon-Z
+
 - Skarmory
 
+- Sableye
+- Mawile
+
+- Goomy
+- Sliggoo
+- Goodra
+
+- Nacli
+- Naclstack
+- Garganacl
+
+#### Model changes to the regional bias resource pack:
+
+- Added Mime Jr. (Galar Bias)
+- Added Bergmite (Hisui Bias)
+- Changed models for every existing regional bias
+
 ### Animation updates for the following Pokémon
-- Drampa
-- Archeops
 - Skarmory
+- Skitty
+- Flygon
+- Shellos
 - Riolu
 - Lucario
-- Shellos
-- Skitty
-- Joltik
 - Purrloin
 - Liepard
-- Flygon
+- Joltik
+- Archeops
+- Drampa
 
 #### Added sounds to the following moves
 - Absorb
@@ -154,6 +182,7 @@
 - Fixed Blitzle's base scale being `1` rather than the intended `0.8`
 - Fixed Magnezone's emissive layer for the shiny having the wrong name, thus displaying wrongly
 - Fixed Litleo not blinking
+- Fixed Garchomp T-posing when sleeping while out of battle.
 - Restructured Botany Pots integration folder structure
 - Decrease the default pastured mon wander radius to 32.
 - Factor in the weight of Pokémon when calculating pushing forces between hitboxes.
