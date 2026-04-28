@@ -53,7 +53,9 @@
             "animation_length": 1.2,
             "sound_effects": {
                 "0.04": {
-                  "effect": "pokemon.sandslash.cry"
+                    "effect": "pokemon.sandslash.cry"
+                }
+            }
         },
 		"animation.sandslash.faint": {
 			"loop": true,
