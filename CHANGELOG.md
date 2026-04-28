@@ -58,6 +58,10 @@
 ### New rideable Pokémon
 - Drampa
 - Archeops
+- Skarmory
+- Crobat
+- Goodra
+- Hisuian Goodra
 
 ### Pokémon Added
 - Wurmple
