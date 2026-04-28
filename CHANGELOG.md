@@ -62,6 +62,7 @@
 - Crobat
 - Goodra
 - Hisuian Goodra
+- Milotic
 
 ### Pokémon Added
 - Wurmple
