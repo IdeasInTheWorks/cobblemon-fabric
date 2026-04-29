@@ -156,6 +156,7 @@
 - Absorb
 - Aurora Beam
 - Double Team
+- Draco Meteor
 - Fire Punch
 - Fire Spin
 - Flame Charge
@@ -175,6 +176,7 @@
 - Tail Whip
 
 ### Changes
+- Stat increase and decrease particles have been changed, with the addition of alpha boost particles. 
 - Dragonite's mailbag cosmetic can now also be obtained with a chest in the cosmetic slot
 
 ### Fixes
