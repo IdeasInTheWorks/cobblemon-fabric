@@ -58,6 +58,11 @@
 ### New rideable Pokémon
 - Drampa
 - Archeops
+- Skarmory
+- Crobat
+- Goodra
+- Hisuian Goodra
+- Milotic
 
 ### Pokémon Added
 - Wurmple
@@ -86,6 +91,10 @@
 - Rockruff
 - Lycanroc
 
+- Rolycoly
+- Carkol
+- Coalossal
+
 - Snom
 - Frosmoth
 
@@ -107,10 +116,18 @@
 - Avalugg (Hisuian)
 
 ### Model updates for the following Pokémon
+- Goomy
+- Sliggoo
+- Goodra
+- Porygon
+- Porygon2
+- Porygon-Z
+- Zubat
+- Golbat
+- Crobat
 
-- Pidgey
-- Pidgeotto
-- Pidgeot
+### Model updates for the following Pokémon
+
 - Sandslash
 - Nidoking
 - Zubat
@@ -121,6 +138,13 @@
 - Porygon-Z
 
 - Skarmory
+- Jynx
+- Popplio
+- Brionne
+- Primarina
+- Fletchling
+- Fletchinder
+- Talonflame
 
 - Sableye
 - Mawile
@@ -149,6 +173,10 @@
 - Purrloin
 - Liepard
 - Joltik
+- Nidoking
+- Fletchling
+- Fletchinder
+- Talonflame
 - Archeops
 - Drampa
 

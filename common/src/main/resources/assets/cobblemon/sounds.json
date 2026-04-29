@@ -5072,7 +5072,13 @@
   "pokemon.sandshrew.cry": {
     "sounds": [ { "name": "cobblemon:pokemon/sandshrew/sandshrew_cry", "volume": 0.8 } ]
   },
+  "pokemon.sandshrew_alolan.cry": {
+    "sounds": [ { "name": "cobblemon:pokemon/sandshrew/sandshrew_cry", "volume": 0.8 } ]
+  },
   "pokemon.sandslash.cry": {
+    "sounds": [ { "name": "cobblemon:pokemon/sandslash/sandslash_cry", "volume": 0.8 } ]
+  },
+  "pokemon.sandslash_alolan.cry": {
     "sounds": [ { "name": "cobblemon:pokemon/sandslash/sandslash_cry", "volume": 0.8 } ]
   },
   "pokemon.nidoranf.cry": {
