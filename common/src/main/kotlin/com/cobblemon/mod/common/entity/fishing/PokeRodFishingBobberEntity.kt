@@ -23,10 +23,8 @@ import com.cobblemon.mod.common.api.spawning.BestSpawner
 import com.cobblemon.mod.common.api.spawning.detail.EntitySpawnResult
 import com.cobblemon.mod.common.api.spawning.detail.SpawnAction
 import com.cobblemon.mod.common.api.spawning.fishing.FishingSpawnCause
-import com.cobblemon.mod.common.api.spawning.influence.BucketNormalizingInfluence
-import com.cobblemon.mod.common.api.spawning.influence.PlayerLevelRangeInfluence
-import com.cobblemon.mod.common.api.spawning.influence.PlayerLevelRangeInfluence.Companion.TYPICAL_VARIATION
 import com.cobblemon.mod.common.api.spawning.position.FishingSpawnablePosition
+import com.cobblemon.mod.common.api.spawning.spawner.FishingSpawnerFactory
 import com.cobblemon.mod.common.api.text.red
 import com.cobblemon.mod.common.client.sound.EntitySoundTracker
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
@@ -762,7 +760,6 @@ class PokeRodFishingBobberEntity(type: EntityType<out PokeRodFishingBobberEntity
         lureLevel: Int
     ) {
         val spawner = BestSpawner.fishingSpawner
-        val bucketInfluence = BucketNormalizingInfluence(tier = lureLevel + luckOfTheSeaLevel)
 
         val spawnCause = FishingSpawnCause(
             spawner = spawner,
@@ -771,14 +768,21 @@ class PokeRodFishingBobberEntity(type: EntityType<out PokeRodFishingBobberEntity
             lureLevel = lureLevel,
         )
 
-        val spawnablePosition = FishingSpawnablePosition(
-            cause = spawnCause,
+        val ctx = FishingSpawnerFactory.Context(
+            player = player,
+            rodStack = rodItemStack,
+            lureLevel = lureLevel,
+            luckOfTheSeaLevel = luckOfTheSeaLevel,
             world = level() as ServerLevel,
             pos = position().toBlockPos(),
-            influences = mutableListOf(
-                PlayerLevelRangeInfluence(player, TYPICAL_VARIATION),
-                bucketInfluence
-            )
+            spawner = spawner
+        )
+
+        val spawnablePosition = FishingSpawnablePosition(
+            cause = spawnCause,
+            world = ctx.world,
+            pos = ctx.pos,
+            influences = FishingSpawnerFactory.buildPositionInfluences(ctx)
         )
 
         val result = spawner.calculateSpawnActionForPosition(

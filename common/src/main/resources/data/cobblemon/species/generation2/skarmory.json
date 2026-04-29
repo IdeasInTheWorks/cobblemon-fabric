@@ -88,104 +88,28 @@
           }
         ],
         "stats": {
-          "ACCELERATION": "45-75",
-          "JUMP": "30-65",
-          "SKILL": "55-85",
-          "SPEED": "30-65",
-          "STAMINA": "45-75"
+          "ACCELERATION": "35-50",
+          "JUMP": "50-70",
+          "SKILL": "30-55",
+          "SPEED": "30-50",
+          "STAMINA": "50-85"
         }
       },
       "LAND": {
         "key": "cobblemon:land/horse",
         "rideSounds": [],
         "stats": {
-          "ACCELERATION": "55-65",
+          "ACCELERATION": "70-90",
           "JUMP": "15-25",
-          "SKILL": "10-25",
-          "SPEED": "25-40",
-          "STAMINA": "20-30"
+          "SKILL": "15-35",
+          "SPEED": "15-25",
+          "STAMINA": "40-65"
         }
       }
     },
     "seats": [
       {
-        "offset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "poseOffsets": [
-          {
-            "offset": {
-              "x": 0.0047415113,
-              "y": -1.6152971,
-              "z": 0.35461712
-            },
-            "poseTypes": [
-              "STAND"
-            ]
-          },
-          {
-            "offset": {
-              "x": -0.003806442,
-              "y": -1.7203209,
-              "z": 0.12983066
-            },
-            "poseTypes": [
-              "WALK"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.039005388,
-              "y": -2.4511793,
-              "z": 0.10381147
-            },
-            "poseTypes": [
-              "HOVER"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.056267936,
-              "y": -2.0914204,
-              "z": -0.45272845
-            },
-            "poseTypes": [
-              "FLY"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.0,
-              "y": -0.7674751,
-              "z": -0.27694723
-            },
-            "poseTypes": [
-              "FLOAT"
-            ]
-          },
-          {
-            "offset": {
-              "x": -0.003806442,
-              "y": -1.7203209,
-              "z": 0.12983066
-            },
-            "poseTypes": [
-              "SWIM"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.0047415113,
-              "y": -1.6152971,
-              "z": 0.35461712
-            },
-            "poseTypes": [
-              "GLIDE"
-            ]
-          }
-        ]
+        "locator": "seat_1"
       }
     ]
   },
