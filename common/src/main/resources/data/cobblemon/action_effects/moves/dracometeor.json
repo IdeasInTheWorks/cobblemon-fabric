@@ -18,6 +18,11 @@
             "locators": ["mouth", "special", "target"]
         },
         {
+            "type": "entity_molang",
+            "entityCondition": "q.entity.is_user == true",
+            "expressions": ["q.sound('move.dracometeor.actor_1');"]
+        },
+        {
             "type": "pause",
             "pause": 0.7
         },
@@ -25,6 +30,11 @@
             "type": "entity_particles",
             "effect": "cobblemon:dracometeor_accent",
             "locator": ["root"]
+        },
+        {
+            "type": "entity_molang",
+            "entityCondition": "q.entity.is_user == true",
+            "expressions": ["q.sound('move.dracometeor.actor_2');"]
         },
         {
             "type": "pause",
@@ -89,6 +99,11 @@
             "animation": ["recoil"]
         },
         {
+            "type": "entity_molang",
+            "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
+            "expressions": ["q.sound('move.dracometeor.target_1');"]
+        },
+        {
             "type": "sequence",
             "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
             "keyframes": [
@@ -145,6 +160,11 @@
             "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
             "effect": "cobblemon:dracometeor_targetfloorscorch",
             "locator": ["root"]
+        },
+        {
+            "type": "entity_molang",
+            "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
+            "expressions": ["q.sound('move.dracometeor.target_2');"]
         },
         {
             "type": "remove_holds",
