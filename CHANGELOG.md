@@ -173,12 +173,16 @@
 - Purrloin
 - Liepard
 - Joltik
+- Galvantula
 - Nidoking
 - Fletchling
 - Fletchinder
 - Talonflame
 - Archeops
 - Drampa
+- Sewaddle
+- Swadloon
+- Leavanny
 
 #### Added sounds to the following moves
 - Absorb
