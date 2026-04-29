@@ -36,6 +36,14 @@
 - Pawniard
 - Bisharp
 - Kingambit
+- Duraludon
+- Archaludon
+- Rolycoly
+- Carkol
+- Coalossal
+- Avalugg (Hisuian)
+- Cherubi
+- Cherrim
 
 ### Model updates for the following Pokémon
 - Goomy
@@ -47,9 +55,6 @@
 - Zubat
 - Golbat
 - Crobat
-- Pidgey
-- Pidgeotto
-- Pidgeot
 - Sandslash
 - Nidoking
 - Sableye
@@ -58,6 +63,13 @@
 - Naclestack
 - Garganacl
 - Skarmory
+- Jynx
+- Popplio
+- Brionne
+- Primarina
+- Fletchling
+- Fletchinder
+- Talonflame
 
 ### Animation updates for the following Pokémon
 - Drampa
@@ -68,6 +80,10 @@
 - Shellos
 - Skitty
 - Joltik
+- Nidoking
+- Fletchling
+- Fletchinder
+- Talonflame
 
 ### Changes
 - Dragonite's mailbag cosmetic can now also be obtained with a chest in the cosmetic slot
