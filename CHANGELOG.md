@@ -91,6 +91,10 @@
 - Rockruff
 - Lycanroc
 
+- Rolycoly
+- Carkol
+- Coalossal
+
 - Snom
 - Frosmoth
 
@@ -109,21 +113,7 @@
 #### Regional Forms
 - Sandshrew (Alolan)
 - Sandslash (Alolan)
-- Seviper
-- Zangoose
-- Stunky
-- Skuntank
-- Pawniard
-- Bisharp
-- Kingambit
-- Duraludon
-- Archaludon
-- Rolycoly
-- Carkol
-- Coalossal
 - Avalugg (Hisuian)
-- Cherubi
-- Cherrim
 
 ### Model updates for the following Pokémon
 - Goomy
@@ -135,13 +125,9 @@
 - Zubat
 - Golbat
 - Crobat
-- Avalugg (Hisuian)
 
 ### Model updates for the following Pokémon
 
-- Pidgey
-- Pidgeotto
-- Pidgeot
 - Sandslash
 - Nidoking
 - Zubat
