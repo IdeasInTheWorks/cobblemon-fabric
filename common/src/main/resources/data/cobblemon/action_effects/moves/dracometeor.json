@@ -33,7 +33,7 @@
         },
         {
             "type": "entity_molang",
-            "entityCondition": "q.entity.is_user == true",
+            "entityCondition": "q.entity.is_user == true && q.missed(q.entity.uuid) == false",
             "expressions": ["q.sound('move.dracometeor.actor_2');"]
         },
         {
