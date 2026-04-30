@@ -503,7 +503,6 @@ object VaryingModelRepository {
         inbuilt("crabominable", ::CrabominableModel)
         inbuilt("wimpod", ::WimpodModel)
         inbuilt("golisopod", ::GolisopodModel)
-        inbuilt("shedinja", ::ShedinjaModel)
         inbuilt("ralts", ::RaltsModel)
         inbuilt("kirlia", ::KirliaModel)
         inbuilt("gardevoir", ::GardevoirModel)

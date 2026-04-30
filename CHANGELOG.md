@@ -183,6 +183,12 @@
 - Sewaddle
 - Swadloon
 - Leavanny
+- Goomy
+- Sliggoo
+- Goodra
+- Shedinja
+- Skwovet
+- Greedent
 
 #### Added sounds to the following moves
 - Absorb
