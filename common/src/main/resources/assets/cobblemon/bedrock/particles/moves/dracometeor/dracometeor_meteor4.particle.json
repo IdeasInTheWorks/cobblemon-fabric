@@ -73,7 +73,7 @@
 				"expiration_event": ["boom", "crater", "ring"]
 			},
 			"minecraft:particle_motion_parametric": {
-				"relative_position": ["(v.target_deltax*v.particle_age*v.motion/v.particle_lifetime)", "(10*(((v.particle_age*v.motion/v.particle_lifetime)*-1)+1))+(v.target_deltay*v.particle_age*v.motion/v.particle_lifetime)-0.5", "-((v.target_deltaz*v.particle_age*v.motion/v.particle_lifetime))+(6*(((v.particle_age*v.motion/v.particle_lifetime)*-1)+1))"]
+				"relative_position": ["(v.target_deltax*v.particle_age*v.motion/v.particle_lifetime)", "(10*(((v.particle_age*v.motion/v.particle_lifetime)*-1)+1))+(v.target_deltay*v.particle_age*v.motion/v.particle_lifetime)-0.5", "((v.target_deltaz*v.particle_age*v.motion/v.particle_lifetime))+(-6*(((v.particle_age*v.motion/v.particle_lifetime)*-1)+1))"]
 			},
 			"minecraft:particle_appearance_billboard": {
 				"size": ["1*v.size", "1*v.size"],
