@@ -33,7 +33,7 @@
         },
         {
             "type": "entity_molang",
-            "entityCondition": "q.entity.is_user == true",
+            "entityCondition": "q.entity.is_user == true && q.missed(q.entity.uuid) == false",
             "expressions": ["q.sound('move.dracometeor.actor_2');"]
         },
         {
@@ -42,10 +42,10 @@
         },
         {
             "type": "sequence",
-            "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
             "keyframes": [
                 {
                     "type": "entity_particles",
+                    "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
                     "effect": "cobblemon:dracometeor_meteor1",
                     "locator": ["root"],
                     "targetLocators": ["root"]
@@ -56,6 +56,7 @@
                 },
                 {
                     "type": "entity_particles",
+                    "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
                     "effect": "cobblemon:dracometeor_meteortrail1",
                     "locator": ["root"],
                     "targetLocators": ["root"]
@@ -69,10 +70,10 @@
         },
         {
             "type": "sequence",
-            "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
             "keyframes": [
                 {
                     "type": "entity_particles",
+                    "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
                     "effect": "cobblemon:dracometeor_meteor2",
                     "locator": ["root"],
                     "targetLocators": ["root"]
@@ -83,6 +84,7 @@
                 },
                 {
                     "type": "entity_particles",
+                    "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
                     "effect": "cobblemon:dracometeor_meteortrail2",
                     "locator": ["root"],
                     "targetLocators": ["root"]
@@ -105,10 +107,10 @@
         },
         {
             "type": "sequence",
-            "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
             "keyframes": [
                 {
                     "type": "entity_particles",
+                    "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
                     "effect": "cobblemon:dracometeor_meteor3",
                     "locator": ["root"],
                     "targetLocators": ["root"]
@@ -119,6 +121,7 @@
                 },
                 {
                     "type": "entity_particles",
+                    "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
                     "effect": "cobblemon:dracometeor_meteortrail3",
                     "locator": ["root"],
                     "targetLocators": ["root"]
@@ -131,10 +134,10 @@
         },
         {
             "type": "sequence",
-            "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
             "keyframes": [
                 {
                     "type": "entity_particles",
+                    "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
                     "effect": "cobblemon:dracometeor_meteor4",
                     "locator": ["root"],
                     "targetLocators": ["root"]
@@ -145,6 +148,7 @@
                 },
                 {
                     "type": "entity_particles",
+                    "entityCondition": "q.entity.is_user == false && q.missed(q.entity.uuid) == false",
                     "effect": "cobblemon:dracometeor_meteortrail4",
                     "locator": ["root"],
                     "targetLocators": ["root"]
