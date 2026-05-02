@@ -1,150 +1,25 @@
 {
-  "multipart": [
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea"
-      },
-      "when": {
-        "north": "true"
-      }
+  "variants": {
+    "facing=down": {
+      "model": "cobblemon:block/pauvillea_hanging"
     },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea"
-      },
-      "when": {
-        "down": "false",
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "up": "false",
-        "west": "false"
-      }
+    "facing=east": {
+      "model": "cobblemon:block/pauvillea_wall",
+      "y": 90
     },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "y": 90
-      },
-      "when": {
-        "east": "true"
-      }
+    "facing=north": {
+      "model": "cobblemon:block/pauvillea_wall"
     },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "y": 90
-      },
-      "when": {
-        "down": "false",
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "up": "false",
-        "west": "false"
-      }
+    "facing=south": {
+      "model": "cobblemon:block/pauvillea_wall",
+      "y": 180
     },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "y": 180
-      },
-      "when": {
-        "south": "true"
-      }
+    "facing=up": {
+      "model": "cobblemon:block/pauvillea_floor"
     },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "y": 180
-      },
-      "when": {
-        "down": "false",
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "up": "false",
-        "west": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "y": 270
-      },
-      "when": {
-        "west": "true"
-      }
-    },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "y": 270
-      },
-      "when": {
-        "down": "false",
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "up": "false",
-        "west": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "x": 270
-      },
-      "when": {
-        "up": "true"
-      }
-    },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "x": 270
-      },
-      "when": {
-        "down": "false",
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "up": "false",
-        "west": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "x": 90
-      },
-      "when": {
-        "down": "true"
-      }
-    },
-    {
-      "apply": {
-        "model": "cobblemon:block/pauvillea",
-        "uvlock": true,
-        "x": 90
-      },
-      "when": {
-        "down": "false",
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "up": "false",
-        "west": "false"
-      }
+    "facing=west": {
+      "model": "cobblemon:block/pauvillea_wall",
+      "y": 270
     }
-  ]
+  }
 }

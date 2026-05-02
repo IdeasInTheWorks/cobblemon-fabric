@@ -9,58 +9,70 @@
 package com.cobblemon.mod.common.block.decor
 
 import com.mojang.serialization.MapCodec
+import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
-import net.minecraft.server.level.ServerLevel
-import net.minecraft.util.RandomSource
 import net.minecraft.world.item.context.BlockPlaceContext
-import net.minecraft.world.level.Level
+import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.LevelReader
-import net.minecraft.world.level.block.BonemealableBlock
-import net.minecraft.world.level.block.MultifaceBlock
-import net.minecraft.world.level.block.MultifaceSpreader
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.DirectionalBlock
 import net.minecraft.world.level.block.state.BlockState
-import java.util.*
+import net.minecraft.world.level.block.state.StateDefinition
+import net.minecraft.world.phys.shapes.CollisionContext
+import net.minecraft.world.phys.shapes.Shapes
+import net.minecraft.world.phys.shapes.VoxelShape
 
-//TODO: Allow it to dangle like VineBlock.class
-//TODO: Decide whether this flower requires shears (and if so, update loot table), or if some way to cause a loot drop when a blockstate becomes false is needed
-class PauvilleaFlowerBlock(properties: Properties?) : MultifaceBlock(properties), BonemealableBlock {
-    val CODEC: MapCodec<PauvilleaFlowerBlock?> =
-        simpleCodec<PauvilleaFlowerBlock?>({ properties: Properties? -> PauvilleaFlowerBlock(properties) })
-    override fun codec(): MapCodec<PauvilleaFlowerBlock?> {
-        return CODEC
+//TODO: Maybe allow it to dangle like VineBlock.class
+class PauvilleaFlowerBlock(properties: Properties?) : DirectionalBlock(properties) {
+    init {
+        registerDefaultState(stateDefinition.any()
+            .setValue(FACING, Direction.DOWN))
     }
 
-    private val spreader = MultifaceSpreader(this)
+    override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
+        builder.add(FACING)
+    }
 
-    override fun isValidBonemealTarget(level: LevelReader?, pos: BlockPos?, state: BlockState?): Boolean {
-        return Direction.stream().anyMatch { arg4: Direction? ->
-            this.spreader.canSpreadInAnyDirection(
-                state,
-                level,
-                pos,
-                arg4!!.getOpposite()
-            )
+    override fun getStateForPlacement(ctx: BlockPlaceContext): BlockState? {
+        var blockState = defaultBlockState()
+        val worldView = ctx.level
+        val blockPos = ctx.clickedPos
+        blockState = blockState.setValue(FACING, ctx.clickedFace) as BlockState
+        if (blockState.canSurvive(worldView, blockPos)) {
+            return blockState
+        }
+        return null
+    }
+
+    override fun canSurvive(state: BlockState, world: LevelReader, pos: BlockPos): Boolean {
+        val direction = state.getValue(FACING) as Direction
+        val blockState = world.getBlockState(pos.relative(direction.opposite))
+        return blockState.canOcclude()
+    }
+
+    override fun codec(): MapCodec<PauvilleaFlowerBlock> = CODEC
+
+    override fun getShape(state: BlockState, blockGetter: BlockGetter, pos: BlockPos, collisionContext: CollisionContext): VoxelShape {
+        return when (state.getValue(FACING)) {
+            Direction.DOWN -> CEILING
+            Direction.NORTH -> WALL_NORTH
+            Direction.EAST -> WALL_EAST
+            Direction.SOUTH -> WALL_SOUTH
+            Direction.WEST -> WALL_WEST
+            Direction.UP -> FLOOR
         }
     }
 
-    override fun isBonemealSuccess(level: Level?, random: RandomSource?, pos: BlockPos?, state: BlockState?): Boolean {
-        return true
-    }
-
-    override fun performBonemeal(level: ServerLevel?, random: RandomSource?, pos: BlockPos?, state: BlockState?) {
-        this.spreader.spreadFromRandomFaceTowardRandomDirection(state, level, pos, random)
-    }
-
-    override fun getSpreader(): MultifaceSpreader {
-        return this.spreader
-    }
-
-    override fun canBeReplaced(state: BlockState, useContext: BlockPlaceContext?): Boolean {
-        return if (!useContext?.isSecondaryUseActive()!! && useContext?.itemInHand!!.`is`(this.asItem()) && hasAnyVacantFace(state)) true else false
-    }
-
-    private fun hasAnyVacantFace(state: BlockState): Boolean {
-        return Arrays.stream(DIRECTIONS).anyMatch { direction: Direction? -> !hasFace(state, direction) }
+    companion object {
+        val CODEC: MapCodec<PauvilleaFlowerBlock> = RecordCodecBuilder.mapCodec {
+            it.group(propertiesCodec()).apply(it, ::PauvilleaFlowerBlock)
+        }
+        val FLOOR = Shapes.box(0.0, 0.0, 0.0, 1.0, 0.4375, 1.0)
+        val WALL_NORTH = Shapes.box(0.0, 0.0, 0.8125, 1.0, 1.0, 1.0)
+        val WALL_EAST = Shapes.box(0.0, 0.0, 0.0, 0.1875, 1.0, 1.0)
+        val WALL_SOUTH = Shapes.box(0.0, 0.0, 0.0, 1.0, 1.0, 0.1875)
+        val WALL_WEST = Shapes.box(0.8125, 0.0, 0.0, 1.0, 1.0, 1.0)
+        val CEILING = Shapes.box(0.0, 0.0, 0.0, 1.0, 1.0, 1.0)
     }
 }
