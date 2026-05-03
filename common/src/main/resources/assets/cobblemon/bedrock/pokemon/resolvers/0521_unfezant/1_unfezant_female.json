@@ -11,6 +11,18 @@
     {
       "aspects": ["female", "shiny"],
       "texture": "cobblemon:textures/pokemon/0521_unfezant/unfezant_female_shiny.png"
+    },
+    {
+      "aspects": [
+        "alpha_eyes"
+      ],
+      "layers": [
+        {
+          "name": "alpha_eyes",
+          "texture": "cobblemon:textures/pokemon/0521_unfezant/unfezant_female_alpha.png",
+          "emissive": true
+        }
+      ]
     }
   ]
 }
