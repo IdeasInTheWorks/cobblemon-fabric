@@ -48,7 +48,7 @@ class PauvilleaFlowerBlock(properties: Properties?) : DirectionalBlock(propertie
     override fun canSurvive(state: BlockState, world: LevelReader, pos: BlockPos): Boolean {
         val direction = state.getValue(FACING) as Direction
         val blockState = world.getBlockState(pos.relative(direction.opposite))
-        return blockState.canOcclude()
+        return blockState.isCollisionShapeFullBlock(world, pos) or blockState.canOcclude()
     }
 
     override fun codec(): MapCodec<PauvilleaFlowerBlock> = CODEC
