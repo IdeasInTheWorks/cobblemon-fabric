@@ -375,7 +375,13 @@ class PokedexGUI private constructor(
         )
 
         // Show selected tab pointer if selected Pokémon has tab info to be shown
-        if (selectedEntry?.let { selectedForm in CobblemonClient.clientPokedexData.getCaughtForms(it) } == true) {
+        if (selectedEntry?.let {
+                selectedForm in if (tabInfoIndex == TAB_DROPS || tabInfoIndex == TAB_MOVES) {
+                    CobblemonClient.clientPokedexData.getEncounteredForms(it)
+                } else {
+                    CobblemonClient.clientPokedexData.getCaughtForms(it)
+                }
+            } == true) {
             // Tab arrow
             blitk(
                 matrixStack = matrices,
@@ -555,7 +561,13 @@ class PokedexGUI private constructor(
     }
 
     fun displaytabInfoElement(tabIndex: Int, update: Boolean = true) {
-        val showActiveTab = selectedEntry?.let { selectedForm in CobblemonClient.clientPokedexData.getCaughtForms(it) } == true
+        val showActiveTab = selectedEntry?.let {
+            selectedForm in if (tabIndex == TAB_DROPS || tabIndex == TAB_MOVES) {
+                CobblemonClient.clientPokedexData.getEncounteredForms(it)
+            } else {
+                CobblemonClient.clientPokedexData.getCaughtForms(it)
+            }
+        } == true
         var statSubIndex = 0
 
         if (tabButtons.isNotEmpty() && tabButtons.size > tabIndex) {
@@ -622,7 +634,13 @@ class PokedexGUI private constructor(
     fun updateTabInfoElement() {
         val species = selectedEntry?.speciesId?.let { PokemonSpecies.getByIdentifier(it) }
         val formName = selectedForm?.displayForm
-        val canDisplay = selectedEntry?.let { selectedForm in CobblemonClient.clientPokedexData.getCaughtForms(it) } == true
+        val canDisplay = selectedEntry?.let {
+            selectedForm in if (tabInfoIndex == TAB_DROPS || tabInfoIndex == TAB_MOVES) {
+                CobblemonClient.clientPokedexData.getEncounteredForms(it)
+            } else {
+                CobblemonClient.clientPokedexData.getCaughtForms(it)
+            }
+        } == true
         val textToShowInDescription = mutableListOf<String>()
 
         if (canDisplay && species != null) {
