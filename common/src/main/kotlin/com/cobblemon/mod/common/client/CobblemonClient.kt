@@ -399,8 +399,9 @@ object CobblemonClient {
 
             CobblemonBlocks.LOBAILA,
             CobblemonBlocks.POMOHANA,
-            CobblemonBlocks.PAUVILLEA
-            //,CobblemonBlocks.SENSERIA
+            CobblemonBlocks.PAUVILLEA,
+            CobblemonBlocks.WISTENSU,
+            CobblemonBlocks.WISTENSU_VINE
         )
 
         this.createBoatModelLayers()

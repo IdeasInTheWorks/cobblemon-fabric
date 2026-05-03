@@ -120,6 +120,10 @@ object CobblemonItemGroups {
         entries.accept(CobblemonItems.GALARICA_NUTS)
         entries.accept(CobblemonItems.HEARTY_GRAINS)
         entries.accept(CobblemonItems.TASTY_TAIL)
+        entries.accept(CobblemonItems.POMOHANA)
+        entries.accept(CobblemonItems.PAUVILLEA)
+        entries.accept(CobblemonItems.LOBAILA)
+        entries.accept(CobblemonItems.WISTENSU)
 //        entries.accept(CobblemonItems.BUGWORT) // TODO after 1.7
 
         entries.accept(CobblemonItems.RED_APRICORN)

@@ -1,111 +1,13 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "bonus_rolls": 0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "conditions": [],
-          "functions": [
-            {
-              "add": true,
-              "conditions": [
-                {
-                  "block": "cobblemon:pauvillea",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "down": "true"
-                  }
-                }
-              ],
-              "count": 1,
-              "function": "minecraft:set_count"
-            },
-            {
-              "add": true,
-              "conditions": [
-                {
-                  "block": "cobblemon:pauvillea",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "up": "true"
-                  }
-                }
-              ],
-              "count": 1,
-              "function": "minecraft:set_count"
-            },
-            {
-              "add": true,
-              "conditions": [
-                {
-                  "block": "cobblemon:pauvillea",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "north": "true"
-                  }
-                }
-              ],
-              "count": 1,
-              "function": "minecraft:set_count"
-            },
-            {
-              "add": true,
-              "conditions": [
-                {
-                  "block": "cobblemon:pauvillea",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "south": "true"
-                  }
-                }
-              ],
-              "count": 1,
-              "function": "minecraft:set_count"
-            },
-            {
-              "add": true,
-              "conditions": [
-                {
-                  "block": "cobblemon:pauvillea",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "west": "true"
-                  }
-                }
-              ],
-              "count": 1,
-              "function": "minecraft:set_count"
-            },
-            {
-              "add": true,
-              "conditions": [
-                {
-                  "block": "cobblemon:pauvillea",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "east": "true"
-                  }
-                }
-              ],
-              "count": 1,
-              "function": "minecraft:set_count"
-            },
-            {
-              "add": true,
-              "count": -1,
-              "function": "minecraft:set_count"
-            },
-            {
-              "function": "minecraft:explosion_decay"
-            }
-          ],
-          "name": "cobblemon:pauvillea"
-        }
-      ],
-      "rolls": 1
-    }
-  ],
-  "random_sequence": "cobblemon:blocks/pauvillea"
+    "type": "minecraft:block",
+    "pools": [{
+        "rolls": 1,
+        "entries": [{
+            "type": "minecraft:item",
+            "name": "cobblemon:pauvillea"
+        }],
+        "conditions": [{
+            "condition": "minecraft:survives_explosion"
+        }]
+    }]
 }
