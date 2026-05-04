@@ -24,17 +24,12 @@ import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.BonemealableBlock
 import net.minecraft.world.level.block.DirectionalBlock
-import net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock.getConnectedDirection
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
-import net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING
-import net.minecraft.world.level.block.state.properties.BlockStateProperties.WATERLOGGED
-import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-//TODO: Maybe allow it to dangle like VineBlock.class
 class PauvilleaFlowerBlock(properties: Properties?) : DirectionalBlock(properties), BonemealableBlock {
     init {
         registerDefaultState(stateDefinition.any()
@@ -56,15 +51,18 @@ class PauvilleaFlowerBlock(properties: Properties?) : DirectionalBlock(propertie
         return null
     }
 
-    override fun canSurvive(state: BlockState, world: LevelReader, pos: BlockPos): Boolean {
-        val direction = state.getValue(FACING) as Direction
-        val blockState = world.getBlockState(pos.relative(direction.opposite))
-        return blockState.isCollisionShapeFullBlock(world, pos) or blockState.canOcclude()
+    override fun updateShape(state: BlockState, direction: Direction, neighborState: BlockState, level: LevelAccessor, pos: BlockPos, neighborPos: BlockPos): BlockState {
+        val facing = state.getValue(FACING)
+        if (direction == facing.opposite && !canSurvive(state, level, pos)) {
+            return Blocks.AIR.defaultBlockState()
+        }
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos)
     }
 
-    override fun updateShape(state: BlockState, direction: Direction, neighborState: BlockState, world: LevelAccessor, pos: BlockPos, neighborPos: BlockPos): BlockState {
-        if (state.getValue(FACING).opposite == direction && !state.canSurvive(world, pos)) Blocks.AIR.defaultBlockState()
-        return super.updateShape(state, direction, neighborState, world, pos, neighborPos)
+    override fun canSurvive(state: BlockState, level: LevelReader, pos: BlockPos): Boolean {
+        val direction = state.getValue(FACING) as Direction
+        val blockState = level.getBlockState(pos.relative(direction.opposite))
+        return blockState.isCollisionShapeFullBlock(level, pos) or blockState.canOcclude()
     }
 
     override fun codec(): MapCodec<PauvilleaFlowerBlock> = CODEC
