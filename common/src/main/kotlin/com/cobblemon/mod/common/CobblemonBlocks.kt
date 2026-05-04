@@ -789,9 +789,9 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     @JvmField
     val PAUVILLEA = this.create("pauvillea",PauvilleaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).instabreak().ignitedByLava().pushReaction(PushReaction.DESTROY)))
     @JvmField
-    val WISTENSU = this.create("wistensu", WistensuFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).instabreak().ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel{3}))
+    val WISTENSU = this.create("wistensu", WistensuFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).instabreak().ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel{11}))
     @JvmField
-    val WISTENSU_VINE = this.create("wistensu_vine", WistensuFlowerVineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).instabreak().ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel{1}))
+    val WISTENSU_VINE = this.create("wistensu_vine", WistensuFlowerVineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).instabreak().ignitedByLava().pushReaction(PushReaction.DESTROY)))
 
     @JvmField
     val HEARTY_GRAIN_BALE = this.create("hearty_grain_bale", BaleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sound(CobblemonSounds.HEARTY_GRAIN_BALE_SOUNDS)))
