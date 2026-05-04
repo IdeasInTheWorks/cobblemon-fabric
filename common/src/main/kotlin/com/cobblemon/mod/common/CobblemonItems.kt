@@ -968,7 +968,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val EJECT_PACK = heldItem("eject_pack")
     @JvmField
-    val ELECTRIC_SEED = heldItem("electric_seed")
+    val ELECTRIC_SEED = itemNameBlockItem("electric_seed", CobblemonBlocks.ELECTRIC_SEED)
     @JvmField
     val EVERSTONE = heldItem("everstone")
     @JvmField
@@ -984,7 +984,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val FOCUS_SASH = heldItem("focus_sash")
     @JvmField
-    val GRASSY_SEED = heldItem("grassy_seed")
+    val GRASSY_SEED = itemNameBlockItem("grassy_seed", CobblemonBlocks.GRASSY_SEED)
     @JvmField
     val GRIP_CLAW = heldItem("grip_claw")
     @JvmField
@@ -1034,7 +1034,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val POWER_WEIGHT = heldItem("power_weight")
     @JvmField
-    val PSYCHIC_SEED = heldItem("psychic_seed")
+    val PSYCHIC_SEED = itemNameBlockItem("psychic_seed", CobblemonBlocks.PSYCHIC_SEED)
     @JvmField
     val PROTECTIVE_PADS = heldItem("protective_pads")
     @JvmField
@@ -1090,7 +1090,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val MIRROR_HERB = compostableHeldItem("mirror_herb", null, 0.85F)
     @JvmField
-    val MISTY_SEED = heldItem("misty_seed")
+    val MISTY_SEED = itemNameBlockItem("misty_seed", CobblemonBlocks.MISTY_SEED)
     @JvmField
     val POWER_HERB = compostableHeldItem("power_herb", null, 0.85F)
     @JvmField
@@ -1572,6 +1572,15 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     val PAUVILLEA = compostableBlockItem("pauvillea", CobblemonBlocks.PAUVILLEA, 0.85f)
     @JvmField
     val WISTENSU = compostableBlockItem("wistensu", CobblemonBlocks.WISTENSU, 0.85f)
+
+    @JvmField
+    val VOLTCONIA = compostableBlockItem("voltconia", CobblemonBlocks.VOLTCONIA, 0.95f)
+    @JvmField
+    val VERDROOT = compostableBlockItem("verdroot", CobblemonBlocks.VERDROOT, 0.95f)
+    @JvmField
+    val MISTLEAF = compostableBlockItem("mistleaf", CobblemonBlocks.MISTLEAF, 0.95f)
+    @JvmField
+    val LUCIBELL = compostableBlockItem("lucibell", CobblemonBlocks.LUCIBELL, 0.95f)
 
     private fun blockItem(name: String, block: Block, rarity: Rarity = Rarity.COMMON): BlockItem = this.create(name, BlockItem(block, Item.Properties().rarity(rarity)))
 

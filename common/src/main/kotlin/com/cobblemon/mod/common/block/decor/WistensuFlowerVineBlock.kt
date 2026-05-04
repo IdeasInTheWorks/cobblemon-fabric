@@ -8,7 +8,6 @@
 
 package com.cobblemon.mod.common.block.decor
 
-
 import com.cobblemon.mod.common.CobblemonBlocks
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
@@ -17,7 +16,7 @@ import net.minecraft.world.level.block.GrowingPlantBodyBlock
 import net.minecraft.world.level.block.GrowingPlantHeadBlock
 import net.minecraft.world.phys.shapes.VoxelShape
 
-
+//TODO: Root/connection shit
 class WistensuFlowerVineBlock(properties: Properties?) : GrowingPlantBodyBlock(properties, Direction.DOWN, SHAPE, false)
 {
     companion object {

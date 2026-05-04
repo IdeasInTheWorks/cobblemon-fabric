@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.GrowingPlantHeadBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.VoxelShape
 
-
+//TODO: Root/connection shit
 class WistensuFlowerBlock(properties: Properties?) : GrowingPlantHeadBlock(properties, Direction.DOWN, SHAPE, false, 0.1) {
     companion object {
         val CODEC: MapCodec<WistensuFlowerBlock> = RecordCodecBuilder.mapCodec {
