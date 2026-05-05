@@ -152,6 +152,7 @@ object CobblemonPlacedFeatures {
 
     fun register() {
         // We don't need to pass in any tags, the feature implementation handles it, while not a perfect system it works
+        // EVERY FEATURE SHOULD ONLY BE ADDED ONCE; WILL CRASH OTHERWISE
         Cobblemon.implementation.addFeatureToWorldGen(APRICORN_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, null)
         Cobblemon.implementation.addFeatureToWorldGen(SACCHARINE_TREE, GenerationStep.Decoration.VEGETAL_DECORATION, null)
         Cobblemon.implementation.addFeatureToWorldGen(MINTS, GenerationStep.Decoration.VEGETAL_DECORATION, null)
@@ -182,10 +183,8 @@ object CobblemonPlacedFeatures {
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_DRIPSTONE_OASIS, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_DRIPSTONE)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_ENHYDRO_AGATE, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_LUSH)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_ERODED_PILLAR, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.HAS_RED_SAND)
-        Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_DRIPSTONE_OASIS, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_DRIPSTONE)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_FROZEN_POND, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_GLACIAL)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_FROZEN_SPIKE, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_GLACIAL)
-        Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_DRIPSTONE_OASIS, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_DRIPSTONE)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_HYDROTHERMAL_VENTS, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_TEMPERATE_OCEAN)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_LUSH_DEN, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_JUNGLE)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_MOSSY_POND, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_LUSH)
@@ -196,8 +195,8 @@ object CobblemonPlacedFeatures {
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_SANDY_DEN, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.HAS_SAND)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_SPRUCE_TREE, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.HAS_SPRUCE_LOG)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_SUBMERGED_IMPACT, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_TEMPERATE_OCEAN)
-        Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_SUBMERGED_SPIKE, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_FROZEN_OCEAN)
-        Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_PRESERVED_SKELETON, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_FROZEN_OCEAN)
+        Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_SUBMERGED_SPIKE, GenerationStep.Decoration.UNDERGROUND_STRUCTURES, CobblemonBiomeTags.IS_FROZEN_OCEAN)
+        Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_PRESERVED_SKELETON, GenerationStep.Decoration.UNDERGROUND_STRUCTURES, CobblemonBiomeTags.IS_FROZEN_OCEAN)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_SUNSCORCHED_DEN, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.HAS_RED_SAND)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_SUNSCORCHED_REMAINS, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.HAS_RED_SAND)
         Cobblemon.implementation.addFeatureToWorldGen(PREHISTORIC_SUSPICIOUS_MOUNDS, GenerationStep.Decoration.LAKES, CobblemonBiomeTags.IS_PLAINS)
