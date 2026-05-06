@@ -52,8 +52,8 @@
 - The lush shipwreck cove structure itself has been slightly cleaned up to be less noisy with the blocks it is built out of.
 - All shipwreck coves' spawners have been adjusted to give compatible mobs enchanted iron or diamond armour and weapons while in its ominous state. The armour given to the mobs will also use the automaton trim. We upped the difficulty because it was too easy now that your Pokémon can fight for you.
 - One TM of the elemental hyper beams has been added as guaranteed loot to the main treasure chest in every shipwreck cove. (Magma cove gets blast burn, lush cove gets frenzy plant, and submerged cove gets hydro cannon)
-- Pokémon cries now play when clicking Pokémon in the summary screen.  
 - Added 7 new advancements
+- Pokémon cries now play when clicking Pokémon in the summary screen.
 
 ### New rideable Pokémon
 - Drampa
