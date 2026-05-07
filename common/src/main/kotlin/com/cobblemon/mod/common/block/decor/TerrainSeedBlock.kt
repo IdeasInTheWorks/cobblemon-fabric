@@ -16,8 +16,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
-import net.minecraft.sounds.SoundEvents
-import net.minecraft.sounds.SoundSource
 import net.minecraft.util.RandomSource
 import net.minecraft.util.StringRepresentable
 import net.minecraft.world.item.Item
@@ -25,7 +23,6 @@ import net.minecraft.world.level.*
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.CropBlock
-import net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING
 import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
@@ -89,10 +86,11 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
     override fun getShape(state: BlockState, world: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape =
         if (state.getValue(HALF) == DoubleBlockHalf.UPPER) AGE_TO_SHAPE_TOP[getAge(state)] else AGE_TO_SHAPE[this.getAge(state)]
 
-    override fun randomTick(state: BlockState, world: ServerLevel, pos: BlockPos, random: RandomSource) {
+    fun randomTick(state: BlockState, block: Block, world: ServerLevel, pos: BlockPos, random: RandomSource) {
         if (state.getValue(HALF) == DoubleBlockHalf.UPPER || !canGrow(world, pos, state)) return
+        val f = getGrowthSpeed(block, world, pos)
 
-        if (hasSufficientLight(world, pos) && random.nextInt(16) == 0) {
+        if (hasSufficientLight(world, pos) && random.nextInt((25.0F / f).toInt() + 1) == 0) {
             grow(world, pos, state, 1)
         }
     }
