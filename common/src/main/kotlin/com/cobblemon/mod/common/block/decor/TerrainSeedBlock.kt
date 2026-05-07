@@ -16,6 +16,8 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
+import net.minecraft.sounds.SoundEvents
+import net.minecraft.sounds.SoundSource
 import net.minecraft.util.RandomSource
 import net.minecraft.util.StringRepresentable
 import net.minecraft.world.item.Item
@@ -23,6 +25,7 @@ import net.minecraft.world.level.*
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.CropBlock
+import net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING
 import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
@@ -45,19 +48,19 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
         val HALF: EnumProperty<DoubleBlockHalf> = BlockStateProperties.DOUBLE_BLOCK_HALF
 
         val AGE_TO_SHAPE = arrayOf(
-            box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0), // Stage 0
-            box(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), // Stage 1
-            box(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), // Stage 2
-            box(0.0, 0.0, 0.0, 16.0, 16.0, 16.0), // Stage 3
-            box(0.0, 0.0, 0.0, 16.0, 16.0, 16.0),  // Stage 4
+            box(2.0, 0.0, 2.0, 14.0, 6.0, 14.0), // Stage 0
+            box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), // Stage 1
+            box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), // Stage 2
+            box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), // Stage 3
+            box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0),  // Stage 4
         )
 
         val AGE_TO_SHAPE_TOP = arrayOf(
-            box(1.0, 0.0, 1.0, 15.0, 1.0, 15.0), // Stage 0
-            box(1.0, 0.0, 1.0, 15.0, 1.0, 15.0), // Stage 1
-            box(1.0, 0.0, 1.0, 15.0, 1.0, 15.0), // Stage 2
-            box(1.0, 0.0, 1.0, 15.0, 1.0, 15.0), // Stage 3
-            box(0.0, 0.0, 0.0, 16.0, 15.0, 16.0),  // Stage 4
+            box(2.0, 0.0, 2.0, 14.0, 1.0, 14.0), // Stage 0
+            box(2.0, 0.0, 2.0, 14.0, 1.0, 14.0), // Stage 1
+            box(2.0, 0.0, 2.0, 14.0, 8.0, 14.0), // Stage 2
+            box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), // Stage 3
+            box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0),  // Stage 4
         )
     }
 
@@ -137,9 +140,9 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
         val newAge = (this.getAge(state) + increment).coerceAtMost(this.maxAge)
         world.setBlock(pos, state.setValue(this.ageProperty, newAge), UPDATE_CLIENTS)
 
+        val abovePos = pos.above()
         // Set top half depending on age
-        if (newAge >= (3)) {
-            val abovePos = pos.above()
+        if (newAge >= (2)) {
             val stateAbove = world.getBlockState(abovePos)
             if (stateAbove.isAir) {
                 world.setBlock(
@@ -155,6 +158,13 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
                     UPDATE_CLIENTS
                 )
             }
+        }
+        // Swaps blocks to the actual Flower when fully grown
+        if (newAge >= this.maxAge) {
+            val nextStateLower = this.terrainSeedType.getFlowerBlock().defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER)
+            val nextStateUpper = this.terrainSeedType.getFlowerBlock().defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER)
+            world.setBlock(abovePos, nextStateUpper, UPDATE_CLIENTS)
+            world.setBlock(pos, nextStateLower, UPDATE_CLIENTS)
         }
     }
 
@@ -199,26 +209,22 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
 
     @Suppress("unused")
     enum class TerrainSeedType : StringRepresentable {
-
         ELECTRIC,
         PSYCHIC,
         MISTY,
         GRASSY;
-
         fun getSeed(): Item = when (this) {
             ELECTRIC -> CobblemonItems.ELECTRIC_SEED
             PSYCHIC -> CobblemonItems.PSYCHIC_SEED
             MISTY -> CobblemonItems.MISTY_SEED
             GRASSY -> CobblemonItems.GRASSY_SEED
         }
-
         fun getCropBlock(): TerrainSeedBlock = when (this) {
             ELECTRIC -> CobblemonBlocks.ELECTRIC_SEED
             PSYCHIC -> CobblemonBlocks.PSYCHIC_SEED
             MISTY -> CobblemonBlocks.MISTY_SEED
             GRASSY -> CobblemonBlocks.GRASSY_SEED
         }
-
         fun getFlowerBlock(): Block = when (this) {
             ELECTRIC -> CobblemonBlocks.VOLTCONIA
             PSYCHIC -> CobblemonBlocks.LUCIBELL

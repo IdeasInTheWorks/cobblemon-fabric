@@ -401,7 +401,15 @@ object CobblemonClient {
             CobblemonBlocks.POMOHANA,
             CobblemonBlocks.PAUVILLEA,
             CobblemonBlocks.WISTENSU,
-            CobblemonBlocks.WISTENSU_VINE
+            CobblemonBlocks.WISTENSU_VINE,
+            CobblemonBlocks.ELECTRIC_SEED,
+            CobblemonBlocks.VOLTCONIA,
+            CobblemonBlocks.GRASSY_SEED,
+            CobblemonBlocks.VERDROOT,
+            CobblemonBlocks.MISTY_SEED,
+            CobblemonBlocks.MISTLEAF,
+            CobblemonBlocks.PSYCHIC_SEED,
+            CobblemonBlocks.LUCIBELL
         )
 
         this.createBoatModelLayers()

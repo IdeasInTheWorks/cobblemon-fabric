@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "half=lower,glowing=false": { "model": "cobblemon:block/temp/mistleaf_bottom" },
+    "half=upper,glowing=false": { "model": "cobblemon:block/temp/mistleaf_top" },
+    "half=lower,glowing=true": { "model": "cobblemon:block/temp/mistleaf_bottom_glowing" },
+    "half=upper,glowing=true": { "model": "cobblemon:block/temp/mistleaf_top_glowing" }
+  }
+}
