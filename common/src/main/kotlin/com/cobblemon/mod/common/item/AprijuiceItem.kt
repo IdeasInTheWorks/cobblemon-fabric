@@ -44,7 +44,7 @@ class AprijuiceItem(val type: Apricorn): CobblemonItem(Properties().stacksTo(16)
             InteractionResultHolder.consume(stack)
         } else {
             if (world is ServerLevel && user is ServerPlayer) {
-                return super<PokemonSelectingItem>.use(user, stack)
+                return super<PokemonSelectingItem>.use(user, stack, false)
             }
             InteractionResultHolder.pass(stack)
         }
