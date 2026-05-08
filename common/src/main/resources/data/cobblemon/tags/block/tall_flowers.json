@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "cobblemon:lobaila"
+    "cobblemon:lobaila",
+    "#cobblemon:terrain_flowers"
   ]
 }

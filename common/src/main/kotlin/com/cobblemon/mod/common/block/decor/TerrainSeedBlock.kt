@@ -86,11 +86,10 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
     override fun getShape(state: BlockState, world: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape =
         if (state.getValue(HALF) == DoubleBlockHalf.UPPER) AGE_TO_SHAPE_TOP[getAge(state)] else AGE_TO_SHAPE[this.getAge(state)]
 
-    fun randomTick(state: BlockState, block: Block, world: ServerLevel, pos: BlockPos, random: RandomSource) {
+    override fun randomTick(state: BlockState, world: ServerLevel, pos: BlockPos, random: RandomSource) {
         if (state.getValue(HALF) == DoubleBlockHalf.UPPER || !canGrow(world, pos, state)) return
-        val f = getGrowthSpeed(block, world, pos)
 
-        if (hasSufficientLight(world, pos) && random.nextInt((25.0F / f).toInt() + 1) == 0) {
+        if (hasSufficientLight(world, pos) && random.nextInt(32) == 0) {
             grow(world, pos, state, 1)
         }
     }
@@ -139,9 +138,9 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
         world.setBlock(pos, state.setValue(this.ageProperty, newAge), UPDATE_CLIENTS)
 
         val abovePos = pos.above()
+        val stateAbove = world.getBlockState(abovePos)
         // Set top half depending on age
         if (newAge >= (2)) {
-            val stateAbove = world.getBlockState(abovePos)
             if (stateAbove.isAir) {
                 world.setBlock(
                     abovePos,
@@ -158,7 +157,7 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
             }
         }
         // Swaps blocks to the actual Flower when fully grown
-        if (newAge >= this.maxAge) {
+        if (newAge == this.maxAge) {
             val nextStateLower = this.terrainSeedType.getFlowerBlock().defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER)
             val nextStateUpper = this.terrainSeedType.getFlowerBlock().defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER)
             world.setBlock(abovePos, nextStateUpper, UPDATE_CLIENTS)
