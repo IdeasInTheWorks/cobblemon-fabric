@@ -322,29 +322,53 @@
     "subtitle": "cobblemon.subtitle.fossilmachine.unprotected",
     "sounds": [ "cobblemon:block/fossil_machine/fossil_machine_unprotected" ]
   },
+  "block.tm_machine.burn": {
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_burn", "volume": 1.0 }
+    ],
+    "subtitle": "cobblemon.subtitle.block.tm_machine.burn"
+  },
   "block.tm_machine.craft": {
-    "sounds": [ "cobblemon:block/tm_machine/tm_machine_craft" ],
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_craft", "volume": 1.0 }
+    ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.craft"
   },
-  "block.tm_machine.off": {
-    "sounds": [ "cobblemon:block/tm_machine/tm_machine_off" ],
-    "subtitle": "cobblemon.subtitle.block.tm_machine.off"
-  },
-  "block.tm_machine.on": {
-    "sounds": [ "cobblemon:block/tm_machine/tm_machine_on" ],
-    "subtitle": "cobblemon.subtitle.block.tm_machine.on"
-  },
   "block.tm_machine.open": {
-    "sounds": [ "cobblemon:block/tm_machine/tm_machine_open" ],
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_open", "volume": 0.3 }
+    ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.open"
   },
   "block.tm_machine.close": {
-    "sounds": [ "cobblemon:block/tm_machine/tm_machine_close" ],
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_close", "volume": 0.3 }
+    ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.close"
   },
-  "block.tm_machine.place_disc": {
-    "sounds": [ "cobblemon:block/tm_machine/tm_machine_place_disc" ],
-    "subtitle": "cobblemon.subtitle.block.tm_machine.place_disc"
+  "block.tm_machine.tm_insert": {
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_tm_insert", "volume": 0.8 }
+    ],
+    "subtitle": "cobblemon.subtitle.block.tm_machine.tm_insert"
+  },
+  "block.tm_machine.tm_retrieve": {
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_tm_retrieve", "volume": 0.8 }
+    ],
+    "subtitle": "cobblemon.subtitle.block.tm_machine.tm_insert"
+  },
+  "block.tm_machine.item_insert": {
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_item_insert", "volume": 0.5 }
+    ],
+    "subtitle": "cobblemon.subtitle.block.tm_machine.item_insert"
+  },
+  "block.tm_machine.item_retrieve": {
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_item_insert", "volume": 0.5 }
+    ],
+    "subtitle": "cobblemon.subtitle.block.tm_machine.item_retrieve"
   },
   "pokemon.gimmighoul.give_item": {
     "sounds": [ "cobblemon:pokemon/gimmighoul/gimmighoul_give_item" ]

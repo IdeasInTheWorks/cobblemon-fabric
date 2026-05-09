@@ -278,7 +278,7 @@ class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
             if (state.hasProperty(TMMachineBlock.EMPTY)) {
                 val isEmpty = getItem(TMMachineMenu.BLANK_TM_SLOT).isEmpty
                 if (currentState.getValue(TMMachineBlock.EMPTY) != isEmpty) {
-                    if (!isEmpty) playSound(CobblemonSounds.TM_MACHINE_PLACE_DISC, 0.5F)
+                    if (!isEmpty) playSound(CobblemonSounds.TM_MACHINE_TM_INSERT, 1.0F)
                     currentState = currentState.setValue(TMMachineBlock.EMPTY, isEmpty)
                     updated = true
                 }

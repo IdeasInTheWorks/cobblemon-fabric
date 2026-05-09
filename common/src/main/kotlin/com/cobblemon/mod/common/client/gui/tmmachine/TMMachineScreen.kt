@@ -1111,7 +1111,6 @@ class TMMachineScreen(containerMenu: TMMachineMenu, val inventory: Inventory, ti
         if (isInventoryKeyPressed(minecraft, keyCode, scanCode)) {
             if (searchFocused) { return true }
             else {
-                playSound(CobblemonSounds.TM_MACHINE_OFF)
                 Minecraft.getInstance().setScreen(null)
                 return true
             }
@@ -1123,7 +1122,6 @@ class TMMachineScreen(containerMenu: TMMachineMenu, val inventory: Inventory, ti
                 this.focused = null
                 return true
             } else {
-                playSound(CobblemonSounds.TM_MACHINE_OFF)
                 Minecraft.getInstance().setScreen(null)
                 return true
             }
