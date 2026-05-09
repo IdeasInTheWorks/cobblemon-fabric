@@ -176,6 +176,8 @@
 - Added new shiny and Alpha chance configs
 - Apricorns now make a new sound when harvested
 - Lowered the volume of harvesting berries
+- Sounds for interacting with various Cobblemon blocks now play from the center of the block, rather than the corner
+- The `/pc` command no longer plays PC activation sounds
 
 ### Fixes
 - Fixed Croagunk's walkspeed
