@@ -324,13 +324,13 @@
   },
   "block.tm_machine.burn": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_burn", "volume": 0.5 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_burn", "volume": 0.6 }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.burn"
   },
   "block.tm_machine.craft": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_craft", "volume": 0.5 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_craft", "volume": 0.65 }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.craft"
   },
@@ -348,25 +348,25 @@
   },
   "block.tm_machine.tm_insert": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_tm_insert", "volume": 0.9 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_tm_insert", "volume": 1.0 }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.tm_insert"
   },
   "block.tm_machine.tm_retrieve": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_tm_retrieve", "volume": 0.9 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_tm_retrieve", "volume": 1.0 }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.tm_insert"
   },
   "block.tm_machine.item_insert": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_item_insert", "volume": 0.5 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_item_insert", "volume": 0.6 }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.item_insert"
   },
   "block.tm_machine.item_retrieve": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_item_insert", "volume": 0.5 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_item_insert", "volume": 0.6 }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.item_retrieve"
   },
