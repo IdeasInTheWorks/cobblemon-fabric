@@ -225,6 +225,8 @@ class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
                         resultStack.grow(1)
                     }
 
+                    playSound(CobblemonSounds.TM_MACHINE_CRAFT, 1.0F, 1.0F)
+
                     tmMachineInventory.setChanged()
                     setChanged()
                 }

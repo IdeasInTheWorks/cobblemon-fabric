@@ -347,7 +347,6 @@ class TMMachineScreen(containerMenu: TMMachineMenu, val inventory: Inventory, ti
                         discReflectionFrame = (discReflectionFrame + 1) % 4
                         discRotationFrame = (discRotationFrame + 1) % 8
                     }
-                    if ((progress == 1F) && (menu.getPostCraftTicks() == 0)) playSound(CobblemonSounds.TM_MACHINE_CRAFT)
                 }
             }
         } else {
