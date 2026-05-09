@@ -16,6 +16,8 @@ import com.cobblemon.mod.common.api.tms.TechnicalMachines
 import com.cobblemon.mod.common.block.tmmachine.TMMachineBlock
 import com.cobblemon.mod.common.block.tmmachine.TMMachineMenu
 import com.cobblemon.mod.common.client.gui.tmmachine.TMMachineScreen
+import com.cobblemon.mod.common.client.sound.BlockEntitySoundTracker
+import com.cobblemon.mod.common.client.sound.instances.CancellableSoundInstance
 import com.cobblemon.mod.common.item.components.TMMoveComponent
 import net.minecraft.core.BlockPos
 import net.minecraft.core.HolderLookup
@@ -59,6 +61,19 @@ class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
         const val POSITION_X_INDEX = 3
         const val POSITION_Y_INDEX = 4
         const val POSITION_Z_INDEX = 5
+
+        fun clientTick(level: Level, pos: BlockPos, state: BlockState, blockEntity: TMMachineBlockEntity) {
+            if (!level.isClientSide) return
+
+            val burning = blockEntity.containerData.get(BURN_ACTIVE_INDEX) == 1
+            val isBurningSoundActive = BlockEntitySoundTracker.isActive(pos, CobblemonSounds.TM_MACHINE_BURN.location)
+
+            if (burning) {
+                if (!isBurningSoundActive) BlockEntitySoundTracker.play(pos, CancellableSoundInstance(CobblemonSounds.TM_MACHINE_BURN, pos, true, 1F, 1F))
+            } else {
+                BlockEntitySoundTracker.stop(pos, CobblemonSounds.TM_MACHINE_BURN.location)
+            }
+        }
 
         fun serverTick(level: Level, pos: BlockPos, state: BlockState, blockEntity: TMMachineBlockEntity) {
             if (level.isClientSide) return
