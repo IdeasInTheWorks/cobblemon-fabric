@@ -53,6 +53,7 @@
 - All shipwreck coves' spawners have been adjusted to give compatible mobs enchanted iron or diamond armour and weapons while in its ominous state. The armour given to the mobs will also use the automaton trim. We upped the difficulty because it was too easy now that your Pokémon can fight for you.
 - One TM of the elemental hyper beams has been added as guaranteed loot to the main treasure chest in every shipwreck cove. (Magma cove gets blast burn, lush cove gets frenzy plant, and submerged cove gets hydro cannon)
 - Added 7 new advancements
+- Pressing the inventory key now closes the Pokémon interact wheel GUI
 
 ### New rideable Pokémon
 - Drampa
@@ -173,6 +174,8 @@
 - Cleaned up seat data. Removed all now unused fields from seats in all species files. Also made locator seat names explicit in the species files (however, this doesn't break the legacy format)
 - Marks can now provide aspects.
 - Added new shiny and Alpha chance configs
+- Apricorns now make a new sound when harvested
+- Lowered the volume of harvesting berries
 
 ### Fixes
 - Fixed Croagunk's walkspeed
@@ -184,6 +187,7 @@
 - Fixed a compatibility issue with World Game Rules which caused some log spam in specific cases.
 - Fixed improper validation of Pokémon when performing a trade.
 - Fixed an issue where particle like beam can disappear when you don't see the beginning of the beam, or you look away
+- Fixed Bedrock particle materials (alpha/opaque/blend/add) sharing one render batch, which caused incorrect culling on mixed batches; each material now batches and draws with its own blend and cull state, and the alpha material renders as a true cutout
 - Fixed an occasional crash on retrieving revived fossils
 - Fixed brushing not working on Neoforge
 - Fixed braking not working for submarines (whoops).
