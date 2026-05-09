@@ -498,9 +498,9 @@
   "block.evolution_stone_block.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      "cobblemon:block/evolution_stone_block/evolution_stone_block_break_1",
-      "cobblemon:block/evolution_stone_block/evolution_stone_block_break_2",
-      "cobblemon:block/evolution_stone_block/evolution_stone_block_break_3"
+      { "name": "cobblemon:block/evolution_stone_block/evolution_stone_block_break_1", "volume": 0.7 },
+      { "name": "cobblemon:block/evolution_stone_block/evolution_stone_block_break_2", "volume": 0.7 },
+      { "name": "cobblemon:block/evolution_stone_block/evolution_stone_block_break_3", "volume": 0.7 }
     ]
   },
   "block.evolution_stone_block.hit": {
@@ -514,9 +514,9 @@
   "block.evolution_stone_block.place": {
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
-      "cobblemon:block/evolution_stone_block/evolution_stone_block_place_1",
-      "cobblemon:block/evolution_stone_block/evolution_stone_block_place_2",
-      "cobblemon:block/evolution_stone_block/evolution_stone_block_place_3"
+      { "name": "cobblemon:block/evolution_stone_block/evolution_stone_block_place_1", "volume": 0.8 },
+      { "name": "cobblemon:block/evolution_stone_block/evolution_stone_block_place_2", "volume": 0.8 },
+      { "name": "cobblemon:block/evolution_stone_block/evolution_stone_block_place_3", "volume": 0.8 }
     ]
   },
   "block.evolution_stone_block.step": {
@@ -531,9 +531,9 @@
   "block.display_case.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      "cobblemon:block/display_case/display_case_break_1",
-      "cobblemon:block/display_case/display_case_break_2",
-      "cobblemon:block/display_case/display_case_break_3"
+      { "name": "cobblemon:block/display_case/display_case_break_1", "volume": 0.8 },
+      { "name": "cobblemon:block/display_case/display_case_break_2", "volume": 0.8 },
+      { "name": "cobblemon:block/display_case/display_case_break_3", "volume": 0.8 }
     ]
   },
   "block.display_case.hit": {
