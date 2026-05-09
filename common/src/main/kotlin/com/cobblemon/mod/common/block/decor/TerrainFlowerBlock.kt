@@ -9,7 +9,6 @@
 package com.cobblemon.mod.common.block.decor
 
 import com.cobblemon.mod.common.CobblemonBlocks
-import com.cobblemon.mod.common.pokemon.requirements.WeatherRequirement
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.RandomSource
@@ -37,36 +36,28 @@ class TerrainFlowerBlock(properties: Properties?) : TallFlowerBlock(properties) 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         builder.add(HALF, GLOWING)
     }
-    private fun isLower(state: BlockState): Boolean = state.`is`(this) && state.getValue(HALF) == DoubleBlockHalf.LOWER
-    private fun getLowerHalf(pos: BlockPos, state: BlockState): BlockPos? {
-        return if (isLower(state)) { pos } else { pos.below() }
-    }
-    private fun getUpperHalf(pos: BlockPos, state: BlockState): BlockPos? {
-        return if (isLower(state)) { pos.above() } else { pos }
-    }
 
     override fun tick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource?) {
-        if (level.getBlockState(pos).getValue(GLOWING) as Boolean) {
-            if (state.`is`(CobblemonBlocks.LUCIBELL)) {this.checkInside(level, pos)}
-            if (state.`is`(CobblemonBlocks.VOLTCONIA)) {this.checkThundering(level, pos, state)}
-            if (state.`is`(CobblemonBlocks.VERDROOT)) {this.checkRaining(level, pos, state)}
-        }
+        //TODO: Figure out why this isn't working
+        if (state.`is`(CobblemonBlocks.LUCIBELL)) {this.checkInside(level, pos, state)}
+        if (state.`is`(CobblemonBlocks.VERDROOT)) {this.checkRaining(level, pos, state)}
+        if (state.`is`(CobblemonBlocks.VOLTCONIA)) {this.checkThundering(level, pos, state)}
     }
 
     override fun entityInside(state: BlockState, level: Level, pos: BlockPos, entity: Entity?) {
         if (!level.isClientSide) {
-            if (!state.getValue(GLOWING)) {
-                this.checkInside(level, pos)
+            if (!state.getValue(GLOWING) && state.`is`(CobblemonBlocks.LUCIBELL)) {
+                this.checkInside(level, pos, state)
             }
         }
     }
-    private fun checkInside(level: Level, pos: BlockPos) {
+    private fun checkInside(level: Level, pos: BlockPos, state: BlockState) {
         var blockState = level.getBlockState(pos)
         val activeState = blockState.getValue(GLOWING) as Boolean
         var entityInsideFlower = false
         val list = level.getEntities(null as Entity?, blockState.getShape(level, pos).bounds().move(pos))
         if (!list.isEmpty()) {for (entity in list) { entityInsideFlower = true; break} }
-        if (entityInsideFlower != activeState) {
+        if (entityInsideFlower != activeState && state.`is`(CobblemonBlocks.LUCIBELL)) {
             blockState = blockState.setValue(GLOWING, entityInsideFlower) as BlockState
             level.setBlock(pos, blockState, UPDATE_CLIENTS)
             //TODO: Figure out way to apply blockstate to both halves of the flower if only one half is being intersected (problem is the detection needs to exist regardless of which half of the flower is interacted)
@@ -76,26 +67,25 @@ class TerrainFlowerBlock(properties: Properties?) : TallFlowerBlock(properties) 
         }
     }
 
-    //TODO: This needs to be made to work
-    var WeatherRequirement.Companion.isRaining: Boolean
-    var WeatherRequirement.Companion.isThundering: Boolean
     fun checkRaining(world: Level, pos: BlockPos, state: BlockState) {
+        val activeState = state.getValue(GLOWING) as Boolean
         //Verdroot On
-        if (WeatherRequirement.isRaining && !WeatherRequirement.isThundering) {
+        if (world.isRaining && !world.isThundering && !activeState && state.`is`(CobblemonBlocks.VERDROOT)) {
             world.setBlock(pos,state.setValue(GLOWING, true), UPDATE_CLIENTS)
         }
         //Verdroot off
-        if (!WeatherRequirement.isRaining && !WeatherRequirement.isThundering) {
+        if (!world.isRaining && !world.isThundering && activeState && state.`is`(CobblemonBlocks.VERDROOT)) {
             world.setBlock(pos,state.setValue(GLOWING, false), UPDATE_CLIENTS)
         }
     }
     fun checkThundering(world: Level, pos: BlockPos, state: BlockState) {
+        val activeState = state.getValue(GLOWING) as Boolean
         //Voltconia On
-        if (WeatherRequirement.isRaining && WeatherRequirement.isThundering) {
+        if (world.isRaining && world.isThundering && !activeState && state.`is`(CobblemonBlocks.VOLTCONIA)) {
             world.setBlock(pos,state.setValue(GLOWING, true), UPDATE_CLIENTS)
         }
         //Voltconia off
-        if (!WeatherRequirement.isRaining && !WeatherRequirement.isThundering) {
+        if (!world.isRaining && !world.isThundering && activeState && state.`is`(CobblemonBlocks.VOLTCONIA)) {
             world.setBlock(pos,state.setValue(GLOWING, false), UPDATE_CLIENTS)
         }
     }
