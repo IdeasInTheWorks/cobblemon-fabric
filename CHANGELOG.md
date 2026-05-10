@@ -248,6 +248,7 @@
 - Cleaned up seat data. Removed all now unused fields from seats in all species files. Also made locator seat names explicit in the species files (however, this doesn't break the legacy format)
 - Marks can now provide aspects.
 - Added new shiny and Alpha chance configs
+- Fixed Raichu (male) and Alolan Raichu (both genders) not displaying the correct Partner Cap when Pewter Crunchies are in the cosmetic slot.
 
 ### Fixes
 - Fixed Croagunk's walkspeed
