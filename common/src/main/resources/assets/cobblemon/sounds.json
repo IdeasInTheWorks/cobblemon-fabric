@@ -170,13 +170,13 @@
     "sounds": [ { "name": "cobblemon:evolution/evolution_ui", "volume": 0.2 } ]
   },
   "gui.levelup_start": {
-    "sounds": [ { "name": "cobblemon:gui/levelup_start", "volume": 0.15 } ]
+    "sounds": [ { "name": "cobblemon:gui/levelup_start", "volume": 0.02 } ]
   },
   "gui.levelup": {
-    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.55 } ]
+    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.4 } ]
   },
   "gui.click": {
-    "sounds": [ "cobblemon:gui/click" ]
+    "sounds": [ { "name": "cobblemon:gui/click", "volume": 0.8 } ]
   },
   "gui.trade": {
     "sounds": [ { "name": "cobblemon:gui/trade", "volume": 0.6 } ]
@@ -1101,10 +1101,10 @@
     "sounds": [ { "name": "cobblemon:move/seedbomb/seedbomb_target", "volume": 1.0 } ]
   },
   "move.smokescreen.actor": {
-    "sounds": [ { "name": "cobblemon:move/smokescreen/smokescreen_actor", "volume": 0.8 } ]
+    "sounds": [ { "name": "cobblemon:move/smokescreen/smokescreen_actor", "volume": 0.7 } ]
   },
   "move.smokescreen.target": {
-    "sounds": [ { "name": "cobblemon:move/smokescreen/smokescreen_target", "volume": 0.8 } ]
+    "sounds": [ { "name": "cobblemon:move/smokescreen/smokescreen_target", "volume": 0.7 } ]
   },
   "move.stringshot.actor": {
     "sounds": [ { "name": "cobblemon:move/stringshot/stringshot_actor", "volume": 0.8 } ]
@@ -1116,7 +1116,7 @@
     "sounds": [ { "name": "cobblemon:move/tailwhip/tailwhip_actor", "volume": 0.8 } ]
   },
   "move.cottonguard.actor": {
-    "sounds": [ { "name": "cobblemon:move/cottonguard/cottonguard_actor", "volume": 0.8 } ]
+    "sounds": [ { "name": "cobblemon:move/cottonguard/cottonguard_actor", "volume": 0.65 } ]
   },
   "move.crunch.target": {
     "sounds": [ { "name": "cobblemon:move/crunch/crunch_target", "volume": 0.8 } ]
@@ -1179,7 +1179,7 @@
     "sounds": [ { "name": "cobblemon:move/thunderwave/thunderwave_target", "volume": 0.8 } ]
   },
   "move.protect.actor": {
-    "sounds": [ { "name": "cobblemon:move/protect/protect_actor", "volume": 0.8 } ]
+    "sounds": [ { "name": "cobblemon:move/protect/protect_actor", "volume": 0.65 } ]
   },
   "move.powder.actor": {
     "sounds": [ { "name": "cobblemon:move/powder/powder_actor", "volume": 1.0 } ]
@@ -1226,7 +1226,7 @@
     ]
   },
   "move.haze.actor": {
-    "sounds": [ { "name": "cobblemon:move/haze/haze_actor", "volume": 0.8 } ]
+    "sounds": [ { "name": "cobblemon:move/haze/haze_actor", "volume": 0.6 } ]
   },
   "move.lick.target": {
     "sounds": [ { "name": "cobblemon:move/lick/lick_target", "volume": 0.8 } ]
@@ -1349,7 +1349,7 @@
     "sounds": [ { "name": "cobblemon:move/magicalleaf/magicalleaf_target", "volume": 0.8 } ]
   },
   "move.mist.actor": {
-    "sounds": [ { "name": "cobblemon:move/mist/mist_actor", "volume": 0.8 } ]
+    "sounds": [ { "name": "cobblemon:move/mist/mist_actor", "volume": 0.6 } ]
   },
   "move.mudbomb.actor": {
     "sounds": [ { "name": "cobblemon:move/mudbomb/mudbomb_actor", "volume": 0.8 } ]
