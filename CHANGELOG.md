@@ -127,6 +127,7 @@
 
 ### Model updates for the following Pokémon
 
+- Sandshrew
 - Sandslash
 - Nidoking
 - Zubat

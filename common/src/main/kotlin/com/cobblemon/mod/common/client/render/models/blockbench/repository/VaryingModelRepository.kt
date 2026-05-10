@@ -288,7 +288,6 @@ object VaryingModelRepository {
         inbuilt("ponyta", ::PonytaModel)
         inbuilt("psyduck", ::PsyduckModel)
         inbuilt("rapidash", ::RapidashModel)
-        inbuilt("sandshrew", ::SandshrewModel)
         inbuilt("sandslash", ::SandslashModel)
         inbuilt("tangela", ::TangelaModel)
         inbuilt("tentacool", ::TentacoolModel)
