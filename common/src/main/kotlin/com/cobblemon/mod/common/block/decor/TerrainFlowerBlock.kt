@@ -39,18 +39,11 @@ class TerrainFlowerBlock(properties: Properties?) : TallFlowerBlock(properties) 
 
     override fun tick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource?) {
         //TODO: Figure out why this isn't working
+        if (state.`is`(CobblemonBlocks.VERDROOT) && (state.getValue(GLOWING)!=level.isRaining)) {level.setBlock(pos,state.setValue(GLOWING, level.isRaining), UPDATE_CLIENTS)}
+        if (state.`is`(CobblemonBlocks.VOLTCONIA) && (state.getValue(GLOWING)!=level.isThundering)) {level.setBlock(pos,state.setValue(GLOWING, level.isThundering), UPDATE_CLIENTS)}
         if (state.`is`(CobblemonBlocks.LUCIBELL)) {this.checkInside(level, pos, state)}
-        if (state.`is`(CobblemonBlocks.VERDROOT)) {this.checkRaining(level, pos, state)}
-        if (state.`is`(CobblemonBlocks.VOLTCONIA)) {this.checkThundering(level, pos, state)}
     }
 
-    override fun entityInside(state: BlockState, level: Level, pos: BlockPos, entity: Entity?) {
-        if (!level.isClientSide) {
-            if (!state.getValue(GLOWING) && state.`is`(CobblemonBlocks.LUCIBELL)) {
-                this.checkInside(level, pos, state)
-            }
-        }
-    }
     private fun checkInside(level: Level, pos: BlockPos, state: BlockState) {
         var blockState = level.getBlockState(pos)
         val activeState = blockState.getValue(GLOWING) as Boolean
@@ -66,27 +59,11 @@ class TerrainFlowerBlock(properties: Properties?) : TallFlowerBlock(properties) 
             level.scheduleTick(BlockPos(pos), this, 30)
         }
     }
-
-    fun checkRaining(world: Level, pos: BlockPos, state: BlockState) {
-        val activeState = state.getValue(GLOWING) as Boolean
-        //Verdroot On
-        if (world.isRaining && !world.isThundering && !activeState && state.`is`(CobblemonBlocks.VERDROOT)) {
-            world.setBlock(pos,state.setValue(GLOWING, true), UPDATE_CLIENTS)
-        }
-        //Verdroot off
-        if (!world.isRaining && !world.isThundering && activeState && state.`is`(CobblemonBlocks.VERDROOT)) {
-            world.setBlock(pos,state.setValue(GLOWING, false), UPDATE_CLIENTS)
-        }
-    }
-    fun checkThundering(world: Level, pos: BlockPos, state: BlockState) {
-        val activeState = state.getValue(GLOWING) as Boolean
-        //Voltconia On
-        if (world.isRaining && world.isThundering && !activeState && state.`is`(CobblemonBlocks.VOLTCONIA)) {
-            world.setBlock(pos,state.setValue(GLOWING, true), UPDATE_CLIENTS)
-        }
-        //Voltconia off
-        if (!world.isRaining && !world.isThundering && activeState && state.`is`(CobblemonBlocks.VOLTCONIA)) {
-            world.setBlock(pos,state.setValue(GLOWING, false), UPDATE_CLIENTS)
+    override fun entityInside(state: BlockState, level: Level, pos: BlockPos, entity: Entity?) {
+        if (!level.isClientSide) {
+            if (!state.getValue(GLOWING) && state.`is`(CobblemonBlocks.LUCIBELL)) {
+                this.checkInside(level, pos, state)
+            }
         }
     }
 
@@ -96,5 +73,4 @@ class TerrainFlowerBlock(properties: Properties?) : TallFlowerBlock(properties) 
         val GLOWING = BooleanProperty.create("glowing")
 
     }
-
 }
