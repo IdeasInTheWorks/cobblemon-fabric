@@ -109,6 +109,7 @@ class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
 
             if (postCraftTicks > 0) {
                 if (postCraftTicks == TMMachineScreen.CRAFT_TICKS) {
+                    BlockEntitySoundTracker.stop(pos, CobblemonSounds.TM_MACHINE_BURN.location)
                     blockEntity.craftTM()
                     level.updateNeighbourForOutputSignal(pos, state.block)
                 }
