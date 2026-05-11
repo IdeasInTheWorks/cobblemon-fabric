@@ -67,6 +67,14 @@
 				}
 			}
 		},
+		"animation.sandshrew.cry": {
+			"animation_length": 1.2,
+			"sound_effects": {
+				"0.0417": {
+					"effect": "pokemon.sandshrew.cry"
+				}
+			}
+		},
 		"animation.sandshrew.ground_walk": {
 			"loop": true,
 			"bones": {

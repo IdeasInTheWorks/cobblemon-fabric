@@ -12,6 +12,18 @@
     {
       "aspects": ["alolan","shiny"],
       "texture": "cobblemon:textures/pokemon/0028_sandslash/sandslash_alolan_shiny.png"
+    },
+    {
+      "aspects": [
+        "alpha_eyes"
+      ],
+      "layers": [
+        {
+          "name": "alpha_eyes",
+          "texture": "cobblemon:textures/pokemon/0028_sandslash/sandslash_alolan_alpha.png",
+          "emissive": true
+        }
+      ]
     }
   ]
 }
