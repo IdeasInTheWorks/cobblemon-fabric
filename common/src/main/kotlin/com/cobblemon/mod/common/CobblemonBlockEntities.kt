@@ -109,4 +109,15 @@ object CobblemonBlockEntities : PlatformRegistry<Registry<BlockEntityType<*>>, R
         "poke_snack",
         BlockEntityType.Builder.of(::PokeSnackBlockEntity, CobblemonBlocks.POKE_SNACK, CobblemonBlocks.POKE_CAKE).build(null)
     )
+
+    @JvmField
+    val TERRAIN_FLOWER: BlockEntityType<TerrainFlowerBlockEntity> = this.create(
+        "terrain_flower",
+        BlockEntityType.Builder.of(::TerrainFlowerBlockEntity,
+            CobblemonBlocks.VOLTCONIA,
+            CobblemonBlocks.LUCIBELL,
+            CobblemonBlocks.MISTLEAF,
+            CobblemonBlocks.VERDROOT
+        ).build(null)
+    )
 }
