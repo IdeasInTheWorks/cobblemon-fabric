@@ -322,11 +322,17 @@
     "subtitle": "cobblemon.subtitle.fossilmachine.unprotected",
     "sounds": [ "cobblemon:block/fossil_machine/fossil_machine_unprotected" ]
   },
-  "block.tm_machine.burn": {
+  "block.tm_machine.burn_loop": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_burn", "volume": 0.6 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_burn", "volume": 0.6, "stream": true }
     ],
-    "subtitle": "cobblemon.subtitle.block.tm_machine.burn"
+    "subtitle": "cobblemon.subtitle.block.tm_machine.burn_loop"
+  },
+  "block.tm_machine.start": {
+    "sounds": [
+      { "name": "cobblemon:block/tm_machine/tm_machine_start", "volume": 0.65 }
+    ],
+    "subtitle": "cobblemon.subtitle.block.tm_machine.start"
   },
   "block.tm_machine.craft": {
     "sounds": [
