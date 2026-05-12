@@ -18,7 +18,7 @@ class TerrainFlowerBlockEntity(pos: BlockPos, state: BlockState): BlockEntity(Co
             val glowing = state.getValue(TerrainFlowerBlock.GLOWING)
 
             val wantedState = if (state.`is`(CobblemonBlocks.VOLTCONIA)) level.isThundering
-                else if (state.`is`(CobblemonBlocks.VERDROOT)) level.isRaining
+                else if (state.`is`(CobblemonBlocks.VERDROOT)) level.isRaining && !level.isThundering
                 else null // We dont control glowing here
 
             if (wantedState != null && glowing != wantedState) {

@@ -116,8 +116,14 @@ object CobblemonBlockEntities : PlatformRegistry<Registry<BlockEntityType<*>>, R
         BlockEntityType.Builder.of(::TerrainFlowerBlockEntity,
             CobblemonBlocks.VOLTCONIA,
             CobblemonBlocks.LUCIBELL,
-            CobblemonBlocks.MISTLEAF,
             CobblemonBlocks.VERDROOT
+        ).build(null)
+    )
+    @JvmField
+    val MISTLEAF_FLOWER: BlockEntityType<MistleafFlowerBlockEntity> = this.create(
+        "mistleaf",
+        BlockEntityType.Builder.of(::MistleafFlowerBlockEntity,
+            CobblemonBlocks.MISTLEAF
         ).build(null)
     )
 }
