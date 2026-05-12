@@ -1,0 +1,7 @@
+- Wistensu Roots
+- Potted Berry Trees
+- Sinister Tea effects for all 8 flowers
+- (Maybe) Get Oricorio Flowers Obtainable
+- Terrain Flowers/Seeds Block Textures
+- Ensure everything is tagged correctly
+- Destroy both half of the Terrain Seed crops when breaking the top half (used the hearty grains as a starting point so it's maintained that behaviour lmao)
