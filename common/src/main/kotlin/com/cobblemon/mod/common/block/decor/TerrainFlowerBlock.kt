@@ -10,9 +10,6 @@ package com.cobblemon.mod.common.block.decor
 
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonBlocks
-import com.cobblemon.mod.common.block.entity.CampfireBlockEntity
-import com.cobblemon.mod.common.block.entity.CampfireBlockEntity.Companion.clientTick
-import com.cobblemon.mod.common.block.entity.CampfireBlockEntity.Companion.serverTick
 import com.cobblemon.mod.common.block.entity.TerrainFlowerBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
@@ -21,7 +18,6 @@ import net.minecraft.world.entity.Entity
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
-import net.minecraft.world.level.block.BaseEntityBlock.createTickerHelper
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.EntityBlock
 import net.minecraft.world.level.block.TallFlowerBlock
@@ -35,8 +31,6 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
-import net.minecraft.world.ticks.TickPriority
-import org.jetbrains.annotations.Nullable
 
 class TerrainFlowerBlock(properties: Properties) : TallFlowerBlock(properties), EntityBlock {
 
