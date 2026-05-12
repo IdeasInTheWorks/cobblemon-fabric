@@ -195,10 +195,63 @@ def main(pokemon_data_dir, spawn_spreadsheet_path="", only_update_existing_files
     finally:
         print_report()
 
+    process_habitats()
+
     # Save data to SQLite
     # print("Saving data to SQLite")
     # write_to_sqlite(pokemon_df, sqlite_db_name, sqlite_table_name)
     print_cobblemon_script_footer("Thanks for using the spawn csv to json script, provided to you by Waldleufer")
+
+def process_habitats():
+    print("Processing habitats...")
+
+    # Habitat columns:
+    # Habitat, No.,	Pokémon,	Entry,	Lv. Min,	Lv. Max,	Bucket,	Weight,	Phases,	Time,	Weather,	Context,	Light Min,	Light Max,	Modifiers
+    # Habitat column is the key that should be used to group records into a single JSON file.
+    habitats_df = download_excel_data(habitats_sheet_url, {'Habitat': str, 'Pokémon': str, 'Entry': str})#, 'No.': int})
+    habitat_groups = habitats_df.groupby('Habitat')
+    for habitat_name, group in habitat_groups:
+        # create the json data
+        json_data = {
+            "name": f"cobblemon.habitat.{habitat_name.replace(' ', '_').lower()}.name",
+            "type": "cobblemon:natural",
+            "spawns": []
+        }
+        for _, row in group.iterrows():
+            if pd.isna(row['Pokémon']) or pd.isna(row['Entry']):
+                continue
+            spawn_data = {
+                "species": row['Pokémon'],
+                "bucket": row['Bucket'],
+                "spawnablePositionType": row['Context'],
+                "weight": row['Weight'],
+                "levelRange": f"{int(row['Lv. Min'])}-{int(row['Lv. Max'])}",
+                "modifiers": row['Modifiers'],
+                "phases": row['Phases'],
+                'timeRange': row['Time'],
+                'minLight': row['Light Min'],
+                'maxLight': row['Light Max']
+            }
+            if pd.isna(spawn_data['modifiers']):
+                del spawn_data['modifiers']
+            if row['Light Min'] == 'any':
+                del spawn_data['minLight']
+            if row['Light Max'] == 'any':
+                del spawn_data['maxLight']
+            if row['Time'] == 'any':
+                del spawn_data['timeRange']
+            if pd.isna(row['Phases']) or row['Phases'] == 'any':
+                del spawn_data['phases']
+            json_data['spawns'].append(spawn_data)
+        if len(json_data['spawns']) == 0:
+            continue
+        # save the json data to a file
+        file_name = f"{habitat_name.replace(' ', '_').lower()}.json"
+        output_directory = '../common/src/main/resources/data/cobblemon/habitat_pools'
+        file_path = os.path.join(output_directory, file_name)
+        os.makedirs(output_directory, exist_ok=True)
+        with open(file_path, 'w', encoding='utf-8') as file:
+            json.dump(json_data, file, indent=2)
 
 
 def print_report():
