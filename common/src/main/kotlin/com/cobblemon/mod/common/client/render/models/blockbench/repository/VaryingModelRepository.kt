@@ -264,7 +264,6 @@ object VaryingModelRepository {
         inbuilt("golduck", ::GolduckModel)
         inbuilt("golem", ::GolemModel)
         inbuilt("graveler", ::GravelerModel)
-        inbuilt("growlithe", ::GrowlitheModel)
         inbuilt("hitmonchan", ::HitmonchanModel)
         inbuilt("hitmonlee", ::HitmonleeModel)
         inbuilt("kabuto", ::KabutoModel)
