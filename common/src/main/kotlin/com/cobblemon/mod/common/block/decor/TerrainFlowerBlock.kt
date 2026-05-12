@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
+import net.minecraft.world.ticks.TickPriority
 
 class TerrainFlowerBlock(properties: Properties?) : TallFlowerBlock(properties) {
 
@@ -45,24 +46,31 @@ class TerrainFlowerBlock(properties: Properties?) : TallFlowerBlock(properties) 
     }
 
     private fun checkInside(level: Level, pos: BlockPos, state: BlockState) {
-        var blockState = level.getBlockState(pos)
-        val activeState = blockState.getValue(GLOWING) as Boolean
-        var entityInsideFlower = false
-        val list = level.getEntities(null as Entity?, blockState.getShape(level, pos).bounds().move(pos))
-        if (!list.isEmpty()) {for (entity in list) { entityInsideFlower = true; break} }
-        if (entityInsideFlower != activeState && state.`is`(CobblemonBlocks.LUCIBELL)) {
-            blockState = blockState.setValue(GLOWING, entityInsideFlower) as BlockState
-            level.setBlock(pos, blockState, UPDATE_CLIENTS)
-            //TODO: Figure out way to apply blockstate to both halves of the flower if only one half is being intersected (problem is the detection needs to exist regardless of which half of the flower is interacted)
+        // Only lower will handle this
+        val upperState = level.getBlockState(pos.above()).takeIf { it.`is`(CobblemonBlocks.LUCIBELL) && it.getValue(HALF) == DoubleBlockHalf.UPPER }
+
+        val entityInside = level.getEntities(null, state.getShape(level, pos).bounds().move(pos)).isNotEmpty()
+                || upperState?.let { level.getEntities(null, it.getShape(level, pos.above()).bounds().move(pos.above())).isNotEmpty() } ?: false
+
+        val glowingState = state.getValue(GLOWING)
+        if (glowingState != entityInside) {
+            level.setBlock(pos, state.setValue(GLOWING, entityInside), UPDATE_CLIENTS)
+            upperState?.let { level.setBlock(pos.above(), it.setValue(GLOWING, entityInside), UPDATE_CLIENTS) }
         }
-        if (entityInsideFlower) {
-            level.scheduleTick(BlockPos(pos), this, 30)
-        }
+        if (entityInside) level.scheduleTick(pos, this, 30) // tick occasionally to check if player inside
     }
+
     override fun entityInside(state: BlockState, level: Level, pos: BlockPos, entity: Entity?) {
-        if (!level.isClientSide) {
-            if (!state.getValue(GLOWING) && state.`is`(CobblemonBlocks.LUCIBELL)) {
-                this.checkInside(level, pos, state)
+        // Lucibell lower block will be our 'driver'
+        if (!level.isClientSide && !state.getValue(GLOWING) && state.`is`(CobblemonBlocks.LUCIBELL)) {
+            val halfState = state.getValue(HALF)
+            if (halfState == DoubleBlockHalf.UPPER) {
+                val lowerState = level.getBlockState(pos.below())
+                    .takeIf { it.`is`(CobblemonBlocks.LUCIBELL) && it.getValue(HALF) == DoubleBlockHalf.LOWER }
+                    ?: return
+                (lowerState.block as TerrainFlowerBlock).checkInside(level, pos.below(), lowerState)
+            } else {
+                checkInside(level, pos, state)
             }
         }
     }
