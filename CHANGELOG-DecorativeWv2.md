@@ -1,2 +1,9 @@
 ### Additions
 - Mint Leaves can now be placed on the ground as Leaf Litter, or in Flower Pots
+- Added Oricorio Flowers
+- Added Terrain Flowers
+
+### Changes
+- Terrain Seeds can now be planted
+- Terrain Seeds are now consumed during PvP and NPC battles
+- Glow Item Frames can be crafted using Bright Powder as an alternative to Glow Ink Sacs
