@@ -3,6 +3,9 @@
   "values": [
     "minecraft:blue_orchid",
 	"minecraft:cornflower",
+    "cobblemon:wistensu",
+    "cobblemon:wistensu_vine",
+    "cobblemon:voltconia",
 	{
       "id": "aether_redux:pink_prismatic_petals",
       "required": false

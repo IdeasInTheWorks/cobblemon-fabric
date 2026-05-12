@@ -5,3 +5,4 @@
 - Terrain Flowers/Seeds Block Textures
 - Ensure everything is tagged correctly
 - Destroy both half of the Terrain Seed crops when breaking the top half (used the hearty grains as a starting point so it's maintained that behaviour lmao)
+- Sniffers digging up Terrain Seeds (potentially can not do, but worth looking at still)

@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "cobblemon:pep_up_flower",
-    "cobblemon:pomohana",
-    "#cobblemon:terrain_flowers"
+    "cobblemon:pomohana"
   ]
 }
