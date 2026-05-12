@@ -353,7 +353,7 @@
 					"name": "head_correction",
 					"parent": "head",
 					"pivot": [0, 6.2, -15],
-					"rotation": [0, 0, 0]
+					"rotation": [-90, 0, 0]
 				},
 				{
 					"name": "head_ai",
