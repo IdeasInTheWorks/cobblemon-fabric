@@ -8,11 +8,11 @@
         "natural"
       ],
       "type": "pokemon-herd",
-      "bucket": "common",
+      "bucket": "ultra-rare",
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "5-53",
-      "weight": 1000.0,
+      "weight": 10.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
