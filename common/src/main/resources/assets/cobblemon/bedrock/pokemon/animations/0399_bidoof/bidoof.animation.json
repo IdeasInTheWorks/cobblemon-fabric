@@ -600,7 +600,7 @@
 			},
 			"sound_effects": {
 				"0.125": {
-					"effect": "bidoof_cry"
+					"effect": "pokemon.bidoof.cry"
 				}
 			}
 		},
