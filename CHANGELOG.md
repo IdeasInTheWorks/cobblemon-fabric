@@ -176,6 +176,23 @@
 - Added new shiny and Alpha chance configs
 - Apricorns now make a new sound when harvested
 - Lowered the volume of harvesting berries
+- Added alternate versions of the basic PC Wallpapers based on the original design of Cobblemon's PC, before public release
+- Improved compatibility with various mods
+    - Farmer's Delight's cutting board can now be used to strip Apricorn and Saccharine's logs, or salvage their planks from various blocks. It can also separate their boats from chests
+    - Farmer's Delight's cutting board can be used to get two white dye from Pep-Up Flowers
+    - Farmer's Delight's cutting board can separate Tumblestone Blocks back into Tumblestones
+    - Farmer's Delight's cutting board can salvage Type Gems from their Gem Blocks
+    - Farmer's Delight's Onions, Tomatoes, and Cabbages can be used to cook Open-Faced Sandwiches. Nature's Spirit's Olives also can be used
+    - Farmer's Delight's cutting board can be used on Hearty Grains to obtain rice and straw, similarly to Farmer's Delight's Rice Panicles
+    - Farmer's Delight's Apple Pies and Apple Ciders can now be made using Applin Apples, alongside the Vanilla counterpart
+    - Amendments allows for cooking Leek and Potato Stew in a Cauldron
+    - Any mods that utilise Moonlight's Soft Fluid system can store Leek and Potato Stew, Medicinal Brew, Antidote, Awakening, Burn Heal, Ice Heal, Paralyze Heal, Full Heal, Potion, Super Potion, Hyper Potion, Max Potion, Full Restore, Ability Capsules, Moomoo Milk, and Berry Juice in liquid form (such as Suplementaries' Jar or Goblet, or Cauldrons while using Amendments)
+    - Supplementaries' Hourglass can now use Bright Powder, Quick Powder, Metal Powder, Heal Powder, Silver Powder, and Remedy
+    - Berry Trees are now compatible with the Planter properly
+    - Saccharine Way Signs (added by Supplementaries automagically) now use a premade texture to prevent odd visual issues
+    - Supplementaries' Jar can now store various Cobblemon cookies, candies, and similar items
+    - Some of Supplementaries' items have been added to the `#cobblemon:held/container_held_items` item tag, including sacks, safes, and lunch baskets
+- Golden Apples can now be crafted using the Applin Apples
 
 ### Fixes
 - Fixed Croagunk's walkspeed
@@ -217,6 +234,7 @@
 - Clusters now display correctly on maps
 - Fixed removing mulch from berry trees with a shovel not working.
 - Fixed collecting honey from Saccharine Leaf blocks deleting Honey Bottles when the inventory was full
+- Fixed Stripped Saccharine Wood recipe being missing
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
