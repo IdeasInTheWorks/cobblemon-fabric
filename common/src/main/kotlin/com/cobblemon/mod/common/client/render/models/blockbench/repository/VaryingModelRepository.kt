@@ -305,7 +305,6 @@ object VaryingModelRepository {
         inbuilt("wooper_paldean", ::WooperPaldeanModel)
         inbuilt("yanma", ::YanmaModel)
         inbuilt("bibarel", ::BibarelModel)
-        inbuilt("bidoof", ::BidoofModel)
         inbuilt("buneary", ::BunearyModel)
         inbuilt("lopunny", ::LopunnyModel)
         inbuilt("mamoswine", ::MamoswineModel)
