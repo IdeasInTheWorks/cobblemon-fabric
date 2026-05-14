@@ -6669,10 +6669,10 @@
     "sounds": [ { "name": "cobblemon:pokemon/unfezant/unfezant_cry", "volume": 0.8 } ]
   },
   "pokemon.blitzle.cry": {
-    "sounds": [ { "name": "cobblemon:pokemon/blitzle/blitzle_cry", "volume": 0.8 } ]
+    "sounds": [ { "name": "cobblemon:pokemon/blitzle/blitzle_cry", "volume": 0.6 } ]
   },
   "pokemon.zebstrika.cry": {
-    "sounds": [ { "name": "cobblemon:pokemon/zebstrika/zebstrika_cry", "volume": 0.8 } ]
+    "sounds": [ { "name": "cobblemon:pokemon/zebstrika/zebstrika_cry", "volume": 0.6 } ]
   },
   "pokemon.roggenrola.cry": {
     "sounds": [ { "name": "cobblemon:pokemon/roggenrola/roggenrola_cry", "volume": 0.8 } ]

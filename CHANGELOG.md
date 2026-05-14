@@ -178,6 +178,7 @@
 - Lowered the volume of harvesting berries
 - Sounds for interacting with various Cobblemon blocks now play from the center of the block, rather than the corner
 - The `/pc` command no longer plays PC activation sounds
+- Lowered the volume of Blitzle and Zebstrika's cry
 
 ### Fixes
 - Fixed Croagunk's walkspeed
