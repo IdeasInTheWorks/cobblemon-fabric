@@ -9461,5 +9461,11 @@
     "cobblemon.entity.variable.animation_name.name": "Nombre de la Animación",
     "cobblemon.entity.variable.animation_name.desc": "El nombre de la animación que se reproduce cuando se interactúa con el PNJ.",
     "cobblemon.entity.variable.play_animation.name": "Activar Animación",
-    "cobblemon.entity.variable.play_animation.desc": "Si la animación se debe empezar cuando se interactúa con el PNJ."
+    "cobblemon.entity.variable.play_animation.desc": "Si la animación se debe empezar cuando se interactúa con el PNJ.",
+    "advancements.cobblemon.construct_note_block_sequencer": "El poder de la ciencia es increíble",
+    "cobblemon.habitat.badlands_shaded_rock.name": "Roca sombría en tierras baldías",
+    "cobblemon.habitat.berry_patch.name": "Malezas de bayas",
+    "cobblemon.habitat.birch_wildlife_scar.name": "Claro salvaje de abedular",
+    "cobblemon.habitat.bug_mound.name": "Montículo de bichos",
+    "cobblemon.habitat.carved_ice_spikes.name": "Picos de hielo escarbados"
 }
