@@ -58,36 +58,62 @@
 ### New rideable Pokémon
 - Drampa
 - Archeops
+- Skarmory
+- Crobat
+- Goodra
+- Hisuian Goodra
+- Milotic
 
 ### Pokémon Added
-- Pancham (+ Cosmetic with Black Glasses)
-- Pangoro (+ Cosmetic with Black Glasses)
-- Skitty
-- Delcatty
 - Wurmple
 - Silcoon
 - Beautifly
 - Cascoon
 - Dustox
+- Skitty
+- Delcatty
+
+- Seviper
+- Zangoose
+- Cherubi
+- Cherrim
+- Stunky
+- Skuntank
+
 - Audino
+- Pawniard
+- Bisharp
+- Kingambit
+
+- Pancham (+ Cosmetic with Black Glasses)
+- Pangoro (+ Cosmetic with Black Glasses)
+
 - Rockruff
 - Lycanroc
+
+- Rolycoly
+- Carkol
+- Coalossal
+
 - Snom
 - Frosmoth
+
+- Duraludon
+- Archaludon
+
 - Applin
 - Flapple
 - Appletun
 - Dipplin
 - Hydrapple
+
+- Nymble
+- Lokix
+
+#### Regional Forms
 - Sandshrew (Alolan)
 - Sandslash (Alolan)
-- Seviper
-- Zangoose
-- Stunky
-- Skuntank
-- Pawniard
-- Bisharp
-- Kingambit
+- Avalugg (Hisuian)
 
 ### Model updates for the following Pokémon
 - Goomy
@@ -99,35 +125,77 @@
 - Zubat
 - Golbat
 - Crobat
-- Pidgey
-- Pidgeotto
-- Pidgeot
+
+### Model updates for the following Pokémon
+
+- Sandshrew
 - Sandslash
 - Nidoking
+- Zubat
+- Golbat
+- Crobat
+- Porygon
+- Porygon2
+- Porygon-Z
+
+- Skarmory
+- Jynx
+- Popplio
+- Brionne
+- Primarina
+- Fletchling
+- Fletchinder
+- Talonflame
+
 - Sableye
 - Mawile
+
+- Goomy
+- Sliggoo
+- Goodra
+
 - Nacli
-- Naclestack
+- Naclstack
 - Garganacl
-- Skarmory
+
+#### Model changes to the regional bias resource pack:
+
+- Added Mime Jr. (Galar Bias)
+- Added Bergmite (Hisui Bias)
+- Changed models for every existing regional bias
 
 ### Animation updates for the following Pokémon
-- Drampa
-- Archeops
 - Skarmory
+- Skitty
+- Flygon
+- Shellos
 - Riolu
 - Lucario
-- Shellos
-- Skitty
-- Joltik
 - Purrloin
 - Liepard
-- Flygon
+- Joltik
+- Galvantula
+- Nidoking
+- Fletchling
+- Fletchinder
+- Talonflame
+- Archeops
+- Drampa
+- Sewaddle
+- Swadloon
+- Leavanny
+- Goomy
+- Sliggoo
+- Goodra
+- Shedinja
+- Skwovet
+- Greedent
 
 #### Added sounds to the following moves
 - Absorb
 - Aurora Beam
 - Double Team
+- Draco Meteor
 - Fire Punch
 - Fire Spin
 - Flame Charge
@@ -147,7 +215,15 @@
 - Tail Whip
 
 ### Changes
+- Stat increase and decrease particles have been changed, with the addition of alpha boost particles. 
 - Dragonite's mailbag cosmetic can now also be obtained with a chest in the cosmetic slot
+
+### Fixes
+- Adjusted Croagunk's walkspeed
+- Fixed Blitzle's base scale being `1` rather than the intended `0.8`
+- Fixed Magnezone's emissive layer for the shiny having the wrong name, thus displaying wrongly
+- Fixed Litleo not blinking
+- Fixed Garchomp T-posing when sleeping while out of battle.
 - Sharp Beak can now be crafted
 - Metal Alloy can now be crafted
 - Ability Capsules can now be brewed
@@ -195,6 +271,7 @@
 - Golden Apples can now be crafted using the Applin Apples
 - Prismarine Crystals and Amethyst Shards can now be used to craft Pokedexes
 - Updated Pokedex Screens item tag to support tagged variants of Redstone and Glowstone Dust
+- Fixed Raichu (male) and Alolan Raichu (both genders) not displaying the correct Partner Cap when Pewter Crunchies are in the cosmetic slot.
 
 ### Fixes
 - Fixed Croagunk's walkspeed
@@ -274,3 +351,9 @@
 
 ### Localization
 - Updated translations for:
+  - Japanese
+  - German
+  - Ecuadorian Spanish
+  - Simplified Chinese
+  - Traditional Chinese
+  - Korean
