@@ -173,10 +173,10 @@
     "sounds": [ { "name": "cobblemon:gui/levelup_start", "volume": 0.02 } ]
   },
   "gui.levelup": {
-    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.35 } ]
+    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.2 } ]
   },
   "gui.move_learn": {
-    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.35 } ]
+    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.2 } ]
   },
   "gui.click": {
     "sounds": [ { "name": "cobblemon:gui/click", "volume": 0.8 } ]
@@ -207,7 +207,7 @@
   },
   "item.tm.use": {
     "subtitle": "cobblemon.subtitle.tm.use",
-    "sounds": [ { "name": "cobblemon:item/tm/tm_use", "volume": 0.9 } ]
+    "sounds": [ { "name": "cobblemon:item/tm/tm_use", "volume": 0.6 } ]
   },
   "item.berry.eat.full": {
     "sounds": [ "cobblemon:item/berry/berry_eat_full" ]
