@@ -193,6 +193,8 @@
     - Supplementaries' Jar can now store various Cobblemon cookies, candies, and similar items
     - Some of Supplementaries' items have been added to the `#cobblemon:held/container_held_items` item tag, including sacks, safes, and lunch baskets
 - Golden Apples can now be crafted using the Applin Apples
+- Prismarine Crystals and Amethyst Shards can now be used to craft Pokedexes
+- Updated Pokedex Screens item tag to support tagged variants of Redstone and Glowstone Dust
 
 ### Fixes
 - Fixed Croagunk's walkspeed
