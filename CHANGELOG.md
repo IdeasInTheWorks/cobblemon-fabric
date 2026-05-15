@@ -268,6 +268,13 @@
     - Saccharine Way Signs (added by Supplementaries automagically) now use a premade texture to prevent odd visual issues
     - Supplementaries' Jar can now store various Cobblemon cookies, candies, and similar items
     - Some of Supplementaries' items have been added to the `#cobblemon:held/container_held_items` item tag, including sacks, safes, and lunch baskets
+    - Experience Nuggets can be used in place of Sculk for making the EXP Candies if using Create
+    - Rage Candy Bar has a Create Mixing recipe
+    - All Cobblemon ores can now be crushed in Create's Crushing Wheels
+    - Hearty Grains can be milled like Farmer's Delight Rice Panicles if both Farmer's Delight and Create are installed
+    - Pep-Up Flowers and all 70 berries can be milled in Create's Millstone for additional dye drops
+    - Auspicious Armor and Upgrades can be Haunted using Create's crafting systems
+    - Applin Apples can be used to make Honeyed Apples in Create
 - Golden Apples can now be crafted using the Applin Apples
 - Prismarine Crystals and Amethyst Shards can now be used to craft Pokedexes
 - Updated Pokedex Screens item tag to support tagged variants of Redstone and Glowstone Dust
