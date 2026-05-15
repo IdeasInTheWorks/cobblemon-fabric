@@ -40,6 +40,7 @@ import net.minecraft.sounds.SoundSource
 import net.minecraft.world.Container
 import net.minecraft.world.inventory.ContainerData
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntity
 
 class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
     BaseContainerBlockEntity(CobblemonBlockEntities.TM_MACHINE, pos, state), TintBlockEntity {
@@ -125,6 +126,11 @@ class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
                 }
             }
         }
+    }
+
+    override fun setRemoved() {
+        if (level?.isClientSide == true) BlockEntitySoundTracker.stop(blockPos, CancellableSoundInstance(CobblemonSounds.TM_MACHINE_BURN_LOOP, blockPos, true, 1F, 1F))
+        return super.setRemoved()
     }
 
     override var tint: Int? = null
