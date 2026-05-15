@@ -331,3 +331,9 @@
 
 ### Localization
 - Updated translations for:
+  - Japanese
+  - German
+  - Ecuadorian Spanish
+  - Simplified Chinese
+  - Traditional Chinese
+  - Korean
