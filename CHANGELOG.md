@@ -54,6 +54,7 @@
 - One TM of the elemental hyper beams has been added as guaranteed loot to the main treasure chest in every shipwreck cove. (Magma cove gets blast burn, lush cove gets frenzy plant, and submerged cove gets hydro cannon)
 - Added 7 new advancements
 - Pressing the inventory key now closes the Pokémon interact wheel GUI
+- Pokémon cries now play when clicking Pokémon in the summary screen.
 
 ### New rideable Pokémon
 - Drampa
@@ -279,6 +280,7 @@
 - Prismarine Crystals and Amethyst Shards can now be used to craft Pokedexes
 - Updated Pokedex Screens item tag to support tagged variants of Redstone and Glowstone Dust
 - Fixed Raichu (male) and Alolan Raichu (both genders) not displaying the correct Partner Cap when Pewter Crunchies are in the cosmetic slot.
+- Regional Foods will now prioritize being eaten instead of used for healing Pokémon, shift clicking will use it as healing
 
 ### Fixes
 - Fixed Croagunk's walkspeed
@@ -322,6 +324,8 @@
 - Fixed collecting honey from Saccharine Leaf blocks deleting Honey Bottles when the inventory was full
 - Fixed Stripped Saccharine Wood recipe being missing
 - Fixed CancelableSoundInstance causing lag by attempting to create sounds every tick when out of range of hearing
+- Fixed Stat Reducing Aprijuice not being possible to apply on a max out Pokémon, and the possibility of going into negatives
+- Fixed Exploit where you could take out the bait or drop your Pokérod with bait to avoid consuming bait, now the bobber will just disappear if you do so
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
