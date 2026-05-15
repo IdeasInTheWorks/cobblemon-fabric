@@ -109,6 +109,9 @@ object CobblemonSounds : PlatformRegistry<Registry<SoundEvent>, ResourceKey<Regi
     val LEVELUP = this.create("gui.levelup")
 
     @JvmField
+    val MOVE_LEARN = this.create("gui.move_learn")
+
+    @JvmField
     val PVN_BATTLE = this.create("battle.pvn.default")
     @JvmField
     val PVP_BATTLE = this.create("battle.pvp.default")
@@ -212,9 +215,11 @@ object CobblemonSounds : PlatformRegistry<Registry<SoundEvent>, ResourceKey<Regi
     @JvmField
     val TM_USE = this.create("item.tm.use")
     @JvmField
-    val TM_MACHINE_BURN = this.create("block.tm_machine.burn")
+    val TM_MACHINE_BURN_LOOP = this.create("block.tm_machine.burn_loop")
     @JvmField
     val TM_MACHINE_CRAFT = this.create("block.tm_machine.craft")
+    @JvmField
+    val TM_MACHINE_START = this.create("block.tm_machine.start")
     @JvmField
     val TM_MACHINE_OPEN = this.create("block.tm_machine.open")
     @JvmField

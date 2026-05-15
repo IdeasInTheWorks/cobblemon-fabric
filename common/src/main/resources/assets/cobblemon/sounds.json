@@ -173,7 +173,10 @@
     "sounds": [ { "name": "cobblemon:gui/levelup_start", "volume": 0.02 } ]
   },
   "gui.levelup": {
-    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.4 } ]
+    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.35 } ]
+  },
+  "gui.move_learn": {
+    "sounds": [ { "name": "cobblemon:gui/levelup", "volume": 0.35 } ]
   },
   "gui.click": {
     "sounds": [ { "name": "cobblemon:gui/click", "volume": 0.8 } ]
@@ -203,8 +206,8 @@
     "sounds": [ "cobblemon:item/berry/berry_eat" ]
   },
   "item.tm.use": {
-    "sounds": [ "cobblemon:item/tm/tm_use" ],
-    "subtitle": "cobblemon.subtitle.tm.use"
+    "subtitle": "cobblemon.subtitle.tm.use",
+    "sounds": [ { "name": "cobblemon:item/tm/tm_use", "volume": 0.9 } ]
   },
   "item.berry.eat.full": {
     "sounds": [ "cobblemon:item/berry/berry_eat_full" ]
@@ -324,19 +327,19 @@
   },
   "block.tm_machine.burn_loop": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_burn", "volume": 0.6, "stream": true }
+      { "name": "cobblemon:block/tm_machine/tm_machine_burn_loop", "volume": 0.1, "stream": true }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.burn_loop"
   },
   "block.tm_machine.start": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_start", "volume": 0.65 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_start", "volume": 1.0 }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.start"
   },
   "block.tm_machine.craft": {
     "sounds": [
-      { "name": "cobblemon:block/tm_machine/tm_machine_craft", "volume": 0.65 }
+      { "name": "cobblemon:block/tm_machine/tm_machine_craft", "volume": 0.3 }
     ],
     "subtitle": "cobblemon.subtitle.block.tm_machine.craft"
   },
@@ -362,7 +365,7 @@
     "sounds": [
       { "name": "cobblemon:block/tm_machine/tm_machine_tm_retrieve", "volume": 1.0 }
     ],
-    "subtitle": "cobblemon.subtitle.block.tm_machine.tm_insert"
+    "subtitle": "cobblemon.subtitle.block.tm_machine.tm_retrieve"
   },
   "block.tm_machine.item_insert": {
     "sounds": [

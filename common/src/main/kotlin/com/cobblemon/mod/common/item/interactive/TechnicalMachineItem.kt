@@ -52,7 +52,7 @@ class TechnicalMachineItem(properties: Properties) : CobblemonItem(properties), 
 
         player.displayClientMessage(lang("tms.teach_move", pokemon.getDisplayName(), moveTemplate.displayName).green(), true)
         player.level().playSound(null, player.blockPosition(), CobblemonSounds.TM_USE, SoundSource.PLAYERS, 1.0F, 1.0F)
-        entity.cry()
+        player.playNotifySound(CobblemonSounds.MOVE_LEARN, SoundSource.MASTER, 1.0F, 1.0F)
         return true
     }
 

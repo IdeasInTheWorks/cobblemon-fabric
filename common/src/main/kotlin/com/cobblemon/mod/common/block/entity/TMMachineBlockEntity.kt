@@ -66,12 +66,12 @@ class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
             if (!level.isClientSide) return
 
             val burning = blockEntity.containerData.get(BURN_ACTIVE_INDEX) == 1
-            val isBurningSoundActive = BlockEntitySoundTracker.isActive(pos, CobblemonSounds.TM_MACHINE_BURN.location)
+            val isBurningSoundActive = BlockEntitySoundTracker.isActive(pos, CobblemonSounds.TM_MACHINE_BURN_LOOP.location)
 
             if (burning) {
-                if (!isBurningSoundActive) BlockEntitySoundTracker.play(pos, CancellableSoundInstance(CobblemonSounds.TM_MACHINE_BURN, pos, true, 1F, 1F))
+                if (!isBurningSoundActive) BlockEntitySoundTracker.play(pos, CancellableSoundInstance(CobblemonSounds.TM_MACHINE_BURN_LOOP, pos, true, 1F, 1F))
             } else {
-                BlockEntitySoundTracker.stop(pos, CobblemonSounds.TM_MACHINE_BURN.location)
+                BlockEntitySoundTracker.stop(pos, CobblemonSounds.TM_MACHINE_BURN_LOOP.location)
             }
         }
 
@@ -109,7 +109,6 @@ class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
 
             if (postCraftTicks > 0) {
                 if (postCraftTicks == TMMachineScreen.CRAFT_TICKS) {
-                    BlockEntitySoundTracker.stop(pos, CobblemonSounds.TM_MACHINE_BURN.location)
                     blockEntity.craftTM()
                     level.updateNeighbourForOutputSignal(pos, state.block)
                 }

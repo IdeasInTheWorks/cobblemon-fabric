@@ -285,6 +285,7 @@ class TMMachineScreen(containerMenu: TMMachineMenu, val inventory: Inventory, ti
                     }*/
 
                     CobblemonNetwork.sendToServer(SetActiveTMPacket(it))
+                    if (burnActive != 1) playSound(CobblemonSounds.TM_MACHINE_START)
                     inventory.setChanged()
                     menu.broadcastChanges()
                 }
