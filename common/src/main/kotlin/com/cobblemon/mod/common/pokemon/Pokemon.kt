@@ -2031,8 +2031,17 @@ open class Pokemon : ShowdownIdentifiable {
     }
 
     fun canApplyRideBoost(stat: RidingStat, decreases: Boolean = false): Boolean {
+        return if (!decreases) canIncreaseRideBoost(stat) else canDecreaseRideBoost(stat)
+    }
+
+    private fun canIncreaseRideBoost(stat: RidingStat): Boolean {
         val current = rideBoosts[stat] ?: 0F
-        return if (!decreases) current < getMaxRideBoost(stat) else current > 0
+        return current < getMaxRideBoost(stat)
+    }
+
+    private fun canDecreaseRideBoost(stat: RidingStat): Boolean {
+        val current = rideBoosts[stat] ?: 0F
+        return current > 0
     }
 
     fun addRideBoost(stat: RidingStat, boostAmount: Float): Boolean {

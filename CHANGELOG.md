@@ -176,6 +176,7 @@
 - Added new shiny and Alpha chance configs
 - Apricorns now make a new sound when harvested
 - Lowered the volume of harvesting berries
+- Regional Foods will now prioritize being eaten instead of used for healing Pokémon, shift clicking will use it as healing
 
 ### Fixes
 - Fixed Croagunk's walkspeed
@@ -215,6 +216,8 @@
 - Fixed various log warnings caused by redundant files and sound events.
 - Traded Pokémon will now retain the original friendship level when traded back to its OT
 - Clusters now display correctly on maps
+- Fixed Stat Reducing Aprijuice not being possible to apply on a max out Pokémon, and the possibility of going into negatives
+- Fixed Exploit where you could take out the bait or drop your Pokérod with bait to avoid consuming bait, now the bobber will just disappear if you do so
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
