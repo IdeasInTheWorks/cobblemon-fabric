@@ -314,6 +314,7 @@
 - Fixed removing mulch from berry trees with a shovel not working.
 - Fixed collecting honey from Saccharine Leaf blocks deleting Honey Bottles when the inventory was full
 - Fixed Stripped Saccharine Wood recipe being missing
+- Fixed CancelableSoundInstance causing lag by attempting to create sounds every tick when out of range of hearing
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
