@@ -9417,5 +9417,13 @@
     "advancements.cobblemon.construct_note_block_sequencer.description": "디스크 선반 위에 소리 블록을 설치해 오디오 장치를 만드세요",
     "block.cobblemon.habitat_block": "서식지 블록",
     "advancements.cobblemon.download_porygon": "폴리곤 다운로드",
-    "advancements.cobblemon.download_porygon.description": "데이터 모니터에 업그레이드나 괴상한 패치를 사용하세요"
+    "advancements.cobblemon.download_porygon.description": "데이터 모니터에 업그레이드나 괴상한 패치를 사용하세요",
+    "cobblemon.behaviour.chatter_npc.name": "대화형 NPC",
+    "cobblemon.behaviour.chatter_npc.desc": "상호작용 시 게임 내 채팅으로 대화하며, 설정에 따라 전용 애니메이션이 출력됩니다.",
+    "cobblemon.entity.variable.chat_message.name": "채팅 메시지 내용",
+    "cobblemon.entity.variable.chat_message.desc": "상호작용 시 NPC가 출력할 대사를 설정합니다. 마인크래프트 표준 색상 코드 및 서식 적용이 가능합니다.",
+    "cobblemon.entity.variable.animation_name.name": "애니메이션 이름",
+    "cobblemon.entity.variable.animation_name.desc": "상호작용 시 NPC가 재생할 애니메이션의 이름을 지정합니다.",
+    "cobblemon.entity.variable.play_animation.name": "애니메이션 재생",
+    "cobblemon.entity.variable.play_animation.desc": "상호작용 시 NPC의 애니메이션을 재생할지 여부를 설정합니다."
 }
