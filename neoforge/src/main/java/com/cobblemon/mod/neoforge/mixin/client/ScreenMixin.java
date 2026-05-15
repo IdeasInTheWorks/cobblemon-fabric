@@ -6,7 +6,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-package com.cobblemon.mod.neoforge.mixin;
+package com.cobblemon.mod.neoforge.mixin.client;
 
 import com.cobblemon.mod.common.client.gui.CobblemonRenderable;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
