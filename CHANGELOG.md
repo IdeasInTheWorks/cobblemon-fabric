@@ -281,6 +281,9 @@
 - Golden Apples can now be crafted using the Applin Apples
 - Prismarine Crystals and Amethyst Shards can now be used to craft Pokedexes
 - Updated Pokedex Screens item tag to support tagged variants of Redstone and Glowstone Dust
+- Sounds for interacting with various Cobblemon blocks now play from the center of the block, rather than the corner
+- The `/pc` command no longer plays PC activation sounds
+- Lowered the volume of Blitzle and Zebstrika's cry
 - Fixed Raichu (male) and Alolan Raichu (both genders) not displaying the correct Partner Cap when Pewter Crunchies are in the cosmetic slot.
 - Regional Foods will now prioritize being eaten instead of used for healing Pokémon, shift clicking will use it as healing
 
