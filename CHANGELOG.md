@@ -256,7 +256,7 @@
 - Added alternate versions of the basic PC Wallpapers based on the original design of Cobblemon's PC, before public release
 - Improved compatibility with various mods
     - Farmer's Delight's cutting board can now be used to strip Apricorn and Saccharine's logs, or salvage their planks from various blocks. It can also separate their boats from chests
-    - Farmer's Delight's cutting board can be used to get two white dye from Pep-Up Flowers
+    - Farmer's Delight's cutting board can be used to get two white dye from Pep-Up Flowers and two magenta dye from Medicinal Leeks
     - Farmer's Delight's cutting board can separate Tumblestone Blocks back into Tumblestones
     - Farmer's Delight's cutting board can salvage Type Gems from their Gem Blocks
     - Farmer's Delight's Onions, Tomatoes, and Cabbages can be used to cook Open-Faced Sandwiches. Nature's Spirit's Olives also can be used
@@ -272,8 +272,10 @@
     - Experience Nuggets can be used in place of Sculk for making the EXP Candies if using Create
     - Rage Candy Bar has a Create Mixing recipe
     - All Cobblemon ores can now be crushed in Create's Crushing Wheels
+    - All Gem and Tumblestone Clusters can be crushed for automatic, low return, gems
     - Hearty Grains can be milled like Farmer's Delight Rice Panicles if both Farmer's Delight and Create are installed
-    - Pep-Up Flowers and all 70 berries can be milled in Create's Millstone for additional dye drops
+    - Big Roots and Revival Herbs can be milled to their respective powders
+    - Pep-Up Flowers, Medicinal Leeks, and all 70 berries can be milled in Create's Millstone for additional dye drops
     - Auspicious Armor and Upgrades can be Haunted using Create's crafting systems
     - Applin Apples can be used to make Honeyed Apples in Create
 - Golden Apples can now be crafted using the Applin Apples
