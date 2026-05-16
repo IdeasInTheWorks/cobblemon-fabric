@@ -111,9 +111,9 @@ object CobblemonBlockEntities : PlatformRegistry<Registry<BlockEntityType<*>>, R
     )
 
     @JvmField
-    val TERRAIN_FLOWER: BlockEntityType<TerrainFlowerBlockEntity> = this.create(
-        "terrain_flower",
-        BlockEntityType.Builder.of(::TerrainFlowerBlockEntity,
+    val TERRAIN_PLANT: BlockEntityType<TerrainPlantBlockEntity> = this.create(
+        "terrain_plant",
+        BlockEntityType.Builder.of(::TerrainPlantBlockEntity,
             CobblemonBlocks.VOLTCONIA,
             CobblemonBlocks.LUCIBELL,
             CobblemonBlocks.VERDROOT

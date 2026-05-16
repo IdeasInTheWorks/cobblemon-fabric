@@ -802,13 +802,13 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     @JvmField
     val GRASSY_SEED = this.create("grassy_seed", TerrainSeedBlock(TerrainSeedBlock.TerrainSeedType.GRASSY, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ).noCollission().randomTicks().instabreak()))
     @JvmField
-    val VOLTCONIA = this.create("voltconia", TerrainFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainFlowerBlock.GLOWING) as Boolean)) 8 else 0 }))
+    val VOLTCONIA = this.create("voltconia", TerrainPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainPlantBlock.GLOWING) as Boolean)) 8 else 0 }))
     @JvmField
-    val LUCIBELL = this.create("lucibell", TerrainFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainFlowerBlock.GLOWING) as Boolean)) 8 else 0 }))
+    val LUCIBELL = this.create("lucibell", TerrainPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainPlantBlock.GLOWING) as Boolean)) 8 else 0 }))
     @JvmField
     val MISTLEAF = this.create("mistleaf", MistleafFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(MistleafFlowerBlock.GLOWING)>=1 )) it.getValue(MistleafFlowerBlock.GLOWING)+2 else 0 }))
     @JvmField
-    val VERDROOT = this.create("verdroot", TerrainFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainFlowerBlock.GLOWING) as Boolean)) 5 else 0 }))
+    val VERDROOT = this.create("verdroot", TerrainPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainPlantBlock.GLOWING) as Boolean)) 5 else 0 }))
 
     @JvmField
     val HEARTY_GRAIN_BALE = this.create("hearty_grain_bale", BaleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sound(CobblemonSounds.HEARTY_GRAIN_BALE_SOUNDS)))

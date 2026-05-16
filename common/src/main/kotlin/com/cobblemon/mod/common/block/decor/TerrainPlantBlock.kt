@@ -10,7 +10,7 @@ package com.cobblemon.mod.common.block.decor
 
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonBlocks
-import com.cobblemon.mod.common.block.entity.TerrainFlowerBlockEntity
+import com.cobblemon.mod.common.block.entity.TerrainPlantBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.RandomSource
@@ -33,7 +33,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class TerrainFlowerBlock(properties: Properties) : TallFlowerBlock(properties), EntityBlock {
+class TerrainPlantBlock(properties: Properties) : TallFlowerBlock(properties), EntityBlock {
 
     init {
         registerDefaultState(stateDefinition.any()
@@ -75,7 +75,7 @@ class TerrainFlowerBlock(properties: Properties) : TallFlowerBlock(properties), 
                 val lowerState = level.getBlockState(pos.below())
                     .takeIf { it.`is`(CobblemonBlocks.LUCIBELL) && it.getValue(HALF) == DoubleBlockHalf.LOWER }
                     ?: return
-                (lowerState.block as TerrainFlowerBlock).checkInside(level, pos.below(), lowerState)
+                (lowerState.block as TerrainPlantBlock).checkInside(level, pos.below(), lowerState)
             } else {
                 checkInside(level, pos, state)
             }
@@ -85,7 +85,7 @@ class TerrainFlowerBlock(properties: Properties) : TallFlowerBlock(properties), 
     override fun getShape(state: BlockState, world: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape = AABB
 
     override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity? {
-        return TerrainFlowerBlockEntity(pos, state)
+        return TerrainPlantBlockEntity(pos, state)
     }
 
     override fun <T : BlockEntity?> getTicker(
@@ -94,7 +94,7 @@ class TerrainFlowerBlock(properties: Properties) : TallFlowerBlock(properties), 
         blockEntityType: BlockEntityType<T?>
     ): BlockEntityTicker<T?>? {
         return if (level.isClientSide) null else BaseEntityBlock.createTickerHelper(blockEntityType as BlockEntityType<*>,
-            CobblemonBlockEntities.TERRAIN_FLOWER, TerrainFlowerBlockEntity::serverTick) as BlockEntityTicker<T?>?
+            CobblemonBlockEntities.TERRAIN_PLANT, TerrainPlantBlockEntity::serverTick) as BlockEntityTicker<T?>?
     }
 
     companion object {
