@@ -487,7 +487,6 @@ object VaryingModelRepository {
         inbuilt("phantump", ::PhantumpModel)
         inbuilt("totodile", ::TotodileModel)
         inbuilt("croconaw", ::CroconawModel)
-        inbuilt("feraligatr", ::FeraligatrModel)
         inbuilt("cyndaquil", ::CyndaquilModel)
         inbuilt("quilava", ::QuilavaModel)
         inbuilt("typhlosion", ::TyphlosionModel)
