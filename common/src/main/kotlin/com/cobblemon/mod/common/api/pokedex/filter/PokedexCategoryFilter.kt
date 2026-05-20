@@ -41,6 +41,7 @@ class PokedexCategoryFilter(
             PokedexCategoryFilterType.UNDISCOVERED_TM_MOVE -> hasUndiscoveredLevelUpTM(entry)
             PokedexCategoryFilterType.RIDEABLE -> {
                 val species = PokemonSpecies.getByIdentifier(entry.speciesId)
+                // we were silly as standard forms also can be rideable and we were ingoring those
                 (species?.forms.orEmpty() + listOfNotNull(species?.standardForm)).any { form -> !form.riding.behaviours.isNullOrEmpty() }
                     && (pokedexManager.getHighestKnowledgeFor(entry) >= PokedexEntryProgress.OWNED ||
                         pokedexManager.getHighestKnowledgeFor(entry) >= PokedexEntryProgress.SEEN)
