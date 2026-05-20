@@ -9186,5 +9186,16 @@
     "cobblemon.ui.generic.question_marks": "？？？",
     "cobblemon.container.tm_machine": "わざマシンマシン",
     "cobblemon.ui.edit.habitat": "生息地エディター",
-    "cobblemon.ui.edit.habitat.mimic_id": "見た目をまねるブロックのID"
+    "cobblemon.ui.edit.habitat.mimic_id": "見た目をまねるブロックのID",
+    "cobblemon.ui.edit.habitat.phase_number": "フェーズ数",
+    "cobblemon.ui.edit.habitat.phase_order": "フェーズ順：%s",
+    "cobblemon.ui.edit.habitat.level_range": "レベル範囲（最小～最大）",
+    "cobblemon.ui.edit.habitat.mode": "モード：%s",
+    "cobblemon.ui.edit.habitat.mode.activated": "有効化",
+    "cobblemon.ui.edit.habitat.mode.natural": "自然",
+    "cobblemon.ui.edit.habitat.trigger": "トリガー：%s",
+    "cobblemon.ui.edit.habitat.spawn_range": "スポーン範囲（ブロック）",
+    "cobblemon.ui.edit.habitat.cancelled_range": "削除する自然スポーン範囲（ブロック）",
+    "cobblemon.ui.edit.habitat.max_spawns": "最大スポーン数（無制限の場合は-1）",
+    "cobblemon.ui.edit.habitat.replace_spawns": "スポーンの置き換え：%s"
 }
