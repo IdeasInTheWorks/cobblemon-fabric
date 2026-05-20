@@ -132,8 +132,7 @@ class SearchFilter(val pokedexManager: AbstractPokedexManager, val searchString:
             form.moves.eggMoves,
             form.moves.evolutionMoves,
             form.moves.formChangeMoves,
-            form.moves.specialMoves,
-            form.moves.legacyMoves
+            form.moves.specialMoves
         )
 
         for (moves in alwaysDiscovered) {
