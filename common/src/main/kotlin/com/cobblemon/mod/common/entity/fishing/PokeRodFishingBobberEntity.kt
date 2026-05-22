@@ -16,6 +16,7 @@ import com.cobblemon.mod.common.advancement.CobblemonCriteria
 import com.cobblemon.mod.common.advancement.criterion.ReelInPokemonContext
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.fishing.BobberSpawnPokemonEvent
+import com.cobblemon.mod.common.api.events.pokemon.PokemonSeenEvent
 import com.cobblemon.mod.common.api.fishing.SpawnBait
 import com.cobblemon.mod.common.api.fishing.SpawnBaitEffects
 import com.cobblemon.mod.common.api.scheduling.afterOnServer
@@ -875,7 +876,10 @@ class PokeRodFishingBobberEntity(type: EntityType<out PokeRodFishingBobberEntity
             if (player !in player.level().players()) {
                 return@afterOnServer
             }
-            spawnedPokemon?.forceBattle(player)
+            spawnedPokemon?.let {
+                it.forceBattle(player)
+                CobblemonEvents.POKEMON_SEEN.post(PokemonSeenEvent(uuid, it.pokemon))
+            }
         }
 
         return true

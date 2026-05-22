@@ -336,6 +336,7 @@
 - Fixed Apricorn and Saccharine boats incorrectly using chest boat models
 - Fixed wild and trainer battle AI refusing to select moves with the `adjacentAlly` target type, even when it's their only option
 - Fixed Guilded chests being more accessible than intended
+- Fixed fished up Pokémon not being added as "seen" to the Pokedex
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
