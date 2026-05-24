@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"screen": "cobblemon:item/pokedexes/models/pokedex_screen_scan",
+		"screen": "cobblemon:item/pokedexes/models/pokedex_screen",
 		"all": "cobblemon:item/pokedexes/models/pokedex_red"
 	},
 	"elements": [
