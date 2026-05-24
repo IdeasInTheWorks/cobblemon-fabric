@@ -16,6 +16,7 @@ import com.cobblemon.mod.common.advancement.CobblemonCriteria
 import com.cobblemon.mod.common.advancement.criterion.ReelInPokemonContext
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.fishing.BobberSpawnPokemonEvent
+import com.cobblemon.mod.common.api.events.pokemon.PokemonSeenEvent
 import com.cobblemon.mod.common.api.fishing.SpawnBait
 import com.cobblemon.mod.common.api.fishing.SpawnBaitEffects
 import com.cobblemon.mod.common.api.scheduling.afterOnServer
@@ -39,7 +40,6 @@ import net.minecraft.advancements.CriteriaTriggers
 import net.minecraft.client.resources.sounds.EntityBoundSoundInstance
 import net.minecraft.core.BlockPos
 import net.minecraft.core.particles.ParticleTypes
-import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
 import net.minecraft.network.syncher.EntityDataAccessor
@@ -248,13 +248,6 @@ class PokeRodFishingBobberEntity(type: EntityType<out PokeRodFishingBobberEntity
         INVALID
     }
 
-    private fun setPlayerFishHook(fishingBobber: FishingHook?) {
-        val playerEntity = this.playerOwner
-        if (playerEntity != null) {
-            playerEntity.fishing = fishingBobber
-        }
-    }
-
     enum class State {
         FLYING,
         HOOKED_IN_ENTITY,
@@ -375,7 +368,7 @@ class PokeRodFishingBobberEntity(type: EntityType<out PokeRodFishingBobberEntity
                         .sumOf { it.value }
                         .toInt()
                     planSpawn(player, rodStack, stackedLureTier)
-                    val selectedWeight = plannedSpawnAction?.bucket?.weight ?: 50F
+                    val selectedWeight = plannedSpawnAction?.bucket?.let { BestSpawner.fishingSpawner.buckets[it] } ?: 50F
                     val reactionMinMax = calculateMinMaxCountdown(selectedWeight)
 
                     // set the hook reaction time to be based off the rarity of the bucket chosen
