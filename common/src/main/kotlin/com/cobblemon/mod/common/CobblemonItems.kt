@@ -1096,7 +1096,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val WHITE_HERB = compostableHeldItem("white_herb", null, 0.85F)
     @JvmField
-    val BRIGHT_POWDER = heldItem("bright_powder")
+    val BRIGHT_POWDER = glowItem("bright_powder")
     @JvmField
     val METAL_POWDER = heldItem("metal_powder")
     @JvmField
@@ -1775,4 +1775,6 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     private fun foodItem(nutrition: Int, saturationModifier: Float): Item {
         return CobblemonItem(Item.Properties().food(FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturationModifier).build()))
     }
+
+    private fun glowItem(name: String): GlowItem = this.create(name, CobblemonItem(Item.Properties()))
 }
