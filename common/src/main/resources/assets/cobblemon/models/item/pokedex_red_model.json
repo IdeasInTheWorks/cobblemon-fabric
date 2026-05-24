@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"screen": "cobblemon:item/pokedexes/models/pokedex_screen",
+		"screen": "cobblemon:item/pokedexes/models/pokedex_screen_scan",
 		"all": "cobblemon:item/pokedexes/models/pokedex_red"
 	},
 	"elements": [
@@ -32,10 +32,10 @@
 		{
 			"name": "screen_left",
 			"from": [1, 1, 4],
-			"to": [8, 1, 12],
+			"to": [7.6, 1, 12],
 			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 0, 8]},
 			"faces": {
-				"up": {"uv": [1, 4, 8, 12], "texture": "#screen"}
+				"up": {"uv": [1, 4, 7.6, 12], "texture": "#screen"}
 			}
 		},
 		{
@@ -62,11 +62,11 @@
 		},
 		{
 			"name": "screen_right",
-			"from": [8, 1, 4],
+			"from": [8.4, 1, 4],
 			"to": [14, 1, 12],
 			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 0, 8]},
 			"faces": {
-				"up": {"uv": [8, 4, 14, 12], "texture": "#screen"}
+				"up": {"uv": [8.4, 4, 14, 12], "texture": "#screen"}
 			}
 		}
 	],
