@@ -1,4 +1,5 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
@@ -31,7 +32,7 @@
 		{
 			"name": "screen_left",
 			"from": [1, 1, 4],
-			"to": [7.6, 1, 12],
+			"to": [8, 1, 12],
 			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 0, 8]},
 			"faces": {
 				"up": {"uv": [1, 4, 8, 12], "texture": "#screen"}
@@ -61,7 +62,7 @@
 		},
 		{
 			"name": "screen_right",
-			"from": [8.4, 1, 4],
+			"from": [8, 1, 4],
 			"to": [14, 1, 12],
 			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 0, 8]},
 			"faces": {
@@ -109,17 +110,20 @@
 		{
 			"name": "pokedex",
 			"origin": [8, 8, 8],
+			"scope": 0,
 			"color": 0,
 			"children": [
 				{
 					"name": "frame_left",
 					"origin": [8, 8, 8],
+					"scope": 0,
 					"color": 0,
 					"children": [0, 1, 2]
 				},
 				{
 					"name": "frame_right",
 					"origin": [8, 8, 8],
+					"scope": 0,
 					"color": 0,
 					"children": [3, 4, 5]
 				}
