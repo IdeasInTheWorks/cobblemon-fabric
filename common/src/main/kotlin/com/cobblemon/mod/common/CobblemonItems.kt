@@ -1776,5 +1776,5 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
         return CobblemonItem(Item.Properties().food(FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturationModifier).build()))
     }
 
-    private fun glowItem(name: String): GlowItem = this.create(name, CobblemonItem(Item.Properties()))
+    private fun glowItem(name: String): GlowItem  = this.create(name, GlowItem(Item.Properties()))
 }

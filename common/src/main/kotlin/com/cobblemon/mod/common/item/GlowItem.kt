@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.entity.SignBlockEntity
 import net.minecraft.world.level.block.entity.SignText
 
-class GlowItem(settings : Properties) : CobblemonItem(settings), SignApplicator {
+class GlowItem(settings: Properties) : CobblemonItem(settings), SignApplicator {
 
     override fun tryApplyToSign(level: Level, sign: SignBlockEntity, isFront: Boolean, player: Player?): Boolean {
         if (sign.updateText({ signText: SignText? -> signText!!.setHasGlowingText(true) }, isFront)) {
