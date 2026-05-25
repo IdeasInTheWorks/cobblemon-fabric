@@ -1,7 +1,7 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"2": "cobblemon:block/berries/hesto_leaves",
+		"2": "cobblemon:block/berries/chesto_leaves",
 		"3": "cobblemon:block/berries/chesto_stem",
 		"particle": "block/flower_pot",
 		"flowerpot": "block/flower_pot",

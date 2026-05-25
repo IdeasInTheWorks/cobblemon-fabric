@@ -1,7 +1,7 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"2": "cobblemon:block/berries//figy_tree",
+		"2": "cobblemon:block/berries/figy_tree",
 		"particle": "block/flower_pot",
 		"flowerpot": "block/flower_pot",
 		"dirt": "block/dirt"

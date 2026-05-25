@@ -2,7 +2,7 @@
 	"ambientocclusion": false,
 	"textures": {
 		"2": "cobblemon:block/berries/aspear_stem",
-		"3": "aspear_leaves",
+		"3": "cobblemon:block/berries/aspear_leaves",
 		"particle": "block/flower_pot",
 		"flowerpot": "block/flower_pot",
 		"dirt": "block/dirt"

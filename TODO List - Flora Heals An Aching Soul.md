@@ -1,5 +1,4 @@
 - Wistensu Roots
-- Potted Berry Trees
 - Sinister Tea effects for all 8 flowers?
 - (Maybe) Get Oricorio Flowers Obtainable
 - Terrain Plants/Seeds Block Textures
