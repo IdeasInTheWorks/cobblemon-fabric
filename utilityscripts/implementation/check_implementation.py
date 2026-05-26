@@ -49,23 +49,24 @@ def debug(string):
 # Directories
 script_dir = os.path.dirname(os.path.abspath(__file__))
 assets_dir_config = os.path.join(script_dir, "assets_directory.txt")
-sheet_id_config = os.path.join(script_dir, "sheet_id.txt")
 
-if not os.path.exists(assets_dir_config):
-    print(f"Please create assets_directory.txt and paste your directory path inside\nCheck README.md for more information")
-    getch()
-    quit()
+if os.path.exists(assets_dir_config):
+    with open(assets_dir_config, "r") as f:
+        assets_dir = os.path.normpath(f.read().strip().replace('"', ''))
+else:
+    assets_dir = os.path.join(script_dir, "../../../cobblemon-assets")
+    if not os.path.exists(assets_dir):
+        print("Could not find the assets directory!")
+        print("The script assumes \"cobblemon-assets\" is cloned in the same folder as the main repository")
+        print("\nFor example:")
+        print(" Repository <-- (That's the folder with everything needed)")
+        print("  \\ cobblemon <---- (This is the main mod with the script)")
+        print("  \\ cobblemon-assets <---- (This is the assets repository)")
+        print("\nIf your repository is elsewhere, create \"assets_directory.txt\" and paste in your path there")
+        print(r"For example: \"D:\Dev\Cobblemon\Repository\cobblemon-assets\"")
+        getch()
+        quit()
 
-with open(assets_dir_config, "r") as f:
-    assets_dir = os.path.normpath(f.read().strip().replace('"', ''))
-
-if not os.path.exists(sheet_id_config):
-    print(f"Please create sheet_id.txt and paste our spreadsheet's identifier inside\nCheck README.md for more information")
-    getch()
-    quit()
-
-with open(sheet_id_config, "r") as f:
-    sheet_id = os.path.normpath(f.read().strip().replace('"', ''))
 
 ## Script start
 print(f"Press either of these keys to check Cobblemon assets implementation")
@@ -102,7 +103,8 @@ print(f"Found the Cobblemon assets repository at \"{assets_dir}\"")
 
 
 ## Spreadsheet
-# Individual sheet GIDs
+# Sheet IDs
+sheet_id = "1_5TB7TYfItjYX_4ezQh9rEAWs8dv2oJOtXYYvYqg5Hg"
 gid_implementation = 0
 gid_cries = 1849522968
 gid_models = 1841954062
