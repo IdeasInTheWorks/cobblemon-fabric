@@ -226,8 +226,10 @@ def normalize_name(name, mode):
     
     ## POSER
     if mode == "poser":
-        # Bulbasaur
+        # Bulbasaur line
         if "bulbasaur" in name: return "bulbasaur"
+        if "ivysaur" in name: return "ivysaur"
+        if "venusaur" in name: return "venusaur"
         # Unown
         if "unown" in pokemon:
             name = name.replace('?', 'question')
@@ -274,8 +276,10 @@ def normalize_name(name, mode):
 
     ## ANIMATION
     if mode == "animation":
-        # Bulbasaur
+        # Bulbasaur line
         if "bulbasaur" in name: return "bulbasaur"
+        if "ivysaur" in name: return "ivysaur"
+        if "venusaur" in name: return "venusaur"
         # Unown
         if "unown" in pokemon: return re.sub(r"unown.*", "unown", name)
         # Toxtricity
@@ -301,8 +305,10 @@ def normalize_name(name, mode):
     
     ## CRY
     if mode == "cry":
-        # Bulbasaur
+        # Bulbasaur line
         if "bulbasaur" in name: return "bulbasaur"
+        if "ivysaur" in name: return "ivysaur"
+        if "venusaur" in name: return "venusaur"
         # Kadabra and Alakazam
         if "kadabra_" in pokemon: return "kadabra"
         if "alakazam_" in pokemon: return "alakazam"
@@ -339,58 +345,126 @@ def normalize_name(name, mode):
 
     return name
 
+def find_poser(name):
+    path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/posers/")
+
+    if not os.path.exists(path):
+        debug("  Poser directory does not exist")
+        return
+
+    path = f"{normalize_name(name,'poser')}.json"
+    for root, dirs, files in os.walk(path):
+        if poser_name in files:
+            poser = os.path.join(root, poser_name)
+            debug(f"  Found poser in \"{poser}\"")
+            return poser
+
+    poser_name = f"{incorrect_region_name(name)}.json"
+    for root, dirs, files in os.walk(path):
+        if poser_name in files:
+            poser = os.path.join(root, poser_name)
+            status["imp_unconventional_name"] = os.path.basename(poser_name)
+            debug(f"  Found poser in \"{poser}\"")
+            return poser
+    
+    path = os.path.join(script_dir, "../..", f"common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/pokemon/")
+    poser_name = f"{name.title().replace('_Female','').replace('_Male','').replace('_', '')}Model.kt"
+    for root, dirs, files in os.walk(path):
+        if poser_name in files:
+            poser = os.path.join(root, poser_name)
+            status["imp_using_kotlin_poser"] = True
+            debug(f"  Found poser in \"{poser}\"")
+            return poser
+        
+    debug(f"  Could not find poser")
+    return False
+
+def find_animation(side, name):
+    if side == "mod":
+        path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/animations/")
+        if not os.path.exists(path):
+            debug("  Animation directory does not exist")
+            return
+    elif side == "repo":
+        path = os.path.join(assets_dir, f"blockbench/pokemon/")
+        if not os.path.exists(path):
+            debug("  Repository directory does not exist")
+            return
+
+    animation_name = f"{normalize_name(name,'animation')}.animation.json"
+    for root, dirs, files in os.walk(path):
+        if animation_name in files:
+            animation = os.path.join(root, animation_name)
+            if side == "mod": debug(f"  Found mod animations in \"{animation}\"")
+            elif side == "repo": debug(f"  Found assets repository animations in \"{animation}\"")
+            return animation
+
+    animation_name = f"{incorrect_region_name(name)}.animation.json"
+    for root, dirs, files in os.walk(path):
+        if animation_name in files:
+            animation = os.path.join(root, animation_name)
+            if side == "mod":
+                status["ani_unconventional_name"] = os.path.basename(animation)
+                debug(f"  Found unconventionally named mod animations in \"{animation}\"")
+            elif side == "repo": debug(f"  Found unconventionally named assets repository animations in \"{animation}\"")
+            return animation
+        
+    if side == "mod": status["ani_file_missing"] = True
+    debug(f"  Could not find animation files")
+    return False
+
+def find_geo(side, name):
+    if side == "mod":
+        path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/")
+        if not os.path.exists(path):
+            debug("  Model directory does not exist")
+            return
+    elif side == "repo":
+        path = os.path.join(assets_dir, f"blockbench/pokemon/")
+        if not os.path.exists(path):
+            debug("  Repository directory does not exist")
+            return
+
+    geo_name = f"{normalize_name(name,'geo')}.geo.json"
+    for root, dirs, files in os.walk(path):
+        if geo_name in files:
+            geo = os.path.join(root, geo_name)
+            if side == "mod": debug(f"  Found mod geo in \"{geo}\"")
+            elif side == "repo": debug(f"  Found assets repository geo in \"{geo}\"")
+            return geo
+
+    geo_name = f"{incorrect_region_name(name)}.geo.json"
+    for root, dirs, files in os.walk(path):
+        if geo_name in files:
+            geo = os.path.join(root, geo_name)
+            if side == "mod":
+                status["ani_unconventional_name"] = os.path.basename(geo)
+                debug(f"  Found unconventionally named mod geo in \"{geo}\"")
+            elif side == "repo": debug(f"  Found unconventionally named assets repository geo in \"{geo}\"")
+            return geo
+        
+    if side == "mod": status["geo_file_missing"] = True
+    debug(f"  Could not find geo files")
+    return False
+
+
 def check_implementation(status, name, dex, gen, model_status):
     debug(f" Checking Implementation for {name} ({sanitize_name(name)})")
     name = sanitize_name(name)
     dex = f"{dex:>04}"
 
-    # Check if a poser exists, if not, fallback to Kotlin and check that
-    poser_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/posers/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'poser')}.json")
-    if poser_path: debug(f"  Looking for \"{poser_path}\"")
-    if os.path.isfile(poser_path):
-        status["imp_implemented"] = True
-        debug("  Found JSON poser")
+    poser_path = find_poser(name)
 
-    # If not found, try a different, incorrectly named file
-    else:
-        poser_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/posers/{dex}_{normalize_name(name,'directory')}/{incorrect_region_name(name)}.json")
-        if poser_path: debug(f"  Looking for a poser with an incorrect region name instead, \"{poser_path}\"")
-        if os.path.isfile(poser_path):
-            status["imp_implemented"] = True
-            debug("  Found JSON poser")
-            status["imp_unconventional_name"] = os.path.basename(poser_path)
-            debug("  JSON poser is using an incorrect region name (eg. \"_alola\" instead of \"_alolan\")")
+    if not poser_path:
+        if model_status == "Implemented":
+            status["sht_erroneous_implemented_flag"] = True
+            debug("  Pokémon is not implemented, but flagged as such on the assets sheet")
+            return
         else:
-            debug("  Could not find any JSON poser")
-
-    # If still not found the poser, try searching for Kotlin
-    if not status.get("imp_implemented"):
-        kotlin_poser_name = name.title().replace("_Female","").replace("_Male","").replace("_", "")
-        kotlin_poser_directory = os.path.join(script_dir, "../..", f"common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/pokemon/")
-        debug(f"  Searching for Kotlin poser \"{kotlin_poser_name}Model.kt\" in \"{kotlin_poser_directory}\"")
-        
-        # Check if a Kotlin poser exists in all gen folders
-        if os.path.exists(kotlin_poser_directory):
-            for root, dirs, files in os.walk(kotlin_poser_directory):
-                if f"{kotlin_poser_name}Model.kt" in files:
-                    # Set the new poser path
-                    poser_path = os.path.join(root, f"{kotlin_poser_name}Model.kt")
-                    # Debug
-                    debug(f"  Found Kotlin poser in \"{poser_path}\"")
-                    break
-        
-            # If poser exists, flag the proper status
-            if os.path.isfile(poser_path):
-                status["imp_implemented"] = True
-                status["imp_using_kotlin_poser"] = True
-            else:
-                if model_status == "Implemented":
-                    status["sht_erroneous_implemented_flag"] = True
-                    debug("  Could not find any poser, not flagging the Pokémon as implemented")
-                    debug("  Pokémon is not implemented, but flagged as such on the assets sheet")
-                    return
-                else:
-                    debug("  Could not find any poser, not flagging the Pokémon as implemented")
+            debug("  Not flagging the Pokémon as implemented, skipping!")
+            return
+    else:
+        status["imp_implemented"] = True
 
     # Check implementation against the Models spreadsheet
     debug("  Checking if the implementation status on the Models spreadsheet matches...")
@@ -404,7 +478,6 @@ def check_implementation(status, name, dex, gen, model_status):
         debug("  Found paperwork mismatch")
     else: debug("  Implementation status and mod implementation match")
         
-
 def scan_animation(status, name, gen, dex):
     debug(" Scanning the animations")
     name = sanitize_name(name)
@@ -412,25 +485,15 @@ def scan_animation(status, name, gen, dex):
     
     if name in use_default_name: name = default_name(name)
 
-    ani_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/animations/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'animation')}.animation.json")
-    ani_repo_path = os.path.join(assets_dir, f"blockbench/pokemon/gen{gen}/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'animation')}.animation.json")
-
-    # Check if files exist
-    if not os.path.isfile(ani_mod_path):
-        # Check if an incorrectly named animation exists first
-        ani_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/animations/{dex}_{normalize_name(name,'directory')}/{incorrect_region_name(name)}.animation.json")
-        if not os.path.isfile(ani_mod_path):
-            status["ani_file_missing"] = True
-            debug(f"  Animation file does not exist, could not find \"{ani_mod_path}\"")
-            return
-        else:
-            status["ani_unconventional_name"] = os.path.basename(ani_mod_path)
-            debug(f"  Could not find the correct animation, but found one using an unconventional name")
-
-    debug(f"  Found \"{ani_mod_path}\"")
+    ani_mod_path = find_animation("mod", name)
+    if not ani_mod_path: return
+    ani_repo_path = find_animation("repo", name)
+    if not ani_repo_path: return
 
     with open(ani_mod_path, "r") as file:
         ani_data = json.load(file)
+    with open(ani_repo_path, "r") as file:
+        repo_data = json.load(file)
 
     # Check for issues with the cry animation
     if status.get("ani_unconventional_name", False): cry_animation = ani_data.get("animations", {}).get(f"animation.{incorrect_region_name(normalize_name(name,'animation'))}.cry")
@@ -464,8 +527,6 @@ def scan_animation(status, name, gen, dex):
     if not os.path.isfile(ani_repo_path):
         debug(f"  Could not find \"{ani_repo_path}")
     else:
-        with open(ani_repo_path, "r") as file:
-            repo_data = json.load(file)
         if ani_data != repo_data:
             status["ani_file_repo_disparity"] = True
             debug(f"  Animations files do not match")
@@ -478,34 +539,12 @@ def scan_model(status, name, gen, dex):
 
     if name in use_default_name: name = default_name(name)
 
-    geo_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'geo')}.geo.json")
+    geo_mod_path = find_geo("mod", name)
+    if not geo_mod_path: return
+    geo_repo_path = find_geo("repo", name)
+    if not geo_repo_path: return
 
-    ## Check if files exist
-    # Mod path
-    if not os.path.isfile(geo_mod_path):
-        # Check if an incorrectly named geo file exists first
-        geo_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/{dex}_{normalize_name(name,'directory')}/{incorrect_region_name(name)}.geo.json")
-        if not os.path.isfile(geo_mod_path):
-            status["geo_file_missing"] = True
-            debug(f"  Geo file does not exist, could not find \"{geo_mod_path}\"")
-            return
-        else:
-            status["geo_unconventional_name"] = os.path.basename(geo_mod_path)
-            debug(f"  Could not find the correct geo file, but found one using an unconventional name")
-    debug(f"  Found \"{geo_mod_path}\"")
-
-    # Repo path
-    geo_repo_path = os.path.join(assets_dir, f"blockbench/pokemon/")
-    debug(f"  Searching for geo in {geo_repo_path}")
-    for root, dirs, files in os.walk(geo_repo_path):
-        if f"{normalize_name(name,'geo')}.geo.json" in files:
-            geo_repo_path = os.path.join(root, f"{normalize_name(name,'geo')}.geo.json")
-            debug(f"  Found geo on the repository in in \"{geo_repo_path}\"")
-            break
-    else:
-        debug(f"  Could not find geo in \"{geo_repo_path}\"")
-        return
-
+    
     with open(geo_mod_path, "r") as file:
         geo_data = json.load(file)
     with open(geo_repo_path, "r") as file:
@@ -544,8 +583,6 @@ def scan_model(status, name, gen, dex):
             debug(f"  Geo files do not match")
         else: debug(f"  Geo files are identical")
 
-
-
 def scan_poser(status, name, gen, dex):
     debug(" Scanning the poser")
     name = sanitize_name(name)
@@ -556,20 +593,10 @@ def scan_poser(status, name, gen, dex):
         debug(f"  Cannot check a Kotlin poser")
         return
 
-    # Get the poser
-    imp_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/posers/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'poser')}.json")
-    if not os.path.isfile(imp_mod_path):
-        debug(f"  Poser file does not exist, could not find \"{imp_mod_path}\"")
-        return
-    else: debug(f"  Found \"{imp_mod_path}\"")
-
-    # Get the animation
-    ani_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/animations/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'animation')}.animation.json")
-    if not os.path.isfile(ani_mod_path):
-        debug(f"  Animation file does not exist, could not find \"{ani_mod_path}\"")
-        return
-    else:
-        debug(f"  Found \"{ani_mod_path}\"")
+    imp_mod_path = find_poser(name)
+    if not imp_mod_path: return
+    ani_mod_path = find_animation("mod", name)
+    if not ani_mod_path: return
 
     # Check for special animation implementation
     possible_targets = ["faint", "cry", "recoil", "physical", "special", "air_physical", "air_special", "status"]
@@ -593,6 +620,7 @@ def scan_sound(status, name, gen, dex):
     debug(" Scanning audio stuff")
     name = sanitize_name(name)
     dex = f"{dex:>04}"
+
     aud_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/sounds/pokemon/{normalize_name(name,'directory')}/{normalize_name(name,'cry')}_cry.ogg")
     aud_repo_path = os.path.join(assets_dir, f"sounds/pokemon/gen{gen}/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'cry')}_cry.ogg")
 
