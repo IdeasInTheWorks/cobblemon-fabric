@@ -479,7 +479,6 @@ def scan_model(status, name, gen, dex):
     if name in use_default_name: name = default_name(name)
 
     geo_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'geo')}.geo.json")
-    #geo_repo_path = os.path.join(assets_dir, f"blockbench/pokemon/gen{gen}/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'geo')}.geo.json")
 
     ## Check if files exist
     # Mod path
@@ -646,7 +645,6 @@ def scan_sound(status, name, gen, dex):
                     status["aud_cry_sound_event_missing"] = True
                     debug(f"  Could not find \"{sound_event}\" in sounds.json")
 
-
 # These Pokémon use their base form for implementation, but have their own row on the sheet
 use_default_name = {
     "weezing_galarian",
@@ -656,7 +654,7 @@ use_default_name = {
 exclude_from_checks = {
     "Substitute": "(Always skipped)",
     "Unown": "(Ignore this! Only Unown with letters are checked and implemented)",
-    "Butterfree": "(Ignore this! Only Unown with letters are checked and implemented)",
+    "Butterfree": "(Specific check is a work in progress)",
     "Steelix": "(Specific check is a work in progress)",
     "Frillish": "(Specific check is a work in progress)",
     "Jellicent": "(Specific check is a work in progress)",
