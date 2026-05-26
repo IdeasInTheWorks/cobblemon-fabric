@@ -202,7 +202,6 @@ def normalize_name(name, mode):
         # Remove variants
         if "unown" not in name: name = name.replace("_male", "")
         if "unown" not in name: name = name.replace("_female", "")
-        ## Edge cases
         # Unown
         name = re.sub(r"unown.*", "unown", name)
         # Toxtricity stuff
@@ -217,6 +216,9 @@ def normalize_name(name, mode):
         if "shellos" in pokemon: return "shellos"
         # Cherrim
         if "cherrim" in pokemon: return "cherrim"
+        # Sinistcha and Sinistea
+        if "sinistcha" in pokemon: return "sinistcha"
+        if "sinistea" in pokemon: return "sinistea"
         # Remove underscores
         name = name.replace('_', '')
         # We go
@@ -224,6 +226,8 @@ def normalize_name(name, mode):
     
     ## POSER
     if mode == "poser":
+        # Bulbasaur
+        if "bulbasaur" in name: return "bulbasaur"
         # Unown
         if "unown" in pokemon:
             name = name.replace('?', 'question')
@@ -242,9 +246,15 @@ def normalize_name(name, mode):
         if "milotic_male" in pokemon: return "milotic"
         # Porygon-Z
         if "porygon_z" in pokemon: return "porygon-z"
+        # Sinistcha and Sinistea
+        if "sinistcha" in pokemon: return "sinistcha"
+        if "sinistea" in pokemon: return "sinistea"
+        # Rattata
+        if "rattata" in pokemon: return "rattata"
 
-    ## ANIMATION
-    if mode == "animation":
+
+    ## GEO
+    if mode == "geo":
         # Unown
         if "unown" in pokemon: return re.sub(r"unown.*", "unown", name)
         # Toxtricity
@@ -261,9 +271,38 @@ def normalize_name(name, mode):
         if "milotic" in pokemon: return "milotic"
         # Porygon-Z
         if "porygon_z" in pokemon: return "porygon-z"
+
+    ## ANIMATION
+    if mode == "animation":
+        # Bulbasaur
+        if "bulbasaur" in name: return "bulbasaur"
+        # Unown
+        if "unown" in pokemon: return re.sub(r"unown.*", "unown", name)
+        # Toxtricity
+        if "toxtricity_low_key" in pokemon: return "toxtricity_lowkey"
+        # Shellos
+        if "shellos" in pokemon: return "shellos"
+        # Jangmo-o line and my depleting sanity
+        if "jangmo" in pokemon: return "jangmo-o"
+        if "hakamo" in pokemon: return "hakamo-o"
+        if "kommo" in pokemon: return "kommo-o"
+        # Unfezant, only male, because it's not named that on the sheet
+        if pokemon == "unfezant": return "unfezant_male"
+        # Milotic
+        if "milotic" in pokemon: return "milotic"
+        # Porygon-Z
+        if "porygon_z" in pokemon: return "porygon-z"
+        # Sinistcha and Sinistea
+        if "sinistcha" in pokemon: return "sinistcha"
+        if "sinistea" in pokemon: return "sinistea"
+        # Rattata
+        if "rattata_male" in pokemon: return "rattata"
+        if "rattata_female" in pokemon: return "rattata"
     
     ## CRY
     if mode == "cry":
+        # Bulbasaur
+        if "bulbasaur" in name: return "bulbasaur"
         # Kadabra and Alakazam
         if "kadabra_" in pokemon: return "kadabra"
         if "alakazam_" in pokemon: return "alakazam"
@@ -291,15 +330,14 @@ def normalize_name(name, mode):
         if "pyroar" in pokemon: return "pyroar"
         # Porygon-Z
         if "porygon_z" in pokemon: return "porygonz"
+        # Sinistcha and Sinistea
+        if "sinistcha" in pokemon: return "sinistcha"
+        if "sinistea" in pokemon: return "sinistea"
+        # Rattata
+        if "rattata_male" in pokemon: return "rattata"
+        if "rattata_female" in pokemon: return "rattata"
 
     return name
-
-
-# These Pokémon use their base form for implementation, but have their own row on the sheet
-use_default_name = {
-    "weezing_galarian",
-    "farfetchd_galarian"
-}
 
 def check_implementation(status, name, dex, gen, model_status):
     debug(f" Checking Implementation for {name} ({sanitize_name(name)})")
@@ -327,7 +365,7 @@ def check_implementation(status, name, dex, gen, model_status):
 
     # If still not found the poser, try searching for Kotlin
     if not status.get("imp_implemented"):
-        kotlin_poser_name = name.title().replace("_", "")
+        kotlin_poser_name = name.title().replace("_Female","").replace("_Male","").replace("_", "")
         kotlin_poser_directory = os.path.join(script_dir, "../..", f"common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/pokemon/")
         debug(f"  Searching for Kotlin poser \"{kotlin_poser_name}Model.kt\" in \"{kotlin_poser_directory}\"")
         
@@ -433,6 +471,82 @@ def scan_animation(status, name, gen, dex):
             debug(f"  Animations files do not match")
         else: debug(f"  Animation files are identical")
 
+def scan_model(status, name, gen, dex):
+    debug(" Scanning the model")
+    name = sanitize_name(name)
+    dex = f"{dex:>04}"
+
+    if name in use_default_name: name = default_name(name)
+
+    geo_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'geo')}.geo.json")
+    #geo_repo_path = os.path.join(assets_dir, f"blockbench/pokemon/gen{gen}/{dex}_{normalize_name(name,'directory')}/{normalize_name(name,'geo')}.geo.json")
+
+    ## Check if files exist
+    # Mod path
+    if not os.path.isfile(geo_mod_path):
+        # Check if an incorrectly named geo file exists first
+        geo_mod_path = os.path.join(script_dir, "../..", f"common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/{dex}_{normalize_name(name,'directory')}/{incorrect_region_name(name)}.geo.json")
+        if not os.path.isfile(geo_mod_path):
+            status["geo_file_missing"] = True
+            debug(f"  Geo file does not exist, could not find \"{geo_mod_path}\"")
+            return
+        else:
+            status["geo_unconventional_name"] = os.path.basename(geo_mod_path)
+            debug(f"  Could not find the correct geo file, but found one using an unconventional name")
+    debug(f"  Found \"{geo_mod_path}\"")
+
+    # Repo path
+    geo_repo_path = os.path.join(assets_dir, f"blockbench/pokemon/")
+    debug(f"  Searching for geo in {geo_repo_path}")
+    for root, dirs, files in os.walk(geo_repo_path):
+        if f"{normalize_name(name,'geo')}.geo.json" in files:
+            geo_repo_path = os.path.join(root, f"{normalize_name(name,'geo')}.geo.json")
+            debug(f"  Found geo on the repository in in \"{geo_repo_path}\"")
+            break
+    else:
+        debug(f"  Could not find geo in \"{geo_repo_path}\"")
+        return
+
+    with open(geo_mod_path, "r") as file:
+        geo_data = json.load(file)
+    with open(geo_repo_path, "r") as file:
+        geo_repo_data = json.load(file)
+
+    ## Check if locators match with the assets respository
+    debug("  Checking if locators match the assets repository")
+    # Get locators
+    mod_bones = geo_data['minecraft:geometry'][0]['bones']
+    mod_locators = {bone['name']: bone for bone in mod_bones if bone['name'].startswith('locator_')}
+    repo_bones = geo_repo_data['minecraft:geometry'][0]['bones']
+    repo_locators = {bone['name']: bone for bone in repo_bones if bone['name'].startswith('locator_')}
+
+    if set(mod_locators.keys()) == set(repo_locators.keys()):
+        debug("  Locators match, checking their contents")
+        mismatched_locators = []
+        for name in mod_locators:
+            if mod_locators[name] != repo_locators[name]:
+                debug(f"  Content mismatch found in locator: {name}")
+                mismatched_locators.append(name)
+                status["geo_locator_content_mismatch"] = mismatched_locators
+    else:
+        debug(f"  Locators present on the repository are missing in the mod: {set(repo_locators.keys()) - set(mod_locators.keys())}")
+        status["geo_missing_locators"] = set(repo_locators.keys()) - set(mod_locators.keys())
+
+
+    # Check for disparity with repository assets
+    debug(f"  Checking parity with the assets repository")
+    if not os.path.isfile(geo_repo_path):
+        debug(f"  Could not find \"{geo_repo_path}")
+    else:
+        with open(geo_repo_path, "r") as file:
+            repo_data = json.load(file)
+        if geo_data != repo_data:
+            status["geo_file_repo_disparity"] = True
+            debug(f"  Geo files do not match")
+        else: debug(f"  Geo files are identical")
+
+
+
 def scan_poser(status, name, gen, dex):
     debug(" Scanning the poser")
     name = sanitize_name(name)
@@ -533,11 +647,16 @@ def scan_sound(status, name, gen, dex):
                     debug(f"  Could not find \"{sound_event}\" in sounds.json")
 
 
-
+# These Pokémon use their base form for implementation, but have their own row on the sheet
+use_default_name = {
+    "weezing_galarian",
+    "farfetchd_galarian"
+}
 
 exclude_from_checks = {
     "Substitute": "(Always skipped)",
     "Unown": "(Ignore this! Only Unown with letters are checked and implemented)",
+    "Butterfree": "(Ignore this! Only Unown with letters are checked and implemented)",
     "Steelix": "(Specific check is a work in progress)",
     "Frillish": "(Specific check is a work in progress)",
     "Jellicent": "(Specific check is a work in progress)",
@@ -559,6 +678,10 @@ exclude_from_checks = {
 # These are Pokémon whose gender difference implementation separated their poser
 # Does not include Pokémon already split into [Male] and [Female] on the assets sheet
 gender_variant_pokemon ={
+    "Bulbasaur",
+    "Ivysaur",
+    "Venusaur",
+    "Rattata",
     "Kadabra",
     "Alakazam",
     "Milotic", # (Male is missing from the poser name, there is only "milotic" and "milotic_female")
@@ -572,6 +695,26 @@ exclude_keywords = {
     "Mega",
     "G-Max"
 }
+
+# Special Pokémon variants
+def split_variants(name):
+    if name in gender_variant_pokemon:
+        debug(f" {name} will be split into \"{name} [Male]\" and \"{name} [Female]\"")
+        return [f"{name} [Male]", f"{name} [Female]"]
+    
+    elif "Sinistcha" in name:
+        debug(f" {name} will be split into \"{name} [Unremarkable]\" and \"{name} [Masterpiece]\"")
+        return [f"{name} [Unremarkable]", f"{name} [Masterpiece]"]
+    
+    elif "Sinistea" in name:
+        debug(f" {name} will be split into \"{name} [Antique]\" and \"{name} [Phony]\"")
+        return [f"{name} [Antique]", f"{name} [Phony]"]
+    
+    elif "Poltchageist" in name:
+        debug(f" {name} will be split into \"{name} [Artisan]\" and \"{name} [Counterfeit]\"")
+        return [f"{name} [Artisan]", f"{name} [Counterfeit]"]
+    
+    return [name]
 
 ## Main loop
 for i, row in df_implementation.iterrows():
@@ -595,7 +738,7 @@ for i, row in df_implementation.iterrows():
         continue
     for c in exclude_from_checks:
         if re.search(rf"\b{c}\b", (df_implementation.loc[i, "Name"])):
-            debug(f" Pokémon \"{c}\" is excluded, skipping!\n")
+            debug(f" \"{c}\" is excluded, skipping!\n")
             skip = True
             break
         else: skip = False
@@ -610,11 +753,7 @@ for i, row in df_implementation.iterrows():
     name = df_implementation.loc[i,"Name"]
 
     # Split the checks if Pokémon has variants with separate implementation
-    if name in gender_variant_pokemon:
-        debug(f" {name} will be split into \"{name} [Male]\" and \"{name} [Female]\"")
-        variants = [f"{name} [Male]", f"{name} [Female]"]
-    else:
-        variants = [name]
+    variants = split_variants(name)
 
     for variant in variants:
         name = variant
@@ -639,6 +778,7 @@ for i, row in df_implementation.iterrows():
         if "imp_implemented" in status:
             scan_poser(status, name, gen, dex)
             scan_animation(status, name, gen, dex)
+            scan_model(status, name, gen, dex)
             scan_sound(status, name, gen, dex)
             
             # Delete non-issues when done
@@ -646,7 +786,7 @@ for i, row in df_implementation.iterrows():
 
         # Exclude checks from basic mode
         if mode == "basic":
-            if not cry_available:
+            if not cry_available: # Issues with cries are ignored if the cry is not made, only in basic mode
                 if "ani_cry_animation_missing" in status: del status["ani_cry_animation_missing"]
                 if "ani_cry_keyframe_missing" in status: del status["ani_cry_keyframe_missing"]
                 if "ani_cry_keyframe_invalid" in status: del status["ani_cry_keyframe_invalid"]
@@ -665,6 +805,7 @@ for i, row in df_implementation.iterrows():
             if "imp_using_kotlin_poser" in status: del status["imp_using_kotlin_poser"]
 
             if "ani_file_repo_disparity" in status: del status["ani_file_repo_disparity"]
+            if "geo_file_repo_disparity" in status: del status["geo_file_repo_disparity"]
 
             if "ani_unconventional_name" in status: del status["ani_unconventional_name"]
             if "aud_cry_sound_event_unconventional_name" in status: del status["aud_cry_sound_event_unconventional_name"]
@@ -674,7 +815,7 @@ for i, row in df_implementation.iterrows():
         if any(status.values()):
             print_color("white")
             print(f"✘ {name} has the following issues:")
-            if len(variants)>1: print(f"(The male/female split is present only in implementation, not on the spreadsheet)")
+            if len(variants)>1: print(f"(The variant split is present only in implementation, not on the spreadsheet)")
 
             name = sanitize_name(name)
 
@@ -723,6 +864,23 @@ for i, row in df_implementation.iterrows():
             if status.get("ani_cry_keyframe_invalid", False): print(f"  ► Cry keyframe in \"animation.{normalize_name(name,'animation')}.cry\" has an incorrect name, expected \"pokemon.{normalize_name(name,'animation')}.cry\" and found \"{status['ani_cry_keyframe_invalid']}\"")
             if (status.get("ani_cry_animation_missing", False) or status.get("ani_cry_keyframe_missing", False)) and not cry_available:
                 print(f"    ▲ Cry sound doesn't exist, but a cry animation should always be implemented at least as a placeholder")
+
+            # Model Issues
+            print_color("blue")
+            if status.get("geo_unconventional_name", False):
+                print(f"  ► Model is using an unconventional name \"{status['geo_unconventional_name']}\"")
+                region_name = status["geo_unconventional_name"]
+                if "_galar" in region_name: print(f"    ▲ The convention is to use \"_galarian\" instead of \"_galar\"")
+                elif "_alola" in region_name: print(f"    ▲ The convention is to use \"_alolan\" instead of \"_alola\"")
+                elif "_hisui" in region_name: print(f"    ▲ The convention is to use \"_hisuian\" instead of \"_hisui\"")
+                elif "_paldea" in region_name: print(f"    ▲ The convention is to use \"_paldean\" instead of \"_paldea\"")
+                else: print(f"    ▲ Whatever triggered this is likely incorrect, report this pls")
+            
+
+            if status.get("geo_file_missing", False): print(f"  ► Geo file does not exist, could not find \"pokemon/models/{dex:>04}_{normalize_name(name,'directory')}/{normalize_name(name,'geo')}.geo.json\"")
+            if status.get("geo_file_repo_disparity", False): print(f"  ► Geo file \"{sanitize_name(normalize_name(name,'geo'))}.geo.json\" does not match the Assets Repository")
+            if status.get("geo_missing_locators", False): print(f"  ► Locators present on the assets repository are missing in the mod: {status['geo_missing_locators']}")
+            if status.get("geo_locator_content_mismatch", False): print(f"  ► Contents of these locators does not match the assets repository: {status['geo_locator_content_mismatch']}")
 
             # Audio issues
             print_color("magenta")
