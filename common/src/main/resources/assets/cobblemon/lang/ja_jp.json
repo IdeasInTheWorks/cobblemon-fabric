@@ -9289,5 +9289,18 @@
     "cobblemon.habitat.freshwater_pond.name": "淡水池",
     "cobblemon.habitat.fungal_dwelling.name": "菌類の住処",
     "cobblemon.habitat.strange_fungal_dwelling.name": "奇妙な菌類の住処",
-    "cobblemon.habitat.warped_fungal_dwelling.name": "歪んだ菌類の住処"
+    "cobblemon.habitat.warped_fungal_dwelling.name": "歪んだ菌類の住処",
+    "cobblemon.habitat.lost_cave_ruins.name": "失われた洞窟遺跡",
+    "cobblemon.habitat.lush_canopy.name": "繁茂した天蓋",
+    "cobblemon.habitat.lush_cenote.name": "繁茂したセノーテ",
+    "cobblemon.habitat.lush_peat_bog.name": "繁茂した泥炭地",
+    "cobblemon.habitat.meteorite_impact.name": "隕石の衝突",
+    "cobblemon.habitat.natural_lightning_rod.name": "天然の避雷針",
+    "cobblemon.habitat.oak_wildlife_scar.name": "オークの野生の傷跡",
+    "cobblemon.habitat.spruce_wildlife_scar.name": "トウヒの野生の傷跡",
+    "cobblemon.habitat.parched_peat_bog.name": "干上がった泥炭地",
+    "cobblemon.habitat.pinkflowerbed_clearing.name": "ピンクフラワーベッドの開拓地",
+    "cobblemon.habitat.sandpit_clearing.name": "砂場の開拓地",
+    "cobblemon.habitat.sunflowerbed_clearing.name": "ヒマワリベッドの開拓地",
+    "cobblemon.habitat.sunscorched_clearing.name": "日差しに焼かれた開拓地"
 }
