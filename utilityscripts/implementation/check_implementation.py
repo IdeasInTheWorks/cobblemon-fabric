@@ -878,7 +878,7 @@ for i, row in df_implementation.iterrows():
             if status.get("geo_file_missing", False): print(f"  ► Geo file does not exist, could not find \"pokemon/models/{dex:>04}_{normalize_name(name,'directory')}/{normalize_name(name,'geo')}.geo.json\"")
             if status.get("geo_file_repo_disparity", False): print(f"  ► Geo file \"{sanitize_name(normalize_name(name,'geo'))}.geo.json\" does not match the Assets Repository")
             if status.get("geo_missing_locators", False): print(f"  ► Locators present on the assets repository are missing in the mod: {status['geo_missing_locators']}")
-            if status.get("geo_locator_content_mismatch", False): print(f"  ► Contents of these locators does not match the assets repository: {status['geo_locator_content_mismatch']}")
+            if status.get("geo_locator_content_mismatch", False): print(f"  ► Content of these locators does not match the assets repository: {status['geo_locator_content_mismatch']}")
 
             # Audio issues
             print_color("magenta")
