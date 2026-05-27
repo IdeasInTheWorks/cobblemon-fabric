@@ -827,7 +827,6 @@ for i, row in df_implementation.iterrows():
             if "sht_erroneous_needs_rework_flag" in status: del status["sht_erroneous_needs_rework_flag"]
             if "sht_erroneous_needs_help_flag" in status: del status["sht_erroneous_needs_help_flag"]
 
-            if "imp_unconventional_name" in status: del status["imp_unconventional_name"]
             if "imp_using_kotlin_poser" in status: del status["imp_using_kotlin_poser"]
 
             if "ani_file_repo_disparity" in status: del status["ani_file_repo_disparity"]
@@ -835,6 +834,10 @@ for i, row in df_implementation.iterrows():
 
             if "ani_unconventional_name" in status: del status["ani_unconventional_name"]
             if "aud_cry_sound_event_unconventional_name" in status: del status["aud_cry_sound_event_unconventional_name"]
+            if "imp_unconventional_name" in status: del status["imp_unconventional_name"]
+            if "geo_unconventional_name" in status: del status["geo_unconventional_name"]
+
+            if "geo_file_missing" in status: del status["geo_file_missing"] # This is ommited for now until I cover all variants
 
 
         # Print out issues
