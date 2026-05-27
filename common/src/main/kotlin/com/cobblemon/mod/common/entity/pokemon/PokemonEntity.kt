@@ -802,7 +802,7 @@ open class PokemonEntity(
      * Prevents ice type Pokémon from freezing (from powered snow)
      */
     override fun canFreeze(): Boolean {
-        return !pokemon.isFreezeImmune()
+        return !pokemon.isFreezeImmune() && super.canFreeze()
     }
 
     /**
