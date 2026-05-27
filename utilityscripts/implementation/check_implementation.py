@@ -477,7 +477,8 @@ def check_implementation(status, name, dex, gen, model_status):
         elif model_status == "Needs Help": status["sht_erroneous_needs_help_flag"] = True
         debug("  Found paperwork mismatch")
     else: debug("  Implementation status and mod implementation match")
-        
+
+
 def scan_animation(status, name, gen, dex):
     debug(" Scanning the animations")
     name = sanitize_name(name)
@@ -499,11 +500,11 @@ def scan_animation(status, name, gen, dex):
     if status.get("ani_unconventional_name", False): cry_animation = ani_data.get("animations", {}).get(f"animation.{incorrect_region_name(normalize_name(name,'animation'))}.cry")
     else: cry_animation = ani_data.get("animations", {}).get(f"animation.{normalize_name(name,'animation')}.cry")
 
+    debug(f"  Scanning animations for potential issues with the cry...")
     if (not cry_animation) or cry_animation == None:
         status["ani_cry_animation_missing"] = True
         debug(f"  Could not find the cry animation")
     else:
-        debug(f"  Scanning \"animation.{normalize_name(name,'animation')}.cry\" for potential issues with the cry")
         cry_animation_sound_effects = cry_animation.get("sound_effects")
         if (not cry_animation_sound_effects) or cry_animation_sound_effects == None:
             status["ani_cry_keyframe_missing"] = True
@@ -522,8 +523,49 @@ def scan_animation(status, name, gen, dex):
                     debug(f"  Found an incorrectly named cry keyframe ({effect})")
                 else: debug(f"  Found no issues with the cry implementation")
 
+    # Check for wing flaps in flight animations
+    air_animations = {
+        air_ani_name: air_ani_content for air_ani_name, air_ani_content in ani_data.get("animations", {}).items()
+        if air_ani_name.split('.')[-1] in flight_animations
+    }
+
+    if air_animations:
+        debug(f"  Checking found air animations for wing flap sounds...")
+
+        valid_wing_flaps = [
+            f"animation.{t}.wing_flap.{s}".lower()
+            for t in wing_flap_variants["textures"]
+            for s in wing_flap_variants["sizes"]
+        ]
+
+        missing_wing_flaps = []
+        incorrect_wing_flaps = []
+
+        for air_ani_name, air_ani_content in air_animations.items():
+            timeline = air_ani_content.get("timeline", {})
+            if not timeline:
+                debug(f"    Could not find keyframe timeline")
+                missing_wing_flaps.append(air_ani_name)
+                break
+            debug(f"   Air Animation: {air_ani_name}")
+            for time, molang in timeline.items():
+                valid_molang = False
+                for s in valid_wing_flaps:
+                    if s in molang:
+                        valid_molang = True
+                        debug(f"    Time: {time} | Found valid molang ({molang})")
+                if not valid_molang:
+                    incorrect_wing_flaps.append(molang)
+                    debug(f"    Time: {time} | Could not find valid molang ({molang})")
+
+        if missing_wing_flaps:
+            status["ani_wing_flap_keyframes_missing"] = missing_wing_flaps
+        if incorrect_wing_flaps:
+            status["ani_wing_flap_keyframes_incorrect"] = incorrect_wing_flaps
+
+
     # Check for disparity with repository assets
-    debug(f"  Checking parity with the assets repository")
+    debug(f"  Checking parity with the assets repository...")
     if not os.path.isfile(ani_repo_path):
         debug(f"  Could not find \"{ani_repo_path}")
     else:
@@ -531,6 +573,7 @@ def scan_animation(status, name, gen, dex):
             status["ani_file_repo_disparity"] = True
             debug(f"  Animations files do not match")
         else: debug(f"  Animation files are identical")
+
 
 def scan_model(status, name, gen, dex):
     debug(" Scanning the model")
@@ -672,6 +715,17 @@ def scan_sound(status, name, gen, dex):
                 else:
                     status["aud_cry_sound_event_missing"] = True
                     debug(f"  Could not find \"{sound_event}\" in sounds.json")
+
+
+flight_animations = {
+    "air_idle",
+    "air_fly",
+}
+
+wing_flap_variants = {
+    "textures": {"leather", "chitin", "steel", "plumage"},
+    "sizes": {"large", "medium", "small"}
+}
 
 # These Pokémon use their base form for implementation, but have their own row on the sheet
 use_default_name = {
@@ -837,7 +891,11 @@ for i, row in df_implementation.iterrows():
             if "imp_unconventional_name" in status: del status["imp_unconventional_name"]
             if "geo_unconventional_name" in status: del status["geo_unconventional_name"]
 
+            if "ani_wing_flap_keyframes_missing" in status: del status["ani_wing_flap_keyframes_missing"]
+            if "ani_wing_flap_keyframes_incorrect" in status: del status["ani_wing_flap_keyframes_incorrect"]
+
             if "geo_file_missing" in status: del status["geo_file_missing"] # This is ommited for now until I cover all variants
+            if "ani_file_missing" in status: del status["ani_file_missing"] # This is ommited for now until I cover all variants
 
 
         # Print out issues
@@ -889,13 +947,15 @@ for i, row in df_implementation.iterrows():
             if status.get("ani_file_repo_disparity", False): print(f"  ► Animation file \"{sanitize_name(normalize_name(name, 'animation'))}.animation.json\" does not match the Assets Repository")
 
             if status.get("ani_cry_animation_missing", False): print(f"  ► Cry animation is missing, could not find \"animation.{normalize_name(name,'animation')}.cry\"")
+            if status.get("ani_wing_flap_keyframes_missing", False): print(f"  ► Could not find wing flap sounds in air animations: {status['ani_wing_flap_keyframes_missing']}")
+            if status.get("ani_wing_flap_keyframes_incorrect", False): print(f"  ► Found incorrect wing flap sounds in air animations: {status['ani_wing_flap_keyframes_incorrect']}")
             if status.get("ani_cry_keyframe_missing", False): print(f"  ► Cry keyframe is missing in \"animation.{normalize_name(name,'animation')}.cry\"")
             if status.get("ani_cry_keyframe_invalid", False): print(f"  ► Cry keyframe in \"animation.{normalize_name(name,'animation')}.cry\" has an incorrect name, expected \"pokemon.{normalize_name(name,'animation')}.cry\" and found \"{status['ani_cry_keyframe_invalid']}\"")
             if (status.get("ani_cry_animation_missing", False) or status.get("ani_cry_keyframe_missing", False)) and not cry_available:
-                print(f"    ▲ Cry sound doesn't exist, but a cry animation should always be implemented at least as a placeholder")
+                print(f"    ▲ Cry sound doesn't exist, but a cry animation and sound keyframe should always be implemented at least as a placeholder")
 
             # Model Issues
-            print_color("blue")
+            print_color("cyan")
             if status.get("geo_unconventional_name", False):
                 print(f"  ► Model is using an unconventional name \"{status['geo_unconventional_name']}\"")
                 region_name = status["geo_unconventional_name"]
