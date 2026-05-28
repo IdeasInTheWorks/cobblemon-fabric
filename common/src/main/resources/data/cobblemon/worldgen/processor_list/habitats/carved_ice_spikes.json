@@ -1,6 +1,12 @@
 {
     "processors": [
         {
+            "processor_type": "cobblemon:height_range",
+            "reference": "sea_level",
+            "min_offset": 2,
+            "max_offset": 250
+        },
+        {
             "processor_type": "minecraft:rule",
             "rules": [
                 {
@@ -34,7 +40,7 @@
         {
             "processor_type": "gravity",
             "heightmap": "WORLD_SURFACE_WG",
-            "offset": -2
+            "offset": -3
         }
     ]
 }

@@ -53,6 +53,9 @@
 - All shipwreck coves' spawners have been adjusted to give compatible mobs enchanted iron or diamond armour and weapons while in its ominous state. The armour given to the mobs will also use the automaton trim. We upped the difficulty because it was too easy now that your Pokémon can fight for you.
 - One TM of the elemental hyper beams has been added as guaranteed loot to the main treasure chest in every shipwreck cove. (Magma cove gets blast burn, lush cove gets frenzy plant, and submerged cove gets hydro cannon)
 - Added 7 new advancements
+- Pressing the inventory key now closes the Pokémon interact wheel GUI
+- Pokémon cries now play when clicking Pokémon in the summary screen.
+- Pressing the Summary key while either the starter selection or summary screen are open now closes those screens
 
 ### New rideable Pokémon
 - Drampa
@@ -226,6 +229,7 @@
 - Sharp Beak can now be crafted
 - Metal Alloy can now be crafted
 - Ability Capsules can now be brewed
+- Using an Ability Capsule will now return an Empty Bottle
 - The following items can now be obtained by brushing the following Pokémon:
   - Pink Wool - Wigglytuff
   - White Wool - Swablu, Altaria
@@ -249,7 +253,42 @@
 - Cleaned up seat data. Removed all now unused fields from seats in all species files. Also made locator seat names explicit in the species files (however, this doesn't break the legacy format)
 - Marks can now provide aspects.
 - Added new shiny and Alpha chance configs
+- Apricorns now make a new sound when harvested
+- Lowered the volume of harvesting berries
+- Added alternate versions of the basic PC Wallpapers based on the original design of Cobblemon's PC, before public release
+- Improved compatibility with various mods
+    - Farmer's Delight's cutting board can now be used to strip Apricorn and Saccharine's logs, or salvage their planks from various blocks. It can also separate their boats from chests
+    - Farmer's Delight's cutting board can be used to get two white dye from Pep-Up Flowers and two magenta dye from Medicinal Leeks
+    - Farmer's Delight's cutting board can separate Tumblestone Blocks back into Tumblestones
+    - Farmer's Delight's cutting board can salvage Type Gems from their Gem Blocks
+    - Farmer's Delight's Onions, Tomatoes, and Cabbages can be used to cook Open-Faced Sandwiches. Nature's Spirit's Olives also can be used
+    - Farmer's Delight's cutting board can be used on Hearty Grains to obtain rice and straw, similarly to Farmer's Delight's Rice Panicles
+    - Farmer's Delight's Apple Pies and Apple Ciders can now be made using Applin Apples, alongside the Vanilla counterpart
+    - Amendments allows for cooking Leek and Potato Stew in a Cauldron
+    - Any mods that utilise Moonlight's Soft Fluid system can store Leek and Potato Stew, Medicinal Brew, Antidote, Awakening, Burn Heal, Ice Heal, Paralyze Heal, Full Heal, Potion, Super Potion, Hyper Potion, Max Potion, Full Restore, Ability Capsules, Moomoo Milk, and Berry Juice in liquid form (such as Suplementaries' Jar or Goblet, or Cauldrons while using Amendments)
+    - Supplementaries' Hourglass can now use Bright Powder, Quick Powder, Metal Powder, Heal Powder, Silver Powder, and Remedy
+    - Berry Trees are now compatible with the Planter properly
+    - Saccharine Way Signs (added by Supplementaries automagically) now use a premade texture to prevent odd visual issues
+    - Supplementaries' Jar can now store various Cobblemon cookies, candies, and similar items
+    - Some of Supplementaries' items have been added to the `#cobblemon:held/container_held_items` item tag, including sacks, safes, and lunch baskets
+    - Experience Nuggets can be used in place of Sculk for making the EXP Candies if using Create
+    - Rage Candy Bar has a Create Mixing recipe
+    - All Cobblemon ores can now be crushed in Create's Crushing Wheels
+    - All Gem and Tumblestone Clusters can be crushed for automatic, low return, gems
+    - Hearty Grains can be milled like Farmer's Delight Rice Panicles if both Farmer's Delight and Create are installed
+    - Big Roots and Revival Herbs can be milled to their respective powders
+    - Pep-Up Flowers, Medicinal Leeks, and all 70 berries can be milled in Create's Millstone for additional dye drops
+    - Auspicious Armor and Upgrades can be Haunted using Create's crafting systems
+    - Applin Apples can be used to make Honeyed Apples in Create
+- Golden Apples can now be crafted using the Applin Apples
+- Prismarine Crystals and Amethyst Shards can now be used to craft Pokedexes
+- Updated Pokedex Screens item tag to support tagged variants of Redstone and Glowstone Dust
+- Sounds for interacting with various Cobblemon blocks now play from the center of the block, rather than the corner
+- The `/pc` command no longer plays PC activation sounds
+- Lowered the volume of Blitzle and Zebstrika's cry
 - Fixed Raichu (male) and Alolan Raichu (both genders) not displaying the correct Partner Cap when Pewter Crunchies are in the cosmetic slot.
+- Regional Foods will now prioritize being eaten instead of used for healing Pokémon, shift clicking will use it as healing
+- Resolved Z-Fighting on Pokédex Models
 
 ### Fixes
 - Fixed Croagunk's walkspeed
@@ -261,6 +300,7 @@
 - Fixed a compatibility issue with World Game Rules which caused some log spam in specific cases.
 - Fixed improper validation of Pokémon when performing a trade.
 - Fixed an issue where particle like beam can disappear when you don't see the beginning of the beam, or you look away
+- Fixed Bedrock particle materials (alpha/opaque/blend/add) sharing one render batch, which caused incorrect culling on mixed batches; each material now batches and draws with its own blend and cull state, and the alpha material renders as a true cutout
 - Fixed an occasional crash on retrieving revived fossils
 - Fixed brushing not working on Neoforge
 - Fixed braking not working for submarines (whoops).
@@ -286,6 +326,19 @@
 - Resolved the niche issue where Structures would spawn in an incorrect location, creating very funky world gen.
 - Fixed Galarian Ponyta missing its cry.
 - Fixed various log warnings caused by redundant files and sound events.
+- Traded Pokémon will now retain the original friendship level when traded back to its OT
+- Clusters now display correctly on maps
+- Fixed removing mulch from berry trees with a shovel not working.
+- Fixed collecting honey from Saccharine Leaf blocks deleting Honey Bottles when the inventory was full
+- Fixed Stripped Saccharine Wood recipe being missing
+- Fixed CancelableSoundInstance causing lag by attempting to create sounds every tick when out of range of hearing
+- Fixed Stat Reducing Aprijuice not being possible to apply on a max out Pokémon, and the possibility of going into negatives
+- Fixed Exploit where you could take out the bait or drop your Pokérod with bait to avoid consuming bait, now the bobber will just disappear if you do so
+- Fixed Apricorn and Saccharine boats incorrectly using chest boat models
+- Fixed wild and trainer battle AI refusing to select moves with the `adjacentAlly` target type, even when it's their only option
+- Fixed Guilded chests being more accessible than intended
+- Fixed fished up Pokémon not being added as "seen" to the Pokedex
+- Fixed surprised Gimmighoul encounters not being added as "seen" to the Pokedex
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
@@ -294,6 +347,8 @@
 - Tweaked the spawning selector interface to take a bucket function rather than a bucket directly.
 - Added a new `cobblemon:height_range` processor type to allow developers to restrict structure-spawning ranges.
 - Separated all the functions of MoLangFunctions.kt into their own files.
+- Spawn buckets and their base weights are now provided by the spawner, with different base weights for world, fishing, snack, and habitat spawn buckets.
+- Removed "SpawnBucket" class in favour of just storing maps of bucket names to weights.
 
 ### Molang & Datapacks
 - Added `moveset_builders` datapack folder for different styles of movesets.
@@ -313,6 +368,19 @@
 - Added `q.world.spawn_loot_table_items(loot_table_id, x, y, z)` which spawns the items from the loot table at the position. (Use type: "minecraft:chest" for the loot table.)
 - Added `q.pokemon.entity` to access the entity of Pokémon.
 - Flamethrower and Seismic Toss had their action effect JSON cleaned up
+- Ride sounds can now be set as exclusive to passengers
+- Ride sounds no longer play when submerged unless specified with a new setting
+- NPC Trainers can now call a `command` animation when issuing a command in battle.
+- Added a q.failed function to move action effects.
+- Herd spawned Pokémon have their levels controlled differently. The `levelRange` property now acts as a clamp instead of a filter, with a new `herdLevelRange` property to do the filter behaviour. 
+
+### Particles
 
 ### Localization
 - Updated translations for:
+  - Japanese
+  - German
+  - Ecuadorian Spanish
+  - Simplified Chinese
+  - Traditional Chinese
+  - Korean
