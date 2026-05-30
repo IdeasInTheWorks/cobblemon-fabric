@@ -1038,7 +1038,7 @@ open class Pokemon : ShowdownIdentifiable {
     }
 
     fun isFreezeImmune(): Boolean {
-        return ElementalTypes.ICE in types
+        return ElementalTypes.ICE in types || form.behaviour.freezeImmune
     }
 
     fun dampensVibrations(): Boolean = form.behaviour.dampensVibrations
