@@ -572,7 +572,6 @@ object VaryingModelRepository {
         inbuilt("vibrava", ::VibravaModel)
         inbuilt("larvitar", ::LarvitarModel)
         inbuilt("pupitar", ::PupitarModel)
-        inbuilt("tyranitar", ::TyranitarModel)
         inbuilt("impidimp", ::ImpidimpModel)
         inbuilt("morgrem", ::MorgremModel)
         inbuilt("grimmsnarl", ::GrimmsnarlModel)
