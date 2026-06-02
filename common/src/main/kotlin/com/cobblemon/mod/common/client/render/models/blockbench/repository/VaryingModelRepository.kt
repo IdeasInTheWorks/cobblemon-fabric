@@ -541,7 +541,6 @@ object VaryingModelRepository {
         inbuilt("petilil_hisui_bias", ::PetililHisuiBiasModel)
         inbuilt("lilligant_hisuian", ::LilligantHisuianModel)
         inbuilt("darumaka", ::DarumakaModel)
-        inbuilt("turtonator", ::TurtonatorModel)
         inbuilt("cufant", ::CufantModel)
         inbuilt("copperajah", ::CopperajahModel)
         inbuilt("budew", ::BudewModel)
