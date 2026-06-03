@@ -374,7 +374,9 @@
 - Updated translations for:
   - Japanese
   - German
+  - Spanish
   - Ecuadorian Spanish
+  - Brazilian Portuguese
   - Simplified Chinese
   - Traditional Chinese
   - Korean
