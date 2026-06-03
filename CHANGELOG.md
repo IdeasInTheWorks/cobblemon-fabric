@@ -67,6 +67,7 @@
 - Milotic
 
 ### Pokémon Added
+#### Generation 3
 - Wurmple
 - Silcoon
 - Beautifly
@@ -76,18 +77,27 @@
 - Delcatty
 - Seviper
 - Zangoose
+
+#### Generation 4
 - Cherubi
 - Cherrim
 - Stunky
 - Skuntank
+
+#### Generation 5
 - Audino
 - Pawniard
 - Bisharp
-- Kingambit
+
+#### Generation 6
 - Pancham (+ Cosmetic with Black Glasses)
 - Pangoro (+ Cosmetic with Black Glasses)
+
+#### Generation 7
 - Rockruff
 - Lycanroc
+
+#### Generation 8
 - Rolycoly
 - Carkol
 - Coalossal
@@ -96,20 +106,24 @@
 - Frosmoth
 - Indeedee
 - Duraludon
-- Archaludon
 - Applin
 - Flapple
 - Appletun
-- Dipplin
-- Hydrapple
+
+#### Generation 9
+
 - Nymble
 - Lokix
+- Kingambit
+- Dipplin
+- Archaludon
+- Hydrapple
 
 #### Regional Forms
-- Sandshrew (Alolan)
-- Sandslash (Alolan)
-- Yamask (Galarian)
-- Avalugg (Hisuian)
+- Sandshrew (Alolan Form)
+- Sandslash (Alolan Form)
+- Yamask (Galarian Form)
+- Avalugg (Hisuian Form)
 
 ### Model updates for the following Pokémon
 
