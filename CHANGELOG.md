@@ -370,6 +370,67 @@
 
 ### Particles
 
+#### New Move Animations
+- Blizzard
+- Disarming Voice
+- Draco Meteor
+- Dragon Breath
+- Dragon Rage
+- Drain Punch
+- Fairy Wind
+- Fire Fang
+- Gust
+- Horn Drill
+- Hydro Pump
+- Ice Fang
+- Leafage
+- Leaf Storm
+- Light Screen
+- Night Shade
+- Play Rough
+- Pyro Ball
+- Reflect
+- Rock Slide
+- Sonic Boom
+- Sucker Punch
+- Supersonic
+- Thunder Fang
+
+#### Tweaks and Fixes
+
+- Confusion
+- Dragon Claw
+- Eruption
+- Fire Punch
+- Flame Burst
+- Flame Charge
+- Flamethrower
+- Frost Breath
+- Hypnosis
+- Ice Punch
+- Icy Wind
+- Mud Sport
+- Poison Fang
+- Protect
+- Psychic
+- Quick Attack
+- Rage Powder
+- Razor Leaf
+- Sand Attack
+- Scratch
+- Shadow Claw
+- Sing
+- Spore
+- String Shot
+- Tackle
+- Tail Whip
+- Thunder
+- Thunder Punch
+- Thunder Wave
+- Water Gun
+- Water Pulse
+- Water Sport
+
 ### Localization
 - Updated translations for:
   - Japanese
