@@ -145,6 +145,7 @@
 - Yamask
 - Cofagrigus
 - Tyranitar
+- Turtonator
 
 #### Model changes to the regional bias resource pack:
 
@@ -396,7 +397,7 @@
 - Supersonic
 - Thunder Fang
 
-#### Tweaks and Fixes
+#### Tweaks and Fixes (Moves)
 
 - Confusion
 - Dragon Claw
@@ -430,6 +431,11 @@
 - Water Gun
 - Water Pulse
 - Water Sport
+
+#### Miscellaneous Particles
+
++ Added Wild Might particles for Alpha Pokémon
++ Updated stat increase and decrease particles
 
 ### Localization
 - Updated translations for:
