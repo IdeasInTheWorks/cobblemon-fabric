@@ -119,6 +119,7 @@
 - Zubat
 - Golbat
 - Crobat
+- Ditto
 - Porygon
 - Porygon2
 - Porygon-Z
