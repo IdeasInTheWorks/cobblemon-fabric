@@ -75,43 +75,34 @@
 - Dustox
 - Skitty
 - Delcatty
-
 - Seviper
 - Zangoose
 - Cherubi
 - Cherrim
 - Stunky
 - Skuntank
-
 - Audino
 - Pawniard
 - Bisharp
 - Kingambit
-
 - Pancham (+ Cosmetic with Black Glasses)
 - Pangoro (+ Cosmetic with Black Glasses)
-
 - Rockruff
 - Lycanroc
-
 - Rolycoly
 - Carkol
 - Coalossal
-
 - Runerigus
 - Snom
 - Frosmoth
 - Indeedee
-
 - Duraludon
 - Archaludon
-
 - Applin
 - Flapple
 - Appletun
 - Dipplin
 - Hydrapple
-
 - Nymble
 - Lokix
 
@@ -120,17 +111,6 @@
 - Sandslash (Alolan)
 - Yamask (Galarian)
 - Avalugg (Hisuian)
-
-### Model updates for the following Pokémon
-- Goomy
-- Sliggoo
-- Goodra
-- Porygon
-- Porygon2
-- Porygon-Z
-- Zubat
-- Golbat
-- Crobat
 
 ### Model updates for the following Pokémon
 
@@ -143,7 +123,6 @@
 - Porygon
 - Porygon2
 - Porygon-Z
-
 - Skarmory
 - Jynx
 - Popplio
@@ -152,23 +131,20 @@
 - Fletchling
 - Fletchinder
 - Talonflame
-
 - Sableye
 - Mawile
-
 - Goomy
 - Sliggoo
 - Goodra
-
 - Nacli
 - Naclstack
 - Garganacl
-
 - Bidoof
 - Cranidos
 - Chatot
 - Yamask
 - Cofagrigus
+- Tyranitar
 
 #### Model changes to the regional bias resource pack:
 
@@ -207,6 +183,7 @@
 - Chatot
 - Yamask
 - Cofagrigus
+- Luvdisc
 
 #### Added sounds to the following moves
 - Absorb
