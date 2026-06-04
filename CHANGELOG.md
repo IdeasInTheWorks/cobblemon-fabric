@@ -56,6 +56,7 @@
 - Pressing the inventory key now closes the Pokémon interact wheel GUI
 - Pokémon cries now play when clicking Pokémon in the summary screen.
 - Pressing the Summary key while either the starter selection or summary screen are open now closes those screens
+- Ice type Pokémon are now immune to Packed Snow
 
 ### New rideable Pokémon
 - Drampa
@@ -160,6 +161,7 @@
 - Yamask
 - Cofagrigus
 - Tyranitar
+- Turtonator
 - Arbok (New Patterns: Angry, Cartoon, Clown, Comedic, Crow, Grin, Ink, Modern, Rain, Scribble, Silence, Sloth, Suspicious, Will)
 
 #### Model changes to the regional bias resource pack:
@@ -386,11 +388,79 @@
 
 ### Particles
 
+#### New Move Animations
+- Blizzard
+- Disarming Voice
+- Draco Meteor
+- Dragon Breath
+- Dragon Rage
+- Drain Punch
+- Fairy Wind
+- Fire Fang
+- Gust
+- Horn Drill
+- Hydro Pump
+- Ice Fang
+- Leafage
+- Leaf Storm
+- Light Screen
+- Night Shade
+- Play Rough
+- Pyro Ball
+- Reflect
+- Rock Slide
+- Sonic Boom
+- Sucker Punch
+- Supersonic
+- Thunder Fang
+
+#### Tweaks and Fixes (Moves)
+
+- Confusion
+- Dragon Claw
+- Eruption
+- Fire Punch
+- Flame Burst
+- Flame Charge
+- Flamethrower
+- Frost Breath
+- Hypnosis
+- Ice Punch
+- Icy Wind
+- Mud Sport
+- Poison Fang
+- Protect
+- Psychic
+- Quick Attack
+- Rage Powder
+- Razor Leaf
+- Sand Attack
+- Scratch
+- Shadow Claw
+- Sing
+- Spore
+- String Shot
+- Tackle
+- Tail Whip
+- Thunder
+- Thunder Punch
+- Thunder Wave
+- Water Gun
+- Water Pulse
+- Water Sport
+
+#### Miscellaneous Particles
+
++ Added Wild Might particles for Alpha Pokémon
++ Updated stat increase and decrease particles
+
 ### Localization
 - Updated translations for:
   - Japanese
   - German
+  - Spanish
   - Ecuadorian Spanish
+  - Brazilian Portuguese
   - Simplified Chinese
   - Traditional Chinese
   - Korean
