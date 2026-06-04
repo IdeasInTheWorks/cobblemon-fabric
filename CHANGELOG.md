@@ -138,6 +138,7 @@
 - Porygon2
 - Porygon-Z
 - Skarmory
+- Smoochum
 - Jynx
 - Popplio
 - Brionne
@@ -159,6 +160,7 @@
 - Yamask
 - Cofagrigus
 - Tyranitar
+- Arbok (New Patterns: Angry, Cartoon, Clown, Comedic, Crow, Grin, Ink, Modern, Rain, Scribble, Silence, Sloth, Suspicious, Will)
 
 #### Model changes to the regional bias resource pack:
 

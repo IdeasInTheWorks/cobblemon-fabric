@@ -248,7 +248,6 @@ object VaryingModelRepository {
         inbuilt("machop", ::MachopModel)
         inbuilt("machoke", ::MachokeModel)
         inbuilt("machamp", ::MachampModel)
-        inbuilt("arbok", ::ArbokModel)
         inbuilt("chansey", ::ChanseyModel)
         inbuilt("cubone", ::CuboneModel)
         inbuilt("dodrio", ::DodrioModel)
