@@ -56,6 +56,7 @@
 - Pressing the inventory key now closes the Pokémon interact wheel GUI
 - Pokémon cries now play when clicking Pokémon in the summary screen.
 - Pressing the Summary key while either the starter selection or summary screen are open now closes those screens
+- Ice type Pokémon are now immune to Packed Snow
 
 ### New rideable Pokémon
 - Drampa
@@ -74,59 +75,42 @@
 - Dustox
 - Skitty
 - Delcatty
-
 - Seviper
 - Zangoose
 - Cherubi
 - Cherrim
 - Stunky
 - Skuntank
-
 - Audino
 - Pawniard
 - Bisharp
 - Kingambit
-
 - Pancham (+ Cosmetic with Black Glasses)
 - Pangoro (+ Cosmetic with Black Glasses)
-
 - Rockruff
 - Lycanroc
-
 - Rolycoly
 - Carkol
 - Coalossal
-
+- Runerigus
 - Snom
 - Frosmoth
-
+- Indeedee
 - Duraludon
 - Archaludon
-
 - Applin
 - Flapple
 - Appletun
 - Dipplin
 - Hydrapple
-
 - Nymble
 - Lokix
 
 #### Regional Forms
 - Sandshrew (Alolan)
 - Sandslash (Alolan)
+- Yamask (Galarian)
 - Avalugg (Hisuian)
-
-### Model updates for the following Pokémon
-- Goomy
-- Sliggoo
-- Goodra
-- Porygon
-- Porygon2
-- Porygon-Z
-- Zubat
-- Golbat
-- Crobat
 
 ### Model updates for the following Pokémon
 
@@ -136,10 +120,10 @@
 - Zubat
 - Golbat
 - Crobat
+- Ditto
 - Porygon
 - Porygon2
 - Porygon-Z
-
 - Skarmory
 - Jynx
 - Popplio
@@ -148,17 +132,21 @@
 - Fletchling
 - Fletchinder
 - Talonflame
-
 - Sableye
 - Mawile
-
 - Goomy
 - Sliggoo
 - Goodra
-
 - Nacli
 - Naclstack
 - Garganacl
+- Bidoof
+- Cranidos
+- Chatot
+- Yamask
+- Cofagrigus
+- Tyranitar
+- Turtonator
 
 #### Model changes to the regional bias resource pack:
 
@@ -192,6 +180,12 @@
 - Shedinja
 - Skwovet
 - Greedent
+- Bidoof
+- Cranidos
+- Chatot
+- Yamask
+- Cofagrigus
+- Luvdisc
 
 #### Added sounds to the following moves
 - Absorb
@@ -288,6 +282,8 @@
 - Lowered the volume of Blitzle and Zebstrika's cry
 - Fixed Raichu (male) and Alolan Raichu (both genders) not displaying the correct Partner Cap when Pewter Crunchies are in the cosmetic slot.
 - Regional Foods will now prioritize being eaten instead of used for healing Pokémon, shift clicking will use it as healing
+- Resolved Z-Fighting on Pokédex Models
+- Restored Ninjask's ability to do barrel rolls
 
 ### Fixes
 - Fixed Croagunk's walkspeed
@@ -371,15 +367,84 @@
 - Ride sounds no longer play when submerged unless specified with a new setting
 - NPC Trainers can now call a `command` animation when issuing a command in battle.
 - Added a q.failed function to move action effects.
-- Herd spawned Pokémon have their levels controlled differently. The `levelRange` property now acts as a clamp instead of a filter, with a new `herdLevelRange` property to do the filter behaviour. 
+- Herd spawned Pokémon have their levels controlled differently. The `levelRange` property now acts as a clamp instead of a filter, with a new `herdLevelRange` property to do the filter behaviour.
+- `q.sound` now accepts three parameters (sound event, volume and pitch) instead of just the sound event and pitch.
 
 ### Particles
+
+#### New Move Animations
+- Blizzard
+- Disarming Voice
+- Draco Meteor
+- Dragon Breath
+- Dragon Rage
+- Drain Punch
+- Fairy Wind
+- Fire Fang
+- Gust
+- Horn Drill
+- Hydro Pump
+- Ice Fang
+- Leafage
+- Leaf Storm
+- Light Screen
+- Night Shade
+- Play Rough
+- Pyro Ball
+- Reflect
+- Rock Slide
+- Sonic Boom
+- Sucker Punch
+- Supersonic
+- Thunder Fang
+
+#### Tweaks and Fixes (Moves)
+
+- Confusion
+- Dragon Claw
+- Eruption
+- Fire Punch
+- Flame Burst
+- Flame Charge
+- Flamethrower
+- Frost Breath
+- Hypnosis
+- Ice Punch
+- Icy Wind
+- Mud Sport
+- Poison Fang
+- Protect
+- Psychic
+- Quick Attack
+- Rage Powder
+- Razor Leaf
+- Sand Attack
+- Scratch
+- Shadow Claw
+- Sing
+- Spore
+- String Shot
+- Tackle
+- Tail Whip
+- Thunder
+- Thunder Punch
+- Thunder Wave
+- Water Gun
+- Water Pulse
+- Water Sport
+
+#### Miscellaneous Particles
+
++ Added Wild Might particles for Alpha Pokémon
++ Updated stat increase and decrease particles
 
 ### Localization
 - Updated translations for:
   - Japanese
   - German
+  - Spanish
   - Ecuadorian Spanish
+  - Brazilian Portuguese
   - Simplified Chinese
   - Traditional Chinese
   - Korean
