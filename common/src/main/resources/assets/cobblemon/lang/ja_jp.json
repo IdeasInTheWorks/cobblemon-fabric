@@ -9309,5 +9309,20 @@
     "cobblemon.habitat.rocky_outcrop.name": "岩の露頭",
     "cobblemon.habitat.rocky_tide_pool.name": "岩場の潮だまり",
     "cobblemon.habitat.root_nursery.name": "根苗圃",
-    "cobblemon.habitat.sandy_tide_pool.name": "砂地の潮だまり"
+    "cobblemon.habitat.sandy_tide_pool.name": "砂地の潮だまり",
+    "cobblemon.habitat.skeletal_fall.name": "骸骨の墓場",
+    "cobblemon.habitat.snowy_burrow.name": "雪に覆われた巣穴",
+    "cobblemon.habitat.snowy_grotto.name": "雪に覆われた洞窟",
+    "cobblemon.habitat.snowy_thermal_vents.name": "雪に覆われた熱水噴出孔",
+    "cobblemon.habitat.thermal_crevices.name": "熱の裂け目",
+    "cobblemon.habitat.treasure_hoard.name": "秘宝の宝庫",
+    "cobblemon.habitat.volcanic_plume.name": "火山噴出柱",
+    "cobblemon.habitat.zen_garden.name": "思念の庭園",
+    "cobblemon.subtitle.tm.use": "わざマシン使用済み",
+    "cobblemon.subtitle.block.tm_machine.burn_loop": "わざマシンマシンでわざマシンをプリントする",
+    "cobblemon.subtitle.block.tm_machine.start": "わざマシンマシンがわざマシンのプリントを開始しました",
+    "cobblemon.subtitle.block.tm_machine.craft": "わざマシンマシンがわざマシンのプリントを完了しました",
+    "cobblemon.subtitle.block.tm_machine.open": "わざマシンマシンの蓋が開きます",
+    "cobblemon.subtitle.block.tm_machine.close": "わざマシンマシンの蓋が閉じます",
+    "cobblemon.subtitle.block.tm_machine.tm_insert": "わざマシンマシンに空のわざマシンをセットする"
 }
