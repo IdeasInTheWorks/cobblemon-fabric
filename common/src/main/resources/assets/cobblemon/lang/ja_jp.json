@@ -9302,5 +9302,12 @@
     "cobblemon.habitat.pinkflowerbed_clearing.name": "ピンクフラワーベッドの開拓地",
     "cobblemon.habitat.sandpit_clearing.name": "砂場の開拓地",
     "cobblemon.habitat.sunflowerbed_clearing.name": "ヒマワリベッドの開拓地",
-    "cobblemon.habitat.sunscorched_clearing.name": "日差しに焼かれた開拓地"
+    "cobblemon.habitat.sunscorched_clearing.name": "日差しに焼かれた開拓地",
+    "cobblemon.habitat.quartz_spikes.name": "クォーツスパイク",
+    "cobblemon.habitat.reclaimed_desert_monument.name": "再生された砂漠の記念碑",
+    "cobblemon.habitat.reclaimed_lush_monument.name": "再生された繁茂した記念碑",
+    "cobblemon.habitat.rocky_outcrop.name": "岩の露頭",
+    "cobblemon.habitat.rocky_tide_pool.name": "岩場の潮だまり",
+    "cobblemon.habitat.root_nursery.name": "根苗圃",
+    "cobblemon.habitat.sandy_tide_pool.name": "砂地の潮だまり"
 }
