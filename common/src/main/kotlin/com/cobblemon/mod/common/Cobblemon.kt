@@ -308,7 +308,9 @@ object Cobblemon {
             this.config.maxPokemonLevel,
             this.config.maxPokemonFriendship,
             this.config.maxDynamaxLevel,
-            this.config.unlockAllMoveDexMovesByDefault
+            this.config.unlockAllMoveDexMovesByDefault,
+            this.config.pokemonIntrinsicSizeMin,
+            this.config.pokemonIntrinsicSizeMax
         ).sendToPlayer(player)
     }
 
