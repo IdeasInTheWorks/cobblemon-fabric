@@ -9324,5 +9324,15 @@
     "cobblemon.subtitle.block.tm_machine.craft": "わざマシンマシンがわざマシンのプリントを完了しました",
     "cobblemon.subtitle.block.tm_machine.open": "わざマシンマシンの蓋が開きます",
     "cobblemon.subtitle.block.tm_machine.close": "わざマシンマシンの蓋が閉じます",
-    "cobblemon.subtitle.block.tm_machine.tm_insert": "わざマシンマシンに空のわざマシンをセットする"
+    "cobblemon.subtitle.block.tm_machine.tm_insert": "わざマシンマシンに空のわざマシンをセットする",
+    "cobblemon.subtitle.block.tm_machine.tm_retrieve": "わざマシンをわざマシンマシンから入手",
+    "cobblemon.subtitle.block.tm_machine.item_insert": "アイテムをわざマシンマシンに配置しました",
+    "cobblemon.subtitle.block.tm_machine.item_retrieve": "わざマシンマシンからアイテムを取り出した",
+    "cobblemon.ui.exp.number": "+%1$s §o経験値",
+    "cobblemon.config.ui.award_experience_to_fainted_pokemon": "倒れたポケモンにも経験値を与える",
+    "cobblemon.config.ui.award_experience_to_fainted_pokemon.tooltip": "バトル中ひんしになったポケモンは、ひんしになる前に倒すのに貢献した相手から経験値を獲得できるか。",
+    "cobblemon.config.ui.award_experience_on_battle_loss": "戦闘敗北時の経験値",
+    "cobblemon.config.ui.award_experience_on_battle_loss.tooltip": "バトルに負けた場合でも、倒した相手からポケモンは経験値を獲得できるか。ひんしになったポケモンが経験値を獲得するには、「倒れたポケモンにも経験値を与える」が有効になっている必要がある。",
+    "cobblemon.config.ui.fossil_machine_alpha_chance": "ふくげんマシンのオヤブン出現確率",
+    "cobblemon.config.ui.fossil_machine_alpha_chance.tooltip": "ふくげんマシンから入手できるポケモンがオヤブンになる確率。\"[入力した数値]分の1\"として計算される。"
 }
