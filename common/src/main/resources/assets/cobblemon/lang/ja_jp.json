@@ -9333,6 +9333,20 @@
     "cobblemon.config.ui.award_experience_to_fainted_pokemon.tooltip": "バトル中ひんしになったポケモンは、ひんしになる前に倒すのに貢献した相手から経験値を獲得できるか。",
     "cobblemon.config.ui.award_experience_on_battle_loss": "戦闘敗北時の経験値",
     "cobblemon.config.ui.award_experience_on_battle_loss.tooltip": "バトルに負けた場合でも、倒した相手からポケモンは経験値を獲得できるか。ひんしになったポケモンが経験値を獲得するには、「倒れたポケモンにも経験値を与える」が有効になっている必要がある。",
-    "cobblemon.config.ui.fossil_machine_alpha_chance": "ふくげんマシンのオヤブン出現確率",
-    "cobblemon.config.ui.fossil_machine_alpha_chance.tooltip": "ふくげんマシンから入手できるポケモンがオヤブンになる確率。\"[入力した数値]分の1\"として計算される。"
+    "cobblemon.config.ui.fossil_machine_alpha_chance": "化石マシンのオヤブン出現確率",
+    "cobblemon.config.ui.fossil_machine_alpha_chance.tooltip": "化石マシンから入手できるポケモンがオヤブンになる確率。\"[入力した数値]分の1\"として計算される。",
+    "cobblemon.config.ui.fossil_machine_shiny_chance.tooltip": "ふくげんマシンから入手できるポケモンが色違いになる確率。\"[入力した数値]分の1\"として計算される。",
+    "cobblemon.config.ui.honey_slather_alpha_chance.tooltip": "ミツ塗りの木から入手できるポケモンがオヤブンになる確率。\"[入力した数値]分の1\"として計算される。",
+    "cobblemon.config.ui.honey_slather_shiny_chance.tooltip": "ミツ塗りの木から入手できるポケモンが色違いになる確率。\"[入力した数値]分の1\"として計算される。",
+    "cobblemon.config.ui.fossil_machine_shiny_chance": "化石マシンの色違い出現確率",
+    "cobblemon.config.ui.honey_slather_alpha_chance": "ミツ塗りの木のオヤブン出現確率",
+    "cobblemon.config.ui.honey_slather_shiny_chance": "ミツ塗りの木の色違い出現確率",
+    "cobblemon.config.ui.data_monitor_alpha_rate": "データモニターのオヤブン出現確率",
+    "cobblemon.config.ui.data_monitor_alpha_rate.tooltip": "データモニターから入手できるポケモンがオヤブンになる確率。\"[入力した数値]分の1\"として計算される。",
+    "cobblemon.config.ui.data_monitor_shiny_rate": "データモニターの色違い出現確率",
+    "cobblemon.config.ui.data_monitor_shiny_rate.tooltip": "データモニターから入手できるポケモンが色違いになる確率。\"[入力した数値]分の1\"として計算される。",
+    "cobblemon.config.ui.pokemon_intrinsic_size_min.tooltip": "出現するポケモンの最小固有サイズ倍率。",
+    "cobblemon.config.ui.pokemon_intrinsic_size_min": "ポケモンの最小固有サイズ",
+    "cobblemon.config.ui.pokemon_intrinsic_size_max": "ポケモンの最大固有サイズ",
+    "cobblemon.config.ui.pokemon_intrinsic_size_max.tooltip": "出現するポケモンの最大固有サイズ倍率。"
 }
