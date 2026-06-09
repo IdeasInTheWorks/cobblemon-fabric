@@ -9348,5 +9348,15 @@
     "cobblemon.config.ui.pokemon_intrinsic_size_min.tooltip": "出現するポケモンの最小固有サイズ倍率。",
     "cobblemon.config.ui.pokemon_intrinsic_size_min": "ポケモンの最小固有サイズ",
     "cobblemon.config.ui.pokemon_intrinsic_size_max": "ポケモンの最大固有サイズ",
-    "cobblemon.config.ui.pokemon_intrinsic_size_max.tooltip": "出現するポケモンの最大固有サイズ倍率。"
+    "cobblemon.config.ui.pokemon_intrinsic_size_max.tooltip": "出現するポケモンの最大固有サイズ倍率。",
+    "cobblemon.config.ui.alpha_pokemon_size_small_multiplier.tooltip": "当たり判定が0.5ブロック未満のポケモンに対するオヤブンサイズ倍率。",
+    "cobblemon.config.ui.alpha_pokemon_size_small_multiplier": "小さいオヤブンサイズ倍率",
+    "cobblemon.config.ui.alpha_pokemon_size_medium_multiplier": "中くらいのオヤブンサイズ倍率",
+    "cobblemon.config.ui.alpha_pokemon_size_medium_multiplier.tooltip": "当たり判定が0.5ブロックから1.5ブロックの間のポケモンに対するオヤブンサイズ倍率。",
+    "cobblemon.config.ui.alpha_pokemon_size_large_multiplier": "大きいオヤブンサイズ倍率",
+    "cobblemon.config.ui.alpha_pokemon_size_large_multiplier.tooltip": "当たり判定が1.5ブロックから10ブロックの間のポケモンに対するオヤブンサイズ倍率。",
+    "cobblemon.config.ui.alpha_pokemon_size_extra_large_multiplier.tooltip": "当たり判定が10ブロック以上のポケモンに対するオヤブンサイズ倍率。",
+    "cobblemon.config.ui.alpha_pokemon_size_extra_large_multiplier": "とても大きいオヤブンサイズ倍率",
+    "cobblemon.config.ui.baby_pokemon_level_duration": "ベイビィポケモン期間レベル",
+    "cobblemon.config.ui.baby_pokemon_level_duration.tooltip": "ポケモンが通常よりも小さく見える「ベイビィポケモン」とみなされるレベル数。"
 }
