@@ -105,7 +105,7 @@ class OmniPathNodeMaker : NodeEvaluator() {
     }
 
     private fun getMobJumpHeight(): Double {
-        return max(1.25, mob.maxUpStep().toDouble())
+        return max(1.125, mob.maxUpStep().toDouble())
     }
 
     protected fun findAcceptedNodeWalk(
