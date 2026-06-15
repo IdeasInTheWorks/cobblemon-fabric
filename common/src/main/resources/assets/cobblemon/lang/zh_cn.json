@@ -9213,5 +9213,7 @@
     "cobblemon.behaviour.defend_owner.desc": "在主人受到攻击时保护他们。",
     "stat.cobblemon.riding_land": "骑着宝可梦在陆地移动距离",
     "stat.cobblemon.riding_air": "骑着宝可梦在空中移动距离",
-    "stat.cobblemon.riding_liquid": "骑着宝可梦在水域移动距离"
+    "stat.cobblemon.riding_liquid": "骑着宝可梦在水域移动距离",
+    "item.cobblemon.sweet_heart.tooltip": "非常甜腻的巧克力",
+    "item.cobblemon.sweet_heart": "心形甜点"
 }
