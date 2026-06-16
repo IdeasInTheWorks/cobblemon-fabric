@@ -9290,5 +9290,13 @@
     "cobblemon.ui.edit.habitat.pool.levels": "等级",
     "cobblemon.ui.edit.habitat.pool.phases": "阶段",
     "cobblemon.ui.edit.habitat.pool.position": "位置",
-    "cobblemon.ui.edit.habitat.pool.weight": "权重"
+    "cobblemon.ui.edit.habitat.pool.weight": "权重",
+    "cobblemon.ui.edit.habitat.pool.bucket": "稀有度档位",
+    "cobblemon.ui.edit.habitat.pool.add_spawn": "增加生成",
+    "cobblemon.ui.edit.habitat.pool.back": "返回",
+    "cobblemon.ui.edit.habitat.pool.select": "选择生成池",
+    "cobblemon.ui.edit.habitat.spawn": "生成编辑器",
+    "cobblemon.ui.edit.habitat.spawn.position_type": "位置类型：%s",
+    "cobblemon.ui.edit.habitat.spawn.bucket": "稀有度档位：%s",
+    "cobblemon.ui.edit.habitat.spawn.weight": "权重"
 }
