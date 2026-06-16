@@ -9267,5 +9267,10 @@
     "cobblemon.ui.generic.question_marks": "？？？",
     "cobblemon.container.tm_machine": "招式学习器机",
     "cobblemon.ui.edit.habitat": "栖息地编辑器",
-    "cobblemon.ui.edit.habitat.mimic_id": "模仿方块ID"
+    "cobblemon.ui.edit.habitat.mimic_id": "模仿方块ID",
+    "cobblemon.ui.edit.habitat.level_range": "等级范围（最小-最大）",
+    "cobblemon.ui.edit.habitat.mode": "模式：%s",
+    "cobblemon.ui.edit.habitat.mode.activated": "已激活",
+    "cobblemon.ui.edit.habitat.mode.natural": "自然",
+    "cobblemon.ui.edit.habitat.trigger": "触发器：%s"
 }
