@@ -9305,8 +9305,8 @@
     "cobblemon.ui.edit.habitat.spawn.time_of_day": "时段",
     "cobblemon.ui.edit.habitat.spawn.time_of_day.value": "时段：%s",
     "cobblemon.ui.edit.habitat.spawn.time_of_day.any": "所有",
-    "cobblemon.ui.edit.habitat.spawn.min_light": "最低亮度（0-15，可选）",
-    "cobblemon.ui.edit.habitat.spawn.max_light": "最高亮度（0-15, 可选）",
+    "cobblemon.ui.edit.habitat.spawn.min_light": "最低光照度（0-15，可选）",
+    "cobblemon.ui.edit.habitat.spawn.max_light": "最高光照度（0-15, 可选）",
     "cobblemon.ui.edit.habitat.spawn.back": "返回",
     "cobblemon.ui.edit.habitat.validation.mimic": "模仿方块必须是被允许且有效的方块ID（查看 habitat_mimics.json）。",
     "cobblemon.ui.edit.habitat.validation.phases": "阶段数必须大于0。",
@@ -9317,5 +9317,7 @@
     "cobblemon.ui.edit.habitat.validation.influence_range": "影响范围必须为0或更高。",
     "cobblemon.ui.edit.habitat.validation.species": "必须为一个有效的宝可梦。",
     "cobblemon.ui.edit.habitat.validation.weight": "权重必须大于0。",
-    "cobblemon.ui.edit.habitat.validation.modifiers": "修饰词的格式无效。"
+    "cobblemon.ui.edit.habitat.validation.modifiers": "修饰词的格式无效。",
+    "cobblemon.ui.edit.habitat.validation.min_light": "最低光照度必须处于0到15之间。",
+    "cobblemon.ui.edit.habitat.validation.max_light": "最高光照度必须处于0到15之间。"
 }
