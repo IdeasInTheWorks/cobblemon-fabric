@@ -9307,5 +9307,15 @@
     "cobblemon.ui.edit.habitat.spawn.time_of_day.any": "所有",
     "cobblemon.ui.edit.habitat.spawn.min_light": "最低亮度（0-15，可选）",
     "cobblemon.ui.edit.habitat.spawn.max_light": "最高亮度（0-15, 可选）",
-    "cobblemon.ui.edit.habitat.spawn.back": "返回"
+    "cobblemon.ui.edit.habitat.spawn.back": "返回",
+    "cobblemon.ui.edit.habitat.validation.mimic": "模仿方块必须是被允许且有效的方块ID（查看 habitat_mimics.json）。",
+    "cobblemon.ui.edit.habitat.validation.phases": "阶段数必须大于0。",
+    "cobblemon.ui.edit.habitat.validation.level_range": "等级范围必须处于1到100之间，且最小值不能大于最大值。",
+    "cobblemon.ui.edit.habitat.validation.spawn_range": "生成范围必须为0或更高。",
+    "cobblemon.ui.edit.habitat.validation.cancelled_range": "被取消的自然生成范围必须为 -1（不取消）或在 0 到 64 之间。",
+    "cobblemon.ui.edit.habitat.validation.max_spawns": "最大生成数必须是-1或更高。",
+    "cobblemon.ui.edit.habitat.validation.influence_range": "影响范围必须为0或更高。",
+    "cobblemon.ui.edit.habitat.validation.species": "必须为一个有效的宝可梦。",
+    "cobblemon.ui.edit.habitat.validation.weight": "权重必须大于0。",
+    "cobblemon.ui.edit.habitat.validation.modifiers": "修饰词的格式无效。"
 }
