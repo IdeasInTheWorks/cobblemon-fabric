@@ -9304,5 +9304,8 @@
     "cobblemon.ui.edit.habitat.spawn.phases": "阶段（例如：1-3, 5）",
     "cobblemon.ui.edit.habitat.spawn.time_of_day": "时段",
     "cobblemon.ui.edit.habitat.spawn.time_of_day.value": "时段：%s",
-    "cobblemon.ui.edit.habitat.spawn.time_of_day.any": "所有"
+    "cobblemon.ui.edit.habitat.spawn.time_of_day.any": "所有",
+    "cobblemon.ui.edit.habitat.spawn.min_light": "最低亮度（0-15，可选）",
+    "cobblemon.ui.edit.habitat.spawn.max_light": "最高亮度（0-15, 可选）",
+    "cobblemon.ui.edit.habitat.spawn.back": "返回"
 }
