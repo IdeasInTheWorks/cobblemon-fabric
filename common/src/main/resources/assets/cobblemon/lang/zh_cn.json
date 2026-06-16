@@ -9219,5 +9219,7 @@
     "item.cobblemon.technical_machine": "招式学习器",
     "item.cobblemon.blank_tm": "空白招式学习器",
     "block.cobblemon.deepslate_crystal_core": "深层水晶母岩",
-    "block.cobblemon.normal_gem_block": "一般宝石块"
+    "block.cobblemon.normal_gem_block": "一般宝石块",
+    "block.cobblemon.fire_gem_block": "火之宝石块",
+    "block.cobblemon.water_gem_block": "水之宝石块"
 }
