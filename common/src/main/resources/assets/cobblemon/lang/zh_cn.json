@@ -9319,5 +9319,19 @@
     "cobblemon.ui.edit.habitat.validation.weight": "权重必须大于0。",
     "cobblemon.ui.edit.habitat.validation.modifiers": "修饰词的格式无效。",
     "cobblemon.ui.edit.habitat.validation.min_light": "最低光照度必须处于0到15之间。",
-    "cobblemon.ui.edit.habitat.validation.max_light": "最高光照度必须处于0到15之间。"
+    "cobblemon.ui.edit.habitat.validation.max_light": "最高光照度必须处于0到15之间。",
+    "cobblemon.ui.moves.learnset.tm.discovered": "发现了",
+    "cobblemon.ui.moves.level": "等级提升",
+    "cobblemon.ui.moves.egg": "蛋",
+    "cobblemon.ui.moves.tm": "招式学习器",
+    "cobblemon.ui.tm_machine.can_learn": "能学习",
+    "cobblemon.ui.tm_machine.cannot_learn": "不能学",
+    "cobblemon.ui.tm_machine.learned": "已学会",
+    "cobblemon.tms.unknown_move": "未知招式",
+    "cobblemon.tms.already_known": "%1$s 已经学会了 %2$s！",
+    "cobblemon.tms.teach_move": "%1$s 学会了 %2$s！",
+    "cobblemon.tms.cannot_learn": "%1$s 不能学习 %2$s！",
+    "cobblemon.tms.unlock_tm": "你解锁了 %1$s 招式学习器！",
+    "cobblemon.tms.new_tms_learned": "学会了新的招式学习器！",
+    "cobblemon.tms.check_tmm": "查看招式学习器机"
 }
