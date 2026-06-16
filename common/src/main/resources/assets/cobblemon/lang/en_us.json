@@ -1186,7 +1186,7 @@
   "cobblemon.ui.edit.habitat.validation.species": "Species must be a valid Pokemon name.",
   "cobblemon.ui.edit.habitat.validation.weight": "Weight must be greater than 0.",
   "cobblemon.ui.edit.habitat.validation.modifiers": "Modifiers format is invalid.",
-  "cobblemon.ui.edit.habitat.validation.phases_list": "Phases must use valid moon phases (0-7), e.g. 1-3 or 1, 3-5, 6.",
+  "cobblemon.ui.edit.habitat.validation.phases_list": "Phases must use a valid format for integer ranges, e.g. 1-3 or 1, 3-5, 6.",
   "cobblemon.ui.edit.habitat.validation.min_light": "Min Light must be between 0 and 15.",
   "cobblemon.ui.edit.habitat.validation.max_light": "Max Light must be between 0 and 15.",
 
