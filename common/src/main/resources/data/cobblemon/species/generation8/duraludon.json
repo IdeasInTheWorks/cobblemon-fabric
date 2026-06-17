@@ -46,8 +46,8 @@
   "baseFriendship": 50,
   "baseScale": 1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.7,
+    "height": 2.2,
     "fixed": false
   },
   "drops": {
@@ -192,6 +192,9 @@
   ],
   "behaviour": {
     "moving": {
+      "walk": {
+        "walkSpeed": 0.15
+      },
       "swim": {
         "avoidsWater": true
       }
