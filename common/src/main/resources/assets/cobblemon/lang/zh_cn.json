@@ -9333,5 +9333,10 @@
     "cobblemon.tms.cannot_learn": "%1$s 不能学习 %2$s！",
     "cobblemon.tms.unlock_tm": "你解锁了 %1$s 招式学习器！",
     "cobblemon.tms.new_tms_learned": "学会了新的招式学习器！",
-    "cobblemon.tms.check_tmm": "查看招式学习器机"
+    "cobblemon.tms.check_tmm": "查看招式学习器机",
+    "cobblemon.ui.party.party_select_title": "更改同行队伍选中",
+    "cobblemon.ui.party.party_select_description": "按下 %1$s/%2$s 或长按 %3$s 滑动鼠标滚轮。",
+    "cobblemon.ui.category": "分类",
+    "cobblemon.ui.pp": "PP",
+    "cobblemon.ui.pokemon.alpha": "头目"
 }
