@@ -357,6 +357,7 @@
 - Fixed Guilded chests being more accessible than intended
 - Fixed fished up Pokémon not being added as "seen" to the Pokedex
 - Fixed surprised Gimmighoul encounters not being added as "seen" to the Pokedex
+- Fixed visual desync in multiplayer for players mounting Pokémon outside other players' loaded chunks 
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
