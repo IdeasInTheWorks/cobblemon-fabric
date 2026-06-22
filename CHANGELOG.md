@@ -204,6 +204,7 @@
 - Luvdisc
 - Staryu
 - Starmie
+- Togetic
 
 #### Added sounds to the following moves
 - Absorb
