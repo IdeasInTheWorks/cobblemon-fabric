@@ -59,13 +59,13 @@
 - Ice type Pokémon are now immune to Packed Snow
 
 ### New rideable Pokémon
-- Drampa
-- Archeops
-- Skarmory
 - Crobat
+- Skarmory
+- Milotic
+- Archeops
 - Goodra
 - Hisuian Goodra
-- Milotic
+- Drampa
 
 ### Pokémon Added
 #### Generation 3
@@ -202,6 +202,8 @@
 - Yamask
 - Cofagrigus
 - Luvdisc
+- Staryu
+- Starmie
 
 #### Added sounds to the following moves
 - Absorb
