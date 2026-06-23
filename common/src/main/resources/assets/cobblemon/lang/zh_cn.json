@@ -9258,7 +9258,7 @@
     "cobblemon.item_class.technical_machine": "招式学习器",
     "block.cobblemon.damaged_monitor": "损坏的数据显示器",
     "block.cobblemon.tm_machine": "招式学习器机",
-    "block.cobblemon.disc_shelf": "唱片架",
+    "block.cobblemon.disc_shelf": "光盘架",
     "cobblemon.fishing_bait_effects.mark_chance.tooltip": "%1$s%% - 证章出现率+%3$s%%",
     "cobblemon.fishing_bait_effects.alpha_chance.tooltip": "%1$s%% - 头目宝可梦出现率",
     "cobblemon.fishing_bait_effects.size.tooltip": "%1$s%% - 体型%3$s%%",
