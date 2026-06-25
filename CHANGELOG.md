@@ -171,6 +171,9 @@
 - Changed models for every existing regional bias
 
 ### Animation updates for the following Pokémon
+
+- Drowzee
+- Hypno
 - Skarmory
 - Skitty
 - Flygon
