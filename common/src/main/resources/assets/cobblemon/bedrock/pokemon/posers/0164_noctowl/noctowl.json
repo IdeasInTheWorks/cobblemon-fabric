@@ -13,7 +13,8 @@
       "poseTypes": [
         "STAND",
         "PORTRAIT",
-        "PROFILE"
+        "PROFILE",
+        "NONE"
       ],
       "isBattle": false,
       "animations": [
