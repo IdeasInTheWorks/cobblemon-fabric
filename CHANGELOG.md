@@ -174,6 +174,7 @@
 
 - Drowzee
 - Hypno
+- Noctowl
 - Skarmory
 - Skitty
 - Flygon
