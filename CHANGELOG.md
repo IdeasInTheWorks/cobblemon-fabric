@@ -172,6 +172,7 @@
 
 ### Animation updates for the following Pokémon
 
+- Vulpix
 - Drowzee
 - Hypno
 - Noctowl
@@ -209,6 +210,8 @@
 - Staryu
 - Starmie
 - Togetic
+- Rellor
+- Rabsca
 
 #### Added sounds to the following moves
 - Absorb
