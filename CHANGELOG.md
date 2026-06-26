@@ -210,6 +210,8 @@
 - Staryu
 - Starmie
 - Togetic
+- Rellor
+- Rabsca
 
 #### Added sounds to the following moves
 - Absorb
