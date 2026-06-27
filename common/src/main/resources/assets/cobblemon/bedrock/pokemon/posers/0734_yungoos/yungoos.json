@@ -19,8 +19,8 @@
       ],
       "isBattle": false,
       "animations": [
-        "q.look('head_ai')",
-        "q.look('head_angle)",
+        "q.look('head_ai', 1, 1, 10, -10, 20, -20)",
+        "q.look('head_angle')",
         "q.bedrock('yungoos', 'ground_idle')",
         {
           "condition": "q.is_holding_item",
@@ -35,8 +35,8 @@
       "poseTypes": ["STAND"],
       "isBattle": true,
       "animations": [
-        "q.look('head_ai')",
-        "q.look('head_angle)",
+        "q.look('head_ai', 1, 1, 10, -10, 20, -20)",
+        "q.look('head_angle')",
         "q.bedrock('yungoos', 'battle_idle')",
         {
           "condition": "q.is_holding_item",
@@ -53,8 +53,8 @@
         "SWIM"
       ],
       "animations": [
-        "q.look('head_ai')",
-        "q.look('head_angle)",
+        "q.look('head_ai', 1, 1, 10, -10, 20, -20)",
+        "q.look('head_angle')",
         "q.bedrock('yungoos', 'ground_walk')"
       ],
       "quirks": [
@@ -68,8 +68,8 @@
       ],
       "condition": "q.is_sprinting",
       "animations": [
-        "q.look('head_ai')",
-        "q.look('head_angle)",
+        "q.look('head_ai', 1, 1, 10, -10, 20, -20)",
+        "q.look('head_angle')",
         "q.bedrock('yungoos', 'ground_run')"
       ],
       "quirks": [
