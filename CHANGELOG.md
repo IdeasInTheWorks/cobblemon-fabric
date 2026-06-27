@@ -172,6 +172,7 @@
 
 ### Animation updates for the following Pokémon
 
+- Poliwrath
 - Vulpix
 - Drowzee
 - Hypno
