@@ -9338,5 +9338,6 @@
     "cobblemon.ui.party.party_select_description": "按下 %1$s/%2$s 或长按 %3$s 滑动鼠标滚轮。",
     "cobblemon.ui.category": "分类",
     "cobblemon.ui.pp": "PP",
-    "cobblemon.ui.pokemon.alpha": "头目"
+    "cobblemon.ui.pokemon.alpha": "头目",
+    "cobblemon.ui.edit.habitat.validation.phases_list": "阶段的格式必须使用有效的整数范围，例如：1-3或者1，3-5，6。"
 }
