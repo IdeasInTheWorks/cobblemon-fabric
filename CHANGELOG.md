@@ -63,8 +63,8 @@
 - Skarmory
 - Milotic
 - Archeops
-- Goodra
-- Hisuian Goodra
+- Goodra 
+- Goodra (Hisuian Form)
 - Drampa
 
 ### Pokémon Added
@@ -212,8 +212,11 @@
 - Togetic
 - Rellor
 - Rabsca
+- Yungoos
+- Gumshoos
 
 #### Added sounds to the following moves
+
 - Absorb
 - Aurora Beam
 - Double Team
@@ -242,10 +245,12 @@
 
 ### Fixes
 - Adjusted Croagunk's walkspeed
+- Adjusted Aerodactyl's walkspeed
 - Fixed Blitzle's base scale being `1` rather than the intended `0.8`
 - Fixed Magnezone's emissive layer for the shiny having the wrong name, thus displaying wrongly
 - Fixed Litleo not blinking
 - Fixed Garchomp T-posing when sleeping while out of battle.
+- Fixed Omanyte and Omastar incorrectly using water animations on land.
 - Sharp Beak can now be crafted
 - Metal Alloy can now be crafted
 - Ability Capsules can now be brewed
