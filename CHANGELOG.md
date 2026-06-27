@@ -173,6 +173,7 @@
 ### Animation updates for the following Pokémon
 
 - Poliwrath
+- Zubat
 - Vulpix
 - Drowzee
 - Hypno
