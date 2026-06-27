@@ -172,6 +172,7 @@
 
 ### Animation updates for the following Pokémon
 
+- Happiny
 - Poliwrath
 - Zubat
 - Vulpix
