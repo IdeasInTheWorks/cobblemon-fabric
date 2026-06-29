@@ -180,6 +180,7 @@
 - Nidoran♂ (+ New shoulder mount)
 - Sandshrew
 - Diglett
+- Graveler
 - Happiny
 - Poliwhirl
 - Poliwrath
