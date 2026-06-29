@@ -175,6 +175,9 @@
 ### Animation updates for the following Pokémon
 
 - Kakuna
+- Nidoran♀ (+ New shoulder mount)
+- Nidorina
+- Nidoran♂ (+ New shoulder mount)
 - Happiny
 - Poliwhirl
 - Poliwrath
