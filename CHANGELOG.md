@@ -66,6 +66,8 @@
 - Goodra 
 - Goodra (Hisuian Form)
 - Drampa
+- Duraludon
+- Archaludon
 
 ### Pokémon Added
 #### Generation 3

@@ -50,6 +50,26 @@
     "height": 2.5,
     "fixed": false
   },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "5-20",
+          "JUMP": "5-15",
+          "SKILL": "5-25",
+          "SPEED": "25-60",
+          "STAMINA": "40-80"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  },
   "moves": [
     "1:electroshot",
     "1:leer",
