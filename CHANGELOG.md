@@ -179,6 +179,7 @@
 - Nidorina
 - Nidoran♂ (+ New shoulder mount)
 - Sandshrew
+- Diglett
 - Happiny
 - Poliwhirl
 - Poliwrath
