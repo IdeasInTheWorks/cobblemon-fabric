@@ -174,6 +174,7 @@
 
 ### Animation updates for the following Pokémon
 
+- Kakuna
 - Happiny
 - Poliwhirl
 - Poliwrath

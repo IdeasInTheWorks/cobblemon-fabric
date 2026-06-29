@@ -224,7 +224,6 @@ object VaryingModelRepository {
         inbuilt("metapod", ::MetapodModel)
         inbuilt("butterfree", ::ButterfreeModel)
         inbuilt("weedle", ::WeedleModel)
-        inbuilt("kakuna", ::KakunaModel)
         inbuilt("beedrill", ::BeedrillModel)
         inbuilt("rattata", ::RattataModel)
         inbuilt("raticate", ::RaticateModel)
