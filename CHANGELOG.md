@@ -164,6 +164,7 @@
 - Cofagrigus
 - Tyranitar
 - Turtonator
+- Golett
 - Arbok (New Patterns: Angry, Cartoon, Clown, Comedic, Crow, Grin, Ink, Modern, Rain, Scribble, Silence, Sloth, Suspicious, Will)
 
 #### Model changes to the regional bias resource pack:

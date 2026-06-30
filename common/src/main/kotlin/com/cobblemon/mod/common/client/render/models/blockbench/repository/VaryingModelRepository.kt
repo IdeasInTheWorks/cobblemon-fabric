@@ -334,7 +334,6 @@ object VaryingModelRepository {
         inbuilt("lotad", :: LotadModel)
         inbuilt("lombre", :: LombreModel)
         inbuilt("ludicolo", :: LudicoloModel)
-        inbuilt("golett", :: GolettModel)
         inbuilt("stantler", :: StantlerModel)
         inbuilt("bergmite", :: BergmiteModel)
         inbuilt("avalugg", :: AvaluggModel)
