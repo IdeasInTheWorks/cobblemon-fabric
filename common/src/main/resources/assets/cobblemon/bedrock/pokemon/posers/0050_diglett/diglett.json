@@ -15,7 +15,7 @@
       "isBattle": false,
       "animations": [
         "q.look('body2', 1, 1, 10, -10, 0, 0)",
-        "q.look('ground', 1, 1, 0, 0, 45, -45)",
+        "q.look('body', 1, 1, 0, 0, 45, -45)",
         "q.bedrock('diglett', 'ground_idle')"
       ],
       "quirks": [
@@ -28,7 +28,7 @@
       "isBattle": true,
       "animations": [
         "q.look('body2', 1, 1, 10, -10, 0, 0)",
-        "q.look('ground', 1, 1, 0, 0, 45, -45)",
+        "q.look('body', 1, 1, 0, 0, 45, -45)",
         "q.bedrock('diglett', 'battle_idle')"
       ],
       "quirks": [
@@ -42,7 +42,10 @@
         "q.look('body2', 1, 1, 10, -10, 0, 0)",
         "q.bedrock('diglett', 'ground_walk')"
       ],
-      "quirks": ["q.bedrock_quirk('diglett', 'blink')"]
+      "quirks": [
+        "q.bedrock_quirk('diglett', 'blink')",
+        "q.bedrock_quirk('diglett', 'quirk_idle')"
+      ]
     },
     "sleep": {
       "poseTypes": ["SLEEP"],

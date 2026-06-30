@@ -3,11 +3,11 @@
   "portraitTranslation": [-0.06, -0.86, 0],
   "profileScale": 0.9,
   "profileTranslation": [0.0, 0.3, 0],
-  "rootBone": "diglett",
+  "rootBone": "diglett_alolan",
   "animations": {
-    "cry": "q.bedrock_stateful('diglett', 'cry')",
-    "recoil": "q.bedrock_stateful('diglett', 'recoil')",
-    "physical": "q.bedrock_primary('diglett', 'physical', q.curve('symmetrical'))"
+    "cry": "q.bedrock_stateful('diglett_alolan', 'cry')",
+    "recoil": "q.bedrock_stateful('diglett_alolan', 'recoil')",
+    "physical": "q.bedrock_primary('diglett_alolan', 'physical', q.curve('symmetrical'))"
   },
   "poses": {
     "standing": {
@@ -15,12 +15,12 @@
       "isBattle": false,
       "animations": [
         "q.look('body2', 1, 1, 10, -10, 0, 0)",
-        "q.look('ground', 1, 1, 0, 0, 45, -45)",
-        "q.bedrock('diglett', 'ground_idle')"
+        "q.look('body', 1, 1, 0, 0, 45, -45)",
+        "q.bedrock('diglett_alolan', 'ground_idle')"
       ],
       "quirks": [
-        "q.bedrock_quirk('diglett', 'blink')",
-        "q.bedrock_quirk('diglett', 'quirk_idle')"
+        "q.bedrock_quirk('diglett_alolan', 'blink')",
+        "q.bedrock_quirk('diglett_alolan', 'quirk_idle')"
       ]
     },
     "battle-standing": {
@@ -28,26 +28,29 @@
       "isBattle": true,
       "animations": [
         "q.look('body2', 1, 1, 10, -10, 0, 0)",
-        "q.look('ground', 1, 1, 0, 0, 45, -45)",
-        "q.bedrock('diglett', 'battle_idle')"
+        "q.look('body', 1, 1, 0, 0, 45, -45)",
+        "q.bedrock('diglett_alolan', 'battle_idle')"
       ],
       "quirks": [
-        "q.bedrock_quirk('diglett', 'blink')",
-        "q.bedrock_quirk('diglett', 'quirk_idle')"
+        "q.bedrock_quirk('diglett_alolan', 'blink')",
+        "q.bedrock_quirk('diglett_alolan', 'quirk_idle')"
       ]
     },
     "walking": {
       "poseTypes": ["WALK", "SWIM"],
       "animations": [
         "q.look('body2', 1, 1, 10, -10, 0, 0)",
-        "q.bedrock('diglett', 'ground_walk')"
+        "q.bedrock('diglett_alolan', 'ground_walk')"
       ],
-      "quirks": ["q.bedrock_quirk('diglett', 'blink')"]
+      "quirks": [
+        "q.bedrock_quirk('diglett_alolan', 'blink')",
+        "q.bedrock_quirk('diglett_alolan', 'quirk_idle')"
+      ]
     },
     "sleep": {
       "poseTypes": ["SLEEP"],
-      "animations": ["q.bedrock('diglett', 'sleep')"],
-      "quirks": ["q.bedrock_quirk('diglett', 'quirk_idle')"],
+      "animations": ["q.bedrock('diglett_alolan', 'sleep')"],
+      "quirks": ["q.bedrock_quirk('diglett_alolan', 'quirk_idle')"],
       "namedAnimations": {
         "cry": "q.bedrock_stateful('dummy', 'cry')"
       }
