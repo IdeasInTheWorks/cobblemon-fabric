@@ -14,10 +14,10 @@
       "poseTypes": ["STAND", "FLOAT", "NONE", "PORTRAIT", "PROFILE"],
       "isBattle": false,
       "animations": [
-        "q.look('body', 1, 1, 0, 0, 45, -45)",
+        "q.look('body1', 1, 1, 0, 0, 45, -45)",
         "q.look('body1_2', 1, 1, 10, -10, 0, 0)",
         "q.look('body2', 1, 1, 10, -10, 45, -45)",
-        "q.look('body3', 1, 1, 0, 0, 45, -45)",
+        "q.look('body3', 1, 1, 5, -5, 45, -45)",
         "q.look('body3_2', 1, 1, 10, -10, 0, 0)",
         "q.bedrock('dugtrio_alolan', 'ground_idle')"
       ],
@@ -32,10 +32,10 @@
       "poseTypes": ["STAND"],
       "isBattle": true,
       "animations": [
-        "q.look('body', 1, 1, 0, 0, 45, -45)",
+        "q.look('body1', 1, 1, 0, 0, 45, -45)",
         "q.look('body1_2', 1, 1, 10, -10, 0, 0)",
         "q.look('body2', 1, 1, 10, -10, 45, -45)",
-        "q.look('body3', 1, 1, 0, 0, 45, -45)",
+        "q.look('body3', 1, 1, 5, -5, 45, -45)",
         "q.look('body3_2', 1, 1, 10, -10, 0, 0)",
         "q.bedrock('dugtrio_alolan', 'battle_idle')"
       ],
