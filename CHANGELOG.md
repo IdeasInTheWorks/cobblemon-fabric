@@ -184,6 +184,8 @@
 - Dugtrio
 - Graveler
 - Happiny
+- Chansey
+- Blissey
 - Poliwhirl
 - Poliwrath
 - Zubat

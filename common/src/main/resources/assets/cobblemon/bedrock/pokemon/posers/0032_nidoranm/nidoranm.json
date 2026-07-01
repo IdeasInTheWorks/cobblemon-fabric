@@ -2,7 +2,7 @@
   "portraitScale": 1.97,
   "portraitTranslation": [-0.19, -1.08, 0],
   "profileScale": 1.05,
-  "profileTranslation": [0.03, 0.11, 0],
+  "profileTranslation": [0, 0.11, 0],
   "rootBone": "nidoranm",
   "animations": {
     "cry": "q.bedrock_stateful('nidoranm', 'cry')",
