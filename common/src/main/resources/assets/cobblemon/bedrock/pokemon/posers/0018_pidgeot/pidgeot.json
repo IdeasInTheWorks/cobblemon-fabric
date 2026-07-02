@@ -1,8 +1,8 @@
 {
-  "portraitScale": 2.2,
-  "portraitTranslation": [-0.6, 0.15, 0],
-  "profileScale": 0.9,
-  "profileTranslation": [0, 0.4, 0],
+  "portraitScale": 1.93,
+  "portraitTranslation": [-0.63, 1.22, 0],
+  "profileScale": 0.75,
+  "profileTranslation": [0, 0.62, 0],
   "rootBone": "pidgeot",
   "animations": {
     "cry": "q.bedrock_stateful('pidgeot', 'cry')",
