@@ -177,6 +177,7 @@
 ### Animation updates for the following Pokémon
 
 - Kakuna
+- Grimer
 - Nidoran♀ (+ New shoulder mount)
 - Nidorina
 - Nidoran♂ (+ New shoulder mount)
