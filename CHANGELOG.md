@@ -231,6 +231,8 @@
 - Rabsca
 - Yungoos
 - Gumshoos
+- Cottonee
+- Whimsicott
 
 #### Added sounds to the following moves
 
