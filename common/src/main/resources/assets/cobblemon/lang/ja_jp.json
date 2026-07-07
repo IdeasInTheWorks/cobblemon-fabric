@@ -9539,5 +9539,19 @@
     "advancements.cobblemon.obtain_ancient_tm.description": "遺跡またはオヤブンポケモンから強力な古代の技術を入手する",
     "advancements.cobblemon.obtain_ancient_tm": "過去の記録",
     "advancements.cobblemon.register_all_tms.description": "わざマシンマシンに可能な全ての技を登録する",
-    "advancements.cobblemon.register_all_tms": "ワザマ先生"
+    "advancements.cobblemon.register_all_tms": "ワザマ シン先生",
+    "advancements.cobblemon.construct_note_block_sequencer.description": "音符ブロックとディスク棚を使ってオーディオシーケンサーを作成する",
+    "advancements.cobblemon.construct_note_block_sequencer": "かがくの ちからって すげー！",
+    "advancements.cobblemon.download_porygon.description": "ポリゴンをダウンロードするなんてありえない",
+    "advancements.cobblemon.download_porygon": "技術的な問題",
+    "cobblemon.battle.combine": "2つの技が 1つになった！ コンビネーション技だ！",
+    "cobblemon.battle.waiting": "%1$sは %2$sを 待っている...",
+    "cobblemon.battle.start.alphaboost": "オヤブンの %1$sは 野生の力に 満ち溢れている！ 能力が 上がった！",
+    "cobblemon.battle.activate.wanderingspirit": "%1$sは 相手と 特性を 入れ替えた！",
+    "cobblemon.battle.sidestart.ally.grasspledge": "味方の 周りに 湿原が 広がった！",
+    "cobblemon.battle.sidestart.ally.firepledge": "味方の 周りが 火の海に 包まれた！",
+    "cobblemon.battle.sidestart.ally.waterpledge": "味方の空に にじが かかった！",
+    "cobblemon.battle.sidestart.opponent.firepledge": "相手の 周りが 火の海に 包まれた！",
+    "cobblemon.battle.sidestart.opponent.grasspledge": "相手の 周りに 湿原が 広がった！",
+    "cobblemon.battle.sidestart.opponent.waterpledge": "相手の空に にじが かかった！"
 }
