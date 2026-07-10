@@ -8731,5 +8731,11 @@
     "cobblemon.battle.sideend.ally.luckychant": "Песнь удачи вашей команды исчезла!",
     "cobblemon.battle.sideend.ally.mist": "Туман вашей команды исчез!",
     "cobblemon.battle.sideend.ally.reflect": "Отражение вашей команды исчезло!",
-    "cobblemon.battle.sideend.ally.safeguard": "Оборона вашей команды исчезла!"
+    "cobblemon.battle.sideend.ally.safeguard": "Оборона вашей команды исчезла!",
+    "cobblemon.battle.sideend.ally.spikes": "Шипы под ногами вашей команды исчезли!",
+    "cobblemon.battle.sideend.ally.stealthrock": "Заточенные камни под ногами вашей команды исчезли!",
+    "cobblemon.battle.sideend.ally.stickyweb": "Липкая паутина под ногами вашей команды исчезла!",
+    "cobblemon.battle.sideend.ally.tailwind": "Попутный ветер вашей команды иссяк!",
+    "cobblemon.battle.sideend.ally.toxicspikes": "Ядовитые шипы под ногами вашей команды исчезли!",
+    "cobblemon.battle.sideend.ally.waterpledge": "Радуга на стороне вашей команды исчезла!"
 }
