@@ -42,9 +42,8 @@
 - All ruin structures gilded chest loot tables have been updated to include a guaranteed TM not learned naturally by any Pokémon through their level-up moveset. Each ruin gets its own specific TM, so you can now go hunting ruins to complete your move dex!
 - All fossil structures have been transferred over to biome features, allowing for better placement in generation.
 - The prehistoric_underwater_fissure & prehistoric_submerged_impact fossil structures now use the biome tag `#cobblemon:is_temperate_ocean`.
-- A new Biome tag called `#cobblemon:is_stony_beach` has been added.
 - Gimmighoul towers now generate at ground level rather than sinking one block into the ground.
-- 1 New shipwreck cove structure called the "magma_shipwreck_cove" has been added.
+- A new shipwreck cove structure called the "magma_shipwreck_cove" has been added.
 - Shipwreck coves now generate slightly more frequently.
 - Added equipment loot tables for shipwreck cove enemies.
 - Maps from abandoned fishing boats leading to shipwreck coves now will skip explored chunks, allowing the player to find more shipwreck coves easier.
@@ -57,17 +56,21 @@
 - Pokémon cries now play when clicking Pokémon in the summary screen.
 - Pressing the Summary key while either the starter selection or summary screen are open now closes those screens
 - Ice type Pokémon are now immune to Packed Snow
+- Held item visibility can now be controlled by the held_item_visible command argument.
 
 ### New rideable Pokémon
-- Drampa
-- Archeops
-- Skarmory
 - Crobat
-- Goodra
-- Hisuian Goodra
+- Skarmory
 - Milotic
+- Archeops
+- Goodra 
+- Goodra (Hisuian Form)
+- Drampa
+- Duraludon
+- Archaludon
 
 ### Pokémon Added
+#### Generation 3
 - Wurmple
 - Silcoon
 - Beautifly
@@ -77,18 +80,27 @@
 - Delcatty
 - Seviper
 - Zangoose
+
+#### Generation 4
 - Cherubi
 - Cherrim
 - Stunky
 - Skuntank
+
+#### Generation 5
 - Audino
 - Pawniard
 - Bisharp
-- Kingambit
+
+#### Generation 6
 - Pancham (+ Cosmetic with Black Glasses)
 - Pangoro (+ Cosmetic with Black Glasses)
+
+#### Generation 7
 - Rockruff
 - Lycanroc
+
+#### Generation 8
 - Rolycoly
 - Carkol
 - Coalossal
@@ -97,20 +109,24 @@
 - Frosmoth
 - Indeedee
 - Duraludon
-- Archaludon
 - Applin
 - Flapple
 - Appletun
-- Dipplin
-- Hydrapple
+
+#### Generation 9
+
 - Nymble
 - Lokix
+- Kingambit
+- Dipplin
+- Archaludon
+- Hydrapple
 
 #### Regional Forms
-- Sandshrew (Alolan)
-- Sandslash (Alolan)
-- Yamask (Galarian)
-- Avalugg (Hisuian)
+- Sandshrew (Alolan Form)
+- Sandslash (Alolan Form)
+- Yamask (Galarian Form)
+- Avalugg (Hisuian Form)
 
 ### Model updates for the following Pokémon
 
@@ -125,6 +141,7 @@
 - Porygon2
 - Porygon-Z
 - Skarmory
+- Smoochum
 - Jynx
 - Popplio
 - Brionne
@@ -147,6 +164,8 @@
 - Cofagrigus
 - Tyranitar
 - Turtonator
+- Golett
+- Arbok (New Patterns: Angry, Cartoon, Clown, Comedic, Crow, Grin, Ink, Modern, Rain, Scribble, Silence, Sloth, Suspicious, Will)
 
 #### Model changes to the regional bias resource pack:
 
@@ -155,6 +174,25 @@
 - Changed models for every existing regional bias
 
 ### Animation updates for the following Pokémon
+
+- Kakuna
+- Nidoran♀ (+ New shoulder mount)
+- Nidorina
+- Nidoran♂ (+ New shoulder mount)
+- Sandshrew
+- Diglett
+- Dugtrio
+- Graveler
+- Happiny
+- Chansey
+- Blissey
+- Poliwhirl
+- Poliwrath
+- Zubat
+- Vulpix
+- Drowzee
+- Hypno
+- Noctowl
 - Skarmory
 - Skitty
 - Flygon
@@ -186,8 +224,16 @@
 - Yamask
 - Cofagrigus
 - Luvdisc
+- Staryu
+- Starmie
+- Togetic
+- Rellor
+- Rabsca
+- Yungoos
+- Gumshoos
 
 #### Added sounds to the following moves
+
 - Absorb
 - Aurora Beam
 - Double Team
@@ -216,10 +262,12 @@
 
 ### Fixes
 - Adjusted Croagunk's walkspeed
+- Adjusted Aerodactyl's walkspeed
 - Fixed Blitzle's base scale being `1` rather than the intended `0.8`
 - Fixed Magnezone's emissive layer for the shiny having the wrong name, thus displaying wrongly
 - Fixed Litleo not blinking
 - Fixed Garchomp T-posing when sleeping while out of battle.
+- Fixed Omanyte and Omastar incorrectly using water animations on land.
 - Sharp Beak can now be crafted
 - Metal Alloy can now be crafted
 - Ability Capsules can now be brewed
@@ -284,6 +332,13 @@
 - Regional Foods will now prioritize being eaten instead of used for healing Pokémon, shift clicking will use it as healing
 - Resolved Z-Fighting on Pokédex Models
 - Restored Ninjask's ability to do barrel rolls
+- Fixed a crash caused by adding enchanted items to the Resurrection Machine
+- Fixed a crash that could occur when starting a PvN battle with only fainted Pokémon.
+- Fixed the Remember Riding Camera config not being respected when dismounting and resolved the incompatibility with the Auto Third Person mod
+- Fixed Full Heal block not dropping Full Heals
+- Fixed status cure items not returning an empty bottle when used
+- Fixed Panpour consuming its held item when evolving with a Water Stone
+- Fixed Smoked Tail Curry returning a Wooden Bowl when consumed despite it not being included in the recipe
 
 ### Fixes
 - Fixed Croagunk's walkspeed
@@ -334,6 +389,9 @@
 - Fixed Guilded chests being more accessible than intended
 - Fixed fished up Pokémon not being added as "seen" to the Pokedex
 - Fixed surprised Gimmighoul encounters not being added as "seen" to the Pokedex
+- Fixed a crash involving berry trees that have been world edited.
+- Fixed visual desync in multiplayer for players mounting Pokémon outside other players' loaded chunks 
+- Fixed Pokémon entities leveled by rare candy not getting stronger as Minecraft entities unless recalled.
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
@@ -344,6 +402,8 @@
 - Separated all the functions of MoLangFunctions.kt into their own files.
 - Spawn buckets and their base weights are now provided by the spawner, with different base weights for world, fishing, snack, and habitat spawn buckets.
 - Removed "SpawnBucket" class in favour of just storing maps of bucket names to weights.
+- Fixed nicknames not being applied to Pokémon spawned from `spawn_pool_world` files.
+- Added support for `profilePokedexScale`, `profilePokedexTranslation`, `profileSummaryScale`, and `profileSummaryTranslation` in poser files for finer control over profile displays.
 
 ### Molang & Datapacks
 - Added `moveset_builders` datapack folder for different styles of movesets.
@@ -354,6 +414,7 @@
 - Added `q.item.is_enchanted()`
 - Added `q.item.has_enchantment(minecraft:sharpness, 3)`
 - Added `has_chosen_starter` & `get_starter_uuid` as available Molang functions
+- Added `has_tm_move_unlocked`, `unlock_tm_move`, & `lock_tm_move` as available Molang functions for Players
 - Added `marks`, `has_mark`, & `remove_marks` as available Molang functions for Pokémon
 - Added Data Component support for species drops, eg `"components": {"minecraft:custom_model_data": 123}`
 - Added the new `sortOrder` field to mark entries, (defaults to 0 if not specified) which controls the order in which marks are rendered on the HUD, with higher numbers being rendered on top of lower numbers
