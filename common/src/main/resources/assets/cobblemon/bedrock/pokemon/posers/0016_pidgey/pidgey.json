@@ -10,13 +10,7 @@
   },
   "poses": {
     "standing": {
-      "poseName": "standing",
-      "poseTypes": [
-        "PORTRAIT",
-        "PROFILE",
-        "STAND",
-        "NONE"
-      ],
+      "poseTypes": ["PORTRAIT", "PROFILE", "STAND", "NONE"],
       "animations": [
         "q.look('head_ai')",
         "q.bedrock('pidgey', 'ground_idle')"
@@ -45,10 +39,7 @@
       ]
     },
     "walk": {
-      "poseName": "walk",
-      "poseTypes": [
-        "WALK"
-      ],
+      "poseTypes": ["WALK"],
       "animations": [
         "q.look('head_ai')",
         "q.bedrock('pidgey', 'ground_walk')"
@@ -76,11 +67,7 @@
       ]
     },
     "hover": {
-      "poseName": "hover",
-      "poseTypes": [
-        "HOVER",
-        "FLOAT"
-      ],
+      "poseTypes": ["HOVER", "FLOAT"],
       "animations": [
         "q.pitch_tilt('body')",
         "q.look('head_ai')",
@@ -109,11 +96,7 @@
       ]
     },
     "fly": {
-      "poseName": "fly",
-      "poseTypes": [
-        "FLY",
-        "SWIM"
-      ],
+      "poseTypes": ["FLY", "SWIM"],
       "animations": [
         "q.pitch_tilt('body')",
         "q.bedrock('pidgey', 'air_fly')"
