@@ -57,7 +57,7 @@
     },
     "moving": {
       "walk": {
-        "walkSpeed": 0.20
+        "walkSpeed": 0.22
       },
       "fly": {
         "canFly": true
@@ -129,9 +129,9 @@
         ],
         "stats": {
           "ACCELERATION": "45-70",
-          "JUMP": "30-60",
+          "JUMP": "40-70",
           "SKILL": "35-70",
-          "SPEED": "30-60",
+          "SPEED": "30-65",
           "STAMINA": "35-60"
         }
       },
