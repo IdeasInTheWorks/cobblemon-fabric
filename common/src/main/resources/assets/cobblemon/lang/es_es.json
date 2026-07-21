@@ -9312,7 +9312,7 @@
     "cobblemon.ui.edit.habitat.validation.species": "Especies debe ser un nombre válido de un Pokémon.",
     "cobblemon.ui.edit.habitat.validation.weight": "Peso debe ser mayor a 0.",
     "cobblemon.ui.edit.habitat.validation.modifiers": "El formato de modificadores es inválido.",
-    "cobblemon.ui.edit.habitat.validation.phases_list": "Fases debe usar fases de la luna válidas (0-7), p.ej. 1-3 o 1, 3-5, 6.",
+    "cobblemon.ui.edit.habitat.validation.phases_list": "Las fases deben usar un formato válido para los intervalos de números enteros, p. ej. 1-3 o 1, 3-5, 6.",
     "cobblemon.ui.edit.habitat.validation.min_light": "Luz mínima debe ser un valor entre 0 y 15.",
     "cobblemon.ui.edit.habitat.validation.max_light": "Luz Máxima debe ser un valor entre 0 y 15.",
     "cobblemon.ui.moves.learnset.tm.discovered": "Descubierto",
@@ -9515,5 +9515,12 @@
     "cobblemon.subtitle.block.tm_machine.burn_loop": "Máquina MT imprime MT",
     "cobblemon.subtitle.block.tm_machine.start": "Maquina MT empieza a imprimir MT",
     "cobblemon.subtitle.block.tm_machine.tm_insert": "MT en blanco colocada en la Máquina MT",
-    "cobblemon.subtitle.block.tm_machine.tm_retrieve": "MT retirada de la Máquina MT"
+    "cobblemon.subtitle.block.tm_machine.tm_retrieve": "MT retirada de la Máquina MT",
+    "cobblemon.subtitle.block.tm_machine.item_insert": "Elemento introducido en la Máquina MT",
+    "cobblemon.subtitle.block.tm_machine.item_retrieve": "Elemento extraído de la Máquina MT",
+    "cobblemon.config.ui.data_monitor_alpha_rate": "Tasa de alfas del Monitor de datos",
+    "cobblemon.config.ui.data_monitor_alpha_rate.tooltip": "Probabilidad de que un Pokémon del Monitor de datos pueda ser un alfa. Se calcula como 1/x.",
+    "cobblemon.config.ui.data_monitor_shiny_rate": "Tasa de shiny del Monitor de datos",
+    "cobblemon.config.ui.data_monitor_shiny_rate.tooltip": "Probabilidad de que un Pokémon del Monitor de datos pueda ser shiny. Se calcula como 1/x.",
+    "advancements.cobblemon.root_geological": "Piedras curiosas"
 }
