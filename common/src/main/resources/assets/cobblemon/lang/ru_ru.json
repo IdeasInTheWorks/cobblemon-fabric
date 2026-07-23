@@ -6907,7 +6907,7 @@
     "cobblemon.battle.activate.leppaberry": "%1$s восстанавливает ОС у %3$s с помощью ягоды леппа!",
     "cobblemon.battle.activate.lingeringaroma": "Стойкий аромат прилипает к %2$s!",
     "cobblemon.battle.activate.mummy": "Способность %1$s поменялась на Мумию!",
-    "cobblemon.battle.activate.thundercage": "%2$s поймал %1$s!",
+    "cobblemon.battle.activate.thundercage": "%2$s ловит %1$s!",
     "item.cobblemon.sharp_beak.tooltip": "Усиливает приёмы Летающего типа",
     "item.cobblemon.safety_goggles.tooltip": "Даёт пользователю иммунитет к атакам порошком и спорами, а также к урону от погоды",
     "item.cobblemon.room_service.tooltip_1": "Понижает Скорость пользователя, когда активна Волшебная комната",
@@ -8762,5 +8762,18 @@
     "cobblemon.battle.damage.ironbarbs": "%1$s укалывается!",
     "cobblemon.battle.damage.liquidooze": "%1$s всасывает жидкую слизь!",
     "cobblemon.battle.damage.roughskin": "%1$s получает ссадину!",
-    "cobblemon.battle.damage.snaptrap": "%1$s получает урон от Капкана!"
+    "cobblemon.battle.damage.snaptrap": "%1$s получает урон от Капкана!",
+    "cobblemon.battle.end.infestation": "%1$s освобождается от Заражения!",
+    "cobblemon.battle.end.neutralizinggas": "Эффекты нейтрализующего газа исчезают!",
+    "cobblemon.battle.end.sandtomb": "%1$s освобождается от Песчаной могилы!",
+    "cobblemon.battle.end.stockpile": "Эффекты накопления %1$s исчезают!",
+    "cobblemon.battle.block.aromaveil": "%1$s защищается ароматной завесой!",
+    "cobblemon.battle.block.sweetveil": "%1$s не может уснуть из-за сладкой завесы!",
+    "cobblemon.battle.damage.thundercage": "%1$s получает урон от Громовой клетки!",
+    "cobblemon.battle.ability.replace": "Способность %1$s становится %2$s!",
+    "cobblemon.battle.error.incorrect_actor_count": "Имеется %1$s участник(-ов), когда требуется %2%.",
+    "cobblemon.battle.error.no_party": "У %1$s нет в команде Покемонов для битвы.",
+    "cobblemon.battle.enditem.focusband": "%1$s держится благодаря Повязке фокусировки!",
+    "cobblemon.battle.enditem.focussash": "%1$s держится благодаря Ленте фокусировки!",
+    "cobblemon.battle.enditem.ejectpack": "%1$s активирует замену с помощью Рюкзака эвакуации!"
 }
