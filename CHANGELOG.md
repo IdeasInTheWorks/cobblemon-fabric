@@ -167,6 +167,7 @@
 - Golett
 - Corsola
 - Arbok (New Patterns: Angry, Cartoon, Clown, Comedic, Crow, Grin, Ink, Modern, Rain, Scribble, Silence, Sloth, Suspicious, Will)
+- ... and Substitute
 
 #### Model changes to the regional bias resource pack:
 
