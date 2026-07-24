@@ -45,9 +45,9 @@
   "baseFriendship": 50,
   "baseScale": 1.1,
   "hitbox": {
-    "width": 1.4,
     "height": 2.3,
-    "fixed": false
+    "fixed": false,
+    "width": 1.4
   },
   "riding": {
     "behaviours": {
@@ -95,35 +95,101 @@
           }
         ],
         "stats": {
-          "ACCELERATION": "45-70",
-          "JUMP": "40-65",
-          "SKILL": "45-70",
+          "ACCELERATION": "40-55",
+          "JUMP": "25-40",
+          "SKILL": "65-90",
           "SPEED": "45-70",
-          "STAMINA": "35-60"
+          "STAMINA": "45-60"
         }
       }
     },
     "seats": [
       {
-        "locator": "seat_1"
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "poseOffsets": [
+          {
+            "offset": {
+              "x": -0.75376916,
+              "y": -0.547185,
+              "z": -0.30115634
+            },
+            "poseTypes": [
+              "STAND"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.21875,
+              "y": -0.5869315,
+              "z": 0.1281231
+            },
+            "poseTypes": [
+              "WALK"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.21875,
+              "y": -0.8011644,
+              "z": 0.048800588
+            },
+            "poseTypes": [
+              "HOVER"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.21875,
+              "y": -0.8011644,
+              "z": 0.048800588
+            },
+            "poseTypes": [
+              "FLY"
+            ]
+          },
+          {
+            "offset": {
+              "x": -0.7597029,
+              "y": -0.57899666,
+              "z": -0.33654642
+            },
+            "poseTypes": [
+              "FLOAT"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.21875,
+              "y": -0.8011644,
+              "z": 0.048800588
+            },
+            "poseTypes": [
+              "SWIM"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.21875,
+              "y": -0.8011644,
+              "z": 0.048800588
+            },
+            "poseTypes": [
+              "GLIDE"
+            ]
+          }
+        ]
       }
     ]
   },
   "behaviour": {
-    "moving": {
-      "walk": {
-        "avoidsLand": true,
-        "walkSpeed": 0.3
-      },
-      "swim": {
-        "swimSpeed": 0.3,
-        "canBreatheUnderwater": true
-      }
-    },
-    "resting": {
-      "canSleep": true,
-      "drowsyChance": 0.0333,
-      "rouseChance": 0.0042
+    "combat": {
+      "willDefendOwner": true,
+      "willDefendSelf": true,
+      "willFlee": false
     },
     "herd": {
       "maxSize": "9",
@@ -142,10 +208,20 @@
         }
       ]
     },
-    "combat": {
-      "willDefendSelf": true,
-      "willDefendOwner": true,
-      "willFlee": false
+    "moving": {
+      "swim": {
+        "canBreatheUnderwater": true,
+        "swimSpeed": 0.3
+      },
+      "walk": {
+        "avoidsLand": true,
+        "walkSpeed": 0.3
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
     }
   },
   "drops": {
