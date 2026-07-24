@@ -45,153 +45,25 @@
   "baseFriendship": 50,
   "baseScale": 1.05,
   "hitbox": {
+    "width": 0.6,
     "height": 1,
-    "fixed": false,
-    "width": 0.6
-  },
-  "riding": {
-    "behaviours": {
-      "AIR": {
-        "key": "cobblemon:air/bird",
-        "rideSounds": [
-          {
-            "muffleEnabled": true,
-            "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
-            "playForNonPassengers": false,
-            "playForPassengers": true,
-            "soundLocation": "cobblemon:ride.loop.wind.stereo",
-            "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
-          },
-          {
-            "muffleEnabled": true,
-            "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
-            "playForNonPassengers": true,
-            "playForPassengers": false,
-            "soundLocation": "cobblemon:ride.loop.wind.mono",
-            "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
-          },
-          {
-            "muffleEnabled": true,
-            "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
-            "playForNonPassengers": false,
-            "playForPassengers": true,
-            "soundLocation": "cobblemon:ride.loop.plumage.stereo",
-            "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
-          },
-          {
-            "muffleEnabled": true,
-            "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
-            "playForNonPassengers": true,
-            "playForPassengers": false,
-            "soundLocation": "cobblemon:ride.loop.plumage.mono",
-            "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
-          }
-        ],
-        "stats": {
-          "ACCELERATION": "45-70",
-          "JUMP": "55-80",
-          "SKILL": "35-65",
-          "SPEED": "30-65",
-          "STAMINA": "25-40"
-        }
-      },
-      "LAND": {
-        "key": "cobblemon:land/horse",
-        "rideSounds": [],
-        "canJump": false,
-        "canSprint": false,
-        "stats": {
-          "ACCELERATION": "10-40",
-          "JUMP": "10-40",
-          "SKILL": "80-100",
-          "SPEED": "10-40",
-          "STAMINA": "10-40"
-        }
-      }
-    },
-    "seats": [
-      {
-        "offset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "poseOffsets": [
-          {
-            "offset": {
-              "x": 0.0,
-              "y": -1.1724468,
-              "z": -0.010186363
-            },
-            "poseTypes": [
-              "STAND"
-            ]
-          },
-          {
-            "offset": {
-              "x": 6.0692396E-18,
-              "y": -1.1622652,
-              "z": -0.008715805
-            },
-            "poseTypes": [
-              "WALK"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.039428007,
-              "y": -1.024926,
-              "z": -0.03951561
-            },
-            "poseTypes": [
-              "HOVER"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.04109907,
-              "y": -1.0887412,
-              "z": -0.12969537
-            },
-            "poseTypes": [
-              "FLY"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.039428007,
-              "y": -1.024926,
-              "z": -0.03951561
-            },
-            "poseTypes": [
-              "FLOAT"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.04109907,
-              "y": -1.0887412,
-              "z": -0.12969537
-            },
-            "poseTypes": [
-              "SWIM"
-            ]
-          },
-          {
-            "offset": {
-              "x": 0.0,
-              "y": -1.1724468,
-              "z": -0.010186363
-            },
-            "poseTypes": [
-              "GLIDE"
-            ]
-          }
-        ]
-      }
-    ]
+    "fixed": false
   },
   "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      },
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "light": "0-4",
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
     "combat": {
       "fightsMelee": true,
       "willDefendOwner": true
@@ -224,22 +96,22 @@
           "tier": 5
         }
       ]
-    },
-    "moving": {
-      "fly": {
-        "canFly": true
-      },
-      "swim": {
-        "avoidsWater": true
-      }
-    },
-    "resting": {
-      "canSleep": true,
-      "drowsyChance": 0.0333,
-      "light": "0-4",
-      "rouseChance": 0.0042
     }
   },
+  "ai": [
+    {
+      "type": "cobblemon:add_tasks_to_activity",
+      "activity": "idle",
+      "tasksByPriority": {
+        "7": [
+          {
+            "type": "cobblemon:target_entity",
+            "entityCondition": "q.entity.is_pokemon && q.entity.species.identifier == 'cobblemon:magikarp' && q.entity.world.is_air(q.entity.x, q.entity.y + 1, q.entity.z)"
+          }
+        ]
+      }
+    }
+  ],
   "drops": {
     "amount": 5,
     "entries": [
@@ -352,31 +224,40 @@
   "preEvolution": "pidgey",
   "evolutions": [
     {
-      "consumeHeldItem": false,
       "id": "pidgeotto_pidgeot",
+      "variant": "level_up",
+      "result": "pidgeot",
+      "consumeHeldItem": false,
       "learnableMoves": [],
       "requirements": [
         {
-          "minLevel": 36,
-          "variant": "level"
+          "variant": "level",
+          "minLevel": 36
         }
-      ],
-      "result": "pidgeot",
-      "variant": "level_up"
+      ]
     }
   ],
-  "ai": [
-    {
-      "activity": "idle",
-      "tasksByPriority": {
-        "7": [
-          {
-            "entityCondition": "q.entity.is_pokemon && q.entity.species.identifier == 'cobblemon:magikarp' && q.entity.world.is_air(q.entity.x, q.entity.y + 1, q.entity.z)",
-            "type": "cobblemon:target_entity"
-          }
-        ]
+  "riding": {
+    "stats": {
+      "SPEED": {
+        "ranges": "30-60"
       },
-      "type": "cobblemon:add_tasks_to_activity"
+      "ACCELERATION": {
+        "ranges": "30-60"
+      },
+      "SKILL": {
+        "ranges": "30-60"
+      },
+      "JUMP": {
+        "ranges": "25-50"
+      },
+      "STAMINA": {
+        "ranges": "30-60"
+      }
+    },
+    "seats": [],
+    "behaviour": {
+      "key": "cobblemon:air/glider"
     }
-  ]
+  }
 }
