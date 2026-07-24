@@ -165,7 +165,9 @@
 - Tyranitar
 - Turtonator
 - Golett
+- Corsola
 - Arbok (New Patterns: Angry, Cartoon, Clown, Comedic, Crow, Grin, Ink, Modern, Rain, Scribble, Silence, Sloth, Suspicious, Will)
+- ... and Substitute
 
 #### Model changes to the regional bias resource pack:
 
@@ -176,6 +178,7 @@
 ### Animation updates for the following Pokémon
 
 - Kakuna
+- Grimer
 - Nidoran♀ (+ New shoulder mount)
 - Nidorina
 - Nidoran♂ (+ New shoulder mount)
@@ -231,6 +234,9 @@
 - Rabsca
 - Yungoos
 - Gumshoos
+- Cottonee
+- Whimsicott
+- Corsola
 
 #### Added sounds to the following moves
 
@@ -405,6 +411,7 @@
 - Removed "SpawnBucket" class in favour of just storing maps of bucket names to weights.
 - Fixed nicknames not being applied to Pokémon spawned from `spawn_pool_world` files.
 - Added support for `profilePokedexScale`, `profilePokedexTranslation`, `profileSummaryScale`, and `profileSummaryTranslation` in poser files for finer control over profile displays.
+- Fixed riding camera offsets defined on Pokémon forms not being applied
 
 ### Molang & Datapacks
 - Added `moveset_builders` datapack folder for different styles of movesets.
