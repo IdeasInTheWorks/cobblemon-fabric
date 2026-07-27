@@ -61,24 +61,6 @@
       "namedAnimations": {
         "cry": "q.bedrock_primary('pidgeot', 'battle_cry', q.curve('symmetrical_wide'))"
       },
-      "transformedParts": [
-        {
-          "part": "wing_open_left",
-          "isVisible": false
-        },
-        {
-          "part": "wing_open_right",
-          "isVisible": false
-        },
-        {
-          "part": "wing_closed_left",
-          "isVisible": true
-        },
-        {
-          "part": "wing_closed_right",
-          "isVisible": true
-        }
-      ],
       "quirks": [
         "q.bedrock_quirk('pidgeot', 'blink')"
       ]
