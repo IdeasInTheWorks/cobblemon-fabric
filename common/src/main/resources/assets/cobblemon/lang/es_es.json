@@ -9625,5 +9625,12 @@
     "cobblemon.species.tatsugiri-stretchymega.desc": "Usa la energía de la megaevolución para crear un transporte vagamente parecido a una bandeja con el que puede desplazarse libremente por el aire.",
     "cobblemon.ui.pokedex.info.form.baxcalibur-mega": "Mega-Baxcalibur",
     "cobblemon.species.baxcalibur-mega.desc": "Tras la megaevolución, la hoja de su placa dorsal adquiere un tamaño descomunal. Dispara rayos por la empuñadura del plexo solar.",
-    "cobblemon.ability.piercingdrill": "Turbotaladro"
+    "cobblemon.ability.piercingdrill": "Turbotaladro",
+    "cobblemon.ability.piercingdrill.desc": "Cuando el Pokémon ataca con un movimiento de contacto, es capaz de alcanzar incluso a objetivos que se encuentran protegidos por algún efecto y les inflige 1/4 del daño original. El resto de efectos no se ven afectados por esta habilidad y se activarán de forma habitual.",
+    "cobblemon.ability.dragonize": "Piel Dragontina",
+    "cobblemon.ability.dragonize.desc": "Convierte los movimientos de tipo Normal del Pokémon en movimientos de tipo Dragón y aumenta un 20 % su potencia.",
+    "cobblemon.ability.megasol": "Megasolar",
+    "cobblemon.ability.megasol.desc": "El Pokémon puede usar movimientos con los mismos resultados que si hiciese sol, aunque realmente ese no sea el tiempo atmosférico actual.",
+    "cobblemon.ability.spicyspray": "Salpicante",
+    "cobblemon.ability.spicyspray.desc": "Quema al atacante si recibe daño de un movimiento."
 }
