@@ -181,7 +181,7 @@
       "phases": "1-4"
     },
     {
-      "species": "Beeheyem",
+      "species": "Beheeyem",
       "bucket": "common",
       "spawnablePositionType": "grounded",
       "weight": 4.0,
@@ -189,7 +189,7 @@
       "phases": "5"
     },
     {
-      "species": "Beeheyem",
+      "species": "Beheeyem",
       "bucket": "uncommon",
       "spawnablePositionType": "grounded",
       "weight": 4.0,
