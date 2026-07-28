@@ -292,24 +292,6 @@
           }
         ]
       },
-      "behaviour": {
-        "combat": {
-          "willDefendOwner": true,
-          "willDefendSelf": true,
-          "willFlee": false
-        },
-        "moving": {
-          "walk": {
-            "walkSpeed": 0.19
-          }
-        },
-        "resting": {
-          "canSleep": true,
-          "drowsyChance": 0.0333,
-          "light": "0-4",
-          "rouseChance": 0.0042
-        }
-      },
       "drops": {
         "amount": 8,
         "entries": [
@@ -443,7 +425,32 @@
       ],
       "preEvolution": "sliggoo hisuian",
       "evolutions": [],
-      "battleOnly": false
+      "battleOnly": false,
+      "behaviour": {
+        "resting": {
+          "drowsyChance": 0.0333,
+          "rouseChance": 0.0042
+        },
+        "moving": {
+          "swim": {
+            "canWalkOnWater": true
+          }
+        },
+        "combat": {
+          "willDefendSelf": true,
+          "willDefendOwner": true,
+          "willFlee": false
+        },
+        "herd": {
+          "maxSize": 5,
+          "toleratedLeaders": [
+            {
+              "pokemon": "goodra alpha",
+              "tier": 1
+            }
+          ]
+        }
+      }
     }
   ],
   "features": [
