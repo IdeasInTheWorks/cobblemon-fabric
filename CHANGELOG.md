@@ -347,12 +347,6 @@
 - Fixed Smoked Tail Curry returning a Wooden Bowl when consumed despite it not being included in the recipe
 - Fixed `/giveallpokemon` not respecting the min and max parameters
 - Fixed the choose starter toast not disappearing when capturing a Pokémon instead of opening the starter selection screen
-
-### Fixes
-- Fixed Croagunk's walkspeed
-- Fixed Blitzle's base scale being `1` rather than the intended `0.8`
-- Fixed Magnezone's emissive layer for the shiny having the wrong name, thus displaying wrongly
-- Fixed Litleo not blinking
 - Fixed Pokédex layout for genderless variations
 - Fixed odd stacking behaviour with the poke_bait item.
 - Fixed a compatibility issue with World Game Rules which caused some log spam in specific cases.
@@ -394,13 +388,14 @@
 - Fixed Exploit where you could take out the bait or drop your Pokérod with bait to avoid consuming bait, now the bobber will just disappear if you do so
 - Fixed Apricorn and Saccharine boats incorrectly using chest boat models
 - Fixed wild and trainer battle AI refusing to select moves with the `adjacentAlly` target type, even when it's their only option
-- Fixed Guilded chests being more accessible than intended
+- Fixed gilded chests being more accessible than intended
 - Fixed fished up Pokémon not being added as "seen" to the Pokedex
 - Fixed surprised Gimmighoul encounters not being added as "seen" to the Pokedex
 - Fixed a crash involving berry trees that have been world edited.
-- Fixed visual desync in multiplayer for players mounting Pokémon outside other players' loaded chunks 
+- Fixed visual desync in multiplayer for players mounting Pokémon outside other players' loaded chunks
 - Fixed Pokémon entities leveled by rare candy not getting stronger as Minecraft entities unless recalled.
 - Fixed a freeze during game load that occurred when multiple mods tried to load Cobblemon API classes at the same time.
+
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
@@ -515,6 +510,7 @@
   - German
   - Spanish
   - Ecuadorian Spanish
+  - Portuguese
   - Brazilian Portuguese
   - Simplified Chinese
   - Traditional Chinese
