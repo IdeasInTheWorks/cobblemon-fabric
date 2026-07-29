@@ -8773,5 +8773,11 @@
     "cobblemon.battle.enditem.focusband": "%1$s держится благодаря Повязке фокусировки!",
     "cobblemon.battle.enditem.focussash": "%1$s держится благодаря Ленте фокусировки!",
     "cobblemon.battle.enditem.ejectpack": "%1$s активирует замену с помощью Рюкзака эвакуации!",
-    "gamerule.healersHealPC": "Лечит Покемонов в ПК, используя Лечебную машину"
+    "gamerule.healersHealPC": "Лечит Покемонов в ПК, используя Лечебную машину",
+    "block.cobblemon.habitat_block": "Блок среды обитания",
+    "cobblemon.move.category": "Категория",
+    "cobblemon.starterselection.category.special": "Спец",
+    "cobblemon.size_category.xl": "XL",
+    "cobblemon.size_category.l": "L",
+    "cobblemon.battle.enditem.babiriberry": "Ягода Бабири ослабила урон на %1$s"
 }
