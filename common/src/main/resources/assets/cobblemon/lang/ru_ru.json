@@ -8802,5 +8802,6 @@
     "cobblemon.battle.enditem.occaberry": "Ягода Окка ослабила урон на %1$s",
     "cobblemon.battle.enditem.passhoberry": "Ягода Пашшо ослабила урон на %1$s",
     "cobblemon.battle.enditem.wacanberry": "Ягода Вакан ослабила урон на %1$s",
-    "cobblemon.battle.enditem.rindoberry": "Ягода Риндо ослабила урон на %1$s"
+    "cobblemon.battle.enditem.rindoberry": "Ягода Риндо ослабила урон на %1$s",
+    "cobblemon.battle.enditem.yacheberry": "Ягода Яче ослабила урон на %1$s"
 }
