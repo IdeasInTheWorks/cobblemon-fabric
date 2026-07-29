@@ -8772,5 +8772,6 @@
     "cobblemon.battle.error.no_party": "У %1$s нет в команде Покемонов для битвы.",
     "cobblemon.battle.enditem.focusband": "%1$s держится благодаря Повязке фокусировки!",
     "cobblemon.battle.enditem.focussash": "%1$s держится благодаря Ленте фокусировки!",
-    "cobblemon.battle.enditem.ejectpack": "%1$s активирует замену с помощью Рюкзака эвакуации!"
+    "cobblemon.battle.enditem.ejectpack": "%1$s активирует замену с помощью Рюкзака эвакуации!",
+    "gamerule.healersHealPC": "Лечит Покемонов в ПК, используя Лечебную машину"
 }
