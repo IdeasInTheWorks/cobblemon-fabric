@@ -3190,7 +3190,7 @@
     "cobblemon.move.telekinesis": "Телекинез",
     "cobblemon.move.telekinesis.desc": "The user makes the target float with its psychic power. The target is easier to hit for three turns.",
     "cobblemon.move.teleport": "Телепортация",
-    "cobblemon.move.teleport.desc": "The user switches places with a party Pokémon in waiting, if any. If a wild Pokémon uses this move, it flees.",
+    "cobblemon.move.teleport.desc": "Пользователь меняется местами с покемоном из команды (если таковой имеется). Если этот приём использует дикий покемон, он убегает.",
     "cobblemon.move.terablast": "Тера залп",
     "cobblemon.move.terablast.desc": "Если пользователь Терасталлизирован, он высвобождает энергию своего Тера типа. Этот приём наносит урон, используя Атаку или Спец. Атаку в зависимости от того, какой показатель выше.",
     "cobblemon.move.terrainpulse": "Полевой пульс",
