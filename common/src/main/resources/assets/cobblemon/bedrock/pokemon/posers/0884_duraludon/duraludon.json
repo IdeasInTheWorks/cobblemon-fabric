@@ -22,8 +22,13 @@
         "PROFILE"
       ],
       "isBattle": false,
+      "condition": "!q.in_air",
       "animations": [
-        "q.bedrock('duraludon', 'ground_idle')"
+        "q.bedrock('duraludon', 'ground_idle')",
+        {
+          "condition": "q.is_ridden && q.has_entity",
+          "animation": "q.bedrock('duraludon', 'ride_ground_run')"
+        }
       ],
       "quirks": [
         "q.bedrock_quirk('duraludon', 'blink')"
@@ -35,6 +40,7 @@
         "FLOAT"
       ],
       "isBattle": true,
+      "condition": "!q.in_air",
       "animations": [
         "q.bedrock('duraludon', 'battle_idle')"
       ],
@@ -50,12 +56,50 @@
         "WALK",
         "SWIM"
       ],
+      "condition": "!q.in_air && !q.is_sprinting",
       "animations": [
-        "q.bedrock('duraludon', 'ground_walk')"
+        "q.bedrock('duraludon', 'ground_walk')",
+        {
+          "condition": "q.is_ridden && q.has_entity",
+          "animation": "q.bedrock('duraludon', 'ride_ground_run')"
+        }
       ],
       "quirks": [
         "q.bedrock_quirk('duraludon', 'blink')"
       ]
+    },
+    "run": {
+      "poseTypes": [
+        "WALK",
+        "SWIM"
+      ],
+      "condition": "!q.in_air && q.is_sprinting",
+      "animations": [
+        "q.bedrock('duraludon', 'ground_run')",
+        {
+          "condition": "q.is_ridden && q.has_entity",
+          "animation": "q.bedrock('duraludon', 'ride_ground_run')"
+        }
+      ],
+      "quirks": [
+        "q.bedrock_quirk('duraludon', 'blink')"
+      ]
+    },
+    "jump": {
+      "poseTypes": ["STAND", "WALK"],
+      "condition": "q.in_air",
+      "animations": [
+        "q.bedrock('duraludon', 'ride_jump')",
+        {
+          "condition": "q.is_ridden",
+          "animation": "q.bedrock('duraludon', 'ride_ground_run')"
+        }
+      ],
+      "quirks": [
+        "q.bedrock_quirk('duraludon', 'blink')"
+      ],
+      "transformTicks": 5,
+      "transformToTicks": 5
     }
   }
 }
