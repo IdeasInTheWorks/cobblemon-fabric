@@ -1,0 +1,2 @@
+VitaminItem needs to somehow become an ItemNameBlockItem extension - Previous branch made a duplicate EVIncreaseItem that swapped CobblemonItem for ItemNameBlockItem. This feels ineffecient, I want to streamline it, but I'm not sure how
+Placeable Wearables needs solving, as the prior code (which also included a way to put on items by right clicking) caused lots of funky behaviours. Either right click to wear doesn't return?
