@@ -472,7 +472,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     // Evolution items
     @JvmField val LINK_CABLE = create("link_cable", LinkCableItem())
     @JvmField val DRAGON_SCALE = noSettingsItem("dragon_scale")
-    @JvmField val METAL_COAT = noSettingsItem("metal_coat")
+    @JvmField val METAL_COAT = itemNameBlockItem("metal_coat", CobblemonBlocks.METAL_COAT)
     @JvmField val UPGRADE = noSettingsItem("upgrade")
     @JvmField val DUBIOUS_DISC = noSettingsItem("dubious_disc")
     @JvmField val DEEP_SEA_SCALE = noSettingsItem("deep_sea_scale")
@@ -743,9 +743,9 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val MAX_REVIVE = create("max_revive", ReviveItem(max = true))
     @JvmField
-    val PP_UP = create("pp_up", PPUpItem(1))
+    val PP_UP = create("pp_up", PPUpItem(1, CobblemonBlocks.PP_UP))
     @JvmField
-    val PP_MAX = create("pp_max", PPUpItem(3))
+    val PP_MAX = create("pp_max", PPUpItem(3, CobblemonBlocks.PP_MAX))
 
     @JvmField
     val RED_MINT_SEEDS = mintSeed("red", MintType.RED.getCropBlock())

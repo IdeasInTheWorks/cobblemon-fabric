@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "amount=1,facing=north": {
+      "model": "cobblemon:block/carbos_one_item"
+    },
+    "amount=1,facing=east": {
+      "model": "cobblemon:block/carbos_one_item",
+      "y": 90
+    },
+    "amount=1,facing=south": {
+      "model": "cobblemon:block/carbos_one_item",
+      "y": 180
+    },
+    "amount=1,facing=west": {
+      "model": "cobblemon:block/carbos_one_item",
+      "y": 270
+    },
+    "amount=2,facing=north": {
+      "model": "cobblemon:block/carbos_two_items"
+    },
+    "amount=2,facing=east": {
+      "model": "cobblemon:block/carbos_two_items",
+      "y": 90
+    },
+    "amount=2,facing=south": {
+      "model": "cobblemon:block/carbos_two_items",
+      "y": 180
+    },
+    "amount=2,facing=west": {
+      "model": "cobblemon:block/carbos_two_items",
+      "y": 270
+    },
+    "amount=3,facing=north": {
+      "model": "cobblemon:block/carbos_three_items"
+    },
+    "amount=3,facing=east": {
+      "model": "cobblemon:block/carbos_three_items",
+      "y": 90
+    },
+    "amount=3,facing=south": {
+      "model": "cobblemon:block/carbos_three_items",
+      "y": 180
+    },
+    "amount=3,facing=west": {
+      "model": "cobblemon:block/carbos_three_items",
+      "y": 270
+    },
+    "amount=4,facing=north": {
+      "model": "cobblemon:block/carbos_four_items"
+    },
+    "amount=4,facing=east": {
+      "model": "cobblemon:block/carbos_four_items",
+      "y": 90
+    },
+    "amount=4,facing=south": {
+      "model": "cobblemon:block/carbos_four_items",
+      "y": 180
+    },
+    "amount=4,facing=west": {
+      "model": "cobblemon:block/carbos_four_items",
+      "y": 270
+    }
+  }
+}

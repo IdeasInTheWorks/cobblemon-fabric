@@ -39,7 +39,9 @@ class StackableItemBlock(settings: Properties, val type: StackableItemBlockType)
         ETHER,
         MAX_POTION,
         POTION,
-        STATUS_RESTORE;
+        STATUS_RESTORE,
+        VITAMIN,
+        METAL_COAT;
 
         override fun getSerializedName(): String = this.name.lowercase()
 
@@ -146,6 +148,42 @@ class StackableItemBlock(settings: Properties, val type: StackableItemBlockType)
                     Shapes.box(0.125, 0.0, 0.0, 0.375, 0.4375, 0.375),
                     Shapes.box(0.625, 0.0, 0.0625, 0.875, 0.4375, 0.4375),
                     Shapes.box(0.6875, 0.0, 0.5625, 0.9375, 0.4375, 0.9375)
+                )
+            ),
+            StackableItemBlockType.METAL_COAT to listOf(
+                Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.375, 0.6875),
+                Shapes.or(
+                    Shapes.box(0.5, 0.0, 0.125, 0.875, 0.375, 0.5),
+                    Shapes.box(0.125, 0.0, 0.5, 0.5, 0.375, 0.875)
+                ),
+                Shapes.or(
+                    Shapes.box(0.3125, 0.0, 0.0625, 0.6875, 0.375, 0.4375),
+                    Shapes.box(0.5625, 0.0, 0.5, 0.9375, 0.375, 0.875),
+                    Shapes.box(0.125, 0.0, 0.5, 0.5, 0.375, 0.875)
+                ),
+                Shapes.or(
+                    Shapes.box(0.5625, 0.0, 0.0625, 0.9375, 0.375, 0.4375),
+                    Shapes.box(0.125, 0.0, 0.125, 0.5, 0.375, 0.5),
+                    Shapes.box(0.5, 0.0, 0.5, 0.875, 0.375, 0.875),
+                    Shapes.box(0.0625, 0.0, 0.5625, 0.4375, 0.375, 0.9375)
+                )
+            ),
+            StackableItemBlockType.VITAMIN to listOf(
+                Shapes.box(0.375, 0.0, 0.375, 0.625, 0.4375, 0.625),
+                Shapes.or(
+                    Shapes.box(0.1875, 0.0, 0.3125, 0.4375, 0.4375, 0.5625),
+                    Shapes.box(0.5625, 0.0, 0.4375, 0.8125, 0.4375, 0.6875)
+                ),
+                Shapes.or(
+                    Shapes.box(0.1875, 0.0, 0.1875, 0.4375, 0.4375, 0.4375),
+                    Shapes.box(0.5625, 0.0, 0.25, 0.8125, 0.4375, 0.25),
+                    Shapes.box(0.375, 0.0, 0.5625, 0.625, 0.4375, 0.8125)
+                ),
+                Shapes.or(
+                    Shapes.box(0.1875, 0.0, 0.125, 0.4375, 0.4375, 0.375),
+                    Shapes.box(0.5625, 0.0, 0.1875, 0.8125, 0.4375, 0.4375),
+                    Shapes.box(0.625, 0.0, 0.625, 0.875, 0.4375, 0.875),
+                    Shapes.box(0.125, 0.0, 0.5625, 0.375, 0.4375, 0.8125)
                 )
             )
         )
