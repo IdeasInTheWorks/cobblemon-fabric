@@ -176,7 +176,7 @@ class StackableItemBlock(settings: Properties, val type: StackableItemBlockType)
                 ),
                 Shapes.or(
                     Shapes.box(0.1875, 0.0, 0.1875, 0.4375, 0.4375, 0.4375),
-                    Shapes.box(0.5625, 0.0, 0.25, 0.8125, 0.4375, 0.25),
+                    Shapes.box(0.5625, 0.0, 0.25, 0.8125, 0.4375, 0.5),
                     Shapes.box(0.375, 0.0, 0.5625, 0.625, 0.4375, 0.8125)
                 ),
                 Shapes.or(
