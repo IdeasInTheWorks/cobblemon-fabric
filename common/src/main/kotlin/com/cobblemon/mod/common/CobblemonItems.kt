@@ -507,7 +507,6 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField val RAZOR_FANG = noSettingsItem("razor_fang")
     @JvmField val AUSPICIOUS_ARMOR = heldItem("auspicious_armor")
     @JvmField val MALICIOUS_ARMOR = heldItem("malicious_armor")
-    @JvmField val SHELL_HELMET = heldItem("shell_helmet")
     @JvmField val METAL_ALLOY = noSettingsItem("metal_alloy")
     @JvmField val SCROLL_OF_DARKNESS = noSettingsItem("scroll_of_darkness")
     @JvmField val SCROLL_OF_WATERS = noSettingsItem("scroll_of_waters")
@@ -927,6 +926,9 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField val ROCKY_HELMET = wearableItem("rocky_helmet")
     @JvmField val SAFETY_GOGGLES = wearableItem("safety_goggles")
     @JvmField val WISE_GLASSES = wearableItem("wise_glasses")
+    @JvmField val SHARP_BEAK = wearableItem("sharp_beak")
+    @JvmField val COVERT_CLOAK = wearableItem("covert_cloak")
+    @JvmField val SHELL_HELMET = wearableItem("shell_helmet")
 
     // Held Items
     @JvmField
@@ -957,8 +959,6 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     val CLEANSE_TAG = itemNameBlockItem("cleanse_tag", CobblemonBlocks.CLEANSE_TAG)
     @JvmField
     val CLEAR_AMULET = heldItem("clear_amulet")
-    @JvmField
-    val COVERT_CLOAK = heldItem("covert_cloak")
     @JvmField
     val DESTINY_KNOT = heldItem("destiny_knot")
     @JvmField
@@ -1049,8 +1049,6 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     val ROOM_SERVICE = heldItem("room_service")
     @JvmField
     val SCOPE_LENS = heldItem("scope_lens")
-    @JvmField
-    val SHARP_BEAK = heldItem("sharp_beak")
     @JvmField
     val SHED_SHELL = heldItem("shed_shell")
     @JvmField
