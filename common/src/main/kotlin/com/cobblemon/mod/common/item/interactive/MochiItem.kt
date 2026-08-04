@@ -15,8 +15,9 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.level.block.Blocks
 
-class MochiItem(stat: Stats): EVIncreaseItem(stat, 4) {
+class MochiItem(stat: Stats): EVIncreaseItem(stat, 4, Blocks.AIR) {
     override val sound: SoundEvent = CobblemonSounds.MOCHI_USE
 
     override fun applyToPokemon(player: ServerPlayer, stack: ItemStack, pokemon: Pokemon): InteractionResultHolder<ItemStack> {

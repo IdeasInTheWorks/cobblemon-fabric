@@ -650,17 +650,17 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val EXPERIENCE_CANDY_XL = candyItem("exp_candy_xl") { _, _ -> CandyItem.DEFAULT_XL_CANDY_YIELD }
     @JvmField
-    val CALCIUM = create("calcium", VitaminItem(Stats.SPECIAL_ATTACK))
+    val CALCIUM = create("calcium", VitaminItem(Stats.SPECIAL_ATTACK, CobblemonBlocks.CALCIUM))
     @JvmField
-    val CARBOS = create("carbos", VitaminItem(Stats.SPEED))
+    val CARBOS = create("carbos", VitaminItem(Stats.SPEED, CobblemonBlocks.CARBOS))
     @JvmField
-    val HP_UP = create("hp_up", VitaminItem(Stats.HP))
+    val HP_UP = create("hp_up", VitaminItem(Stats.HP, CobblemonBlocks.HP_UP))
     @JvmField
-    val IRON = create("iron", VitaminItem(Stats.DEFENCE))
+    val IRON = create("iron", VitaminItem(Stats.DEFENCE, CobblemonBlocks.IRON))
     @JvmField
-    val PROTEIN = create("protein", VitaminItem(Stats.ATTACK))
+    val PROTEIN = create("protein", VitaminItem(Stats.ATTACK, CobblemonBlocks.PROTEIN))
     @JvmField
-    val ZINC = create("zinc", VitaminItem(Stats.SPECIAL_DEFENCE))
+    val ZINC = create("zinc", VitaminItem(Stats.SPECIAL_DEFENCE, CobblemonBlocks.ZINC))
     @JvmField
     val HEALTH_MOCHI = create("health_mochi", MochiItem(Stats.HP))
     @JvmField

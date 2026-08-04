@@ -11,7 +11,8 @@ package com.cobblemon.mod.common.item.interactive
 import com.cobblemon.mod.common.CobblemonSounds
 import com.cobblemon.mod.common.api.pokemon.stats.Stat
 import net.minecraft.sounds.SoundEvent
+import net.minecraft.world.level.block.Blocks
 
-class FeatherItem(stat: Stat) : EVIncreaseItem(stat, 1) {
+class FeatherItem(stat: Stat) : EVIncreaseItem(stat, 1, Blocks.AIR) {
     override val sound: SoundEvent = CobblemonSounds.MEDICINE_FEATHER_USE
 }

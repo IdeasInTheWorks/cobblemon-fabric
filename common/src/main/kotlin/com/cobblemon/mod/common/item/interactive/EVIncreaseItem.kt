@@ -20,14 +20,18 @@ import net.minecraft.sounds.SoundEvent
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.player.Player
+import net.minecraft.world.item.ItemNameBlockItem
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 
 abstract class EVIncreaseItem(
     val stat: Stat,
     val evIncreaseAmount: Int,
-) : CobblemonItem(Properties()), PokemonSelectingItem {
+    block: Block? = Blocks.AIR
+) : ItemNameBlockItem(block, Properties()), PokemonSelectingItem {
     override val bagItem = null
     override fun canUseOnPokemon(stack: ItemStack, pokemon: Pokemon) = pokemon.evs.getOrDefault(stat) < EVs.MAX_STAT_VALUE &&
             super.canUseOnPokemon(stack, pokemon)
