@@ -3,9 +3,14 @@ Galarica Wreath, Magnet, and Plaque could maybe have shared code moved into a ba
 
 Function Decisions:
     //Iron Ball
-Code:
-    //Eject Button
 Models:
     //King's Rock, Never-Melt Ice (0.989F), Hard Stone (with Iron Ball)
 Design Work:
     //Upgrade, Dubious Disc, Peat Block, Flame Orb {15}, Toxic Orb, Life Orb {2}[may change], Light Ball {13}, Smoke Ball, Soul Dew? {11}[may change]
+
+TODO:
+- Item Tags
+- Block Tags?
+- Ensure LambDynLights have the correct values
+- Wearables improvements and additions
+- Begin work on the stuff not approved (and iron ball)

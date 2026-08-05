@@ -42,6 +42,7 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
         CENTERED_8x,
         FLATTENED_8x6,
         FLATTENED_8x4,
+        FLATTENED_10x4,
         //For specific items
         TEACUP,
         TEAPOT,
@@ -64,6 +65,7 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
         val CENTERED_8x = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.5, 0.75)
         val FLAT6_HITBOX = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.375, 0.75)
         val FLAT4_HITBOX = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.25, 0.75)
+        val SMOOSHED4_HITBOX = Shapes.box(0.1875, 0.0, 0.1875, 0.8125, 0.25, 0.8125)
         val TEACUP_HITBOX = Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.25, 0.6875)
         val TEAPOT_HITBOX = Shapes.box(0.1875, 0.0, 0.1875, 0.8125, 0.625, 0.8125)
         val KNOT_HITBOX = Shapes.box(0.375, 0.0, 0.375, 0.75, 0.375, 0.75)
@@ -75,6 +77,7 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
                 DecorativeItemBlockType.TEACUP -> TEACUP_HITBOX
                 DecorativeItemBlockType.KNOT -> KNOT_HITBOX
                 DecorativeItemBlockType.POUCH -> POUCH_HITBOX
+                DecorativeItemBlockType.FLATTENED_10x4 -> SMOOSHED4_HITBOX
                 DecorativeItemBlockType.FLATTENED_8x4 -> FLAT4_HITBOX
                 DecorativeItemBlockType.FLATTENED_8x6 -> FLAT6_HITBOX
                 else -> CENTERED_8x
@@ -104,13 +107,9 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
         else super.updateShape(state, direction, neighborState, world, pos, neighborPos)
     }
 
-    override fun getCollisionShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape {
+    override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape {
         val direction = state.getValue(HORIZONTAL_FACING)
         return rotateShape(Direction.NORTH, direction, getShape(type))
-    }
-
-    override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape {
-        return getCollisionShape(state, level, pos, context).singleEncompassing()
     }
 
     override fun getStateForPlacement(context: BlockPlaceContext): BlockState? {
