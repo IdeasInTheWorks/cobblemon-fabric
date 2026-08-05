@@ -18,7 +18,8 @@
     "standing": {
       "poseTypes": ["PORTRAIT", "PROFILE", "STAND", "NONE"],
       "animations": [
-        "q.look('head_ai')",
+        "q.look('neck_ai', 1, 1, 30, -20, 7.5, -7.5)",
+        "q.look('head_ai', 1, 1, 3.5, -7.5, 1.5, -1.5)",
         "q.bedrock('pidgeotto', 'ground_idle')"
       ],
       "quirks": [
@@ -29,7 +30,8 @@
     "walk": {
       "poseTypes": ["WALK"],
       "animations": [
-        "q.look('head_ai')",
+        "q.look('neck_ai', 1, 1, 30, -20, 7.5, -7.5)",
+        "q.look('head_ai', 1, 1, 3.5, -7.5, 1.5, -1.5)",
         "q.bedrock('pidgeotto', 'ground_walk')"
       ],
       "transformedParts": [
@@ -58,7 +60,8 @@
       "poseTypes": ["HOVER", "FLOAT"],
       "animations": [
         "q.pitch_tilt('body')",
-        "q.look('head_ai')",
+        "q.look('neck_ai', 1, 1, 30, -20, 7.5, -7.5)",
+        "q.look('head_ai', 1, 1, 3.5, -7.5, 1.5, -1.5)",
         "q.bedrock('pidgeotto', 'air_idle')"
       ],
       "transformedParts": [
