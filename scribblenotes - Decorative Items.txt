@@ -1,2 +1,14 @@
-VitaminItem needs to somehow become an ItemNameBlockItem extension - Previous branch made a duplicate EVIncreaseItem that swapped CobblemonItem for ItemNameBlockItem. This feels ineffecient, I want to streamline it, but I'm not sure how
-Placeable Wearables needs solving, as the prior code (which also included a way to put on items by right clicking) caused lots of funky behaviours. Either right click to wear doesn't return?
+Placeable Wearables needs solving, as the prior code (which also included a way to put on items by right clicking) caused lots of funky behaviours. Either right click to wear doesn't return? - Maybe wearables can become an interface, as EVIncrementItem did, which branches into ones which can be right clicked to wear, and ones which can be placed?
+
+Galarica Wreath and Magnet can reuse Plaque code, maybe move it into a more generic form besides the hitboxes
+Metronome possibly can be genericized?
+Target probably can be a direct port in, no hassle
+
+Function Decisions:
+    //Iron Ball
+Code:
+    //Metronome, Eject Button, Ring Target, Magnet, Galarica Wreath
+Models:
+    //King's Rock, Never-Melt Ice (0.989F), Hard Stone (with Iron Ball)
+Design Work:
+    //Upgrade, Dubious Disc, Peat Block, Flame Orb {15}, Toxic Orb, Life Orb {2}[may change], Light Ball {13}, Smoke Ball, Soul Dew? {11}[may change]

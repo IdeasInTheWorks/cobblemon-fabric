@@ -383,7 +383,19 @@ object CobblemonClient {
             CobblemonBlocks.X_SP_ATK,
             CobblemonBlocks.X_SP_DEF,
             CobblemonBlocks.X_SPEED,
-            CobblemonBlocks.TM_MACHINE
+            CobblemonBlocks.TM_MACHINE,
+
+            CobblemonBlocks.GALARICA_CUFF,
+            CobblemonBlocks.CHIPPED_POT,
+            CobblemonBlocks.CRACKED_POT,
+            CobblemonBlocks.UNREMARKABLE_TEACUP,
+            CobblemonBlocks.MASTERPIECE_TEACUP,
+            CobblemonBlocks.LUMINOUS_MOSS,
+            CobblemonBlocks.ICY_ROCK,
+            CobblemonBlocks.HEAT_ROCK,
+            CobblemonBlocks.SMOOTH_ROCK,
+            CobblemonBlocks.DAMP_ROCK,
+            CobblemonBlocks.DESTINY_KNOT
         )
 
         this.createBoatModelLayers()
