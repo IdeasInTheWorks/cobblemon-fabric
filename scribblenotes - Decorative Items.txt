@@ -8,13 +8,21 @@ Items that are currently itemNameBlockItem that should also be wearable:  Galari
 Items that are currently wearableItem that should also be placeable:      King's Rock
 Items which are currently neither but in time should be both:             Never-Melt Ice
 
-Function Decisions:
-    //Iron Ball
-Models:
-    //King's Rock, Never-Melt Ice (0.989F), Hard Stone (with Iron Ball)
-Design Work:
-    //Upgrade, Dubious Disc, Peat Block, Flame Orb {15}, Toxic Orb, Life Orb {2}[may change], Light Ball {13}, Smoke Ball, Soul Dew? {11}[may change]
-
 TODO:
 - Wearables improvements and additions
-- Begin work on the stuff not approved (and iron ball)
+- Decide how to implement the Iron Ball, as it feels off in the old branch
+- Begin improvements for the stuff not approved to get it approved
+- Work on new models/blocks
+
+Function Decisions:
+    Iron Ball
+Models:
+    King's Rock, Never-Melt Ice (0.989F), Hard Stone (with Iron Ball)
+Design Work:
+    Upgrade, Dubious Disc, Peat Block, Flame Orb {15}, Toxic Orb, Life Orb {2}[may change], Light Ball {13}, Smoke Ball, Soul Dew? {11}[may change]
+New Ideas:
+    Scope Lens, Wide Lens, Zoom Lens,  Loaded Dice,  Shell Bell, Soothe Bell,  Lagging Tail,  Electirizer, Magmarizer,  Protector,  Throat Spray, Terrain Extender
+Maybe Ideas:
+    Ability Patch, Ability Capsule,  Moomoo Milk, Berry Juice,  Scroll of Waters, Scroll of Darkness,  Room Service?,  Whipped Dream?
+Additional Pitches (Denied/Unsure if worth it):
+    Sticky Barb (size), Poison Barb (idk), Incenses (dead items), Utility Umbrella (https://klipy.com/gifs/the-amazing-digital-circus-pomni-4), Air Balloon (pomni gif again), Batteries (unsure if makes sense), Booster Energy (it's not even in the mod yet), Everstone (display case maybe, but as a block idk), Amulet Coin (unsure if will ever be added?), Black Sludge (oozy snow layers sounds interesting but idk)
