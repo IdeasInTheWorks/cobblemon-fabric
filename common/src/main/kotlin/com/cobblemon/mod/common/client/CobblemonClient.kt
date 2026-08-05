@@ -396,7 +396,8 @@ object CobblemonClient {
             CobblemonBlocks.HEAT_ROCK,
             CobblemonBlocks.SMOOTH_ROCK,
             CobblemonBlocks.DAMP_ROCK,
-            CobblemonBlocks.DESTINY_KNOT
+            CobblemonBlocks.DESTINY_KNOT,
+            CobblemonBlocks.METRONOME
         )
 
         this.createBoatModelLayers()

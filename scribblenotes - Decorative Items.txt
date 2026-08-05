@@ -1,13 +1,10 @@
 Placeable Wearables needs solving, as the prior code (which also included a way to put on items by right clicking) caused lots of funky behaviours. Either right click to wear doesn't return? - Maybe wearables can become an interface, as EVIncrementItem did, which branches into ones which can be right clicked to wear, and ones which can be placed?
-
-Galarica Wreath and Magnet can reuse Plaque code, maybe move it into a more generic form besides the hitboxes
-Metronome possibly can be genericized?
-Target probably can be a direct port in, no hassle
+Galarica Wreath, Magnet, and Plaque could maybe have shared code moved into a base class, couldn't find a way to cleanly do it without something erroring so left it as is for now
 
 Function Decisions:
     //Iron Ball
 Code:
-    //Metronome, Eject Button, Ring Target, Magnet, Galarica Wreath
+    //Eject Button
 Models:
     //King's Rock, Never-Melt Ice (0.989F), Hard Stone (with Iron Ball)
 Design Work:
