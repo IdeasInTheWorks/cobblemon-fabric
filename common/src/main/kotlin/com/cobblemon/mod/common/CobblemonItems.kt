@@ -500,7 +500,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField val TART_APPLE = compostableItem("tart_apple", foodItem(4, 0.3f), 0.65f)
     @JvmField val SYRUPY_APPLE = compostableItem("syrupy_apple", foodItem(4, 0.3f), 0.65f)
     @JvmField val GALARICA_CUFF = itemNameBlockItem("galarica_cuff", CobblemonBlocks.GALARICA_CUFF)
-    @JvmField val GALARICA_WREATH = noSettingsItem("galarica_wreath")
+    @JvmField val GALARICA_WREATH = itemNameBlockItem("galarica_wreath", CobblemonBlocks.GALARICA_WREATH)
     @JvmField val BLACK_AUGURITE = noSettingsItem("black_augurite")
     @JvmField val PEAT_BLOCK = noSettingsItem("peat_block")
     @JvmField val RAZOR_CLAW = noSettingsItem("razor_claw")
@@ -1010,7 +1010,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val LUMINOUS_MOSS = itemNameBlockItem("luminous_moss", CobblemonBlocks.LUMINOUS_MOSS)
     @JvmField
-    val MAGNET = heldItem("magnet")
+    val MAGNET = itemNameBlockItem("magnet", CobblemonBlocks.MAGNET)
     @JvmField
     val METRONOME = heldItem("metronome")
     @JvmField

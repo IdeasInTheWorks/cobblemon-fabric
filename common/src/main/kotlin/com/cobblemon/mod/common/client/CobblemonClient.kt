@@ -386,6 +386,7 @@ object CobblemonClient {
             CobblemonBlocks.TM_MACHINE,
 
             CobblemonBlocks.GALARICA_CUFF,
+            CobblemonBlocks.GALARICA_WREATH,
             CobblemonBlocks.CHIPPED_POT,
             CobblemonBlocks.CRACKED_POT,
             CobblemonBlocks.UNREMARKABLE_TEACUP,

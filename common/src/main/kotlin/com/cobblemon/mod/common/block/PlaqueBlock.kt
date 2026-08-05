@@ -121,6 +121,8 @@ class PlaqueBlock(properties : Properties) : FaceAttachedHorizontalDirectionalBl
         return if (state.getValue(FACE) == AttachFace.CEILING) {
             val direction = getConnectedDirection(state)
             canSupportCenter(level, pos.relative(direction.opposite), direction)
+        } else if (state.getValue(FACE) == AttachFace.WALL) {
+            level.getBlockState(pos.relative(state.getValue(FACING).opposite)).isSolid
         } else {
             super.canSurvive(state, level, pos)
         }
