@@ -10,7 +10,6 @@ package com.cobblemon.mod.common.item.interactive
 
 import com.cobblemon.mod.common.CobblemonSounds
 import com.cobblemon.mod.common.api.pokemon.stats.Stat
-import com.cobblemon.mod.common.api.pokemon.stats.Stats
 import com.cobblemon.mod.common.item.CobblemonItem
 import com.cobblemon.mod.common.pokemon.Pokemon
 import net.minecraft.server.level.ServerPlayer
@@ -18,10 +17,8 @@ import net.minecraft.sounds.SoundEvent
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.Item.Properties
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.Blocks
 
 class MochiItem(override val stat: Stat): CobblemonItem(Properties()), EVIncreaseItem {
     override val evIncreaseAmount: Int = 4

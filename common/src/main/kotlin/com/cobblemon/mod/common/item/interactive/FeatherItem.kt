@@ -18,7 +18,6 @@ import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.Blocks
 
 class FeatherItem(override val stat: Stat): CobblemonItem(Properties()), EVIncreaseItem {
     override val evIncreaseAmount: Int = 1

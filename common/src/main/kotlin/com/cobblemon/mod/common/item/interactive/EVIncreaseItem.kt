@@ -11,22 +11,15 @@ package com.cobblemon.mod.common.item.interactive
 import com.cobblemon.mod.common.api.item.PokemonSelectingItem
 import com.cobblemon.mod.common.api.pokemon.stats.ItemEvSource
 import com.cobblemon.mod.common.api.pokemon.stats.Stat
-import com.cobblemon.mod.common.item.CobblemonItem
 import com.cobblemon.mod.common.item.battle.BagItem
 import com.cobblemon.mod.common.pokemon.EVs
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.giveOrDropItemStack
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvent
-import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
-import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.ItemNameBlockItem
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
-import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.Blocks
 
 interface EVIncreaseItem: PokemonSelectingItem {
     val stat: Stat
