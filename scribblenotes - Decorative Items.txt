@@ -15,13 +15,13 @@ TODO:
 - Work on new models/blocks
 
 Function Decisions:
-    Iron Ball
+    Iron Ball, King's Rock
 Models:
-    King's Rock, Never-Melt Ice (0.989F), Hard Stone (with Iron Ball)
+    Never-Melt Ice (0.989F), Hard Stone (with Iron Ball)
 Design Work:
     Upgrade, Dubious Disc, Peat Block, Flame Orb {15}, Toxic Orb, Life Orb {2}[may change], Light Ball {13}, Smoke Ball, Soul Dew? {11}[may change]
 New Ideas:
-    Scope Lens, Wide Lens, Zoom Lens,  Loaded Dice,  Shell Bell, Soothe Bell,  Lagging Tail,  Electirizer, Magmarizer,  Protector,  Throat Spray, Terrain Extender
+    Scope Lens, Wide Lens, Zoom Lens,  Loaded Dice,  Shell Bell, Soothe Bell,  Lagging Tail,  Electirizer, Magmarizer,  Protector,  ~~Throat Spray~~, Terrain Extender
 Maybe Ideas:
     Ability Patch, Ability Capsule,  Moomoo Milk, Berry Juice,  Scroll of Waters, Scroll of Darkness,  Room Service?,  Whipped Dream?
 Additional Pitches (Denied/Unsure if worth it):
