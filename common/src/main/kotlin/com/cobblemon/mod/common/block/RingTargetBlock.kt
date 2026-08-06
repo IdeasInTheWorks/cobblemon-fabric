@@ -30,7 +30,6 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-@Suppress("DEPRECATED", "OVERRIDE_DEPRECATION")
 class RingTargetBlock(settings: Properties) : TargetBlock(settings), SimpleWaterloggedBlock {
     init {
         registerDefaultState(stateDefinition.any()
@@ -79,7 +78,6 @@ class RingTargetBlock(settings: Properties) : TargetBlock(settings), SimpleWater
         }
     }
 
-    @Deprecated("Deprecated in Java")
     override fun updateShape(
         state: BlockState,
         direction: Direction,
@@ -95,12 +93,10 @@ class RingTargetBlock(settings: Properties) : TargetBlock(settings), SimpleWater
         else super.updateShape(state, direction, neighborState, world, pos, neighborPos)
     }
 
-    @Deprecated("Deprecated in Java")
     override fun rotate(state: BlockState, rotation: Rotation): BlockState {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)))
     }
 
-    @Deprecated("Deprecated in Java")
     override fun canSurvive(state: BlockState, level: LevelReader, pos: BlockPos): Boolean {
         return level.getBlockState(pos.relative(state.getValue(FACING).opposite)).isSolid
     }
