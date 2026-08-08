@@ -1,4 +1,5 @@
 Galarica Wreath, Magnet, and Plaque could maybe have shared code moved into a base class, couldn't find a way to cleanly do it without something erroring so left it as is for now
+    - Would also be helpful for when the orb assets make it past the approvers, as that'd probably end up being a similar (but with differences) class, akin to the magnet moreso
 
 Wearables needs some tweaks. A lot of the difficult parts can be removed come 26.X, but until then, I have suffering.
 - Wearable class works well enough for items purely being wearable, but to have some that also happen to be blocks causes annoying quirks. Solution would be to expand how the Wearables work, until we can get to 26.X and have the model stuff handled the Mojang way so the issues of the system can be completely bypassed
