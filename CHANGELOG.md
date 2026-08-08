@@ -1,6 +1,11 @@
 # Changelog
 ## [1.x.x (MONTH Xth, 2026)](#1-x-x)
 
+### TEST
+### Pokémon Added
+
+## [1.8.0 (MONTH Xth, 2026)](#1-8-0)
+
 ### Additions
 
 ### New rideable Pokémon
