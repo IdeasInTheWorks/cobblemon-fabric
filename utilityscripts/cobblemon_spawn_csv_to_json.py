@@ -261,8 +261,8 @@ def process_herds(herds_df, herd_pokemon_df):
                 "weight": row['Weight']
             }
 
-            if pd.notna(row['Min Dist']):
-                spawn_data["minDistanceBetweenSpawns"] = int(row['Min Dist'])
+            #if pd.notna(row['Min Dist']):
+            #    spawn_data["minDistanceBetweenSpawns"] = int(row['Min Dist'])
 
             if len(presets) == 0:
                 del spawn_data['presets']

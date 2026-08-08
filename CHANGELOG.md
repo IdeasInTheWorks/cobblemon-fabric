@@ -21,7 +21,7 @@
 - Added Move Dex to Pokédex
 - Added the Habitat Block, a spawner block for servers and adventure maps that controls spawning in an area.
 - Added Disk Rack for storing disks and being an audio sequencer for Noteblocks
-- Added intrinsic scaling to all mons (+-5%). Some rendering cases, such as shoulder mounting, revert to 1.0 scaling to preserve animation accuracy.
+- Added intrinsic scaling to all Pokémon (+-5%). Some rendering cases, such as shoulder mounting, revert to 1.0 scaling to preserve animation accuracy.
 - Added scaling to "baby" Pokémon (smaller (-20%) at level 1 → normally sized at level 10)
 - Added conditional seats for riding. Seats can be gated by molang such as "is_alpha".
 - Added Alpha Pokémon
@@ -265,15 +265,8 @@
 ### Changes
 - Stat increase and decrease particles have been changed, with the addition of alpha boost particles. 
 - Dragonite's mailbag cosmetic can now also be obtained with a chest in the cosmetic slot
-
-### Fixes
 - Adjusted Croagunk's walkspeed
 - Adjusted Aerodactyl's walkspeed
-- Fixed Blitzle's base scale being `1` rather than the intended `0.8`
-- Fixed Magnezone's emissive layer for the shiny having the wrong name, thus displaying wrongly
-- Fixed Litleo not blinking
-- Fixed Garchomp T-posing when sleeping while out of battle.
-- Fixed Omanyte and Omastar incorrectly using water animations on land.
 - Sharp Beak can now be crafted
 - Metal Alloy can now be crafted
 - Ability Capsules can now be brewed
@@ -326,33 +319,19 @@
     - Hearty Grains can be milled like Farmer's Delight Rice Panicles if both Farmer's Delight and Create are installed
     - Big Roots and Revival Herbs can be milled to their respective powders
     - Pep-Up Flowers, Medicinal Leeks, and all 70 berries can be milled in Create's Millstone for additional dye drops
-    - Auspicious Armor and Upgrades can be Haunted using Create's crafting systems
+    - Auspicious Armour and Upgrades can be Haunted using Create's crafting systems
     - Applin Apples can be used to make Honeyed Apples in Create
 - Golden Apples can now be crafted using the Applin Apples
 - Prismarine Crystals and Amethyst Shards can now be used to craft Pokedexes
-- Updated Pokedex Screens item tag to support tagged variants of Redstone and Glowstone Dust
-- Sounds for interacting with various Cobblemon blocks now play from the center of the block, rather than the corner
+- Updated Pokédex Screens item tag to support tagged variants of Redstone and Glowstone Dust
+- Sounds for interacting with various Cobblemon blocks now play from the centre of the block, rather than the corner
 - The `/pc` command no longer plays PC activation sounds
-- Lowered the volume of Blitzle and Zebstrika's cry
-- Fixed Raichu (male) and Alolan Raichu (both genders) not displaying the correct Partner Cap when Pewter Crunchies are in the cosmetic slot.
-- Regional Foods will now prioritize being eaten instead of used for healing Pokémon, shift clicking will use it as healing
-- Resolved Z-Fighting on Pokédex Models
-- Restored Ninjask's ability to do barrel rolls
-- Fixed a crash caused by adding enchanted items to the Resurrection Machine
-- Fixed a crash that could occur when starting a PvN battle with only fainted Pokémon.
-- Fixed the Remember Riding Camera config not being respected when dismounting and resolved the incompatibility with the Auto Third Person mod
-- Fixed Full Heal block not dropping Full Heals
-- Fixed status cure items not returning an empty bottle when used
-- Fixed Panpour consuming its held item when evolving with a Water Stone
-- Fixed Smoked Tail Curry returning a Wooden Bowl when consumed despite it not being included in the recipe
-- Fixed `/giveallpokemon` not respecting the min and max parameters
-- Fixed the choose starter toast not disappearing when capturing a Pokémon instead of opening the starter selection screen
 
 ### Fixes
-- Fixed Croagunk's walkspeed
 - Fixed Blitzle's base scale being `1` rather than the intended `0.8`
 - Fixed Magnezone's emissive layer for the shiny having the wrong name, thus displaying wrongly
 - Fixed Litleo not blinking
+- Fixed Omanyte and Omastar incorrectly using water animations on land.
 - Fixed Pokédex layout for genderless variations
 - Fixed odd stacking behaviour with the poke_bait item.
 - Fixed a compatibility issue with World Game Rules which caused some log spam in specific cases.
@@ -394,13 +373,30 @@
 - Fixed Exploit where you could take out the bait or drop your Pokérod with bait to avoid consuming bait, now the bobber will just disappear if you do so
 - Fixed Apricorn and Saccharine boats incorrectly using chest boat models
 - Fixed wild and trainer battle AI refusing to select moves with the `adjacentAlly` target type, even when it's their only option
-- Fixed Guilded chests being more accessible than intended
+- Fixed gilded chests being more accessible than intended
 - Fixed fished up Pokémon not being added as "seen" to the Pokedex
 - Fixed surprised Gimmighoul encounters not being added as "seen" to the Pokedex
 - Fixed a crash involving berry trees that have been world edited.
-- Fixed visual desync in multiplayer for players mounting Pokémon outside other players' loaded chunks 
+- Fixed visual desync in multiplayer for players mounting Pokémon outside other players' loaded chunks
 - Fixed Pokémon entities leveled by rare candy not getting stronger as Minecraft entities unless recalled.
 - Fixed a freeze during game load that occurred when multiple mods tried to load Cobblemon API classes at the same time.
+- Fixed random tick crashes from berry trees
+- Lowered the volume of Blitzle and Zebstrika's cry
+- Regional Foods will now prioritise being eaten instead of used for healing Pokémon, shift clicking will use it as healing
+- Resolved Z-Fighting on Pokédex Models
+- Restored Ninjask's ability to do barrel rolls
+- Fixed Raichu (male) and Alolan Raichu (both genders) not displaying the correct Partner Cap when Pewter Crunchies are in the cosmetic slot.
+- Fixed a crash caused by adding enchanted items to the Resurrection Machine
+- Fixed a crash that could occur when starting a PvN battle with only fainted Pokémon.
+- Fixed the Remember Riding Camera config not being respected when dismounting and resolved the incompatibility with the Auto Third Person mod
+- Fixed Full Heal block not dropping Full Heals
+- Fixed status cure items not returning an empty bottle when used
+- Fixed Panpour consuming its held item when evolving with a Water Stone
+- Fixed Smoked Tail Curry returning a Wooden Bowl when consumed despite it not being included in the recipe
+- Fixed `/giveallpokemon` not respecting the min and max parameters
+- Fixed the choose starter toast not disappearing when capturing a Pokémon instead of opening the starter selection screen
+- Fixed an issue where certain Sinister Tea seasonings were only applying as instant effects and would not apply over time
+- Long config option labels now scroll instead of overflowing
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
@@ -515,6 +511,7 @@
   - German
   - Spanish
   - Ecuadorian Spanish
+  - Portuguese
   - Brazilian Portuguese
   - Simplified Chinese
   - Traditional Chinese
