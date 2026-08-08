@@ -62,129 +62,45 @@ class StackableItemBlock(settings: Properties, val type: StackableItemBlockType)
         val northShapeMap: Map<StackableItemBlockType, List<VoxelShape>> = mapOf(
             StackableItemBlockType.BATTLE_ITEM to listOf(
                 Shapes.box(0.34375, 0.0, 0.34375, 0.65625, 0.4375, 0.65625),
-                Shapes.or(
-                    Shapes.box(0.09375, 0.0, 0.34375, 0.40625, 0.4375, 0.65625),
-                    Shapes.box(0.59375, 0.0, 0.40625, 0.90625, 0.4375, 0.71875)
-                ),
-                Shapes.or(
-                    Shapes.box(0.59375, 0.0, 0.59375, 0.90625, 0.4375, 0.90625),
-                    Shapes.box(0.09375, 0.0, 0.53125, 0.40625, 0.4375, 0.84375),
-                    Shapes.box(0.34375, 0.0, 0.09375, 0.65625, 0.4375, 0.40625)
-                ),
-                Shapes.or(
-                    Shapes.box(0.09375, 0.0, 0.09375, 0.40625, 0.4375, 0.40625),
-                    Shapes.box(0.59375, 0.0, 0.15625, 0.90625, 0.4375, 0.46875),
-                    Shapes.box(0.65625, 0.0, 0.59375, 0.96875, 0.4375, 0.90625),
-                    Shapes.box(0.15625, 0.0, 0.53125, 0.46875, 0.4375, 0.84375)
-                )
+                Shapes.box(0.09375, 0.0, 0.34375, 0.90625, 0.4375, 0.71875),
+                Shapes.box(0.09375, 0.0, 0.09375, 0.90625, 0.4375, 0.90625),
+                Shapes.box(0.09375, 0.0, 0.09375, 0.96875, 0.4375, 0.90625)
             ),
             StackableItemBlockType.ETHER to listOf(
                 Shapes.box(0.375, 0.0, 0.3125, 0.625, 0.5, 0.6875),
-                Shapes.or(
-                    Shapes.box(0.625, 0.0, 0.375, 0.875, 0.5, 0.75),
-                    Shapes.box(0.125, 0.0, 0.3125, 0.375, 0.5, 0.6875)
-                ),
-                Shapes.or(
-                    Shapes.box(0.375, 0.0, 0.125, 0.625, 0.5, 0.5),
-                    Shapes.box(0.125, 0.0, 0.5625, 0.375, 0.5, 0.9375),
-                    Shapes.box(0.625, 0.0, 0.625, 0.875, 0.5, 1.0)
-                ),
-                Shapes.or(
-                    Shapes.box(0.125, 0.0, 0.0625, 0.375, 0.5, 0.4375),
-                    Shapes.box(0.625, 0.0, 0.125, 0.875, 0.5, 0.5),
-                    Shapes.box(0.6875, 0.0, 0.625, 0.9375, 0.5, 1.0),
-                    Shapes.box(0.1875, 0.0, 0.5625, 0.4375, 0.5, 0.9375)
-                )
+                Shapes.box(0.125, 0.0, 0.3125, 0.875, 0.5, 0.75),
+                Shapes.box(0.125, 0.0, 0.125, 0.875, 0.5, 1.0),
+                Shapes.box(0.125, 0.0, 0.0625, 0.9375, 0.5, 1.0)
             ),
             StackableItemBlockType.MAX_POTION to listOf(
                 Shapes.box(0.34375, 0.0, 0.3125, 0.65625, 0.5, 0.6875),
-                Shapes.or(
-                    Shapes.box(0.09375, 0.0, 0.3125, 0.40625, 0.5, 0.6875),
-                    Shapes.box(0.59375, 0.0, 0.375, 0.90625, 0.5, 0.75)
-                ),
-                Shapes.or(
-                    Shapes.box(0.34375, 0.0, 0.0625, 0.65625, 0.5, 0.4375),
-                    Shapes.box(0.09375, 0.0, 0.5625, 0.40625, 0.5, 0.9375),
-                    Shapes.box(0.59375, 0.0, 0.625, 0.90625, 0.5, 1.0)
-                ),
-                Shapes.or(
-                    Shapes.box(0.09375, 0.0, 0.0625, 0.40625, 0.5, 0.4375),
-                    Shapes.box(0.15625, 0.0, 0.5625, 0.46875, 0.5, 0.9375),
-                    Shapes.box(0.65625, 0.0, 0.625, 0.96875, 0.5, 1.0),
-                    Shapes.box(0.59375, 0.0, 0.125, 0.90625, 0.5, 0.5)
-                ).singleEncompassing()
+                Shapes.box(0.09375, 0.0, 0.3125, 0.90625, 0.5, 0.75),
+                Shapes.box(0.09375, 0.0, 0.0625, 0.90625, 0.5, 1.0),
+                Shapes.box(0.09375, 0.0, 0.0625, 0.96875, 0.5, 1.0)
             ),
             StackableItemBlockType.POTION to listOf(
                 Shapes.box(0.375, 0.0, 0.3125, 0.625, 0.5625, 0.75),
-                Shapes.or(
-                    Shapes.box(0.125, 0.0, 0.3125, 0.375, 0.5625, 0.75),
-                    Shapes.box(0.625, 0.0, 0.375, 0.875, 0.5625, 0.8125)
-                ),
-                Shapes.or(
-                    Shapes.box(0.375, 0.0, 0.0625, 0.625, 0.5625, 0.5),
-                    Shapes.box(0.625, 0.0, 0.5625, 0.875, 0.5625, 1.0),
-                    Shapes.box(0.125, 0.0, 0.5, 0.375, 0.5625, 0.9375)
-                ),
-                Shapes.or(
-                    Shapes.box(0.125, 0.0, 0.0, 0.375, 0.5625, 0.4375),
-                    Shapes.box(0.625, 0.0, 0.0625, 0.875, 0.5625, 0.5),
-                    Shapes.box(0.6875, 0.0, 0.5625, 0.9375, 0.5625, 1.0),
-                    Shapes.box(0.1875, 0.0, 0.5, 0.4375, 0.5625, 0.9375)
-                )
+                Shapes.box(0.125, 0.0, 0.3125, 0.875, 0.5625, 0.8125),
+                Shapes.box(0.125, 0.0, 0.0625, 0.875, 0.5625, 1.0),
+                Shapes.box(0.125, 0.0, 0.0, 0.9375, 0.5625, 1.0)
             ),
             StackableItemBlockType.STATUS_RESTORE to listOf(
                 Shapes.box(0.375, 0.0, 0.3125, 0.625, 0.4375, 0.6875),
-                Shapes.or(
-                    Shapes.box(0.125, 0.0, 0.3125, 0.375, 0.4375, 0.75),
-                    Shapes.box(0.625, 0.0, 0.375, 0.875, 0.4375, 0.75)
-                ),
-                Shapes.or(
-                    Shapes.box(0.125, 0.0, 0.5, 0.375, 0.4375, 0.875),
-                    Shapes.box(0.625, 0.0, 0.5625, 0.875, 0.4375, 0.9375),
-                    Shapes.box(0.375, 0.0, 0.0625, 0.625, 0.4375, 0.4375)
-                ),
-                Shapes.or(
-                    Shapes.box(0.1875, 0.0, 0.5, 0.4375, 0.4375, 0.875),
-                    Shapes.box(0.125, 0.0, 0.0, 0.375, 0.4375, 0.375),
-                    Shapes.box(0.625, 0.0, 0.0625, 0.875, 0.4375, 0.4375),
-                    Shapes.box(0.6875, 0.0, 0.5625, 0.9375, 0.4375, 0.9375)
-                )
+                Shapes.box(0.125, 0.0, 0.3125, 0.875, 0.4375, 0.75),
+                Shapes.box(0.125, 0.0, 0.0625, 0.875, 0.4375, 0.9375),
+                Shapes.box(0.125, 0.0, 0.0, 0.9375, 0.4375, 0.9375)
             ),
             StackableItemBlockType.METAL_COAT to listOf(
                 Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.375, 0.6875),
-                Shapes.or(
-                    Shapes.box(0.5, 0.0, 0.125, 0.875, 0.375, 0.5),
-                    Shapes.box(0.125, 0.0, 0.5, 0.5, 0.375, 0.875)
-                ),
-                Shapes.or(
-                    Shapes.box(0.3125, 0.0, 0.0625, 0.6875, 0.375, 0.4375),
-                    Shapes.box(0.5625, 0.0, 0.5, 0.9375, 0.375, 0.875),
-                    Shapes.box(0.125, 0.0, 0.5, 0.5, 0.375, 0.875)
-                ),
-                Shapes.or(
-                    Shapes.box(0.5625, 0.0, 0.0625, 0.9375, 0.375, 0.4375),
-                    Shapes.box(0.125, 0.0, 0.125, 0.5, 0.375, 0.5),
-                    Shapes.box(0.5, 0.0, 0.5, 0.875, 0.375, 0.875),
-                    Shapes.box(0.0625, 0.0, 0.5625, 0.4375, 0.375, 0.9375)
-                )
+                Shapes.box(0.125, 0.0, 0.125, 0.875, 0.375, 0.875),
+                Shapes.box(0.125, 0.0, 0.0625, 0.9375, 0.375, 0.875),
+                Shapes.box(0.0625, 0.0, 0.0625, 0.9375, 0.375, 0.9375)
             ),
             StackableItemBlockType.VITAMIN to listOf(
                 Shapes.box(0.375, 0.0, 0.375, 0.625, 0.4375, 0.625),
-                Shapes.or(
-                    Shapes.box(0.1875, 0.0, 0.3125, 0.4375, 0.4375, 0.5625),
-                    Shapes.box(0.5625, 0.0, 0.4375, 0.8125, 0.4375, 0.6875)
-                ),
-                Shapes.or(
-                    Shapes.box(0.1875, 0.0, 0.1875, 0.4375, 0.4375, 0.4375),
-                    Shapes.box(0.5625, 0.0, 0.25, 0.8125, 0.4375, 0.5),
-                    Shapes.box(0.375, 0.0, 0.5625, 0.625, 0.4375, 0.8125)
-                ),
-                Shapes.or(
-                    Shapes.box(0.1875, 0.0, 0.125, 0.4375, 0.4375, 0.375),
-                    Shapes.box(0.5625, 0.0, 0.1875, 0.8125, 0.4375, 0.4375),
-                    Shapes.box(0.625, 0.0, 0.625, 0.875, 0.4375, 0.875),
-                    Shapes.box(0.125, 0.0, 0.5625, 0.375, 0.4375, 0.8125)
-                )
+                Shapes.box(0.1875, 0.0, 0.3125, 0.8125, 0.4375, 0.6875),
+                Shapes.box(0.1875, 0.0, 0.1875, 0.8125, 0.4375, 0.8125),
+                Shapes.box(0.125, 0.0, 0.125, 0.875, 0.4375, 0.875)
             )
         )
 
@@ -222,7 +138,7 @@ class StackableItemBlock(settings: Properties, val type: StackableItemBlockType)
     }
 
     override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape {
-        return getCollisionShape(state, level, pos, context).singleEncompassing()
+        return getCollisionShape(state, level, pos, context)
     }
 
     override fun getStateForPlacement(context: BlockPlaceContext): BlockState? {
