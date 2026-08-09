@@ -1,7 +1,0 @@
-{
-  "parent": "cobblemon:block/vitamin_one_item",
-  "textures": {
-        "texture": "cobblemon:block/decorative/hp_up",
-        "particle": "cobblemon:block/decorative/hp_up"
-  }
-}
