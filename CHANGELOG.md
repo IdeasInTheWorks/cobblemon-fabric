@@ -2,6 +2,9 @@
 
 ### TEST
 ### Pokémon Added
+#### Generation 4
+- Snover
+- Abomasnow
 
 ## [1.8.0 (MONTH Xth, 2026)](#1-8-0)
 
