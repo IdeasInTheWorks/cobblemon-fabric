@@ -36,6 +36,7 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
     enum class DecorativeItemBlockType: StringRepresentable {
         //For basic use, also ignore camelcase errors, it's just dumb
         CENTERED_8x,
+        CENTERED_6x,
         FLATTENED_8x6,
         FLATTENED_8x4,
         FLATTENED_10x4,
@@ -59,6 +60,7 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
         ).apply(it, ::DecorativeItemBlock) }
 
         val CENTERED_8x = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.5, 0.75)
+        val CENTERED_6x = Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.375, 0.6875)
         val FLAT6_HITBOX = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.375, 0.75)
         val FLAT4_HITBOX = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.25, 0.75)
         val SMOOSHED4_HITBOX = Shapes.box(0.1875, 0.0, 0.1875, 0.8125, 0.25, 0.8125)
@@ -76,6 +78,7 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
                 DecorativeItemBlockType.FLATTENED_10x4 -> SMOOSHED4_HITBOX
                 DecorativeItemBlockType.FLATTENED_8x4 -> FLAT4_HITBOX
                 DecorativeItemBlockType.FLATTENED_8x6 -> FLAT6_HITBOX
+                DecorativeItemBlockType.CENTERED_6x -> CENTERED_6x
                 else -> CENTERED_8x
             }
         }

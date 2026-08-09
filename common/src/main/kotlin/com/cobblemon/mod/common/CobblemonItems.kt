@@ -992,7 +992,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val HEAVY_DUTY_BOOTS = heldItem("heavy_duty_boots")
     @JvmField
-    val IRON_BALL = heldItem("iron_ball")
+    val IRON_BALL = itemNameBlockItem("iron_ball", CobblemonBlocks.IRON_BALL)
     @JvmField
     val LAGGING_TAIL = heldItem("lagging_tail")
     @JvmField
@@ -1068,7 +1068,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val TERRAIN_EXTENDER = heldItem("terrain_extender")
     @JvmField
-    val THROAT_SPRAY = heldItem("throat_spray")
+    val THROAT_SPRAY = itemNameBlockItem("throat_spray", CobblemonBlocks.THROAT_SPRAY)
     @JvmField
     val TOXIC_ORB = heldItem("toxic_orb")
     @JvmField

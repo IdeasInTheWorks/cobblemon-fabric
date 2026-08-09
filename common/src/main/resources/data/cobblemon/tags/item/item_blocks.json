@@ -46,6 +46,7 @@
         "cobblemon:carbos",
         "cobblemon:pp_up",
         "cobblemon:pp_max",
+        "cobblemon:throat_spray",
         
         "cobblemon:metal_coat",
         "cobblemon:luminous_moss",
@@ -60,6 +61,7 @@
         "cobblemon:smooth_rock",
         "cobblemon:icy_rock",
         "cobblemon:destiny_knot",
-        "cobblemon:kings_rock"
+        "cobblemon:kings_rock",
+        "cobblemon:iron_ball"
     ]
 }
