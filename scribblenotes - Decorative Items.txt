@@ -1,22 +1,12 @@
-Galarica Wreath, Magnet, and Plaque could maybe have shared code moved into a base class, couldn't find a way to cleanly do it without something erroring so left it as is for now
-    - Would also be helpful for when the orb assets make it past the approvers, as that'd probably end up being a similar (but with differences) class, akin to the magnet moreso
-
-Wearables needs some tweaks. A lot of the difficult parts can be removed come 26.X, but until then, I have suffering.
-- Wearable class works well enough for items purely being wearable, but to have some that also happen to be blocks causes annoying quirks. Solution would be to expand how the Wearables work, until we can get to 26.X and have the model stuff handled the Mojang way so the issues of the system can be completely bypassed
-- Wearables can't be put on the player head from right clicking, like other armour. Blocks you can wear don't do it though, a potentially useful distinction
-  - Additional flaw with the code Poly made in the original branch on this is it will put on the items while you're trying to put it on the Pokemon, so either an override while sneaking or an override while looking directly at a Pokemon (or maybe exactly when both?) is needed for the right click wearing/armour swapping to behave properly
-Items that are currently itemNameBlockItem that should also be wearable:  Galarica Wreath
-Items that are currently wearableItem that should also be placeable:      King's Rock
-Items which are currently neither but in time should be both:             Never-Melt Ice
+Wearable items can put on the items while you're trying to put it on the Pokemon, so either an override while sneaking or an override while looking directly at a Pokemon (or maybe exactly when both?) is needed for the right click wearing/armour swapping to behave properly
 
 TODO:
-- Wearables improvements and additions
-- Decide how to implement the Iron Ball, as it feels off in the old branch
+- Wearables improvement
 - Begin improvements for the stuff not approved to get it approved
 - Work on new models/blocks
 
 Function Decisions:
-    Iron Ball, King's Rock
+    Iron Ball
 Models:
     Never-Melt Ice (0.989F), Hard Stone (with Iron Ball)
 Design Work:
