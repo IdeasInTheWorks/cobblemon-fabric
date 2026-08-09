@@ -3364,7 +3364,7 @@
     "cobblemon.entity.pokemon": "Покемон",
     "entity.cobblemon.empty_pokeball": "Пустой покебол",
     "cobblemon.species.bulbasaur.name": "Бульбазавр",
-    "cobblemon.species.bulbasaur.desc": "While it is young, it uses the nutrients that are stored in the seed on its back in order to grow.",
+    "cobblemon.species.bulbasaur.desc": "При рождении на его спине было посажено странное семя. Растение прорастает и растёт вместе с этим покемоном. (Pokémon Red, Pokémon Blue, Pokémon LeafGreen)\n\nОн может обходиться без еды целыми днями. Он запасает энергию в луковице на спине. (Pokémon Yellow)\n\nС возрастом луковицеобразный мешочек на его спине становится всё больше по мере его взросления. Этот мешочек заполнен множеством семян. (Pokémon Stadium)\n\nСемя на его спине богато питательными веществами. По мере роста его тела это семя также увеличивается в размерах. (Pokémon Gold, Pokémon Stadium 2)\n\nС самого рождения на спине у него находится семя. По мере взросления семя тоже становится больше. (Pokémon Silver, Pokémon Stadium 2)\n\nПока он молод, он использует питательные вещества, запасённые в семенах на спине, для роста. (Pokémon Crystal)\n\nБульбазавр часто дремлет под яркими лучами солнца. На его спине есть семя. Поглощая солнечные лучи, это семя постепенно становится больше. (Pokémon Ruby, Pokémon Sapphire, Pokémon Emerald)\n\nС самого дня рождения у этого покемона на спине находится семя растения. Это семя постепенно становится больше. (Pokémon FireRed)",
     "cobblemon.species.ivysaur.name": "Айвизавр",
     "cobblemon.species.ivysaur.desc": "Exposure to sunlight adds to its strength. Sunlight also makes the bud on its back grow larger.",
     "cobblemon.species.venusaur.name": "Венузавр",
