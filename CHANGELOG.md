@@ -326,6 +326,17 @@
 - Updated Pokédex Screens item tag to support tagged variants of Redstone and Glowstone Dust
 - Sounds for interacting with various Cobblemon blocks now play from the centre of the block, rather than the corner
 - The `/pc` command no longer plays PC activation sounds
+- The following items can now be placed on the ground as blocks:
+  - King's Rock, Galarica Cuff, Unremarkable Teacup, Masterpiece Teacup, Chipped Pot, Cracked Pot, Sachet, Metal Powder, Quick Powder, Bright Powder, Icy Rock, Heat Rock, Smooth Rock, Damp Rock, Destiny Knot, Luminous Moss
+  - Iron Ball, Metal Coat, Throat Spray, HP Up, Protein, Iron, Carbos, Calcium, Zinc, PP Up, PP Max
+- The following items can now be placed on various surfaces:
+  - Galarica Wreath, Magnet
+- The following items can now be placed as blocks, and have additional functionality:
+  - Ring Target, Metronome, Eject Button, Ring Target
+- The following items can now be worn by Players and Pokémon:
+  - Galarica Wreath, Cleanse Tag, Spell Tag, Sharp Beak, Covert Cloak, Shell Helmet
+- Wearable items can now be equipped by a player by holding it and right-clicking (or rebound use/interact)
+  - Wearable items that can be placed down are exempt from this behaviour
 
 ### Fixes
 - Fixed Blitzle's base scale being `1` rather than the intended `0.8`

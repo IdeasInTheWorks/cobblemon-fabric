@@ -644,13 +644,13 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val CRACKED_POT = create("cracked_pot", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.TUMBLESTONE_BLOCK_SOUNDS).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.TEAPOT))
 
     @JvmField
-    val SACHET = create("sachet", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.POUCH))
+    val SACHET = create("sachet", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.POUCH))
     @JvmField
-    val METAL_POWDER = create("metal_powder", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.POUCH))
+    val METAL_POWDER = create("metal_powder", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.POUCH))
     @JvmField
-    val QUICK_POWDER = create("quick_powder", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.POUCH))
+    val QUICK_POWDER = create("quick_powder", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.POUCH))
     @JvmField
-    val BRIGHT_POWDER = create("bright_powder", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.NONE).noOcclusion().lightLevel{3}, DecorativeItemBlock.DecorativeItemBlockType.POUCH))
+    val BRIGHT_POWDER = create("bright_powder", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).mapColor(MapColor.NONE).noOcclusion().lightLevel{3}, DecorativeItemBlock.DecorativeItemBlockType.POUCH))
 
     @JvmField
     val ICY_ROCK = create("icy_rock", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.TUMBLESTONE_SOUNDS).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.FLATTENED_8x4))
