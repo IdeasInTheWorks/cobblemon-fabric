@@ -25,7 +25,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties.WAT
 import net.minecraft.world.level.block.state.properties.Property
 import net.minecraft.world.level.material.FluidState
 import net.minecraft.world.level.material.Fluids
-import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape

@@ -8,8 +8,6 @@
 
 package com.cobblemon.mod.common.block
 
-import com.cobblemon.mod.common.block.StackableItemBlock.Companion.AMOUNT
-import com.cobblemon.mod.common.block.StackableItemBlock.Companion.getMaxAmount
 import com.cobblemon.mod.common.util.rotateShape
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
@@ -27,13 +25,11 @@ import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.WATERLOGGED
-import net.minecraft.world.level.block.state.properties.IntegerProperty
 import net.minecraft.world.level.material.FluidState
 import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
-import kotlin.math.min
 
 class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockType): HorizontalDirectionalBlock(settings), SimpleWaterloggedBlock {
 
