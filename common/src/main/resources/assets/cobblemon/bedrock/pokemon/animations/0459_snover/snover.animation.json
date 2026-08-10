@@ -8,16 +8,23 @@
 					"rotation": [-7.44134, 0.07948, 0.53084]
 				},
 				"arm_right": {
-					"rotation": [0, 0, -32.5]
+					"rotation": [0, 0, "-32.5-5*Math.sin((query.anim_time-0.5) * 90 * 1)"]
 				},
 				"arm_right2": {
-					"rotation": [0, -12.5, 0]
+					"rotation": [0, "-12.5+5*Math.sin((query.anim_time-0.75) * 90 * 1)", 0]
+				},
+				"torso": {
+					"rotation": ["-2.5+2*Math.sin((query.anim_time-0) * 90 * 1)", 0, "-2*Math.sin((query.anim_time-0.8) * 90 * 0.5)"],
+					"position": [0, "0.1*Math.sin((query.anim_time-0.75) * 90 * 1)", 0]
+				},
+				"torso2": {
+					"rotation": ["5+1*Math.sin((query.anim_time-0.25) * 90 * 1)", 0, 0]
 				},
 				"arm_left": {
-					"rotation": [0, 0, 32.5]
+					"rotation": [0, 0, "32.5+5*Math.sin((query.anim_time-0.5) * 90 * 1)"]
 				},
 				"arm_left2": {
-					"rotation": [0, 12.5, 0]
+					"rotation": [0, "12.5-5*Math.sin((query.anim_time-0.75) * 90 * 1)", 0]
 				}
 			}
 		},
@@ -73,26 +80,23 @@
 				}
 			}
 		},
-		"animation.snover.berries_male": {
+		"animation.snover.berries_female": {
 			"loop": true,
 			"bones": {
 				"berry_front": {
-					"position": [0, 3, -4]
+					"position": [0, 0, -4]
 				},
 				"berry_front_right": {
-					"position": [-4, 3, -4]
+					"position": [-4, 0, -4]
 				},
 				"berry_back_right": {
-					"position": [-4, 3, 4]
+					"position": [-4, 0, 4]
 				},
 				"berry_front_left": {
-					"position": [4, 3, -4]
+					"position": [4, 0, -4]
 				},
 				"berry_back_left": {
-					"position": [4, 3, 4]
-				},
-				"berry_back": {
-					"position": [0, 3, 4]
+					"position": [4, 0, 4]
 				}
 			}
 		}
