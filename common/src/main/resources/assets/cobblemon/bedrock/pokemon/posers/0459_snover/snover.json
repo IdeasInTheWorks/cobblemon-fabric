@@ -17,8 +17,7 @@
       "animations": [
         "q.look('torso', 0.2, 0.1)",
         "q.look('torso2', 0.2, 0.1)",
-        "q.bedrock('snover', 'ground_idle')",
-        "q.bimanual_swing(0.66, 1.4, 'arm_left', 'arm_right')"
+        "q.bedrock('snover', 'ground_idle')"
       ],
       "quirks": [
        "q.bedrock_quirk('snover', 'blink')"
@@ -33,8 +32,7 @@
         "q.look('torso', 0.2, 0.1)",
         "q.look('torso2', 0.2, 0.1)",
         "q.bedrock('snover', 'ground_idle')",
-        "q.biped_walk(0.66, 0.4, 'foot_left', 'foot_right')",
-        "q.bimanual_swing(0.66, 1.4, 'arm_left', 'arm_right')"
+        "q.biped_walk(0.66, 0.4, 'foot_left', 'foot_right')"
       ],
       "quirks": [
        "q.bedrock_quirk('snover', 'blink')"
