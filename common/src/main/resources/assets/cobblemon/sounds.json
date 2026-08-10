@@ -1459,6 +1459,9 @@
   "move.leafstorm.target": {
     "sounds": [ { "name": "cobblemon:move/leafstorm/leafstorm_target", "volume": 1.0 } ]
   },
+  "move.suckerpunch.target": {
+    "sounds": [ { "name": "cobblemon:move/suckerpunch/suckerpunch_target", "volume": 1.0 } ]
+  },
   "impact.normal": {
     "sounds": [
       { "name": "cobblemon:move/impact_generic/impact_generic_fighting_1", "volume": 0.8 },
