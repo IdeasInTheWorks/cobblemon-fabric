@@ -329,14 +329,14 @@
 - Sounds for interacting with various Cobblemon blocks now play from the centre of the block, rather than the corner
 - The `/pc` command no longer plays PC activation sounds
 - The following items can now be placed on the ground as blocks:
-  - King's Rock, Galarica Cuff, Unremarkable Teacup, Masterpiece Teacup, Chipped Pot, Cracked Pot, Sachet, Metal Powder, Quick Powder, Bright Powder, Icy Rock, Heat Rock, Smooth Rock, Damp Rock, Destiny Knot, Luminous Moss
-  - Iron Ball, Metal Coat, Throat Spray, HP Up, Protein, Iron, Carbos, Calcium, Zinc, PP Up, PP Max
+  - King's Rock, Galarica Cuff, Unremarkable Teacup, Masterpiece Teacup, Chipped Pot, Cracked Pot, Sachet, Metal Powder, Quick Powder, Bright Powder, Icy Rock, Heat Rock, Smooth Rock, Damp Rock, Destiny Knot, Luminous Moss, Never-Melt Ice, Wide Lens, Scope Lens, Zoom Lens
+  - Iron Ball, Metal Coat, Throat Spray, HP Up, Protein, Iron, Carbos, Calcium, Zinc, PP Up, PP Max, Upgrade, Dubious Disc
 - The following items can now be placed on various surfaces:
   - Galarica Wreath, Magnet, Flame Orb, Life Orb, Toxic Orb, Light Ball, Smoke Ball
 - The following items can now be placed as blocks, and have additional functionality:
   - Ring Target, Metronome, Eject Button
 - The following items can now be worn by Players and Pokémon:
-  - Galarica Wreath, Cleanse Tag, Spell Tag, Sharp Beak, Covert Cloak, Shell Helmet
+  - Galarica Wreath, Cleanse Tag, Spell Tag, Sharp Beak, Covert Cloak, Shell Helmet, Never-Melt Ice
 - Wearable items can now be equipped by a player by holding it and right-clicking (or rebound use/interact)
   - Wearable items that can be placed down are exempt from this behaviour
 

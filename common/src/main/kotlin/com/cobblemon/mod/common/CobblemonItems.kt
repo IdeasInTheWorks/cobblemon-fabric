@@ -473,8 +473,8 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField val LINK_CABLE = create("link_cable", LinkCableItem())
     @JvmField val DRAGON_SCALE = noSettingsItem("dragon_scale")
     @JvmField val METAL_COAT = itemNameBlockItem("metal_coat", CobblemonBlocks.METAL_COAT)
-    @JvmField val UPGRADE = noSettingsItem("upgrade")
-    @JvmField val DUBIOUS_DISC = noSettingsItem("dubious_disc")
+    @JvmField val UPGRADE = itemNameBlockItem("upgrade", CobblemonBlocks.UPGRADE)
+    @JvmField val DUBIOUS_DISC = itemNameBlockItem("dubious_disc", CobblemonBlocks.DUBIOUS_DISC)
     @JvmField val DEEP_SEA_SCALE = noSettingsItem("deep_sea_scale")
     @JvmField val DEEP_SEA_TOOTH = noSettingsItem("deep_sea_tooth")
     @JvmField val ELECTIRIZER = noSettingsItem("electirizer")
@@ -921,6 +921,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField val EXP_SHARE = wearableItem("exp_share")
     @JvmField val FOCUS_BAND = wearableItem("focus_band")
     @JvmField val KINGS_ROCK = wearableBlockItem("kings_rock", CobblemonBlocks.KINGS_ROCK)
+    @JvmField val NEVER_MELT_ICE = wearableBlockItem("never_melt_ice", CobblemonBlocks.NEVER_MELT_ICE)
     @JvmField val MUSCLE_BAND = wearableItem("muscle_band")
     @JvmField val ROCKY_HELMET = wearableItem("rocky_helmet")
     @JvmField val SAFETY_GOGGLES = wearableItem("safety_goggles")
@@ -1018,8 +1019,6 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val MYSTIC_WATER = heldItem("mystic_water")
     @JvmField
-    val NEVER_MELT_ICE = heldItem("never_melt_ice")
-    @JvmField
     val POISON_BARB = heldItem("poison_barb")
     @JvmField
     val POWER_ANKLET = heldItem("power_anklet")
@@ -1048,7 +1047,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val ROOM_SERVICE = heldItem("room_service")
     @JvmField
-    val SCOPE_LENS = heldItem("scope_lens")
+    val SCOPE_LENS = itemNameBlockItem("scope_lens", CobblemonBlocks.SCOPE_LENS)
     @JvmField
     val SHED_SHELL = heldItem("shed_shell")
     @JvmField
@@ -1078,9 +1077,9 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val WEAKNESS_POLICY = itemNameBlockItem("weakness_policy", CobblemonBlocks.WEAKNESS_POLICY)
     @JvmField
-    val WIDE_LENS = heldItem("wide_lens")
+    val WIDE_LENS = itemNameBlockItem("wide_lens", CobblemonBlocks.WIDE_LENS)
     @JvmField
-    val ZOOM_LENS = heldItem("zoom_lens")
+    val ZOOM_LENS = itemNameBlockItem("zoom_lens", CobblemonBlocks.ZOOM_LENS)
     @JvmField
     val MENTAL_HERB = compostableHeldItem("mental_herb", null, 0.85F)
     @JvmField

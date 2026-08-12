@@ -44,7 +44,11 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
         TEACUP,
         TEAPOT,
         KNOT,
-        POUCH;
+        POUCH,
+        NEVERMELT,
+        SCOPE,
+        WIDE,
+        ZOOM;
 
         override fun getSerializedName(): String = this.name.lowercase()
 
@@ -68,6 +72,10 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
         val TEAPOT_HITBOX = Shapes.box(0.1875, 0.0, 0.1875, 0.8125, 0.625, 0.8125)
         val KNOT_HITBOX = Shapes.box(0.375, 0.0, 0.375, 0.75, 0.375, 0.75)
         val POUCH_HITBOX = Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.3125, 0.6875)
+        val NEVERMELT_HITBOX = Shapes.box(0.25, 0.0, 0.3125, 0.6875, 0.75, 0.75)
+        val SCOPE_HITBOX = Shapes.box(0.625, 0.0, 0.4375, 0.9375, 0.125, 0.75)
+        val WIDE_HITBOX = Shapes.box(0.625, 0.0, 0.125, 0.9375, 0.0625, 0.625)
+        val ZOOM_HITBOX = Shapes.box(0.125, 0.0, 0.1875, 0.375, 0.1875, 0.5)
 
         fun getShape(type: DecorativeItemBlockType): VoxelShape {
             return when (type) {
@@ -75,6 +83,10 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
                 DecorativeItemBlockType.TEACUP -> TEACUP_HITBOX
                 DecorativeItemBlockType.KNOT -> KNOT_HITBOX
                 DecorativeItemBlockType.POUCH -> POUCH_HITBOX
+                DecorativeItemBlockType.NEVERMELT -> NEVERMELT_HITBOX
+                DecorativeItemBlockType.SCOPE -> SCOPE_HITBOX
+                DecorativeItemBlockType.WIDE -> WIDE_HITBOX
+                DecorativeItemBlockType.ZOOM -> ZOOM_HITBOX
                 DecorativeItemBlockType.FLATTENED_10x4 -> SMOOSHED4_HITBOX
                 DecorativeItemBlockType.FLATTENED_8x4 -> FLAT4_HITBOX
                 DecorativeItemBlockType.FLATTENED_8x6 -> FLAT6_HITBOX

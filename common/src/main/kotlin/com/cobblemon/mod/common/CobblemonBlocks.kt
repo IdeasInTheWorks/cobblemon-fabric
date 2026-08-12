@@ -664,6 +664,15 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val BRIGHT_POWDER = create("bright_powder", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).mapColor(MapColor.NONE).noOcclusion().lightLevel{3}, DecorativeItemBlock.DecorativeItemBlockType.POUCH))
 
     @JvmField
+    val NEVER_MELT_ICE = create("never_melt_ice", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).mapColor(MapColor.NONE).noOcclusion().friction(0.989F), DecorativeItemBlock.DecorativeItemBlockType.NEVERMELT))
+    @JvmField
+    val SCOPE_LENS = create("scope_lens", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.SCOPE))
+    @JvmField
+    val WIDE_LENS = create("wide_lens", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.WIDE))
+    @JvmField
+    val ZOOM_LENS = create("zoom_lens", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.ZOOM))
+
+    @JvmField
     val ICY_ROCK = create("icy_rock", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.FLATTENED_8x4))
     @JvmField
     val HEAT_ROCK = create("heat_rock", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.FLATTENED_8x4))
@@ -685,6 +694,10 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val IRON_BALL = create("iron_ball", StackableItemBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.IRON_BALL))
     @JvmField
     val METAL_COAT = create("metal_coat", StackableItemBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.METAL_COAT))
+    @JvmField
+    val UPGRADE = create("upgrade", StackableItemBlock(BlockBehaviour.Properties.of().sound(SoundType.CANDLE).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.UPGRADE))
+    @JvmField
+    val DUBIOUS_DISC = create("dubious_disc", StackableItemBlock(BlockBehaviour.Properties.of().sound(SoundType.CANDLE).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.UPGRADE))
 
     @JvmField
     val THROAT_SPRAY = create("throat_spray", StackableItemBlock(BlockBehaviour.Properties.of().sound(SoundType.CANDLE).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.THROAT_SPRAY))

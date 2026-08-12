@@ -68,6 +68,12 @@
         "cobblemon:toxic_orb",
         "cobblemon:life_orb",
         "cobblemon:smoke_ball",
-        "cobblemon:light_ball"
+        "cobblemon:light_ball",
+        "cobblemon:never_melt_ice",
+        "cobblemon:upgrade",
+        "cobblemon:dubious_disc",
+        "cobblemon:zoom_lens",
+        "cobblemon:wide_lens",
+        "cobblemon:scope_lens"
     ]
 }

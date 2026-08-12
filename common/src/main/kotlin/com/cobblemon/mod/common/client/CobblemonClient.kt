@@ -240,6 +240,12 @@ object CobblemonClient {
         )
 
         this.implementation.registerBlockRenderType(
+            RenderType.translucent(),
+            CobblemonBlocks.UPGRADE,
+            CobblemonBlocks.DUBIOUS_DISC
+        )
+
+        this.implementation.registerBlockRenderType(
             RenderType.cutout(),
             CobblemonBlocks.GILDED_CHEST,
             CobblemonBlocks.FOSSIL_ANALYZER,
@@ -404,7 +410,11 @@ object CobblemonClient {
             CobblemonBlocks.LIFE_ORB,
             CobblemonBlocks.TOXIC_ORB,
             CobblemonBlocks.LIGHT_BALL,
-            CobblemonBlocks.SMOKE_BALL
+            CobblemonBlocks.SMOKE_BALL,
+            CobblemonBlocks.NEVER_MELT_ICE,
+            CobblemonBlocks.WIDE_LENS,
+            CobblemonBlocks.ZOOM_LENS,
+            CobblemonBlocks.SCOPE_LENS
         )
 
         this.createBoatModelLayers()

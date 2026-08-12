@@ -15,9 +15,14 @@
         "E": {
             "item": "minecraft:ender_pearl"
         },
-        "G": {
-            "item": "cobblemon:electric_gem"
-        }
+        "G": [
+            {
+                "item": "cobblemon:thunder_stone"
+            },
+            {
+                "item": "cobblemon:electric_gem"
+            }
+        ]
     },
     "result": {
         "id": "cobblemon:light_ball"
