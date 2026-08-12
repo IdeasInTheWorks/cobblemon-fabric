@@ -72,7 +72,7 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
         val TEAPOT_HITBOX = Shapes.box(0.1875, 0.0, 0.1875, 0.8125, 0.625, 0.8125)
         val KNOT_HITBOX = Shapes.box(0.375, 0.0, 0.375, 0.75, 0.375, 0.75)
         val POUCH_HITBOX = Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.3125, 0.6875)
-        val NEVERMELT_HITBOX = Shapes.box(0.25, 0.0, 0.3125, 0.6875, 0.75, 0.75)
+        val NEVERMELT_HITBOX = Shapes.box(0.25, 0.0, 0.3125, 0.6875, 0.25, 0.75)
         val SCOPE_HITBOX = Shapes.box(0.625, 0.0, 0.4375, 0.9375, 0.125, 0.75)
         val WIDE_HITBOX = Shapes.box(0.625, 0.0, 0.125, 0.9375, 0.0625, 0.625)
         val ZOOM_HITBOX = Shapes.box(0.125, 0.0, 0.1875, 0.375, 0.1875, 0.5)

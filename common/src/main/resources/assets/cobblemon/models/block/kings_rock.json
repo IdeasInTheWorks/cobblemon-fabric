@@ -1,4 +1,5 @@
 {
+    "ambientocclusion": false,
 	"textures": {
 		"particle": "cobblemon:item/wearable/kings_rock",
 		"texture": "cobblemon:item/wearable/kings_rock"
