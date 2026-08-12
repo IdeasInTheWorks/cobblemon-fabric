@@ -1,6 +1,4 @@
 {
-	"format_version": "1.21.6",
-	"credit": "Made with Blockbench",
 	"textures": {
 		"texture": "cobblemon:block/decorative/pp_max",
         "particle": "cobblemon:block/decorative/pp_max"

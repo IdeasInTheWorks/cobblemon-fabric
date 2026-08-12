@@ -1,7 +1,4 @@
 {
-	"format_version": "1.9.0",
-	"credit": "Made with Blockbench",
-	"ambientocclusion": false,
 	"textures": {
 		"particle": "cobblemon:orb_life",
 		"texture": "orb_flame"

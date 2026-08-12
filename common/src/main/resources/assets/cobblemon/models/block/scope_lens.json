@@ -1,5 +1,4 @@
 {
-	"ambientocclusion": false,
 	"textures": {
 		"0": "cobblemon:block/decorative/scope_lens",
 		"particle": "cobblemon:block/decorative/scope_lens"

@@ -1,5 +1,4 @@
 {
-	"ambientocclusion": false,
 	"textures": {
 		"0": "cobblemon:block/decorative/zoom_lens",
 		"particle": "cobblemon:block/decorative/zoom_lens"

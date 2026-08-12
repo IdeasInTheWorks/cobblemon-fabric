@@ -1,5 +1,4 @@
 {
-	"ambientocclusion": false,
 	"textures": {
 		"1": "cobblemon:block/decorative/wide_lens",
         "particle": "cobblemon:block/decorative/wide_lens"

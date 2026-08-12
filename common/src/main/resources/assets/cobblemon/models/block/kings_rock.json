@@ -1,7 +1,4 @@
 {
-	"format_version": "1.21.11",
-	"credit": "Made with Blockbench",
-	"ambientocclusion": false,
 	"textures": {
 		"particle": "cobblemon:item/wearable/kings_rock",
 		"texture": "cobblemon:item/wearable/kings_rock"
