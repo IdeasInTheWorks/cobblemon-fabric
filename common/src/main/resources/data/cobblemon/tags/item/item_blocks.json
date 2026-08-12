@@ -74,6 +74,7 @@
         "cobblemon:dubious_disc",
         "cobblemon:zoom_lens",
         "cobblemon:wide_lens",
-        "cobblemon:scope_lens"
+        "cobblemon:scope_lens",
+        "cobblemon:loaded_dice"
     ]
 }

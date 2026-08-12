@@ -1005,7 +1005,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val LIGHT_CLAY = heldItem("light_clay")
     @JvmField
-    val LOADED_DICE = heldItem("loaded_dice")
+    val LOADED_DICE = itemNameBlockItem("loaded_dice", CobblemonBlocks.LOADED_DICE)
     @JvmField
     val LUCKY_EGG = heldItem("lucky_egg")
     @JvmField

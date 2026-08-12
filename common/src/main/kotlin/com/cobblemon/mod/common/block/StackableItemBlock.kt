@@ -44,7 +44,8 @@ class StackableItemBlock(settings: Properties, val type: StackableItemBlockType)
         METAL_COAT,
         IRON_BALL,
         THROAT_SPRAY,
-        UPGRADE;
+        UPGRADE,
+        DICE;
 
         override fun getSerializedName(): String = this.name.lowercase()
 
@@ -126,6 +127,12 @@ class StackableItemBlock(settings: Properties, val type: StackableItemBlockType)
                     Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.25, 0.6875),
                     Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.375, 0.6875),
                     Shapes.box(0.3125, 0.0, 0.3125, 0.6875, 0.5, 0.6875)
+                ),
+                StackableItemBlockType.DICE to listOf(
+                    Shapes.box(0.125, 0.0, 0.6875, 0.3125, 0.1875, 0.875),
+                    Shapes.box(0.125, 0.0, 0.625, 0.5625, 0.1875, 0.875),
+                    Shapes.box(0.125, 0.0, 0.4375, 0.5625, 0.1875, 0.875),
+                    Shapes.box(0.125, 0.0, 0.4375, 0.5625, 0.375, 0.875)
                 )
             )
 
