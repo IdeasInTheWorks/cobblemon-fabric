@@ -62,6 +62,12 @@
         "cobblemon:icy_rock",
         "cobblemon:destiny_knot",
         "cobblemon:kings_rock",
-        "cobblemon:iron_ball"
+        "cobblemon:iron_ball",
+        
+        "cobblemon:flame_orb",
+        "cobblemon:toxic_orb",
+        "cobblemon:life_orb",
+        "cobblemon:smoke_ball",
+        "cobblemon:light_ball"
     ]
 }

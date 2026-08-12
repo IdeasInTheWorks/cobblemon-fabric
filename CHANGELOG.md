@@ -269,6 +269,8 @@
 - Adjusted Aerodactyl's walkspeed
 - Sharp Beak can now be crafted
 - Metal Alloy can now be crafted
+- Smoke Ball can now be crafted
+- Light Ball can now be crafted
 - Ability Capsules can now be brewed
 - Using an Ability Capsule will now return an Empty Bottle
 - The following items can now be obtained by brushing the following Pokémon:
@@ -330,9 +332,9 @@
   - King's Rock, Galarica Cuff, Unremarkable Teacup, Masterpiece Teacup, Chipped Pot, Cracked Pot, Sachet, Metal Powder, Quick Powder, Bright Powder, Icy Rock, Heat Rock, Smooth Rock, Damp Rock, Destiny Knot, Luminous Moss
   - Iron Ball, Metal Coat, Throat Spray, HP Up, Protein, Iron, Carbos, Calcium, Zinc, PP Up, PP Max
 - The following items can now be placed on various surfaces:
-  - Galarica Wreath, Magnet
+  - Galarica Wreath, Magnet, Flame Orb, Life Orb, Toxic Orb, Light Ball, Smoke Ball
 - The following items can now be placed as blocks, and have additional functionality:
-  - Ring Target, Metronome, Eject Button, Ring Target
+  - Ring Target, Metronome, Eject Button
 - The following items can now be worn by Players and Pokémon:
   - Galarica Wreath, Cleanse Tag, Spell Tag, Sharp Beak, Covert Cloak, Shell Helmet
 - Wearable items can now be equipped by a player by holding it and right-clicking (or rebound use/interact)

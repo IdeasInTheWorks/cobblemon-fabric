@@ -630,6 +630,17 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val GALARICA_WREATH = create("galarica_wreath", GalaricaWreathBlock(BlockBehaviour.Properties.of().sound(SoundType.AZALEA_LEAVES).mapColor(MapColor.NONE).noOcclusion().noCollission()))
 
     @JvmField
+    val FLAME_ORB = create("flame_orb", OrbBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).mapColor(MapColor.NONE).noOcclusion().lightLevel{15}))
+    @JvmField
+    val TOXIC_ORB = create("toxic_orb", OrbBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).mapColor(MapColor.NONE).noOcclusion()))
+    @JvmField
+    val LIFE_ORB = create("life_orb", OrbBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).mapColor(MapColor.NONE).noOcclusion().lightLevel{7}))
+    @JvmField
+    val LIGHT_BALL = create("light_ball", OrbBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).mapColor(MapColor.NONE).noOcclusion().lightLevel{13}))
+    @JvmField
+    val SMOKE_BALL = create("smoke_ball", OrbBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).mapColor(MapColor.NONE).noOcclusion()))
+
+    @JvmField
     val KINGS_ROCK = create("kings_rock", DecorativeItemBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.TUMBLESTONE_BLOCK_SOUNDS).mapColor(MapColor.NONE).noOcclusion(), DecorativeItemBlock.DecorativeItemBlockType.CENTERED_6x))
 
     @JvmField

@@ -22,6 +22,7 @@ import com.cobblemon.mod.common.api.storage.player.client.ClientPokedexManager
 import com.cobblemon.mod.common.api.storage.player.client.ClientTMMoveManager
 import com.cobblemon.mod.common.api.tags.CobblemonItemTags
 import com.cobblemon.mod.common.block.entity.TintBlockEntity
+import com.cobblemon.mod.common.block.sign.CobblemonSignBlock
 import com.cobblemon.mod.common.client.battle.ClientBattle
 import com.cobblemon.mod.common.client.gui.PartyOverlay
 import com.cobblemon.mod.common.client.gui.PartyOverlayDataControl
@@ -398,7 +399,12 @@ object CobblemonClient {
             CobblemonBlocks.DAMP_ROCK,
             CobblemonBlocks.DESTINY_KNOT,
             CobblemonBlocks.METRONOME,
-            CobblemonBlocks.KINGS_ROCK
+            CobblemonBlocks.KINGS_ROCK,
+            CobblemonBlocks.FLAME_ORB,
+            CobblemonBlocks.LIFE_ORB,
+            CobblemonBlocks.TOXIC_ORB,
+            CobblemonBlocks.LIGHT_BALL,
+            CobblemonBlocks.SMOKE_BALL
         )
 
         this.createBoatModelLayers()

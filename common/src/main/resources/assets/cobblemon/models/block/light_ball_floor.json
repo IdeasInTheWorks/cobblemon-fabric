@@ -1,0 +1,7 @@
+{
+  "parent": "cobblemon:block/orb_floor",
+  "textures": {
+        "texture": "cobblemon:block/decorative/orb_light",
+        "particle": "cobblemon:block/decorative/orb_light"
+  }
+}
