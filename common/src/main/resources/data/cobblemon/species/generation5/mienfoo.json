@@ -193,8 +193,12 @@
   ],
   "behaviour": {
     "herd": {
-      "maxSize": "2",
+      "maxSize": 2,
       "toleratedLeaders": [
+        {
+          "pokemon": "mienfoo alpha",
+          "tier": 1
+        },
         {
           "pokemon": "mienshao",
           "tier": 1

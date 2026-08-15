@@ -74,6 +74,19 @@
     },
     "combat": {
       "willDefendOwner": true
+    },
+    "herd": {
+      "maxSize": 2,
+      "toleratedLeaders": [
+        {
+          "pokemon": "skitty alpha",
+          "tier": 1
+        },
+        {
+          "pokemon": "delcatty alpha",
+          "tier": 1
+        }
+      ]
     }
   },
   "drops": {

@@ -75,6 +75,19 @@
     },
     "combat": {
       "willDefendOwner": true
+    },
+    "herd": {
+      "maxSize": 4,
+      "toleratedLeaders": [
+        {
+          "pokemon": "meowth galarian=false alpha",
+          "tier": 1
+        },
+        {
+          "pokemon": "persian galarian=false alpha",
+          "tier": 1
+        }
+      ]
     }
   },
   "drops": {

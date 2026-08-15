@@ -153,15 +153,19 @@
   ],
   "behaviour": {
     "herd": {
-      "maxSize": "2",
+      "maxSize": 2,
       "toleratedLeaders": [
         {
-          "pokemon": "hattrem",
+          "pokemon": "hatenna alpha",
           "tier": 1
         },
         {
-          "pokemon": "hatterene",
-          "tier": 2
+          "pokemon": "hatterene alpha",
+          "tier": 1
+        },
+        {
+          "pokemon": "hattrem",
+          "tier": 1
         }
       ]
     },
