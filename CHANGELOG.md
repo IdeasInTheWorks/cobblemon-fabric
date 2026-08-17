@@ -398,6 +398,8 @@
 - Fixed an issue where certain Sinister Tea seasonings were only applying as instant effects and would not apply over time
 - Long config option labels now scroll instead of overflowing
 - Fixed some z-fighting and clipping on Dewott
+- Fixed multiple Pokémon having their cries missing
+- Fixed Tentacool not using its swim animation when on water surface
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
