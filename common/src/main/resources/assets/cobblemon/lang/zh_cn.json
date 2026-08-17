@@ -8088,9 +8088,9 @@
     "cobblemon.ui.pokedex.info.form.darmanitan": "普通模式",
     "cobblemon.ui.pokedex.info.form.darmanitan-zen": "达摩模式",
     "cobblemon.species.darmanitan-zen.desc": "它会通过冥想来镇静自己浮躁的心，以此磨练精神力量。",
-    "cobblemon.ui.pokedex.info.form.darmanitan-galar": "普通模式（伽勒尔的样子）",
+    "cobblemon.ui.pokedex.info.form.darmanitan-galar": "伽勒尔的样子，普通模式",
     "cobblemon.species.darmanitan-galar.desc": "会把食物装到头顶的雪球里带回家。在暴风雪的日子会下山来到人类居住的村落。",
-    "cobblemon.ui.pokedex.info.form.darmanitan-galarzen": "达摩模式（伽勒尔的样子）",
+    "cobblemon.ui.pokedex.info.form.darmanitan-galarzen": "伽勒尔的样子，达摩模式",
     "cobblemon.species.darmanitan-galarzen.desc": "原本已经退化的火囊因愤怒而重生。在所到之处胡乱喷火大闹一番。",
     "cobblemon.ui.pokedex.info.form.yamask": " ",
     "cobblemon.ui.pokedex.info.form.yamask-galar": "伽勒尔的样子",
@@ -9351,7 +9351,7 @@
     "cobblemon.habitat.abandoned_fortress.name": "废弃堡垒",
     "cobblemon.habitat.abandoned_village_house.name": "废弃村庄",
     "cobblemon.habitat.ancient_wellspring.name": "古老源泉",
-    "cobblemon.habitat.badlands_shaded_rock.name": "恶地背阴岩石",
+    "cobblemon.habitat.badlands_shaded_rock.name": "恶地背阴岩",
     "cobblemon.habitat.berry_patch.name": "树果从",
     "cobblemon.habitat.bug_mound.name": "虫丘",
     "cobblemon.habitat.carved_ice_spikes.name": "雕刻冰刺",
@@ -9621,5 +9621,6 @@
     "cobblemon.ui.pokedex.info.form.falinks": " ",
     "cobblemon.ui.pokedex.info.form.scovillain": " ",
     "cobblemon.ui.pokedex.info.form.glimmora": " ",
-    "cobblemon.ui.pokedex.info.form.baxcalibur": " "
+    "cobblemon.ui.pokedex.info.form.baxcalibur": " ",
+    "cobblemon.ui.pokedex.info.form.kyurem": " "
 }
