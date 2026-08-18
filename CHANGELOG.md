@@ -328,6 +328,7 @@
 - The `/pc` command no longer plays PC activation sounds
 
 ### Fixes
+- Fixed `cobblemon:height_range` leaving behind flattened square pockets of terrain and a `/locate` result where a structure had been rejected for being outside of its height range. The range is now checked while the structure start is created, before terrain adaptation runs, and it is checked against the bottom of each piece rather than its origin so that pieces can no longer bury their foundations out of range
 - Fixed Blitzle's base scale being `1` rather than the intended `0.8`
 - Fixed Magnezone's emissive layer for the shiny having the wrong name, thus displaying wrongly
 - Fixed Litleo not blinking
