@@ -400,6 +400,8 @@
 - Fixed some z-fighting and clipping on Dewott
 - Fixed multiple Pokémon having their cries missing
 - Fixed Tentacool not using its swim animation when on water surface
+- Fixed Eevee using it's left shoulder pose when in battle
+- The Gyarados Jump Pattern resourcepack should now stop replacing shiny textures of other Gyarados related addons
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
