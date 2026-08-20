@@ -1,4 +1,4 @@
-q.pokemon.size_category == 'XS' ? {
+(q.pokemon.size_category == 'XS' && !q.pokemon.is_alpha) ? {
     q.pokemon.add_marks('cobblemon:mark_mini');
 };
 
