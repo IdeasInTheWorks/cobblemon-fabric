@@ -488,6 +488,7 @@ def transform_pokemon_to_json(pokemon_rows, invalid_biome_tags, drops_df):
                         elif dropcondition.startswith("biome:"):
                             biomes = [drop.strip().replace("biome:", "").lower() for drop in dropcondition.split(',')]
                             for biome in biomes:
+                                biome = biome.lower()
                                 if biome not in biome_dictionary:
                                     print_warning(f"Unknown biome: {biome}")
                                 # Apply the biome mapping to the condition
