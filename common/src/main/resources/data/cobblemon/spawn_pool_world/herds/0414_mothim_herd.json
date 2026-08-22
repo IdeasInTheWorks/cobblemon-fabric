@@ -1,0 +1,118 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "mothim-herd-1",
+      "presets": [
+        "natural",
+        "foliage",
+        "treetop"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "20-42",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ],
+        "timeRange": "night",
+        "isRaining": false,
+        "minLight": 1
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "mothim",
+          "weight": 120.0,
+          "levelRange": "22-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "mothim-herd-2",
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "20-42",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_temperate"
+        ],
+        "timeRange": "night",
+        "isRaining": false,
+        "minLight": 1
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "mothim",
+          "weight": 120.0,
+          "levelRange": "22-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "mothim-herd-3",
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "20-42",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "aether:skyroot_forest",
+          "aether:skyroot_woodland"
+        ],
+        "minLight": 1
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "mothim",
+          "weight": 120.0,
+          "levelRange": "22-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

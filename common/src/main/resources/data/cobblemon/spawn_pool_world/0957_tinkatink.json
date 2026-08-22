@@ -14,7 +14,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "5-30",
-            "weight": 18.0,
+            "weight": 90.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -29,19 +29,30 @@
         {
             "id": "tinkatink-2",
             "pokemon": "tinkatink",
+            "presets": [
+                "natural"
+            ],
             "type": "pokemon",
             "spawnablePositionType": "grounded",
             "bucket": "uncommon",
             "level": "5-30",
-            "weight": 8.4,
+            "weight": 42.0,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "isThundering": true
+                }
+            },
             "condition": {
-                "minSkyLight": 0,
-                "maxSkyLight": 7,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
                 "biomes": [
-                    "#aether:is_aether"
-                ],
-                "structures": [
-                    "#aether:dungeons"
+                    "#cobblemon:is_freshwater"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_freezing"
                 ]
             }
         }

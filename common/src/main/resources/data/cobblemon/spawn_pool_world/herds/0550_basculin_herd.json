@@ -1,0 +1,522 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "basculin-blue-herd-1",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 100.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "1-3"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin bluestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-blue-herd-2",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 20.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "5-7"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin bluestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-blue-herd-3",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 50.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "0,4"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin bluestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-blue-herd-4",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "1-3"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin bluestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-blue-herd-5",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "5-7"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin bluestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-blue-herd-6",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 50.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "0,4"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin bluestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-red-herd-1",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 100.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "5-7"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-red-herd-2",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 20.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "1-3"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-red-herd-3",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 50.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "0,4"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-red-herd-4",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "5-7"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-red-herd-5",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "1-3"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-red-herd-6",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-46",
+      "weight": 50.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "0,4"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-white-herd-1",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-53",
+      "weight": 18.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "0,4"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin whitestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "basculegion",
+          "weight": 20.0,
+          "levelRange": "43-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-white-herd-2",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-53",
+      "weight": 90.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_cold_ocean",
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin whitestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "basculegion",
+          "weight": 20.0,
+          "levelRange": "43-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-white-herd-3",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-53",
+      "weight": 18.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "moonPhase": "0,4"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin whitestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "basculegion",
+          "weight": 20.0,
+          "levelRange": "43-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "basculin-white-herd-4",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "21-53",
+      "weight": 90.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_cold_ocean",
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "basculin whitestriped",
+          "weight": 80.0,
+          "levelRange": "24-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "basculegion",
+          "weight": 20.0,
+          "levelRange": "43-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

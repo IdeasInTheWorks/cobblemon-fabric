@@ -6,74 +6,11 @@
         {
             "id": "chatot-1",
             "pokemon": "chatot",
-            "presets": [
-                "natural",
-                "treetop"
-            ],
-            "type": "pokemon",
-            "spawnablePositionType": "grounded",
-            "bucket": "uncommon",
-            "level": "16-41",
-            "weight": 10.0,
-            "condition": {
-                "minSkyLight": 8,
-                "maxSkyLight": 15,
-                "biomes": [
-                    "#cobblemon:is_jungle"
-                ],
-                "timeRange": "day"
-            }
-        },
-        {
-            "id": "chatot-2",
-            "pokemon": "chatot",
-            "presets": [
-                "natural",
-                "treetop"
-            ],
             "type": "pokemon",
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "16-41",
-            "weight": 6.0,
-            "condition": {
-                "minSkyLight": 8,
-                "maxSkyLight": 15,
-                "biomes": [
-                    "#cobblemon:is_tropical_island"
-                ],
-                "timeRange": "day"
-            }
-        },
-        {
-            "id": "chatot-3",
-            "pokemon": "chatot",
-            "presets": [
-                "natural",
-                "treetop"
-            ],
-            "type": "pokemon",
-            "spawnablePositionType": "grounded",
-            "bucket": "common",
-            "level": "16-41",
-            "weight": 10.0,
-            "condition": {
-                "minSkyLight": 8,
-                "maxSkyLight": 15,
-                "biomes": [
-                    "#cobblemon:is_sky"
-                ],
-                "timeRange": "day"
-            }
-        },
-        {
-            "id": "chatot-4",
-            "pokemon": "chatot",
-            "type": "pokemon",
-            "spawnablePositionType": "grounded",
-            "bucket": "common",
-            "level": "16-41",
-            "weight": 6.0,
+            "weight": 0.0,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -88,7 +25,7 @@
             }
         },
         {
-            "id": "chatot-8",
+            "id": "chatot-2",
             "pokemon": "chatot",
             "presets": [
                 "natural",
@@ -98,7 +35,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "uncommon",
             "level": "16-41",
-            "weight": 10.0,
+            "weight": 0.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
