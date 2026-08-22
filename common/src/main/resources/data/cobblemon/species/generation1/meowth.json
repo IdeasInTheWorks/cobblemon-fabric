@@ -84,7 +84,7 @@
           "tier": 1
         },
         {
-          "pokemon": "persian galarian=false alpha",
+          "pokemon": "persian galarian=false",
           "tier": 1
         }
       ]
@@ -502,7 +502,7 @@
               "tier": 1
             },
             {
-              "pokemon": "persian galarian=false alpha",
+              "pokemon": "persian galarian=false",
               "tier": 1
             }
           ]

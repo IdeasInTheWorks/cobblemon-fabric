@@ -734,6 +734,8 @@ def parse_biomes(biomes_str, invalid_biome_tags):
     biomes = []
     for biome in biomes_str.split(','):
         biome = biome.lower().strip()
+        if biome == '':
+            continue
 
         # Verify that the biome is not in the invalid_biome_tags list
         if invalid_biome_tags and biome_dictionary[biome] in invalid_biome_tags:

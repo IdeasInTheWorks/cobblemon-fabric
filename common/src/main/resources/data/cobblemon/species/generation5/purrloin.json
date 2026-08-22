@@ -77,7 +77,7 @@
       "willFlee": false
     },
     "herd": {
-      "maxSize": 2,
+      "maxSize": 4,
       "toleratedLeaders": [
         {
           "pokemon": "purrloin alpha",
