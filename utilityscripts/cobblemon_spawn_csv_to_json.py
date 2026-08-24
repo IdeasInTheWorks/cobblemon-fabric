@@ -214,7 +214,7 @@ def process_herds(herds_df, herd_pokemon_df):
     # At the top level the columns are:
     # File, Herd ID, Herd Pokémon, Max Size, Lv. Min, Lv. Max, Bucket, Weight, Biomes, Excluded Biomes, Time, Weather, Multipliers, Context, Presets, Conditions, Anticonditions, Sky Light Min, Sky Light Max, Sees Sky, Min Dist, Enabled
     # This is fairly similar to the regular spawn data for the most part. First let's create the details ignoring the contents of Herd Pokémon.
-    herds_df = herds_df[herds_df['Enabled'] != False]
+    herds_df = herds_df[herds_df['Enabled'] != 'FALSE']
     herd_groups = herds_df.groupby('File')
 
     herd_pokemon = herd_pokemon_df.set_index('Entry ID')
