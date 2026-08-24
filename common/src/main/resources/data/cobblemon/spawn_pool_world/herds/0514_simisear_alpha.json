@@ -49,7 +49,7 @@
         },
         {
           "pokemon": "simisear",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "29-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -104,7 +104,7 @@
         },
         {
           "pokemon": "simisear",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "29-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

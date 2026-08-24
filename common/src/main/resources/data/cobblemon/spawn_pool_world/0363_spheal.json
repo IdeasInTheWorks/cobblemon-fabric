@@ -28,7 +28,7 @@
             "spawnablePositionType": "fishing",
             "bucket": "common",
             "level": "4-29",
-            "weight": 18.0,
+            "weight": 9.0,
             "weightMultipliers": [
                 {
                     "multiplier": 3.0,
@@ -79,7 +79,7 @@
             "spawnablePositionType": "fishing",
             "bucket": "common",
             "level": "4-29",
-            "weight": 18.0,
+            "weight": 9.0,
             "weightMultipliers": [
                 {
                     "multiplier": 3.0,

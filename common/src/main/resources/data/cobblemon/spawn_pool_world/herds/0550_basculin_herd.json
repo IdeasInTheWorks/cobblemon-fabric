@@ -372,7 +372,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-53",
-      "weight": 18.0,
+      "weight": 20.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_freshwater"
@@ -394,7 +394,7 @@
           "weight": 20.0,
           "levelRange": "43-49",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 3,
+          "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
         }
@@ -410,7 +410,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-53",
-      "weight": 90.0,
+      "weight": 100.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_cold_ocean",
@@ -432,7 +432,7 @@
           "weight": 20.0,
           "levelRange": "43-49",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 3,
+          "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
         }
@@ -448,7 +448,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-53",
-      "weight": 18.0,
+      "weight": 20.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -472,7 +472,7 @@
           "weight": 20.0,
           "levelRange": "43-49",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 3,
+          "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
         }
@@ -488,7 +488,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-53",
-      "weight": 90.0,
+      "weight": 100.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -512,7 +512,7 @@
           "weight": 20.0,
           "levelRange": "43-49",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 3,
+          "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
         }

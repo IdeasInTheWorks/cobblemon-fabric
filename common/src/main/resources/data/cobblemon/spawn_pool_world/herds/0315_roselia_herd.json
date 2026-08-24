@@ -24,7 +24,7 @@
       "herdablePokemon": [
         {
           "pokemon": "roselia",
-          "weight": 60.0,
+          "weight": 65.0,
           "levelRange": "26-37",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -72,7 +72,7 @@
       "herdablePokemon": [
         {
           "pokemon": "roselia",
-          "weight": 60.0,
+          "weight": 65.0,
           "levelRange": "26-37",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

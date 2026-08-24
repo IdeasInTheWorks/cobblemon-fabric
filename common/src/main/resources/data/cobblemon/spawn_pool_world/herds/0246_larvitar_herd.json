@@ -38,7 +38,7 @@
         },
         {
           "pokemon": "pupitar",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "32-50",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -47,7 +47,7 @@
         },
         {
           "pokemon": "tyranitar",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -86,7 +86,7 @@
         },
         {
           "pokemon": "pupitar",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "32-50",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -95,7 +95,7 @@
         },
         {
           "pokemon": "tyranitar",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

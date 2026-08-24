@@ -34,7 +34,7 @@
         },
         {
           "pokemon": "thwackey",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-38",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -43,7 +43,7 @@
         },
         {
           "pokemon": "rillaboom",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "36-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

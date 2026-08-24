@@ -273,49 +273,6 @@
           "isFollower": true
         }
       ]
-    },
-    {
-      "id": "sigilyph-alpha-8",
-      "presets": [
-        "natural"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "boss",
-      "spawnablePositionType": "grounded",
-      "maxHerdSize": 4,
-      "levelRange": "22-100",
-      "weight": 50.0,
-      "condition": {
-        "minSkyLight": 8,
-        "maxSkyLight": 15,
-        "biomes": [
-          "#cobblemon:space/is_mars"
-        ]
-      },
-      "anticondition": {
-        "biomes": [
-          "#cobblemon:space/is_icy"
-        ]
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "sigilyph held_item=cobblemon:flying_gem alpha=true",
-          "weight": 30.0,
-          "levelRange": "1-100",
-          "maxTimes": 1,
-          "isLeader": false,
-          "isFollower": false
-        },
-        {
-          "pokemon": "sigilyph",
-          "weight": 80.0,
-          "levelRange": "27-46",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
     }
   ]
 }

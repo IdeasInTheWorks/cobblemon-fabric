@@ -39,7 +39,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "4-29",
-            "weight": 45.0,
+            "weight": 27.0,
             "condition": {
                 "biomes": [
                     "#cobblemon:is_mushroom"

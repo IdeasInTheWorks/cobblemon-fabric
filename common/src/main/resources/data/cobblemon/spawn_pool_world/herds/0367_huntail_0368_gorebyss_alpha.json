@@ -22,7 +22,7 @@
       "herdablePokemon": [
         {
           "pokemon": "huntail held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -30,7 +30,7 @@
         },
         {
           "pokemon": "gorebyss held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -57,7 +57,7 @@
       "herdablePokemon": [
         {
           "pokemon": "huntail held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -65,7 +65,7 @@
         },
         {
           "pokemon": "gorebyss held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -95,7 +95,7 @@
       "herdablePokemon": [
         {
           "pokemon": "huntail held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -103,7 +103,7 @@
         },
         {
           "pokemon": "gorebyss held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -132,7 +132,7 @@
       "herdablePokemon": [
         {
           "pokemon": "huntail held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -140,7 +140,7 @@
         },
         {
           "pokemon": "gorebyss held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -172,7 +172,7 @@
       "herdablePokemon": [
         {
           "pokemon": "huntail held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -180,7 +180,7 @@
         },
         {
           "pokemon": "gorebyss held_item=cobblemon:water_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,

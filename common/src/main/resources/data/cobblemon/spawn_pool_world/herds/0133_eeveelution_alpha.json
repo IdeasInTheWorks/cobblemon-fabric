@@ -88,7 +88,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -97,7 +97,7 @@
         },
         {
           "pokemon": "vaporeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -106,7 +106,7 @@
         },
         {
           "pokemon": "jolteon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -115,7 +115,7 @@
         },
         {
           "pokemon": "flareon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -124,7 +124,7 @@
         },
         {
           "pokemon": "espeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -133,7 +133,7 @@
         },
         {
           "pokemon": "umbreon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -142,7 +142,7 @@
         },
         {
           "pokemon": "leafeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -151,7 +151,7 @@
         },
         {
           "pokemon": "glaceon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -160,7 +160,7 @@
         },
         {
           "pokemon": "sylveon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -257,7 +257,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -266,7 +266,7 @@
         },
         {
           "pokemon": "vaporeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -275,7 +275,7 @@
         },
         {
           "pokemon": "jolteon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -284,7 +284,7 @@
         },
         {
           "pokemon": "flareon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -293,7 +293,7 @@
         },
         {
           "pokemon": "espeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -302,7 +302,7 @@
         },
         {
           "pokemon": "umbreon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -311,7 +311,7 @@
         },
         {
           "pokemon": "leafeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -320,7 +320,7 @@
         },
         {
           "pokemon": "glaceon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -329,7 +329,7 @@
         },
         {
           "pokemon": "sylveon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -421,7 +421,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -430,7 +430,7 @@
         },
         {
           "pokemon": "vaporeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -439,7 +439,7 @@
         },
         {
           "pokemon": "jolteon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -448,7 +448,7 @@
         },
         {
           "pokemon": "flareon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -457,7 +457,7 @@
         },
         {
           "pokemon": "espeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -466,7 +466,7 @@
         },
         {
           "pokemon": "umbreon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -475,7 +475,7 @@
         },
         {
           "pokemon": "leafeon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -484,7 +484,7 @@
         },
         {
           "pokemon": "glaceon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -493,7 +493,7 @@
         },
         {
           "pokemon": "sylveon",
-          "weight": 15.0,
+          "weight": 16.875,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -531,7 +531,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -540,7 +540,7 @@
         },
         {
           "pokemon": "espeon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -579,7 +579,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -588,7 +588,7 @@
         },
         {
           "pokemon": "flareon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -626,7 +626,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -635,7 +635,7 @@
         },
         {
           "pokemon": "glaceon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -673,7 +673,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -682,7 +682,7 @@
         },
         {
           "pokemon": "jolteon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -729,7 +729,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -738,7 +738,7 @@
         },
         {
           "pokemon": "leafeon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -784,7 +784,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -793,7 +793,7 @@
         },
         {
           "pokemon": "sylveon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -831,7 +831,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -840,7 +840,7 @@
         },
         {
           "pokemon": "umbreon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -890,7 +890,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -899,7 +899,7 @@
         },
         {
           "pokemon": "vaporeon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -946,7 +946,7 @@
         },
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -955,7 +955,7 @@
         },
         {
           "pokemon": "vaporeon",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "30-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

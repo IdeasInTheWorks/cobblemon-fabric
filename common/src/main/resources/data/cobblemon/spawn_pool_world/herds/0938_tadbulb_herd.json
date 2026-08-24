@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "2-50",
-      "weight": 60.0,
+      "weight": 58.5,
       "weightMultiplier": {
         "multiplier": 5.0,
         "condition": {
@@ -34,7 +34,7 @@
       "herdablePokemon": [
         {
           "pokemon": "tadbulb",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "5-24",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -43,7 +43,7 @@
         },
         {
           "pokemon": "bellibolt",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "24-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,

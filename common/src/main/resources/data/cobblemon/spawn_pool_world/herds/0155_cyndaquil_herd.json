@@ -37,7 +37,7 @@
         },
         {
           "pokemon": "quilava",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "19-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -46,7 +46,7 @@
         },
         {
           "pokemon": "typhlosion",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -86,7 +86,7 @@
         },
         {
           "pokemon": "quilava hisuibias",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "19-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -95,7 +95,7 @@
         },
         {
           "pokemon": "typhlosion hisuian",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -134,7 +134,7 @@
         },
         {
           "pokemon": "quilava hisuibias",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "19-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -143,7 +143,7 @@
         },
         {
           "pokemon": "typhlosion hisuian",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

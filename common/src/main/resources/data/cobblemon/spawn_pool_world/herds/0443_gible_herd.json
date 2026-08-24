@@ -34,7 +34,7 @@
         },
         {
           "pokemon": "gabite",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "26-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -43,7 +43,7 @@
         },
         {
           "pokemon": "garchomp",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "49-55",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -84,7 +84,7 @@
         },
         {
           "pokemon": "gabite",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "26-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -93,7 +93,7 @@
         },
         {
           "pokemon": "garchomp",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "49-55",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -144,7 +144,7 @@
         },
         {
           "pokemon": "gabite",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "26-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -153,7 +153,7 @@
         },
         {
           "pokemon": "garchomp",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "49-55",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -204,7 +204,7 @@
         },
         {
           "pokemon": "gabite",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "26-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -213,7 +213,7 @@
         },
         {
           "pokemon": "garchomp",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "49-55",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -253,7 +253,7 @@
         },
         {
           "pokemon": "gabite",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "26-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -262,7 +262,7 @@
         },
         {
           "pokemon": "garchomp",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "49-55",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -301,7 +301,7 @@
         },
         {
           "pokemon": "gabite",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "26-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -310,7 +310,7 @@
         },
         {
           "pokemon": "garchomp",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "49-55",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

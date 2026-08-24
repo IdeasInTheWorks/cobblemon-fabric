@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "8-48",
-      "weight": 100.0,
+      "weight": 60.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -58,7 +58,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 4,
       "levelRange": "8-48",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -101,7 +101,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 4,
       "levelRange": "8-48",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {

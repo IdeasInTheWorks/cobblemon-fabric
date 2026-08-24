@@ -37,7 +37,7 @@
         },
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -46,7 +46,7 @@
         },
         {
           "pokemon": "mismagius",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "41-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -90,7 +90,7 @@
         },
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -99,7 +99,7 @@
         },
         {
           "pokemon": "mismagius",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "41-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -141,7 +141,7 @@
         },
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -150,7 +150,7 @@
         },
         {
           "pokemon": "mismagius",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "41-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -189,7 +189,7 @@
         },
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -198,7 +198,7 @@
         },
         {
           "pokemon": "mismagius",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "41-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -234,7 +234,7 @@
         },
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -243,7 +243,7 @@
         },
         {
           "pokemon": "mismagius",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "41-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -281,7 +281,7 @@
         },
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -290,7 +290,7 @@
         },
         {
           "pokemon": "mismagius",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "41-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

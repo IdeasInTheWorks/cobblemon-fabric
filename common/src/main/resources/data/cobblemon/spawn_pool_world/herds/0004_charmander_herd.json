@@ -34,7 +34,7 @@
         },
         {
           "pokemon": "charmeleon",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -43,7 +43,7 @@
         },
         {
           "pokemon": "charizard",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -80,7 +80,7 @@
         },
         {
           "pokemon": "charmeleon",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -89,7 +89,7 @@
         },
         {
           "pokemon": "charizard",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

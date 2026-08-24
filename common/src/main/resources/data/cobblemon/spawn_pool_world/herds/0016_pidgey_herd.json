@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "1-48",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -40,7 +40,7 @@
         },
         {
           "pokemon": "pidgeotto",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "20-31",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -49,7 +49,7 @@
         },
         {
           "pokemon": "pidgeot",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-43",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -69,7 +69,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "1-48",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -90,7 +90,7 @@
         },
         {
           "pokemon": "pidgeotto",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "20-31",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -99,7 +99,7 @@
         },
         {
           "pokemon": "pidgeot",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-43",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

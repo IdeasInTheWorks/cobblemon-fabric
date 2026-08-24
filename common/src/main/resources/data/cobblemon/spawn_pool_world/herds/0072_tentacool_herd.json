@@ -12,7 +12,7 @@
       "spawnablePositionType": "surface",
       "maxHerdSize": 7,
       "levelRange": "9-52",
-      "weight": 50.0,
+      "weight": 10.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_ocean"

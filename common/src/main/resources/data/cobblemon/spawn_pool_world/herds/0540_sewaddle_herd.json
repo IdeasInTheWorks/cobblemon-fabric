@@ -39,7 +39,7 @@
         },
         {
           "pokemon": "swadloon",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "22-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -48,7 +48,7 @@
         },
         {
           "pokemon": "leavanny",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "34-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

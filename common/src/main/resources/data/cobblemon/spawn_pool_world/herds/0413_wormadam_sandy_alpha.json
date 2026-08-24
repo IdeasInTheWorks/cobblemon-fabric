@@ -25,7 +25,7 @@
       "herdablePokemon": [
         {
           "pokemon": "wormadam sandy held_item=cobblemon:ground_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,

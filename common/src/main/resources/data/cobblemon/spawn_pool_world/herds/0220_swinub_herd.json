@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-53",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -33,7 +33,7 @@
         },
         {
           "pokemon": "piloswine",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "35-41",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -42,7 +42,7 @@
         },
         {
           "pokemon": "mamoswine",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "41-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

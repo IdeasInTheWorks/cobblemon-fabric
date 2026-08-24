@@ -13,7 +13,7 @@
             "spawnablePositionType": "surface",
             "bucket": "common",
             "level": "9-34",
-            "weight": 45.0,
+            "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [

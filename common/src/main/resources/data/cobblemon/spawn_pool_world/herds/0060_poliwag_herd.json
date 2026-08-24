@@ -33,7 +33,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -42,7 +42,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -51,7 +51,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -100,7 +100,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -109,7 +109,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -118,7 +118,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -158,7 +158,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -167,7 +167,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -176,7 +176,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -230,7 +230,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -239,7 +239,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -248,7 +248,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -296,7 +296,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -305,7 +305,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -314,7 +314,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -360,7 +360,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -369,7 +369,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -378,7 +378,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -424,7 +424,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -433,7 +433,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -442,7 +442,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -484,7 +484,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -493,7 +493,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -502,7 +502,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -552,7 +552,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -561,7 +561,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -570,7 +570,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -619,7 +619,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -628,7 +628,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -637,7 +637,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

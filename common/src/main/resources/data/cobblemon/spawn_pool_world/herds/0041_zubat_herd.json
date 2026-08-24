@@ -41,7 +41,7 @@
         },
         {
           "pokemon": "golbat",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "24-42",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -50,7 +50,7 @@
         },
         {
           "pokemon": "crobat",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "42-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -102,7 +102,7 @@
         },
         {
           "pokemon": "golbat",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "24-42",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -111,7 +111,7 @@
         },
         {
           "pokemon": "crobat",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "42-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -130,7 +130,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "1-54",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 1.5,
         "condition": {
@@ -163,7 +163,7 @@
         },
         {
           "pokemon": "golbat",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "24-42",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -172,7 +172,7 @@
         },
         {
           "pokemon": "crobat",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "42-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -191,7 +191,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "1-54",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 1.5,
         "condition": {
@@ -222,7 +222,7 @@
         },
         {
           "pokemon": "golbat",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "24-42",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -231,7 +231,7 @@
         },
         {
           "pokemon": "crobat",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "42-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -250,7 +250,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "1-54",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 1.5,
         "condition": {
@@ -277,7 +277,7 @@
         },
         {
           "pokemon": "golbat",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "24-42",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -286,7 +286,7 @@
         },
         {
           "pokemon": "crobat",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "42-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -305,7 +305,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "1-54",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "minSkyLight": 0,
         "maxSkyLight": 7,
@@ -325,7 +325,7 @@
         },
         {
           "pokemon": "golbat",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "24-42",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -334,7 +334,7 @@
         },
         {
           "pokemon": "crobat",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "42-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -353,7 +353,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "1-54",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "minSkyLight": 0,
         "maxSkyLight": 7,
@@ -373,7 +373,7 @@
         },
         {
           "pokemon": "golbat",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "24-42",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -382,7 +382,7 @@
         },
         {
           "pokemon": "crobat",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "42-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

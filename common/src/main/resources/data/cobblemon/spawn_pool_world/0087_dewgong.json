@@ -13,7 +13,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "34-48",
-            "weight": 5.0,
+            "weight": 3.0,
             "weightMultiplier": {
                 "multiplier": 0.25,
                 "condition": {
@@ -68,7 +68,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "34-48",
-            "weight": 5.0,
+            "weight": 3.0,
             "weightMultiplier": {
                 "multiplier": 0.25,
                 "condition": {

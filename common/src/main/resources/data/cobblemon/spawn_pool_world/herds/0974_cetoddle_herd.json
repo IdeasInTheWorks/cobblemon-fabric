@@ -25,7 +25,7 @@
       "herdablePokemon": [
         {
           "pokemon": "cetoddle",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "11-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -34,47 +34,7 @@
         },
         {
           "pokemon": "cetitan",
-          "weight": 20.0,
-          "levelRange": "30-48",
-          "levelRangeOffset": "-2-4",
-          "maxTimes": 2,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
-    },
-    {
-      "id": "cetoddle-herd-2",
-      "presets": [
-        "natural",
-        "wild"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "uncommon",
-      "spawnablePositionType": "grounded",
-      "maxHerdSize": 5,
-      "levelRange": "8-52",
-      "weight": 100.0,
-      "condition": {
-        "minSkyLight": 8,
-        "maxSkyLight": 15,
-        "biomes": [
-          "#cobblemon:is_frozen_ocean"
-        ]
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "cetoddle",
-          "weight": 80.0,
-          "levelRange": "11-30",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        },
-        {
-          "pokemon": "cetitan",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "30-48",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,

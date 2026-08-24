@@ -42,7 +42,7 @@
         },
         {
           "pokemon": "tadbulb",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "5-24",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -51,7 +51,7 @@
         },
         {
           "pokemon": "bellibolt",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "24-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

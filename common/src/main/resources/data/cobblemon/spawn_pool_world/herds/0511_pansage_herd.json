@@ -14,7 +14,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "7-50",
-      "weight": 100.0,
+      "weight": 50.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -32,7 +32,7 @@
       "herdablePokemon": [
         {
           "pokemon": "pansage",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "10-29",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -62,7 +62,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "7-50",
-      "weight": 20.0,
+      "weight": 10.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -79,7 +79,7 @@
       "herdablePokemon": [
         {
           "pokemon": "pansage",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "10-29",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -108,7 +108,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "7-50",
-      "weight": 20.0,
+      "weight": 10.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -120,7 +120,7 @@
       "herdablePokemon": [
         {
           "pokemon": "pansage",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "10-29",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

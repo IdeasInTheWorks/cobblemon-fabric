@@ -38,7 +38,7 @@
         },
         {
           "pokemon": "dolliv",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "27-31",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -47,7 +47,7 @@
         },
         {
           "pokemon": "arboliva",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "36-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

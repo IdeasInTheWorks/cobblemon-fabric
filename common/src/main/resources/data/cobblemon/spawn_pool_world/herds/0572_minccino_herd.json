@@ -23,7 +23,7 @@
       "herdablePokemon": [
         {
           "pokemon": "minccino",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -32,7 +32,7 @@
         },
         {
           "pokemon": "cinccino",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "27-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -69,7 +69,7 @@
       "herdablePokemon": [
         {
           "pokemon": "minccino",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -78,7 +78,7 @@
         },
         {
           "pokemon": "cinccino",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "27-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -117,7 +117,7 @@
       "herdablePokemon": [
         {
           "pokemon": "minccino",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -126,7 +126,7 @@
         },
         {
           "pokemon": "cinccino",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "27-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -154,7 +154,7 @@
       "herdablePokemon": [
         {
           "pokemon": "minccino",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -163,7 +163,7 @@
         },
         {
           "pokemon": "cinccino",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "27-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,

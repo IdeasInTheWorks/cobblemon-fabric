@@ -13,10 +13,13 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "20-41",
-            "weight": 5.0,
+            "weight": 8.0,
             "condition": {
                 "minSkyLight": 8,
-                "maxSkyLight": 15
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_grassland"
+                ]
             },
             "anticondition": {
                 "biomes": [
@@ -34,7 +37,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "20-41",
-            "weight": 5.0,
+            "weight": 8.0,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -59,7 +62,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "uncommon",
             "level": "20-41",
-            "weight": 8.0,
+            "weight": 12.8,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [

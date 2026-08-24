@@ -42,7 +42,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 6,
       "levelRange": "24-49",
-      "weight": 100.0,
+      "weight": 1000.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_ocean"
@@ -108,7 +108,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 6,
       "levelRange": "24-49",
-      "weight": 100.0,
+      "weight": 1000.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,

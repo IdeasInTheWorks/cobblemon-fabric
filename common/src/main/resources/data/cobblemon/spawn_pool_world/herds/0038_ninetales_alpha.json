@@ -47,7 +47,7 @@
         },
         {
           "pokemon": "ninetales alolan",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-47",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -92,7 +92,7 @@
         },
         {
           "pokemon": "ninetales alolan",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-47",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -151,7 +151,7 @@
         },
         {
           "pokemon": "ninetales",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-47",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -201,7 +201,7 @@
         },
         {
           "pokemon": "ninetales",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-47",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

@@ -42,7 +42,7 @@
         },
         {
           "pokemon": "corvisquire",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "20-33",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,

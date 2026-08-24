@@ -33,7 +33,7 @@
         },
         {
           "pokemon": "torracat",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "19-38",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,

@@ -73,7 +73,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "22-46",
-            "weight": 4.5,
+            "weight": 2.7,
             "weightMultiplier": {
                 "multiplier": 1.5,
                 "condition": {
@@ -105,7 +105,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "uncommon",
             "level": "22-46",
-            "weight": 7.6,
+            "weight": 4.32,
             "weightMultiplier": {
                 "multiplier": 1.5,
                 "condition": {
@@ -136,7 +136,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "22-46",
-            "weight": 4.5,
+            "weight": 2.7,
             "weightMultiplier": {
                 "multiplier": 1.5,
                 "condition": {
@@ -162,7 +162,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "uncommon",
             "level": "22-46",
-            "weight": 7.6,
+            "weight": 4.32,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -181,7 +181,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "22-46",
-            "weight": 4.5,
+            "weight": 2.7,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,

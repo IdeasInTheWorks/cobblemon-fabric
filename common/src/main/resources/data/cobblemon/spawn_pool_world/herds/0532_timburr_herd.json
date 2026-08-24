@@ -45,7 +45,7 @@
         },
         {
           "pokemon": "gurdurr",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -54,7 +54,7 @@
         },
         {
           "pokemon": "conkeldurr",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "37-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -108,7 +108,7 @@
         },
         {
           "pokemon": "gurdurr",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -117,7 +117,7 @@
         },
         {
           "pokemon": "conkeldurr",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "37-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

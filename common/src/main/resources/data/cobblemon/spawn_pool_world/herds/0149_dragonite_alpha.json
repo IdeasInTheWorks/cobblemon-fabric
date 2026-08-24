@@ -58,7 +58,7 @@
         },
         {
           "pokemon": "dragonite",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -115,7 +115,7 @@
         },
         {
           "pokemon": "dragonite",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -170,7 +170,7 @@
         },
         {
           "pokemon": "dragonite",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -227,7 +227,7 @@
         },
         {
           "pokemon": "dragonite",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

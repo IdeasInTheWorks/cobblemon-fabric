@@ -24,7 +24,7 @@
       "herdablePokemon": [
         {
           "pokemon": "spritzee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -61,7 +61,7 @@
       "herdablePokemon": [
         {
           "pokemon": "spritzee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

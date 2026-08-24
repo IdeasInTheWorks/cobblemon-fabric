@@ -39,7 +39,7 @@
         },
         {
           "pokemon": "linoone galarian",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "22-38",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -48,7 +48,7 @@
         },
         {
           "pokemon": "obstagoon",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "36-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -67,7 +67,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "1-42",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 1.5,
         "condition": {
@@ -113,7 +113,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "1-42",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,

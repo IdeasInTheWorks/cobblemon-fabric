@@ -30,7 +30,7 @@
       "herdablePokemon": [
         {
           "pokemon": "wormadam plant held_item=cobblemon:grass_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -82,7 +82,7 @@
       "herdablePokemon": [
         {
           "pokemon": "wormadam plant held_item=cobblemon:grass_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -129,7 +129,7 @@
       "herdablePokemon": [
         {
           "pokemon": "wormadam plant held_item=cobblemon:grass_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,

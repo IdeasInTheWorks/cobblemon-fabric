@@ -35,7 +35,7 @@
         },
         {
           "pokemon": "hattrem",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -74,7 +74,7 @@
         },
         {
           "pokemon": "hattrem",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -111,7 +111,7 @@
         },
         {
           "pokemon": "hattrem",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,

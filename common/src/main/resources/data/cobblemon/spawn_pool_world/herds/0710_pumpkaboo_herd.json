@@ -26,7 +26,7 @@
       "herdablePokemon": [
         {
           "pokemon": "pumpkaboo",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -35,7 +35,7 @@
         },
         {
           "pokemon": "gourgeist",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "31-45",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -63,7 +63,7 @@
       "herdablePokemon": [
         {
           "pokemon": "pumpkaboo",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -72,7 +72,7 @@
         },
         {
           "pokemon": "gourgeist",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "31-45",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,

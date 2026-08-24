@@ -33,7 +33,7 @@
         },
         {
           "pokemon": "scyther",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "28-47",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -42,7 +42,7 @@
         },
         {
           "pokemon": "scizor",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "47-47",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

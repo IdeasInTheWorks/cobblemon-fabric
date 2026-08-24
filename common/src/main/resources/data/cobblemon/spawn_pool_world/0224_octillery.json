@@ -13,7 +13,7 @@
             "spawnablePositionType": "seafloor",
             "bucket": "common",
             "level": "25-48",
-            "weight": 10.0,
+            "weight": 6.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -63,7 +63,7 @@
             "spawnablePositionType": "seafloor",
             "bucket": "common",
             "level": "25-48",
-            "weight": 10.0,
+            "weight": 6.0,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [

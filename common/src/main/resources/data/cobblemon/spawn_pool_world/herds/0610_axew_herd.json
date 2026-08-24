@@ -31,7 +31,7 @@
         },
         {
           "pokemon": "fraxure",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "40-40",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -40,7 +40,7 @@
         },
         {
           "pokemon": "haxorus",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "49-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

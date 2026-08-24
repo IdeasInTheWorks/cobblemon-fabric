@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "39-100",
-      "weight": 80.0,
+      "weight": 10.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -68,7 +68,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "39-100",
-      "weight": 80.0,
+      "weight": 10.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_end"
