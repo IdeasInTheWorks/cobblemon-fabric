@@ -43,6 +43,15 @@
           "isFollower": true
         },
         {
+          "pokemon": "fletchinder",
+          "weight": 70.0,
+          "levelRange": "19-34",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
           "pokemon": "talonflame",
           "weight": 50.0,
           "levelRange": "36-45",
@@ -95,6 +104,15 @@
           "isFollower": true
         },
         {
+          "pokemon": "fletchinder",
+          "weight": 70.0,
+          "levelRange": "19-34",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
           "pokemon": "talonflame",
           "weight": 50.0,
           "levelRange": "36-45",
@@ -140,6 +158,15 @@
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "fletchinder",
+          "weight": 70.0,
+          "levelRange": "19-34",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
         },

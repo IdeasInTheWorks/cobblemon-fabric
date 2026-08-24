@@ -80,11 +80,10 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
     }
 
     fun lacksPossibleLeader(selectionData: SpawnSelectionData): Boolean {
-        val level = getOrSetHerdLevel(selectionData)
         val herdable = getValidHerdMembers(selectionData)
         val herdCounts = getHerdMemberCounts(selectionData)
 
-        val leaderIsPossible = herdable.any { it.herdLevelRange?.contains(level) != false && it.isLeader }
+        val leaderIsPossible = herdable.any { it.isLeader }
         val leaderIsSelected = herdCounts.any { it.key?.isLeader == true && it.value > 0 }
         return leaderIsPossible && !leaderIsSelected
     }

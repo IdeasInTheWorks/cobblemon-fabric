@@ -14,6 +14,7 @@
       "levelRange": "8-46",
       "weight": 60.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_deep_ocean"
         ],
@@ -52,6 +53,7 @@
       "levelRange": "8-46",
       "weight": 60.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -92,6 +94,7 @@
       "levelRange": "8-46",
       "weight": 60.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],

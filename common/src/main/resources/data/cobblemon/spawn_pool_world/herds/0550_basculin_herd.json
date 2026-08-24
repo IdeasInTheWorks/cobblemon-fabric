@@ -14,6 +14,7 @@
       "levelRange": "21-46",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -43,6 +44,7 @@
       "levelRange": "21-46",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -72,6 +74,7 @@
       "levelRange": "21-46",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -101,6 +104,7 @@
       "levelRange": "21-46",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -132,6 +136,7 @@
       "levelRange": "21-46",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -163,6 +168,7 @@
       "levelRange": "21-46",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -194,6 +200,7 @@
       "levelRange": "21-46",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -223,6 +230,7 @@
       "levelRange": "21-46",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -252,6 +260,7 @@
       "levelRange": "21-46",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -281,6 +290,7 @@
       "levelRange": "21-46",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -312,6 +322,7 @@
       "levelRange": "21-46",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -343,6 +354,7 @@
       "levelRange": "21-46",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -374,6 +386,7 @@
       "levelRange": "21-53",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -412,6 +425,7 @@
       "levelRange": "21-53",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_cold_ocean",
           "#cobblemon:is_frozen_ocean"
@@ -450,6 +464,7 @@
       "levelRange": "21-53",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -490,6 +505,7 @@
       "levelRange": "21-53",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

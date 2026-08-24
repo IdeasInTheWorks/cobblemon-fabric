@@ -26,7 +26,17 @@
           "#cobblemon:is_freezing"
         ]
       },
-      "herdablePokemon": []
+      "herdablePokemon": [
+        {
+          "pokemon": "exeggcute alolabias",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
     },
     {
       "id": "exeggcute-herd-1",

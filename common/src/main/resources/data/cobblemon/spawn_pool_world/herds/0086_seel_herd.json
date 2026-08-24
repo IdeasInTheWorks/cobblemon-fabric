@@ -66,6 +66,7 @@
         }
       },
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_frozen_ocean"
         ]
@@ -109,6 +110,7 @@
         }
       },
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

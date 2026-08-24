@@ -110,6 +110,7 @@ def main(pokemon_data_dir, spawn_spreadsheet_path="", only_update_existing_files
     habitats_df = download_excel_data(habitats_sheet_url, {'Habitat': str, 'Pokémon': str, 'Entry': str})#, 'No.': int})
     herds_df = download_excel_data(herds_sheet_url, {'Herd ID': str, 'Herd Pokémon': str})
     herd_pokemon_df = download_excel_data(herd_pokemon_sheet_url, {'Entry ID': str, 'No.': str})
+    herds_df['Sees Sky'] = herds_df['Sees Sky'].apply(lambda x: str(x).lower())
 
     # Verify all biome tags are valid
     invalid_biome_tags = [] # verify_biome_tags() I don't know that this provides much value except to restrict the machines the script can run on

@@ -95,6 +95,7 @@
       "levelRange": "5-53",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_jungle",
           "#cobblemon:is_swamp"

@@ -59,6 +59,7 @@
       "levelRange": "1-41",
       "weight": 16.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],
@@ -142,6 +143,7 @@
       "levelRange": "1-41",
       "weight": 16.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_spooky"
         ]
@@ -273,6 +275,7 @@
       "levelRange": "1-41",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],

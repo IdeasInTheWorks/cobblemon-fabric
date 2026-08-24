@@ -139,6 +139,7 @@
       "levelRange": "5-51",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_swamp"
         ],
@@ -269,6 +270,7 @@
       "levelRange": "5-51",
       "weight": 30.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater",
           "#cobblemon:is_hills",
@@ -463,6 +465,7 @@
       "levelRange": "5-51",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -523,6 +526,7 @@
       "levelRange": "5-51",
       "weight": 30.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

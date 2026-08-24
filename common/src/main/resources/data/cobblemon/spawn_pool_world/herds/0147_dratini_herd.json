@@ -197,6 +197,7 @@
       "levelRange": "5-60",
       "weight": 4950.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_ocean"
         ]
@@ -235,6 +236,7 @@
       "levelRange": "5-60",
       "weight": 4950.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

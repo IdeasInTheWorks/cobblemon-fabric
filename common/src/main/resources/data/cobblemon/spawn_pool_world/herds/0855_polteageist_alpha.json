@@ -11,6 +11,7 @@
       "levelRange": "24-100",
       "weight": 80.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_floral",
           "#cobblemon:is_magical",
@@ -200,6 +201,7 @@
       "levelRange": "24-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]

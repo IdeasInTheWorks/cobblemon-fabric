@@ -53,6 +53,7 @@
       "levelRange": "5-53",
       "weight": 64.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_frozen_ocean"
         ]
@@ -90,6 +91,7 @@
       "levelRange": "5-53",
       "weight": 64.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

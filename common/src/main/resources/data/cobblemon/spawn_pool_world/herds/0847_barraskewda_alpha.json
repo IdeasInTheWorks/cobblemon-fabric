@@ -14,6 +14,7 @@
       "levelRange": "24-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater",
           "#cobblemon:is_ocean"
@@ -32,6 +33,15 @@
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": false
+        },
+        {
+          "pokemon": "arrokuda",
+          "weight": 80.0,
+          "levelRange": "6-25",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
         },
         {
           "pokemon": "barraskewda",
@@ -56,6 +66,7 @@
       "levelRange": "24-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -76,6 +87,15 @@
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": false
+        },
+        {
+          "pokemon": "arrokuda",
+          "weight": 80.0,
+          "levelRange": "6-25",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
         },
         {
           "pokemon": "barraskewda",

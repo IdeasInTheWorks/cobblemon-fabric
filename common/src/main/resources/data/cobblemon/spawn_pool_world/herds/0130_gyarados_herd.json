@@ -14,6 +14,7 @@
       "levelRange": "20-54",
       "weight": 0.6,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater",
           "#cobblemon:is_ocean"
@@ -74,6 +75,7 @@
       "levelRange": "20-54",
       "weight": 0.6,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

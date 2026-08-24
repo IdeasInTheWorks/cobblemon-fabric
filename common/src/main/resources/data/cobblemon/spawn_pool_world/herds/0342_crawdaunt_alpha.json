@@ -66,6 +66,7 @@
       "levelRange": "28-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ]

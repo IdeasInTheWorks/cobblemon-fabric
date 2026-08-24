@@ -381,6 +381,7 @@
       "levelRange": "22-100",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_jungle"
         ],
@@ -473,6 +474,7 @@
       "levelRange": "22-100",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_desert"
         ],
@@ -529,6 +531,15 @@
           "levelRange": "41-46",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "yamask galarian",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
           "isLeader": false,
           "isFollower": true
         },

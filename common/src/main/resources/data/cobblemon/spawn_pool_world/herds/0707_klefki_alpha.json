@@ -90,6 +90,7 @@
       "levelRange": "20-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]

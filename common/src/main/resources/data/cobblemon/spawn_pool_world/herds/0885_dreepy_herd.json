@@ -20,6 +20,7 @@
         }
       },
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -77,6 +78,7 @@
         }
       },
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_coast",
           "#cobblemon:is_ocean"

@@ -15,6 +15,7 @@
       "levelRange": "11-64",
       "weight": 420.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_desert"
         ],
@@ -45,6 +46,7 @@
       "levelRange": "11-64",
       "weight": 420.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_jungle"
         ],

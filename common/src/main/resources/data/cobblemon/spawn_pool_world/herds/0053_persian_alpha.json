@@ -46,6 +46,15 @@
           "maxTimes": 7,
           "isLeader": false,
           "isFollower": true
+        },
+        {
+          "pokemon": "persian alolan",
+          "weight": 20.0,
+          "levelRange": "30-40",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
         }
       ]
     },
@@ -98,6 +107,15 @@
           "maxTimes": 7,
           "isLeader": false,
           "isFollower": true
+        },
+        {
+          "pokemon": "persian alolan",
+          "weight": 20.0,
+          "levelRange": "30-40",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
         }
       ]
     },
@@ -144,6 +162,15 @@
           "maxTimes": 7,
           "isLeader": false,
           "isFollower": true
+        },
+        {
+          "pokemon": "persian alolan",
+          "weight": 20.0,
+          "levelRange": "30-40",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
         }
       ]
     },
@@ -159,6 +186,7 @@
       "levelRange": "26-100",
       "weight": 80.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],
@@ -179,6 +207,15 @@
           "levelRange": "7-26",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "persian alolan",
+          "weight": 20.0,
+          "levelRange": "30-40",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
         }
@@ -232,6 +269,15 @@
           "levelRange": "7-26",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "persian",
+          "weight": 20.0,
+          "levelRange": "30-40",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
         }
@@ -289,6 +335,15 @@
           "maxTimes": 7,
           "isLeader": false,
           "isFollower": true
+        },
+        {
+          "pokemon": "persian",
+          "weight": 20.0,
+          "levelRange": "30-40",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
         }
       ]
     },
@@ -332,6 +387,15 @@
           "levelRange": "7-26",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "persian",
+          "weight": 20.0,
+          "levelRange": "30-40",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
         }

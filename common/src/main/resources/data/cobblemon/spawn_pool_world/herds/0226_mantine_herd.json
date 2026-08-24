@@ -14,6 +14,7 @@
       "levelRange": "10-49",
       "weight": 60.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_lukewarm_ocean",
           "#cobblemon:is_warm_ocean"
@@ -53,6 +54,7 @@
       "levelRange": "10-49",
       "weight": 60.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
