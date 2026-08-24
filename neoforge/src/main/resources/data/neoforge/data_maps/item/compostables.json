@@ -93,6 +93,9 @@
     "cobblemon:durin_berry": {
       "chance": 0.65
     },
+    "cobblemon:eggant_berry": {
+      "chance": 0.65
+    },
     "cobblemon:energy_root": {
       "chance": 0.6
     },
