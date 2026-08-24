@@ -112,7 +112,6 @@
 - Applin
 - Flapple
 - Appletun
-- Eternatus
 
 #### Generation 9
 
