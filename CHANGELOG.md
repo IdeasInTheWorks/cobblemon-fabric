@@ -402,7 +402,7 @@
 - Fixed multiple Pokémon having their cries missing
 - Fixed Tentacool not using its swim animation when on water surface
 - Fixed Eevee using it's left shoulder pose when in battle
-- The Gyarados Jump Pattern resourcepack should now stop replacing shiny textures of other Gyarados related addons
+- The Magikarp and Gyarados Jump Pattern resourcepacks should now stop replacing shiny textures of addons targeting Magikarp or Gyarados.
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
