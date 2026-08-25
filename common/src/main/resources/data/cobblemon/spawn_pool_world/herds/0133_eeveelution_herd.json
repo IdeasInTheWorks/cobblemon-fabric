@@ -37,7 +37,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -68,7 +68,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -99,7 +99,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -204,7 +204,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -297,6 +297,7 @@
       "levelRange": "5-53",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -304,7 +305,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -406,7 +407,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -446,7 +447,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -485,7 +486,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -524,7 +525,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -572,7 +573,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -619,7 +620,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -658,7 +659,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -709,7 +710,7 @@
       "herdablePokemon": [
         {
           "pokemon": "eevee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

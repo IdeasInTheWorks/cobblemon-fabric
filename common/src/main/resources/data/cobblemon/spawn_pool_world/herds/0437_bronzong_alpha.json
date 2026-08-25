@@ -242,56 +242,6 @@
           "isFollower": true
         }
       ]
-    },
-    {
-      "id": "bronzong-alpha-6",
-      "presets": [
-        "natural"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "boss",
-      "spawnablePositionType": "grounded",
-      "maxHerdSize": 4,
-      "levelRange": "31-100",
-      "weight": 80.0,
-      "condition": {
-        "biomes": [
-          "#cobblemon:space/is_mars"
-        ]
-      },
-      "anticondition": {
-        "biomes": [
-          "#cobblemon:space/is_icy"
-        ]
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "bronzong held_item=cobblemon:psychic_gem alpha=true",
-          "weight": 30.0,
-          "levelRange": "1-100",
-          "maxTimes": 1,
-          "isLeader": false,
-          "isFollower": false
-        },
-        {
-          "pokemon": "bronzor",
-          "weight": 80.0,
-          "levelRange": "8-27",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        },
-        {
-          "pokemon": "bronzong",
-          "weight": 120.0,
-          "levelRange": "35-46",
-          "levelRangeOffset": "-2-4",
-          "maxTimes": 5,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
     }
   ]
 }

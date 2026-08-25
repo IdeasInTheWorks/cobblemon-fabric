@@ -47,7 +47,7 @@
         },
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -56,7 +56,7 @@
         },
         {
           "pokemon": "delcatty",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -108,7 +108,7 @@
         },
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -117,7 +117,7 @@
         },
         {
           "pokemon": "delcatty",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -138,6 +138,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -153,7 +154,7 @@
         },
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -162,7 +163,7 @@
         },
         {
           "pokemon": "delcatty",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -210,7 +211,7 @@
         },
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -219,7 +220,7 @@
         },
         {
           "pokemon": "delcatty",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -265,7 +266,7 @@
         },
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -274,7 +275,7 @@
         },
         {
           "pokemon": "delcatty",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -313,7 +314,7 @@
         },
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -322,7 +323,7 @@
         },
         {
           "pokemon": "delcatty",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

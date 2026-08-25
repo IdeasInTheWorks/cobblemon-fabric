@@ -216,6 +216,15 @@
           "isFollower": true
         },
         {
+          "pokemon": "sliggoo hisuian",
+          "weight": 70.0,
+          "levelRange": "42-42",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
           "pokemon": "goodra hisuian",
           "weight": 50.0,
           "levelRange": "51-55",
@@ -273,6 +282,15 @@
           "isFollower": true
         },
         {
+          "pokemon": "sliggoo hisuian",
+          "weight": 70.0,
+          "levelRange": "42-42",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
           "pokemon": "goodra hisuian",
           "weight": 50.0,
           "levelRange": "51-55",
@@ -323,6 +341,15 @@
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "sliggoo hisuian",
+          "weight": 70.0,
+          "levelRange": "42-42",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
         },

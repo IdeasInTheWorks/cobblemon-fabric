@@ -39,7 +39,7 @@
       "herdablePokemon": [
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -92,7 +92,7 @@
       "herdablePokemon": [
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -122,6 +122,7 @@
       "levelRange": "1-40",
       "weight": 1.5,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -129,7 +130,7 @@
       "herdablePokemon": [
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -178,7 +179,7 @@
       "herdablePokemon": [
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -225,7 +226,7 @@
       "herdablePokemon": [
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -265,7 +266,7 @@
       "herdablePokemon": [
         {
           "pokemon": "skitty",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

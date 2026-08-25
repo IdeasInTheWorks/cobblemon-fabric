@@ -38,7 +38,7 @@
         },
         {
           "pokemon": "murkrow",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "19-38",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -47,7 +47,7 @@
         },
         {
           "pokemon": "honchkrow",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "38-47",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -89,7 +89,7 @@
         },
         {
           "pokemon": "murkrow",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "19-38",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -98,7 +98,7 @@
         },
         {
           "pokemon": "honchkrow",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "38-47",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -138,7 +138,7 @@
         },
         {
           "pokemon": "murkrow",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "19-38",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -147,7 +147,7 @@
         },
         {
           "pokemon": "honchkrow",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "38-47",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

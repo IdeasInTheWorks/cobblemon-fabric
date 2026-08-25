@@ -12,8 +12,9 @@
       "spawnablePositionType": "seafloor",
       "maxHerdSize": 7,
       "levelRange": "6-31",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_cold_ocean",
           "#cobblemon:is_frozen_ocean"
@@ -41,8 +42,9 @@
       "spawnablePositionType": "seafloor",
       "maxHerdSize": 7,
       "levelRange": "6-31",
-      "weight": 30.0,
+      "weight": 20.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_ocean"
         ]
@@ -75,8 +77,9 @@
       "spawnablePositionType": "seafloor",
       "maxHerdSize": 7,
       "levelRange": "6-31",
-      "weight": 30.0,
+      "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],

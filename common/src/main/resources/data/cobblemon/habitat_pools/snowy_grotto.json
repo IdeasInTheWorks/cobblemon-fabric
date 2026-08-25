@@ -256,22 +256,6 @@
       "timeRange": "night"
     },
     {
-      "species": "Snover",
-      "bucket": "uncommon",
-      "spawnablePositionType": "grounded",
-      "weight": 6.0,
-      "levelRange": "8-33",
-      "phases": "1-9"
-    },
-    {
-      "species": "Abomasnow",
-      "bucket": "uncommon",
-      "spawnablePositionType": "grounded",
-      "weight": 4.0,
-      "levelRange": "40-49",
-      "phases": "1-9"
-    },
-    {
       "species": "Glaceon",
       "bucket": "uncommon",
       "spawnablePositionType": "grounded",

@@ -26,7 +26,7 @@
       "herdablePokemon": [
         {
           "pokemon": "phantump",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "9-28",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -35,7 +35,7 @@
         },
         {
           "pokemon": "trevenant",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "28-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -67,7 +67,7 @@
       "herdablePokemon": [
         {
           "pokemon": "phantump",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "9-28",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -76,7 +76,7 @@
         },
         {
           "pokemon": "trevenant",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "28-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,

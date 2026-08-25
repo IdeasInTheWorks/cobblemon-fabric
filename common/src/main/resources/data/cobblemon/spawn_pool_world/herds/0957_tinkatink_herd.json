@@ -39,7 +39,7 @@
         },
         {
           "pokemon": "tinkatuff",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "26-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -48,7 +48,7 @@
         },
         {
           "pokemon": "tinkaton",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "39-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -91,7 +91,7 @@
         },
         {
           "pokemon": "tinkatuff",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "26-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -100,7 +100,7 @@
         },
         {
           "pokemon": "tinkaton",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "39-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

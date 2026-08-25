@@ -41,7 +41,7 @@
         },
         {
           "pokemon": "klang",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "40-40",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -50,7 +50,7 @@
         },
         {
           "pokemon": "klinklang",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "50-50",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -88,7 +88,7 @@
         },
         {
           "pokemon": "klang",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "40-40",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -97,7 +97,7 @@
         },
         {
           "pokemon": "klinklang",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "50-50",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -140,7 +140,7 @@
         },
         {
           "pokemon": "klang",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "40-40",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -149,7 +149,7 @@
         },
         {
           "pokemon": "klinklang",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "50-50",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

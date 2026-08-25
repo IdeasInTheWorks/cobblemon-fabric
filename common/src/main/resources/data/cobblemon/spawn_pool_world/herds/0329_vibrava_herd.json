@@ -31,7 +31,7 @@
       "herdablePokemon": [
         {
           "pokemon": "vibrava",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "37-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 7,
@@ -40,7 +40,7 @@
         },
         {
           "pokemon": "flygon",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "46-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

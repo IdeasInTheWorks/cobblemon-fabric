@@ -41,7 +41,7 @@
         },
         {
           "pokemon": "gloom",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -50,7 +50,7 @@
         },
         {
           "pokemon": "bellossom",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "36-44",
           "levelRangeOffset": "-1-5",
           "maxTimes": 7,
@@ -98,7 +98,7 @@
         },
         {
           "pokemon": "gloom",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -107,7 +107,7 @@
         },
         {
           "pokemon": "bellossom",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "36-44",
           "levelRangeOffset": "-1-5",
           "maxTimes": 7,
@@ -156,7 +156,7 @@
         },
         {
           "pokemon": "gloom valencian",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "23-36",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -165,7 +165,7 @@
         },
         {
           "pokemon": "bellossom valencian",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "36-44",
           "levelRangeOffset": "-1-5",
           "maxTimes": 7,

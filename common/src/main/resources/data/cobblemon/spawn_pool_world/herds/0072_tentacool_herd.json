@@ -12,8 +12,9 @@
       "spawnablePositionType": "surface",
       "maxHerdSize": 7,
       "levelRange": "9-52",
-      "weight": 50.0,
+      "weight": 10.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_ocean"
         ]
@@ -51,6 +52,7 @@
       "levelRange": "9-52",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 0,
         "maxSkyLight": 7,
         "biomes": [
@@ -140,6 +142,7 @@
       "levelRange": "9-52",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],

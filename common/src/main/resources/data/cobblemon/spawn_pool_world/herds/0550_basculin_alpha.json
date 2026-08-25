@@ -14,6 +14,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -51,6 +52,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -88,6 +90,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -125,6 +128,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -164,6 +168,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -203,6 +208,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -242,6 +248,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -279,6 +286,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -316,6 +324,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
@@ -353,6 +362,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -392,6 +402,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -431,6 +442,7 @@
       "levelRange": "19-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

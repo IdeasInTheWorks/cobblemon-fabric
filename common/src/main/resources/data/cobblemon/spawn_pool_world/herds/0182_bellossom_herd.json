@@ -24,7 +24,7 @@
       "herdablePokemon": [
         {
           "pokemon": "bellossom",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "36-44",
           "levelRangeOffset": "-1-5",
           "maxTimes": 7,
@@ -55,7 +55,7 @@
       "herdablePokemon": [
         {
           "pokemon": "bellossom",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "36-44",
           "levelRangeOffset": "-1-5",
           "maxTimes": 7,
@@ -87,7 +87,7 @@
       "herdablePokemon": [
         {
           "pokemon": "bellossom valencian",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "36-44",
           "levelRangeOffset": "-1-5",
           "maxTimes": 7,

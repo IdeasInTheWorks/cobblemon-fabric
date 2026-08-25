@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-54",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -34,7 +34,7 @@
         },
         {
           "pokemon": "primeape",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "30-42",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -43,7 +43,7 @@
         },
         {
           "pokemon": "annihilape",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "36-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

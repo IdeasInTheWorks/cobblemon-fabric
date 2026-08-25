@@ -55,6 +55,7 @@
       "levelRange": "6-50",
       "weight": 10.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_coast",
           "#cobblemon:is_warm_ocean"

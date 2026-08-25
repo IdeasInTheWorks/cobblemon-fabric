@@ -39,7 +39,7 @@
         },
         {
           "pokemon": "morgrem",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -48,7 +48,7 @@
         },
         {
           "pokemon": "grimmsnarl",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "43-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -92,7 +92,7 @@
         },
         {
           "pokemon": "morgrem",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -101,7 +101,7 @@
         },
         {
           "pokemon": "grimmsnarl",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "43-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

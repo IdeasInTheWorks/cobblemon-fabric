@@ -191,6 +191,15 @@
           "isFollower": false
         },
         {
+          "pokemon": "koffing galarbias",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
           "pokemon": "weezing galarian",
           "weight": 120.0,
           "levelRange": "37-45",
@@ -233,6 +242,15 @@
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": false
+        },
+        {
+          "pokemon": "koffing galarbias",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
         },
         {
           "pokemon": "weezing galarian",

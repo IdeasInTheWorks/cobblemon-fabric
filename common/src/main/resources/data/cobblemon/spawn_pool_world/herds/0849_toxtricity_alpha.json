@@ -30,12 +30,21 @@
           "isFollower": false
         },
         {
+          "pokemon": "toxel",
+          "weight": 30.0,
+          "levelRange": "5-22",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
           "pokemon": "toxtricity",
-          "weight": 70.0,
+          "weight": 90.0,
           "levelRange": "33-47",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
-          "isLeader": true,
+          "isLeader": false,
           "isFollower": true
         }
       ]
@@ -75,12 +84,21 @@
           "isFollower": false
         },
         {
+          "pokemon": "toxel",
+          "weight": 30.0,
+          "levelRange": "5-22",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
           "pokemon": "toxtricity",
-          "weight": 70.0,
+          "weight": 90.0,
           "levelRange": "33-47",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
-          "isLeader": true,
+          "isLeader": false,
           "isFollower": true
         }
       ]

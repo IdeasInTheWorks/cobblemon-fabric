@@ -36,7 +36,7 @@
         },
         {
           "pokemon": "kirlia",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "22-25",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -45,7 +45,7 @@
         },
         {
           "pokemon": "gardevoir",
-          "weight": 3.0,
+          "weight": 1.5,
           "levelRange": "31-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -54,7 +54,7 @@
         },
         {
           "pokemon": "gallade",
-          "weight": 2.0,
+          "weight": 0.5,
           "levelRange": "31-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -94,7 +94,7 @@
         },
         {
           "pokemon": "kirlia",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "22-25",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -103,7 +103,7 @@
         },
         {
           "pokemon": "gardevoir",
-          "weight": 3.0,
+          "weight": 1.5,
           "levelRange": "31-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -112,7 +112,7 @@
         },
         {
           "pokemon": "gallade",
-          "weight": 2.0,
+          "weight": 0.5,
           "levelRange": "31-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -154,7 +154,7 @@
         },
         {
           "pokemon": "kirlia",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "22-25",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -163,7 +163,7 @@
         },
         {
           "pokemon": "gardevoir",
-          "weight": 3.0,
+          "weight": 1.5,
           "levelRange": "31-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -172,7 +172,7 @@
         },
         {
           "pokemon": "gallade",
-          "weight": 2.0,
+          "weight": 0.5,
           "levelRange": "31-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -193,6 +193,7 @@
       "levelRange": "1-52",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -209,7 +210,7 @@
         },
         {
           "pokemon": "kirlia",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "22-25",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -218,7 +219,7 @@
         },
         {
           "pokemon": "gardevoir",
-          "weight": 3.0,
+          "weight": 1.5,
           "levelRange": "31-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -227,7 +228,7 @@
         },
         {
           "pokemon": "gallade",
-          "weight": 2.0,
+          "weight": 0.5,
           "levelRange": "31-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

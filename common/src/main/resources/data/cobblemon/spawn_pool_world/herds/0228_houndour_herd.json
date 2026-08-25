@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "8-50",
-      "weight": 60.0,
+      "weight": 20.0,
       "weightMultiplier": {
         "multiplier": 1.5,
         "condition": {
@@ -58,53 +58,10 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "8-50",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "biomes": [
           "#minecraft:is_nether"
-        ]
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "houndour",
-          "weight": 80.0,
-          "levelRange": "11-30",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        },
-        {
-          "pokemon": "houndoom",
-          "weight": 20.0,
-          "levelRange": "26-46",
-          "levelRangeOffset": "-2-4",
-          "maxTimes": 2,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
-    },
-    {
-      "id": "houndour-herd-3",
-      "presets": [
-        "ruined_portal"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "uncommon",
-      "spawnablePositionType": "grounded",
-      "maxHerdSize": 5,
-      "levelRange": "8-50",
-      "weight": 1000.0,
-      "weightMultiplier": {
-        "multiplier": 1.5,
-        "condition": {
-          "timeRange": "night"
-        }
-      },
-      "condition": {
-        "biomes": [
-          "#cobblemon:is_overworld"
         ]
       },
       "herdablePokemon": [

@@ -21,7 +21,7 @@
                 "biomes": [
                     "#cobblemon:is_peak"
                 ],
-                "minY": 190
+                "minY": 192
             }
         },
         {
@@ -42,7 +42,7 @@
                 "biomes": [
                     "#cobblemon:is_sky"
                 ],
-                "minY": 190
+                "minY": 192
             }
         }
     ]

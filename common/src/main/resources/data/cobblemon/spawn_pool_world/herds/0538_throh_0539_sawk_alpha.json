@@ -29,7 +29,7 @@
       "herdablePokemon": [
         {
           "pokemon": "throh held_item=cobblemon:fighting_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,
@@ -37,7 +37,7 @@
         },
         {
           "pokemon": "sawk held_item=cobblemon:fighting_gem alpha=true",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": false,

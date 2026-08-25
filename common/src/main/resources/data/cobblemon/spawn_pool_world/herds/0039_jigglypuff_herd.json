@@ -29,7 +29,7 @@
       "herdablePokemon": [
         {
           "pokemon": "jigglypuff",
-          "weight": 60.0,
+          "weight": 65.0,
           "levelRange": "19-24",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -88,7 +88,7 @@
       "herdablePokemon": [
         {
           "pokemon": "jigglypuff",
-          "weight": 60.0,
+          "weight": 65.0,
           "levelRange": "19-24",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -137,7 +137,7 @@
       "herdablePokemon": [
         {
           "pokemon": "jigglypuff",
-          "weight": 60.0,
+          "weight": 65.0,
           "levelRange": "19-24",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

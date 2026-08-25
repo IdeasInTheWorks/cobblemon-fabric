@@ -39,7 +39,7 @@
         },
         {
           "pokemon": "lairon",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-39",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -48,7 +48,7 @@
         },
         {
           "pokemon": "aggron",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "43-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -95,7 +95,7 @@
         },
         {
           "pokemon": "lairon",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-39",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -104,7 +104,7 @@
         },
         {
           "pokemon": "aggron",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "43-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

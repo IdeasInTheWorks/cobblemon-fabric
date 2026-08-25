@@ -31,7 +31,7 @@
         },
         {
           "pokemon": "capsakid",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -40,7 +40,7 @@
         },
         {
           "pokemon": "scovillain",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-45",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -76,7 +76,7 @@
         },
         {
           "pokemon": "capsakid",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -85,7 +85,7 @@
         },
         {
           "pokemon": "scovillain",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-45",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

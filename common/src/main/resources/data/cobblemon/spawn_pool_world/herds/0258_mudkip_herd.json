@@ -38,7 +38,7 @@
         },
         {
           "pokemon": "marshtomp",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -47,7 +47,7 @@
         },
         {
           "pokemon": "swampert",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -68,6 +68,7 @@
       "levelRange": "5-54",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_swamp"
         ]
@@ -84,7 +85,7 @@
         },
         {
           "pokemon": "marshtomp",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -93,7 +94,7 @@
         },
         {
           "pokemon": "swampert",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -139,7 +140,7 @@
         },
         {
           "pokemon": "marshtomp",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -148,7 +149,7 @@
         },
         {
           "pokemon": "swampert",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -194,7 +195,7 @@
         },
         {
           "pokemon": "marshtomp",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -203,7 +204,7 @@
         },
         {
           "pokemon": "swampert",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -224,6 +225,7 @@
       "levelRange": "5-54",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -242,7 +244,7 @@
         },
         {
           "pokemon": "marshtomp",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -251,7 +253,7 @@
         },
         {
           "pokemon": "swampert",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -300,7 +302,7 @@
         },
         {
           "pokemon": "marshtomp",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -309,7 +311,7 @@
         },
         {
           "pokemon": "swampert",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -358,7 +360,7 @@
         },
         {
           "pokemon": "marshtomp",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -367,7 +369,7 @@
         },
         {
           "pokemon": "swampert",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

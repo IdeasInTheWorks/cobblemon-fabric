@@ -14,6 +14,7 @@
       "levelRange": "19-44",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_cold_ocean"
         ]
@@ -48,6 +49,7 @@
       "levelRange": "19-44",
       "weight": 120.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_cold_ocean",
           "#cobblemon:is_frozen_ocean"
@@ -77,6 +79,7 @@
       "levelRange": "19-44",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -113,6 +116,7 @@
       "levelRange": "19-44",
       "weight": 120.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -144,6 +148,7 @@
       "levelRange": "19-44",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_cold"
         ],
@@ -177,6 +182,7 @@
       "levelRange": "19-51",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_lukewarm_ocean",
           "#cobblemon:is_warm_ocean"
@@ -221,6 +227,7 @@
       "levelRange": "19-51",
       "weight": 120.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_ocean"
         ]
@@ -264,6 +271,7 @@
       "levelRange": "19-51",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -310,6 +318,7 @@
       "levelRange": "19-51",
       "weight": 120.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -355,6 +364,7 @@
       "levelRange": "19-51",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],

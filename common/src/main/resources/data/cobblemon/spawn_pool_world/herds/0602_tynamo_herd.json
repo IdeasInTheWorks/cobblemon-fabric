@@ -31,7 +31,7 @@
         },
         {
           "pokemon": "eelektrik",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "41-41",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -40,7 +40,7 @@
         },
         {
           "pokemon": "eelektross",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "40-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -90,7 +90,7 @@
         },
         {
           "pokemon": "eelektrik",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "41-41",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -99,7 +99,7 @@
         },
         {
           "pokemon": "eelektross",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "40-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -120,6 +120,7 @@
       "levelRange": "3-52",
       "weight": 60.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],
@@ -141,7 +142,7 @@
         },
         {
           "pokemon": "eelektrik",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "41-41",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -150,7 +151,7 @@
         },
         {
           "pokemon": "eelektross",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "40-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

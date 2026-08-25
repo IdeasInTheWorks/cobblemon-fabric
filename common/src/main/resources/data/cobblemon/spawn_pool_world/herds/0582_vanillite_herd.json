@@ -38,7 +38,7 @@
         },
         {
           "pokemon": "vanillish",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "37-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -47,7 +47,7 @@
         },
         {
           "pokemon": "vanilluxe",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "48-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -87,7 +87,7 @@
         },
         {
           "pokemon": "vanillish",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "37-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -96,7 +96,7 @@
         },
         {
           "pokemon": "vanilluxe",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "48-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -133,7 +133,7 @@
         },
         {
           "pokemon": "vanillish",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "37-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -142,7 +142,7 @@
         },
         {
           "pokemon": "vanilluxe",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "48-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

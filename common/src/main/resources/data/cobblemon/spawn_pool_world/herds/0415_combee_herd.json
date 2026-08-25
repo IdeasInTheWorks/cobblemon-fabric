@@ -39,7 +39,7 @@
       "herdablePokemon": [
         {
           "pokemon": "combee",
-          "weight": 95.0,
+          "weight": 98.0,
           "levelRange": "4-21",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -48,7 +48,7 @@
         },
         {
           "pokemon": "vespiquen",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "23-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -97,7 +97,7 @@
       "herdablePokemon": [
         {
           "pokemon": "combee",
-          "weight": 95.0,
+          "weight": 98.0,
           "levelRange": "4-21",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -106,7 +106,7 @@
         },
         {
           "pokemon": "vespiquen",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "23-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -149,7 +149,7 @@
       "herdablePokemon": [
         {
           "pokemon": "combee",
-          "weight": 95.0,
+          "weight": 98.0,
           "levelRange": "4-21",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -158,7 +158,7 @@
         },
         {
           "pokemon": "vespiquen",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "23-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -188,7 +188,7 @@
       "herdablePokemon": [
         {
           "pokemon": "combee",
-          "weight": 95.0,
+          "weight": 98.0,
           "levelRange": "4-21",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -197,7 +197,7 @@
         },
         {
           "pokemon": "vespiquen",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "23-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,

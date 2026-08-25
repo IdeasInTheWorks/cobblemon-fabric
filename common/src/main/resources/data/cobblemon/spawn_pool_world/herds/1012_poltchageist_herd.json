@@ -11,6 +11,7 @@
       "levelRange": "6-51",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_arid",
           "#cobblemon:is_bamboo",

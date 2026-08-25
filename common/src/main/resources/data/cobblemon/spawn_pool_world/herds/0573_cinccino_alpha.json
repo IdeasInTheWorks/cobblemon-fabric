@@ -31,7 +31,7 @@
         },
         {
           "pokemon": "minccino",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -40,7 +40,7 @@
         },
         {
           "pokemon": "cinccino",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -85,7 +85,7 @@
         },
         {
           "pokemon": "minccino",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -94,7 +94,7 @@
         },
         {
           "pokemon": "cinccino",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -141,7 +141,7 @@
         },
         {
           "pokemon": "minccino",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -150,7 +150,7 @@
         },
         {
           "pokemon": "cinccino",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -171,6 +171,7 @@
       "levelRange": "23-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -186,7 +187,7 @@
         },
         {
           "pokemon": "minccino",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -195,7 +196,7 @@
         },
         {
           "pokemon": "cinccino",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "27-43",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

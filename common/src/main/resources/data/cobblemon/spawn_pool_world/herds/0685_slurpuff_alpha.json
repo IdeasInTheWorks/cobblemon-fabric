@@ -36,7 +36,7 @@
         },
         {
           "pokemon": "swirlix",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -45,7 +45,7 @@
         },
         {
           "pokemon": "slurpuff",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "31-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -93,7 +93,7 @@
         },
         {
           "pokemon": "swirlix",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -102,7 +102,7 @@
         },
         {
           "pokemon": "slurpuff",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "31-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -150,7 +150,7 @@
         },
         {
           "pokemon": "swirlix",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -159,7 +159,7 @@
         },
         {
           "pokemon": "slurpuff",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "31-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,
@@ -180,6 +180,7 @@
       "levelRange": "27-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -195,7 +196,7 @@
         },
         {
           "pokemon": "swirlix",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -204,7 +205,7 @@
         },
         {
           "pokemon": "slurpuff",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "31-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

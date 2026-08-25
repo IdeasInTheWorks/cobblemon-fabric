@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "18-43",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -59,7 +59,7 @@
       "spawnablePositionType": "surface",
       "maxHerdSize": 4,
       "levelRange": "18-43",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -102,7 +102,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "18-43",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "biomes": [
           "the_bumblezone:floral_meadow"
@@ -144,7 +144,7 @@
       "spawnablePositionType": "surface",
       "maxHerdSize": 4,
       "levelRange": "18-43",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "biomes": [
           "#the_bumblezone:the_bumblezone"

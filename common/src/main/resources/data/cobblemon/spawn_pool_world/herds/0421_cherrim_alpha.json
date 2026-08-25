@@ -297,11 +297,28 @@
       },
       "herdablePokemon": [
         {
+          "pokemon": "cherrim sunshine held_item=cobblemon:grass_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": false
+        },
+        {
           "pokemon": "cherubi",
           "weight": 80.0,
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "cherrim sunshine",
+          "weight": 120.0,
+          "levelRange": "27-41",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
         }
@@ -336,11 +353,28 @@
       },
       "herdablePokemon": [
         {
+          "pokemon": "cherrim sunshine held_item=cobblemon:grass_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": false
+        },
+        {
           "pokemon": "cherubi",
           "weight": 80.0,
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "cherrim sunshine",
+          "weight": 120.0,
+          "levelRange": "27-41",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
         }

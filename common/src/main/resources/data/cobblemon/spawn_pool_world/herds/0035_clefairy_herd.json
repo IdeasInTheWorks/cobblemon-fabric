@@ -35,7 +35,7 @@
       "herdablePokemon": [
         {
           "pokemon": "clefairy",
-          "weight": 60.0,
+          "weight": 65.0,
           "levelRange": "20-29",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -84,7 +84,7 @@
       "herdablePokemon": [
         {
           "pokemon": "clefairy",
-          "weight": 60.0,
+          "weight": 65.0,
           "levelRange": "20-29",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -134,103 +134,7 @@
       "herdablePokemon": [
         {
           "pokemon": "clefairy",
-          "weight": 60.0,
-          "levelRange": "20-29",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": true,
-          "isFollower": true
-        },
-        {
-          "pokemon": "clefable",
-          "weight": 5.0,
-          "levelRange": "29-44",
-          "levelRangeOffset": "-2-4",
-          "maxTimes": 1,
-          "isLeader": true,
-          "isFollower": true
-        },
-        {
-          "pokemon": "cleffa",
-          "weight": 30.0,
-          "levelRange": "5-20",
-          "levelRangeOffset": "-4-2",
-          "maxTimes": 3,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
-    },
-    {
-      "id": "clefairy-herd-5",
-      "presets": [
-        "natural"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "uncommon",
-      "spawnablePositionType": "grounded",
-      "maxHerdSize": 5,
-      "levelRange": "1-48",
-      "weight": 40.8,
-      "condition": {
-        "minSkyLight": 0,
-        "maxSkyLight": 7,
-        "biomes": [
-          "#cobblemon:space/is_moon"
-        ]
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "clefairy",
-          "weight": 60.0,
-          "levelRange": "20-29",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": true,
-          "isFollower": true
-        },
-        {
-          "pokemon": "clefable",
-          "weight": 5.0,
-          "levelRange": "29-44",
-          "levelRangeOffset": "-2-4",
-          "maxTimes": 1,
-          "isLeader": true,
-          "isFollower": true
-        },
-        {
-          "pokemon": "cleffa",
-          "weight": 30.0,
-          "levelRange": "5-20",
-          "levelRangeOffset": "-4-2",
-          "maxTimes": 3,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
-    },
-    {
-      "id": "clefairy-herd-6",
-      "presets": [
-        "natural"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "rare",
-      "spawnablePositionType": "grounded",
-      "maxHerdSize": 5,
-      "levelRange": "1-48",
-      "weight": 47.2,
-      "condition": {
-        "minSkyLight": 8,
-        "maxSkyLight": 15,
-        "biomes": [
-          "#cobblemon:space/is_moon"
-        ]
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "clefairy",
-          "weight": 60.0,
+          "weight": 65.0,
           "levelRange": "20-29",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

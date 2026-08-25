@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "16-51",
-      "weight": 100.0,
+      "weight": 60.0,
       "weightMultiplier": {
         "multiplier": 1.5,
         "condition": {
@@ -30,7 +30,7 @@
       "herdablePokemon": [
         {
           "pokemon": "murkrow",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "19-38",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -73,7 +73,7 @@
       "herdablePokemon": [
         {
           "pokemon": "murkrow",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "19-38",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -102,7 +102,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "16-51",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -114,7 +114,7 @@
       "herdablePokemon": [
         {
           "pokemon": "murkrow",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "19-38",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

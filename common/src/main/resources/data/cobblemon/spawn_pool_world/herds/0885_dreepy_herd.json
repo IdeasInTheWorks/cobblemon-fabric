@@ -20,6 +20,7 @@
         }
       },
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -44,7 +45,7 @@
         },
         {
           "pokemon": "drakloak",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "52-52",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -53,7 +54,7 @@
         },
         {
           "pokemon": "dragapult",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "61-61",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -77,6 +78,7 @@
         }
       },
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_coast",
           "#cobblemon:is_ocean"
@@ -99,7 +101,7 @@
         },
         {
           "pokemon": "drakloak",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "52-52",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -108,7 +110,7 @@
         },
         {
           "pokemon": "dragapult",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "61-61",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -154,7 +156,7 @@
         },
         {
           "pokemon": "drakloak",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "52-52",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -163,7 +165,7 @@
         },
         {
           "pokemon": "dragapult",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "61-61",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

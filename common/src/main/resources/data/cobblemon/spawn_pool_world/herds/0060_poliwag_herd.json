@@ -33,7 +33,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -42,7 +42,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -51,7 +51,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -100,7 +100,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -109,7 +109,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -118,7 +118,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -139,6 +139,7 @@
       "levelRange": "5-51",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_swamp"
         ],
@@ -158,7 +159,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -167,7 +168,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -176,7 +177,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -230,7 +231,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -239,7 +240,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -248,7 +249,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -269,6 +270,7 @@
       "levelRange": "5-51",
       "weight": 30.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater",
           "#cobblemon:is_hills",
@@ -296,7 +298,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -305,7 +307,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -314,7 +316,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -360,7 +362,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -369,7 +371,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -378,7 +380,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -424,7 +426,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -433,7 +435,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -442,7 +444,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -463,6 +465,7 @@
       "levelRange": "5-51",
       "weight": 50.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -484,7 +487,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -493,7 +496,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -502,7 +505,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -523,6 +526,7 @@
       "levelRange": "5-51",
       "weight": 30.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -552,7 +556,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -561,7 +565,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -570,7 +574,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -619,7 +623,7 @@
         },
         {
           "pokemon": "poliwhirl",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -628,7 +632,7 @@
         },
         {
           "pokemon": "poliwrath",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-46",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -637,7 +641,7 @@
         },
         {
           "pokemon": "politoed",
-          "weight": 2.5,
+          "weight": 0.5,
           "levelRange": "35-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

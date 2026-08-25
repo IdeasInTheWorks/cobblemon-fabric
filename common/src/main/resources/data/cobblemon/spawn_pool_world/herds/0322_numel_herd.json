@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-46",
-      "weight": 60.0,
+      "weight": 20.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -57,7 +57,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-46",
-      "weight": 100.0,
+      "weight": 60.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -102,7 +102,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-46",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "biomes": [
           "#cobblemon:nether/is_overgrowth",

@@ -38,7 +38,7 @@
         },
         {
           "pokemon": "charcadet",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -47,7 +47,7 @@
         },
         {
           "pokemon": "armarouge",
-          "weight": 60.0,
+          "weight": 67.5,
           "levelRange": "23-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -56,7 +56,7 @@
         },
         {
           "pokemon": "ceruledge",
-          "weight": 60.0,
+          "weight": 67.5,
           "levelRange": "23-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -100,7 +100,7 @@
         },
         {
           "pokemon": "charcadet",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -109,7 +109,7 @@
         },
         {
           "pokemon": "armarouge",
-          "weight": 60.0,
+          "weight": 67.5,
           "levelRange": "23-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -118,7 +118,7 @@
         },
         {
           "pokemon": "ceruledge",
-          "weight": 60.0,
+          "weight": 67.5,
           "levelRange": "23-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -164,7 +164,7 @@
         },
         {
           "pokemon": "charcadet",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "4-23",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -173,7 +173,7 @@
         },
         {
           "pokemon": "armarouge",
-          "weight": 60.0,
+          "weight": 67.5,
           "levelRange": "23-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -182,7 +182,7 @@
         },
         {
           "pokemon": "ceruledge",
-          "weight": 60.0,
+          "weight": 67.5,
           "levelRange": "23-49",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,

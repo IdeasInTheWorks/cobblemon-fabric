@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "4-53",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -32,7 +32,7 @@
         },
         {
           "pokemon": "sealeo",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -41,7 +41,7 @@
         },
         {
           "pokemon": "walrein",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "45-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -60,8 +60,9 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 4,
       "levelRange": "4-53",
-      "weight": 30.0,
+      "weight": 10.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_frozen_ocean"
         ]
@@ -78,7 +79,7 @@
         },
         {
           "pokemon": "sealeo",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -87,7 +88,7 @@
         },
         {
           "pokemon": "walrein",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "45-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -106,8 +107,9 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 4,
       "levelRange": "4-53",
-      "weight": 30.0,
+      "weight": 10.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -126,7 +128,7 @@
         },
         {
           "pokemon": "sealeo",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -135,7 +137,7 @@
         },
         {
           "pokemon": "walrein",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "45-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

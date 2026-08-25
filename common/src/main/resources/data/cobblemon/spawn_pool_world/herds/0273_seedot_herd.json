@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "1-48",
-      "weight": 30.0,
+      "weight": 10.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -35,7 +35,7 @@
         },
         {
           "pokemon": "nuzleaf",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "16-30",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -44,7 +44,7 @@
         },
         {
           "pokemon": "shiftry",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "30-43",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

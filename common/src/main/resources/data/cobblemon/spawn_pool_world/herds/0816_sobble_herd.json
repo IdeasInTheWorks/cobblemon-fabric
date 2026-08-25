@@ -32,7 +32,7 @@
         },
         {
           "pokemon": "drizzile",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-38",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -74,7 +74,7 @@
         },
         {
           "pokemon": "drizzile",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-38",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -95,6 +95,7 @@
       "levelRange": "5-53",
       "weight": 20.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_jungle",
           "#cobblemon:is_swamp"
@@ -112,7 +113,7 @@
         },
         {
           "pokemon": "drizzile",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "18-38",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,

@@ -32,7 +32,7 @@
         },
         {
           "pokemon": "empoleon",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -53,6 +53,7 @@
       "levelRange": "5-53",
       "weight": 64.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_frozen_ocean"
         ]
@@ -69,7 +70,7 @@
         },
         {
           "pokemon": "empoleon",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -90,6 +91,7 @@
       "levelRange": "5-53",
       "weight": 64.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -108,7 +110,7 @@
         },
         {
           "pokemon": "empoleon",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "37-48",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

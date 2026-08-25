@@ -171,7 +171,7 @@
       "herdablePokemon": [
         {
           "pokemon": "voltorb hisuian",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "11-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

@@ -29,7 +29,7 @@
       "herdablePokemon": [
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -74,7 +74,7 @@
       "herdablePokemon": [
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -104,6 +104,7 @@
       "levelRange": "19-50",
       "weight": 12.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_spooky",
           "#cobblemon:is_swamp"
@@ -117,7 +118,7 @@
       "herdablePokemon": [
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -157,7 +158,7 @@
       "herdablePokemon": [
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -194,7 +195,7 @@
       "herdablePokemon": [
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -221,6 +222,7 @@
       "levelRange": "19-50",
       "weight": 12.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],
@@ -238,7 +240,7 @@
       "herdablePokemon": [
         {
           "pokemon": "misdreavus",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "22-41",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

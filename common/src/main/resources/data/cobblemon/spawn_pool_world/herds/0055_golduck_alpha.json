@@ -121,6 +121,7 @@
       "levelRange": "31-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

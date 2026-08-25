@@ -202,48 +202,6 @@
           "isFollower": true
         }
       ]
-    },
-    {
-      "id": "bronzor-herd-6",
-      "presets": [
-        "natural"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "uncommon",
-      "spawnablePositionType": "grounded",
-      "maxHerdSize": 4,
-      "levelRange": "5-50",
-      "weight": 0.64,
-      "condition": {
-        "biomes": [
-          "#cobblemon:space/is_mars"
-        ]
-      },
-      "anticondition": {
-        "biomes": [
-          "#cobblemon:space/is_icy"
-        ]
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "bronzor",
-          "weight": 80.0,
-          "levelRange": "8-27",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        },
-        {
-          "pokemon": "bronzong",
-          "weight": 20.0,
-          "levelRange": "35-46",
-          "levelRangeOffset": "-2-4",
-          "maxTimes": 1,
-          "isLeader": true,
-          "isFollower": true
-        }
-      ]
     }
   ]
 }

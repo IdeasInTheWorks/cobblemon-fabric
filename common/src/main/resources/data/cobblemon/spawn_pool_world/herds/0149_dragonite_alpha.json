@@ -58,7 +58,7 @@
         },
         {
           "pokemon": "dragonite",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -115,7 +115,7 @@
         },
         {
           "pokemon": "dragonite",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -137,6 +137,7 @@
       "levelRange": "53-100",
       "weight": 80.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_ocean"
         ]
@@ -170,7 +171,7 @@
         },
         {
           "pokemon": "dragonite",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -192,6 +193,7 @@
       "levelRange": "53-100",
       "weight": 80.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -227,7 +229,7 @@
         },
         {
           "pokemon": "dragonite",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "56-56",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

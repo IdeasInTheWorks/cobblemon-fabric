@@ -12,8 +12,9 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "4-47",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_swamp"
         ]
@@ -88,8 +89,9 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "4-47",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

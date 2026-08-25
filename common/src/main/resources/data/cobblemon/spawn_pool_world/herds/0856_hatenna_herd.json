@@ -35,7 +35,7 @@
         },
         {
           "pokemon": "hattrem",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -74,7 +74,7 @@
         },
         {
           "pokemon": "hattrem",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -95,6 +95,7 @@
       "levelRange": "2-37",
       "weight": 10.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -111,7 +112,7 @@
         },
         {
           "pokemon": "hattrem",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "34-34",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,

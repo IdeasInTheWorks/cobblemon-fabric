@@ -61,6 +61,7 @@
       "levelRange": "18-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:has_block/mud"
         ]
@@ -106,6 +107,7 @@
       "levelRange": "18-100",
       "weight": 80.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_savanna"
         ]
@@ -201,6 +203,7 @@
       "levelRange": "18-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -248,6 +251,7 @@
       "levelRange": "18-100",
       "weight": 80.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [

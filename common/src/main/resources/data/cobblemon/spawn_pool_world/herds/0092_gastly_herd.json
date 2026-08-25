@@ -39,7 +39,7 @@
         },
         {
           "pokemon": "haunter",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -48,7 +48,7 @@
         },
         {
           "pokemon": "gengar",
-          "weight": 2.5,
+          "weight": 1.0,
           "levelRange": "37-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -69,6 +69,7 @@
       "levelRange": "6-50",
       "weight": 12.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -90,7 +91,7 @@
         },
         {
           "pokemon": "haunter",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -99,7 +100,7 @@
         },
         {
           "pokemon": "gengar",
-          "weight": 2.5,
+          "weight": 1.0,
           "levelRange": "37-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -139,7 +140,7 @@
         },
         {
           "pokemon": "haunter",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -148,7 +149,7 @@
         },
         {
           "pokemon": "gengar",
-          "weight": 2.5,
+          "weight": 1.0,
           "levelRange": "37-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -185,7 +186,7 @@
         },
         {
           "pokemon": "haunter",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "27-37",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -194,7 +195,7 @@
         },
         {
           "pokemon": "gengar",
-          "weight": 2.5,
+          "weight": 1.0,
           "levelRange": "37-45",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

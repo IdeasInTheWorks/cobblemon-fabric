@@ -33,7 +33,7 @@
         },
         {
           "pokemon": "bisharp held_item=cobblemon:kings_rock",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "54-54",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -78,7 +78,7 @@
         },
         {
           "pokemon": "bisharp held_item=cobblemon:kings_rock",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "54-54",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
@@ -127,7 +127,7 @@
         },
         {
           "pokemon": "kingambit",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "53-53",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
@@ -181,7 +181,7 @@
         },
         {
           "pokemon": "kingambit",
-          "weight": 5.0,
+          "weight": 1.0,
           "levelRange": "53-53",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

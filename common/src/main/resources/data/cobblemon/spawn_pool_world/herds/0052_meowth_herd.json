@@ -50,8 +50,8 @@
           "weight": 120.0,
           "levelRange": "30-40",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 5,
-          "isLeader": false,
+          "maxTimes": 1,
+          "isLeader": true,
           "isFollower": true
         }
       ]
@@ -106,8 +106,8 @@
           "weight": 120.0,
           "levelRange": "30-40",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 5,
-          "isLeader": false,
+          "maxTimes": 1,
+          "isLeader": true,
           "isFollower": true
         }
       ]
@@ -152,8 +152,8 @@
           "weight": 120.0,
           "levelRange": "30-40",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 5,
-          "isLeader": false,
+          "maxTimes": 1,
+          "isLeader": true,
           "isFollower": true
         }
       ]
@@ -200,8 +200,8 @@
           "weight": 120.0,
           "levelRange": "30-40",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 5,
-          "isLeader": false,
+          "maxTimes": 1,
+          "isLeader": true,
           "isFollower": true
         }
       ]
@@ -253,8 +253,8 @@
           "weight": 120.0,
           "levelRange": "30-40",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 5,
-          "isLeader": false,
+          "maxTimes": 1,
+          "isLeader": true,
           "isFollower": true
         }
       ]
@@ -300,8 +300,8 @@
           "weight": 120.0,
           "levelRange": "30-40",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 5,
-          "isLeader": false,
+          "maxTimes": 1,
+          "isLeader": true,
           "isFollower": true
         }
       ]
@@ -318,6 +318,7 @@
       "levelRange": "4-44",
       "weight": 120.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],
@@ -338,8 +339,8 @@
           "weight": 120.0,
           "levelRange": "30-40",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 5,
-          "isLeader": false,
+          "maxTimes": 1,
+          "isLeader": true,
           "isFollower": true
         }
       ]

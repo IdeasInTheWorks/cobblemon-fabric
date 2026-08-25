@@ -24,7 +24,7 @@
       "herdablePokemon": [
         {
           "pokemon": "spritzee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -54,6 +54,7 @@
       "levelRange": "9-46",
       "weight": 60.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ]
@@ -61,7 +62,7 @@
       "herdablePokemon": [
         {
           "pokemon": "spritzee",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "12-31",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

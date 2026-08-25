@@ -203,7 +203,7 @@
         },
         {
           "pokemon": "voltorb hisuian",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "11-30",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -212,7 +212,7 @@
         },
         {
           "pokemon": "electrode hisuian",
-          "weight": 120.0,
+          "weight": 135.0,
           "levelRange": "32-45",
           "levelRangeOffset": "-2-4",
           "maxTimes": 5,

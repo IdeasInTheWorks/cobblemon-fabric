@@ -35,7 +35,7 @@
       "herdablePokemon": [
         {
           "pokemon": "petilil",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -44,7 +44,7 @@
         },
         {
           "pokemon": "lilligant",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "25-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -89,7 +89,7 @@
       "herdablePokemon": [
         {
           "pokemon": "petilil",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -98,7 +98,7 @@
         },
         {
           "pokemon": "lilligant",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "25-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -128,7 +128,7 @@
       "herdablePokemon": [
         {
           "pokemon": "petilil",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -137,7 +137,7 @@
         },
         {
           "pokemon": "lilligant",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "25-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -181,7 +181,7 @@
       "herdablePokemon": [
         {
           "pokemon": "petilil hisuibias",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -190,7 +190,7 @@
         },
         {
           "pokemon": "lilligant hisuian",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "25-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -220,7 +220,7 @@
       "herdablePokemon": [
         {
           "pokemon": "petilil hisuibias",
-          "weight": 80.0,
+          "weight": 90.0,
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -229,7 +229,7 @@
         },
         {
           "pokemon": "lilligant hisuian",
-          "weight": 20.0,
+          "weight": 10.0,
           "levelRange": "25-44",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,

@@ -32,7 +32,7 @@
         },
         {
           "pokemon": "weepinbell",
-          "weight": 15.0,
+          "weight": 19.0,
           "levelRange": "23-35",
           "levelRangeOffset": "-2-4",
           "maxTimes": 2,
@@ -41,7 +41,7 @@
         },
         {
           "pokemon": "victreebel",
-          "weight": 2.5,
+          "weight": 1.0,
           "levelRange": "35-44",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

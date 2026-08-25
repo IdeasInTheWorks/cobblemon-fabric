@@ -14,6 +14,7 @@
       "levelRange": "3-49",
       "weight": 30.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater",
           "#cobblemon:is_ocean"
@@ -25,6 +26,15 @@
         ]
       },
       "herdablePokemon": [
+        {
+          "pokemon": "arrokuda",
+          "weight": 80.0,
+          "levelRange": "6-25",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
         {
           "pokemon": "barraskewda",
           "weight": 20.0,
@@ -48,6 +58,7 @@
       "levelRange": "3-49",
       "weight": 30.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -61,6 +72,15 @@
         ]
       },
       "herdablePokemon": [
+        {
+          "pokemon": "arrokuda",
+          "weight": 80.0,
+          "levelRange": "6-25",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
         {
           "pokemon": "barraskewda",
           "weight": 20.0,

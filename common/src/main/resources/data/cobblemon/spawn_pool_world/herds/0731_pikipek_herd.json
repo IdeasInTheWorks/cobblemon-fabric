@@ -37,7 +37,7 @@
         },
         {
           "pokemon": "trumbeak",
-          "weight": 15.0,
+          "weight": 18.0,
           "levelRange": "16-32",
           "levelRangeOffset": "-2-4",
           "maxTimes": 3,
@@ -46,7 +46,7 @@
         },
         {
           "pokemon": "toucannon",
-          "weight": 5.0,
+          "weight": 2.0,
           "levelRange": "29-44",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,

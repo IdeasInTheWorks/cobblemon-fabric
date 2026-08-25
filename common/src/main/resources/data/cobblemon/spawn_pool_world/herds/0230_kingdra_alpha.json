@@ -14,6 +14,7 @@
       "levelRange": "37-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_lukewarm_ocean",
           "#cobblemon:is_warm_ocean"
@@ -48,7 +49,7 @@
         },
         {
           "pokemon": "kingdra",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "40-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 3,
@@ -69,6 +70,7 @@
       "levelRange": "37-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
@@ -105,7 +107,7 @@
         },
         {
           "pokemon": "kingdra",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "40-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 3,
@@ -126,6 +128,7 @@
       "levelRange": "37-100",
       "weight": 100.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],
@@ -164,7 +167,7 @@
         },
         {
           "pokemon": "kingdra",
-          "weight": 5.0,
+          "weight": 50.0,
           "levelRange": "40-49",
           "levelRangeOffset": "-1-5",
           "maxTimes": 3,

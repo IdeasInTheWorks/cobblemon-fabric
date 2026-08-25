@@ -59,6 +59,7 @@
       "levelRange": "1-41",
       "weight": 16.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],
@@ -142,6 +143,7 @@
       "levelRange": "1-41",
       "weight": 16.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_spooky"
         ]
@@ -182,7 +184,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-41",
-      "weight": 50.0,
+      "weight": 20.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -226,7 +228,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-41",
-      "weight": 50.0,
+      "weight": 20.0,
       "condition": {
         "minSkyLight": 0,
         "maxSkyLight": 7,
@@ -271,8 +273,9 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-41",
-      "weight": 50.0,
+      "weight": 20.0,
       "condition": {
+        "canSeeSky": false,
         "biomes": [
           "#cobblemon:is_overworld"
         ],

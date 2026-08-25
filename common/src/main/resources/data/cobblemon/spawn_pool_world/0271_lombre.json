@@ -39,7 +39,7 @@
             "spawnablePositionType": "surface",
             "bucket": "common",
             "level": "14-34",
-            "weight": 2.85,
+            "weight": 0.95,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -50,6 +50,33 @@
         },
         {
             "id": "lombre-3",
+            "pokemon": "lombre",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "surface",
+            "bucket": "common",
+            "level": "14-34",
+            "weight": 0.95,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:lily_pad"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ]
+            }
+        },
+        {
+            "id": "lombre-4",
             "pokemon": "lombre",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -74,7 +101,7 @@
             }
         },
         {
-            "id": "lombre-4",
+            "id": "lombre-5",
             "pokemon": "lombre",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

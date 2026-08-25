@@ -13,7 +13,62 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-49",
-      "weight": 100.0,
+      "weight": 60.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_temperate"
+        ],
+        "isRaining": false,
+        "minY": 96,
+        "maxY": 191
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_sky",
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "swablu",
+          "weight": 80.0,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "altaria",
+          "weight": 20.0,
+          "levelRange": "37-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "swablu-herd-2",
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "6-49",
+      "weight": 20.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -27,7 +82,7 @@
           "#cobblemon:is_overworld"
         ],
         "isRaining": false,
-        "minY": 190
+        "minY": 192
       },
       "anticondition": {
         "biomes": [
@@ -58,7 +113,7 @@
       ]
     },
     {
-      "id": "swablu-herd-2",
+      "id": "swablu-herd-3",
       "presets": [
         "natural",
         "treetop"
@@ -112,7 +167,7 @@
       ]
     },
     {
-      "id": "swablu-herd-3",
+      "id": "swablu-herd-4",
       "presets": [
         "natural",
         "treetop"
@@ -122,7 +177,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-49",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
