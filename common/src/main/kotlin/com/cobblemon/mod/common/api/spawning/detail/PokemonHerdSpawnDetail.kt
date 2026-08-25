@@ -111,11 +111,17 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
         }.weightedSelection { it.weight } ?: herdablePokemon[0]
 
         val level = selectionData.context[herdLevelKey] as? Int ?: 1
-        val levelRange = herdable.levelRangeOffset?.let { offset ->
+        var levelRange = herdable.levelRangeOffset?.let { offset ->
             val min = level + offset.first
             val max = level + offset.last
             min..max
         } ?: level..level
+
+        herdable.levelRange?.let {
+            val clampedMin = maxOf(it.first, levelRange.first)
+            val clampedMax = minOf(it.last, levelRange.last)
+            levelRange = clampedMin..clampedMax
+        }
 
         val heldItem = herdable.heldItem?.let { heldItemId ->
             val item = spawnablePosition.world.registryAccess().registryOrThrow(Registries.ITEM).get(heldItemId)
