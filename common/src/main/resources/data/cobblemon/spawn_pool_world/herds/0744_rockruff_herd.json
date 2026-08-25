@@ -40,16 +40,16 @@
           "isFollower": true
         },
         {
-          "pokemon": "rockruff dusk",
+          "pokemon": "rockruff wolf_form=dusk",
           "weight": 40.0,
           "levelRange": "6-25",
           "levelRangeOffset": "-3-3",
-          "maxTimes": 1,
+          "maxTimes": 3,
           "isLeader": false,
           "isFollower": true
         },
         {
-          "pokemon": "lycanroc dusk",
+          "pokemon": "lycanroc wolf_form=dusk",
           "weight": 2.667,
           "levelRange": "26-44",
           "levelRangeOffset": "-1-5",
@@ -145,7 +145,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "lycanroc midnight",
+          "pokemon": "lycanroc wolf_form=midnight",
           "weight": 1.778,
           "levelRange": "27-45",
           "levelRangeOffset": "-2-4",

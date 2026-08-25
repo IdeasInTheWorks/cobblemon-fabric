@@ -22,7 +22,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -52,7 +52,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -82,7 +82,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -114,7 +114,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -146,7 +146,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -178,7 +178,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -394,7 +394,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -433,7 +433,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -474,7 +474,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -515,7 +515,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",

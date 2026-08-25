@@ -26,11 +26,11 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -73,11 +73,11 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -122,11 +122,11 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -171,11 +171,11 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",

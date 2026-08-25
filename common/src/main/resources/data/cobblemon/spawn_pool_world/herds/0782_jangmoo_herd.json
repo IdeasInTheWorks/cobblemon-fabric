@@ -36,7 +36,7 @@
           "levelRange": "37-38",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -45,7 +45,7 @@
           "levelRange": "46-55",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         }
       ]
@@ -84,7 +84,7 @@
           "levelRange": "37-38",
           "levelRangeOffset": "-2-4",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -93,7 +93,7 @@
           "levelRange": "46-55",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         }
       ]
