@@ -36,6 +36,15 @@
           "isFollower": false
         },
         {
+          "pokemon": "sudowoodo",
+          "weight": 90.0,
+          "levelRange": "19-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
           "pokemon": "bonsly",
           "weight": 30.0,
           "levelRange": "8-27",
