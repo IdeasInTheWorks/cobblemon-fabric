@@ -17,6 +17,7 @@ import com.cobblemon.mod.common.util.weightedSelection
 import com.google.gson.annotations.SerializedName
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.util.Mth.clamp
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 
@@ -72,8 +73,9 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
         selectionData.removeSpawnablePositions { _, pos -> pos.distanceTo(spawnablePosition) < minDistanceBetweenSpawns }
 
         val herdSpawnCount = selectionData.spawnActions.count { it.detail == this } + 1
+        val lacksPossibleLeader = lacksPossibleLeader(selectionData)
 
-        if (herdSpawnCount >= maxHerdSize || getValidHerdMembers(selectionData).isEmpty()) {
+        if (herdSpawnCount >= maxHerdSize || getValidHerdMembersForRole(selectionData, useLeaderRole = lacksPossibleLeader).isEmpty()) {
             // We can't spawn any more in the herd so remove this spawn from the selection pool.
             selectionData.removeSpawnDetails { it == this }
         }
@@ -96,19 +98,20 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
         }
     }
 
+    private fun getValidHerdMembersForRole(selectionData: SpawnSelectionData, useLeaderRole: Boolean): List<Herdable> {
+        return getValidHerdMembers(selectionData).filter { (useLeaderRole && it.isLeader) || (!useLeaderRole && it.isFollower) }
+    }
+
     override fun createSpawnAction(
         spawnablePosition: SpawnablePosition,
         bucket: String,
         selectionData: SpawnSelectionData
     ): PokemonSpawnAction {
-        val validHerdMembers = getValidHerdMembers(selectionData)
-        var searchedForLeader = false
-        val herdable = if (lacksPossibleLeader(selectionData)) {
-            searchedForLeader = true
-            validHerdMembers.filter { it.isLeader }
-        } else {
-            validHerdMembers.filter { it.isFollower }
-        }.weightedSelection { it.weight } ?: herdablePokemon[0]
+        val searchedForLeader = lacksPossibleLeader(selectionData)
+        val herdable = getValidHerdMembersForRole(
+            selectionData = selectionData,
+            useLeaderRole = lacksPossibleLeader(selectionData)
+        ).weightedSelection { it.weight } ?: herdablePokemon[0]
 
         val level = selectionData.context[herdLevelKey] as? Int ?: 1
         var levelRange = herdable.levelRangeOffset?.let { offset ->
@@ -118,8 +121,8 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
         } ?: level..level
 
         herdable.levelRange?.let {
-            val clampedMin = maxOf(it.first, levelRange.first)
-            val clampedMax = minOf(it.last, levelRange.last)
+            val clampedMin = clamp(it.first, levelRange.first, levelRange.last)
+            val clampedMax = clamp(it.last, levelRange.first, levelRange.last)
             levelRange = clampedMin..clampedMax
         }
 
