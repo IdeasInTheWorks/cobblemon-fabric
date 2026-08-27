@@ -40,7 +40,7 @@
           "pokemon": "vanillish",
           "weight": 18.0,
           "levelRange": "37-37",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true
@@ -89,7 +89,7 @@
           "pokemon": "vanillish",
           "weight": 18.0,
           "levelRange": "37-37",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true
@@ -135,7 +135,7 @@
           "pokemon": "vanillish",
           "weight": 18.0,
           "levelRange": "37-37",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true

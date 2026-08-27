@@ -14,7 +14,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "25-45",
-            "weight": 5.0,
+            "weight": 3.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -40,7 +40,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "25-45",
-            "weight": 5.0,
+            "weight": 3.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -67,7 +67,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "25-45",
-            "weight": 5.0,
+            "weight": 3.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -94,7 +94,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "25-45",
-            "weight": 3.0,
+            "weight": 1.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -122,7 +122,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "25-45",
-            "weight": 3.0,
+            "weight": 1.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -149,7 +149,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "25-45",
-            "weight": 3.0,
+            "weight": 1.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -173,7 +173,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "25-45",
-            "weight": 5.0,
+            "weight": 3.0,
             "condition": {
                 "biomes": [
                     "the_bumblezone:floral_meadow"

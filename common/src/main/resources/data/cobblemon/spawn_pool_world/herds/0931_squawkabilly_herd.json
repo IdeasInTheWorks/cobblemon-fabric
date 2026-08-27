@@ -129,7 +129,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "17-42",
-      "weight": 25.0,
+      "weight": 15.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -277,7 +277,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "17-42",
-      "weight": 37.5,
+      "weight": 22.5,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -425,7 +425,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "17-42",
-      "weight": 12.5,
+      "weight": 7.5,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -573,7 +573,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "17-42",
-      "weight": 25.0,
+      "weight": 15.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,

@@ -36,8 +36,8 @@
         {
           "pokemon": "magcargo",
           "weight": 20.0,
-          "levelRange": "40-39",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -76,8 +76,8 @@
         {
           "pokemon": "magcargo",
           "weight": 20.0,
-          "levelRange": "40-39",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -114,8 +114,8 @@
         {
           "pokemon": "magcargo",
           "weight": 20.0,
-          "levelRange": "40-39",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -152,8 +152,8 @@
         {
           "pokemon": "magcargo",
           "weight": 20.0,
-          "levelRange": "40-39",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true

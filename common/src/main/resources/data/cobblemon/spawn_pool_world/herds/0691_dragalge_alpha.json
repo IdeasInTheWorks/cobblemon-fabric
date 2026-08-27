@@ -43,8 +43,8 @@
         {
           "pokemon": "dragalge",
           "weight": 120.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "48-48",
+          "levelRangeOffset": "0-1",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -94,8 +94,8 @@
         {
           "pokemon": "dragalge",
           "weight": 120.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "48-48",
+          "levelRangeOffset": "0-1",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -145,8 +145,8 @@
         {
           "pokemon": "dragalge",
           "weight": 120.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "48-48",
+          "levelRangeOffset": "0-1",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true

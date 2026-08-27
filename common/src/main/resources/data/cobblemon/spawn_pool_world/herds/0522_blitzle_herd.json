@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "5-50",
-      "weight": 100.0,
+      "weight": 60.0,
       "weightMultipliers": [
         {
           "multiplier": 0.25,

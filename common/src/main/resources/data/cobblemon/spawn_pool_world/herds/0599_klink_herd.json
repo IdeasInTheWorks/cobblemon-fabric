@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "5-52",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "minSkyLight": 0,
         "maxSkyLight": 7,
@@ -51,8 +51,8 @@
         {
           "pokemon": "klinklang",
           "weight": 2.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-1-5",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -98,8 +98,8 @@
         {
           "pokemon": "klinklang",
           "weight": 2.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-1-5",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -150,8 +150,8 @@
         {
           "pokemon": "klinklang",
           "weight": 2.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-1-5",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true

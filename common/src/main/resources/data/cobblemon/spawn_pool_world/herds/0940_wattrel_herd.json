@@ -204,7 +204,7 @@
       "spawnablePositionType": "surface",
       "maxHerdSize": 7,
       "levelRange": "3-49",
-      "weight": 100.0,
+      "weight": 20.0,
       "weightMultiplier": {
         "multiplier": 5.0,
         "condition": {

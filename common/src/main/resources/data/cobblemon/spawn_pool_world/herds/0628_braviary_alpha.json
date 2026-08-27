@@ -46,7 +46,7 @@
           "pokemon": "braviary",
           "weight": 120.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -96,7 +96,7 @@
           "pokemon": "braviary",
           "weight": 120.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -158,7 +158,7 @@
           "pokemon": "braviary hisuian",
           "weight": 120.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -213,7 +213,7 @@
           "pokemon": "braviary hisuian",
           "weight": 120.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true

@@ -44,7 +44,7 @@
           "pokemon": "sliggoo",
           "weight": 70.0,
           "levelRange": "42-42",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -103,7 +103,7 @@
           "pokemon": "sliggoo",
           "weight": 70.0,
           "levelRange": "42-42",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -162,7 +162,7 @@
           "pokemon": "sliggoo",
           "weight": 70.0,
           "levelRange": "42-42",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -219,7 +219,7 @@
           "pokemon": "sliggoo hisuian",
           "weight": 70.0,
           "levelRange": "42-42",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -285,7 +285,7 @@
           "pokemon": "sliggoo hisuian",
           "weight": 70.0,
           "levelRange": "42-42",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -348,7 +348,7 @@
           "pokemon": "sliggoo hisuian",
           "weight": 70.0,
           "levelRange": "42-42",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true

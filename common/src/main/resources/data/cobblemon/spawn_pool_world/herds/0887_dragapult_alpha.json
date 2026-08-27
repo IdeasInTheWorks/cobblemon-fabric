@@ -55,7 +55,7 @@
           "pokemon": "drakloak",
           "weight": 70.0,
           "levelRange": "52-52",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -64,7 +64,7 @@
           "pokemon": "dragapult",
           "weight": 50.0,
           "levelRange": "61-61",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true
@@ -119,7 +119,7 @@
           "pokemon": "drakloak",
           "weight": 70.0,
           "levelRange": "52-52",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -128,7 +128,7 @@
           "pokemon": "dragapult",
           "weight": 50.0,
           "levelRange": "61-61",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true
@@ -182,7 +182,7 @@
           "pokemon": "drakloak",
           "weight": 70.0,
           "levelRange": "52-52",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -191,7 +191,7 @@
           "pokemon": "dragapult",
           "weight": 50.0,
           "levelRange": "61-61",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true

@@ -12,7 +12,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "3-49",
-      "weight": 30.0,
+      "weight": 10.0,
       "condition": {
         "canSeeSky": true,
         "biomes": [
@@ -56,7 +56,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "3-49",
-      "weight": 30.0,
+      "weight": 10.0,
       "condition": {
         "canSeeSky": false,
         "minSkyLight": 8,

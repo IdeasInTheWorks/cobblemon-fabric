@@ -22,8 +22,8 @@
         {
           "pokemon": "unown",
           "weight": 80.0,
-          "levelRange": "100-1",
-          "levelRangeOffset": "-99-99",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-49-49",
           "maxTimes": 7,
           "isLeader": false,
           "isFollower": true

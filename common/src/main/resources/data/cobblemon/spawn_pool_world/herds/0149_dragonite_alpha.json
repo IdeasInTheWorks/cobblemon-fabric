@@ -60,7 +60,7 @@
           "pokemon": "dragonite",
           "weight": 50.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -117,7 +117,7 @@
           "pokemon": "dragonite",
           "weight": 50.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -173,7 +173,7 @@
           "pokemon": "dragonite",
           "weight": 50.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -231,7 +231,7 @@
           "pokemon": "dragonite",
           "weight": 50.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true

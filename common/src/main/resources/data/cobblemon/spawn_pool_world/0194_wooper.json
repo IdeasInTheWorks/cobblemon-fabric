@@ -13,7 +13,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "1-21",
-            "weight": 45.0,
+            "weight": 27.0,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -39,7 +39,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "1-21",
-            "weight": 45.0,
+            "weight": 27.0,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -282,7 +282,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "1-21",
-            "weight": 45.0,
+            "weight": 27.0,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -311,7 +311,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "1-21",
-            "weight": 45.0,
+            "weight": 27.0,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -340,7 +340,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "uncommon",
             "level": "1-21",
-            "weight": 42.0,
+            "weight": 25.2,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -362,7 +362,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "uncommon",
             "level": "1-21",
-            "weight": 42.0,
+            "weight": 25.2,
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -569,7 +569,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "1-21",
-            "weight": 45.0,
+            "weight": 27.0,
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -588,7 +588,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "1-21",
-            "weight": 45.0,
+            "weight": 27.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -702,7 +702,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "1-21",
-            "weight": 45.0,
+            "weight": 27.0,
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,

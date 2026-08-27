@@ -32,8 +32,8 @@
         {
           "pokemon": "eelektrik",
           "weight": 19.0,
-          "levelRange": "41-41",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true
@@ -91,8 +91,8 @@
         {
           "pokemon": "eelektrik",
           "weight": 19.0,
-          "levelRange": "41-41",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true
@@ -143,8 +143,8 @@
         {
           "pokemon": "eelektrik",
           "weight": 19.0,
-          "levelRange": "41-41",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true

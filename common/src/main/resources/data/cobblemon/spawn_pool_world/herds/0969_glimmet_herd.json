@@ -85,7 +85,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "10-53",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "biomes": [
           "the_bumblezone:crystal_canyon",

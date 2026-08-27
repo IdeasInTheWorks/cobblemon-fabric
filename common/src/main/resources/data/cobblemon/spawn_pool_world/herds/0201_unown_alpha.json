@@ -11,7 +11,7 @@
       "bucket": "boss",
       "spawnablePositionType": "grounded",
       "maxHerdSize": 8,
-      "levelRange": "4-100",
+      "levelRange": "1-100",
       "weight": 100.0,
       "condition": {
         "biomes": [
@@ -22,7 +22,8 @@
         {
           "pokemon": "unown held_item=cobblemon:colbur_berry alpha=true",
           "weight": 30.0,
-          "levelRange": "1-100",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-49-49",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": false
@@ -30,8 +31,8 @@
         {
           "pokemon": "unown",
           "weight": 80.0,
-          "levelRange": "100-1",
-          "levelRangeOffset": "-99-99",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-49-49",
           "maxTimes": 7,
           "isLeader": false,
           "isFollower": true
@@ -47,7 +48,7 @@
       "bucket": "boss",
       "spawnablePositionType": "grounded",
       "maxHerdSize": 8,
-      "levelRange": "4-100",
+      "levelRange": "1-100",
       "weight": 100.0,
       "condition": {
         "biomes": [
@@ -59,7 +60,8 @@
         {
           "pokemon": "unown held_item=cobblemon:colbur_berry alpha=true",
           "weight": 30.0,
-          "levelRange": "1-100",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-49-49",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": false
@@ -67,8 +69,8 @@
         {
           "pokemon": "unown",
           "weight": 80.0,
-          "levelRange": "100-1",
-          "levelRangeOffset": "-99-99",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-49-49",
           "maxTimes": 7,
           "isLeader": false,
           "isFollower": true
@@ -81,7 +83,7 @@
       "bucket": "boss",
       "spawnablePositionType": "grounded",
       "maxHerdSize": 8,
-      "levelRange": "4-100",
+      "levelRange": "1-100",
       "weight": 100.0,
       "condition": {
         "biomes": [
@@ -97,7 +99,8 @@
         {
           "pokemon": "unown held_item=cobblemon:colbur_berry alpha=true",
           "weight": 30.0,
-          "levelRange": "1-100",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-49-49",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": false
@@ -105,8 +108,8 @@
         {
           "pokemon": "unown",
           "weight": 80.0,
-          "levelRange": "100-1",
-          "levelRangeOffset": "-99-99",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-49-49",
           "maxTimes": 7,
           "isLeader": false,
           "isFollower": true

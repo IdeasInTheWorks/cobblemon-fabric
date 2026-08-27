@@ -14,7 +14,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "10-59",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -38,7 +38,7 @@
           "pokemon": "braviary",
           "weight": 20.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true
@@ -57,7 +57,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "10-59",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -80,7 +80,7 @@
           "pokemon": "braviary",
           "weight": 20.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true
@@ -99,7 +99,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "10-59",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -134,7 +134,7 @@
           "pokemon": "braviary hisuian",
           "weight": 20.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true
@@ -153,7 +153,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "10-59",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -181,7 +181,7 @@
           "pokemon": "braviary hisuian",
           "weight": 20.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true

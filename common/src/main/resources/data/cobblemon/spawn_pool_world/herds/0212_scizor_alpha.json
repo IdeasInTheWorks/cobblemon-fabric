@@ -44,7 +44,7 @@
           "pokemon": "scizor",
           "weight": 135.0,
           "levelRange": "47-47",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
