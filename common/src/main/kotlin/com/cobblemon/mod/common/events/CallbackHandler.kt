@@ -24,7 +24,7 @@ object CallbackHandler {
     fun setup() {
         CobblemonEvents.STARTER_CHOSEN.subscribe { CobblemonCallbacks.run(cobblemonResource("starter_chosen"), it.getContext(), it.functions) }
         CobblemonEvents.POKEMON_CAPTURED.subscribe { CobblemonCallbacks.run(cobblemonResource("pokemon_captured"), it.context) }
-        CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { entity -> CobblemonCallbacks.run(cobblemonResource("pokemon_entity_spawn"), mutableMapOf<String, MoValue>("pokemon_entity" to entity.entity.asMoLangValue()), functions = moLangFunctionMap("pokemon" to { entity.entity.pokemon.struct })) }
+        CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { CobblemonCallbacks.run(cobblemonResource("pokemon_entity_spawn"), mutableMapOf<String, MoValue>("pokemon_entity" to it.entity.asMoLangValue())) }
         CobblemonEvents.BATTLE_VICTORY.subscribe { CobblemonCallbacks.run(cobblemonResource("battle_victory"), it.context) }
         CobblemonEvents.POKEDEX_DATA_CHANGED_PRE.subscribe { CobblemonCallbacks.run(cobblemonResource("pokedex_data_changed_pre"), it.getContext(), it.functions) }
         CobblemonEvents.POKEDEX_DATA_CHANGED_POST.subscribe { CobblemonCallbacks.run(cobblemonResource("pokedex_data_changed_post"), it.getContext()) }
