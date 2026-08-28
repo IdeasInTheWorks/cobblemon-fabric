@@ -400,7 +400,7 @@
 - Fixed some z-fighting and clipping on Dewott
 - Fixed multiple Pokémon having their cries missing
 - Fixed Tentacool not using its swim animation when on water surface
-- Fixed Eevee using it's left shoulder pose when in battle
+- Fixed Eevee using its left shoulder pose when in battle
 - The Magikarp and Gyarados Jump Pattern resourcepacks should now stop replacing shiny textures of addons targeting Magikarp or Gyarados.
 
 ### Developer
