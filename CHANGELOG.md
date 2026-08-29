@@ -402,6 +402,10 @@
 - Fixed Tentacool not using its swim animation when on water surface
 - Fixed Eevee using its left shoulder pose when in battle
 - The Magikarp and Gyarados Jump Pattern resourcepacks should now stop replacing shiny textures of addons targeting Magikarp or Gyarados.
+- Fixed Combee's pollinated texture overwriting the shiny and female textures
+- Fixed a coloring error with Dracovish's shiny
+- Fixed Togedemaru's back spikes z-fighting
+- Fixed Sliggoo (+ Hisuian) evolving in the Nether and End, where it can't rain
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters

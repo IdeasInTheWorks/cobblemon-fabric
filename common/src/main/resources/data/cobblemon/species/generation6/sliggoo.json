@@ -164,6 +164,10 @@
         {
           "variant": "weather",
           "isRaining": true
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_overworld"
         }
       ]
     }
@@ -328,6 +332,10 @@
             {
               "variant": "weather",
               "isRaining": true
+            },
+            {
+              "variant": "biome",
+              "biomeCondition": "#cobblemon:is_overworld"
             }
           ]
         }
