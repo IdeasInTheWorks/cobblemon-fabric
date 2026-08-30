@@ -24,7 +24,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.storage.WritableLevelData;
 import net.minecraft.world.phys.AABB;
-import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -55,7 +54,6 @@ public abstract class ServerLevelMixin extends Level implements ServerLevelDuck 
     }
 
     @Shadow
-    @NotNull
     public abstract MinecraftServer shadow$getServer();
 
     /**
