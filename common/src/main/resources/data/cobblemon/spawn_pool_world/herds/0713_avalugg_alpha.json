@@ -161,6 +161,14 @@
       },
       "herdablePokemon": [
         {
+          "pokemon": "avalugg hisuian held_item=cobblemon:ice_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
           "pokemon": "bergmite hisuibias",
           "weight": 80.0,
           "levelRange": "8-27",

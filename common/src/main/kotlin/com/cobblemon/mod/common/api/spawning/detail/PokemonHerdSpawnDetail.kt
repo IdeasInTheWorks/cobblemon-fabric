@@ -138,8 +138,8 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
         }
 
         herdable.levelRange?.let {
-            val clampedMin = clamp(it.first, levelRange.first, levelRange.last)
-            val clampedMax = clamp(it.last, levelRange.first, levelRange.last)
+            val clampedMin = clamp(levelRange.first, it.first, it.last)
+            val clampedMax = clamp(levelRange.last, it.first, it.last)
             levelRange = clampedMin..clampedMax
         }
 
