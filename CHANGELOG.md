@@ -407,6 +407,7 @@
 - Fixed Tentacool not using its swim animation when on water surface
 - Fixed Eevee using its left shoulder pose when in battle
 - The Magikarp and Gyarados Jump Pattern resourcepacks should now stop replacing shiny textures of addons targeting Magikarp or Gyarados.
+- Fixed Dudunsparce and Maushold always having the same form instead of having the 1 in 100 chance of being different.
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
