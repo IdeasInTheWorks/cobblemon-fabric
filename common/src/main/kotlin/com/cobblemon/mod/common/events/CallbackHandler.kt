@@ -13,7 +13,6 @@ import com.cobblemon.mod.common.CobblemonCallbacks
 import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.molang.MoLangFunctions.asMoLangValue
-import com.cobblemon.mod.common.api.molang.MoLangFunctions.moLangFunctionMap
 import com.cobblemon.mod.common.platform.events.PlatformEvents
 import com.cobblemon.mod.common.util.cobblemonResource
 
