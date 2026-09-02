@@ -61,12 +61,10 @@ open class CobblemonStarterHandler : StarterHandler {
             return
         }
         val properties = if (index == category.pokemon.size) { // means random
-            val allPossiblePokemon = mutableListOf<PokemonProperties>()
-            getStarterList(player).forEach {
-                allPossiblePokemon.addAll(it.pokemon)
-            }
-            allPossiblePokemon[Random.nextInt(0,allPossiblePokemon.size)]
-        } else category.pokemon[index]
+            getStarterList(player).flatMap { it.pokemon }.random()
+        } else {
+            category.pokemon[index]
+        }
 
         val pokemon = properties.create(player)
 
