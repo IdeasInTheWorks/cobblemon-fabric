@@ -5,24 +5,27 @@
     {
       "id": "cyclizar-alpha-1",
       "presets": [
-        "water"
+        "natural"
       ],
       "type": "pokemon-herd",
       "bucket": "boss",
-      "spawnablePositionType": "surface",
+      "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "23-100",
       "weight": 50.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
         "biomes": [
-          "#cobblemon:is_jungle",
-          "#cobblemon:is_savanna",
-          "#cobblemon:is_swamp",
-          "#cobblemon:is_tropical_island"
-        ],
-        "timeRange": "day"
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_grassland"
+        ]
       },
       "herdablePokemon": [
         {
@@ -30,7 +33,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {

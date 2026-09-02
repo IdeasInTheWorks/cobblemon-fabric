@@ -3,7 +3,7 @@
   "neededUninstalledMods": [],
   "spawns": [
     {
-      "id": "gimmighoul-alpha-1",
+      "id": "gimmighoul-roaming-alpha-1",
       "type": "pokemon-herd",
       "bucket": "boss",
       "spawnablePositionType": "grounded",
@@ -21,15 +21,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "gimmighoul roaming=true held_item=cobblemon:ghost_gem alpha=true",
+          "pokemon": "gimmighoul roaming held_item=cobblemon:ghost_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "gimmighoul roaming=true",
+          "pokemon": "gimmighoul roaming",
           "weight": 80.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "id": "gimmighoul-alpha-2",
+      "id": "gimmighoul-roaming-alpha-2",
       "type": "pokemon-herd",
       "bucket": "boss",
       "spawnablePositionType": "grounded",
@@ -59,15 +59,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "gimmighoul roaming=true held_item=cobblemon:ghost_gem alpha=true",
+          "pokemon": "gimmighoul roaming held_item=cobblemon:ghost_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "gimmighoul roaming=true",
+          "pokemon": "gimmighoul roaming",
           "weight": 80.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "id": "gimmighoul-alpha-3",
+      "id": "gimmighoul-roaming-alpha-3",
       "type": "pokemon-herd",
       "bucket": "boss",
       "spawnablePositionType": "grounded",
@@ -97,15 +97,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "gimmighoul roaming=true held_item=cobblemon:ghost_gem alpha=true",
+          "pokemon": "gimmighoul roaming held_item=cobblemon:ghost_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "gimmighoul roaming=true",
+          "pokemon": "gimmighoul roaming",
           "weight": 80.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
@@ -116,7 +116,7 @@
       ]
     },
     {
-      "id": "gimmighoul-chest-alpha-1",
+      "id": "gimmighoul-alpha-1",
       "type": "pokemon-herd",
       "bucket": "boss",
       "spawnablePositionType": "grounded",
@@ -134,15 +134,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "gimmighoul roaming=false held_item=cobblemon:ghost_gem alpha=true",
+          "pokemon": "gimmighoul held_item=cobblemon:ghost_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "gimmighoul roaming=true",
+          "pokemon": "gimmighoul roaming",
           "weight": 80.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
@@ -153,7 +153,7 @@
       ]
     },
     {
-      "id": "gimmighoul-chest-alpha-2",
+      "id": "gimmighoul-alpha-2",
       "type": "pokemon-herd",
       "bucket": "boss",
       "spawnablePositionType": "grounded",
@@ -172,15 +172,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "gimmighoul roaming=false held_item=cobblemon:ghost_gem alpha=true",
+          "pokemon": "gimmighoul held_item=cobblemon:ghost_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "gimmighoul roaming=true",
+          "pokemon": "gimmighoul roaming",
           "weight": 80.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",
@@ -191,7 +191,7 @@
       ]
     },
     {
-      "id": "gimmighoul-chest-alpha-3",
+      "id": "gimmighoul-alpha-3",
       "type": "pokemon-herd",
       "bucket": "boss",
       "spawnablePositionType": "grounded",
@@ -210,15 +210,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "gimmighoul roaming=false held_item=cobblemon:ghost_gem alpha=true",
+          "pokemon": "gimmighoul held_item=cobblemon:ghost_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "gimmighoul roaming=true",
+          "pokemon": "gimmighoul roaming",
           "weight": 80.0,
           "levelRange": "8-27",
           "levelRangeOffset": "-3-3",

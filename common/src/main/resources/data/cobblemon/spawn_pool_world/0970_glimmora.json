@@ -46,7 +46,7 @@
             "spawnablePositionType": "grounded",
             "bucket": "common",
             "level": "35-53",
-            "weight": 5.0,
+            "weight": 3.0,
             "condition": {
                 "biomes": [
                     "the_bumblezone:crystal_canyon",

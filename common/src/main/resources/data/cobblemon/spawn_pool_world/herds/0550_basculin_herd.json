@@ -12,7 +12,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-46",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "canSeeSky": true,
         "biomes": [
@@ -22,7 +22,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -42,17 +42,17 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-46",
-      "weight": 20.0,
+      "weight": 30.0,
       "condition": {
         "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
-        "moonPhase": "5-7"
+        "moonPhase": "0,4"
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -72,17 +72,19 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-46",
-      "weight": 50.0,
+      "weight": 60.0,
       "condition": {
-        "canSeeSky": true,
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
-        "moonPhase": "0,4"
+        "moonPhase": "1-3"
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -102,71 +104,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-46",
-      "weight": 100.0,
-      "condition": {
-        "canSeeSky": false,
-        "minSkyLight": 8,
-        "maxSkyLight": 15,
-        "biomes": [
-          "#cobblemon:is_freshwater"
-        ],
-        "moonPhase": "1-3"
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "basculin bluestriped",
-          "weight": 80.0,
-          "levelRange": "24-43",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
-    },
-    {
-      "id": "basculin-blue-herd-5",
-      "presets": [
-        "water"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "common",
-      "spawnablePositionType": "submerged",
-      "maxHerdSize": 7,
-      "levelRange": "21-46",
-      "weight": 20.0,
-      "condition": {
-        "canSeeSky": false,
-        "minSkyLight": 8,
-        "maxSkyLight": 15,
-        "biomes": [
-          "#cobblemon:is_freshwater"
-        ],
-        "moonPhase": "5-7"
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "basculin bluestriped",
-          "weight": 80.0,
-          "levelRange": "24-43",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
-    },
-    {
-      "id": "basculin-blue-herd-6",
-      "presets": [
-        "water"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "common",
-      "spawnablePositionType": "submerged",
-      "maxHerdSize": 7,
-      "levelRange": "21-46",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "canSeeSky": false,
         "minSkyLight": 8,
@@ -178,7 +116,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin bluestriped",
+          "pokemon": "basculin striped=blue",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -198,7 +136,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-46",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "canSeeSky": true,
         "biomes": [
@@ -228,13 +166,13 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-46",
-      "weight": 20.0,
+      "weight": 30.0,
       "condition": {
         "canSeeSky": true,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
-        "moonPhase": "1-3"
+        "moonPhase": "0,4"
       },
       "herdablePokemon": [
         {
@@ -258,13 +196,15 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-46",
-      "weight": 50.0,
+      "weight": 60.0,
       "condition": {
-        "canSeeSky": true,
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
         "biomes": [
           "#cobblemon:is_freshwater"
         ],
-        "moonPhase": "0,4"
+        "moonPhase": "5-7"
       },
       "herdablePokemon": [
         {
@@ -288,71 +228,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-46",
-      "weight": 100.0,
-      "condition": {
-        "canSeeSky": false,
-        "minSkyLight": 8,
-        "maxSkyLight": 15,
-        "biomes": [
-          "#cobblemon:is_freshwater"
-        ],
-        "moonPhase": "5-7"
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "basculin",
-          "weight": 80.0,
-          "levelRange": "24-43",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
-    },
-    {
-      "id": "basculin-red-herd-5",
-      "presets": [
-        "water"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "common",
-      "spawnablePositionType": "submerged",
-      "maxHerdSize": 7,
-      "levelRange": "21-46",
-      "weight": 20.0,
-      "condition": {
-        "canSeeSky": false,
-        "minSkyLight": 8,
-        "maxSkyLight": 15,
-        "biomes": [
-          "#cobblemon:is_freshwater"
-        ],
-        "moonPhase": "1-3"
-      },
-      "herdablePokemon": [
-        {
-          "pokemon": "basculin",
-          "weight": 80.0,
-          "levelRange": "24-43",
-          "levelRangeOffset": "-3-3",
-          "maxTimes": 7,
-          "isLeader": false,
-          "isFollower": true
-        }
-      ]
-    },
-    {
-      "id": "basculin-red-herd-6",
-      "presets": [
-        "water"
-      ],
-      "type": "pokemon-herd",
-      "bucket": "common",
-      "spawnablePositionType": "submerged",
-      "maxHerdSize": 7,
-      "levelRange": "21-46",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "canSeeSky": false,
         "minSkyLight": 8,
@@ -394,7 +270,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -423,7 +299,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-53",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "canSeeSky": true,
         "biomes": [
@@ -433,7 +309,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -474,7 +350,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",
@@ -503,7 +379,7 @@
       "spawnablePositionType": "submerged",
       "maxHerdSize": 7,
       "levelRange": "21-53",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "canSeeSky": false,
         "minSkyLight": 8,
@@ -515,7 +391,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "basculin whitestriped",
+          "pokemon": "basculin striped=white",
           "weight": 80.0,
           "levelRange": "24-43",
           "levelRangeOffset": "-3-3",

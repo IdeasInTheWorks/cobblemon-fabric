@@ -57,6 +57,7 @@
 - Pressing the Summary key while either the starter selection or summary screen are open now closes those screens
 - Ice type Pokémon are now immune to Packed Snow
 - Held item visibility can now be controlled by the held_item_visible command argument.
+- Added config option to disable Pokémon spawning on a per-world basis
 
 ### New rideable Pokémon
 - Crobat
@@ -401,6 +402,13 @@
 - Eggant Berries can now be composted properly on NeoForge
 - Composting chances are now the same on NeoForge as on Fabric
 - Fixed problem where furnaces which had smelted Revival Herbs into Heal Powder in older versions would glitch out on trying to get the experience out of the block
+- Fixed the Battle AI not recognizing Surging Strikes as a multistrike move
+- Fixed some z-fighting and clipping on Dewott
+- Fixed multiple Pokémon having their cries missing
+- Fixed Tentacool not using its swim animation when on water surface
+- Fixed Eevee using its left shoulder pose when in battle
+- The Magikarp and Gyarados Jump Pattern resourcepacks should now stop replacing shiny textures of addons targeting Magikarp or Gyarados.
+- Fixed Dudunsparce and Maushold always having the same form instead of having the 1 in 100 chance of being different.
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters

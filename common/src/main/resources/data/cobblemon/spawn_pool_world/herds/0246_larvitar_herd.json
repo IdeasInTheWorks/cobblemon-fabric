@@ -49,7 +49,7 @@
           "pokemon": "tyranitar",
           "weight": 2.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": true
@@ -97,7 +97,7 @@
           "pokemon": "tyranitar",
           "weight": 2.0,
           "levelRange": "56-56",
-          "levelRangeOffset": "-1-5",
+          "levelRangeOffset": "-1-4",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": true

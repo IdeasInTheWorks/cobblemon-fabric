@@ -29,7 +29,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -44,8 +44,8 @@
         {
           "pokemon": "magcargo",
           "weight": 120.0,
-          "levelRange": "40-39",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -77,7 +77,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -92,8 +92,8 @@
         {
           "pokemon": "magcargo",
           "weight": 120.0,
-          "levelRange": "40-39",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -123,7 +123,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -138,8 +138,8 @@
         {
           "pokemon": "magcargo",
           "weight": 120.0,
-          "levelRange": "40-39",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -169,7 +169,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -184,8 +184,8 @@
         {
           "pokemon": "magcargo",
           "weight": 120.0,
-          "levelRange": "40-39",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true

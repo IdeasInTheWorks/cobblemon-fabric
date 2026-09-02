@@ -34,7 +34,7 @@
           "pokemon": "zweilous",
           "weight": 18.0,
           "levelRange": "52-52",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -79,7 +79,7 @@
           "pokemon": "zweilous",
           "weight": 18.0,
           "levelRange": "52-52",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true
@@ -118,7 +118,7 @@
           "pokemon": "zweilous",
           "weight": 18.0,
           "levelRange": "52-52",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": false,
           "isFollower": true

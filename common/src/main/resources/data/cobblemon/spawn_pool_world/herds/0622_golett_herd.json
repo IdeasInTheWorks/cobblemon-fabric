@@ -34,7 +34,7 @@
           "pokemon": "golurk",
           "weight": 20.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": true
@@ -76,7 +76,7 @@
           "pokemon": "golurk",
           "weight": 20.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": true
@@ -115,7 +115,7 @@
           "pokemon": "golurk",
           "weight": 20.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": true
@@ -153,7 +153,7 @@
           "pokemon": "golurk",
           "weight": 20.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": true
@@ -191,7 +191,7 @@
           "pokemon": "golurk",
           "weight": 20.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": true
@@ -230,7 +230,7 @@
           "pokemon": "golurk",
           "weight": 20.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 1,
           "isLeader": true,
           "isFollower": true

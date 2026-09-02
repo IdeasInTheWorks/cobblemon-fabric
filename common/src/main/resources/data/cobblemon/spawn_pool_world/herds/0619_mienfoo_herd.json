@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "10-51",
-      "weight": 100.0,
+      "weight": 60.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -45,8 +45,8 @@
         {
           "pokemon": "mienshao",
           "weight": 20.0,
-          "levelRange": "52-52",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "50-50",
+          "levelRangeOffset": "0-1",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true

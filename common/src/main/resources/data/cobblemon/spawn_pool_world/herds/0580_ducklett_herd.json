@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-47",
-      "weight": 100.0,
+      "weight": 60.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -62,7 +62,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-47",
-      "weight": 100.0,
+      "weight": 60.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -107,7 +107,7 @@
       "spawnablePositionType": "surface",
       "maxHerdSize": 7,
       "levelRange": "6-47",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -152,7 +152,7 @@
       "spawnablePositionType": "surface",
       "maxHerdSize": 7,
       "levelRange": "6-47",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -192,7 +192,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "6-47",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -234,7 +234,7 @@
       "spawnablePositionType": "surface",
       "maxHerdSize": 7,
       "levelRange": "6-47",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,

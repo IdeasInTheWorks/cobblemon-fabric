@@ -38,7 +38,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -53,8 +53,8 @@
         {
           "pokemon": "mienshao",
           "weight": 120.0,
-          "levelRange": "52-52",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "50-50",
+          "levelRangeOffset": "0-1",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true

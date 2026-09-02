@@ -35,7 +35,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -59,8 +59,8 @@
         {
           "pokemon": "klinklang",
           "weight": 50.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-1-5",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true
@@ -90,7 +90,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -114,8 +114,8 @@
         {
           "pokemon": "klinklang",
           "weight": 50.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-1-5",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true
@@ -150,7 +150,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -174,8 +174,8 @@
         {
           "pokemon": "klinklang",
           "weight": 50.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-1-5",
+          "levelRange": "50-51",
+          "levelRangeOffset": "-1-1",
           "maxTimes": 3,
           "isLeader": false,
           "isFollower": true

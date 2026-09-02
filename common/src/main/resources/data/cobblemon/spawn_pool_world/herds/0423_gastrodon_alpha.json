@@ -29,15 +29,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "gastrodon eastsea held_item=cobblemon:water_gem alpha=true",
+          "pokemon": "gastrodon sea=east held_item=cobblemon:water_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "shellos eastsea",
+          "pokemon": "shellos sea=east",
           "weight": 80.0,
           "levelRange": "11-30",
           "levelRangeOffset": "-3-3",
@@ -46,7 +46,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "gastrodon eastsea",
+          "pokemon": "gastrodon sea=east",
           "weight": 120.0,
           "levelRange": "32-44",
           "levelRangeOffset": "-2-4",
@@ -77,15 +77,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "gastrodon eastsea held_item=cobblemon:water_gem alpha=true",
+          "pokemon": "gastrodon sea=east held_item=cobblemon:water_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "shellos eastsea",
+          "pokemon": "shellos sea=east",
           "weight": 80.0,
           "levelRange": "11-30",
           "levelRangeOffset": "-3-3",
@@ -94,7 +94,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "gastrodon eastsea",
+          "pokemon": "gastrodon sea=east",
           "weight": 120.0,
           "levelRange": "32-44",
           "levelRangeOffset": "-2-4",
@@ -130,7 +130,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -178,7 +178,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {

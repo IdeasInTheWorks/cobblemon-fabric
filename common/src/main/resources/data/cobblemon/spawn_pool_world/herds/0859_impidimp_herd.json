@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "2-51",
-      "weight": 60.0,
+      "weight": 20.0,
       "weightMultiplier": {
         "multiplier": 1.5,
         "condition": {
@@ -41,7 +41,7 @@
           "pokemon": "morgrem",
           "weight": 18.0,
           "levelRange": "34-34",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true
@@ -68,7 +68,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "2-51",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "biomes": [
           "#cobblemon:nether/is_forest",
@@ -94,7 +94,7 @@
           "pokemon": "morgrem",
           "weight": 18.0,
           "levelRange": "34-34",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 2,
           "isLeader": false,
           "isFollower": true

@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-49",
-      "weight": 50.0,
+      "weight": 30.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -108,7 +108,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-49",
-      "weight": 50.0,
+      "weight": 30.0,
       "condition": {
         "biomes": [
           "#cobblemon:nether/is_crimson",

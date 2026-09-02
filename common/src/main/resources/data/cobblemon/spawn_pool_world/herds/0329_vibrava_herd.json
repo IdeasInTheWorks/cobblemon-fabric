@@ -44,7 +44,7 @@
           "levelRange": "46-47",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         }
       ]
