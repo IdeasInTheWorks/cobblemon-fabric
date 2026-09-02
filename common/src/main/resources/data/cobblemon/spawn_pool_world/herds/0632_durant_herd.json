@@ -43,7 +43,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "23-48",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "minSkyLight": 0,
         "maxSkyLight": 7,
@@ -74,7 +74,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 7,
       "levelRange": "23-48",
-      "weight": 100.0,
+      "weight": 60.0,
       "condition": {
         "biomes": [
           "#cobblemon:nether/is_mountain"

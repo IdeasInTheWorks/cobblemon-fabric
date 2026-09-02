@@ -23,11 +23,11 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "marowak alolan held_item=minecraft.bone alpha=true",
+          "pokemon": "marowak alolan held_item=minecraft:bone alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -69,11 +69,11 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "marowak alolan held_item=minecraft.bone alpha=true",
+          "pokemon": "marowak alolan held_item=minecraft:bone alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -118,11 +118,11 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "marowak held_item=minecraft.bone alpha=true",
+          "pokemon": "marowak held_item=minecraft:bone alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {

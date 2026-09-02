@@ -26,7 +26,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -42,7 +42,7 @@
           "pokemon": "golurk",
           "weight": 120.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -76,7 +76,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -92,7 +92,7 @@
           "pokemon": "golurk",
           "weight": 120.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -123,7 +123,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -139,7 +139,7 @@
           "pokemon": "golurk",
           "weight": 120.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -169,7 +169,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -185,7 +185,7 @@
           "pokemon": "golurk",
           "weight": 120.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -215,7 +215,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -231,7 +231,7 @@
           "pokemon": "golurk",
           "weight": 120.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -262,7 +262,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -278,7 +278,7 @@
           "pokemon": "golurk",
           "weight": 120.0,
           "levelRange": "45-45",
-          "levelRangeOffset": "-2-4",
+          "levelRangeOffset": "-2-3",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true

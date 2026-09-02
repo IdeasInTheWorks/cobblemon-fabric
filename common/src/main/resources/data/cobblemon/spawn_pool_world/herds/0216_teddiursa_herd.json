@@ -57,7 +57,7 @@
           "levelRange": "46-50",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         }
       ]
@@ -110,7 +110,7 @@
           "levelRange": "46-50",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         }
       ]
@@ -159,7 +159,7 @@
           "levelRange": "46-50",
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         }
       ]

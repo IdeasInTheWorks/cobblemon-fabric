@@ -300,7 +300,7 @@ def process_herds(herds_df, herd_pokemon_df):
                     "levelRange": f"{herd_pokemon_row['Lv. Min']}-{herd_pokemon_row['Lv. Max']}",
                     "levelRangeOffset": offset,
                     "maxTimes": max_times,
-                    "isLeader": herd_pokemon_row['Leader'] == 'yes',
+                    "isLeader": herd_pokemon_row['Leader'] != 'no',
                     "isFollower": herd_pokemon_row['Leader'] != 'only'
                 }
 

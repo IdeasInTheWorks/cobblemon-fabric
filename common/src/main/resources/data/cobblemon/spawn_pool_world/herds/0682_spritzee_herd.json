@@ -52,7 +52,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "9-46",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "canSeeSky": false,
         "biomes": [

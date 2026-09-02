@@ -4,8 +4,8 @@
     "neededUninstalledMods": [],
     "spawns": [
         {
-            "id": "basculin-red-1",
-            "pokemon": "basculin striped=red",
+            "id": "basculin-blue-1",
+            "pokemon": "basculin striped=blue",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -24,36 +24,12 @@
                     "#cobblemon:is_taiga",
                     "#cobblemon:is_tundra"
                 ],
-                "moonPhase": "5-7"
-            }
-        },
-        {
-            "id": "basculin-red-2",
-            "pokemon": "basculin striped=red",
-            "type": "pokemon",
-            "spawnablePositionType": "fishing",
-            "bucket": "common",
-            "level": "21-46",
-            "weight": 20.0,
-            "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_arid",
-                    "#cobblemon:is_forest",
-                    "#cobblemon:is_freshwater",
-                    "#cobblemon:is_grassland",
-                    "#cobblemon:is_jungle",
-                    "#cobblemon:is_mountain",
-                    "#cobblemon:is_snowy_forest",
-                    "#cobblemon:is_taiga",
-                    "#cobblemon:is_tundra"
-                ],
                 "moonPhase": "1-3"
             }
         },
         {
-            "id": "basculin-red-3",
-            "pokemon": "basculin striped=red",
+            "id": "basculin-blue-2",
+            "pokemon": "basculin striped=blue",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -76,8 +52,8 @@
             }
         },
         {
-            "id": "basculin-red-4",
-            "pokemon": "basculin striped=red",
+            "id": "basculin-blue-3",
+            "pokemon": "basculin striped=blue",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -98,17 +74,17 @@
                     "#cobblemon:is_taiga",
                     "#cobblemon:is_tundra"
                 ],
-                "moonPhase": "5-7"
+                "moonPhase": "1-3"
             }
         },
         {
-            "id": "basculin-red-5",
-            "pokemon": "basculin striped=red",
+            "id": "basculin-blue-4",
+            "pokemon": "basculin striped=blue",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
             "level": "21-46",
-            "weight": 20.0,
+            "weight": 50.0,
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,
@@ -124,7 +100,31 @@
                     "#cobblemon:is_taiga",
                     "#cobblemon:is_tundra"
                 ],
-                "moonPhase": "1-3"
+                "moonPhase": "0,4"
+            }
+        },
+        {
+            "id": "basculin-red-5",
+            "pokemon": "basculin striped=red",
+            "type": "pokemon",
+            "spawnablePositionType": "fishing",
+            "bucket": "common",
+            "level": "21-46",
+            "weight": 100.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_arid",
+                    "#cobblemon:is_forest",
+                    "#cobblemon:is_freshwater",
+                    "#cobblemon:is_grassland",
+                    "#cobblemon:is_jungle",
+                    "#cobblemon:is_mountain",
+                    "#cobblemon:is_snowy_forest",
+                    "#cobblemon:is_taiga",
+                    "#cobblemon:is_tundra"
+                ],
+                "moonPhase": "5-7"
             }
         },
         {
@@ -136,80 +136,6 @@
             "level": "21-46",
             "weight": 50.0,
             "condition": {
-                "canSeeSky": false,
-                "minSkyLight": 8,
-                "maxSkyLight": 15,
-                "biomes": [
-                    "#cobblemon:is_arid",
-                    "#cobblemon:is_forest",
-                    "#cobblemon:is_freshwater",
-                    "#cobblemon:is_grassland",
-                    "#cobblemon:is_jungle",
-                    "#cobblemon:is_mountain",
-                    "#cobblemon:is_snowy_forest",
-                    "#cobblemon:is_taiga",
-                    "#cobblemon:is_tundra"
-                ],
-                "moonPhase": "0,4"
-            }
-        },
-        {
-            "id": "basculin-blue-7",
-            "pokemon": "basculin striped=blue",
-            "type": "pokemon",
-            "spawnablePositionType": "fishing",
-            "bucket": "common",
-            "level": "21-46",
-            "weight": 100.0,
-            "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_arid",
-                    "#cobblemon:is_forest",
-                    "#cobblemon:is_freshwater",
-                    "#cobblemon:is_grassland",
-                    "#cobblemon:is_jungle",
-                    "#cobblemon:is_mountain",
-                    "#cobblemon:is_snowy_forest",
-                    "#cobblemon:is_taiga",
-                    "#cobblemon:is_tundra"
-                ],
-                "moonPhase": "1-3"
-            }
-        },
-        {
-            "id": "basculin-blue-8",
-            "pokemon": "basculin striped=blue",
-            "type": "pokemon",
-            "spawnablePositionType": "fishing",
-            "bucket": "common",
-            "level": "21-46",
-            "weight": 20.0,
-            "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_arid",
-                    "#cobblemon:is_forest",
-                    "#cobblemon:is_freshwater",
-                    "#cobblemon:is_grassland",
-                    "#cobblemon:is_jungle",
-                    "#cobblemon:is_mountain",
-                    "#cobblemon:is_snowy_forest",
-                    "#cobblemon:is_taiga",
-                    "#cobblemon:is_tundra"
-                ],
-                "moonPhase": "5-7"
-            }
-        },
-        {
-            "id": "basculin-blue-9",
-            "pokemon": "basculin striped=blue",
-            "type": "pokemon",
-            "spawnablePositionType": "fishing",
-            "bucket": "common",
-            "level": "21-46",
-            "weight": 50.0,
-            "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_arid",
@@ -226,8 +152,8 @@
             }
         },
         {
-            "id": "basculin-blue-10",
-            "pokemon": "basculin striped=blue",
+            "id": "basculin-red-7",
+            "pokemon": "basculin striped=red",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -248,38 +174,12 @@
                     "#cobblemon:is_taiga",
                     "#cobblemon:is_tundra"
                 ],
-                "moonPhase": "1-3"
-            }
-        },
-        {
-            "id": "basculin-blue-11",
-            "pokemon": "basculin striped=blue",
-            "type": "pokemon",
-            "spawnablePositionType": "fishing",
-            "bucket": "common",
-            "level": "21-46",
-            "weight": 20.0,
-            "condition": {
-                "canSeeSky": false,
-                "minSkyLight": 8,
-                "maxSkyLight": 15,
-                "biomes": [
-                    "#cobblemon:is_arid",
-                    "#cobblemon:is_forest",
-                    "#cobblemon:is_freshwater",
-                    "#cobblemon:is_grassland",
-                    "#cobblemon:is_jungle",
-                    "#cobblemon:is_mountain",
-                    "#cobblemon:is_snowy_forest",
-                    "#cobblemon:is_taiga",
-                    "#cobblemon:is_tundra"
-                ],
                 "moonPhase": "5-7"
             }
         },
         {
-            "id": "basculin-blue-12",
-            "pokemon": "basculin striped=blue",
+            "id": "basculin-red-8",
+            "pokemon": "basculin striped=red",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -304,7 +204,7 @@
             }
         },
         {
-            "id": "basculin-white-13",
+            "id": "basculin-white-9",
             "pokemon": "basculin striped=white",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -328,7 +228,7 @@
             }
         },
         {
-            "id": "basculin-white-14",
+            "id": "basculin-white-10",
             "pokemon": "basculin striped=white",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -344,7 +244,7 @@
             }
         },
         {
-            "id": "basculin-white-15",
+            "id": "basculin-white-11",
             "pokemon": "basculin striped=white",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -370,7 +270,7 @@
             }
         },
         {
-            "id": "basculin-white-16",
+            "id": "basculin-white-12",
             "pokemon": "basculin striped=white",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

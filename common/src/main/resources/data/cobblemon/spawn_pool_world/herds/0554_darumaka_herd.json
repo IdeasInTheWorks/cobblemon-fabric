@@ -135,7 +135,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "7-54",
-      "weight": 60.0,
+      "weight": 20.0,
       "condition": {
         "biomes": [
           "#minecraft:is_nether"

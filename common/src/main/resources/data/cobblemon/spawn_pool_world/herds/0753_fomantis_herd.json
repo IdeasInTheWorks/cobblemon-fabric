@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-48",
-      "weight": 50.0,
+      "weight": 27.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -50,7 +50,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-48",
-      "weight": 30.0,
+      "weight": 9.0,
       "weightMultiplier": {
         "multiplier": 0.25,
         "condition": {
@@ -84,7 +84,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "1-48",
-      "weight": 50.0,
+      "weight": 27.0,
       "condition": {
         "biomes": [
           "the_bumblezone:floral_meadow"

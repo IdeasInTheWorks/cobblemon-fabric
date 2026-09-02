@@ -37,7 +37,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -87,15 +87,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "tauros paldeaaqua held_item=cobblemon:fighting_gem alpha=true",
+          "pokemon": "tauros paldean bull_breed=aqua held_item=cobblemon:fighting_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "tauros paldeacombat",
+          "pokemon": "tauros paldean bull_breed=combat",
           "weight": 80.0,
           "levelRange": "27-46",
           "levelRangeOffset": "-3-3",
@@ -104,7 +104,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "tauros paldeaaqua",
+          "pokemon": "tauros paldean bull_breed=aqua",
           "weight": 120.0,
           "levelRange": "26-45",
           "levelRangeOffset": "-2-4",
@@ -150,15 +150,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "tauros paldeablaze held_item=cobblemon:fighting_gem alpha=true",
+          "pokemon": "tauros paldean bull_breed=blaze held_item=cobblemon:fighting_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "tauros paldeacombat",
+          "pokemon": "tauros paldean bull_breed=combat",
           "weight": 80.0,
           "levelRange": "27-46",
           "levelRangeOffset": "-3-3",
@@ -167,7 +167,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "tauros paldeablaze",
+          "pokemon": "tauros paldean bull_breed=blaze",
           "weight": 120.0,
           "levelRange": "26-45",
           "levelRangeOffset": "-2-4",
@@ -203,15 +203,15 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "tauros paldeacombat held_item=cobblemon:fighting_gem alpha=true",
+          "pokemon": "tauros paldean bull_breed=combat held_item=cobblemon:fighting_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
-          "pokemon": "tauros paldeacombat",
+          "pokemon": "tauros paldean bull_breed=combat",
           "weight": 80.0,
           "levelRange": "27-46",
           "levelRangeOffset": "-3-3",

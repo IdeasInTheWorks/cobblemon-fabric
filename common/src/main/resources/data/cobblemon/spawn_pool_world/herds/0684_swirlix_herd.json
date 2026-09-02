@@ -4,6 +4,9 @@
   "spawns": [
     {
       "id": "swirlix-herd-1",
+      "presets": [
+        "natural"
+      ],
       "type": "pokemon-herd",
       "bucket": "common",
       "spawnablePositionType": "grounded",

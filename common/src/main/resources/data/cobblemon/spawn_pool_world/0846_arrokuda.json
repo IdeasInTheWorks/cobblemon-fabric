@@ -13,7 +13,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "3-28",
-            "weight": 42.0,
+            "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -67,7 +67,7 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "3-28",
-            "weight": 42.0,
+            "weight": 9.0,
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,

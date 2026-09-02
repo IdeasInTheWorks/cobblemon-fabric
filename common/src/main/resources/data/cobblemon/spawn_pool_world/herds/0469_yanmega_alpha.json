@@ -33,7 +33,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -87,7 +87,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -137,7 +137,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -194,7 +194,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -241,7 +241,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {

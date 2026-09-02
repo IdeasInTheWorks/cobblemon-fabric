@@ -25,7 +25,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -40,8 +40,8 @@
         {
           "pokemon": "fraxure",
           "weight": 70.0,
-          "levelRange": "40-40",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "39-39",
+          "levelRangeOffset": "-1-2",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true

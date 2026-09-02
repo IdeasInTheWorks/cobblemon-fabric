@@ -28,7 +28,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -43,8 +43,8 @@
         {
           "pokemon": "dragalge",
           "weight": 120.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "48-48",
+          "levelRangeOffset": "0-1",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -79,7 +79,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -94,8 +94,8 @@
         {
           "pokemon": "dragalge",
           "weight": 120.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "48-48",
+          "levelRangeOffset": "0-1",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
@@ -130,7 +130,7 @@
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": false
         },
         {
@@ -145,8 +145,8 @@
         {
           "pokemon": "dragalge",
           "weight": 120.0,
-          "levelRange": "50-50",
-          "levelRangeOffset": "-2-4",
+          "levelRange": "48-48",
+          "levelRangeOffset": "0-1",
           "maxTimes": 5,
           "isLeader": false,
           "isFollower": true
