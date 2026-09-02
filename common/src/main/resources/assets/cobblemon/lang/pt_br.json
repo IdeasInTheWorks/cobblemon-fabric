@@ -9325,5 +9325,11 @@
     "cobblemon.ability.dragonize": "Pele Dracônica",
     "cobblemon.ability.dragonize.desc": "Os movimentos do tipo Normal do Pokémon se tornam movimentos do tipo Dragão e sua força é aumentada em 20%.",
     "cobblemon.ability.megasol": "Mega Sol",
-    "cobblemon.ability.megasol.desc": "Mesmo quando a luz solar não está intensa, o Pokémon pode usar seus movimentos como se o clima fosse de luz solar intensa."
+    "cobblemon.ability.megasol.desc": "Mesmo quando a luz solar não está intensa, o Pokémon pode usar seus movimentos como se o clima fosse de luz solar intensa.",
+    "cobblemon.ui.starter.random": "Aleatório",
+    "cobblemon.ui.starter.random_description": "Um Pokémon inicial aleatório escolhido da lista de opções. É impossível saber qual será a não ser que seja escolhido.",
+    "cobblemon.config.ui.world_spawning_blocklist": "Permissões de Geração em Mundos",
+    "cobblemon.config.ui.world_spawning_blocklist.tooltip": "Mundos nos quais desabilitar a geração de Pokémon.",
+    "advancements.cobblemon.obtain_tm.description": "Encontrar ou gravar um TM",
+    "advancements.cobblemon.obtain_tm": "Olha esses movimentos!"
 }
