@@ -528,3 +528,4 @@
   - Simplified Chinese
   - Traditional Chinese
   - Korean
+  - Russian
