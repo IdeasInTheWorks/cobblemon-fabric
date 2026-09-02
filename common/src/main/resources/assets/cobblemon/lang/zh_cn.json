@@ -9671,5 +9671,11 @@
     "cobblemon.size_category.s": "S",
     "cobblemon.size_category.m": "M",
     "cobblemon.size_category.l": "L",
-    "cobblemon.size_category.xl": "XL"
+    "cobblemon.size_category.xl": "XL",
+    "cobblemon.ui.starter.random": "随机",
+    "cobblemon.ui.starter.random_description": "在可选择的初始宝可梦池中随机。在被选中之前将无法得知为谁。",
+    "cobblemon.config.ui.world_spawning_blocklist": "维度生成黑名单",
+    "cobblemon.config.ui.world_spawning_blocklist.tooltip": "禁用宝可梦生成逻辑的维度。",
+    "advancements.cobblemon.obtain_tm": "让我看看你的招式",
+    "advancements.cobblemon.obtain_tm.description": "发现或刻写一个招式学习器"
 }
