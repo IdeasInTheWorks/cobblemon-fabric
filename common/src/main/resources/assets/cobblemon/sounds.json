@@ -1474,8 +1474,8 @@
   "move.hydropump.target": {
     "sounds": [ { "name": "cobblemon:move/hydropump/hydropump_target", "volume": 1.0 } ]
   },
-  "move.lightscreen.target": {
-    "sounds": [ { "name": "cobblemon:move/lightscreen/lightscreen_target", "volume": 1.0 } ]
+  "move.lightscreen.actor": {
+    "sounds": [ { "name": "cobblemon:move/lightscreen/lightscreen_actor", "volume": 1.0 } ]
   },
   "impact.normal": {
     "sounds": [
