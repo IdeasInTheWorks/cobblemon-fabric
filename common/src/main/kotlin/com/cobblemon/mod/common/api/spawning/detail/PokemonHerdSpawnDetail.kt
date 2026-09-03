@@ -98,7 +98,7 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
         return (selectionData.context[herdLevelKey] as? Int) ?: run {
             val level = levelRange.random()
             selectionData.context[herdLevelKey] = level
-            return level
+            level
         }
     }
 
@@ -116,12 +116,7 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
             useLeaderRole = lacksPossibleLeader(selectionData)
         ).weightedSelection { it.weight } ?: herdablePokemon[0]
 
-        val level = selectionData.context[herdLevelKey] as? Int ?: 1
-        var levelRange = herdable.levelRangeOffset?.let { offset ->
-            val min = level + offset.first
-            val max = level + offset.last
-            min..max
-        } ?: level..level
+        var level = selectionData.context[herdLevelKey] as? Int ?: 1
 
         // Attempt to do more detailed anti-wall-spawn logic. Herd members could spawn in walls because
         // we've just been assuming they're 1 block wide (or at least, all in the herd have the same size).
@@ -137,11 +132,13 @@ class PokemonHerdSpawnDetail : SpawnDetail() {
             }
         }
 
-        herdable.levelRange?.let {
-            val clampedMin = clamp(levelRange.first, it.first, it.last)
-            val clampedMax = clamp(levelRange.last, it.first, it.last)
-            levelRange = clampedMin..clampedMax
-        }
+        level = herdable.levelRange?.let { clamp(level, it.first, it.last) } ?: level
+
+        val levelRange = herdable.levelRangeOffset?.let { offset ->
+            val min = level + offset.first
+            val max = level + offset.last
+            min..max
+        } ?: level..level
 
         val heldItem = herdable.heldItem?.let { heldItemId ->
             val item = spawnablePosition.world.registryAccess().registryOrThrow(Registries.ITEM).get(heldItemId)
