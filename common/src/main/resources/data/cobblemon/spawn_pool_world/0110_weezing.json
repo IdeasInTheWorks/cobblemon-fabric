@@ -15,12 +15,20 @@
             "bucket": "common",
             "level": "35-49",
             "weight": 1.6,
-            "weightMultiplier": {
-                "multiplier": 5.0,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 5.0,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -40,12 +48,20 @@
             "bucket": "common",
             "level": "35-49",
             "weight": 1.6,
-            "weightMultiplier": {
-                "multiplier": 5.0,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 5.0,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -68,6 +84,12 @@
             "bucket": "common",
             "level": "35-49",
             "weight": 8.0,
+            "weightMultiplier": {
+                "multiplier": 1.25,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "biomes": [
                     "#cobblemon:nether/is_toxic"
@@ -85,12 +107,20 @@
             "bucket": "common",
             "level": "35-49",
             "weight": 1.6,
-            "weightMultiplier": {
-                "multiplier": 1.5,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -110,12 +140,20 @@
             "bucket": "common",
             "level": "35-49",
             "weight": 1.6,
-            "weightMultiplier": {
-                "multiplier": 1.5,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,

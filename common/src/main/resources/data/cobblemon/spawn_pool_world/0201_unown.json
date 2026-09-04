@@ -7,6 +7,510 @@
             "id": "unown-a-1",
             "pokemon": "unown character=a",
             "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-b-1",
+            "pokemon": "unown character=b",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-c-1",
+            "pokemon": "unown character=c",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-d-1",
+            "pokemon": "unown character=d",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-e-1",
+            "pokemon": "unown character=e",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-f-1",
+            "pokemon": "unown character=f",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-g-1",
+            "pokemon": "unown character=g",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-h-1",
+            "pokemon": "unown character=h",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-i-1",
+            "pokemon": "unown character=i",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-j-1",
+            "pokemon": "unown character=j",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-k-1",
+            "pokemon": "unown character=k",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-l-1",
+            "pokemon": "unown character=l",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-m-1",
+            "pokemon": "unown character=m",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-n-1",
+            "pokemon": "unown character=n",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-o-1",
+            "pokemon": "unown character=o",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-p-1",
+            "pokemon": "unown character=p",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-q-1",
+            "pokemon": "unown character=q",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-r-1",
+            "pokemon": "unown character=r",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-s-1",
+            "pokemon": "unown character=s",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-t-1",
+            "pokemon": "unown character=t",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-u-1",
+            "pokemon": "unown character=u",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-v-1",
+            "pokemon": "unown character=v",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-w-1",
+            "pokemon": "unown character=w",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-x-1",
+            "pokemon": "unown character=x",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-y-1",
+            "pokemon": "unown character=y",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-z-1",
+            "pokemon": "unown character=z",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 37.692,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-!-2",
+            "pokemon": "unown character=!",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 10.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-?-2",
+            "pokemon": "unown character=?",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-100",
+            "weight": 10.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "unown-a-3",
+            "pokemon": "unown character=a",
+            "presets": [
                 "trail_ruins"
             ],
             "type": "pokemon",
@@ -22,7 +526,7 @@
             }
         },
         {
-            "id": "unown-b-1",
+            "id": "unown-b-3",
             "pokemon": "unown character=b",
             "presets": [
                 "trail_ruins"
@@ -40,7 +544,7 @@
             }
         },
         {
-            "id": "unown-c-1",
+            "id": "unown-c-3",
             "pokemon": "unown character=c",
             "presets": [
                 "trail_ruins"
@@ -58,7 +562,7 @@
             }
         },
         {
-            "id": "unown-d-1",
+            "id": "unown-d-3",
             "pokemon": "unown character=d",
             "presets": [
                 "trail_ruins"
@@ -76,7 +580,7 @@
             }
         },
         {
-            "id": "unown-e-1",
+            "id": "unown-e-3",
             "pokemon": "unown character=e",
             "presets": [
                 "trail_ruins"
@@ -94,7 +598,7 @@
             }
         },
         {
-            "id": "unown-f-1",
+            "id": "unown-f-3",
             "pokemon": "unown character=f",
             "presets": [
                 "trail_ruins"
@@ -112,7 +616,7 @@
             }
         },
         {
-            "id": "unown-g-1",
+            "id": "unown-g-3",
             "pokemon": "unown character=g",
             "presets": [
                 "trail_ruins"
@@ -130,7 +634,7 @@
             }
         },
         {
-            "id": "unown-h-1",
+            "id": "unown-h-3",
             "pokemon": "unown character=h",
             "presets": [
                 "trail_ruins"
@@ -148,7 +652,7 @@
             }
         },
         {
-            "id": "unown-i-1",
+            "id": "unown-i-3",
             "pokemon": "unown character=i",
             "presets": [
                 "trail_ruins"
@@ -166,7 +670,7 @@
             }
         },
         {
-            "id": "unown-j-1",
+            "id": "unown-j-3",
             "pokemon": "unown character=j",
             "presets": [
                 "trail_ruins"
@@ -184,7 +688,7 @@
             }
         },
         {
-            "id": "unown-k-1",
+            "id": "unown-k-3",
             "pokemon": "unown character=k",
             "presets": [
                 "trail_ruins"
@@ -202,7 +706,7 @@
             }
         },
         {
-            "id": "unown-l-1",
+            "id": "unown-l-3",
             "pokemon": "unown character=l",
             "presets": [
                 "trail_ruins"
@@ -220,7 +724,7 @@
             }
         },
         {
-            "id": "unown-m-1",
+            "id": "unown-m-3",
             "pokemon": "unown character=m",
             "presets": [
                 "trail_ruins"
@@ -238,7 +742,7 @@
             }
         },
         {
-            "id": "unown-n-1",
+            "id": "unown-n-3",
             "pokemon": "unown character=n",
             "presets": [
                 "trail_ruins"
@@ -256,7 +760,7 @@
             }
         },
         {
-            "id": "unown-o-1",
+            "id": "unown-o-3",
             "pokemon": "unown character=o",
             "presets": [
                 "trail_ruins"
@@ -274,7 +778,7 @@
             }
         },
         {
-            "id": "unown-p-1",
+            "id": "unown-p-3",
             "pokemon": "unown character=p",
             "presets": [
                 "trail_ruins"
@@ -292,7 +796,7 @@
             }
         },
         {
-            "id": "unown-q-1",
+            "id": "unown-q-3",
             "pokemon": "unown character=q",
             "presets": [
                 "trail_ruins"
@@ -310,7 +814,7 @@
             }
         },
         {
-            "id": "unown-r-1",
+            "id": "unown-r-3",
             "pokemon": "unown character=r",
             "presets": [
                 "trail_ruins"
@@ -328,7 +832,7 @@
             }
         },
         {
-            "id": "unown-s-1",
+            "id": "unown-s-3",
             "pokemon": "unown character=s",
             "presets": [
                 "trail_ruins"
@@ -346,7 +850,7 @@
             }
         },
         {
-            "id": "unown-t-1",
+            "id": "unown-t-3",
             "pokemon": "unown character=t",
             "presets": [
                 "trail_ruins"
@@ -364,7 +868,7 @@
             }
         },
         {
-            "id": "unown-u-1",
+            "id": "unown-u-3",
             "pokemon": "unown character=u",
             "presets": [
                 "trail_ruins"
@@ -382,7 +886,7 @@
             }
         },
         {
-            "id": "unown-v-1",
+            "id": "unown-v-3",
             "pokemon": "unown character=v",
             "presets": [
                 "trail_ruins"
@@ -400,7 +904,7 @@
             }
         },
         {
-            "id": "unown-w-1",
+            "id": "unown-w-3",
             "pokemon": "unown character=w",
             "presets": [
                 "trail_ruins"
@@ -418,7 +922,7 @@
             }
         },
         {
-            "id": "unown-x-1",
+            "id": "unown-x-3",
             "pokemon": "unown character=x",
             "presets": [
                 "trail_ruins"
@@ -436,7 +940,7 @@
             }
         },
         {
-            "id": "unown-y-1",
+            "id": "unown-y-3",
             "pokemon": "unown character=y",
             "presets": [
                 "trail_ruins"
@@ -454,7 +958,7 @@
             }
         },
         {
-            "id": "unown-z-1",
+            "id": "unown-z-3",
             "pokemon": "unown character=z",
             "presets": [
                 "trail_ruins"
@@ -472,7 +976,7 @@
             }
         },
         {
-            "id": "unown-!-2",
+            "id": "unown-!-4",
             "pokemon": "unown character=!",
             "presets": [
                 "trail_ruins"
@@ -490,7 +994,7 @@
             }
         },
         {
-            "id": "unown-?-2",
+            "id": "unown-?-4",
             "pokemon": "unown character=?",
             "presets": [
                 "trail_ruins"
@@ -508,7 +1012,7 @@
             }
         },
         {
-            "id": "unown-a-3",
+            "id": "unown-a-5",
             "pokemon": "unown character=a",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -527,7 +1031,7 @@
             }
         },
         {
-            "id": "unown-b-3",
+            "id": "unown-b-5",
             "pokemon": "unown character=b",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -546,7 +1050,7 @@
             }
         },
         {
-            "id": "unown-c-3",
+            "id": "unown-c-5",
             "pokemon": "unown character=c",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -565,7 +1069,7 @@
             }
         },
         {
-            "id": "unown-d-3",
+            "id": "unown-d-5",
             "pokemon": "unown character=d",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -584,7 +1088,7 @@
             }
         },
         {
-            "id": "unown-e-3",
+            "id": "unown-e-5",
             "pokemon": "unown character=e",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -603,7 +1107,7 @@
             }
         },
         {
-            "id": "unown-f-3",
+            "id": "unown-f-5",
             "pokemon": "unown character=f",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -622,7 +1126,7 @@
             }
         },
         {
-            "id": "unown-g-3",
+            "id": "unown-g-5",
             "pokemon": "unown character=g",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -641,7 +1145,7 @@
             }
         },
         {
-            "id": "unown-h-3",
+            "id": "unown-h-5",
             "pokemon": "unown character=h",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -660,7 +1164,7 @@
             }
         },
         {
-            "id": "unown-i-3",
+            "id": "unown-i-5",
             "pokemon": "unown character=i",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -679,7 +1183,7 @@
             }
         },
         {
-            "id": "unown-j-3",
+            "id": "unown-j-5",
             "pokemon": "unown character=j",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -698,7 +1202,7 @@
             }
         },
         {
-            "id": "unown-k-3",
+            "id": "unown-k-5",
             "pokemon": "unown character=k",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -717,7 +1221,7 @@
             }
         },
         {
-            "id": "unown-l-3",
+            "id": "unown-l-5",
             "pokemon": "unown character=l",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -736,7 +1240,7 @@
             }
         },
         {
-            "id": "unown-m-3",
+            "id": "unown-m-5",
             "pokemon": "unown character=m",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -755,7 +1259,7 @@
             }
         },
         {
-            "id": "unown-n-3",
+            "id": "unown-n-5",
             "pokemon": "unown character=n",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -774,7 +1278,7 @@
             }
         },
         {
-            "id": "unown-o-3",
+            "id": "unown-o-5",
             "pokemon": "unown character=o",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -793,7 +1297,7 @@
             }
         },
         {
-            "id": "unown-p-3",
+            "id": "unown-p-5",
             "pokemon": "unown character=p",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -812,7 +1316,7 @@
             }
         },
         {
-            "id": "unown-q-3",
+            "id": "unown-q-5",
             "pokemon": "unown character=q",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -831,7 +1335,7 @@
             }
         },
         {
-            "id": "unown-r-3",
+            "id": "unown-r-5",
             "pokemon": "unown character=r",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -850,7 +1354,7 @@
             }
         },
         {
-            "id": "unown-s-3",
+            "id": "unown-s-5",
             "pokemon": "unown character=s",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -869,7 +1373,7 @@
             }
         },
         {
-            "id": "unown-t-3",
+            "id": "unown-t-5",
             "pokemon": "unown character=t",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -888,7 +1392,7 @@
             }
         },
         {
-            "id": "unown-u-3",
+            "id": "unown-u-5",
             "pokemon": "unown character=u",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -907,7 +1411,7 @@
             }
         },
         {
-            "id": "unown-v-3",
+            "id": "unown-v-5",
             "pokemon": "unown character=v",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -926,7 +1430,7 @@
             }
         },
         {
-            "id": "unown-w-3",
+            "id": "unown-w-5",
             "pokemon": "unown character=w",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -945,7 +1449,7 @@
             }
         },
         {
-            "id": "unown-x-3",
+            "id": "unown-x-5",
             "pokemon": "unown character=x",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -964,7 +1468,7 @@
             }
         },
         {
-            "id": "unown-y-3",
+            "id": "unown-y-5",
             "pokemon": "unown character=y",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -983,7 +1487,7 @@
             }
         },
         {
-            "id": "unown-z-3",
+            "id": "unown-z-5",
             "pokemon": "unown character=z",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -1002,7 +1506,7 @@
             }
         },
         {
-            "id": "unown-!-4",
+            "id": "unown-!-6",
             "pokemon": "unown character=!",
             "type": "pokemon",
             "spawnablePositionType": "grounded",
@@ -1021,7 +1525,7 @@
             }
         },
         {
-            "id": "unown-?-4",
+            "id": "unown-?-6",
             "pokemon": "unown character=?",
             "type": "pokemon",
             "spawnablePositionType": "grounded",

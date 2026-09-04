@@ -6,6 +6,51 @@
         {
             "id": "azurill-1",
             "pokemon": "azurill",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "1-19",
+            "weight": 20.0,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_river"
+                ],
+                "isPokeSnack": true
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_freezing"
+                ]
+            }
+        },
+        {
+            "id": "azurill-2",
+            "pokemon": "azurill",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "surface",
+            "bucket": "uncommon",
+            "level": "1-19",
+            "weight": 15.6,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_river"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "azurill-3",
+            "pokemon": "azurill",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -32,7 +77,7 @@
             }
         },
         {
-            "id": "azurill-2",
+            "id": "azurill-4",
             "pokemon": "azurill",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

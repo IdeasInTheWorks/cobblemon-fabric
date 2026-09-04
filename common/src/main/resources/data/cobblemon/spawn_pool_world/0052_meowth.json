@@ -15,12 +15,20 @@
             "bucket": "common",
             "level": "4-29",
             "weight": 72.0,
-            "weightMultiplier": {
-                "multiplier": 1.5,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -48,12 +56,20 @@
             "bucket": "common",
             "level": "4-29",
             "weight": 72.0,
-            "weightMultiplier": {
-                "multiplier": 1.5,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -85,12 +101,20 @@
             "bucket": "common",
             "level": "4-29",
             "weight": 72.0,
-            "weightMultiplier": {
-                "multiplier": 1.5,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -110,12 +134,20 @@
             "bucket": "common",
             "level": "4-29",
             "weight": 72.0,
-            "weightMultiplier": {
-                "multiplier": 1.5,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -139,12 +171,20 @@
             "bucket": "common",
             "level": "4-29",
             "weight": 432.0,
-            "weightMultiplier": {
-                "multiplier": 1.5,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -172,12 +212,20 @@
             "bucket": "common",
             "level": "4-29",
             "weight": 432.0,
-            "weightMultiplier": {
-                "multiplier": 1.5,
-                "condition": {
-                    "timeRange": "night"
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "timeRange": "night"
+                    }
+                },
+                {
+                    "multiplier": 1.25,
+                    "condition": {
+                        "isPokeSnack": true
+                    }
                 }
-            },
+            ],
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -198,6 +246,12 @@
             "bucket": "uncommon",
             "level": "4-29",
             "weight": 144.0,
+            "weightMultiplier": {
+                "multiplier": 1.25,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": false,
                 "biomes": [

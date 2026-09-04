@@ -6,6 +6,66 @@
         {
             "id": "barboach-1",
             "pokemon": "barboach",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "4-29",
+            "weight": 54.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "barboach-2",
+            "pokemon": "barboach",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "uncommon",
+            "level": "4-29",
+            "weight": 84.0,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "barboach-3",
+            "pokemon": "barboach",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "4-29",
+            "weight": 54.0,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "barboach-4",
+            "pokemon": "barboach",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -29,7 +89,7 @@
             }
         },
         {
-            "id": "barboach-2",
+            "id": "barboach-5",
             "pokemon": "barboach",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -45,7 +105,7 @@
             }
         },
         {
-            "id": "barboach-3",
+            "id": "barboach-6",
             "pokemon": "barboach",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

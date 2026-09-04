@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "7-54",
-      "weight": 30.0,
+      "weight": 50.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_mountain"

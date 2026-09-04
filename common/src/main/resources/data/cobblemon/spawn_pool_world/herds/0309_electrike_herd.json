@@ -8,11 +8,11 @@
         "natural"
       ],
       "type": "pokemon-herd",
-      "bucket": "common",
+      "bucket": "uncommon",
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "5-48",
-      "weight": 1.0,
+      "weight": 60.0,
       "weightMultiplier": {
         "multiplier": 5.0,
         "condition": {
@@ -42,7 +42,7 @@
           "weight": 20.0,
           "levelRange": "28-44",
           "levelRangeOffset": "-2-4",
-          "maxTimes": 2,
+          "maxTimes": 3,
           "isLeader": true,
           "isFollower": true
         }

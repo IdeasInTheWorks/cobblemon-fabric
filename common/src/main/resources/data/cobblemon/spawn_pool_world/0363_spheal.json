@@ -7,13 +7,39 @@
             "id": "spheal-1",
             "pokemon": "spheal",
             "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "4-29",
+            "weight": 18.0,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_frozen_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "spheal-2",
+            "pokemon": "spheal",
+            "presets": [
                 "water"
             ],
             "type": "pokemon",
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "4-29",
-            "weight": 27.0,
+            "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -22,7 +48,7 @@
             }
         },
         {
-            "id": "spheal-2",
+            "id": "spheal-3",
             "pokemon": "spheal",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -53,7 +79,7 @@
             }
         },
         {
-            "id": "spheal-3",
+            "id": "spheal-4",
             "pokemon": "spheal",
             "presets": [
                 "water"
@@ -62,7 +88,13 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "4-29",
-            "weight": 27.0,
+            "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,
@@ -73,7 +105,7 @@
             }
         },
         {
-            "id": "spheal-4",
+            "id": "spheal-5",
             "pokemon": "spheal",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

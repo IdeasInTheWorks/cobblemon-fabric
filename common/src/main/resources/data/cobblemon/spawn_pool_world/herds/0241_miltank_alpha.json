@@ -73,7 +73,7 @@
       "herdablePokemon": [
         {
           "pokemon": "miltank held_item=cobblemon:normal_gem alpha=true",
-          "weight": 9.9,
+          "weight": 99.902,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": true,
@@ -81,7 +81,7 @@
         },
         {
           "pokemon": "miltank held_item=cobblemon:normal_gem alpha=true",
-          "weight": 0.1,
+          "weight": 0.098,
           "levelRange": "1-100",
           "maxTimes": 1,
           "isLeader": true,
@@ -89,7 +89,7 @@
         },
         {
           "pokemon": "miltank mooshtank=red",
-          "weight": 79.2,
+          "weight": 79.922,
           "levelRange": "27-46",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
@@ -98,7 +98,7 @@
         },
         {
           "pokemon": "miltank mooshtank=brown",
-          "weight": 0.8,
+          "weight": 0.078,
           "levelRange": "27-46",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,

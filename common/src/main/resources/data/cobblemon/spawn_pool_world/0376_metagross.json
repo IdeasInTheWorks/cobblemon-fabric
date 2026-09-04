@@ -14,6 +14,12 @@
             "bucket": "ultra-rare",
             "level": "45-60",
             "weight": 2.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "biomes": [
                     "#cobblemon:is_dripstone",
@@ -32,6 +38,12 @@
             "bucket": "rare",
             "level": "45-60",
             "weight": 1.25,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "biomes": [
                     "#cobblemon:is_end"
@@ -49,6 +61,12 @@
             "bucket": "rare",
             "level": "45-60",
             "weight": 1.25,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -65,6 +83,12 @@
             "bucket": "uncommon",
             "level": "45-60",
             "weight": 0.16,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -84,6 +108,12 @@
             "bucket": "rare",
             "level": "45-60",
             "weight": 1.25,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "biomes": [
                     "the_bumblezone:howling_constructs"

@@ -6,6 +6,66 @@
         {
             "id": "whiscash-1",
             "pokemon": "whiscash",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "30-47",
+            "weight": 6.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "whiscash-2",
+            "pokemon": "whiscash",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "uncommon",
+            "level": "30-47",
+            "weight": 16.0,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "whiscash-3",
+            "pokemon": "whiscash",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "30-47",
+            "weight": 6.0,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "whiscash-4",
+            "pokemon": "whiscash",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -29,7 +89,7 @@
             }
         },
         {
-            "id": "whiscash-2",
+            "id": "whiscash-5",
             "pokemon": "whiscash",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -45,7 +105,7 @@
             }
         },
         {
-            "id": "whiscash-true-3",
+            "id": "whiscash-true-6",
             "pokemon": "whiscash whiscash_nero=true",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -71,7 +131,7 @@
             }
         },
         {
-            "id": "whiscash-true-4",
+            "id": "whiscash-true-7",
             "pokemon": "whiscash whiscash_nero=true",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -88,7 +148,7 @@
             }
         },
         {
-            "id": "whiscash-5",
+            "id": "whiscash-8",
             "pokemon": "whiscash",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -115,7 +175,7 @@
             }
         },
         {
-            "id": "whiscash-true-6",
+            "id": "whiscash-true-9",
             "pokemon": "whiscash whiscash_nero=true",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

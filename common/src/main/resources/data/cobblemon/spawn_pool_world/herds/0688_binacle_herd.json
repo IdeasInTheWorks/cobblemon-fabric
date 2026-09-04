@@ -9,7 +9,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "6-31",
-      "weight": 10.0,
+      "weight": 9.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_coast"
@@ -37,7 +37,7 @@
       "spawnablePositionType": "seafloor",
       "maxHerdSize": 4,
       "levelRange": "6-31",
-      "weight": 50.0,
+      "weight": 42.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_ocean"

@@ -4,46 +4,6 @@
     "neededUninstalledMods": [],
     "spawns": [
         {
-            "id": "finizen-1",
-            "pokemon": "finizen",
-            "type": "pokemon",
-            "spawnablePositionType": "fishing",
-            "bucket": "uncommon",
-            "level": "7-32",
-            "weight": 50.4,
-            "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_ocean"
-                ]
-            },
-            "anticondition": {
-                "minLureLevel": 1
-            }
-        },
-        {
-            "id": "finizen-2",
-            "pokemon": "finizen",
-            "type": "pokemon",
-            "spawnablePositionType": "fishing",
-            "bucket": "common",
-            "level": "7-32",
-            "weight": 18.0,
-            "weightMultiplier": {
-                "multiplier": 3.0,
-                "condition": {
-                    "minLureLevel": 3
-                }
-            },
-            "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_ocean"
-                ],
-                "minLureLevel": 1
-            }
-        },
-        {
             "id": "finizen-3",
             "pokemon": "finizen",
             "type": "pokemon",
@@ -52,9 +12,7 @@
             "level": "7-32",
             "weight": 50.4,
             "condition": {
-                "canSeeSky": false,
-                "minSkyLight": 8,
-                "maxSkyLight": 15,
+                "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_ocean"
                 ]
@@ -78,6 +36,48 @@
                 }
             },
             "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "minLureLevel": 1
+            }
+        },
+        {
+            "id": "finizen-5",
+            "pokemon": "finizen",
+            "type": "pokemon",
+            "spawnablePositionType": "fishing",
+            "bucket": "uncommon",
+            "level": "7-32",
+            "weight": 50.4,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ]
+            },
+            "anticondition": {
+                "minLureLevel": 1
+            }
+        },
+        {
+            "id": "finizen-6",
+            "pokemon": "finizen",
+            "type": "pokemon",
+            "spawnablePositionType": "fishing",
+            "bucket": "common",
+            "level": "7-32",
+            "weight": 18.0,
+            "weightMultiplier": {
+                "multiplier": 3.0,
+                "condition": {
+                    "minLureLevel": 3
+                }
+            },
+            "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -85,6 +85,46 @@
                     "#cobblemon:is_ocean"
                 ],
                 "minLureLevel": 1
+            }
+        },
+        {
+            "id": "finizen-1",
+            "pokemon": "finizen",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "uncommon",
+            "level": "7-32",
+            "weight": 54.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "finizen-2",
+            "pokemon": "finizen",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "uncommon",
+            "level": "7-32",
+            "weight": 54.0,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "isPokeSnack": true
             }
         }
     ]

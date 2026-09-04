@@ -14,6 +14,12 @@
             "bucket": "uncommon",
             "level": "30-49",
             "weight": 2.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -33,6 +39,12 @@
             "bucket": "rare",
             "level": "30-49",
             "weight": 3.125,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -66,6 +78,12 @@
             "bucket": "uncommon",
             "level": "30-49",
             "weight": 2.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,
@@ -87,6 +105,12 @@
             "bucket": "rare",
             "level": "30-49",
             "weight": 3.125,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,
@@ -124,6 +148,12 @@
             "bucket": "uncommon",
             "level": "30-49",
             "weight": 2.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": false,
                 "biomes": [

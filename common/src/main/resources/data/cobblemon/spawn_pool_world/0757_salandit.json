@@ -17,11 +17,30 @@
             "condition": {
                 "biomes": [
                     "#cobblemon:is_volcanic"
-                ]
+                ],
+                "isPokeSnack": false
             }
         },
         {
-            "id": "salandit-male-2",
+            "id": "salandit-2",
+            "pokemon": "salandit",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "7-32",
+            "weight": 99.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_volcanic"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "salandit-male-3",
             "pokemon": "salandit male",
             "presets": [
                 "natural"
@@ -40,7 +59,8 @@
                 ],
                 "neededNearbyBlocks": [
                     "minecraft:lava"
-                ]
+                ],
+                "isPokeSnack": false
             },
             "anticondition": {
                 "biomes": [
@@ -49,7 +69,36 @@
             }
         },
         {
-            "id": "salandit-male-3",
+            "id": "salandit-4",
+            "pokemon": "salandit",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "7-32",
+            "weight": 99.0,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_badlands",
+                    "#cobblemon:is_mountain"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:lava"
+                ],
+                "isPokeSnack": true
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_volcanic"
+                ]
+            }
+        },
+        {
+            "id": "salandit-male-5",
             "pokemon": "salandit male",
             "presets": [
                 "natural"
@@ -62,11 +111,30 @@
             "condition": {
                 "biomes": [
                     "#cobblemon:nether/is_basalt"
-                ]
+                ],
+                "isPokeSnack": false
             }
         },
         {
-            "id": "salandit-male-4",
+            "id": "salandit-6",
+            "pokemon": "salandit",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "7-32",
+            "weight": 99.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:nether/is_basalt"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "salandit-male-7",
             "pokemon": "salandit male",
             "presets": [
                 "natural"
@@ -79,7 +147,26 @@
             "condition": {
                 "biomes": [
                     "#cobblemon:nether/is_desert"
-                ]
+                ],
+                "isPokeSnack": false
+            }
+        },
+        {
+            "id": "salandit-8",
+            "pokemon": "salandit",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "7-32",
+            "weight": 59.4,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:nether/is_desert"
+                ],
+                "isPokeSnack": true
             }
         }
     ]
