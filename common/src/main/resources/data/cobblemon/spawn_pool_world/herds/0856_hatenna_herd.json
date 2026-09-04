@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "2-37",
-      "weight": 50.0,
+      "weight": 49.2,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -51,7 +51,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "2-37",
-      "weight": 10.0,
+      "weight": 9.9,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -93,7 +93,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "2-37",
-      "weight": 10.0,
+      "weight": 9.9,
       "condition": {
         "canSeeSky": false,
         "biomes": [

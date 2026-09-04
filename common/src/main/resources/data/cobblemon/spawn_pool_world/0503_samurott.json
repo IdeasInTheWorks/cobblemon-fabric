@@ -14,6 +14,12 @@
             "bucket": "ultra-rare",
             "level": "36-53",
             "weight": 2.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -38,6 +44,12 @@
             "bucket": "ultra-rare",
             "level": "36-53",
             "weight": 2.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,

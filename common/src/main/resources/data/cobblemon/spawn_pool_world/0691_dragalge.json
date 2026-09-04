@@ -4,7 +4,7 @@
     "neededUninstalledMods": [],
     "spawns": [
         {
-            "id": "dragalge-1",
+            "id": "dragalge-4",
             "pokemon": "dragalge",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -38,7 +38,7 @@
             }
         },
         {
-            "id": "dragalge-2",
+            "id": "dragalge-5",
             "pokemon": "dragalge",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -74,7 +74,7 @@
             }
         },
         {
-            "id": "dragalge-3",
+            "id": "dragalge-6",
             "pokemon": "dragalge",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -106,6 +106,76 @@
                 ],
                 "minY": -60,
                 "maxY": 13
+            }
+        },
+        {
+            "id": "dragalge-1",
+            "pokemon": "dragalge",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "48-49",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:kelp_plant"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "dragalge-2",
+            "pokemon": "dragalge",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "48-49",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:kelp_plant"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "dragalge-3",
+            "pokemon": "dragalge",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "48-49",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "structures": [
+                    "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+                ],
+                "minY": -60,
+                "maxY": 13,
+                "isPokeSnack": true
             }
         }
     ]

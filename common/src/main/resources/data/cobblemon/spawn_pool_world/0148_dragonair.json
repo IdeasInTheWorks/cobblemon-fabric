@@ -14,6 +14,12 @@
             "bucket": "rare",
             "level": "30-42",
             "weight": 11.25,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -40,6 +46,12 @@
             "bucket": "rare",
             "level": "30-42",
             "weight": 11.25,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -90,6 +102,12 @@
             "bucket": "uncommon",
             "level": "30-42",
             "weight": 7.2,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -115,6 +133,12 @@
             "bucket": "uncommon",
             "level": "30-42",
             "weight": 7.2,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 0,
                 "maxSkyLight": 7,
@@ -164,6 +188,12 @@
             "bucket": "common",
             "level": "30-42",
             "weight": 450.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -224,6 +254,12 @@
             "bucket": "common",
             "level": "30-42",
             "weight": 450.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,

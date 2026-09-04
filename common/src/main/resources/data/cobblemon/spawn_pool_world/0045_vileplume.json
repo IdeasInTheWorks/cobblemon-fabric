@@ -14,6 +14,12 @@
             "bucket": "common",
             "level": "35-49",
             "weight": 0.4,
+            "weightMultiplier": {
+                "multiplier": 1.25,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -34,6 +40,12 @@
             "bucket": "common",
             "level": "35-49",
             "weight": 0.08,
+            "weightMultiplier": {
+                "multiplier": 1.25,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,
@@ -54,6 +66,12 @@
             "bucket": "common",
             "level": "35-49",
             "weight": 0.08,
+            "weightMultiplier": {
+                "multiplier": 1.25,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "minSkyLight": 8,
                 "maxSkyLight": 15,

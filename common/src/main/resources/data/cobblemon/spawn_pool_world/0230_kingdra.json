@@ -6,6 +6,72 @@
         {
             "id": "kingdra-1",
             "pokemon": "kingdra",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "39-54",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_lukewarm_ocean",
+                    "#cobblemon:is_warm_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "kingdra-2",
+            "pokemon": "kingdra",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "39-54",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_lukewarm_ocean",
+                    "#cobblemon:is_warm_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "kingdra-3",
+            "pokemon": "kingdra",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "39-54",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "structures": [
+                    "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+                ],
+                "minY": -60,
+                "maxY": 13,
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "kingdra-4",
+            "pokemon": "kingdra",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -40,7 +106,7 @@
             }
         },
         {
-            "id": "kingdra-2",
+            "id": "kingdra-5",
             "pokemon": "kingdra",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -78,7 +144,7 @@
             }
         },
         {
-            "id": "kingdra-3",
+            "id": "kingdra-6",
             "pokemon": "kingdra",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

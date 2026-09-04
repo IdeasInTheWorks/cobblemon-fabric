@@ -4,7 +4,7 @@
     "neededUninstalledMods": [],
     "spawns": [
         {
-            "id": "brionne-1",
+            "id": "brionne-2",
             "pokemon": "brionne",
             "presets": [
                 "water"
@@ -14,38 +14,44 @@
             "bucket": "ultra-rare",
             "level": "17-42",
             "weight": 28.8,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_coast"
-                ]
-            }
-        },
-        {
-            "id": "brionne-2",
-            "pokemon": "brionne",
-            "type": "pokemon",
-            "spawnablePositionType": "fishing",
-            "bucket": "ultra-rare",
-            "level": "17-42",
-            "weight": 36.0,
-            "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_coast",
-                    "#cobblemon:is_ocean",
-                    "#cobblemon:is_tropical_island"
-                ]
-            },
-            "anticondition": {
-                "biomes": [
-                    "#cobblemon:is_freezing"
                 ]
             }
         },
         {
             "id": "brionne-3",
             "pokemon": "brionne",
+            "type": "pokemon",
+            "spawnablePositionType": "fishing",
+            "bucket": "ultra-rare",
+            "level": "17-42",
+            "weight": 36.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_coast",
+                    "#cobblemon:is_ocean",
+                    "#cobblemon:is_tropical_island"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_freezing"
+                ]
+            }
+        },
+        {
+            "id": "brionne-4",
+            "pokemon": "brionne",
             "presets": [
                 "water"
             ],
@@ -54,6 +60,12 @@
             "bucket": "ultra-rare",
             "level": "17-42",
             "weight": 28.8,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,
@@ -64,7 +76,7 @@
             }
         },
         {
-            "id": "brionne-4",
+            "id": "brionne-5",
             "pokemon": "brionne",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -85,6 +97,26 @@
                 "biomes": [
                     "#cobblemon:is_freezing"
                 ]
+            }
+        },
+        {
+            "id": "brionne-1",
+            "pokemon": "brionne",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "ultra-rare",
+            "level": "17-42",
+            "weight": 36.0,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_coast"
+                ],
+                "isPokeSnack": true
             }
         }
     ]

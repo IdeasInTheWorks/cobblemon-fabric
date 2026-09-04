@@ -6,6 +6,51 @@
         {
             "id": "lapras-1",
             "pokemon": "lapras",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "surface",
+            "bucket": "uncommon",
+            "level": "29-54",
+            "weight": 20.0,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_frozen_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "lapras-2",
+            "pokemon": "lapras",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "surface",
+            "bucket": "ultra-rare",
+            "level": "29-54",
+            "weight": 100.0,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "isPokeSnack": true
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_frozen_ocean"
+                ]
+            }
+        },
+        {
+            "id": "lapras-3",
+            "pokemon": "lapras",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "uncommon",
@@ -22,7 +67,7 @@
             }
         },
         {
-            "id": "lapras-2",
+            "id": "lapras-4",
             "pokemon": "lapras",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -44,7 +89,7 @@
             }
         },
         {
-            "id": "lapras-3",
+            "id": "lapras-5",
             "pokemon": "lapras",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -64,7 +109,7 @@
             }
         },
         {
-            "id": "lapras-4",
+            "id": "lapras-6",
             "pokemon": "lapras",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -84,7 +129,7 @@
             }
         },
         {
-            "id": "lapras-5",
+            "id": "lapras-7",
             "pokemon": "lapras",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -108,7 +153,7 @@
             }
         },
         {
-            "id": "lapras-6",
+            "id": "lapras-8",
             "pokemon": "lapras",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

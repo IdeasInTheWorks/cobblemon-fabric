@@ -15,6 +15,12 @@
             "bucket": "ultra-rare",
             "level": "35-42",
             "weight": 18.0,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "biomes": [
                     "#cobblemon:is_jungle"
@@ -34,6 +40,12 @@
             "bucket": "rare",
             "level": "35-42",
             "weight": 11.25,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "biomes": [
                     "#cobblemon:is_tropical_island"

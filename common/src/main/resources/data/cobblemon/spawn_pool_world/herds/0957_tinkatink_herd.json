@@ -13,7 +13,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 3,
       "levelRange": "5-51",
-      "weight": 60.0,
+      "weight": 30.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,

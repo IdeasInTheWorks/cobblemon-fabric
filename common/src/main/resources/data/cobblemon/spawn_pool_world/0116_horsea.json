@@ -6,6 +6,72 @@
         {
             "id": "horsea-1",
             "pokemon": "horsea",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "5-30",
+            "weight": 18.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_lukewarm_ocean",
+                    "#cobblemon:is_warm_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "horsea-2",
+            "pokemon": "horsea",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "5-30",
+            "weight": 18.0,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_lukewarm_ocean",
+                    "#cobblemon:is_warm_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "horsea-3",
+            "pokemon": "horsea",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "5-30",
+            "weight": 18.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "structures": [
+                    "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+                ],
+                "minY": -60,
+                "maxY": 13,
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "horsea-4",
+            "pokemon": "horsea",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -40,7 +106,7 @@
             }
         },
         {
-            "id": "horsea-2",
+            "id": "horsea-5",
             "pokemon": "horsea",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -78,7 +144,7 @@
             }
         },
         {
-            "id": "horsea-3",
+            "id": "horsea-6",
             "pokemon": "horsea",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

@@ -7,13 +7,39 @@
             "id": "sealeo-1",
             "pokemon": "sealeo",
             "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "32-41",
+            "weight": 1.8,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_frozen_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "sealeo-2",
+            "pokemon": "sealeo",
+            "presets": [
                 "water"
             ],
             "type": "pokemon",
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "32-41",
-            "weight": 2.7,
+            "weight": 0.9,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -22,7 +48,7 @@
             }
         },
         {
-            "id": "sealeo-2",
+            "id": "sealeo-3",
             "pokemon": "sealeo",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -53,7 +79,7 @@
             }
         },
         {
-            "id": "sealeo-3",
+            "id": "sealeo-4",
             "pokemon": "sealeo",
             "presets": [
                 "water"
@@ -62,7 +88,13 @@
             "spawnablePositionType": "submerged",
             "bucket": "common",
             "level": "32-41",
-            "weight": 2.7,
+            "weight": 0.9,
+            "weightMultiplier": {
+                "multiplier": 2.0,
+                "condition": {
+                    "isPokeSnack": true
+                }
+            },
             "condition": {
                 "canSeeSky": false,
                 "minSkyLight": 8,
@@ -73,7 +105,7 @@
             }
         },
         {
-            "id": "sealeo-4",
+            "id": "sealeo-5",
             "pokemon": "sealeo",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

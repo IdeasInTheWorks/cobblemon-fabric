@@ -6,6 +6,69 @@
         {
             "id": "magikarp-1",
             "pokemon": "magikarp",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "1-20",
+            "weight": 59.4,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_freshwater",
+                    "#cobblemon:is_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "magikarp-2",
+            "pokemon": "magikarp",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "1-20",
+            "weight": 59.4,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_freshwater",
+                    "#cobblemon:is_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "magikarp-3",
+            "pokemon": "magikarp",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "surface",
+            "bucket": "uncommon",
+            "level": "1-20",
+            "weight": 18.4,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_freshwater",
+                    "#cobblemon:is_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "magikarp-4",
+            "pokemon": "magikarp",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -20,7 +83,7 @@
             }
         },
         {
-            "id": "magikarp-2",
+            "id": "magikarp-5",
             "pokemon": "magikarp",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -38,7 +101,7 @@
             }
         },
         {
-            "id": "magikarp-skelly-3",
+            "id": "magikarp-skelly-6",
             "pokemon": "magikarp magikarp_jump=skelly",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -63,7 +126,7 @@
             }
         },
         {
-            "id": "magikarp-skelly-4",
+            "id": "magikarp-skelly-7",
             "pokemon": "magikarp magikarp_jump=skelly",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -81,7 +144,7 @@
             }
         },
         {
-            "id": "magikarp-skelly-5",
+            "id": "magikarp-skelly-8",
             "pokemon": "magikarp magikarp_jump=skelly",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -108,7 +171,7 @@
             }
         },
         {
-            "id": "magikarp-calico-orange-white-6",
+            "id": "magikarp-calico-orange-white-9",
             "pokemon": "magikarp magikarp_jump=calico-orange-white",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -144,7 +207,7 @@
             }
         },
         {
-            "id": "magikarp-calico-orange-white-black-6",
+            "id": "magikarp-calico-orange-white-black-9",
             "pokemon": "magikarp magikarp_jump=calico-orange-white-black",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -180,7 +243,7 @@
             }
         },
         {
-            "id": "magikarp-calico-white-orange-6",
+            "id": "magikarp-calico-white-orange-9",
             "pokemon": "magikarp magikarp_jump=calico-white-orange",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -216,7 +279,7 @@
             }
         },
         {
-            "id": "magikarp-calico-orange-gold-7",
+            "id": "magikarp-calico-orange-gold-10",
             "pokemon": "magikarp magikarp_jump=calico-orange-gold",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -250,7 +313,7 @@
             }
         },
         {
-            "id": "magikarp-orange-two-tone-8",
+            "id": "magikarp-orange-two-tone-11",
             "pokemon": "magikarp magikarp_jump=orange-two-tone",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -288,7 +351,7 @@
             }
         },
         {
-            "id": "magikarp-orange-orca-8",
+            "id": "magikarp-orange-orca-11",
             "pokemon": "magikarp magikarp_jump=orange-orca",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -326,7 +389,7 @@
             }
         },
         {
-            "id": "magikarp-orange-dapples-8",
+            "id": "magikarp-orange-dapples-11",
             "pokemon": "magikarp magikarp_jump=orange-dapples",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -364,7 +427,7 @@
             }
         },
         {
-            "id": "magikarp-pink-two-tone-9",
+            "id": "magikarp-pink-two-tone-12",
             "pokemon": "magikarp magikarp_jump=pink-two-tone",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -401,7 +464,7 @@
             }
         },
         {
-            "id": "magikarp-pink-orca-9",
+            "id": "magikarp-pink-orca-12",
             "pokemon": "magikarp magikarp_jump=pink-orca",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -438,7 +501,7 @@
             }
         },
         {
-            "id": "magikarp-pink-dapples-9",
+            "id": "magikarp-pink-dapples-12",
             "pokemon": "magikarp magikarp_jump=pink-dapples",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -475,7 +538,7 @@
             }
         },
         {
-            "id": "magikarp-gray-bubbles-10",
+            "id": "magikarp-gray-bubbles-13",
             "pokemon": "magikarp magikarp_jump=gray-bubbles",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -512,7 +575,7 @@
             }
         },
         {
-            "id": "magikarp-gray-diamonds-10",
+            "id": "magikarp-gray-diamonds-13",
             "pokemon": "magikarp magikarp_jump=gray-diamonds",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -549,7 +612,7 @@
             }
         },
         {
-            "id": "magikarp-gray-patches-10",
+            "id": "magikarp-gray-patches-13",
             "pokemon": "magikarp magikarp_jump=gray-patches",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -586,7 +649,7 @@
             }
         },
         {
-            "id": "magikarp-purple-bubbles-11",
+            "id": "magikarp-purple-bubbles-14",
             "pokemon": "magikarp magikarp_jump=purple-bubbles",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -623,7 +686,7 @@
             }
         },
         {
-            "id": "magikarp-purple-diamonds-11",
+            "id": "magikarp-purple-diamonds-14",
             "pokemon": "magikarp magikarp_jump=purple-diamonds",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -660,7 +723,7 @@
             }
         },
         {
-            "id": "magikarp-purple-patches-11",
+            "id": "magikarp-purple-patches-14",
             "pokemon": "magikarp magikarp_jump=purple-patches",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -697,7 +760,7 @@
             }
         },
         {
-            "id": "magikarp-apricot-tiger-12",
+            "id": "magikarp-apricot-tiger-15",
             "pokemon": "magikarp magikarp_jump=apricot-tiger",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -734,7 +797,7 @@
             }
         },
         {
-            "id": "magikarp-apricot-zebra-12",
+            "id": "magikarp-apricot-zebra-15",
             "pokemon": "magikarp magikarp_jump=apricot-zebra",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -771,7 +834,7 @@
             }
         },
         {
-            "id": "magikarp-apricot-stripes-12",
+            "id": "magikarp-apricot-stripes-15",
             "pokemon": "magikarp magikarp_jump=apricot-stripes",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -808,7 +871,7 @@
             }
         },
         {
-            "id": "magikarp-brown-tiger-13",
+            "id": "magikarp-brown-tiger-16",
             "pokemon": "magikarp magikarp_jump=brown-tiger",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -845,7 +908,7 @@
             }
         },
         {
-            "id": "magikarp-brown-zebra-13",
+            "id": "magikarp-brown-zebra-16",
             "pokemon": "magikarp magikarp_jump=brown-zebra",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -882,7 +945,7 @@
             }
         },
         {
-            "id": "magikarp-brown-stripes-13",
+            "id": "magikarp-brown-stripes-16",
             "pokemon": "magikarp magikarp_jump=brown-stripes",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -919,7 +982,7 @@
             }
         },
         {
-            "id": "magikarp-orange-forehead-14",
+            "id": "magikarp-orange-forehead-17",
             "pokemon": "magikarp magikarp_jump=orange-forehead",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -947,7 +1010,7 @@
             }
         },
         {
-            "id": "magikarp-orange-mask-14",
+            "id": "magikarp-orange-mask-17",
             "pokemon": "magikarp magikarp_jump=orange-mask",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -975,7 +1038,7 @@
             }
         },
         {
-            "id": "magikarp-orange-forehead-15",
+            "id": "magikarp-orange-forehead-18",
             "pokemon": "magikarp magikarp_jump=orange-forehead",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -993,7 +1056,7 @@
             }
         },
         {
-            "id": "magikarp-orange-mask-15",
+            "id": "magikarp-orange-mask-18",
             "pokemon": "magikarp magikarp_jump=orange-mask",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1011,7 +1074,7 @@
             }
         },
         {
-            "id": "magikarp-orange-forehead-16",
+            "id": "magikarp-orange-forehead-19",
             "pokemon": "magikarp magikarp_jump=orange-forehead",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1041,7 +1104,7 @@
             }
         },
         {
-            "id": "magikarp-orange-mask-16",
+            "id": "magikarp-orange-mask-19",
             "pokemon": "magikarp magikarp_jump=orange-mask",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1071,7 +1134,7 @@
             }
         },
         {
-            "id": "magikarp-black-forehead-17",
+            "id": "magikarp-black-forehead-20",
             "pokemon": "magikarp magikarp_jump=black-forehead",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1107,7 +1170,7 @@
             }
         },
         {
-            "id": "magikarp-black-mask-17",
+            "id": "magikarp-black-mask-20",
             "pokemon": "magikarp magikarp_jump=black-mask",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1143,7 +1206,7 @@
             }
         },
         {
-            "id": "magikarp-black-forehead-18",
+            "id": "magikarp-black-forehead-21",
             "pokemon": "magikarp magikarp_jump=black-forehead",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1161,7 +1224,7 @@
             }
         },
         {
-            "id": "magikarp-black-mask-18",
+            "id": "magikarp-black-mask-21",
             "pokemon": "magikarp magikarp_jump=black-mask",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1179,7 +1242,7 @@
             }
         },
         {
-            "id": "magikarp-black-forehead-19",
+            "id": "magikarp-black-forehead-22",
             "pokemon": "magikarp magikarp_jump=black-forehead",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1217,7 +1280,7 @@
             }
         },
         {
-            "id": "magikarp-black-mask-19",
+            "id": "magikarp-black-mask-22",
             "pokemon": "magikarp magikarp_jump=black-mask",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1255,7 +1318,7 @@
             }
         },
         {
-            "id": "magikarp-blue-saucy-20",
+            "id": "magikarp-blue-saucy-23",
             "pokemon": "magikarp magikarp_jump=blue-saucy",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1291,7 +1354,7 @@
             }
         },
         {
-            "id": "magikarp-blue-raindrops-20",
+            "id": "magikarp-blue-raindrops-23",
             "pokemon": "magikarp magikarp_jump=blue-raindrops",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1327,7 +1390,7 @@
             }
         },
         {
-            "id": "magikarp-violet-saucy-21",
+            "id": "magikarp-violet-saucy-24",
             "pokemon": "magikarp magikarp_jump=violet-saucy",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -1362,7 +1425,7 @@
             }
         },
         {
-            "id": "magikarp-violet-raindrops-21",
+            "id": "magikarp-violet-raindrops-24",
             "pokemon": "magikarp magikarp_jump=violet-raindrops",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

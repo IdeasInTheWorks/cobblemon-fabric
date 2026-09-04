@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 5,
       "levelRange": "5-53",
-      "weight": 20.0,
+      "weight": 50.0,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -29,7 +29,7 @@
           "levelRange": "8-28",
           "levelRangeOffset": "-3-3",
           "maxTimes": 7,
-          "isLeader": false,
+          "isLeader": true,
           "isFollower": true
         },
         {
@@ -48,7 +48,7 @@
           "levelRangeOffset": "-1-5",
           "maxTimes": 1,
           "isLeader": true,
-          "isFollower": true
+          "isFollower": false
         }
       ]
     }

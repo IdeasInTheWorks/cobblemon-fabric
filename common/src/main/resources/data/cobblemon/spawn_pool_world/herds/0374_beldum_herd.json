@@ -12,7 +12,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "5-60",
-      "weight": 30.0,
+      "weight": 50.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_dripstone",
@@ -59,7 +59,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "5-60",
-      "weight": 100.0,
+      "weight": 50.0,
       "condition": {
         "biomes": [
           "#cobblemon:is_end"
@@ -105,7 +105,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "5-60",
-      "weight": 100.0,
+      "weight": 50.0,
       "condition": {
         "minSkyLight": 0,
         "maxSkyLight": 7,
@@ -150,7 +150,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "5-60",
-      "weight": 20.0,
+      "weight": 10.0,
       "condition": {
         "minSkyLight": 0,
         "maxSkyLight": 7,
@@ -198,7 +198,7 @@
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "5-60",
-      "weight": 100.0,
+      "weight": 50.0,
       "condition": {
         "biomes": [
           "the_bumblezone:howling_constructs"

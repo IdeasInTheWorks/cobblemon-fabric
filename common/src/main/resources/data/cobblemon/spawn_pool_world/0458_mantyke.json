@@ -6,6 +6,50 @@
         {
             "id": "mantyke-1",
             "pokemon": "mantyke",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "uncommon",
+            "level": "10-35",
+            "weight": 15.6,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_lukewarm_ocean",
+                    "#cobblemon:is_warm_ocean"
+                ],
+                "minY": 48,
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "mantyke-2",
+            "pokemon": "mantyke",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "uncommon",
+            "level": "10-35",
+            "weight": 15.6,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_lukewarm_ocean",
+                    "#cobblemon:is_warm_ocean"
+                ],
+                "minY": 48,
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "mantyke-3",
+            "pokemon": "mantyke",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "uncommon",
@@ -26,7 +70,7 @@
             }
         },
         {
-            "id": "mantyke-2",
+            "id": "mantyke-4",
             "pokemon": "mantyke",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -55,7 +99,7 @@
             }
         },
         {
-            "id": "mantyke-3",
+            "id": "mantyke-5",
             "pokemon": "mantyke",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -79,7 +123,7 @@
             }
         },
         {
-            "id": "mantyke-4",
+            "id": "mantyke-6",
             "pokemon": "mantyke",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

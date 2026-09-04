@@ -6,6 +6,70 @@
         {
             "id": "sharpedo-1",
             "pokemon": "sharpedo",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "30-46",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "sharpedo-2",
+            "pokemon": "sharpedo",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "30-46",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "sharpedo-3",
+            "pokemon": "sharpedo",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "30-46",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "structures": [
+                    "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+                ],
+                "minY": -60,
+                "maxY": 13,
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "sharpedo-4",
+            "pokemon": "sharpedo",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -34,7 +98,7 @@
             }
         },
         {
-            "id": "sharpedo-2",
+            "id": "sharpedo-5",
             "pokemon": "sharpedo",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
@@ -66,7 +130,7 @@
             }
         },
         {
-            "id": "sharpedo-3",
+            "id": "sharpedo-6",
             "pokemon": "sharpedo",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

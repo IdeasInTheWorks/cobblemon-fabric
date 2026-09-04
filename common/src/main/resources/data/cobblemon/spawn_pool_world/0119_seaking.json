@@ -6,6 +6,46 @@
         {
             "id": "seaking-1",
             "pokemon": "seaking",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "33-45",
+            "weight": 6.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_river"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "seaking-2",
+            "pokemon": "seaking",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "submerged",
+            "bucket": "common",
+            "level": "33-45",
+            "weight": 6.0,
+            "condition": {
+                "canSeeSky": false,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_river"
+                ],
+                "isPokeSnack": true
+            }
+        },
+        {
+            "id": "seaking-3",
+            "pokemon": "seaking",
             "type": "pokemon",
             "spawnablePositionType": "fishing",
             "bucket": "common",
@@ -28,7 +68,7 @@
             }
         },
         {
-            "id": "seaking-2",
+            "id": "seaking-4",
             "pokemon": "seaking",
             "type": "pokemon",
             "spawnablePositionType": "fishing",

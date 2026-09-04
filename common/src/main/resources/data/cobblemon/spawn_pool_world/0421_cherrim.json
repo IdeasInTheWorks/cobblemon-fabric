@@ -31,7 +31,7 @@
         },
         {
             "id": "cherrim-sunshine-2",
-            "pokemon": "cherrim sunshine",
+            "pokemon": "cherrim blossom_form=sunshine",
             "presets": [
                 "natural",
                 "treetop"
@@ -85,7 +85,7 @@
         },
         {
             "id": "cherrim-sunshine-4",
-            "pokemon": "cherrim sunshine",
+            "pokemon": "cherrim blossom_form=sunshine",
             "presets": [
                 "natural",
                 "treetop"

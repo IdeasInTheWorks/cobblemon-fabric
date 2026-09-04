@@ -297,7 +297,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "cherrim sunshine held_item=cobblemon:grass_gem alpha=true",
+          "pokemon": "cherrim blossom_form=sunshine held_item=cobblemon:grass_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
@@ -314,7 +314,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "cherrim sunshine",
+          "pokemon": "cherrim blossom_form=sunshine",
           "weight": 120.0,
           "levelRange": "27-41",
           "levelRangeOffset": "-2-4",
@@ -353,7 +353,7 @@
       },
       "herdablePokemon": [
         {
-          "pokemon": "cherrim sunshine held_item=cobblemon:grass_gem alpha=true",
+          "pokemon": "cherrim blossom_form=sunshine held_item=cobblemon:grass_gem alpha=true",
           "weight": 30.0,
           "levelRange": "1-100",
           "maxTimes": 1,
@@ -370,7 +370,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "cherrim sunshine",
+          "pokemon": "cherrim blossom_form=sunshine",
           "weight": 120.0,
           "levelRange": "27-41",
           "levelRangeOffset": "-2-4",

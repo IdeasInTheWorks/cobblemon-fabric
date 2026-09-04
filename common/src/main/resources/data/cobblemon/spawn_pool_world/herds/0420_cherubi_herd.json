@@ -85,7 +85,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "cherrim sunshine",
+          "pokemon": "cherrim blossom_form=sunshine",
           "weight": 20.0,
           "levelRange": "27-41",
           "levelRangeOffset": "-2-4",
@@ -180,7 +180,7 @@
           "isFollower": true
         },
         {
-          "pokemon": "cherrim sunshine",
+          "pokemon": "cherrim blossom_form=sunshine",
           "weight": 20.0,
           "levelRange": "27-41",
           "levelRangeOffset": "-2-4",

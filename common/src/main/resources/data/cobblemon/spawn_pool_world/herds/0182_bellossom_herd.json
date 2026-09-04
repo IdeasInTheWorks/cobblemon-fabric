@@ -8,11 +8,11 @@
         "natural"
       ],
       "type": "pokemon-herd",
-      "bucket": "rare",
+      "bucket": "common",
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "35-49",
-      "weight": 20.0,
+      "weight": 0.25,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -39,11 +39,11 @@
         "natural"
       ],
       "type": "pokemon-herd",
-      "bucket": "rare",
+      "bucket": "common",
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "35-49",
-      "weight": 20.0,
+      "weight": 0.05,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,
@@ -70,11 +70,11 @@
         "natural"
       ],
       "type": "pokemon-herd",
-      "bucket": "rare",
+      "bucket": "common",
       "spawnablePositionType": "grounded",
       "maxHerdSize": 4,
       "levelRange": "35-49",
-      "weight": 20.0,
+      "weight": 0.05,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,

@@ -481,7 +481,7 @@ def transform_pokemon_to_json(pokemon_rows, invalid_biome_tags, drops_df):
                             # check if the dropcondition is in the preset_list, if not, then add it to the unknown_conditions list
                             for preset in presets:
                                 if preset not in preset_list:
-                                    print_warning(f"Unknown preset: {preset}")
+                                    print_warning(f"Unknown preset: {preset} used by {current_id}")
                                 # if the current entry's preset matches with the condition, then add the drops to the json_data
                                 # check if the presets field is in the spawn_data
                                 if "presets" in spawn_data and preset in spawn_data['presets']:
@@ -491,7 +491,7 @@ def transform_pokemon_to_json(pokemon_rows, invalid_biome_tags, drops_df):
                             for biome in biomes:
                                 biome = biome.lower()
                                 if biome not in biome_dictionary:
-                                    print_warning(f"Unknown biome: {biome}")
+                                    print_warning(f"Unknown biome: {biome} used by {current_id}")
                                 # Apply the biome mapping to the condition
                                 if biome in biome_dictionary:
                                     biome = biome_dictionary[biome]
