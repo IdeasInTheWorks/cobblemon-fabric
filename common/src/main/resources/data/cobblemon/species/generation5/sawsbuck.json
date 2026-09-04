@@ -260,7 +260,7 @@
   ],
   "behaviour": {
     "herd": {
-      "maxSize": 9,
+      "maxSize": 5,
       "toleratedLeaders": [
         {
           "pokemon": "stantler",
