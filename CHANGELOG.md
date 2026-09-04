@@ -422,6 +422,8 @@
 - Fixed some battles being startable with fainted Pokémon in the initial sendout. 
 - Fixed random gender selection for forms with strict gender divides (such as Meowstic and Oinkalogne) never choosing female (that's sexist).
 - Fixed the "Press R to battle" prompt not disappearing after you finish your first battle, at least until you relogged.
+- Fixed the composter block being listed as "composer" in the cosmetic items species feature
+- Fixed Castform's forms being tagged as introduced in generation 4 instead of 3
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
