@@ -548,7 +548,6 @@ object VaryingModelRepository {
         inbuilt("morgrem", ::MorgremModel)
         inbuilt("grimmsnarl", ::GrimmsnarlModel)
         inbuilt("klefki", ::KlefkiModel)
-        inbuilt("dewott_hisui_bias", ::DewottHisuiBiasModel)
         inbuilt("samurott_hisuian", ::SamurottHisuianModel)
         inbuilt("cyndaquil_hisui_bias", ::CyndaquilHisuiBiasModel)
         inbuilt("quilava_hisui_bias", ::QuilavaHisuiBiasModel)
