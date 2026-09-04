@@ -397,7 +397,7 @@
 - Fixed the choose starter toast not disappearing when capturing a Pokémon instead of opening the starter selection screen
 - Fixed an issue where certain Sinister Tea seasonings were only applying as instant effects and would not apply over time
 - Long config option labels now scroll instead of overflowing
-- Fixed some z-fighting and clipping on Dewott
+- Fixed some z-fighting and clipping on Dewott and Hisui Bias Dewott
 - Fixed multiple Pokémon having their cries missing
 - Fixed Tentacool not using its swim animation when on water surface
 - Fixed Eevee using its left shoulder pose when in battle
@@ -408,7 +408,8 @@
 - Fixed Sliggoo (+ Hisuian) evolving in the Nether and End, where it can't rain
 - Corrected the scales, hitbox sizes , and eye heights for Ariados, Cetoddle, Durant, Galvantula, Klink, Lanturn, Lumineon, Mantine, Mantyke, Mudbray, Numel, Staravia, and Torkoal
 - Fixed Torkoal's walk speed not matching its animation. He will no longer move faster than Bunnelby and Buneary
-- Fixed Lanturn t posing due to missing ground walk and sleep animations. 
+- Fixed Lanturn t-posing due to missing ground walk and sleep animations. 
+- Fixed Oshawott and Dewott using their sleep animation in unintended scenarios. 
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
