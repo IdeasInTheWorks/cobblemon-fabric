@@ -406,6 +406,9 @@
 - Fixed a coloring error with Dracovish's shiny
 - Fixed Togedemaru's back spikes z-fighting
 - Fixed Sliggoo (+ Hisuian) evolving in the Nether and End, where it can't rain
+- Corrected the scales, hitbox sizes , and eye heights for Ariados, Cetoddle, Durant, Galvantula, Klink, Lanturn, Lumineon, Mantine, Mantyke, Mudbray, Numel, Staravia, and Torkoal
+- Fixed Torkoal's walk speed not matching its animation. He will no longer move faster than Bunnelby and Buneary
+- Fixed Lanturn t posing due to missing ground walk and sleep animations. 
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
