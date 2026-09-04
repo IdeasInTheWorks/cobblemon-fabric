@@ -57,6 +57,7 @@
 - Pressing the Summary key while either the starter selection or summary screen are open now closes those screens
 - Ice type Pokémon are now immune to Packed Snow
 - Held item visibility can now be controlled by the held_item_visible command argument.
+- Added config option to disable Pokémon spawning on a per-world basis
 
 ### New rideable Pokémon
 - Crobat
@@ -287,6 +288,7 @@
 - Factor in the weight of Pokémon when calculating pushing forces between hitboxes.
 - Remade the Starter Selection Screen with new assets
 - Refactored berry trees to be less impactful on TPS (more performant)
+- Indexed party/PC stores by UUID so lookups no longer scan the whole store, reducing MSPT with many pastured Pokémon
 - Changed the bait effects of the following items: (Vanilla) Sweet & Glow Berries, Golden & Enchanted Golden Apples (Cobblemon) Custap, Eggant, Hopo & Micle Berries, Sweet Hearts
 - Wild Pokémon now reliably have at least one offensive move if they can have offensive moves at that level.
 - Data Monitor can accept Disks (TMs, Music Disks, Upgrade, Dubious Disk, etc.) to change what's being displayed on the screen
@@ -398,6 +400,11 @@
 - Fixed an issue where certain Sinister Tea seasonings were only applying as instant effects and would not apply over time
 - Long config option labels now scroll instead of overflowing
 - Fixed some z-fighting and clipping on Dewott and Hisui Bias Dewott
+- Eggant Berries can now be composted properly on NeoForge
+- Composting chances are now the same on NeoForge as on Fabric
+- Fixed problem where furnaces which had smelted Revival Herbs into Heal Powder in older versions would glitch out on trying to get the experience out of the block
+- Fixed the Battle AI not recognizing Surging Strikes as a multistrike move
+- Fixed some z-fighting and clipping on Dewott
 - Fixed multiple Pokémon having their cries missing
 - Fixed Tentacool not using its swim animation when on water surface
 - Fixed Eevee using its left shoulder pose when in battle
@@ -410,6 +417,11 @@
 - Fixed Torkoal's walk speed not matching its animation. He will no longer move faster than Bunnelby and Buneary
 - Fixed Lanturn t-posing due to missing ground walk and sleep animations. 
 - Fixed Oshawott and Dewott using their sleep animation in unintended scenarios. 
+- Fixed Dudunsparce and Maushold always having the same form instead of having the 1 in 100 chance of being different.
+- Fixed bird mounts rapidly switching between their flying and gliding animations when flying at low speed
+- Fixed some battles being startable with fainted Pokémon in the initial sendout. 
+- Fixed random gender selection for forms with strict gender divides (such as Meowstic and Oinkalogne) never choosing female (that's sexist).
+- Fixed the "Press R to battle" prompt not disappearing after you finish your first battle, at least until you relogged.
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
@@ -529,3 +541,4 @@
   - Simplified Chinese
   - Traditional Chinese
   - Korean
+  - Russian
