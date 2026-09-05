@@ -9668,5 +9668,11 @@
     "cobblemon.ui.pokedex.info.form.baxcalibur": " ",
     "cobblemon.habitat.birch_wildfire_scar.name": "Abedular calcinado",
     "cobblemon.habitat.oak_wildfire_scar.name": "Robledal calcinado",
-    "cobblemon.habitat.spruce_wildfire_scar.name": "Taiga calcinada"
+    "cobblemon.habitat.spruce_wildfire_scar.name": "Taiga calcinada",
+    "cobblemon.ui.starter.random": "Aleatorio",
+    "cobblemon.ui.starter.random_description": "Se te asignará un Pokémon inicial aleatorio de entre todos los posibles, pero no sabrás cuál hasta que lo pulses.",
+    "cobblemon.config.ui.world_spawning_blocklist": "Lista de mundos sin apariciones",
+    "cobblemon.config.ui.world_spawning_blocklist.tooltip": "Mundos en los que la lógica de aparición de Pokémon estará deshabilitada.",
+    "advancements.cobblemon.obtain_tm": "Muéstrame tus movimientos prohibidos",
+    "advancements.cobblemon.obtain_tm.description": "Encuentra o imprime una MT"
 }
