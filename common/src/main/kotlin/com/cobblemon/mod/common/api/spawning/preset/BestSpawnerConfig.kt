@@ -28,7 +28,7 @@ import java.io.InputStreamReader
  * @since July 8th, 2022
  */
 class BestSpawnerConfig {
-    val version = 0
+    val version = 2
     /** Whether an external config will be replaced by an internal one once [version] is higher on the internal. */
     val replaceWithNewVersion = true
     @SerializedName("spawnablePositionTypeWeights", alternate = ["contextWeights"])
