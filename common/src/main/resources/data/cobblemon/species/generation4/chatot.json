@@ -60,7 +60,7 @@
       }
     },
     "herd": {
-      "maxSize": "9",
+      "maxSize": 9,
       "toleratedLeaders": [
         {
           "pokemon": "chatot",
@@ -136,7 +136,6 @@
     "tm:ominouswind",
     "tm:partingshot",
     "tm:pluck",
-    "tm:powershift",
     "tm:protect",
     "tm:raindance",
     "tm:rest",

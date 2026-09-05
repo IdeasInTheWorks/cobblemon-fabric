@@ -56,7 +56,13 @@
       "rouseChance": 0.0042
     },
     "herd": {
-      "maxSize": "5"
+      "maxSize": 7,
+      "toleratedLeaders": [
+        {
+          "pokemon": "sceptile alpha",
+          "tier": 1
+        }
+      ]
     },
     "moving": {
       "swim": {
@@ -176,7 +182,6 @@
     "tm:magicalleaf",
     "tm:megakick",
     "tm:megapunch",
-    "tm:naturalgift",
     "tm:naturepower",
     "tm:outrage",
     "tm:poweruppunch",
@@ -254,6 +259,7 @@
     "legacy:hiddenpower",
     "legacy:mimic",
     "legacy:mudslap",
+    "legacy:naturalgift",
     "legacy:return",
     "legacy:round",
     "legacy:secretpower",

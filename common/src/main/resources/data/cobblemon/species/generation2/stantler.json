@@ -56,7 +56,7 @@
       "rouseChance": 0.0042
     },
     "herd": {
-      "maxSize": "9",
+      "maxSize": 9,
       "toleratedLeaders": [
         {
           "pokemon": "stantler",
@@ -128,7 +128,6 @@
     "tm:bounce",
     "tm:bulldoze",
     "tm:calmmind",
-    "tm:captivate",
     "tm:chargebeam",
     "tm:confuseray",
     "tm:curse",
@@ -226,6 +225,7 @@
     "tutor:wildcharge",
     "tutor:zenheadbutt",
     "legacy:attract",
+    "legacy:captivate",
     "legacy:confide",
     "legacy:detect",
     "legacy:doubleteam",

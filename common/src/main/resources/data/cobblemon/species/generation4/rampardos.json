@@ -50,7 +50,7 @@
   },
   "behaviour": {
     "herd": {
-      "maxSize": "7",
+      "maxSize": 7,
       "toleratedLeaders": [
         {
           "pokemon": "rampardos",
@@ -152,7 +152,6 @@
     "tm:mudslap",
     "tm:outrage",
     "tm:payback",
-    "tm:powershift",
     "tm:poweruppunch",
     "tm:protect",
     "tm:raindance",

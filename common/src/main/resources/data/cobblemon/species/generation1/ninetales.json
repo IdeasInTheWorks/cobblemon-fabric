@@ -62,7 +62,13 @@
       "rouseChance": 0.0042
     },
     "herd": {
-      "maxSize": "3"
+      "maxSize": 3,
+      "toleratedLeaders": [
+        {
+          "pokemon": "ninetales alpha",
+          "tier": 1
+        }
+      ]
     },
     "moving": {
       "swim": {
@@ -132,7 +138,6 @@
     "tm:bodyslam",
     "tm:burningjealousy",
     "tm:calmmind",
-    "tm:captivate",
     "tm:charm",
     "tm:confuseray",
     "tm:covet",
@@ -221,6 +226,7 @@
     "tutor:zenheadbutt",
     "legacy:attract",
     "legacy:bide",
+    "legacy:captivate",
     "legacy:confide",
     "legacy:curse",
     "legacy:doubleteam",
@@ -342,7 +348,6 @@
         "tm:blizzard",
         "tm:bodyslam",
         "tm:calmmind",
-        "tm:captivate",
         "tm:charm",
         "tm:chillingwater",
         "tm:confuseray",
@@ -426,6 +431,7 @@
         "tutor:zenheadbutt",
         "legacy:aquatail",
         "legacy:attract",
+        "legacy:captivate",
         "legacy:confide",
         "legacy:doubleteam",
         "legacy:frustration",
