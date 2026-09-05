@@ -94,7 +94,6 @@
     "tm:bodyslam",
     "tm:brickbreak",
     "tm:calmmind",
-    "tm:captivate",
     "tm:charm",
     "tm:covet",
     "tm:drainingkiss",
@@ -201,6 +200,7 @@
     "legacy:attract",
     "legacy:bide",
     "legacy:bubblebeam",
+    "legacy:captivate",
     "legacy:confide",
     "legacy:counter",
     "legacy:curse",
@@ -234,7 +234,13 @@
   "evolutions": [],
   "behaviour": {
     "herd": {
-      "maxSize": "3"
+      "maxSize": 3,
+      "toleratedLeaders": [
+        {
+          "pokemon": "jynx alpha",
+          "tier": 1
+        }
+      ]
     },
     "moving": {
       "swim": {

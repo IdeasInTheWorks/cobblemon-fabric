@@ -68,6 +68,15 @@
     },
     "combat": {
       "willDefendOwner": true
+    },
+    "herd": {
+      "maxSize": 5,
+      "toleratedLeaders": [
+        {
+          "pokemon": "delcatty alpha",
+          "tier": 1
+        }
+      ]
     }
   },
   "drops": {
@@ -119,7 +128,6 @@
     "tm:blizzard",
     "tm:bodyslam",
     "tm:calmmind",
-    "tm:captivate",
     "tm:chargebeam",
     "tm:charm",
     "tm:cosmicpower",
@@ -207,6 +215,7 @@
     "tutor:waterpulse",
     "tutor:wildcharge",
     "tutor:zenheadbutt",
+    "legacy:captivate",
     "legacy:confide",
     "legacy:defensecurl",
     "legacy:doubleteam",

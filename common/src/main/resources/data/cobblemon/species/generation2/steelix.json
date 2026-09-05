@@ -70,7 +70,16 @@
       "willDefendOwner": true,
       "willFlee": false
     },
-    "fireImmune": true
+    "fireImmune": true,
+    "herd": {
+      "maxSize": 3,
+      "toleratedLeaders": [
+        {
+          "pokemon": "steelix alpha",
+          "tier": 1
+        }
+      ]
+    }
   },
   "drops": {
     "amount": 7,
@@ -170,7 +179,6 @@
     "tm:mudslap",
     "tm:naturepower",
     "tm:payback",
-    "tm:powershift",
     "tm:protect",
     "tm:psychicfangs",
     "tm:psychup",

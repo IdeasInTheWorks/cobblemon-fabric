@@ -155,7 +155,7 @@
       "rouseChance": 0.0042
     },
     "herd": {
-      "maxSize": "9",
+      "maxSize": 9,
       "toleratedLeaders": [
         {
           "pokemon": "mantine",
@@ -250,7 +250,6 @@
     "tm:ironhead",
     "tm:liquidation",
     "tm:mudslap",
-    "tm:powershift",
     "tm:protect",
     "tm:psybeam",
     "tm:raindance",

@@ -67,7 +67,7 @@
       "rouseChance": 0.0042
     },
     "herd": {
-      "maxSize": "9",
+      "maxSize": 9,
       "toleratedLeaders": [
         {
           "pokemon": "bergmite",
@@ -277,7 +277,7 @@
             },
             {
               "variant": "biome",
-              "biomeAntiondition": "#cobblemon:evolution/regional/bergmite_kalosbiome"
+              "biomeAnticondition": "#cobblemon:evolution/regional/bergmite_kalosbiome"
             }
           ]
         }

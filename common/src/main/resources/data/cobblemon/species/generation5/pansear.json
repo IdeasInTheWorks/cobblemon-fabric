@@ -126,7 +126,6 @@
     "tm:lowkick",
     "tm:lowsweep",
     "tm:nastyplot",
-    "tm:naturalgift",
     "tm:overheat",
     "tm:payback",
     "tm:protect",
@@ -175,6 +174,7 @@
     "legacy:doubleteam",
     "legacy:frustration",
     "legacy:hiddenpower",
+    "legacy:naturalgift",
     "legacy:return",
     "legacy:round",
     "legacy:secretpower",
@@ -195,7 +195,7 @@
   ],
   "behaviour": {
     "herd": {
-      "maxSize": "4",
+      "maxSize": 4,
       "toleratedLeaders": [
         {
           "pokemon": "aipom",

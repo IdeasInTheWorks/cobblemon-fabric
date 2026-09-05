@@ -68,7 +68,7 @@
       "rouseChance": 0.0042
     },
     "herd": {
-      "maxSize": "6",
+      "maxSize": 6,
       "toleratedLeaders": [
         {
           "pokemon": "exeggutor alolan=false",
@@ -172,7 +172,6 @@
     "tm:lightscreen",
     "tm:lowkick",
     "tm:magicalleaf",
-    "tm:naturalgift",
     "tm:naturepower",
     "tm:powerswap",
     "tm:protect",
@@ -247,6 +246,7 @@
     "legacy:frustration",
     "legacy:hiddenpower",
     "legacy:mimic",
+    "legacy:naturalgift",
     "legacy:nightmare",
     "legacy:powerwhip",
     "legacy:psywave",
@@ -373,7 +373,6 @@
         "tm:lightscreen",
         "tm:lowkick",
         "tm:magicalleaf",
-        "tm:naturalgift",
         "tm:naturepower",
         "tm:outrage",
         "tm:powerswap",
@@ -458,6 +457,7 @@
         "legacy:headbutt",
         "legacy:hiddenpower",
         "legacy:mimic",
+        "legacy:naturalgift",
         "legacy:nightmare",
         "legacy:psywave",
         "legacy:rage",

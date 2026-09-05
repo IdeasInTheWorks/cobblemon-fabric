@@ -101,7 +101,6 @@
     "tm:megapunch",
     "tm:naturepower",
     "tm:payback",
-    "tm:powershift",
     "tm:poweruppunch",
     "tm:protect",
     "tm:raindance",
@@ -176,7 +175,7 @@
   "evolutions": [],
   "behaviour": {
     "herd": {
-      "maxSize": "5"
+      "maxSize": 5
     },
     "resting": {
       "times": [

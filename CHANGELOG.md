@@ -1,62 +1,40 @@
 # Changelog
-## [1.8.0 (MONTH Xth, 2026)](#1-8-0)
+## [1.8.0 (September Xth, 2026)](#1-8-0)
 
 ### Additions
-- Added config options to award experience to fainted Pokémon for opponents they helped defeat (`awardExperienceToFaintedPokemon`) and to still award experience for defeated enemies even after battle loss/forfeit (`awardExperienceOnBattleLoss`)
-- Party Overlay Exp Gained Animation will now display the amount of EXP the Pokémon gained
-- Added a toast to notify players of how they can scroll through their party. Did you know you can hold R and scroll instead of using arrow keys??!
-- Added a new layer property that makes a layer scroll in a direction. "scrolling": {"speedU": 0.1, "speedV": 0.1}
-- Added missing crops to Botany Pots integration
-- Added a way to obtain Porygon by inserting the Upgrade or Dubious Disc into a data monitor
-- Added a new `cobblemon:structure`, which is a feature without any restrictions allowing the Builders to place certain structures in much more specific manner.
-- Added Configs for Infinite Use TMs and Unlocking all TMs
-- Added Type Gem blocks
-- Added Type Gem Clusters
-- Added TMs
-- Added TM Machine
-- Added Deepslate Core Block
-- Added /givetm Command
-- Added advancement triggers for learning TMs: `cobblemon:has_learn_specific_tm` (per-TM), `cobblemon:has_learn_all_tm` (all TMs learned), and `cobblemon:tms_learned` (count-based), backed by a new `totalTMLearnedCount` on player advancement data.
-- Added `cobblemon:catch_alpha_pokemon` advancement trigger and `totalAlphaCaptureCount` tracking for capturing Alpha Pokémon.
-- Added Move Dex to Pokédex
-- Added the Habitat Block, a spawner block for servers and adventure maps that controls spawning in an area.
-- Added Disk Rack for storing disks and being an audio sequencer for Noteblocks
-- Added intrinsic scaling to all Pokémon (+-5%). Some rendering cases, such as shoulder mounting, revert to 1.0 scaling to preserve animation accuracy.
-- Added scaling to "baby" Pokémon (smaller (-20%) at level 1 → normally sized at level 10)
-- Added conditional seats for riding. Seats can be gated by molang such as "is_alpha".
 - Added Alpha Pokémon
-    - Added alpha scaling (alphas are larger than their normal counterparts)
-    - Alphas will always lead herds and will spawn in herds
-    - Alphas spawn with two random TM moves from their learnset
-    - Alpha Pokémon will always defend themselves from players that attack them
-    - Added alpha level matching and stat boost (based on level)
-    - Added pitch-down and reverb to alpha cries
-    - Added alpha Pokémon bait effect
-    - Added alpha eye rendering including eye overlay, bloom, eye trail, and particles.
-- Added cobweb block slowness immunity for spider Pokémon
-- Added 49 new habitat structures. 34 as typical Minecraft structures and 15 as structures that get placed as biome features to allow for more natural placement in generation. Structures placed as biome features will not be able to be located with the `/locate structure` command.
-- Vanilla village house template pools have been adjusted to account for the new abandoned village structure habitat. Weights have changed within the JSON file for every piece to ensure too many habitats don't generate in a single village.
+  - Alpha Pokémon are bigger, stronger, and more aggressive than regular Pokémon.
+  - They are also scarier.
+  - They always know a TM move and will adapt to be stronger than your party.
+  - Alphas will always lead herds and spawn in herds
+- Added alpha Pokémon attraction bait effect to Hopo Berries.
+- Added intrinsic scaling to all Pokémon (anywhere from 5% smaller to 5% bigger than normal). Some cases, such as shoulder mounting, will not scale so that the shoulder animations don't look silly.
+- Added scaling to "baby" Pokémon (10% smaller at level 1 → normally sized at level 10).
+- Added TMs.
+  - Added TM Machine. TMs are made from elemental type gems, and their recipes are unlocked by having Pokémon that know the move.
+  - Added config options for making TMs infinite-use and instant unlocking of all TM recipes.
+  - Added Type Gem blocks as well as crystal clusters and deepslate core blocks that are used for growing elemental type gems.
+- Added a new Starter Selection menu that looks way better.
+- Added a "Move Dex" to the Pokédex to help identify what moves a Pokémon can learn and what Pokémon can get a move.
+- Added the Habitat Block, a spawner block for servers and adventure maps that controls spawning in an area.
+- Added 49 new habitat structures. In these habitats you will find rarer Pokémon and sometimes different Pokémon will appear on different days.
+- Added a toast to notify players of how they can scroll through their party. Did you know you can hold R and scroll instead of using arrow keys? It's true!!!
+- Added a way to obtain Porygon by inserting an Upgrade or Dubious Disc into a data monitor.
+- Added Disk Rack for storing disks and being an audio sequencer for Noteblocks. What does that have to do with Pokémon? How about you mind your own business!
+- Party Overlay Exp Gained Animation will now display the amount of EXP the Pokémon gained.
+- Added missing crops to Botany Pots integration.
+- Added conditional seats for riding. Seats can be gated by Molang such as "is_alpha".
 - Added 10 new ruin structures.
-- rooted_arch_ruins & crumbling_arch_ruins have been transferred over to biome features, allowing for better placement in generation.
-- All ruin structures that did not generate with a gimmighoul/gilded chest before will now generate with one.
-- All ruin structures gilded chest loot tables have been updated to include a guaranteed TM not learned naturally by any Pokémon through their level-up moveset. Each ruin gets its own specific TM, so you can now go hunting ruins to complete your move dex!
-- All fossil structures have been transferred over to biome features, allowing for better placement in generation.
-- The prehistoric_underwater_fissure & prehistoric_submerged_impact fossil structures now use the biome tag `#cobblemon:is_temperate_ocean`.
-- Gimmighoul towers now generate at ground level rather than sinking one block into the ground.
-- A new shipwreck cove structure called the "magma_shipwreck_cove" has been added.
-- Shipwreck coves now generate slightly more frequently.
-- Added equipment loot tables for shipwreck cove enemies.
-- Maps from abandoned fishing boats leading to shipwreck coves now will skip explored chunks, allowing the player to find more shipwreck coves easier.
-- The lush shipwreck cove's phantom mob spawner has been replaced with breezes.
-- The lush shipwreck cove structure itself has been slightly cleaned up to be less noisy with the blocks it is built out of.
-- All shipwreck coves' spawners have been adjusted to give compatible mobs enchanted iron or diamond armour and weapons while in its ominous state. The armour given to the mobs will also use the automaton trim. We upped the difficulty because it was too easy now that your Pokémon can fight for you.
-- One TM of the elemental hyper beams has been added as guaranteed loot to the main treasure chest in every shipwreck cove. (Magma cove gets blast burn, lush cove gets frenzy plant, and submerged cove gets hydro cannon)
+- Added a new shipwreck cove structure called the Magma Shipwreck Cove.
 - Added 7 new advancements
 - Pressing the inventory key now closes the Pokémon interact wheel GUI
 - Pokémon cries now play when clicking Pokémon in the summary screen.
-- Pressing the Summary key while either the starter selection or summary screen are open now closes those screens
-- Ice type Pokémon are now immune to Packed Snow
-- Held item visibility can now be controlled by the held_item_visible command argument.
+- Held item visibility can now be controlled by the `held_item_visible` command argument.
+- Added config option to disable Pokémon spawning on a per-world basis.
+- Added config options to award experience to fainted Pokémon for opponents they helped defeat (`awardExperienceToFaintedPokemon`) and to still award experience for defeated enemies even after battle loss/forfeit (`awardExperienceOnBattleLoss`)
+- Added /givetm command
+- Added advancement triggers for learning TMs: `cobblemon:has_learn_specific_tm` (per-TM), `cobblemon:has_learn_all_tm` (all TMs learned), and `cobblemon:tms_learned` (count-based), backed by a new `totalTMLearnedCount` on player advancement data.
+- Added `cobblemon:catch_alpha_pokemon` advancement trigger and `totalAlphaCaptureCount` stat for captured Alpha Pokémon.
 
 ### New rideable Pokémon
 - Crobat
@@ -265,12 +243,22 @@
 ### Changes
 - Stat increase and decrease particles have been changed, with the addition of alpha boost particles. 
 - Dragonite's mailbag cosmetic can now also be obtained with a chest in the cosmetic slot
-- Adjusted Croagunk's walkspeed
-- Adjusted Aerodactyl's walkspeed
-- Sharp Beak can now be crafted
-- Metal Alloy can now be crafted
-- Ability Capsules can now be brewed
-- Using an Ability Capsule will now return an Empty Bottle
+- Adjusted the walk speed for Croagunk and Aerodactyl.
+- Sharp Beak can now be crafted using bones and Flying Gems.
+- Metal Alloy can now be crafted using iron and Thunder Stones.
+- Ability Capsules can now be brewed from Medicinal Brew and Dragon Breath.
+- Using an Ability Capsule will now return an Empty Bottle.
+- Rooted Arch Ruins, Crumbling Arch Ruins, and all fossil structures have been improved so that they generate more naturally in terrain.
+- All ruin structures that did not generate with a gimmighoul/gilded chest before will now generate with one.
+- All ruin structures gilded chest loot tables have been updated to include a guaranteed TM not learned naturally by any Pokémon through their level-up moveset. Each ruin gets its own specific TM, so you can now go hunting ruins to complete your move dex!
+- The prehistoric_underwater_fissure & prehistoric_submerged_impact fossil structures now use the biome tag `#cobblemon:is_temperate_ocean`.
+- The lush shipwreck cove's phantom mob spawner has been replaced with breezes.
+- Gimmighoul towers now generate at ground-level rather than sinking one block into the ground.
+- Shipwreck coves now generate slightly more frequently.
+- Added equipment loot tables for shipwreck cove enemies.
+- Maps from abandoned fishing boats leading to shipwreck coves now will skip explored chunks, allowing the player to find more shipwreck coves easier.
+- All shipwreck coves' spawners have been adjusted to give compatible mobs enchanted iron or diamond armour and weapons while in its ominous state. The armour given to the mobs will also use the automaton trim. We upped the difficulty because it was too easy now that your Pokémon can fight for you.
+- One TM of the elemental hyper beams has been added as guaranteed loot to the main treasure chest in every shipwreck cove. (Magma Cove gets Blast Burn, Lush Cove gets Frenzy Plant, and Submerged Cove gets Hydro Cannon)
 - The following items can now be obtained by brushing the following Pokémon:
   - Pink Wool - Wigglytuff
   - White Wool - Swablu, Altaria
@@ -279,14 +267,13 @@
 - The following items can now be obtained by evolving the following Pokémon into any of their evolutions:
   - Turtle Scute - Squirtle, Wartortle, Turtwig, Grotle, Tirtouga, Chewtle
   - Shed Shell - Metapod, Kakuna, Ekans, Paras, Venonat, Krabby, Scyther, Kabuto, Dratini, Dragonair, Ledyba, Spinarak, Yanma, Pineco, Dunsparce, GLigar, Pupitar, Treecko, Grovyle, Silcoon, Cascoon, Surskit, Nincada, Trapinch, Vibrava, Corphish, Anorith, Bagon, Shelgon, Kricketot, Burmy, Combee, Skorupi, Swadloon, Whirlipede, Dwebble, Scraggy, Karrablast, Joltik, Larvesta, Spewpa, Clauncher, Helioptile, Charjabug, Crabrawler, Cutiefly, Dewpider, Salandit, Wimpod, Poipole, Sobble, Drizzile, Dottler, Silicobra, Toxel, Sizzlipede, Snom, Tarountula, Nymble, Rellor
-- Saccharine Leaves now drop Tart, Sweet, or Syrupy Apples, depending on their honey coating stage, instead of vanilla Apples
-- Fixed the height of the Tumblestone Bud items when held in hand, placed on head, viewed in a GUI, and placed in an Item Frame
-- Refactored all advancements, removing several deemed unnecessary. Due to this refactor, all previously obtained advancements will be reset besides the root (for picking a starter Pokémon). We are sorry for the inconvience, but it makes the tab cleaner and simplifies future advancements.
-- Restructured Botany Pots integration folder structure
-- Decrease the default pastured mon wander radius to 32.
+- Saccharine Leaves now drop Tart, Sweet, or Syrupy Apples, depending on their honey coating stage, instead of vanilla Apples.
+- Fixed the height of the Tumblestone Bud items when held in hand, placed on head, viewed in a GUI, and placed in an Item Frame.
+- Refactored all advancements, removing several deemed unnecessary. Due to this cleanup, all previously obtained advancements will be reset besides the root (for picking a starter Pokémon). This sucks, and we're sorry. We had to do this eventually so better now than later.
+- Decrease the default pastured wander radius to 32 blocks.
 - Factor in the weight of Pokémon when calculating pushing forces between hitboxes.
-- Remade the Starter Selection Screen with new assets
 - Refactored berry trees to be less impactful on TPS (more performant)
+- Indexed party/PC stores by UUID so lookups no longer scan the whole store, reducing MSPT with many pastured Pokémon
 - Changed the bait effects of the following items: (Vanilla) Sweet & Glow Berries, Golden & Enchanted Golden Apples (Cobblemon) Custap, Eggant, Hopo & Micle Berries, Sweet Hearts
 - Wild Pokémon now reliably have at least one offensive move if they can have offensive moves at that level.
 - Data Monitor can accept Disks (TMs, Music Disks, Upgrade, Dubious Disk, etc.) to change what's being displayed on the screen
@@ -326,6 +313,9 @@
 - Updated Pokédex Screens item tag to support tagged variants of Redstone and Glowstone Dust
 - Sounds for interacting with various Cobblemon blocks now play from the centre of the block, rather than the corner
 - The `/pc` command no longer plays PC activation sounds
+- Pressing the Summary key while either the starter selection or summary screen are open now closes those screens.
+- Ice type Pokémon are now immune to Packed Snow.
+- Added cobweb block slowness immunity for spider Pokémon
 
 ### Fixes
 - Fixed Blitzle's base scale being `1` rather than the intended `0.8`
@@ -398,6 +388,11 @@
 - Fixed an issue where certain Sinister Tea seasonings were only applying as instant effects and would not apply over time
 - Long config option labels now scroll instead of overflowing
 - Fixed some z-fighting and clipping on Dewott and Hisui Bias Dewott
+- Eggant Berries can now be composted properly on NeoForge
+- Composting chances are now the same on NeoForge as on Fabric
+- Fixed problem where furnaces which had smelted Revival Herbs into Heal Powder in older versions would glitch out on trying to get the experience out of the block
+- Fixed the Battle AI not recognizing Surging Strikes as a multistrike move
+- Fixed some z-fighting and clipping on Dewott
 - Fixed multiple Pokémon having their cries missing
 - Fixed Tentacool not using its swim animation when on water surface
 - Fixed Eevee using its left shoulder pose when in battle
@@ -410,6 +405,13 @@
 - Fixed Torkoal's walk speed not matching its animation. He will no longer move faster than Bunnelby and Buneary
 - Fixed Lanturn t-posing due to missing ground walk and sleep animations. 
 - Fixed Oshawott and Dewott using their sleep animation in unintended scenarios. 
+- Fixed Dudunsparce and Maushold always having the same form instead of having the 1 in 100 chance of being different.
+- Fixed bird mounts rapidly switching between their flying and gliding animations when flying at low speed
+- Fixed some battles being startable with fainted Pokémon in the initial sendout. 
+- Fixed random gender selection for forms with strict gender divides (such as Meowstic and Oinkologne) never choosing female (that's sexist).
+- Fixed the "Press R to battle" prompt not disappearing after you finish your first battle, at least until you relogged.
+- Fixed the composter block being listed as "composer" in the cosmetic items species feature
+- Fixed Castform's forms being tagged as introduced in generation 4 instead of 3
 
 ### Developer
 - Added `PokeSnackSpawnerFactory` which allows influence registration on PokeSnack encounters
@@ -449,6 +451,7 @@
 - Added a q.failed function to move action effects.
 - Herd spawned Pokémon have their levels controlled differently. The `levelRange` property now acts as a clamp instead of a filter, with a new `herdLevelRange` property to do the filter behaviour.
 - `q.sound` now accepts three parameters (sound event, volume and pitch) instead of just the sound event and pitch.
+- Added a new layer property that makes a layer scroll in a direction. "scrolling": {"speedU": 0.1, "speedV": 0.1}
 
 ### Particles
 
@@ -529,3 +532,4 @@
   - Simplified Chinese
   - Traditional Chinese
   - Korean
+  - Russian

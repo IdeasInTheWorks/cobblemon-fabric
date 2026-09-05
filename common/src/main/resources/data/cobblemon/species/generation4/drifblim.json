@@ -91,7 +91,7 @@
       "willDefendOwner": true
     },
     "herd": {
-      "maxSize": "7",
+      "maxSize": 7,
       "toleratedLeaders": [
         {
           "pokemon": "drifblim",
@@ -200,7 +200,6 @@
     "tm:painsplit",
     "tm:payback",
     "tm:phantomforce",
-    "tm:powershift",
     "tm:protect",
     "tm:psybeam",
     "tm:psychic",
