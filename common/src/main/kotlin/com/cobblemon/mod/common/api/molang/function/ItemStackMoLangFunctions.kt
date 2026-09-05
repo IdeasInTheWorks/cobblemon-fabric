@@ -54,14 +54,14 @@ object ItemStackMoLangFunctions : AbstractMoLangFunctionHolder<Pair<ItemStack, R
         }
         functions["is_food"] = { DoubleValue(stack.has(DataComponents.FOOD)) }
         functions["is_enchanted"] = { DoubleValue(stack.hasFoil()) }
-        functions["has_enchantment"] = put@{ params ->
+        functions["has_enchantment"] = hasEnchantment@{ params ->
             val enchantmentId = params.getString(0).asIdentifierDefaultingNamespace()
             val minLevel = params.getIntOrNull(1) ?: 1
             val enchantmentRegistry = registryAccess.registryOrThrow(Registries.ENCHANTMENT)
             val holder =
-                enchantmentRegistry.getHolder(enchantmentId).orElse(null) ?: return@put DoubleValue.ZERO
+                enchantmentRegistry.getHolder(enchantmentId).orElse(null) ?: return@hasEnchantment DoubleValue.ZERO
             val level = EnchantmentHelper.getItemEnchantmentLevel(holder, stack)
-            return@put DoubleValue(level >= minLevel)
+            DoubleValue(level >= minLevel)
         }
 
         return functions

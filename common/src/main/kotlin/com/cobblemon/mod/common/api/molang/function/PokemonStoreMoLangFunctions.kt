@@ -59,7 +59,7 @@ object PokemonStoreMoLangFunctions : AbstractMoLangFunctionHolder<PokemonStore<*
             val pokemon = store.find { it.uuid == id } ?: return@removeById DoubleValue.ZERO
             DoubleValue(store.remove(pokemon))
         }
-        functions["average_level"] = averageLevel@{ _ ->
+        functions["average_level"] = averageLevel@{
             var numberOfPokemon = 0
             var totalLevel = 0
             for (pokemon in store) {
