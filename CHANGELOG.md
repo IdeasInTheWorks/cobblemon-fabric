@@ -1,6 +1,14 @@
 # Changelog
 ## [1.8.0 (September Xth, 2026)](#1-8-0)
 
+### TEST
+### Pokémon Added
+#### Generation 4
+- Snover
+- Abomasnow
+
+## [1.8.0 (MONTH Xth, 2026)](#1-8-0)
+
 ### Additions
 - Added Alpha Pokémon
   - Alpha Pokémon are bigger, stronger, and more aggressive than regular Pokémon.
