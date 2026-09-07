@@ -1,6 +1,9 @@
 # Changelog
 ## [1.8.0 (September Xth, 2026)](#1-8-0)
 
+### Fixes
+- Fixed Ampharos' eyes not emitting particles
+
 ### TEST
 ### Pokémon Added
 #### Generation 4
