@@ -15,6 +15,7 @@
 
 ### Fixes
 - Fixed the `stat_compare` and `stat_equal` evolution requirements crashing the server when given `special_attack` or `special_defence`, and made them treat any non-permanent stat as a failed requirement instead of crashing
+- Fixed NPCs getting their own TM progress file.
 
 ### Developer
 
