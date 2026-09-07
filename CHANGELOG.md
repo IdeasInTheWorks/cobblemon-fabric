@@ -1,6 +1,9 @@
 # Changelog
 ## [1.x.x (MONTH Xth, 2026)](#1-x-x)
 
+### Fixes
+- Fixed Ampharos' eyes not emitting particles
+
 ### TEST
 ### Pokémon Added
 #### Generation 4
