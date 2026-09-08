@@ -10,6 +10,11 @@
 - Snover
 - Abomasnow
 
+#### Generation 7
+- Grubbin
+- Charjabug
+- Vikavolt
+
 ## [1.8.0 (MONTH Xth, 2026)](#1-8-0)
 
 ### Additions
