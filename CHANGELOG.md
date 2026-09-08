@@ -3,7 +3,7 @@
 
 ### Fixes
 - Fixed Ampharos' eyes not emitting particles
-
+- Fixed Alolan Raticate's cry not playing
 ### TEST
 ### Pokémon Added
 #### Generation 4
