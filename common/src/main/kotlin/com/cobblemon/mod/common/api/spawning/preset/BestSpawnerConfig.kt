@@ -40,11 +40,11 @@ class BestSpawnerConfig {
     )
 
     val worldBuckets = mutableMapOf(
-        "common" to 94F,
+        "common" to 94.05F,
         "uncommon" to 5F,
         "rare" to 0.5F,
         "ultra-rare" to 0.2F,
-        "boss" to 0.3F,
+        "boss" to 0.25F,
     )
 
     val fishingBuckets = mutableMapOf(
