@@ -5351,7 +5351,7 @@
     "item.cobblemon.mild_mint.tooltip": "Altera os atributos de um Pokémon para uma natureza Mansa",
     "cobblemon.snapshots.warning.description": "Você está usando uma snapshot %s do Cobblemon. Os recursos nesta versão ainda estão em desenvolvimento e podem não ser seguros para usar em seus mundos. Deseja continuar ciente desses riscos?",
     "item.cobblemon.npc_editor": "Cartão de Treinador NPC",
-    "item.cobblemon.link_cable.tooltip": "Evolui Pokémon que exigem troca",
+    "item.cobblemon.link_cable.tooltip": "Permite a evolução de um Pokémon que requer troca",
     "item.cobblemon.dragon_scale.tooltip": "Evolui Seadra para Kingdra quando segurado durante a troca",
     "item.cobblemon.kings_rock.tooltip_1": "Quando o portador inflige dano com sucesso, o alvo pode hesitar",
     "item.cobblemon.kings_rock.tooltip_2": "Evolui Poliwhirl para Politoed e Slowpoke para Slowking quando segurado durante a troca",
