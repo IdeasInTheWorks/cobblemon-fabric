@@ -29,6 +29,7 @@
 - Fixed Rowap and Jacoba berries not correctly altering Pokémon sizes when used as bait
 - Fixed Ampharos' eyes not emitting particles
 - Fixed Alolan Raticate's cry not playing
+- Fixed unintentional watermelon cosmetic for Hisuian Electrode. 
 
 ### Developer
 
