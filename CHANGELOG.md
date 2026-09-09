@@ -30,6 +30,7 @@
 - Fixed Ampharos' eyes not emitting particles
 - Fixed Alolan Raticate's cry not playing
 - Fixed unintentional watermelon cosmetic for Hisuian Electrode. 
+- Fixed Blastoise having an unintentional passenger seat
 
 ### Developer
 
