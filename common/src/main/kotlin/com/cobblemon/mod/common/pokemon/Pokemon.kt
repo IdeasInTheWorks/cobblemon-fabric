@@ -599,7 +599,7 @@ open class Pokemon : ShowdownIdentifiable {
     var scaleModifier: Float = 1F
         set(value) {
             if (field != value) {
-                field = value
+                field = value.coerceAtLeast(0.05F)
                 onChange(ScaleModifierUpdatePacket({ this }, value))
             }
         }
