@@ -15,6 +15,10 @@
 - Charjabug
 - Vikavolt
 
+#### Generation 9
+- Greavard
+- Houndstone
+
 ## [1.8.0 (MONTH Xth, 2026)](#1-8-0)
 
 ### Additions
