@@ -1,5 +1,5 @@
 # Changelog
-## [1.x.x (MONTH Xth, 2026)](#1-x-x)
+## [1.8.1 (MONTH Xth, 2026)](#1-8-1)
 
 ### Additions
 
@@ -31,6 +31,7 @@
 - Fixed Alolan Raticate's cry not playing
 - Fixed unintentional watermelon cosmetic for Hisuian Electrode. 
 - Fixed Blastoise having an unintentional passenger seat
+- Fixed odd NeoForge crash due to a dependency being outdated. It will now flag the dependency for being outdated correctly.
 
 ### Developer
 
