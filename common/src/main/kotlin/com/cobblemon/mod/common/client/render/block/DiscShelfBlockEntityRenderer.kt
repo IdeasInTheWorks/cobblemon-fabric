@@ -37,6 +37,9 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
     private val slotHeightPixels = 2
     private val textureSize = 16f
 
+    private val slotUMax = slotWidthPixels / textureSize
+    private val slotVMax = slotHeightPixels / textureSize
+
     private val leftMargin = 1f
     private val rightMargin = 1f
     private val topMargin = 1f
@@ -176,13 +179,15 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
         val g = (gBase * slotBrightnessMultiplier).coerceIn(0f, 1f)
         val b = (bBase * slotBrightnessMultiplier).coerceIn(0f, 1f)
 
-        consumer.addVertex(matrix, 0f, 0f, 0f).setColor(r, g, b, a).setUv(0f, 1f)
+        // The quad faces -Z, so a viewer looking at it sees +X on their left.
+        // U runs from slotUMax at x = 0 to 0 at x = width so the art is not mirrored.
+        consumer.addVertex(matrix, 0f, 0f, 0f).setColor(r, g, b, a).setUv(slotUMax, slotVMax)
                 .setUv1(0, 0).setUv2(light and 0xFFFF, light shr 16).setNormal(0f, 0f, -1f)
-        consumer.addVertex(matrix, 0f, height, 0f).setColor(r, g, b, a).setUv(0f, 0f)
+        consumer.addVertex(matrix, 0f, height, 0f).setColor(r, g, b, a).setUv(slotUMax, 0f)
                 .setUv1(0, 0).setUv2(light and 0xFFFF, light shr 16).setNormal(0f, 0f, -1f)
-        consumer.addVertex(matrix, width, height, 0f).setColor(r, g, b, a).setUv(1f, 0f)
+        consumer.addVertex(matrix, width, height, 0f).setColor(r, g, b, a).setUv(0f, 0f)
                 .setUv1(0, 0).setUv2(light and 0xFFFF, light shr 16).setNormal(0f, 0f, -1f)
-        consumer.addVertex(matrix, width, 0f, 0f).setColor(r, g, b, a).setUv(1f, 1f)
+        consumer.addVertex(matrix, width, 0f, 0f).setColor(r, g, b, a).setUv(0f, slotVMax)
                 .setUv1(0, 0).setUv2(light and 0xFFFF, light shr 16).setNormal(0f, 0f, -1f)
     }
 
