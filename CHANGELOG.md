@@ -32,6 +32,7 @@
 - Fixed odd NeoForge crash due to a dependency being outdated. It will now correctly flag the dependency for being outdated.
 - Fixed several incorrect light-based spawning conditions for ghosts and bugs. 
 - Removed unused, placeholder habitat pools.
+- Fixed Pokémon on shoulders not animating if they are visibly holding a held item.
 
 ### Developer
 
