@@ -40,7 +40,13 @@
 - Fixed odd NeoForge crash due to a dependency being outdated. It will now correctly flag the dependency for being outdated.
 - Fixed several incorrect light-based spawning conditions for ghosts and bugs. 
 - Removed unused, placeholder habitat pools.
-- Fixed Mantyke, Mantine, and Quaxly getting stuck in a recoil 'expression' during battles due to a having an expression mistakenly assigned as a recoil animation. 
+- Fixed Mantyke, Mantine, and Quaxly getting stuck in a recoil 'expression' during battles due to a having an expression mistakenly assigned as a recoil animation.
+- Fixed Lycanroc's head movement
+- Added head movement to Archaludon
+- Fixed Duraludon line not having their sleep animations
+- Fixed Diglett line not having their faint animations
+- Fixed Kingambit moving its legs while walking
+
 
 ### Developer
 
