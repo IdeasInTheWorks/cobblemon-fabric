@@ -49,7 +49,11 @@
 - Fixed Rowap and Jacoba berries not correctly altering Pokémon sizes when used as bait
 - Fixed Ampharos' eyes not emitting particles
 - Fixed Alolan Raticate's cry not playing
-
+- Fixed Lycanroc's head movement
+- Added head movement to Archaludon
+- Fixed Duraludon line not having their sleep animations
+- Fixed Diglett line not having their faint animations
+- Fixed Kingambit moving its legs while walking
 ### Developer
 
 ### Molang & Datapacks
