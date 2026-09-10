@@ -1,5 +1,5 @@
 # Changelog
-## [1.x.x (MONTH Xth, 2026)](#1-x-x)
+## [1.8.1 (MONTH Xth, 2026)](#1-8-1)
 
 ### Additions
 
@@ -29,6 +29,7 @@
 - Fixed Rowap and Jacoba berries not correctly altering Pokémon sizes when used as bait
 - Fixed Ampharos' eyes not emitting particles
 - Fixed Alolan Raticate's cry not playing
+- Fixed odd NeoForge crash due to a dependency being outdated. It will now flag the dependency for being outdated correctly.
 
 ### Developer
 
