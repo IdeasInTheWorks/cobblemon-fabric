@@ -30,6 +30,7 @@
 - Updated various recipes to display in Recipe Groups within the Recipe Book
 - Updated most recipes to display more logically/consistently within the Recipe Book's categories
 - Item evolutions now unlock **all** unlocked evolutions whose requirements are met instead of stopping after the first.
+- Item evolutions now unlock **all** locked evolutions whose requirements are met instead of stopping after the first.
 
 ### Fixes
 - Correctly grants "They're Minerals!" advancement when planting a type gem
