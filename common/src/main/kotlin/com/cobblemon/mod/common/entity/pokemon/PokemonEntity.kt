@@ -1486,14 +1486,15 @@ open class PokemonEntity(
             val context = ItemInteractionEvolution.ItemInteractionContext(stack, player.level())
             pokemon.lockedEvolutions
                     .filterIsInstance<ItemInteractionEvolution>()
-                    .forEach { evolution ->
-                        if (evolution.attemptEvolution(pokemon, context)) {
+                    // we unlock all evolutions that depend on this single item
+                    .map { evolution -> return@map evolution.attemptEvolution(pokemon, context) }.let {
+                        if (it.contains(true)) { // if any of the evolutions were unlocked, we take the item
                             stack.consume(1, player)
                             this.level().playSoundServer(
-                                    position = this.position(),
-                                    sound = CobblemonSounds.ITEM_USE,
-                                    volume = 1F,
-                                    pitch = 1F
+                                position = this.position(),
+                                sound = CobblemonSounds.ITEM_USE,
+                                volume = 1F,
+                                pitch = 1F
                             )
                             return true
                         }
