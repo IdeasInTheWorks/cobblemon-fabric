@@ -18,17 +18,18 @@ import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.RandomSource
 import net.minecraft.util.StringRepresentable
-import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.*
-import net.minecraft.world.level.block.*
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.CropBlock
+import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf
 import net.minecraft.world.level.block.state.properties.EnumProperty
 import net.minecraft.world.level.block.state.properties.IntegerProperty
-import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
 
@@ -102,28 +103,16 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
         return blockState.isAir || blockState.`is`(this.terrainSeedType.getCropBlock())
     }
 
-    override fun updateShape(state: BlockState, direction: Direction, neighborState: BlockState, level: LevelAccessor, pos: BlockPos, neighborPos: BlockPos): BlockState {
-        val doubleBlockHalf = state.getValue(DoublePlantBlock.HALF) as DoubleBlockHalf
-        if (direction.getAxis() !== Direction.Axis.Y || doubleBlockHalf == DoubleBlockHalf.LOWER != (direction == Direction.UP) || neighborState.`is`(this) && neighborState.getValue(DoublePlantBlock.HALF) != doubleBlockHalf
-        ) {
-            return if (doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canSurvive(level, pos)) Blocks.AIR.defaultBlockState() else super.updateShape(state, direction, neighborState, level, pos, neighborPos)
-        } else {
-            return Blocks.AIR.defaultBlockState()
-        }
-    }
-
-    override fun playerWillDestroy(world: Level, pos: BlockPos, state: BlockState, player: Player): BlockState {
-        if (!world.isClientSide && player?.isCreative == true) {
-            var blockPos: BlockPos = BlockPos.ZERO
-            var blockState: BlockState = state
-            val part = state.getValue(DoublePlantBlock.HALF)
-            if (part == DoubleBlockHalf.UPPER && world.getBlockState(pos.below().also { blockPos = it }).also { blockState = it }.`is`(state.block) && blockState.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER) {
-                val blockState2 = if (blockState.fluidState.`is`(Fluids.WATER)) Blocks.WATER.defaultBlockState() else Blocks.AIR.defaultBlockState()
-                world.setBlock(blockPos, blockState2, UPDATE_ALL or UPDATE_SUPPRESS_DROPS)
-                world.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, blockPos, getId(blockState))
-            }
-        }
-        return super.playerWillDestroy(world, pos, state, player)
+    override fun updateShape(
+        state: BlockState,
+        direction: Direction,
+        neighborState: BlockState,
+        world: LevelAccessor,
+        pos: BlockPos,
+        neighborPos: BlockPos
+    ): BlockState {
+        if (!state.canSurvive(world, pos)) return Blocks.AIR.defaultBlockState()
+        return state
     }
 
     override fun isValidBonemealTarget(level: LevelReader, pos: BlockPos, state: BlockState): Boolean {
