@@ -18,18 +18,19 @@ import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.RandomSource
 import net.minecraft.util.StringRepresentable
+import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
+import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.*
-import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.Blocks
-import net.minecraft.world.level.block.CropBlock
-import net.minecraft.world.level.block.SoundType
+import net.minecraft.world.level.block.*
+import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf
 import net.minecraft.world.level.block.state.properties.EnumProperty
 import net.minecraft.world.level.block.state.properties.IntegerProperty
+import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
 
@@ -103,16 +104,12 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
         return blockState.isAir || blockState.`is`(this.terrainSeedType.getCropBlock())
     }
 
-    override fun updateShape(
-        state: BlockState,
-        direction: Direction,
-        neighborState: BlockState,
-        world: LevelAccessor,
-        pos: BlockPos,
-        neighborPos: BlockPos
-    ): BlockState {
-        if (!state.canSurvive(world, pos)) return Blocks.AIR.defaultBlockState()
-        return state
+    override fun updateShape(state: BlockState, direction: Direction, neighborState: BlockState, world: LevelAccessor, pos: BlockPos, neighborPos: BlockPos): BlockState {
+        return if (state.getValue(AGE) >= 2) {
+            super.updateShape(state, direction, neighborState, world, pos, neighborPos)
+        } else {
+            if (state.canSurvive(world, pos)) state else Blocks.AIR.defaultBlockState()
+        }
     }
 
     override fun isValidBonemealTarget(level: LevelReader, pos: BlockPos, state: BlockState): Boolean {
@@ -233,6 +230,44 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
 
         companion object {
             val CODEC = StringRepresentable.fromEnum(::values)
+        }
+    }
+
+    override fun playerWillDestroy(level: Level, pos: BlockPos, state: BlockState, player: Player): BlockState {
+        if (!level.isClientSide) {
+            if (player.isCreative()) {
+                preventDropFromBottomPart(level, pos, state, player)
+            } else {
+                dropResources(state, level, pos, null as BlockEntity?, player, player.getMainHandItem())
+            }
+        }
+
+        return super.playerWillDestroy(level, pos, state, player)
+    }
+
+    override fun playerDestroy(
+        level: Level,
+        player: Player,
+        pos: BlockPos,
+        state: BlockState,
+        blockEntity: BlockEntity?,
+        tool: ItemStack
+    ) {
+        super.playerDestroy(level, player, pos, Blocks.AIR.defaultBlockState(), blockEntity, tool)
+    }
+
+    fun preventDropFromBottomPart(level: Level, pos: BlockPos, state: BlockState, player: Player?) {
+        val doubleblockhalf = state.getValue<DoubleBlockHalf?>(DoublePlantBlock.HALF) as DoubleBlockHalf
+        if (doubleblockhalf == DoubleBlockHalf.UPPER) {
+            val blockpos = pos.below()
+            val blockstate = level.getBlockState(blockpos)
+            if (blockstate.`is`(state.getBlock()) && blockstate.getValue<DoubleBlockHalf?>(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER) {
+                val blockstate1 = if (blockstate.getFluidState()
+                        .`is`(Fluids.WATER)
+                ) Blocks.WATER.defaultBlockState() else Blocks.AIR.defaultBlockState()
+                level.setBlock(blockpos, blockstate1, 35)
+                level.levelEvent(player, 2001, blockpos, getId(blockstate))
+            }
         }
     }
 }
