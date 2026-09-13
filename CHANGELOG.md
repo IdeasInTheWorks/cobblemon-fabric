@@ -1,5 +1,5 @@
 # Changelog
-## [1.x.x (MONTH Xth, 2026)](#1-x-x)
+## [1.8.2 (MONTH xth, 2026)](#1-8-2)
 
 ### Additions
 
@@ -7,9 +7,13 @@
 
 ### Pokémon Added
 
+#### Regional Forms
+
 ### Model updates for the following Pokémon
 
 ### Animation updates for the following Pokémon
+
+#### Added sounds to the following moves
 
 ### Changes
 - Stat increase and decrease particles have been changed, with the addition of alpha boost particles. 
@@ -96,6 +100,8 @@
 ### Molang & Datapacks
 
 ### Particles
+
+#### New Move Animations
 
 ### Localization
 - Updated translations for:
