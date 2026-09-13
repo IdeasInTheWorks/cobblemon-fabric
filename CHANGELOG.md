@@ -4,6 +4,7 @@
 ### Fixes
 - Fixed Ampharos' eyes not emitting particles
 - Fixed Alolan Raticate's cry not playing
+- Removed unnecessary conditions for Mimikyu's standing pose. Hopefully fixes the rare instance of it using its shoulder animations during battle in multiplayer scenarios.  
 ### TEST
 ### Pokémon Added
 #### Generation 4
