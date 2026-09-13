@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "cobblemon:pauvillea",
-    "cobblemon:wisteria"
+    "#cobblemon:oricorio_flowers"
   ]
 }

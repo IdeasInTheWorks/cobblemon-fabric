@@ -2,7 +2,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"2": "cobblemon:block/flowers/wistensu_stem",
-		"particle": "cobblemon:block/flowers/wistensu_stem"
+		"particle": "cobblemon:block/flowers/wistensu_particle"
 	},
 	"elements": [
 		{
