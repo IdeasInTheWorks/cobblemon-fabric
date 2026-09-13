@@ -12,6 +12,7 @@
 ### Animation updates for the following Pokémon
 
 ### Changes
+- Make ride rotations less jittery in multiplayer.
 
 ### Fixes
 - Fixed the `stat_compare` and `stat_equal` evolution requirements crashing the game when given `special_attack` or `special_defence`, and made them treat any non-permanent stat as a failed requirement instead of crashing.
