@@ -73,9 +73,18 @@ fun simpleSpringDamperQuat(
 ) {
     val y = halflifeToDamping(halflife) / 2.0f
 
+    // Quaternions have double cover q and -q represent the same rotation.
+    // so an accidentally rotation the long way could be calculated.
+    // account for that specifically
+    val goal = if (spring.quat.dot(goalQuat) < 0f) {
+        Quaternionf(-goalQuat.x, -goalQuat.y, -goalQuat.z, -goalQuat.w)
+    } else {
+        goalQuat
+    }
+
     // Gather the rotation from the goal to the current
-    val goalToCurrQuat = Quaternionf(spring.quat).mul(Quaternionf(goalQuat).conjugate())
-    
+    val goalToCurrQuat = Quaternionf(spring.quat).mul(Quaternionf(goal).conjugate())
+
     val j0 = Vector3f()
     goalToCurrQuat.toScaledAngleAxis(j0)
 
@@ -86,12 +95,11 @@ fun simpleSpringDamperQuat(
     val scaledAxis = Vector3f(j0).add(Vector3f(j1).mul(dt)).mul(eydt)
 
     spring.quat.setFromScaledAngleAxis(scaledAxis)
-    spring.quat.mul(goalQuat)
+    spring.quat.mul(goal)
 
     spring.angVel.sub(j1.mul(y * dt))
     spring.angVel.mul(eydt)
 }
-
 
 /**
 * Below is essentially the same code as found here: https://github.com/orangeduck/Spring-It-On/blob/main/inertialeasing.c
