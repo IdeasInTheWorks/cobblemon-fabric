@@ -29,6 +29,7 @@
 ### Changes
 
 ### Fixes
+- Correctly grants "They're Minerals!" advancement when planting a type gem
 
 ### Developer
 
