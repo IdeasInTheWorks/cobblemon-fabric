@@ -1,5 +1,4 @@
 - Wistensu Roots
-- Sinister Tea effects for all 8 flowers?
 - (Maybe) Get Oricorio Flowers Obtainable
 - Ensure everything is tagged correctly
 - Sniffers digging up Terrain Seeds (potentially can not do, but worth looking at still)
