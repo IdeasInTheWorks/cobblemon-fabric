@@ -19,6 +19,14 @@
 - Greavard
 - Houndstone
 
+### Remodels
+- Cacnea
+- Cacturne
+
+### New Animations
+- Cacnea
+- Cacturne
+
 ## [1.8.0 (MONTH Xth, 2026)](#1-8-0)
 
 ### Additions
