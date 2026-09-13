@@ -22,6 +22,8 @@
 ### Remodels
 - Cacnea
 - Cacturne
+- Binacle
+- Barbaracle
 
 ### New Animations
 - Cacnea
