@@ -1,7 +1,6 @@
 - Wistensu Roots
 - Sinister Tea effects for all 8 flowers?
 - (Maybe) Get Oricorio Flowers Obtainable
-- Terrain Plants/Seeds Block Textures
 - Ensure everything is tagged correctly
 - Sniffers digging up Terrain Seeds (potentially can not do, but worth looking at still)
 - Bright Powder needs a unique sound for application to signs (Sterr has been asked about this)
