@@ -1,5 +1,2 @@
-- Wistensu Roots
 - (Maybe) Get Oricorio Flowers Obtainable
-- Ensure everything is tagged correctly
-- Sniffers digging up Terrain Seeds (potentially can not do, but worth looking at still)
 - Bright Powder needs a unique sound for application to signs (Sterr has been asked about this)

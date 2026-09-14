@@ -20,6 +20,9 @@
     },
     "root=true,facing=down": {
       "model": "cobblemon:block/wistensu_root"
+    },
+    "root=true,facing=up": {
+      "model": "cobblemon:block/wistensu_root"
     }
   }
 }
