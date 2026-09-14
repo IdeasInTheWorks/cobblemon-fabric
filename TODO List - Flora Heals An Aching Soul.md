@@ -1,2 +1,0 @@
-- (Maybe) Get Oricorio Flowers Obtainable
-- Bright Powder needs a unique sound for application to signs (Sterr has been asked about this)
