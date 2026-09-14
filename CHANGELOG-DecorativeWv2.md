@@ -1,7 +1,8 @@
 ### Additions
 - Mint Leaves can now be placed on the ground as Leaf Litter, or in Flower Pots
 - Added Oricorio Flowers
-- Added Terrain Flowers
+- Added Terrain Plants
+- Berries can now be placed in Flower Pots
 
 ### Changes
 - Terrain Seeds can now be planted
