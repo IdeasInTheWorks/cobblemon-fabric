@@ -26,6 +26,8 @@
 - Cacturne
 - Binacle
 - Barbaracle
+- Glimmet
+- Glimmora
 
 ### New Animations
 - Cacnea
