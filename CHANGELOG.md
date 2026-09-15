@@ -30,6 +30,7 @@
 - Glimmora
 - Deerling
 - Sawsbuck (All forms)
+- Absol
 
 ### New Animations
 - Cacnea
