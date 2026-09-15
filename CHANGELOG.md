@@ -28,6 +28,8 @@
 - Barbaracle
 - Glimmet
 - Glimmora
+- Deerling
+- Sawsbuck (All forms)
 
 ### New Animations
 - Cacnea

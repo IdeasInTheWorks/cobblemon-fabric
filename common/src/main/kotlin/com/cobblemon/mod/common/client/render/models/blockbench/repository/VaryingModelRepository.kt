@@ -304,8 +304,6 @@ object VaryingModelRepository {
         inbuilt("sizzlipede", ::SizzlipedeModel)
         inbuilt("kleavor", ::KleavorModel)
         inbuilt("pyukumuku", ::PyukumukuModel)
-        inbuilt("deerling", ::DeerlingModel)
-        inbuilt("sawsbuck", ::SawsbuckModel)
         inbuilt("natu", ::NatuModel)
         inbuilt("xatu", ::XatuModel)
         inbuilt("milcery", :: MilceryModel)
