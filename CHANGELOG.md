@@ -15,6 +15,11 @@
 - Snover
 - Abomasnow
 
+#### Generation 5
+- Tympole
+- Palpitoad
+- Seismitoad
+
 #### Generation 6
 - Helioptile
 - Heliolisk
