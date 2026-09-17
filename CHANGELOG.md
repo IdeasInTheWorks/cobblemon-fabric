@@ -8,6 +8,7 @@
 - Fixed Rockruff line not blinking
 - Fixed Flygon sometimes using its running animation instead of walking
 - Fixed Bramblin always sleeping outside of battle
+- Fixed Dragonair using its battle idle as a normal idle
 ### TEST
 ### Pokémon Added
 #### Generation 4
