@@ -6,6 +6,7 @@
 - Fixed Alolan Raticate's cry not playing
 - Removed unnecessary conditions for Mimikyu's standing pose. Hopefully fixes the rare instance of it using its shoulder animations during battle in multiplayer scenarios.
 - Fixed Rockruff line not blinking
+- Fixed Flygon sometimes using its running animation instead of walking
 ### TEST
 ### Pokémon Added
 #### Generation 4
