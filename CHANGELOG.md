@@ -15,6 +15,10 @@
 - Snover
 - Abomasnow
 
+#### Generation 6
+- Helioptile
+- Heliolisk
+
 #### Generation 7
 - Grubbin
 - Charjabug
