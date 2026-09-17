@@ -2322,9 +2322,15 @@ open class Pokemon : ShowdownIdentifiable {
             }
         }
 
-        // Add new form's form-change moves
+        // Add new form's form-change moves, skipping any that are also a level-up move the Pokémon hasn't reached yet.
+        // E.g, Glaciate shouldn't be granted by a form change if it's also a level 80 move and this Pokémon is below level 80.
         newForm.moves.formChangeMoves.forEach { move ->
             if (this.moveSet.filterNotNull().none { it.template == move }) {
+                val requiredLevel = newForm.moves.levelUpMoves.entries.firstOrNull { move in it.value }?.key
+                if (requiredLevel != null && this.level < requiredLevel) {
+                    return@forEach
+                }
+
                 if (this.moveSet.hasSpace()) {
                     this.moveSet.add(move.create())
                 } else {
