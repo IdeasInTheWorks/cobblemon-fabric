@@ -55,6 +55,12 @@ object GeneralMoLangFunctions {
             struct.map.remove(variable)
             DoubleValue.ONE
         }
+        functions["delete_variables"] = { params ->
+            val struct = params.get<VariableStruct>(0)
+            val variable = params.getString(1)
+            struct.map.clear()
+            DoubleValue.ONE
+        }
         functions["get_variable"] = { params ->
             val struct = params.get<VariableStruct>(0)
             val variable = params.getString(1)
