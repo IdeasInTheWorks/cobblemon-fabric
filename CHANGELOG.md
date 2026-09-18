@@ -14,6 +14,9 @@
 #### Generation 4
 - Snover
 - Abomasnow
+- Burmy
+- Wormadam
+- Mothim
 
 #### Generation 5
 - Tympole
