@@ -354,7 +354,7 @@ object CobblemonFabric : CobblemonImplementation {
         reloaderFactory: (HolderLookup.Provider) -> PreparableReloadListener
     ) {
         if (type == PackType.SERVER_DATA) {
-            val resourceLoader = ResourceManagerHelper.get(PackType.CLIENT_RESOURCES)
+            val resourceLoader = ResourceManagerHelper.get(PackType.SERVER_DATA)
             resourceLoader.registerReloadListener(identifier,  { object : IdentifiableResourceReloadListener {
                 override fun reload(
                     synchronizer: PreparableReloadListener.PreparationBarrier,

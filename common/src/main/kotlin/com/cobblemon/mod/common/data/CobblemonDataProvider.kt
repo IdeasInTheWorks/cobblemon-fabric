@@ -183,11 +183,13 @@ object CobblemonDataProvider : DataProvider {
             val reloadAllowed = server()?.isReady != true
             registries
                 .filter { it.type == PackType.SERVER_DATA && (reloadAllowed || it in reloadableRegistries) }
-                .filterIsInstance<ServerJsonDataRegistry<*>>()
-                .forEach { it.reload(manager, registryAccess) }
-            registries
-                .filter { it.type == PackType.SERVER_DATA && (reloadAllowed || it in reloadableRegistries) }
-                .forEach { it.reload(manager) }
+                .forEach {
+                    if (it is ServerJsonDataRegistry<*>) {
+                        it.reload(manager, registryAccess)
+                    } else {
+                        it.reload(manager)
+                    }
+                }
         }
     }
 }
