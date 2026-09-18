@@ -9015,5 +9015,8 @@
     "cobblemon.species.alakazam-mega.desc": "Потеряв свои мышцы, истинную мощь Алаказама была высвобождена. Используя свои психические способности он может предвидеть всё.",
     "cobblemon.species.machamp-gmax.desc": "Гигантамакс энергия, текущая в его руках, придаёт его ударам силу, сравнимую с взрывом бомбы.",
     "cobblemon.ui.starter.random": "Случайный",
-    "advancements.cobblemon.obtain_tm": "Покажи, что ты можешь"
+    "advancements.cobblemon.obtain_tm": "Покажи, что ты можешь",
+    "cobblemon.ui.starter.random_description": "Случайный покемон из списка доступных вариантов. Невозможно узнать, кто им будет, пока не выбрана эта опция.",
+    "cobblemon.config.ui.world_spawning_blocklist": "Список запрещённых появлений на мир",
+    "cobblemon.config.ui.world_spawning_blocklist.tooltip": "Миры, в которых отключается принцип появления покемонов."
 }
