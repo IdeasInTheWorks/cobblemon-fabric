@@ -2920,7 +2920,7 @@
     "cobblemon.move.meteorbeam": "메테오빔",
     "cobblemon.move.meteorbeam.desc": "1턴째에 우주의 힘을 모아서 특수공격을 올리고 2턴째에 상대를 공격한다.",
     "cobblemon.move.meteormash": "코멧펀치",
-    "cobblemon.move.meteormash.desc": "혜성과 같은 펀치를 날려서 상대를 공격한다. 20%의 확률로 자신의 공격이 2랭크 오른다.",
+    "cobblemon.move.meteormash.desc": "혜성과 같은 펀치를 날려서 상대를 공격한다. 20%의 확률로 자신의 공격이 1랭크 오른다.",
     "cobblemon.move.metronome": "손가락흔들기",
     "cobblemon.move.metronome.desc": "손가락을 흔들어 자신의 뇌를 자극해서 모든 기술 중 어느 하나를 날린다.",
     "cobblemon.move.milkdrink": "우유마시기",
