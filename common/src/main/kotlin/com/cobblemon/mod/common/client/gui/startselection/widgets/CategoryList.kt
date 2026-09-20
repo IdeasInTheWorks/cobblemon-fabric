@@ -67,7 +67,7 @@ class CategoryList(
     }
 
     private fun createEntries() = categories.map { category ->
-        val pokemonCount = category.pokemon.size - 1 + if (category.randomStarter) 1 else 0
+        val pokemonCount = category.pokemon.size - if (category.randomStarter) 0 else 1
         val rows = pokemonCount / 3 + 1
         val height = CONTAINER_BUTTON_SIZE * rows + BUTTON_SEPERATION * (rows + 1) + HEADER_HEIGHT + 3
         Category(category, height)
