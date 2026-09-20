@@ -36,6 +36,8 @@
 - Some other recipes without advancements have also been corrected
 - Corrected the TM Recipes for Charge Beam and Payday
 - Type Gem blocks now properly generate clusters off of the block.
+- Fixed Entries rendering being improperly culled for optimization
+- Fixed Random Starter entry not counting towards height calculation
 
 ### Developer
 
