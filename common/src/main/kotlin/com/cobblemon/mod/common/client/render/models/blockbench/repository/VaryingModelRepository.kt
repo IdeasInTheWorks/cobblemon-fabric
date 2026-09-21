@@ -266,8 +266,6 @@ object VaryingModelRepository {
         inbuilt("nidorino", ::NidorinoModel)
         inbuilt("persian", ::PersianModel)
         inbuilt("pinsir", ::PinsirModel)
-        inbuilt("poliwag", ::PoliwagModel)
-        inbuilt("politoed", ::PolitoedModel)
         inbuilt("ponyta", ::PonytaModel)
         inbuilt("psyduck", ::PsyduckModel)
         inbuilt("rapidash", ::RapidashModel)
