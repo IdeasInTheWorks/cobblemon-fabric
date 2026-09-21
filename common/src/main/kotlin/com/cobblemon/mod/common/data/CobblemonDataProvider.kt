@@ -74,7 +74,6 @@ object CobblemonDataProvider : DataProvider {
     // client is public only so we can use it cross-module. maybe a more elegant solution exists, but this works
     @ApiStatus.Internal
     val clientResourceReloader: PreparableReloadListener = ClientResourceReloader()
-    private val serverResourceReloader: PreparableReloadListener = ServerResourceReloader()
 
     fun registerDefaults() {
         this.register(CobblemonScripts, reloadable = true)
@@ -128,11 +127,9 @@ object CobblemonDataProvider : DataProvider {
         }
 
         ifClient {
-            Cobblemon.implementation.registerResourceReloader(cobblemonResource("client_resources"), PackType.CLIENT_RESOURCES, emptyList()) { ClientResourceReloader() }
-            Cobblemon.implementation.registerResourceReloader(cobblemonResource("client_resources"), clientResourceReloader, PackType.CLIENT_RESOURCES, emptyList())
+            Cobblemon.implementation.registerResourceReloader(cobblemonResource("client_resources"), PackType.CLIENT_RESOURCES, emptyList()) { clientResourceReloader }
         }
         Cobblemon.implementation.registerResourceReloader(cobblemonResource("data_resources"), PackType.SERVER_DATA, emptyList()) { ServerResourceReloader(it) }
-        Cobblemon.implementation.registerResourceReloader(cobblemonResource("data_resources"), serverResourceReloader, PackType.SERVER_DATA, emptyList())
     }
 
     override fun <T : DataRegistry> register(registry: T, reloadable: Boolean): T {
