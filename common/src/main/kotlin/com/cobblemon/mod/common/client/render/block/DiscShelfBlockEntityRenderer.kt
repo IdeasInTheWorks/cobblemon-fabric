@@ -99,12 +99,12 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
 
                 if (item.item == CobblemonItems.TECHNICAL_MACHINE) {
                     val elementId = item.components.get(CobblemonItemComponents.TM_MOVE)!!.move.elementalType.showdownId
-                    val resource = cobblemonResource("textures/block/disc_shelf/${elementId}_tm.png")
+                    val texture = cobblemonResource("textures/block/disc_shelf/${elementId}_tm.png")
                     renderSlotQuad(
                             poseStack,
                             buffer,
-                        resource,
-                        0xFFFFFF,
+                            texture,
+                            0xFFFFFF,
                             packedLight,
                             slotWidth,
                             slotHeight,
