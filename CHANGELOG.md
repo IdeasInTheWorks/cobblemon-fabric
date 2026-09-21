@@ -50,6 +50,8 @@
 - Deerling
 - Sawsbuck (All forms)
 - Absol
+- Poliwag
+- Politoed
 
 ### Animation updates for the following Pokémon
 - Cacnea
