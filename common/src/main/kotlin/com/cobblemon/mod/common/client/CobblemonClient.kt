@@ -414,7 +414,10 @@ object CobblemonClient {
             CobblemonBlocks.NEVER_MELT_ICE,
             CobblemonBlocks.WIDE_LENS,
             CobblemonBlocks.ZOOM_LENS,
-            CobblemonBlocks.SCOPE_LENS
+            CobblemonBlocks.SCOPE_LENS,
+            CobblemonBlocks.MOOMOO_MILK,
+            CobblemonBlocks.MEDICINAL_BREW,
+            CobblemonBlocks.TERRAIN_EXTENDER
         )
 
         this.createBoatModelLayers()
