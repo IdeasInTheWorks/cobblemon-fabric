@@ -8,9 +8,9 @@
 
 package com.cobblemon.mod.common.client.render.block
 
+import com.cobblemon.mod.common.CobblemonItemComponents
 import com.cobblemon.mod.common.block.entity.DiscShelfBlockEntity
 import com.cobblemon.mod.common.CobblemonItems
-import com.cobblemon.mod.common.client.render.color.TechnicalMachineItemColorProvider
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
@@ -44,11 +44,8 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
     private val rightMargin = 1f
     private val topMargin = 1f
     private val interRowSpacing = 0f
-    private val tmOverlayDepthOffset = -0.0002f
     private val slotBrightnessMultiplier = 0.65f
 
-    private val tmBaseTexture = cobblemonResource("textures/block/disc_shelf/technical_machine_base.png")
-    private val tmOverlayTexture = cobblemonResource("textures/block/disc_shelf/technical_machine_overlay.png")
     private val musicDiscUnknownTexture = cobblemonResource("textures/block/disc_shelf/music_disc_unknown.png")
 
     override fun render(
@@ -101,35 +98,19 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
                 poseStack.translate(posX, posY, -0.001f)
 
                 if (item.item == CobblemonItems.TECHNICAL_MACHINE) {
-                    val baseColor = TechnicalMachineItemColorProvider.getColor(item, 0)
-                    val overlayColor = TechnicalMachineItemColorProvider.getColor(item, 1)
-
+                    val elementId = item.components.get(CobblemonItemComponents.TM_MOVE)!!.move.elementalType.showdownId
+                    val texture = cobblemonResource("textures/block/disc_shelf/${elementId}_tm.png")
                     renderSlotQuad(
                             poseStack,
                             buffer,
-                            tmBaseTexture,
-                            baseColor,
+                            texture,
+                            0xFFFFFF,
                             packedLight,
                             slotWidth,
                             slotHeight,
                             tint = true,
                             useTextRenderType = true
                     )
-
-                    poseStack.pushPose()
-                    poseStack.translate(0.0, 0.0, tmOverlayDepthOffset.toDouble())
-                    renderSlotQuad(
-                            poseStack,
-                            buffer,
-                            tmOverlayTexture,
-                            overlayColor,
-                            packedLight,
-                            slotWidth,
-                            slotHeight,
-                            tint = true,
-                            useTextRenderType = true
-                    )
-                    poseStack.popPose()
                 } else {
                     val tex = getItemTexture(item)
                     renderSlotQuad(
