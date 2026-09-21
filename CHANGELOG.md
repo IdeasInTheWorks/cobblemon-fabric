@@ -42,6 +42,7 @@
 ### Developer
 
 ### Molang & Datapacks
+- A new `negate` variant for evolution requirements has been added, which will negate (invert) the provided inner condition.
 
 ### Particles
 
