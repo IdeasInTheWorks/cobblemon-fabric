@@ -82,7 +82,7 @@ class MovesLearnsetWidget(val pX: Int, val pY: Int) : SoundlessWidget(
 
         private val moveSlot = cobblemonResource("textures/gui/pokedex/move_slot.png")
         private val moveSlotSelected = cobblemonResource("textures/gui/pokedex/move_slot_select.png")
-        private val tmSprite = cobblemonResource("textures/item/tms/blank_disc.png")
+        private val tmSprite = cobblemonResource("textures/item/tms/blank_tm.png")
         private val tmSpriteUndiscovered = cobblemonResource("textures/gui/pokedex/tm_undiscovered.png")
         private val scrollBorderTop = cobblemonResource("textures/gui/pokedex/move_scroll_border.png")
 
