@@ -14,6 +14,7 @@
 ### Changes
 
 ### Fixes
+- Corrected the mip mapping of TM Shelf disc textures to be 16x16
 - Fixed the `stat_compare` and `stat_equal` evolution requirements crashing the game when given `special_attack` or `special_defence`, and made them treat any non-permanent stat as a failed requirement instead of crashing.
 - Fixed the Beast Ball not applying its 0.1× penalty to Pokémon that are not Ultra Beasts.
 - Fixed the Moon Ball reading the world's total elapsed time instead of the time of day, so its bonus applied during the day instead.
