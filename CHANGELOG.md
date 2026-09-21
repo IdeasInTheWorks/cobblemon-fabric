@@ -36,11 +36,15 @@
 - Charjabug
 - Vikavolt
 
+#### Generation 8
+- Eternatus
+
 #### Generation 9
 - Greavard
 - Houndstone
 
 ### Model updates for the following Pokémon
+- Spheal
 - Cacnea
 - Cacturne
 - Binacle
