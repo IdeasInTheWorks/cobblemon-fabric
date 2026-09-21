@@ -9020,5 +9020,6 @@
     "cobblemon.config.ui.world_spawning_blocklist": "Список запрещённых появлений на мир",
     "cobblemon.config.ui.world_spawning_blocklist.tooltip": "Миры, в которых отключается принцип появления покемонов.",
     "advancements.cobblemon.obtain_tm.description": "Найдите или напечатайте ТМ",
-    "cobblemon.species.victreebel-mega.desc": "В результате Мега эволюции объём кислоты у этого покемона увеличился, заполняя весь его рот. Если он не будет осторожен, кислота переполнится и выльется наружу."
+    "cobblemon.species.victreebel-mega.desc": "В результате Мега эволюции объём кислоты у этого покемона увеличился, заполняя весь его рот. Если он не будет осторожен, кислота переполнится и выльется наружу.",
+    "cobblemon.ui.pokedex.info.form.victreebel-mega": "Мега Виктрибелл"
 }
