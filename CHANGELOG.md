@@ -85,6 +85,8 @@
 - Various Structure fixes
 
 ### Developer
+- Fixed wrong order of operations in the code flow prior to the `FOSSIL_REVIVED` event causing pokemon to appear without entity link
+- Fixed TestPartySlot command not correctly comparing the provided spec with the target Pokémon
 
 ### Molang & Datapacks
 - A new `negate` variant for evolution requirements has been added, which will negate (invert) the provided inner condition.
