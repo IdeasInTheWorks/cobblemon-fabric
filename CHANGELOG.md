@@ -7,29 +7,59 @@
   - Iron Ball, Metal Coat, Throat Spray, Terrain Extender, Medicinal Brew, Moomoo Milk, HP Up, Protein, Iron, Carbos, Calcium, Zinc, PP Up, PP Max, Upgrade, Dubious Disc, and Loaded Dice.
 - The following items can now be placed on various surfaces:
   - Galarica Wreath, Magnet, Flame Orb, Life Orb, Toxic Orb, Light Ball, and Smoke Ball.
-- The following items can now be placed as blocks, and have additional functionality:
+- The following items can now be placed as blocks and have additional functionality:
   - Ring Target, Metronome, and Eject Button.
 - The following items can now be worn by Players and Pokémon:
   - Galarica Wreath, Cleanse Tag, Spell Tag, Sharp Beak, Covert Cloak, Shell Helmet, and Never-Melt Ice.
 - Wearable items can now be equipped by a player by holding it and right-clicking (or rebound use/interact)
   - Wearable items that can be placed down are exempt from this behaviour.
 
-### New rideable Pokémon
-
 ### Pokémon Added
+#### Generation 4
+- Snover
+- Abomasnow
+- Burmy
+- Wormadam
+- Mothim
 
-#### Regional Forms
+#### Generation 5
+- Tympole
+- Palpitoad
+- Seismitoad
+
+#### Generation 6
+- Helioptile
+- Heliolisk
+
+#### Generation 7
+- Grubbin
+- Charjabug
+- Vikavolt
+
+#### Generation 9
+- Greavard
+- Houndstone
 
 ### Model updates for the following Pokémon
+- Cacnea
+- Cacturne
+- Binacle
+- Barbaracle
+- Glimmet
+- Glimmora
+- Deerling
+- Sawsbuck (All forms)
+- Absol
 
 ### Animation updates for the following Pokémon
-
-#### Added sounds to the following moves
+- Cacnea
+- Cacturne
 
 ### Changes
 - Updated various recipes to display in Recipe Groups within the Recipe Book
 - Updated most recipes to display more logically/consistently within the Recipe Book's categories
 - Updated Never-Melt Ice's recipe
+- Make ride rotations less jittery in multiplayer.
 
 ### Fixes
 - Correctly grants "They're Minerals!" advancement when planting a type gem
@@ -37,12 +67,27 @@
 - Some other recipes without advancements have also been corrected
 - Corrected the TM Recipes for Charge Beam and Payday
 - Type Gem blocks now properly generate clusters off of the block.
-- Starter Screen Categories will no longer stop rendering if they are bigger than the viewport, and you are not viewing top or bottom edges 
+- Starter Screen Categories will no longer stop rendering if they are bigger than the viewport, and you are not viewing top or bottom edges
 - Random Starter option now properly handled in height calculation, so now it won't run off into other categories or be un-accessible due to scroll limits if it causes a new row
+- Mochi and Feathers no longer drop glass bottles on use
+- Fixed a rare set of concurrency bugs related to reloading packs on NeoForge; fixes a ModernFix issue
+- Removed unnecessary conditions for Mimikyu's standing pose. Hopefully fixes the rare instance of it using its shoulder animations during battle in multiplayer scenarios.
+- Fixed Rockruff line not blinking
+- Fixed Flygon sometimes using its running animation instead of walking
+- Fixed Bramblin always sleeping outside of battle
+- Fixed Dragonair using its battle idle as a normal idle
+- Fixed Lycanroc's head movement
+- Added head movement to Archaludon
+- Fixed Duraludon line not having any sleep animations
+- Fixed Diglett line not having their faint animations
+- Fixed Kingambit moving its legs while walking
+- Various Structure fixes
 
 ### Developer
 
 ### Molang & Datapacks
+- A new `negate` variant for evolution requirements has been added, which will negate (invert) the provided inner condition.
+- Added Molang functions for individual Pokédex ids, wherein a subdex is passed in as a string to `dex_caught_count` etc.
 
 ### Particles
 
