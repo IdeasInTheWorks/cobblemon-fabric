@@ -7,7 +7,7 @@
   ],
   "key": {
     "G": {
-      "item": "minecraft:glass"
+      "item": "minecraft:glass_pane"
     },
     "A": {
       "item": "minecraft:amethyst_shard"
@@ -15,6 +15,6 @@
   },
   "result": {
     "id": "cobblemon:blank_tm",
-    "count": 4
+    "count": 2
   }
 }
