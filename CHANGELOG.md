@@ -59,7 +59,7 @@
 - Updated various recipes to display in Recipe Groups within the Recipe Book
 - Updated most recipes to display more logically/consistently within the Recipe Book's categories
 - Updated Never-Melt Ice's recipe
-- Increased the amount of Blank TMs crafted per craft
+- Updated Blank TM's recipe
 - Make ride rotations less jittery in multiplayer.
 
 ### Fixes
