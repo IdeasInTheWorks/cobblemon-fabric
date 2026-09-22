@@ -56,10 +56,18 @@
 - Absol
 - Poliwag
 - Politoed
+- Oddish
+- Gloom
+- Vileplume
+- Bellossom
 
 ### Animation updates for the following Pokémon
 - Cacnea
 - Cacturne
+- Oddish
+- Gloom
+- Vileplume
+- Bellossom
 
 ### Changes
 - Updated various recipes to display in Recipe Groups within the Recipe Book
