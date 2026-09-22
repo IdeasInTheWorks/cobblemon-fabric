@@ -3,13 +3,19 @@
     "category": "misc",
     "group": "never_melt_ice",
     "pattern": [
-        " S ",
-        "SSS",
-		"SGS"
+        " I ",
+        "SPS",
+		"PGP"
     ],
     "key": {
         "S": {
             "item": "minecraft:snowball"
+        },
+        "I": {
+            "item": "minecraft:ice"
+        },
+        "P": {
+            "item": "minecraft:packed_ice"
         },
         "G": {
 			"item": "cobblemon:ice_gem"
