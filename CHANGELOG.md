@@ -94,6 +94,7 @@
 - Fixed Duraludon line not having any sleep animations
 - Fixed Diglett line not having their faint animations
 - Fixed Kingambit moving its legs while walking
+- Fixed Alolan Diglett's cry not playing
 - Various Structure fixes
 
 ### Developer
