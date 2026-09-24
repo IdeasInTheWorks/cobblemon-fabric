@@ -35,6 +35,7 @@
 - Grubbin
 - Charjabug
 - Vikavolt
+- Minior
 
 #### Generation 8
 - Eternatus
