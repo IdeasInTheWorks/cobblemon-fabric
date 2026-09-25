@@ -61,6 +61,8 @@
 - Updated Never-Melt Ice's recipe
 - Updated Blank TM's recipe
 - Make ride rotations less jittery in multiplayer.
+- Changes tm shelf discs to use textures instead of tinting and overlays to line up with item display
+- Blank TM can now be inserted into the Disc Shelf
 
 ### Fixes
 - Correctly grants "They're Minerals!" advancement when planting a type gem
@@ -83,8 +85,11 @@
 - Fixed Diglett line not having their faint animations
 - Fixed Kingambit moving its legs while walking
 - Various Structure fixes
+- Fixed shiny pokemon under certain circumstances forgetting taught TMs
 
 ### Developer
+- Fixed wrong order of operations in the code flow prior to the `FOSSIL_REVIVED` event causing pokemon to appear without entity link
+- Fixed TestPartySlot command not correctly comparing the provided spec with the target Pokémon
 
 ### Molang & Datapacks
 - A new `negate` variant for evolution requirements has been added, which will negate (invert) the provided inner condition.
