@@ -45,6 +45,7 @@
 - Houndstone
 
 ### Model updates for the following Pokémon
+- Sudowoodo
 - Spheal
 - Cacnea
 - Cacturne
@@ -63,6 +64,9 @@
 - Bellossom
 
 ### Animation updates for the following Pokémon
+- Treecko (New Shoulder Mount!)
+- Bonsly (New Shoulder Mount!)
+- Sudowoodo
 - Cacnea
 - Cacturne
 - Oddish
