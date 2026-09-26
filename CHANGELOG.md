@@ -62,6 +62,7 @@
 - Gloom
 - Vileplume
 - Bellossom
+- Shroomish
 
 ### Animation updates for the following Pokémon
 - Treecko (New Shoulder Mount!)
