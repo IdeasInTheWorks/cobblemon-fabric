@@ -101,6 +101,7 @@
 - Fixed Diglett line not having their faint animations
 - Fixed Kingambit moving its legs while walking
 - Fixed Alolan Diglett's cry not playing
+- Fixed shiny alpha Snorlax using the non-shiny texture
 - Various Structure fixes
 
 ### Developer
