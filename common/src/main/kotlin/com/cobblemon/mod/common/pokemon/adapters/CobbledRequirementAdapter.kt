@@ -75,7 +75,7 @@ object CobblemonRequirementAdapter : RequirementAdapter {
         GsonBuilder()
             .registerTypeAdapter(ResourceLocation::class.java, IdentifierAdapter)
             .registerTypeAdapter(PokemonProperties::class.java, pokemonPropertiesShortAdapter)
-            .registerTypeAdapter(ItemPredicate::class.java, LegacyItemConditionWrapperAdapter)
+            .registerTypeAdapter(ItemPredicate::class.java, LegacyItemConditionWrapperAdapter())
             .registerTypeAdapter(Requirement::class.java, CobblemonRequirementAdapter)
             .registerTypeAdapter(InteractionEffect::class.java, InteractionEffectAdapter)
             .registerTypeAdapter(ExpressionLike::class.java, ExpressionLikeAdapter)
