@@ -4,6 +4,7 @@
 ### Fixes
 - Fixed Ampharos' eyes not emitting particles
 - Fixed Alolan Raticate's cry not playing
+- Fixed #updateMovesOnFormChange not properly initializing a form-swapped Pokemon's non-form_change moves.
 ### TEST
 ### Pokémon Added
 #### Generation 4
