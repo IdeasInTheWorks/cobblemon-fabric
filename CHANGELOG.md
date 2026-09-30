@@ -74,6 +74,7 @@
 - Gloom
 - Vileplume
 - Bellossom
+- Arbok
 
 ### Changes
 - Updated various recipes to display in Recipe Groups within the Recipe Book
