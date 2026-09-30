@@ -58,6 +58,7 @@
 - Absol
 - Poliwag
 - Politoed
+- Ekans
 - Oddish
 - Gloom
 - Vileplume
@@ -70,11 +71,12 @@
 - Sudowoodo
 - Cacnea
 - Cacturne
+- Ekans
+- Arbok
 - Oddish
 - Gloom
 - Vileplume
 - Bellossom
-- Arbok
 
 ### Changes
 - Updated various recipes to display in Recipe Groups within the Recipe Book
