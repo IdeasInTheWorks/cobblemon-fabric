@@ -58,6 +58,7 @@
 - Absol
 - Poliwag
 - Politoed
+- Ekans
 - Oddish
 - Gloom
 - Vileplume
@@ -70,6 +71,8 @@
 - Sudowoodo
 - Cacnea
 - Cacturne
+- Ekans
+- Arbok
 - Oddish
 - Gloom
 - Vileplume
