@@ -1569,7 +1569,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     val WISTENSU = compostableBlockItem("wistensu", CobblemonBlocks.WISTENSU, 0.5f)
 
     @JvmField
-    val VOLTCONIA = compostableBlockItem("voltconia", CobblemonBlocks.VOLTCONIA, 0.85f)
+    val VOLTACONIA = compostableBlockItem("voltaconia", CobblemonBlocks.VOLTACONIA, 0.85f)
     @JvmField
     val VERDROOT = compostableBlockItem("verdroot", CobblemonBlocks.VERDROOT, 0.85f)
     @JvmField

@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "cobblemon:voltconia"
+              "cobblemon:voltaconia"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "cobblemon:light_blue_dye_from_voltconia"
+        "recipe": "cobblemon:light_blue_dye_from_voltaconia"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "cobblemon:light_blue_dye_from_voltconia"
+      "cobblemon:light_blue_dye_from_voltaconia"
     ]
   },
   "sends_telemetry_event": false

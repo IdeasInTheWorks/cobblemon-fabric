@@ -126,7 +126,7 @@ object CobblemonItemGroups {
         entries.accept(CobblemonItems.PAUVILLEA)
         entries.accept(CobblemonItems.LOBAILA)
         entries.accept(CobblemonItems.WISTENSU)
-        entries.accept(CobblemonItems.VOLTCONIA)
+        entries.accept(CobblemonItems.VOLTACONIA)
         entries.accept(CobblemonItems.VERDROOT)
         entries.accept(CobblemonItems.MISTLEAF)
         entries.accept(CobblemonItems.LUCIBELL)

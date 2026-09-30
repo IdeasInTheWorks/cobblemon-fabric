@@ -220,7 +220,7 @@ class TerrainSeedBlock(private val terrainSeedType: TerrainSeedType, settings: P
             GRASSY -> CobblemonBlocks.GRASSY_SEED
         }
         fun getFlowerBlock(): Block = when (this) {
-            ELECTRIC -> CobblemonBlocks.VOLTCONIA
+            ELECTRIC -> CobblemonBlocks.VOLTACONIA
             PSYCHIC -> CobblemonBlocks.LUCIBELL
             MISTY -> CobblemonBlocks.MISTLEAF
             GRASSY -> CobblemonBlocks.VERDROOT

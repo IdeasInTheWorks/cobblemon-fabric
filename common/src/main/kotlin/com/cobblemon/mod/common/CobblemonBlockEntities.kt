@@ -114,7 +114,7 @@ object CobblemonBlockEntities : PlatformRegistry<Registry<BlockEntityType<*>>, R
     val TERRAIN_PLANT: BlockEntityType<TerrainPlantBlockEntity> = this.create(
         "terrain_plant",
         BlockEntityType.Builder.of(::TerrainPlantBlockEntity,
-            CobblemonBlocks.VOLTCONIA,
+            CobblemonBlocks.VOLTACONIA,
             CobblemonBlocks.LUCIBELL,
             CobblemonBlocks.VERDROOT
         ).build(null)

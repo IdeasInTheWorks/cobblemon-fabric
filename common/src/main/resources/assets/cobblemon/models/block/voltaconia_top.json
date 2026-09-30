@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "cobblemon:block/flowers/voltconia_bottom"
+    "cross": "cobblemon:block/flowers/voltaconia_top"
   }
 }

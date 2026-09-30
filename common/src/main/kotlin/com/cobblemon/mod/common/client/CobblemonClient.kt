@@ -435,7 +435,7 @@ object CobblemonClient {
             CobblemonBlocks.WISTENSU,
             CobblemonBlocks.WISTENSU_VINE,
             CobblemonBlocks.ELECTRIC_SEED,
-            CobblemonBlocks.VOLTCONIA,
+            CobblemonBlocks.VOLTACONIA,
             CobblemonBlocks.GRASSY_SEED,
             CobblemonBlocks.VERDROOT,
             CobblemonBlocks.MISTY_SEED,

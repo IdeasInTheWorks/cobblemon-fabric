@@ -16,7 +16,7 @@
   "type": "create:milling",
   "ingredients": [
     {
-      "item": "cobblemon:voltconia"
+      "item": "cobblemon:voltaconia"
     }
   ],
   "processing_time": 50,

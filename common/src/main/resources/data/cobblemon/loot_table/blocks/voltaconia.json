@@ -5,7 +5,7 @@
       "bonus_rolls": 0,
       "conditions": [
         {
-          "block": "cobblemon:voltconia",
+          "block": "cobblemon:voltaconia",
           "condition": "minecraft:block_state_property",
           "properties": {
             "half": "lower"
@@ -16,7 +16,7 @@
           "offsetY": 1,
           "predicate": {
             "block": {
-              "blocks": "cobblemon:voltconia",
+              "blocks": "cobblemon:voltaconia",
               "state": {
                 "half": "upper"
               }
@@ -65,7 +65,7 @@
                   "function": "minecraft:set_count"
                 }
               ],
-              "name": "cobblemon:voltconia"
+              "name": "cobblemon:voltaconia"
             },
             {
               "type": "minecraft:item",
@@ -118,7 +118,7 @@
       "bonus_rolls": 0,
       "conditions": [
         {
-          "block": "cobblemon:voltconia",
+          "block": "cobblemon:voltaconia",
           "condition": "minecraft:block_state_property",
           "properties": {
             "half": "upper"
@@ -129,7 +129,7 @@
           "offsetY": -1,
           "predicate": {
             "block": {
-              "blocks": "cobblemon:voltconia",
+              "blocks": "cobblemon:voltaconia",
               "state": {
                 "half": "lower"
               }
@@ -178,7 +178,7 @@
                   "function": "minecraft:set_count"
                 }
               ],
-              "name": "cobblemon:voltconia"
+              "name": "cobblemon:voltaconia"
             },
             {
               "type": "minecraft:item",
