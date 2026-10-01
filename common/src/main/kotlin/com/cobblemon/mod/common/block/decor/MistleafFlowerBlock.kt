@@ -17,19 +17,35 @@ import net.minecraft.world.level.LevelReader
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.EntityBlock
+import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.TallFlowerBlock
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.entity.BlockEntityType
+import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf
 import net.minecraft.world.level.block.state.properties.IntegerProperty
+import net.minecraft.world.level.material.MapColor
+import net.minecraft.world.level.material.PushReaction
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class MistleafFlowerBlock(properties: Properties) : TallFlowerBlock(properties), EntityBlock {
+class MistleafFlowerBlock(lightLevel: (BlockState) -> Int) :
+    EntityBlock,
+    TallFlowerBlock(
+        Properties.of()
+            .mapColor(MapColor.PLANT)
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.GRASS)
+            .offsetType(OffsetType.XZ)
+            .ignitedByLava()
+            .pushReaction(PushReaction.DESTROY)
+            .lightLevel(lightLevel)
+    ) {
 
     init {
         registerDefaultState(stateDefinition.any()
@@ -40,7 +56,7 @@ class MistleafFlowerBlock(properties: Properties) : TallFlowerBlock(properties),
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         builder.add(HALF, GLOWING)
     }
-    override fun isValidBonemealTarget(level: LevelReader?, pos: BlockPos?, state: BlockState?): Boolean {
+    override fun isValidBonemealTarget(level: LevelReader, pos: BlockPos, state: BlockState): Boolean {
         return false
     }
 
@@ -64,8 +80,8 @@ class MistleafFlowerBlock(properties: Properties) : TallFlowerBlock(properties),
         val GLOWING = IntegerProperty.create("glowing", 0, 8)
     }
 
-    override fun hasAnalogOutputSignal(state: BlockState?): Boolean { return true }
-    override fun getAnalogOutputSignal(state: BlockState, level: Level?, pos: BlockPos?): Int {
+    override fun hasAnalogOutputSignal(state: BlockState): Boolean { return true }
+    override fun getAnalogOutputSignal(state: BlockState, level: Level, pos: BlockPos): Int {
         return state.getValue(GLOWING) as Int
     }
 }

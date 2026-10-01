@@ -858,29 +858,29 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val POTTED_SACCHARINE_SAPLING = this.create("potted_saccharine_sapling", BlocksInvoker.createFlowerPotBlock(SACCHARINE_SAPLING))
 
     @JvmField
-    val RED_MINT_LEAF_LITTER = this.create("red_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_RED).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    val RED_MINT_LEAF_LITTER = this.mintLitter("red_mint_leaf_litter", MapColor.COLOR_RED)
     @JvmField
-    val POTTED_RED_MINT = this.create("potted_red_mint", BlocksInvoker.createFlowerPotBlock(RED_MINT_LEAF_LITTER))
+    val POTTED_RED_MINT = this.pottedPlant("potted_red_mint", RED_MINT_LEAF_LITTER)
     @JvmField
-    val BLUE_MINT_LEAF_LITTER = this.create("blue_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_BLUE).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    val BLUE_MINT_LEAF_LITTER = this.mintLitter("blue_mint_leaf_litter", MapColor.COLOR_BLUE)
     @JvmField
-    val POTTED_BLUE_MINT = this.create("potted_blue_mint", BlocksInvoker.createFlowerPotBlock(BLUE_MINT_LEAF_LITTER))
+    val POTTED_BLUE_MINT = this.pottedPlant("potted_blue_mint", BLUE_MINT_LEAF_LITTER)
     @JvmField
-    val CYAN_MINT_LEAF_LITTER = this.create("cyan_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_CYAN).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    val CYAN_MINT_LEAF_LITTER = this.mintLitter("cyan_mint_leaf_litter", MapColor.COLOR_CYAN)
     @JvmField
-    val POTTED_CYAN_MINT = this.create("potted_cyan_mint", BlocksInvoker.createFlowerPotBlock(CYAN_MINT_LEAF_LITTER))
+    val POTTED_CYAN_MINT = this.pottedPlant("potted_cyan_mint", CYAN_MINT_LEAF_LITTER)
     @JvmField
-    val PINK_MINT_LEAF_LITTER = this.create("pink_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_PINK).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    val PINK_MINT_LEAF_LITTER = this.mintLitter("pink_mint_leaf_litter", MapColor.COLOR_PINK)
     @JvmField
-    val POTTED_PINK_MINT = this.create("potted_pink_mint", BlocksInvoker.createFlowerPotBlock(PINK_MINT_LEAF_LITTER))
+    val POTTED_PINK_MINT = this.pottedPlant("potted_pink_mint", PINK_MINT_LEAF_LITTER)
     @JvmField
-    val GREEN_MINT_LEAF_LITTER = this.create("green_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.COLOR_GREEN).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    val GREEN_MINT_LEAF_LITTER = this.mintLitter("green_mint_leaf_litter", MapColor.COLOR_GREEN)
     @JvmField
-    val POTTED_GREEN_MINT = this.create("potted_green_mint", BlocksInvoker.createFlowerPotBlock(GREEN_MINT_LEAF_LITTER))
+    val POTTED_GREEN_MINT = this.pottedPlant("potted_green_mint", GREEN_MINT_LEAF_LITTER)
     @JvmField
-    val WHITE_MINT_LEAF_LITTER = this.create("white_mint_leaf_litter", MintLitterBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.MINT_SOUNDS).mapColor(MapColor.SNOW).noOcclusion().noCollission().pushReaction(PushReaction.DESTROY)))
+    val WHITE_MINT_LEAF_LITTER = this.mintLitter("white_mint_leaf_litter", MapColor.SNOW)
     @JvmField
-    val POTTED_WHITE_MINT = this.create("potted_white_mint", BlocksInvoker.createFlowerPotBlock(WHITE_MINT_LEAF_LITTER))
+    val POTTED_WHITE_MINT = this.pottedPlant("potted_white_mint", WHITE_MINT_LEAF_LITTER)
 
     @JvmField
     val LOBAILA = this.create("lobaila", LobailaFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)))
@@ -894,21 +894,26 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     val WISTENSU_VINE = this.create("wistensu_vine", WistensuFlowerVineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.GRASS).instabreak().ignitedByLava().pushReaction(PushReaction.DESTROY)))
 
     @JvmField
-    val ELECTRIC_SEED = this.create("electric_seed", TerrainSeedBlock(TerrainSeedBlock.TerrainSeedType.ELECTRIC, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ).noCollission().randomTicks().instabreak()))
+    val ELECTRIC_SEED = this.terrainSeed("electric_seed", TerrainSeedBlock.TerrainSeedType.ELECTRIC)
     @JvmField
-    val PSYCHIC_SEED = this.create("psychic_seed", TerrainSeedBlock(TerrainSeedBlock.TerrainSeedType.PSYCHIC, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ).noCollission().randomTicks().instabreak()))
+    val PSYCHIC_SEED = this.terrainSeed("psychic_seed", TerrainSeedBlock.TerrainSeedType.PSYCHIC)
     @JvmField
-    val MISTY_SEED = this.create("misty_seed", TerrainSeedBlock(TerrainSeedBlock.TerrainSeedType.MISTY, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ).noCollission().randomTicks().instabreak()))
+    val MISTY_SEED = this.terrainSeed("misty_seed", TerrainSeedBlock.TerrainSeedType.MISTY)
     @JvmField
-    val GRASSY_SEED = this.create("grassy_seed", TerrainSeedBlock(TerrainSeedBlock.TerrainSeedType.GRASSY, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ).noCollission().randomTicks().instabreak()))
+    val GRASSY_SEED = this.terrainSeed("grassy_seed", TerrainSeedBlock.TerrainSeedType.GRASSY)
     @JvmField
-    val VOLTACONIA = this.create("voltaconia", TerrainPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainPlantBlock.GLOWING) as Boolean)) 8 else 0 }))
+    val VOLTACONIA = this.terrainPlant("voltaconia") { state -> if (state.getValue(TerrainPlantBlock.GLOWING)) 8 else 0 }
     @JvmField
-    val LUCIBELL = this.create("lucibell", TerrainPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainPlantBlock.GLOWING) as Boolean)) 8 else 0 }))
+    val VERDROOT = this.terrainPlant("verdroot") { state -> if (state.getValue(TerrainPlantBlock.GLOWING)) 5 else 0 }
     @JvmField
-    val MISTLEAF = this.create("mistleaf", MistleafFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(MistleafFlowerBlock.GLOWING)>=1 )) it.getValue(MistleafFlowerBlock.GLOWING)+2 else 0 }))
+    val LUCIBELL = this.terrainPlant("lucibell") { state -> if (state.getValue(TerrainPlantBlock.GLOWING)) 8 else 0 }
     @JvmField
-    val VERDROOT = this.create("verdroot", TerrainPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel { if ((it.getValue(TerrainPlantBlock.GLOWING) as Boolean)) 5 else 0 }))
+    val MISTLEAF = this.create(
+        "mistleaf",
+        MistleafFlowerBlock {
+            if ((it.getValue(MistleafFlowerBlock.GLOWING) >= 1)) it.getValue(MistleafFlowerBlock.GLOWING) + 2 else 0
+        }
+    )
 
     @JvmField
     val HEARTY_GRAIN_BALE = this.create("hearty_grain_bale", BaleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sound(CobblemonSounds.HEARTY_GRAIN_BALE_SOUNDS)))
@@ -1328,4 +1333,48 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     }
 
     fun typeGemClusters() = typeGemClusters.toMap()
+
+    private fun pottedPlant(name: String, flower: Block) = this.create(name, BlocksInvoker.createFlowerPotBlock(flower))
+
+    private fun mintLitter(name: String, color: MapColor) = this.create(
+        name,
+        MintLitterBlock(
+            BlockBehaviour.Properties.of()
+                .sound(CobblemonSounds.MINT_SOUNDS)
+                .mapColor(color)
+                .noOcclusion()
+                .noCollission()
+                .pushReaction(PushReaction.DESTROY)
+        )
+    )
+
+    private fun terrainSeed(name: String, type: TerrainSeedBlock.TerrainSeedType) = this.create(
+        name,
+        TerrainSeedBlock(
+            type,
+            BlockBehaviour.Properties.of()
+                .pushReaction(PushReaction.DESTROY)
+                .ignitedByLava()
+                .mapColor(MapColor.PLANT)
+                .offsetType(BlockBehaviour.OffsetType.XZ)
+                .noCollission()
+                .randomTicks()
+                .instabreak()
+        )
+    )
+
+    private fun terrainPlant(name: String, lightLevel: (BlockState) -> Int) = this.create(
+        name,
+        TerrainPlantBlock(
+            BlockBehaviour.Properties.of()
+                .mapColor(MapColor.PLANT)
+                .noCollission()
+                .instabreak()
+                .sound(SoundType.GRASS)
+                .offsetType(BlockBehaviour.OffsetType.XZ)
+                .ignitedByLava()
+                .pushReaction(PushReaction.DESTROY)
+                .lightLevel(lightLevel)
+        )
+    )
 }

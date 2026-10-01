@@ -44,11 +44,11 @@ class TerrainPlantBlock(properties: Properties) : TallFlowerBlock(properties), E
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         builder.add(HALF, GLOWING)
     }
-    override fun isValidBonemealTarget(level: LevelReader?, pos: BlockPos?, state: BlockState?): Boolean {
+    override fun isValidBonemealTarget(level: LevelReader, pos: BlockPos, state: BlockState): Boolean {
         return false
     }
 
-    override fun tick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource?) {
+    override fun tick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource) {
         if (state.`is`(CobblemonBlocks.LUCIBELL)) { this.checkInside(level, pos, state) }
     }
 
@@ -67,7 +67,7 @@ class TerrainPlantBlock(properties: Properties) : TallFlowerBlock(properties), E
         if (entityInside) level.scheduleTick(pos, this, 30) // tick occasionally to check if player inside
     }
 
-    override fun entityInside(state: BlockState, level: Level, pos: BlockPos, entity: Entity?) {
+    override fun entityInside(state: BlockState, level: Level, pos: BlockPos, entity: Entity) {
         // Lucibell lower block will be our 'driver'
         if (!level.isClientSide && !state.getValue(GLOWING) && state.`is`(CobblemonBlocks.LUCIBELL)) {
             val halfState = state.getValue(HALF)
@@ -84,11 +84,11 @@ class TerrainPlantBlock(properties: Properties) : TallFlowerBlock(properties), E
 
     override fun getShape(state: BlockState, world: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape = AABB
 
-    override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity? {
+    override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity {
         return TerrainPlantBlockEntity(pos, state)
     }
 
-    override fun <T : BlockEntity?> getTicker(
+    override fun <T : BlockEntity> getTicker(
         level: Level,
         state: BlockState,
         blockEntityType: BlockEntityType<T?>
