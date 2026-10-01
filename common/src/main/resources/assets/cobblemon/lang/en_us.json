@@ -2096,6 +2096,8 @@
   "cobblemon.subtitle.wallpaper.unlock": "PC box wallpaper unlocked",
   "cobblemon.subtitle.tm.use": "Technical Machine used",
 
+  "cobblemon.subtitle.item.bright_powder.use": "Bright Powder illuminates",
+
   "cobblemon.subtitle.block.tm_machine.burn_loop": "TM Machine prints TM",
   "cobblemon.subtitle.block.tm_machine.start": "TM Machine starts printing TM",
   "cobblemon.subtitle.block.tm_machine.craft": "TM Machine finishes printing TM",

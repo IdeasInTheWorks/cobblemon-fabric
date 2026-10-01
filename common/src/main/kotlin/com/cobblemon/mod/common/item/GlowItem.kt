@@ -8,7 +8,7 @@
 
 package com.cobblemon.mod.common.item
 
-import net.minecraft.sounds.SoundEvents
+import com.cobblemon.mod.common.CobblemonSounds
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemNameBlockItem
@@ -25,7 +25,7 @@ class GlowItem(block: Block, settings: Properties) : ItemNameBlockItem(block, se
             level.playSound(
                 null as Player?,
                 sign.blockPos,
-                SoundEvents.GLOW_INK_SAC_USE,
+                CobblemonSounds.BRIGHT_POWDER_USE,
                 SoundSource.BLOCKS,
                 1.0f,
                 1.0f
