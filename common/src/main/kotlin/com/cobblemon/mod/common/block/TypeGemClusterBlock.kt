@@ -146,7 +146,7 @@ class TypeGemClusterBlock(
             }
             level.setBlock(pos, nextState, UPDATE_ALL)
             if (isGem(nextState)) {
-                TypeGemCoreBlock.addClustersToBlock(state, pos, level)
+                TypeGemCoreBlock.addClustersToBlock(state, pos, level, random)
             }
     }
 
@@ -154,37 +154,6 @@ class TypeGemClusterBlock(
         return state.`is`(CobblemonBlockTags.TYPE_GEM_BLOCKS)
     }
 
-    /*
-    private fun attachDecorativeClusters(level: LevelAccessor, gemPos: BlockPos, random: RandomSource) {
-        val openDirections = Direction.entries.filter { direction ->
-            level.getBlockState(gemPos.relative(direction)).isAir
-        }.toMutableList()
-
-        if (openDirections.isEmpty()) {
-            return
-        }
-
-        val minClusters = maxOf(1, (openDirections.size * 0.75f).toInt())
-        val clusterCount = random.nextInt(minClusters, openDirections.size + 1)
-
-        repeat(clusterCount) {
-            if (openDirections.isEmpty()) return@repeat
-
-            val index = random.nextInt(openDirections.size)
-            val direction = openDirections.removeAt(index)
-            val clusterPos = gemPos.relative(direction)
-            val stage = random.nextInt(0, 4)
-
-            val clusterState = defaultBlockState()
-                .setValue(FACING, direction)
-                .setValue(STAGE, stage)
-                .setValue(SHOULD_GROW, false) // so we can reduce lag... hopefully
-                .setValue(STUNTED, false)
-
-            level.setBlock(clusterPos, clusterState, UPDATE_ALL)
-        }
-    }
-    */
 
     fun gemClusterCanGrow(state: BlockState, level: LevelReader, pos: BlockPos): Boolean {
         if (state.getValue(GROWTH_TYPE) == GrowthType.DECORATION) return false

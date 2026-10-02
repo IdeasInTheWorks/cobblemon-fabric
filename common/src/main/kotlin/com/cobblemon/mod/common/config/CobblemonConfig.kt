@@ -392,6 +392,18 @@ class CobblemonConfig {
     @CobblemonConfigField(Category.Spawning, lang = "data_monitor_shiny_rate", SERVER)
     var monitorShinyRate = 200
 
+    @CobblemonConfigField(Category.World, lang = "type_gem_max_connected", SERVER)
+    var typeGemMaxConnected = 16
+
+    @CobblemonConfigField(Category.World, lang = "type_gem_min_growth", SERVER)
+    var typeGemMinGrowth = 5
+
+    @CobblemonConfigField(Category.World, lang = "type_gem_growth_chance", SERVER)
+    var typeGemGrowthChance = 0.5f
+
+    @CobblemonConfigField(Category.World, lang = "type_gem_initial_expansion_cycles", SERVER)
+    var typeGemInitialExpansionCycles = 20
+
     fun clone(): CobblemonConfig {
         val newConfig = CobblemonConfig()
         CobblemonConfig::class.memberProperties.forEach { property ->

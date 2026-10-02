@@ -8,9 +8,12 @@
 
 package com.cobblemon.mod.common.block
 
+import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.CobblemonBlocks
 import com.cobblemon.mod.common.api.tags.CobblemonBlockTags
+import com.cobblemon.mod.common.block.TypeGemClusterBlock.Companion.FACING
 import com.cobblemon.mod.common.block.TypeGemClusterBlock.Companion.GROWTH_TYPE
+import com.cobblemon.mod.common.block.TypeGemClusterBlock.Companion.STAGE
 import com.cobblemon.mod.common.block.TypeGemClusterBlock.GrowthType
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -29,10 +32,6 @@ import java.util.*
 class TypeGemCoreBlock(properties: Properties) : Block(properties) {
 
     companion object {
-        const val MAX_CONNECTED_GEMS = 16
-        const val MIN_GROWTH = 5 // TODO make this do literally anything
-        const val GROWTH_CHANCE = 0.5f
-
         val BLOCK_TO_CLUSTER: Map<ResourceLocation, Block> by lazy {
             mapOf(
                 ResourceLocation.parse("cobblemon:normal_gem_block") to CobblemonBlocks.TYPE_GEM_CLUSTER_NORMAL,
@@ -105,25 +104,41 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
             return connectedGems
         }
 
-        fun addClustersToBlock(state: BlockState, pos: BlockPos, level: LevelAccessor) {
+        fun addClustersToBlock(state: BlockState, pos: BlockPos, level: LevelAccessor, random: RandomSource) {
             Direction.entries.forEach {
-                val faceState = level.getBlockState(pos.relative(it))
-                val newState = BLOCK_TO_CLUSTER[BuiltInRegistries.BLOCK.getKey(state.block)]?.defaultBlockState()
-                    ?.setValue(DirectionalBlock.FACING, it)
-                    ?.setValue(GROWTH_TYPE, decideClusterGrowthType())
-                    ?: return
+                if (random.nextFloat() < Cobblemon.config.typeGemGrowthChance) {
+                    val faceState = level.getBlockState(pos.relative(it))
+                    val randomGrowthType = decideClusterGrowthType(level, pos)
+                    val newState = BLOCK_TO_CLUSTER[BuiltInRegistries.BLOCK.getKey(state.block)]?.defaultBlockState()
+                        ?.setValue(DirectionalBlock.FACING, it)
+                        ?.setValue(GROWTH_TYPE, randomGrowthType)
+                        ?: return
 
-                if (faceState.`is`(Blocks.AIR)) {
-                    level.setBlock(pos.relative(it), newState, 3)
+//                // if min growth hasnt been hit, force more growth
+//                val size = getConnectedGemBlocks(level, pos).size
+//                if (size < MIN_GROWTH && randomGrowthType != GrowthType.FULL) {
+//                    println("Forced extra growth at size $size")
+//                    newState.setValue(GROWTH_TYPE, GrowthType.FULL)
+//                }
+
+                    if (faceState.`is`(Blocks.AIR)) {
+                        level.setBlock(pos.relative(it), newState, 3)
+                    }
                 }
+
             }
         }
 
-        private fun decideClusterGrowthType(random: RandomSource = RandomSource.create()): GrowthType {
-            val totalChance = GrowthType.entries.sumOf { it.chance.toDouble() }
+        private fun decideClusterGrowthType(level: LevelAccessor, pos: BlockPos, random: RandomSource = RandomSource.create()): GrowthType {
+            val growthTypes = if (getConnectedGemBlocks(level, pos).size > Cobblemon.config.typeGemMaxConnected) {
+                listOf(GrowthType.DECORATION, GrowthType.STUNTED)
+            } else {
+                GrowthType.entries
+            }
+            val totalChance = growthTypes.sumOf { it.chance.toDouble() }
             var roll = random.nextDouble() * totalChance
 
-            for (type in GrowthType.entries) {
+            for (type in growthTypes) {
                 roll -= type.chance.toDouble()
                 if (roll <= 0.0) {
                     return type
@@ -134,11 +149,51 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
         }
     }
 
-    override fun randomTick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource) {
-        if (getConnectedGemBlocks(level, pos).size > MAX_CONNECTED_GEMS) return
-//        addInitialClusters(pos, level, CobblemonBlocks.TYPE_GEM_CLUSTER_BUG as TypeGemClusterBlock)
+    private fun getConnectedClusters(level: LevelAccessor, pos: BlockPos): List<Pair<BlockState, BlockPos>> {
+        val gemBlocks = getConnectedGemBlocks(level, pos)
+        val clusters = mutableListOf<Pair<BlockState, BlockPos>>()
+        val visited = mutableSetOf<BlockPos>()
 
-        println(getConnectedGemBlocks(level, pos)) // TODO take this out when done
+        for ((gemState, gemPos) in gemBlocks) {
+            val expectedCluster = BLOCK_TO_CLUSTER[BuiltInRegistries.BLOCK.getKey(gemState.block)] ?: continue
+
+            for (direction in Direction.entries) {
+                val clusterPos = gemPos.relative(direction)
+                if (!visited.add(clusterPos)) continue
+
+                val clusterState = level.getBlockState(clusterPos)
+                if (clusterState.block == expectedCluster) {
+                    clusters += clusterState to clusterPos
+                }
+            }
+        }
+        return clusters
+    }
+
+    override fun randomTick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource) {
+        val gemCount = getConnectedGemBlocks(level, pos).size
+//        if (gemCount > Cobblemon.config.typeGemMaxConnected) {
+//            getConnectedGemBlocks(level, pos).forEach {
+//                if(!it.first.`is`(CobblemonBlocks.TYPE_GEM_CORE)) attachDecorativeClusters(level, it.second, random)
+//            }
+//            return
+//        }
+
+        // if growth has stopped fully but min growth hasn't been reached, randomly set a stopped bud to GROWTH_TYPE full
+        val clusters = getConnectedClusters(level, pos)
+        val fullClusterCount = clusters.count { (clusterState, _) ->
+            clusterState.getValue(GROWTH_TYPE) == GrowthType.FULL
+        }
+
+        if (fullClusterCount == 0) {
+            if (gemCount < Cobblemon.config.typeGemMinGrowth && clusters.isNotEmpty()) {
+                println("Force set a cluster to FULL at size $gemCount")
+                val randomCluster = clusters.random()
+                level.setBlockAndUpdate(randomCluster.second, randomCluster.first.setValue(GROWTH_TYPE, GrowthType.FULL))
+            }
+        }
+
+
         expand(state, level, pos, random)
     }
 
@@ -146,7 +201,7 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
         getConnectedGemBlocks(level, pos).forEach {
             val state = it.first
             val pos = it.second
-            addClustersToBlock(state, pos, level)
+            addClustersToBlock(state, pos, level, random)
             growClusters(state, pos, level, random)
         }
     }
@@ -158,7 +213,7 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
             val clusterBlock = relativeState.block as? TypeGemClusterBlock ?: return@forEach
 
             if (relativeState.getValue(DirectionalBlock.FACING) == direction &&
-                random.nextFloat() < GROWTH_CHANCE
+                random.nextFloat() < Cobblemon.config.typeGemGrowthChance
             ) {
                 clusterBlock.advanceGrowth(relativeState, level, relativePos, random)
             }
@@ -180,6 +235,37 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
 
     override fun isRandomlyTicking(state: BlockState): Boolean = true
 
+    private fun attachDecorativeClusters(level: LevelAccessor, gemPos: BlockPos, random: RandomSource) {
+        val openDirections = Direction.entries.filter { direction ->
+            level.getBlockState(gemPos.relative(direction)).isAir
+        }.toMutableList()
+
+        if (openDirections.isEmpty()) {
+            return
+        }
+
+        val gemState = level.getBlockState(gemPos)
+        val clusterBlock = BLOCK_TO_CLUSTER[BuiltInRegistries.BLOCK.getKey(gemState.block)] ?: return
+
+        val minClusters = maxOf(1, (openDirections.size * 0.75f).toInt())
+        val clusterCount = random.nextInt(minClusters, openDirections.size + 1)
+
+        repeat(clusterCount) {
+            if (openDirections.isEmpty()) return@repeat
+
+            val index = random.nextInt(openDirections.size)
+            val direction = openDirections.removeAt(index)
+            val clusterPos = gemPos.relative(direction)
+            val stage = random.nextInt(0, 4)
+
+            val clusterState = clusterBlock.defaultBlockState()
+                .setValue(FACING, direction)
+                .setValue(STAGE, stage)
+                .setValue(GROWTH_TYPE, GrowthType.DECORATION)
+
+            level.setBlock(clusterPos, clusterState, UPDATE_ALL)
+        }
+    }
 }
     /*
     fun forceGrow(level: WorldGenLevel, pos: BlockPos, random: RandomSource, percentage: Float) {
