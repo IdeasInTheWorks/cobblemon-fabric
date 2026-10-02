@@ -8,11 +8,10 @@
 
 package com.cobblemon.mod.common.block
 
-import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.CobblemonBlocks
 import com.cobblemon.mod.common.api.tags.CobblemonBlockTags
-import com.cobblemon.mod.common.block.TypeGemClusterBlock.Companion.SHOULD_GROW
-import com.cobblemon.mod.common.block.TypeGemClusterBlock.Companion.STUNTED
+import com.cobblemon.mod.common.block.TypeGemClusterBlock.Companion.GROWTH_TYPE
+import com.cobblemon.mod.common.block.TypeGemClusterBlock.GrowthType
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.registries.BuiltInRegistries
@@ -21,8 +20,8 @@ import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.RandomSource
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.LevelAccessor
-import net.minecraft.world.level.WorldGenLevel
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.DirectionalBlock
 import net.minecraft.world.level.block.state.BlockState
 import java.util.*
@@ -30,12 +29,9 @@ import java.util.*
 class TypeGemCoreBlock(properties: Properties) : Block(properties) {
 
     companion object {
-        const val MAX_CONNECTED_GEMS = 7
-        const val MIN_DISTANCE_BETWEEN_GEMS = 1
-        const val CONTINUATION_CHANCE = 0.8f
-
-        // Upper safety check to prevent infinite loops
-        const val MAX_FORCE_GROW_ATTEMPTS = 64
+        const val MAX_CONNECTED_GEMS = 16
+        const val MIN_GROWTH = 5 // TODO make this do literally anything
+        const val GROWTH_CHANCE = 0.5f
 
         val BLOCK_TO_CLUSTER: Map<ResourceLocation, Block> by lazy {
             mapOf(
@@ -59,7 +55,7 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
                 ResourceLocation.parse("cobblemon:fairy_gem_block") to CobblemonBlocks.TYPE_GEM_CLUSTER_FAIRY
             )
         }
-
+        /*
         fun setStuntState(level: LevelAccessor, gemBlocks: List<Pair<BlockState, BlockPos>>, stunted: Boolean) {
             for ((_, gemPos) in gemBlocks) {
                 for (dir in Direction.entries) {
@@ -81,6 +77,7 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
                 }
             }
         }
+        */
 
         fun getConnectedGemBlocks(level: BlockGetter, pos: BlockPos): List<Pair<BlockState, BlockPos>> {
             val connectedGems = mutableListOf<Pair<BlockState, BlockPos>>()
@@ -107,12 +104,84 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
             }
             return connectedGems
         }
+
+        fun addClustersToBlock(state: BlockState, pos: BlockPos, level: LevelAccessor) {
+            Direction.entries.forEach {
+                val faceState = level.getBlockState(pos.relative(it))
+                val newState = BLOCK_TO_CLUSTER[BuiltInRegistries.BLOCK.getKey(state.block)]?.defaultBlockState()
+                    ?.setValue(DirectionalBlock.FACING, it)
+                    ?.setValue(GROWTH_TYPE, decideClusterGrowthType())
+                    ?: return
+
+                if (faceState.`is`(Blocks.AIR)) {
+                    level.setBlock(pos.relative(it), newState, 3)
+                }
+            }
+        }
+
+        private fun decideClusterGrowthType(random: RandomSource = RandomSource.create()): GrowthType {
+            val totalChance = GrowthType.entries.sumOf { it.chance.toDouble() }
+            var roll = random.nextDouble() * totalChance
+
+            for (type in GrowthType.entries) {
+                roll -= type.chance.toDouble()
+                if (roll <= 0.0) {
+                    return type
+                }
+            }
+
+            return GrowthType.DECORATION
+        }
     }
 
     override fun randomTick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource) {
-        grow(level, pos, random)
+        if (getConnectedGemBlocks(level, pos).size > MAX_CONNECTED_GEMS) return
+//        addInitialClusters(pos, level, CobblemonBlocks.TYPE_GEM_CLUSTER_BUG as TypeGemClusterBlock)
+
+        println(getConnectedGemBlocks(level, pos)) // TODO take this out when done
+        expand(state, level, pos, random)
     }
 
+    fun expand(state: BlockState, level: LevelAccessor, pos: BlockPos, random: RandomSource) {
+        getConnectedGemBlocks(level, pos).forEach {
+            val state = it.first
+            val pos = it.second
+            addClustersToBlock(state, pos, level)
+            growClusters(state, pos, level, random)
+        }
+    }
+
+    private fun growClusters(state: BlockState, pos: BlockPos, level: LevelAccessor, random: RandomSource) {
+        Direction.entries.forEach { direction ->
+            val relativePos = pos.relative(direction)
+            val relativeState = level.getBlockState(relativePos)
+            val clusterBlock = relativeState.block as? TypeGemClusterBlock ?: return@forEach
+
+            if (relativeState.getValue(DirectionalBlock.FACING) == direction &&
+                random.nextFloat() < GROWTH_CHANCE
+            ) {
+                clusterBlock.advanceGrowth(relativeState, level, relativePos, random)
+            }
+        }
+    }
+
+    private fun addInitialClusters(pos: BlockPos, level: ServerLevel, clusterType: TypeGemClusterBlock) {
+        Direction.entries.forEach {
+            val faceState = level.getBlockState(pos.relative(it))
+
+            if (faceState.`is`(Blocks.AIR)) {
+                level.setBlockAndUpdate(pos.relative(it), clusterType.defaultBlockState().setValue(
+                    DirectionalBlock.FACING, it)
+                    .setValue(GROWTH_TYPE, GrowthType.FULL)
+                )
+            }
+        }
+    }
+
+    override fun isRandomlyTicking(state: BlockState): Boolean = true
+
+}
+    /*
     fun forceGrow(level: WorldGenLevel, pos: BlockPos, random: RandomSource, percentage: Float) {
         val desiredLength = MAX_CONNECTED_GEMS * percentage
 
@@ -126,8 +195,9 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
             pos,
             MAX_FORCE_GROW_ATTEMPTS
         )
-    }
+        */
 
+    /*
     private fun grow(
         level: WorldGenLevel,
         pos: BlockPos,
@@ -221,5 +291,5 @@ class TypeGemCoreBlock(properties: Properties) : Block(properties) {
         return state.`is`(CobblemonBlockTags.TYPE_GEM_BLOCKS)
     }
 
-    override fun isRandomlyTicking(state: BlockState): Boolean = true
-}
+    */
+
