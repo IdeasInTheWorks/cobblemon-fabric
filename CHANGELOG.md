@@ -64,6 +64,12 @@
 - Vileplume
 - Bellossom
 - Shroomish
+- Chespin
+- Quilladin
+- Chesnaught
+- Fennekin
+- Braixen
+- Delphox
 
 ### Animation updates for the following Pokémon
 - Treecko (New Shoulder Mount!)
