@@ -51,7 +51,10 @@ class TypeGemFeature : Feature<BlockStateConfiguration>(BlockStateConfiguration.
 
         // Trigger forced growth with clusters
         val coreBlock = coreState.block as TypeGemCoreBlock
-        coreBlock.forceGrow(worldGenLevel, origin, random, 0.5f)
+//        coreBlock.forceGrow(worldGenLevel, origin, random, 0.5f) //TODO DONT LEAVE THIS
+        repeat(20) {
+            coreBlock.expand(coreState, worldGenLevel, origin, random)
+        }
 
         // println("[TypeGemFeature] Placed ${gemId.path} at $chosenPos")
         return true
