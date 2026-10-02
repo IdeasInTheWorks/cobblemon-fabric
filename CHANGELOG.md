@@ -2,10 +2,6 @@
 ## [1.8.2 (MONTH xth, 2026)](#1-8-2)
 
 ### Additions
-- The evolution tree can now be viewed on the Pokédex, showing a Pokémon's full family line and what's needed to evolve into each stage.
-- Added custom sounds to a bunch of items that can be placed as blocks: liquid bottles, pill bottles, powders and dice.
-
-### New rideable Pokémon
 - The following items can now be placed on the ground as blocks:
   - King's Rock, Galarica Cuff, Unremarkable Teacup, Masterpiece Teacup, Chipped Pot, Cracked Pot, Sachet, Metal Powder, Quick Powder, Bright Powder, Icy Rock, Heat Rock, Smooth Rock, Damp Rock, Destiny Knot, Luminous Moss, Never-Melt Ice, Wide Lens, Scope Lens, and Zoom Lens.
   - Iron Ball, Metal Coat, Throat Spray, HP Up, Protein, Iron, Carbos, Calcium, Zinc, PP Up, PP Max, Upgrade, Dubious Disc, and Loaded Dice.
@@ -17,6 +13,8 @@
   - Galarica Wreath, Cleanse Tag, Spell Tag, Sharp Beak, Covert Cloak, Shell Helmet, and Never-Melt Ice.
 - Wearable items can now be equipped by a player by holding it and right-clicking (or rebound use/interact)
   - Wearable items that can be placed down are exempt from this behaviour.
+- The evolution tree can now be viewed on the Pokédex, showing a Pokémon's full family line and what's needed to evolve into each stage.
+- Added custom sounds to a bunch of items that can be placed as blocks: liquid bottles, pill bottles, powders and dice.
 
 ### Pokémon Added
 #### Generation 4
@@ -116,10 +114,11 @@
 - Fixed Alolan Diglett's cry not playing
 - Fixed shiny alpha Snorlax using the non-shiny texture
 - Various Structure fixes
-- Fixed shiny pokemon under certain circumstances forgetting taught TMs
+- Fixed shiny Pokémon under certain circumstances forgetting taught TMs
 - Fixed certain Pokémon sounds sometimes being doubled when played at specific times in their animations
 - Fixed ball capture beam origin coming from behind the ball.
 - Fixed Safari Ball catch rate outside of battle
+
 ### Developer
 - Evolution requirements can now set `pokedexIcon` and `pokedexTooltip` directly in their JSON to control how they're shown on the Pokédex's evolution tree, for example:
   ```json
