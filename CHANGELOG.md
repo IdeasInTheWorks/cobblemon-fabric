@@ -13,6 +13,7 @@
   - Galarica Wreath, Cleanse Tag, Spell Tag, Sharp Beak, Covert Cloak, Shell Helmet, and Never-Melt Ice.
 - Wearable items can now be equipped by a player by holding it and right-clicking (or rebound use/interact)
   - Wearable items that can be placed down are exempt from this behaviour.
+- New Cosmetic Item for Pikachu: Paper
 
 ### Pokémon Added
 #### Generation 4
@@ -83,6 +84,9 @@
 - Gloom
 - Vileplume
 - Bellossom
+- Pichu
+- Pikachu
+- Raichu (+ alolan)
 
 ### Changes
 - Updated various recipes to display in Recipe Groups within the Recipe Book
