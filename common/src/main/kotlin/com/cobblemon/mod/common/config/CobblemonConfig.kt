@@ -399,10 +399,13 @@ class CobblemonConfig {
     var typeGemMinGrowth = 5
 
     @CobblemonConfigField(Category.World, lang = "type_gem_growth_chance", SERVER)
-    var typeGemGrowthChance = 0.5f
+    var typeGemGrowthChance = 0.1f
 
     @CobblemonConfigField(Category.World, lang = "type_gem_initial_expansion_cycles", SERVER)
     var typeGemInitialExpansionCycles = 20
+
+    @CobblemonConfigField(Category.World, lang = "type_gem_tick_chance", SERVER)
+    var typeGemTickChance = 0.1f
 
     fun clone(): CobblemonConfig {
         val newConfig = CobblemonConfig()

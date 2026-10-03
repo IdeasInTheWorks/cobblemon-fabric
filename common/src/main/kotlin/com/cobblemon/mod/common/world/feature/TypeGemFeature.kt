@@ -53,7 +53,7 @@ class TypeGemFeature : Feature<BlockStateConfiguration>(BlockStateConfiguration.
         // Trigger forced growth with clusters
         val coreBlock = coreState.block as TypeGemCoreBlock
         repeat(Cobblemon.config.typeGemInitialExpansionCycles) {
-            coreBlock.expand(coreState, worldGenLevel, origin, random)
+            coreBlock.expand(worldGenLevel, origin, random)
         }
 
         // println("[TypeGemFeature] Placed ${gemId.path} at $chosenPos")
