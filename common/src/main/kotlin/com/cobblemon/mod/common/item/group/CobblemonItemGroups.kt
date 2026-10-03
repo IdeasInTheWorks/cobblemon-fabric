@@ -12,9 +12,11 @@ import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.CobblemonItemComponents
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.api.riding.stats.RidingStat
+import com.cobblemon.mod.common.api.tms.TechnicalMachines
 import com.cobblemon.mod.common.block.TypeGemClusterBlock
 import com.cobblemon.mod.common.item.AprijuiceItem
 import com.cobblemon.mod.common.item.components.RideBoostsComponent
+import com.cobblemon.mod.common.item.components.TMMoveComponent
 import com.cobblemon.mod.common.util.cobblemonResource
 import net.minecraft.core.component.DataComponents
 import net.minecraft.core.registries.BuiltInRegistries
@@ -62,6 +64,10 @@ object CobblemonItemGroups {
         ItemStack(CobblemonItems.BLACK_AUGURITE)
     }
 
+    @JvmStatic val TM_ITEMS_KEY = this.create("tm_item", this::tmItemEntries) {
+        ItemStack(CobblemonItems.BLANK_TM)
+    }
+
     @JvmStatic val BLOCKS get() = BuiltInRegistries.CREATIVE_MODE_TAB.get(BLOCKS_KEY)
     @JvmStatic val UTILITY_ITEMS get() = BuiltInRegistries.CREATIVE_MODE_TAB.get(UTILITY_ITEMS_KEY)
     @JvmStatic val AGRICULTURE get() = BuiltInRegistries.CREATIVE_MODE_TAB.get(AGRICULTURE_KEY)
@@ -69,6 +75,7 @@ object CobblemonItemGroups {
     @JvmStatic val CONSUMABLES get() = BuiltInRegistries.CREATIVE_MODE_TAB.get(CONSUMABLES_KEY)
     @JvmStatic val HELD_ITEMS get() = BuiltInRegistries.CREATIVE_MODE_TAB.get(HELD_ITEMS_KEY)
     @JvmStatic val EVOLUTION_ITEMS get() = BuiltInRegistries.CREATIVE_MODE_TAB.get(EVOLUTION_ITEMS_KEY)
+    @JvmStatic val TM_ITEMS get() = BuiltInRegistries.CREATIVE_MODE_TAB.get(TM_ITEMS_KEY)
 
     @JvmStatic val BUILDING_BLOCKS_INJECTIONS = this.inject(ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), ResourceLocation.parse("building_blocks")), this::blocksInjections)
     @JvmStatic val COLORED_BLOCKS_INJECTIONS = this.inject(ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), ResourceLocation.parse("colored_blocks")), this::coloredBlocksInjections)
@@ -631,8 +638,6 @@ object CobblemonItemGroups {
         entries.accept(CobblemonItems.ABILITY_CAPSULE)
         entries.accept(CobblemonItems.ABILITY_PATCH)
 
-        entries.accept(CobblemonItems.BLANK_TM)
-
         entries.accept(CobblemonItems.POKE_BAIT)
         entries.accept(CobblemonItems.POKE_SNACK)
         entries.accept(CobblemonItems.POKE_CAKE)
@@ -846,6 +851,15 @@ object CobblemonItemGroups {
         entries.accept(CobblemonItems.GRASSY_SEED)
         entries.accept(CobblemonItems.MISTY_SEED)
         entries.accept(CobblemonItems.PSYCHIC_SEED)
+    }
+
+    private fun tmItemEntries(displayContext: ItemDisplayParameters, entries: Output) {
+        entries.accept(CobblemonItems.BLANK_TM)
+        TechnicalMachines
+            .tmMap
+            .entries
+            .sortedBy { it.value.moveName.elementalType.typeGem }
+            .forEach { (_, machine) -> entries.accept(TMMoveComponent.createStack(machine.moveName)) }
     }
 
     private fun utilityItemEntries(displayContext: ItemDisplayParameters, entries: Output) {
