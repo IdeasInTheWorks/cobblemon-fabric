@@ -22,13 +22,18 @@
          "poseTypes": ["WALK", "SWIM"],
          "animations": [
             "q.look('head')",
-            "q.bedrock('quilladin', 'ground_idle')",
-            "q.biped_walk(0.66, 1.4, 'leg_left', 'leg_right')",
-            "q.bimanual_swing(0.66, 1.4, 'arm_left', 'arm_right')"
+            "q.bedrock('quilladin', 'ground_walk')"
          ],
          "quirks": [
             "q.bedrock_quirk('quilladin', 'blink')"
          ]
+      },
+      "sleep": {
+         "poseTypes": ["SLEEP"],
+         "namedAnimations": {
+            "cry": "q.bedrock_stateful('dummy', 'cry')"
+         },
+         "animations": ["q.bedrock('quilladin', 'sleep')"]
       }
    }
 }
