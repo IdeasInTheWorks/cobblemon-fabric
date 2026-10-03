@@ -85,6 +85,7 @@
 - Changes tm shelf discs to use textures instead of tinting and overlays to line up with item display
 - Blank TM can now be inserted into the Disc Shelf
 - Recall animation now renders ball in hand with the player arm raised.
+- Slowed the speed of Type Gem growth, and revamped their generation to grow in a more crystal-like shape
 
 ### Fixes
 - Correctly grants "They're Minerals!" advancement when planting a type gem
