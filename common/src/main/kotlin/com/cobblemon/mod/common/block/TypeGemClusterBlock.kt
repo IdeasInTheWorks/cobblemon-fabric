@@ -34,7 +34,6 @@ import net.minecraft.world.level.block.Mirror
 import net.minecraft.world.level.block.Rotation
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
-import net.minecraft.world.level.block.state.properties.BooleanProperty
 import net.minecraft.world.level.block.state.properties.DirectionProperty
 import net.minecraft.world.level.block.state.properties.EnumProperty
 import net.minecraft.world.level.block.state.properties.IntegerProperty
@@ -73,9 +72,9 @@ class TypeGemClusterBlock(
     }
 
     enum class GrowthType(private val label: String, val chance: Float): StringRepresentable {
-        FULL("full", 0.3f),
-        STUNTED("stunted", 0.3f),
-        DECORATION("none", 0.3f);
+        FULL("full", 0.5f),
+        STUNTED("stunted", 0.25f),
+        DECORATION("none", 0.25f);
         override fun getSerializedName(): String = label
     }
 
