@@ -102,6 +102,7 @@
 - Item evolutions now unlock **all** locked evolutions whose requirements are met instead of stopping after the first.
   - Exceptions being "forced" evolutions which will continue to stop after the first one
 - Removed Mega Drain as a TM
+- Slowed the speed of Type Gem growth, and revamped their generation to grow in a more crystal-like shape
 
 ### Fixes
 - Correctly grants "They're Minerals!" advancement when planting a type gem
