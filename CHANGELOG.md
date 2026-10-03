@@ -83,10 +83,10 @@
 ### Changes
 - Updated various recipes to display in Recipe Groups within the Recipe Book
 - Updated most recipes to display more logically/consistently within the Recipe Book's categories
-- Updated Never-Melt Ice's recipe
-- Updated Blank TM's recipe
+- Updated the following recipes
+  - Never-Melt Ice, Focus Sash, Blunder Policy, Weakness Policy, Blank TM
 - Make ride rotations less jittery in multiplayer.
-- Changes tm shelf discs to use textures instead of tinting and overlays to line up with item display
+- Changes Disc Shelf TMs to use textures instead of tinting and overlays to line up with item display
 - Blank TM can now be inserted into the Disc Shelf
 - Added TM creative tab
 - Recall animation now renders ball in hand with the player arm raised.
