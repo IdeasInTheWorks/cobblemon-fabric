@@ -473,9 +473,11 @@ class PokemonClientDelegate : PosableState(), PokemonSideDelegate {
                 when (particleData) {
                     is ParticleData.SnowstormParticle -> {
                         val locators = particleData.locatorResolver(locatorStates).filter(::isLocatorVisible)
+
+                        Cobblemon.LOGGER.info(particleData.amount())
                         if (particleData.chance > random.nextDouble()) {
                             locators.forEach { locator ->
-                                repeat(particleData.amount) {
+                                repeat(particleData.amount()) {
                                     runtime.resolve("q.particle('${particleData.particle}', '$locator')".asExpressionLike())
                                 }
                             }
@@ -485,7 +487,8 @@ class PokemonClientDelegate : PosableState(), PokemonSideDelegate {
                     is ParticleData.MinecraftParticle -> {
                         if (particleData.chance > random.nextDouble()) {
                             val box = currentEntity.boundingBox
-                            repeat(particleData.amount) {
+                            Cobblemon.LOGGER.info(particleData.amount())
+                            repeat(particleData.amount()) {
                                 val x = box.minX + (box.maxX - box.minX) * random.nextDouble()
                                 val y = box.minY + (box.maxY - box.minY) * random.nextDouble()
                                 val z = box.minZ + (box.maxZ - box.minZ) * random.nextDouble()
