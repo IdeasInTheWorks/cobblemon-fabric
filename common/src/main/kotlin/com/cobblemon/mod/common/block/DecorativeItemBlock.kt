@@ -77,7 +77,7 @@ class DecorativeItemBlock(settings: Properties, val type: DecorativeItemBlockTyp
         val SCOPE_HITBOX = Shapes.box(0.625, 0.0, 0.4375, 0.9375, 0.125, 0.75)
         val WIDE_HITBOX = Shapes.box(0.625, 0.0, 0.125, 0.9375, 0.0625, 0.625)
         val ZOOM_HITBOX = Shapes.box(0.125, 0.0, 0.1875, 0.375, 0.1875, 0.5)
-        val IZER_HITBOX = Shapes.box(0.1875, 0.0, 0.25, 0.8125, 0.375, 0.75)
+        val IZER_HITBOX = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.375, 0.75)
 
         fun getShape(type: DecorativeItemBlockType): VoxelShape {
             return when (type) {
