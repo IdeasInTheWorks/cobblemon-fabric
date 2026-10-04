@@ -15,7 +15,6 @@ import com.cobblemon.mod.common.block.entity.PokeSnackBlockEntity
 import com.cobblemon.mod.common.client.entity.PokemonClientDelegate
 import com.cobblemon.mod.common.client.render.MatrixWrapper
 import com.cobblemon.mod.common.util.cobblemonResource
-import com.mojang.authlib.minecraft.client.MinecraftClient
 import net.minecraft.client.Minecraft
 import net.minecraft.client.ParticleStatus
 import net.minecraft.core.particles.BlockParticleOption
