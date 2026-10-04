@@ -57,7 +57,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-rage_candy_bar"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_male.geo",
       "layers": [
         {
           "name": "original",
@@ -68,7 +68,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-pewter_crunchies"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_male.geo",
       "layers": [
         {
           "name": "partner",
@@ -79,7 +79,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-lava_cookie"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_male.geo",
       "layers": [
         {
           "name": "hoenn",
@@ -90,7 +90,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-old_gateau"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_male.geo",
       "layers": [
         {
           "name": "sinnoh",
@@ -101,7 +101,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-casteliacone"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_male.geo",
       "layers": [
         {
           "name": "unova",
@@ -112,7 +112,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-lumiose_galette"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_male.geo",
       "layers": [
         {
           "name": "kalos",
@@ -123,7 +123,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-big_malasada"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_male.geo",
       "layers": [
         {
           "name": "alola",
@@ -134,7 +134,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-smoked_tail_curry"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_male.geo",
       "layers": [
         {
           "name": "world",
@@ -144,11 +144,11 @@
     },
     {
       "aspects": ["region-bias-alola", "cosmetic_item-shears"],
-      "model": "cobblemon:pikachu_fluff_alola_bias_male.geo"
+      "model": "cobblemon:pikachu_alola_bias_fluff_male.geo"
     },
     {
       "aspects": ["region-bias-alola", "cosmetic_item-leather_helmet"],
-      "model": "cobblemon:pikachu_detective_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_detective_male.geo",
       "layers": [
         {
           "name": "detective",
@@ -158,7 +158,7 @@
     },
     {
       "aspects": ["region-bias-alola", "cosmetic_item-sinister_tea"],
-      "model": "cobblemon:pikachu_detective_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_detective_male.geo",
       "layers": [
         {
           "name": "detective",
@@ -168,7 +168,7 @@
     },
     {
       "aspects": ["region-bias-alola", "cosmetic_item-cocoa_beans"],
-      "model": "cobblemon:pikachu_detective_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_detective_male.geo",
       "layers": [
         {
           "name": "detective",
@@ -179,7 +179,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-rage_candy_bar", "female"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_female.geo",
       "layers": [
         {
           "name": "original",
@@ -190,7 +190,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-pewter_crunchies", "female"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_female.geo",
       "layers": [
         {
           "name": "partner",
@@ -201,7 +201,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-lava_cookie", "female"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_female.geo",
       "layers": [
         {
           "name": "hoenn",
@@ -212,7 +212,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-old_gateau", "female"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_female.geo",
       "layers": [
         {
           "name": "sinnoh",
@@ -223,7 +223,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-casteliacone", "female"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_female.geo",
       "layers": [
         {
           "name": "unova",
@@ -234,7 +234,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-lumiose_galette", "female"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_female.geo",
       "layers": [
         {
           "name": "kalos",
@@ -245,7 +245,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-big_malasada", "female"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_female.geo",
       "layers": [
         {
           "name": "alola",
@@ -256,7 +256,7 @@
     {
       "aspects": ["region-bias-alola", "cosmetic_item-smoked_tail_curry", "female"],
       "poser": "cobblemon:pikachu_alolan_cap",
-      "model": "cobblemon:pikachu_cap_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_cap_female.geo",
       "layers": [
         {
           "name": "world",
@@ -266,11 +266,11 @@
     },
     {
       "aspects": ["region-bias-alola", "cosmetic_item-shears", "female"],
-      "model": "cobblemon:pikachu_fluff_alola_bias_female.geo"
+      "model": "cobblemon:pikachu_alola_bias_fluff_female.geo"
     },
     {
       "aspects": ["region-bias-alola", "cosmetic_item-leather_helmet", "female"],
-      "model": "cobblemon:pikachu_detective_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_detective_female.geo",
       "layers": [
         {
           "name": "detective",
@@ -280,7 +280,7 @@
     },
     {
       "aspects": ["region-bias-alola", "cosmetic_item-sinister_tea", "female"],
-      "model": "cobblemon:pikachu_detective_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_detective_female.geo",
       "layers": [
         {
           "name": "detective",
@@ -290,7 +290,7 @@
     },
     {
       "aspects": ["region-bias-alola", "cosmetic_item-cocoa_beans", "female"],
-      "model": "cobblemon:pikachu_detective_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_detective_female.geo",
       "layers": [
         {
           "name": "detective",
@@ -300,7 +300,7 @@
     },
         {
       "aspects": ["region-bias-alola", "cosmetic_item-compass"],
-      "model": "cobblemon:pikachu_captain_alola_bias_male.geo",
+      "model": "cobblemon:pikachu_alola_bias_captain_male.geo",
       "poser": "cobblemon:pikachu_alolan_captain",
       "layers": [
         {
@@ -311,7 +311,7 @@
     },
         {
       "aspects": ["region-bias-alola", "cosmetic_item-compass", "female"],
-      "model": "cobblemon:pikachu_captain_alola_bias_female.geo",
+      "model": "cobblemon:pikachu_alola_bias_captain_female.geo",
       "poser": "cobblemon:pikachu_alolan_captain",
       "layers": [
         {
