@@ -710,7 +710,7 @@ object CobblemonBlocks : PlatformRegistry<Registry<Block>, ResourceKey<Registry<
     @JvmField
     val THROAT_SPRAY = create("throat_spray", StackableItemBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.ITEM_BLOCK_BOTTLE_LIQUID_SOUNDS).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.THROAT_SPRAY))
     @JvmField
-    val TERRAIN_EXTENDER = create("terrain_extender", StackableItemBlock(BlockBehaviour.Properties.of().sound(SoundType.CANDLE).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.EXTENDER))
+    val TERRAIN_EXTENDER = create("terrain_extender", StackableItemBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.ITEM_METAL_CAN_SOUNDS).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.EXTENDER))
     @JvmField
     val MOOMOO_MILK = create("moomoo_milk", StackableItemBlock(BlockBehaviour.Properties.of().sound(CobblemonSounds.ITEM_BLOCK_BOTTLE_LIQUID_SOUNDS).mapColor(MapColor.NONE).noOcclusion(), StackableItemBlock.StackableItemBlockType.GLASS_BOTTLE))
     @JvmField
