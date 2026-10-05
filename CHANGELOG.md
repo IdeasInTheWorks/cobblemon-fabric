@@ -107,6 +107,7 @@
 - Updated most recipes to display more logically/consistently within the Recipe Book's categories
 - Make ride rotations less jittery in multiplayer.
 - Made regional and Vivillon split-evo locations now mutually exclusive
+- Vivillon's patterns are now viewable as forms with form names and unique Pokedex entries displayed.
 
 ### Fixes
 - Correctly grants "They're Minerals!" advancement when planting a type gem
