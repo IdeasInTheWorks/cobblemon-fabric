@@ -72,9 +72,9 @@ class TypeGemClusterBlock(
     }
 
     enum class GrowthType(private val label: String, val chance: Float): StringRepresentable {
+        DECORATION("none", 0.25f),
         FULL("full", 0.5f),
-        STUNTED("stunted", 0.25f),
-        DECORATION("none", 0.25f);
+        STUNTED("stunted", 0.25f);
         override fun getSerializedName(): String = label
     }
 
