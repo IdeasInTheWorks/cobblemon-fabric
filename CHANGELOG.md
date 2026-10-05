@@ -77,6 +77,9 @@
 - Froakie
 - Frogadier
 - Greninja
+- Shinx
+- Luxio
+- Luxray
 
 ### Animation updates for the following Pokémon
 - Treecko (New Shoulder Mount!)
