@@ -80,6 +80,7 @@
 - Shinx
 - Luxio
 - Luxray
+- Slakoth
 
 ### Animation updates for the following Pokémon
 - Treecko (New Shoulder Mount!)
@@ -97,6 +98,7 @@
 - Pikachu
 - Raichu (+ Alolan)
 - Greninja
+- Slakoth
 
 ### Changes
 - Updated various recipes to display in Recipe Groups within the Recipe Book
