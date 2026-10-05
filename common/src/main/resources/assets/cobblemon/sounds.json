@@ -1120,6 +1120,33 @@
       { "name": "cobblemon:block/item_block/metal_can_step_4", "volume": 0.2 }
     ]
   },
+  "block.item_block.jar_glass_liquid.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_place_1", "volume": 0.3 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_place_2", "volume": 0.3 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_place_3", "volume": 0.3 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_place_4", "volume": 0.3 }
+    ]
+  },
+  "block.item_block.jar_glass_liquid.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_break_1", "volume": 0.4 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_break_2", "volume": 0.4 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_break_3", "volume": 0.4 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_break_4", "volume": 0.4 }
+    ]
+  },
+  "block.item_block.jar_glass_liquid.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_step_1", "volume": 0.2 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_step_2", "volume": 0.2 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_step_3", "volume": 0.2 },
+      { "name": "cobblemon:block/item_block/jar_glass_liquid_step_4", "volume": 0.2 }
+    ]
+  },
   "move.absorb.actor": {
     "sounds": [ { "name": "cobblemon:move/absorb/absorb_actor", "volume": 0.3 } ]
   },
