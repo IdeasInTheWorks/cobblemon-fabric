@@ -81,6 +81,8 @@
 - Luxio
 - Luxray
 - Slakoth
+- Riolu
+- Lucario
 
 ### Animation updates for the following Pokémon
 - Treecko (New Shoulder Mount!)
