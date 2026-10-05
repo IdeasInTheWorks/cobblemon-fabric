@@ -74,6 +74,9 @@
 - Fennekin
 - Braixen
 - Delphox
+- Froakie
+- Frogadier
+- Greninja
 
 ### Animation updates for the following Pokémon
 - Treecko (New Shoulder Mount!)
@@ -89,7 +92,8 @@
 - Bellossom
 - Pichu
 - Pikachu
-- Raichu (+ alolan)
+- Raichu (+ Alolan)
+- Greninja
 
 ### Changes
 - Updated various recipes to display in Recipe Groups within the Recipe Book
