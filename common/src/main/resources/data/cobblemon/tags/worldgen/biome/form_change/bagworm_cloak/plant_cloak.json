@@ -6,8 +6,10 @@
     "#cobblemon:is_jungle",
     "#cobblemon:is_bamboo",
     "#cobblemon:is_floral",
-    "#cobblemon:is_cherry_blossom",
     "#cobblemon:is_plains",
-    "#cobblemon:is_swamp"
+    "#cobblemon:is_swamp",
+    "#cobblemon:is_tropical_island",
+    "#cobblemon:nether/is_forest",
+    "#cobblemon:nether/is_overgrowth"
   ]
 }

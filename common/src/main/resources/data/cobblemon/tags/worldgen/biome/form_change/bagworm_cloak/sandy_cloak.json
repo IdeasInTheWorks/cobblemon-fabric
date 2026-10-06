@@ -4,6 +4,8 @@
     "#cobblemon:is_sandy",
     "#cobblemon:is_beach",
     "#cobblemon:is_cave",
-    "#cobblemon:is_dripstone"
+    "#cobblemon:is_dripstone",
+    "#cobblemon:nether/is_desert",
+    "#cobblemon:nether/is_soul_sand"
   ]
 }
