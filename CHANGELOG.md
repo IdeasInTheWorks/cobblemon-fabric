@@ -15,6 +15,8 @@
   - Wearable items that can be placed down are exempt from this behaviour.
 - New Cosmetic Item for Pikachu: Paper
 - Burmy changes its cloak after a battle it took part in, based on the biome: Trash Cloak in the Deep Dark, Nether and End, Plant Cloak in lush biomes such as forests, jungles, plains and swamps, and Sandy Cloak in sandy biomes, beaches and caves.
+- The evolution tree can now be viewed on the Pokédex, showing a Pokémon's full family line and what's needed to evolve into each stage.
+- Added custom sounds to a bunch of items that can be placed as blocks: liquid bottles, pill bottles, powders and dice.
 
 ### Fixes
 - Fixed #updateMovesOnFormChange not properly initializing a form-swapped Pokemon's non-form_change moves.
@@ -107,11 +109,18 @@
 - Updated various recipes to display in Recipe Groups within the Recipe Book
 - Updated most recipes to display more logically/consistently within the Recipe Book's categories
 - Make ride rotations less jittery in multiplayer.
+- Changes tm shelf discs to use textures instead of tinting and overlays to line up with item display
+- Blank TM can now be inserted into the Disc Shelf
+- Recall animation now renders ball in hand with the player arm raised.
 - Made regional and Vivillon split-evo locations now mutually exclusive
 - Vivillon's patterns are now viewable as forms with form names and unique Pokedex entries displayed.
+- Item evolutions now unlock **all** locked evolutions whose requirements are met instead of stopping after the first.
+  - Exceptions being "forced" evolutions which will continue to stop after the first one
 
 ### Fixes
 - Correctly grants "They're Minerals!" advancement when planting a type gem
+- Shoulder mounted Pokémon now follow player body animations, improving their positioning with custom player animations and default actions.
+- Shoulder mounted Pokémon now sit slightly higher with chest armor equipped for better alignment, with a configurable blacklist.
 - Type Gem Blocks now have advancements to give you the recipe in the recipe book (the data for the advancements were inside the recipes somehow??)
 - Some other recipes without advancements have also been corrected
 - Corrected the TM Recipes for Charge Beam and Payday
@@ -133,8 +142,22 @@
 - Fixed Alolan Diglett's cry not playing
 - Fixed shiny alpha Snorlax using the non-shiny texture
 - Various Structure fixes
+- Fixed shiny Pokémon under certain circumstances forgetting taught TMs
+- Fixed certain Pokémon sounds sometimes being doubled when played at specific times in their animations
+- Fixed ball capture beam origin coming from behind the ball.
+- Fixed Safari Ball catch rate outside of battle
 
 ### Developer
+- Evolution requirements can now set `pokedexIcon` and `pokedexTooltip` directly in their JSON to control how they're shown on the Pokédex's evolution tree, for example:
+  ```json
+  {
+    "variant": "attack_defence_ratio",
+    "pokedexIcon": "minecraft:diamond_sword",
+    "pokedexTooltip": "cobblemon.ui.pokedex.requirement.attack_defence_ratio.tooltip"
+  }
+  ```
+- Fixed wrong order of operations in the code flow prior to the `FOSSIL_REVIVED` event causing pokemon to appear without entity link
+- Fixed TestPartySlot command not correctly comparing the provided spec with the target Pokémon
 
 ### Molang & Datapacks
 - A new `negate` variant for evolution requirements has been added, which will negate (invert) the provided inner condition.
