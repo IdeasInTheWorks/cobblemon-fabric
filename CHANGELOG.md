@@ -23,6 +23,7 @@
 - Burmy changes its cloak after a battle it took part in, based on the biome: Trash Cloak in the Deep Dark, Nether and End, Plant Cloak in lush biomes such as forests, jungles, plains and swamps, and Sandy Cloak in sandy biomes, beaches and caves.
 
 ### Fixes
+- Sweeping attacks no longer set owned Pokémon on fire (e.g. with Fire Aspect) or knock them back.
 - Fixed #updateMovesOnFormChange not properly initializing a form-swapped Pokemon's non-form_change moves.
 ### TEST
 ### Pokémon Added
