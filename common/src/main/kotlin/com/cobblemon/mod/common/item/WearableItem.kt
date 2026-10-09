@@ -63,8 +63,8 @@ interface WearableItem : Equipable {
 
         val equipStack = itemStack.split(1)
         when {
-            !itemStack.isEmpty -> player.addItem(slotStack.copyAndClear())
-            else -> itemStack = slotStack.copyAndClear()
+            itemStack.isEmpty -> itemStack = slotStack.copyAndClear()
+            else -> player.addItem(slotStack.copyAndClear())
         }
 
         player.setItemSlot(equipmentSlot, equipStack)
