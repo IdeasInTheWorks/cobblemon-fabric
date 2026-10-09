@@ -1235,7 +1235,7 @@ open class PokemonEntity(
                 if (pokemon.aspects.any { it.contains("mooshtank-brown") }) {
                     player.playSound(SoundEvents.MOOSHROOM_EAT, 1.0f, 1.0f)
                     pokemon.lastFlowerFed = itemStack
-                    if (!player.isCreative) itemStack.shrink(1)
+                    if (!player.isCreative && !level().isClientSide) itemStack.shrink(1)
                     return InteractionResult.sidedSuccess(level().isClientSide)
                 }
             } else if (!player.isShiftKeyDown && StashHandler.interactMob(player, pokemon, itemStack)) {
