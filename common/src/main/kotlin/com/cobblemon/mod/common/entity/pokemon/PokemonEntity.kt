@@ -1234,7 +1234,7 @@ open class PokemonEntity(
             ) {
                 if (pokemon.aspects.any { it.contains("mooshtank-brown") }) {
                     player.playSound(SoundEvents.MOOSHROOM_EAT, 1.0f, 1.0f)
-                    pokemon.lastFlowerFed = itemStack
+                    pokemon.lastFlowerFed = itemStack.copyWithCount(1)
                     if (!player.isCreative && !level().isClientSide) itemStack.shrink(1)
                     return InteractionResult.sidedSuccess(level().isClientSide)
                 }
