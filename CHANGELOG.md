@@ -94,6 +94,8 @@
 - Slakoth
 - Riolu
 - Lucario
+- Corsola
+- Mime Jr.
 
 ### Animation updates for the following Pokémon
 - Treecko (New Shoulder Mount!)
@@ -132,7 +134,6 @@
 - Item evolutions now unlock **all** locked evolutions whose requirements are met instead of stopping after the first.
   - Exceptions being "forced" evolutions which will continue to stop after the first one
 - Removed Mega Drain as a TM
-- Vivillon's patterns are now viewable as forms with form names and unique Pokedex entries displayed.
 - Slowed the speed of Type Gem growth, and revamped their generation to grow in a more crystal-like shape
 - PokeSnacks (and other area spawns) will now start the vertical offset checking from the center rather than base coordinate
   - This will help PokeSnacks to work inside caves or tighter spaces better
@@ -161,6 +162,8 @@
 - Fixed Kingambit moving its legs while walking
 - Fixed Alolan Diglett's cry not playing
 - Fixed shiny alpha Snorlax using the non-shiny texture
+- Fixed Crabominable's head breaking when looking around
+- Fixed Shiny Dipplin and Hydrapple's textures
 - Various Structure fixes
 - Fixed shiny Pokémon under certain circumstances forgetting taught TMs
 - Fixed certain Pokémon sounds sometimes being doubled when played at specific times in their animations
