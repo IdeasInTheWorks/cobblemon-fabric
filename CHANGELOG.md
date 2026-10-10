@@ -175,6 +175,8 @@
 - Fixed equipping a stack of items instead of one item of a stack
 - Fixed TM stack consumption in TMM screen when player teaches a move to species
 - Fixed every Miltank giving mushroom stew, not only mushroom variants 
+- Fixed Oricorio Pa'u form dex description
+- Fixed PC playing sound on close when opened via command
 
 ### Developer
 - Evolution requirements can now set `pokedexIcon` and `pokedexTooltip` directly in their JSON to control how they're shown on the Pokédex's evolution tree, for example:
