@@ -21,14 +21,7 @@
 - Added custom sounds to a bunch of items that can be placed as blocks: liquid bottles, pill bottles, powders and dice.
 - New Cosmetic Item for Pikachu: Paper
 - Burmy changes its cloak after a battle it took part in, based on the biome: Trash Cloak in the Deep Dark, Nether and End, Plant Cloak in lush biomes such as forests, jungles, plains and swamps, and Sandy Cloak in sandy biomes, beaches and caves.
-- The evolution tree can now be viewed on the Pokédex, showing a Pokémon's full family line and what's needed to evolve into each stage.
-- Added custom sounds to a bunch of items that can be placed as blocks: liquid bottles, pill bottles, powders and dice.
 
-### Fixes
-- Medicinal Leeks can now be eaten when they aren't being planted, matching their food properties.
-- Sweeping attacks no longer set owned Pokémon on fire (e.g. with Fire Aspect) or knock them back.
-- Fixed #updateMovesOnFormChange not properly initializing a form-swapped Pokemon's non-form_change moves.
-### TEST
 ### Pokémon Added
 #### Generation 4
 - Snover
@@ -132,7 +125,6 @@
 - Item evolutions now unlock **all** locked evolutions whose requirements are met instead of stopping after the first.
   - Exceptions being "forced" evolutions which will continue to stop after the first one
 - Removed Mega Drain as a TM
-- Vivillon's patterns are now viewable as forms with form names and unique Pokedex entries displayed.
 - Slowed the speed of Type Gem growth, and revamped their generation to grow in a more crystal-like shape
 - PokeSnacks (and other area spawns) will now start the vertical offset checking from the center rather than base coordinate
   - This will help PokeSnacks to work inside caves or tighter spaces better
@@ -142,11 +134,11 @@
 - Shoulder mounted Pokémon now follow player body animations, improving their positioning with custom player animations and default actions.
 - Shoulder mounted Pokémon now sit slightly higher with chest armor equipped for better alignment, with a configurable blacklist.
 - Type Gem Blocks now have advancements to give you the recipe in the recipe book (the data for the advancements were inside the recipes somehow??)
-- Some other recipes without advancements have also been corrected
+  - Some other recipes without advancements have also been corrected
 - Corrected the TM Recipes for Charge Beam and Payday
 - Type Gem blocks now properly generate clusters off of the block.
 - Starter Screen Categories will no longer stop rendering if they are bigger than the viewport, and you are not viewing top or bottom edges
-- Random Starter option now properly handled in height calculation, so now it won't run off into other categories or be un-accessible due to scroll limits if it causes a new row
+- The Random Starter option is now properly handled in height calculation, so now it won't run off into other categories or be unaccessible due to scroll limits if it causes a new row
 - Mochi and Feathers no longer drop glass bottles on use
 - Fixed a rare set of concurrency bugs related to reloading packs on NeoForge; fixes a ModernFix issue
 - Removed unnecessary conditions for Mimikyu's standing pose. Hopefully fixes the rare instance of it using its shoulder animations during battle in multiplayer scenarios.
@@ -168,13 +160,16 @@
 - Fixed Safari Ball catch rate outside of battle
 - Fixed alpha eye (and other) particles not respecting client particle density setting in video options
 - Fixed TM-Machine UI not closing when player is moving away from it
-- Fixed config category for alpha/shiny chance config fields for fossil machine and honey log slathering to Spawning
+- Fixed the config category for alpha/shiny chance config fields for fossil machine and honey log slathering to Spawning
 - Fixed crashes for addon species with non-Cobblemon namespaces, in evolution, fishing bait and Pokédex lookups.
 - Bees now grow Apricorns and the Galarica Nut Bush, which were in the bee growables tag but never handled, and correctly spend their nectar when they do
 - Saccharine Leaves can now be bone mealed
 - Fixed equipping a stack of items instead of one item of a stack
 - Fixed TM stack consumption in TMM screen when player teaches a move to species
 - Fixed every Miltank giving mushroom stew, not only mushroom variants 
+- Medicinal Leeks can now be eaten when they aren't being planted, matching their food properties.
+- Sweeping attacks no longer set owned Pokémon on fire (e.g. with Fire Aspect) or knock them back.
+- Fixed #updateMovesOnFormChange not properly initializing a form-swapped Pokemon's non-form_change moves.
 
 ### Developer
 - Evolution requirements can now set `pokedexIcon` and `pokedexTooltip` directly in their JSON to control how they're shown on the Pokédex's evolution tree, for example:
@@ -185,7 +180,7 @@
     "pokedexTooltip": "cobblemon.ui.pokedex.requirement.attack_defence_ratio.tooltip"
   }
   ```
-- Fixed wrong order of operations in the code flow prior to the `FOSSIL_REVIVED` event causing pokemon to appear without entity link
+- Fixed the wrong order of operations in the code flow prior to the `FOSSIL_REVIVED` event causing Pokémon to appear without the entity link
 - Fixed TestPartySlot command not correctly comparing the provided spec with the target Pokémon
 
 ### Molang & Datapacks
