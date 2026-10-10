@@ -29,6 +29,7 @@
             },
             "anticondition": {
                 "biomes": [
+                    "#cobblemon:is_taiga",
                     "#cobblemon:is_spooky"
                 ]
             }
