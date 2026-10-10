@@ -1,12 +1,15 @@
 {
   "replace": false,
   "values": [
-    "minecraft:dappled_forest",
     "#cobblemon:is_arid",
     "#cobblemon:is_cold_ocean",
     "#cobblemon:is_mountain",
     "#cobblemon:is_mushroom",
     "#cobblemon:is_taiga",
+    {
+      "id": "minecraft:dappled_forest",
+      "required": false
+    },
     {
       "id": "biomesoplenty:aspen_forest",
       "required": false
