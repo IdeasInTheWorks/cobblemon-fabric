@@ -2142,7 +2142,7 @@ open class Pokemon : ShowdownIdentifiable {
     }
 
     fun getSizeCategory(): PokemonSizeCategory {
-        return PokemonSizeCategory.fromScale(effectiveScale)
+        return PokemonSizeCategory.fromScale(scaleModifier)
     }
 
     fun addExperience(source: ExperienceSource, xp: Int): AddExperienceResult {
