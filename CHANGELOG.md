@@ -196,3 +196,9 @@
 
 ### Localization
 - Updated translations for:
+  - Brazilian Portuguese
+  - Canadian French
+  - Japanese
+  - Korean
+  - Russian
+  - Ukrainian
