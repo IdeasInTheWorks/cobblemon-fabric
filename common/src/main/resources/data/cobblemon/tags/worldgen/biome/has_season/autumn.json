@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:dappled_forest",
     "#cobblemon:is_arid",
     "#cobblemon:is_cold_ocean",
     "#cobblemon:is_mountain",
