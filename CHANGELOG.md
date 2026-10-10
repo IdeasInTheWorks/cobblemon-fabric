@@ -177,6 +177,7 @@
 - Fixed every Miltank giving mushroom stew, not only mushroom variants 
 - Fixed Oricorio Pa'u form dex description
 - Fixed PC playing sound on close when opened via command
+- Fixed pokemon size display in summary/scanner/molang to use individual scale
 
 ### Developer
 - Evolution requirements can now set `pokedexIcon` and `pokedexTooltip` directly in their JSON to control how they're shown on the Pokédex's evolution tree, for example:
