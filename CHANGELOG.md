@@ -1,5 +1,5 @@
 # Changelog
-## [1.8.2 (October xth, 2026)](#1-8-2)
+## [1.8.2 (October 11th, 2026)](#1-8-2)
 
 ### Additions
 - The following items can now be placed on the ground as blocks:
