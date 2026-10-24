@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "id": "cobblemon",
   "version": "${version}",
-  "name": "Cobblemon",
+  "name": "Cobblemon (Independent Fabric Port)",
   "description": "Adds Pokémon to the world, letting you find, battle, capture, and evolve them.",
   "authors": [
     "The Cobblemon Team"
   ],
   "contact": {
     "homepage": "https://cobblemon.com/",
-    "sources": "https://gitlab.com/cable-mc/cobblemon",
-    "issues": "https://gitlab.com/cable-mc/cobblemon/-/issues"
+    "sources": "https://github.com/IdeasInTheWorks/cobblemon-fabric",
+    "issues": "https://github.com/IdeasInTheWorks/cobblemon-fabric/issues"
   },
   "license": "MPL-2.0",
   "icon": "assets/cobblemon/icon_cobblemon.png",
@@ -55,7 +55,7 @@
       }
     },
     "loom:injected_interfaces": {
-      "net/minecraft/class_630": ["com/cobblemon/mod/common/client/render/models/blockbench/pose/Bone"]
+      "net/minecraft/client/model/geom/ModelPart": ["com/cobblemon/mod/common/client/render/models/blockbench/pose/Bone"]
     }
   }
 }

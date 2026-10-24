@@ -16,7 +16,7 @@ import net.minecraft.client.gui.components.toasts.Toast
 import net.minecraft.client.gui.components.toasts.ToastComponent
 import net.minecraft.world.item.ItemStack
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.util.Mth
 import java.util.*
 import kotlin.math.min
@@ -29,7 +29,7 @@ class CobblemonToast(
     var icons: List<ItemStack>,
     var title: Component,
     var description: Component,
-    var frameTexture: ResourceLocation,
+    var frameTexture: Identifier,
     var progress: Float,
     var progressColor: Int,
     var durationMs: Long? = null

@@ -19,12 +19,12 @@ import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.world.entity.LivingEntity
 
 class BehaviourEditorScreen(
     val entity: LivingEntity,
-    val appliedBehaviours: MutableSet<ResourceLocation>,
+    val appliedBehaviours: MutableSet<Identifier>,
 ) : Screen(Component.literal("Behaviour Editor")) {
     companion object {
         const val BASE_WIDTH = 360
@@ -127,13 +127,13 @@ class BehaviourEditorScreen(
         super.render(context, mouseX, mouseY, delta)
     }
 
-    fun add(resourceLocation: ResourceLocation, alignButtonRight: Boolean) {
+    fun add(resourceLocation: Identifier, alignButtonRight: Boolean) {
         appliedBehaviours.add(resourceLocation)
         unadded.removeEntry(resourceLocation)
         added.addEntry(resourceLocation, !alignButtonRight)
     }
 
-    fun remove(resourceLocation: ResourceLocation, alignButtonRight: Boolean) {
+    fun remove(resourceLocation: Identifier, alignButtonRight: Boolean) {
         appliedBehaviours.remove(resourceLocation)
         added.removeEntry(resourceLocation)
         unadded.addEntry(resourceLocation, !alignButtonRight)

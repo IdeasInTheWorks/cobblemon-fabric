@@ -21,7 +21,7 @@ import net.minecraft.client.resources.sounds.SimpleSoundInstance
 import net.minecraft.client.sounds.SoundManager
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class SummaryButton(
     var buttonX: Float,
@@ -30,8 +30,8 @@ class SummaryButton(
     val buttonHeight: Number,
     val clickAction: OnPress,
     private val text: MutableComponent = Component.empty(),
-    private val resource: ResourceLocation,
-    private val activeResource: ResourceLocation? = null,
+    private val resource: Identifier,
+    private val activeResource: Identifier? = null,
     private val renderRequirement: ((button: SummaryButton) -> Boolean) = { true },
     private val clickRequirement: ((button: SummaryButton) -> Boolean) = { true },
     private val hoverTexture: Boolean = true,

@@ -23,7 +23,7 @@ import net.minecraft.client.gui.components.Button
 import net.minecraft.client.sounds.SoundManager
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import org.joml.Quaternionf
 import org.joml.Vector3f
 
@@ -60,7 +60,7 @@ class TMPartySlotWidget(
         private val learnedLabel = lang("ui.tm_machine.learned")
     }
 
-    private fun getResource(): ResourceLocation = when (teachable) {
+    private fun getResource(): Identifier = when (teachable) {
         CAN_LEARN -> if (clickable) slotLearnableResource else slotLearnableDisabledResource
         CANNOT_LEARN -> slotDisabledResource
         LEARNED -> slotLearnedResource

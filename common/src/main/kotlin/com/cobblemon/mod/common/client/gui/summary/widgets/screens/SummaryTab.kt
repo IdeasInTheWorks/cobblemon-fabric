@@ -19,12 +19,12 @@ import net.minecraft.client.resources.sounds.SimpleSoundInstance
 import net.minecraft.client.sounds.SoundManager
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class SummaryTab(
     pX: Int, pY: Int,
     val label: MutableComponent? = null,
-    val icon: ResourceLocation? = null,
+    val icon: Identifier? = null,
     onPress: OnPress
 ): Button(pX, pY, WIDTH, HEIGHT, label ?: Component.empty(), onPress, DEFAULT_NARRATION), CobblemonRenderable {
     companion object {

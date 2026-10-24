@@ -25,7 +25,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.LightTexture
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.texture.OverlayTexture
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.util.Mth
 import net.minecraft.world.phys.Vec3
 import org.joml.Quaternionf
@@ -76,7 +76,7 @@ fun drawProfilePokemon(
 )
 
 fun drawProfilePokemon(
-    species: ResourceLocation,
+    species: Identifier,
     matrixStack: PoseStack,
     rotation: Quaternionf,
     poseType: PoseType = PoseType.PROFILE,

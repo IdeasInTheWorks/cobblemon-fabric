@@ -31,7 +31,7 @@ import net.minecraft.client.gui.screens.ChatScreen
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.client.player.Input
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.util.Mth
 import kotlin.math.max
 
@@ -76,7 +76,7 @@ class RideControlsOverlay : Gui(Minecraft.getInstance()) {
     var mouseMovedUp: Boolean? = null
     var mouseMovedRight: Boolean? = null
 
-    var currentBehaviourKey: ResourceLocation? = null
+    var currentBehaviourKey: Identifier? = null
 
     override fun render(context: GuiGraphics, tickCounter: DeltaTracker) {
         val minecraft = Minecraft.getInstance()

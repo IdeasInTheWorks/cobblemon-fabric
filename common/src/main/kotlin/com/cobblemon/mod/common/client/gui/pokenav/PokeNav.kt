@@ -27,7 +27,7 @@ import net.minecraft.client.gui.components.Button
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class PokeNav : Screen(Component.translatable("cobblemon.ui.pokenav.title")), CobblemonRenderable {
 
@@ -287,13 +287,13 @@ class PokeNav : Screen(Component.translatable("cobblemon.ui.pokenav.title")), Co
      *
      * @throws [IllegalStateException] if the UI cannot fit more buttons.
      *
-     * @param identifier The [ResourceLocation] of this button.
+     * @param identifier The [Identifier] of this button.
      * @param onPress The action ran when the button is clicked, will not execute if [canClick] is false.
      * @param text The display [Component] of the button.
      * @param canClick Used to check if the button can be clicked. Will affect asset rendering to visually symbolize if false.
      */
     private fun insertButton(
-        identifier: ResourceLocation,
+        identifier: Identifier,
         onPress: Button.OnPress,
         text: MutableComponent,
         canClick: () -> Boolean = { true }

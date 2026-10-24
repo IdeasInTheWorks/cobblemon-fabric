@@ -14,10 +14,10 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.advancements.critereon.ContextAwarePredicate
 import net.minecraft.advancements.critereon.EntityPredicate
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import java.util.Optional
 
-class PokemonInteractContext(val species: ResourceLocation, val item: ResourceLocation)
+class PokemonInteractContext(val species: Identifier, val item: Identifier)
 
 class PokemonInteractCriterion(
     playerCtx: Optional<ContextAwarePredicate>,

@@ -28,7 +28,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.resources.sounds.SimpleSoundInstance
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.util.FastColor
 import net.minecraft.util.Mth
 
@@ -48,7 +48,7 @@ class MovesScrollingWidget(val pX: Int, val pY: Int, tmList: SettableObservable<
         val searchBar = cobblemonResource("textures/gui/tmmachine/search_bar.png")
     }
 
-    var highlightedMoveId: ResourceLocation? = null
+    var highlightedMoveId: Identifier? = null
 
     init {
         tmList.subscribeIncludingCurrent { tmList ->
@@ -56,7 +56,7 @@ class MovesScrollingWidget(val pX: Int, val pY: Int, tmList: SettableObservable<
         }
     }
 
-    fun setSlotHighlighted(id: ResourceLocation?) {
+    fun setSlotHighlighted(id: Identifier?) {
         highlightedMoveId = id
         for (child in children()) {
             if (child is ScrollSlot) {

@@ -15,13 +15,13 @@ import com.cobblemon.mod.common.client.render.models.blockbench.FloatingState
 import java.util.UUID
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.events.GuiEventListener
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class NPCRenderWidget(
     val x: Int,
     val y: Int,
     val entityId: UUID,
-    var identifier: ResourceLocation,
+    var identifier: Identifier,
     val aspects: MutableSet<String>
 ) : CobblemonRenderable, GuiEventListener {
     val state = FloatingState().also {

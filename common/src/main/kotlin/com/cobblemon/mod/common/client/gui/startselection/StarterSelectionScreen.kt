@@ -41,7 +41,7 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.toasts.Toast
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.client.resources.sounds.SimpleSoundInstance
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.sounds.SoundEvent
 import java.io.FileNotFoundException
 
@@ -329,7 +329,7 @@ class StarterSelectionScreen(private val categories: List<RenderableStarterCateg
         super.render(context, mouseX, mouseY, delta)
     }
 
-    fun getPlatformResource(type: ElementalType): ResourceLocation? {
+    fun getPlatformResource(type: ElementalType): Identifier? {
         return try {
             cobblemonResource("textures/gui/starterselection/starter_platform_base_${type.showdownId}.png")
         } catch (error: FileNotFoundException) {

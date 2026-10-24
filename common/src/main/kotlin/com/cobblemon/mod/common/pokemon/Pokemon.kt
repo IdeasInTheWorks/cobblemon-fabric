@@ -146,7 +146,7 @@ import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.chat.contents.PlainTextContents
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.tags.FluidTags
@@ -431,7 +431,7 @@ open class Pokemon : ShowdownIdentifiable {
             }
         }
 
-    var interactionCooldowns: MutableMap<ResourceLocation, Int> = mutableMapOf()
+    var interactionCooldowns: MutableMap<Identifier, Int> = mutableMapOf()
 
     var state: PokemonState = InactivePokemonState()
         set(value) {
@@ -1127,7 +1127,7 @@ open class Pokemon : ShowdownIdentifiable {
     }
 
     // maybe we will have an item that uses this method later, like we will do with breeding cooldowns
-    fun resetInteractionCooldown(group: ResourceLocation) {
+    fun resetInteractionCooldown(group: Identifier) {
         this.interactionCooldowns.remove(group)
     }
 
@@ -1146,7 +1146,7 @@ open class Pokemon : ShowdownIdentifiable {
         }
     }
 
-    fun isOnInteractionCooldown(group: ResourceLocation): Boolean {
+    fun isOnInteractionCooldown(group: Identifier): Boolean {
         return this.interactionCooldowns.getOrDefault(group, 0) > 0
     }
 

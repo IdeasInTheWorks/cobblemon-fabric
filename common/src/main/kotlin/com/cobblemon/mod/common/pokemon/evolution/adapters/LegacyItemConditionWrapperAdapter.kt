@@ -23,7 +23,7 @@ import net.minecraft.advancements.critereon.NbtPredicate
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.tags.TagKey
 import java.lang.reflect.Type
 
@@ -64,7 +64,7 @@ class LegacyItemConditionWrapperAdapter(val registryAccess: HolderLookup.Provide
     private fun createBuilderForItem(raw: String): ItemPredicate.Builder {
         val isTag = raw.startsWith(TAG_PREFIX)
         val builder = ItemPredicate.Builder.item()
-        return ResourceLocation.read(if (isTag) raw.substring(1) else raw)
+        return Identifier.read(if (isTag) raw.substring(1) else raw)
             .mapOrElse(
                 { id ->
                     if (isTag) {

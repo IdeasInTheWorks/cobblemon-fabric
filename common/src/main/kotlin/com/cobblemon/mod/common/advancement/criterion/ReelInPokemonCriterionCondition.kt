@@ -15,9 +15,9 @@ import java.util.Optional
 import net.minecraft.advancements.critereon.ContextAwarePredicate
 import net.minecraft.advancements.critereon.EntityPredicate
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
-class ReelInPokemonContext(val species : ResourceLocation, val baitId: ResourceLocation)
+class ReelInPokemonContext(val species : Identifier, val baitId: Identifier)
 
 class ReelInPokemonCriterionCondition(
         playerCtx: Optional<ContextAwarePredicate>,

@@ -20,14 +20,14 @@ import com.mojang.blaze3d.vertex.PoseStack
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.sounds.SoundManager
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 open class PokeNavImageButton(
     val posX: Int, val posY: Int,
     pX: Int, pY: Int,
     pWidth: Int, pHeight: Int,
     pXTexStart: Int, pYTexStart: Int, pYDiffText: Int,
-    private val resourceLocation: ResourceLocation, pTextureWidth: Int, pTextureHeight: Int,
+    private val resourceLocation: Identifier, pTextureWidth: Int, pTextureHeight: Int,
     onPress: OnPress,
     private val text: MutableComponent,
     private val canClick: () -> Boolean = { true }

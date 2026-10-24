@@ -14,7 +14,7 @@ import kotlin.reflect.KClass
 import net.minecraft.commands.synchronization.ArgumentTypeInfo
 import net.minecraft.core.HolderLookup
 import net.minecraft.resources.ResourceKey
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
@@ -143,7 +143,7 @@ interface CobblemonImplementation {
      * @param argumentClass
      * @param serializer
      */
-    fun <A : ArgumentType<*>, T : ArgumentTypeInfo.Template<A>> registerCommandArgument(identifier: ResourceLocation, argumentClass: KClass<A>, serializer: ArgumentTypeInfo<A, T>)
+    fun <A : ArgumentType<*>, T : ArgumentTypeInfo.Template<A>> registerCommandArgument(identifier: Identifier, argumentClass: KClass<A>, serializer: ArgumentTypeInfo<A, T>)
 
     /**
      * TODO
@@ -174,9 +174,9 @@ interface CobblemonImplementation {
      * @param dependencies
      */
     fun registerResourceReloader(
-        identifier: ResourceLocation,
+        identifier: Identifier,
         type: PackType,
-        dependencies: Collection<ResourceLocation>,
+        dependencies: Collection<Identifier>,
         reloaderFactory: (HolderLookup.Provider) -> PreparableReloadListener
     )
     /**

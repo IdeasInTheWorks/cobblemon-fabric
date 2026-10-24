@@ -28,7 +28,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.util.FormattedCharSequence
 import net.minecraft.util.Mth
 import net.minecraft.world.item.ItemDisplayContext
@@ -155,7 +155,7 @@ fun renderScrollingString(
 
 fun drawScaledText(
     context: GuiGraphics,
-    font: ResourceLocation? = null,
+    font: Identifier? = null,
     text: MutableComponent,
     x: Number,
     y: Number,
@@ -229,7 +229,7 @@ fun drawScaledText(
 
 fun drawScaledTextJustifiedRight(
     context: GuiGraphics,
-    font: ResourceLocation? = null,
+    font: Identifier? = null,
     text: MutableComponent,
     x: Number,
     y: Number,
@@ -291,7 +291,7 @@ fun drawScaledTextJustifiedRight(
 fun renderBeaconBeam(
     matrixStack: PoseStack,
     buffer: MultiBufferSource,
-    textureLocation: ResourceLocation = CobblemonResources.PHASE_BEAM,
+    textureLocation: Identifier = CobblemonResources.PHASE_BEAM,
     partialTicks: Float,
     totalLevelTime: Long,
     yOffset: Float = 0F,

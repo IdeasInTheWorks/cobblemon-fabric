@@ -71,7 +71,7 @@ import net.minecraft.client.gui.screens.Screen
 import net.minecraft.client.resources.sounds.SimpleSoundInstance
 import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.sounds.SoundEvent
 
 /**
@@ -82,7 +82,7 @@ import net.minecraft.sounds.SoundEvent
  */
 class PokedexGUI private constructor(
     val type: PokedexType,
-    val initSpecies: ResourceLocation?,
+    val initSpecies: Identifier?,
     val blockPos: BlockPos?
 ): Screen(Component.translatable("cobblemon.ui.pokedex.title")), CobblemonRenderable {
     companion object {
@@ -123,7 +123,7 @@ class PokedexGUI private constructor(
         /**
          * Attempts to open this screen for a client.
          */
-        fun open(pokedex: ClientPokedexManager, type: PokedexType, species: ResourceLocation? = null, blockPos: BlockPos? = null) {
+        fun open(pokedex: ClientPokedexManager, type: PokedexType, species: Identifier? = null, blockPos: BlockPos? = null) {
             if(Dexes.dexEntryMap.isEmpty()){
                 Minecraft.getInstance().player?.sendSystemMessage(
                     Component.literal("§cError: No Pokedex regions available.")
@@ -151,7 +151,7 @@ class PokedexGUI private constructor(
     private var selectedEntry: PokedexEntry? = null
     private var selectedForm: PokedexForm? = null
 
-    private var availableRegions = emptyList<ResourceLocation>()
+    private var availableRegions = emptyList<Identifier>()
     private var selectedRegionIndex = 0
 
     private lateinit var regionSelectWidgetUp: ScaledButton

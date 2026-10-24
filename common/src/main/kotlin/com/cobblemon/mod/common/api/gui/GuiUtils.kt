@@ -33,7 +33,7 @@ import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.util.FormattedCharSequence
 import org.joml.Matrix4f
 import org.joml.Vector3f
@@ -41,7 +41,7 @@ import org.joml.Vector3f
 @JvmOverloads
 fun blitk(
     matrixStack: PoseStack,
-    texture: ResourceLocation? = null,
+    texture: Identifier? = null,
     x: Number,
     y: Number,
     height: Number = 0,
@@ -102,7 +102,7 @@ fun drawRectangle(
 @JvmOverloads
 fun drawCenteredText(
     context: GuiGraphics,
-    font: ResourceLocation? = null,
+    font: Identifier? = null,
     text: Component,
     x: Number,
     y: Number,
@@ -117,7 +117,7 @@ fun drawCenteredText(
 @JvmOverloads
 fun drawText(
     context: GuiGraphics,
-    font: ResourceLocation? = null,
+    font: Identifier? = null,
     text: MutableComponent,
     x: Number,
     y: Number,
@@ -149,7 +149,7 @@ fun drawText(
 @JvmOverloads
 fun drawTextJustifiedRight(
     context: GuiGraphics,
-    font: ResourceLocation? = null,
+    font: Identifier? = null,
     text: MutableComponent,
     x: Number,
     y: Number,
@@ -188,7 +188,7 @@ fun drawString(
     y: Number,
     colour: Int,
     shadow: Boolean = true,
-    font: ResourceLocation? = null
+    font: Identifier? = null
 ) {
     val comp = Component.literal(text).also {
         font?.run {
@@ -201,7 +201,7 @@ fun drawString(
 
 @JvmOverloads
 fun drawPosablePortrait(
-    identifier: ResourceLocation,
+    identifier: Identifier,
     matrixStack: PoseStack,
     scale: Float = 13F,
     contextScale: Float = 1F,
@@ -287,7 +287,7 @@ fun drawPosablePortrait(
 }
 
 fun drawProfile(
-    resourceIdentifier: ResourceLocation,
+    resourceIdentifier: Identifier,
     matrixStack: PoseStack,
     state: PosableState,
     partialTicks: Float,
@@ -351,7 +351,7 @@ fun drawProfile(
     }
 }
 
-fun renderSprite(matrixStack: PoseStack, sprite: ResourceLocation) {
+fun renderSprite(matrixStack: PoseStack, sprite: Identifier) {
     val matrix: PoseStack.Pose = matrixStack.last()
     matrix.pose().translate(-1f, 0f, 0f)
 

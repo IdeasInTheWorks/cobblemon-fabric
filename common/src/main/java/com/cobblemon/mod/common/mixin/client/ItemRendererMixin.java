@@ -23,7 +23,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -58,14 +58,14 @@ public abstract class ItemRendererMixin {
     )
     private void cobblemon$overrideItemModel(ItemStack stack, ItemDisplayContext renderMode, boolean leftHanded, PoseStack matrices, MultiBufferSource multiBufferSource, int light, int overlay, BakedModel model, CallbackInfo ci) {
         boolean shouldBe2d = renderMode == ItemDisplayContext.GUI || renderMode == ItemDisplayContext.FIXED || stack.getItem() == CobblemonItems.TECHNICAL_MACHINE;
-        ResourceLocation resourceLocation = null;
+        Identifier resourceLocation = null;
         if (shouldBe2d) {
             if (stack.getItem() instanceof PokeBallItem pokeBallItem) resourceLocation = pokeBallItem.getPokeBall().getModel2d();
             else if (stack.getItem() instanceof PokedexItem pokedexItem) resourceLocation = pokedexItem.getType().getItemSpritePath();
             else if (stack.getItem() == CobblemonItems.TECHNICAL_MACHINE) {
                 TMMoveComponent component = stack.get(CobblemonItemComponents.TM_MOVE);
                 if (component != null) {
-                    resourceLocation = new ResourceLocation(Cobblemon.MODID, "tm/" + component.getMove().getElementalType().showdownId() + "_tm");
+                    resourceLocation = new Identifier(Cobblemon.MODID, "tm/" + component.getMove().getElementalType().showdownId() + "_tm");
                 }
             }
         }
@@ -82,7 +82,7 @@ public abstract class ItemRendererMixin {
 
     @Inject(method = "getModel", at = @At("HEAD"), cancellable = true)
     private void cobblemon$getItemModel(ItemStack stack, Level world, LivingEntity entity, int seed, CallbackInfoReturnable<BakedModel> cir) {
-        ResourceLocation resourceLocation = null;
+        Identifier resourceLocation = null;
         if (stack.getItem() instanceof PokeBallItem pokeBallItem) resourceLocation = pokeBallItem.getPokeBall().getModel3d();
         else if (stack.getItem() instanceof PokedexItem pokedexItem) {
             boolean isScanModel = entity instanceof Player && entity.getUseItem() == stack && entity.isUsingItem();

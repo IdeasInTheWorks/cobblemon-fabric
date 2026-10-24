@@ -49,14 +49,14 @@ import net.minecraft.client.resources.sounds.SimpleSoundInstance
 import net.minecraft.network.chat.Component
 import net.minecraft.sounds.SoundEvent
 import kotlin.isInitialized
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class PCGUI(
     val pc: ClientPC,
     val party: ClientParty,
     val configuration: PCGUIConfiguration,
     val openOnBox: Int = CobblemonClient.lastPcBoxViewed,
-    val unseenWallpapers: MutableSet<ResourceLocation> = mutableSetOf(),
+    val unseenWallpapers: MutableSet<Identifier> = mutableSetOf(),
     val silent: Boolean = false
 ) : Screen(Component.translatable("cobblemon.ui.pc.title")), CobblemonRenderable {
 

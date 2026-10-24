@@ -15,12 +15,12 @@ import net.minecraft.client.gui.components.AbstractWidget
 import net.minecraft.client.gui.narration.NarrationElementOutput
 import net.minecraft.client.sounds.SoundManager
 import net.minecraft.network.chat.CommonComponents
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class VariableObjectSelectionScrollbar(var parent: VariableObjectSelectionList, x: Int, y: Int, width: Int, height: Int): AbstractWidget(x, y, width, height, CommonComponents.EMPTY) {
     companion object {
-        private val scrollerResource: ResourceLocation = ResourceLocation("minecraft", "textures/gui/sprites/widget/scroller.png")
-        private val scrollerBackgroundResource: ResourceLocation = ResourceLocation("minecraft", "textures/gui/sprites/widget/scroller_background.png")
+        private val scrollerResource: Identifier = Identifier("minecraft", "textures/gui/sprites/widget/scroller.png")
+        private val scrollerBackgroundResource: Identifier = Identifier("minecraft", "textures/gui/sprites/widget/scroller_background.png")
 
         private const val SCROLLER_HEIGHT = 32
     }

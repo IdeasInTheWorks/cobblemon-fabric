@@ -32,7 +32,7 @@ import net.minecraft.client.gui.screens.Screen
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class HabitatEditGUI(
     /** The position of the habitat block in the client player's world */
@@ -50,7 +50,7 @@ class HabitatEditGUI(
     /** Use this as reference data for what buckets can be chosen for activated spawns */
     val activatedHabitatBuckets: List<String>,
     /** Use this as reference data for pre-made habitat pools */
-    val pools: Map<ResourceLocation, HabitatPool>,
+    val pools: Map<Identifier, HabitatPool>,
     /** The current settings - edit the properties in here then send it back to the server. */
     val habitatSettingsDTO: HabitatSettingsDTO
 ) : Screen(lang("ui.edit.habitat")), CobblemonRenderable {
@@ -96,7 +96,7 @@ class HabitatEditGUI(
         mimicInput.setMaxLength(80)
         mimicInput.value = habitatSettingsDTO.mimicId.toString()
         mimicInput.setResponder { value ->
-            val id = ResourceLocation.tryParse(value)
+            val id = Identifier.tryParse(value)
             val valid = id != null &&
                 BuiltInRegistries.BLOCK.containsKey(id) &&
                 BuiltInRegistries.BLOCK.get(id).builtInRegistryHolder().`is`(CobblemonBlockTags.HABITAT_MIMICS)
@@ -106,7 +106,7 @@ class HabitatEditGUI(
             mimicInput.setTextColor(if (valid) validTextColor else invalidTextColor)
             setFieldValidity("mimic", valid, "ui.edit.habitat.validation.mimic")
         }
-        val initialMimicId = ResourceLocation.tryParse(mimicInput.value)
+        val initialMimicId = Identifier.tryParse(mimicInput.value)
         val initialMimicValid = initialMimicId != null &&
             BuiltInRegistries.BLOCK.containsKey(initialMimicId) &&
             BuiltInRegistries.BLOCK.get(initialMimicId).builtInRegistryHolder().`is`(CobblemonBlockTags.HABITAT_MIMICS)
@@ -414,7 +414,7 @@ class HabitatEditGUI(
         }
     }
 
-    private fun applyPoolSelection(poolId: ResourceLocation?) {
+    private fun applyPoolSelection(poolId: Identifier?) {
         val currentPool = habitatSettingsDTO.pool
         if (poolId == null) {
             if (currentPool.isReference) {

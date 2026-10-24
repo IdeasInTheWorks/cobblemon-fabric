@@ -21,14 +21,14 @@ import net.minecraft.client.gui.components.ObjectSelectionList
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.client.resources.language.I18n
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class HabitatPoolSelectionGUI(
     private val isActivated: Boolean,
-    private val pools: Map<ResourceLocation, HabitatPool>,
-    private val selectedPoolId: ResourceLocation?,
+    private val pools: Map<Identifier, HabitatPool>,
+    private val selectedPoolId: Identifier?,
     private val parentScreen: Screen,
-    private val onSelect: (ResourceLocation?) -> Unit
+    private val onSelect: (Identifier?) -> Unit
 ) : Screen(lang("ui.edit.habitat.pool.select")), CobblemonRenderable {
     private val headerHeight = 24
     private val footerHeight = 44
@@ -79,8 +79,8 @@ class HabitatPoolSelectionGUI(
         return height - footerHeight
     }
 
-    private fun getOptions(): List<Pair<ResourceLocation?, String>> {
-        val options = mutableListOf<Pair<ResourceLocation?, String>>()
+    private fun getOptions(): List<Pair<Identifier?, String>> {
+        val options = mutableListOf<Pair<Identifier?, String>>()
         options.add(null to I18n.get("cobblemon.ui.edit.habitat.pool.custom"))
         val pools = pools.entries.map { it.key to I18n.get(it.value.name) }.sortedBy { it.second.lowercase() }
         options.addAll(pools)
@@ -92,9 +92,9 @@ class HabitatPoolSelectionGUI(
         private val top: Int,
         private val listWidth: Int,
         private val listHeight: Int,
-        options: List<Pair<ResourceLocation?, String>>,
-        selectedPoolId: ResourceLocation?,
-        private val onSelect: (ResourceLocation?) -> Unit
+        options: List<Pair<Identifier?, String>>,
+        selectedPoolId: Identifier?,
+        private val onSelect: (Identifier?) -> Unit
     ) : ObjectSelectionList<PoolList.PoolEntry>(
         Minecraft.getInstance(),
         listWidth,
@@ -123,9 +123,9 @@ class HabitatPoolSelectionGUI(
         }
 
         private class PoolEntry(
-            val poolId: ResourceLocation?,
+            val poolId: Identifier?,
             private val poolName: String,
-            private val onSelect: (ResourceLocation?) -> Unit
+            private val onSelect: (Identifier?) -> Unit
         ) : ObjectSelectionList.Entry<PoolEntry>() {
             override fun render(
                 guiGraphics: GuiGraphics,

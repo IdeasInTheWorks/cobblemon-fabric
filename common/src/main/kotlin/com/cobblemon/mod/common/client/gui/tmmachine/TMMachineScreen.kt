@@ -54,7 +54,7 @@ import net.minecraft.client.resources.sounds.SimpleSoundInstance
 import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.Style
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.util.Mth
 import net.minecraft.world.entity.player.Inventory
@@ -112,12 +112,12 @@ class TMMachineScreen(containerMenu: TMMachineMenu, val inventory: Inventory, ti
         val screenOverlay = cobblemonResource("textures/gui/tmmachine/screen_overlay.png")
         val scanLines = cobblemonResource("textures/gui/tmmachine/scan_lines.png")
 
-        val logoResourceMap: Map<ResourceLocation, List<String>> = mapOf(
+        val logoResourceMap: Map<Identifier, List<String>> = mapOf(
             cobblemonResource("textures/gui/tmmachine/logo_ct.png") to listOf("fr"),
             cobblemonResource("textures/gui/tmmachine/logo_mt.png") to listOf("es", "it", "pt")
         )
 
-        fun getLogoResource(langCode: String?): ResourceLocation =
+        fun getLogoResource(langCode: String?): Identifier =
             logoResourceMap.entries.find { it.value.contains(langCode?.substringBefore("_")) }?.key ?: logo
     }
 
@@ -143,7 +143,7 @@ class TMMachineScreen(containerMenu: TMMachineMenu, val inventory: Inventory, ti
 
     var ticksElapsed: Int = 0
 
-    var logoResource: ResourceLocation = logo
+    var logoResource: Identifier = logo
     var logoTint: Triple<Double, Double, Double> = ElementalTypes.all().random().secondaryColor.toRGB()
     var logoPosX: Int = 0
     var logoPosY: Int = 0

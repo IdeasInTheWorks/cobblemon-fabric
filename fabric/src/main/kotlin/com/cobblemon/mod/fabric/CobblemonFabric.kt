@@ -51,7 +51,7 @@ import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttribute
 import net.fabricmc.fabric.api.`object`.builder.v1.trade.TradeOfferHelper
 import net.fabricmc.fabric.api.`object`.builder.v1.world.poi.PointOfInterestHelper
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry
+import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
@@ -65,7 +65,7 @@ import net.minecraft.core.RegistryAccess
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.resources.ResourceKey
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
@@ -276,7 +276,9 @@ object CobblemonFabric : CobblemonImplementation {
 
     override fun registerBlocks() {
         CobblemonBlocks.register { identifier, item -> Registry.register(CobblemonBlocks.registry, identifier, item) }
-        CobblemonBlocks.strippedBlocks().forEach(StrippableBlockRegistry::register)
+        CobblemonBlocks.strippedBlocks().forEach { (log, stripped) ->
+            BlockTransformerHelper.registerStripping(log, stripped)
+        }
     }
 
     override fun registerEntityTypes() {
@@ -329,7 +331,7 @@ object CobblemonFabric : CobblemonImplementation {
         BiomeModifications.addFeature(predicate, step, feature)
     }
 
-    override fun <A : ArgumentType<*>, T : ArgumentTypeInfo.Template<A>> registerCommandArgument(identifier: ResourceLocation, argumentClass: KClass<A>, serializer: ArgumentTypeInfo<A, T>) {
+    override fun <A : ArgumentType<*>, T : ArgumentTypeInfo.Template<A>> registerCommandArgument(identifier: Identifier, argumentClass: KClass<A>, serializer: ArgumentTypeInfo<A, T>) {
         ArgumentTypeRegistry.registerArgumentType(identifier, argumentClass.java, serializer)
     }
 
@@ -348,9 +350,9 @@ object CobblemonFabric : CobblemonImplementation {
     }
 
     override fun registerResourceReloader(
-        identifier: ResourceLocation,
+        identifier: Identifier,
         type: PackType,
-        dependencies: Collection<ResourceLocation>,
+        dependencies: Collection<Identifier>,
         reloaderFactory: (HolderLookup.Provider) -> PreparableReloadListener
     ) {
         if (type == PackType.SERVER_DATA) {
@@ -407,15 +409,15 @@ object CobblemonFabric : CobblemonImplementation {
         }
     }
 
-    private class CobblemonReloadListener(private val identifier: ResourceLocation, private val reloader: PreparableReloadListener, private val dependencies: Collection<ResourceLocation>) : IdentifiableResourceReloadListener {
+    private class CobblemonReloadListener(private val identifier: Identifier, private val reloader: PreparableReloadListener, private val dependencies: Collection<Identifier>) : IdentifiableResourceReloadListener {
 
         override fun reload(synchronizer: PreparableReloadListener.PreparationBarrier, manager: ResourceManager, prepareProfiler: ProfilerFiller, applyProfiler: ProfilerFiller, prepareExecutor: Executor, applyExecutor: Executor): CompletableFuture<Void> = this.reloader.reload(synchronizer, manager, prepareProfiler, applyProfiler, prepareExecutor, applyExecutor)
 
-        override fun getFabricId(): ResourceLocation = this.identifier
+        override fun getFabricId(): Identifier = this.identifier
 
         override fun getName(): String = this.reloader.name
 
-        override fun getFabricDependencies(): MutableCollection<ResourceLocation> = this.dependencies.toMutableList()
+        override fun getFabricDependencies(): MutableCollection<Identifier> = this.dependencies.toMutableList()
     }
 
     private class FabricItemGroupInjector(private val fabricItemGroupEntries: FabricItemGroupEntries) : CobblemonItemGroups.Injector {

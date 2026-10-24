@@ -16,14 +16,14 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.resources.sounds.SimpleSoundInstance
 import net.minecraft.client.sounds.SoundManager
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 
 class MarkingButton(
     val buttonX: Number,
     val buttonY: Number,
     var buttonState: Int,
     var canEdit: Boolean = true,
-    private val resource: ResourceLocation,
+    private val resource: Identifier,
     val clickAction: OnPress
 ): Button(buttonX.toInt(), buttonY.toInt(), (SIZE / 2), (SIZE / 2), "".text(), clickAction, DEFAULT_NARRATION), CobblemonRenderable {
 

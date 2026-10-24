@@ -37,7 +37,7 @@ import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.NbtOps
 import net.minecraft.nbt.Tag
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ArmorItem
@@ -298,7 +298,7 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
                     }, { null })
             }
             val species =
-                PokemonSpecies.getByIdentifier(ResourceLocation.parse(shoulderNbt.getString(DataKeys.SHOULDER_SPECIES)))
+                PokemonSpecies.getByIdentifier(Identifier.parse(shoulderNbt.getString(DataKeys.SHOULDER_SPECIES)))
                     ?: return null
             val formName = shoulderNbt.getString(DataKeys.SHOULDER_FORM)
             val form = species.forms.firstOrNull { it.name == formName } ?: species.standardForm
