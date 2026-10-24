@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 1,
+  "generation": 2,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -13,12 +13,13 @@
       "lease_id": "d8c6ffc3-c66a-43da-832c-c43b22fab92f",
       "operation_id": "d8c6ffc3-c66a-43da-832c-c43b22fab92f",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-24T21:08:25Z",
       "heartbeat_at": "2026-10-24T21:08:25Z",
       "expires_at": "2026-10-24T21:13:25Z",
       "minutes": 5,
-      "checkpoint": ""
+      "checkpoint": "Live simultaneous-acquire probe complete; no source files changed",
+      "closed_at": "2026-10-24T21:08:29Z"
     }
   },
   "events": [
@@ -31,6 +32,16 @@
       "lease_id": "d8c6ffc3-c66a-43da-832c-c43b22fab92f",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 2,
+      "at": "2026-10-24T21:08:29Z",
+      "kind": "release",
+      "work_id": "RACE-23263caf2384",
+      "owner": "race-agent-a",
+      "lease_id": "d8c6ffc3-c66a-43da-832c-c43b22fab92f",
+      "epoch": 1,
+      "checkpoint": "Live simultaneous-acquire probe complete; no source files changed"
     }
   ]
 }
