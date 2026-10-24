@@ -189,7 +189,7 @@ object LivingEntityMoLangFunctions : AbstractMoLangFunctionHolder<LivingEntity>(
             val memories =
                 params.params
                     .map { it.asString().asIdentifierDefaultingNamespace() }
-                    .map(BuiltInRegistries.MEMORY_MODULE_TYPE::get)
+                    .mapNotNull(BuiltInRegistries.MEMORY_MODULE_TYPE::getValue)
             memories.forEach { entity.brain.eraseMemory(it) }
             DoubleValue.ONE
         }

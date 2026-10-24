@@ -7,6 +7,11 @@ accessWidener v2 official
 # For all entries, unless otherwise noted, prefix each typical access keywork with
 # "transitive-" to ensure they will extend down to dev environments.
 
+# Common creative-tab collectors use vanilla's callback API. Its nested output
+# and visibility types became protected in 26.3; retain the existing collectors.
+transitive-accessible class net/minecraft/world/item/CreativeModeTab$Output
+transitive-accessible class net/minecraft/world/item/CreativeModeTab$TabVisibility
+
 transitive-accessible method net/minecraft/client/renderer/entity/LivingEntityRenderer addLayer (Lnet/minecraft/client/renderer/entity/layers/RenderLayer;)Z
 transitive-accessible field net/minecraft/world/entity/Entity DATA_AIR_SUPPLY_ID Lnet/minecraft/network/syncher/EntityDataAccessor;
 transitive-accessible method net/minecraft/world/entity/player/Player setShoulderEntityLeft (Lnet/minecraft/nbt/CompoundTag;)V
