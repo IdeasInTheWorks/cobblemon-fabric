@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "owned_scope",
+      "exit_code": 0,
+      "expected": 0,
+      "passed": true,
+      "message": "Verified active scoped lease"
+    },
+    {
+      "case": "outside_scope",
+      "exit_code": 1,
+      "expected": 1,
+      "passed": true,
+      "message": "Work claim refused: Changed path is outside the lease: LICENSE"
+    },
+    {
+      "case": "wrong_owner_push",
+      "exit_code": 1,
+      "expected": 1,
+      "passed": true,
+      "message": "Work claim refused: No current lease matches this owner, branch and lease ID"
+    },
+    {
+      "case": "stale_lease_push",
+      "exit_code": 1,
+      "expected": 1,
+      "passed": true,
+      "message": "Work claim refused: No current lease matches this owner, branch and lease ID"
+    }
+  ],
+  "scope": "Live GitHub reads; refusal probes did not change source refs or registry"
+}

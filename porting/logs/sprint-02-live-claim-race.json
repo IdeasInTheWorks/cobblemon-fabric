@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "scope": "live remote claim collision only; no gameplay or mod build",
+  "work_id": "RACE-23263caf2384",
+  "contenders": 2,
+  "winners": 1,
+  "refusals": 1,
+  "remote_conflicts": 1
+}

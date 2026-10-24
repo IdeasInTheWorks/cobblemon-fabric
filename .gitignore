@@ -51,3 +51,4 @@ common/.fabric
 /ci-logs/
 __pycache__/
 *.pyc
+.work-lease.json

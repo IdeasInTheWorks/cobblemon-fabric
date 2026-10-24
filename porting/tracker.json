@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "spreadsheet_id": "1_H2BdYlb3f3CnsmP99R2GqlGeuOwax2-3NvjWuVqOQE",
+  "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1_H2BdYlb3f3CnsmP99R2GqlGeuOwax2-3NvjWuVqOQE/edit",
+  "dashboard_sheet_id": 1916237045,
+  "roadmap_sheet_id": 101,
+  "sprint_log_sheet_id": 102,
+  "build_history_sheet_id": 103,
+  "claims_sheet_id": 104,
+  "handoff_sheet_id": 105,
+  "assumptions_sheet_id": 106,
+  "claim_registry_branch": "coordination/work-claims",
+  "claim_registry_file": "state.json",
+  "note": "Native Google Sheets is the human roadmap; GitHub registry is authoritative for leases. No automatic background synchronization is configured."
+}

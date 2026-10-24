@@ -2,7 +2,12 @@
 # This compatibility port must never publish to upstream or another account.
 case "$1:$2" in
   origin:https://github.com/IdeasInTheWorks/cobblemon-fabric.git|origin:git@github.com:IdeasInTheWorks/cobblemon-fabric.git)
-    exit 0
+    claim_python=$(git config --get cobblemon.claimPython)
+    if [ -z "$claim_python" ]; then
+      echo 'Push rejected: configure cobblemon.claimPython and acquire a work lease; see AGENTS.md.' >&2
+      exit 1
+    fi
+    exec "$claim_python" scripts/work_claims.py verify-push
     ;;
   *)
     echo 'Push rejected: only origin at IdeasInTheWorks/cobblemon-fabric is allowed.' >&2
