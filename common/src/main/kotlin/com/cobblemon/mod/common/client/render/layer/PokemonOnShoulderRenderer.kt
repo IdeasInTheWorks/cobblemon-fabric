@@ -310,7 +310,10 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
                 shoulderNbt.getList(DataKeys.SHOULDER_ASPECTS, Tag.TAG_STRING.toInt()).map { it.asString().orElse("") }.toSet()
             val scaleModifier = shoulderNbt.getFloatOr(DataKeys.SHOULDER_SCALE_MODIFIER, 0F)
             val shownItem = Minecraft.getInstance().level?.registryAccess()
-                ?.let { ItemStack.parseOptional(it, shoulderNbt.getCompoundOrEmpty(DataKeys.SHOULDER_ITEM)) }
+                ?.let { ItemStack.OPTIONAL_CODEC.parse(
+                    it.createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE),
+                    shoulderNbt.getCompoundOrEmpty(DataKeys.SHOULDER_ITEM)
+                ).result().orElse(ItemStack.EMPTY) }
                 ?: ItemStack.EMPTY
             return ShoulderData(pokemonUUID, species, form, aspects, scaleModifier, shownItem)
         }

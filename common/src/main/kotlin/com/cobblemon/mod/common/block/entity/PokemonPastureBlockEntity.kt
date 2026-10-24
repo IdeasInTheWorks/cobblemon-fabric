@@ -48,7 +48,6 @@ import net.minecraft.core.HolderLookup
 import net.minecraft.core.Vec3i
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.ListTag
-import net.minecraft.nbt.NbtUtils
 import net.minecraft.resources.Identifier
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
@@ -385,8 +384,8 @@ class PokemonPastureBlockEntity(pos: BlockPos, state: BlockState) :
                 )
             )
         }
-        this.minRoamPos = NbtUtils.readBlockPos(nbt, DataKeys.TETHER_MIN_ROAM_POS).get()
-        this.maxRoamPos = NbtUtils.readBlockPos(nbt, DataKeys.TETHER_MAX_ROAM_POS).get()
+        this.minRoamPos = LegacyNbt.readBlockPos(nbt, DataKeys.TETHER_MIN_ROAM_POS).get()
+        this.maxRoamPos = LegacyNbt.readBlockPos(nbt, DataKeys.TETHER_MAX_ROAM_POS).get()
     }
 
     override fun saveAdditional(output: ValueOutput) {
@@ -403,8 +402,8 @@ class PokemonPastureBlockEntity(pos: BlockPos, state: BlockState) :
             list.add(tetheringNBT)
         }
         nbt.put(DataKeys.TETHER_POKEMON, list)
-        nbt.put(DataKeys.TETHER_MIN_ROAM_POS, NbtUtils.writeBlockPos(minRoamPos))
-        nbt.put(DataKeys.TETHER_MAX_ROAM_POS, NbtUtils.writeBlockPos(maxRoamPos))
+        nbt.put(DataKeys.TETHER_MIN_ROAM_POS, LegacyNbt.writeBlockPos(minRoamPos))
+        nbt.put(DataKeys.TETHER_MAX_ROAM_POS, LegacyNbt.writeBlockPos(maxRoamPos))
         ownerId?.let { nbt.putUUID(DataKeys.TETHER_OWNER_ID, it) }
         nbt.putString(DataKeys.TETHER_OWNER_NAME, this.ownerName)
 

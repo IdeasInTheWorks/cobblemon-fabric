@@ -23,6 +23,9 @@ import com.cobblemon.mod.common.net.messages.client.spawn.SpawnGenericBedrockPac
 import com.cobblemon.mod.common.util.DataKeys
 import com.cobblemon.mod.common.util.cobblemonResource
 import net.minecraft.world.entity.EntityDimensions
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.ListTag
 import net.minecraft.nbt.StringTag
@@ -102,7 +105,8 @@ class GenericBedrockEntity(world: Level) : Entity(CobblemonEntities.GENERIC_BEDR
         builder.define(POSE_TYPE, PoseType.NONE)
     }
 
-    override fun readAdditionalSaveData(nbt: CompoundTag) {
+    override fun readAdditionalSaveData(input: ValueInput) {
+        val nbt = LegacyNbt.read(input)
         this.category = Identifier.parse(nbt.getStringOr(DataKeys.GENERIC_BEDROCK_CATEGORY, ""))
         this.aspects = nbt.getList(DataKeys.GENERIC_BEDROCK_ASPECTS, Tag.TAG_STRING.toInt()).map { it.asString().orElse("") }.toSet()
         this.entityData.set(POSE_TYPE, PoseType.values()[nbt.getByteOr(DataKeys.GENERIC_BEDROCK_POSE_TYPE, 0).toInt()])
@@ -112,7 +116,8 @@ class GenericBedrockEntity(world: Level) : Entity(CobblemonEntities.GENERIC_BEDR
         this.syncAge = nbt.getBooleanOr(DataKeys.GENERIC_BEDROCK_SYNC_AGE, false)
     }
 
-    override fun addAdditionalSaveData(nbt: CompoundTag) {
+    override fun addAdditionalSaveData(output: ValueOutput) {
+        val nbt = CompoundTag()
         nbt.putString(DataKeys.GENERIC_BEDROCK_CATEGORY, category.toString())
         nbt.put(DataKeys.GENERIC_BEDROCK_ASPECTS, ListTag().also { it.addAll(aspects.map(StringTag::valueOf)) })
         nbt.putByte(DataKeys.GENERIC_BEDROCK_POSE_TYPE, getCurrentPoseType().ordinal.toByte())
@@ -120,6 +125,7 @@ class GenericBedrockEntity(world: Level) : Entity(CobblemonEntities.GENERIC_BEDR
         nbt.putFloat(DataKeys.GENERIC_BEDROCK_COLLIDER_WIDTH, colliderWidth)
         nbt.putFloat(DataKeys.GENERIC_BEDROCK_COLLIDER_HEIGHT, colliderHeight)
         nbt.putBoolean(DataKeys.GENERIC_BEDROCK_SYNC_AGE, syncAge)
+        LegacyNbt.write(output, nbt)
     }
 
     override fun isPickable() = true

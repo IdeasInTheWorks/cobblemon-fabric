@@ -10,12 +10,19 @@
 package com.cobblemon.mod.common.util;
 
 import java.util.UUID;
+import java.util.Optional;
+import java.util.function.Consumer;
 import com.mojang.serialization.MapCodec;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NumericTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.IntArrayTag;
+import net.minecraft.util.ProblemReporter;
+import net.minecraft.world.level.storage.TagValueOutput;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 
@@ -32,6 +39,27 @@ public final class LegacyNbt {
 
     public static void write(ValueOutput output, CompoundTag tag) {
         output.store(ROOT_CODEC, tag);
+    }
+
+    /** Adapts legacy NBT entry points without losing the caller's registry context. */
+    public static CompoundTag toTag(HolderLookup.Provider lookup, Consumer<ValueOutput> writer) {
+        var problems = new ProblemReporter.Collector();
+        var output = TagValueOutput.createWithContext(problems, lookup);
+        writer.accept(output);
+        if (!problems.isEmpty()) {
+            throw new IllegalStateException("Cannot save Cobblemon data: " + problems.getReport());
+        }
+        return output.buildResult();
+    }
+
+    // NbtUtils in 1.21.1 used exactly three ints, not a packed long or an X/Y/Z map.
+    public static IntArrayTag writeBlockPos(BlockPos pos) {
+        return new IntArrayTag(new int[] {pos.getX(), pos.getY(), pos.getZ()});
+    }
+
+    public static Optional<BlockPos> readBlockPos(CompoundTag tag, String key) {
+        return tag.getIntArray(key).filter(value -> value.length == 3)
+                .map(value -> new BlockPos(value[0], value[1], value[2]));
     }
 
     public static boolean contains(CompoundTag tag, String key, int type) {

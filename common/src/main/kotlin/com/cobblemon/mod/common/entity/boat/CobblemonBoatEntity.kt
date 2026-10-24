@@ -13,6 +13,9 @@ import com.cobblemon.mod.common.util.contains
 import com.cobblemon.mod.common.CobblemonEntities
 import com.cobblemon.mod.common.mixin.accessor.BoatEntityAccessor
 import net.minecraft.core.BlockPos
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.StringTag
 import net.minecraft.nbt.Tag
@@ -74,14 +77,19 @@ open class CobblemonBoatEntity(entityType: EntityType<out Boat>, world: Level) :
         builder.define(TYPE_TRACKED_DATA, CobblemonBoatType.APRICORN.ordinal)
     }
 
-    override fun readAdditionalSaveData(nbt: CompoundTag) {
+    override fun readAdditionalSaveData(input: ValueInput) {
+        super.readAdditionalSaveData(input)
+        val nbt = LegacyNbt.read(input)
         if (nbt.contains(TYPE_KEY, Tag.TAG_STRING.toInt())) {
             this.boatType = CobblemonBoatType.valueOf(nbt.getStringOr(TYPE_KEY, ""))
         }
     }
 
-    override fun addAdditionalSaveData(nbt: CompoundTag) {
+    override fun addAdditionalSaveData(output: ValueOutput) {
+        super.addAdditionalSaveData(output)
+        val nbt = CompoundTag()
         nbt.put(TYPE_KEY, StringTag.valueOf(this.boatType.name))
+        LegacyNbt.write(output, nbt)
     }
 
     override fun setVariant(type: Type) {

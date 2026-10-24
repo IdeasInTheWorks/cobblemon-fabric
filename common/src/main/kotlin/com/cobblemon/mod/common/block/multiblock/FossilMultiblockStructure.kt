@@ -46,12 +46,13 @@ import kotlin.math.ceil
 import kotlin.random.Random
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueOutput
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.ListTag
 import net.minecraft.nbt.NbtOps
-import net.minecraft.nbt.NbtUtils
 import net.minecraft.resources.Identifier
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
@@ -625,21 +626,16 @@ class FossilMultiblockStructure (
         return true
     }
 
-    override fun writeToNbt(registryLookup: HolderLookup.Provider): CompoundTag {
+    override fun write(output: ValueOutput) {
         val result = CompoundTag()
-        result.put(DataKeys.MONITOR_POS, NbtUtils.writeBlockPos(monitorPos))
-        result.put(DataKeys.ANALYZER_POS, NbtUtils.writeBlockPos(analyzerPos))
-        result.put(DataKeys.TANK_BASE_POS, NbtUtils.writeBlockPos(tankBasePos))
+        result.put(DataKeys.MONITOR_POS, LegacyNbt.writeBlockPos(monitorPos))
+        result.put(DataKeys.ANALYZER_POS, LegacyNbt.writeBlockPos(analyzerPos))
+        result.put(DataKeys.TANK_BASE_POS, LegacyNbt.writeBlockPos(tankBasePos))
         result.putInt(DataKeys.TIME_LEFT, timeRemaining)
         result.putInt(DataKeys.PROTECTED_TIME_LEFT, protectionTime)
         fossilOwnerUUID?.let { result.putUUID(DataKeys.FOSSIL_OWNER, it) }
         result.putInt(DataKeys.ORGANIC_MATERIAL, organicMaterialInside)
-        val fossilInv = ListTag()
-
-        val ops = registryLookup.createSerializationContext(NbtOps.INSTANCE)
-        fossilInventory.forEach { fossilInv.add(ItemStack.CODEC.encodeStart(ops, it).getOrThrow()) }
-        result.put(DataKeys.FOSSIL_INVENTORY, fossilInv)
-        result.putString(DataKeys.CONNECTOR_DIRECTION, tankConnectorDirection?.toString())
+        tankConnectorDirection?.let { result.putString(DataKeys.CONNECTOR_DIRECTION, it.toString()) }
 
         if (this.resultingFossil != null) {
             result.putString(DataKeys.INSERTED_FOSSIL, this.resultingFossil!!.serializedName)
@@ -647,7 +643,9 @@ class FossilMultiblockStructure (
 
         result.putBoolean(DataKeys.HAS_CREATED_POKEMON, hasCreatedPokemon)
 
-        return result
+        LegacyNbt.write(output, result)
+        val inventory = output.list(DataKeys.FOSSIL_INVENTORY, ItemStack.CODEC)
+        fossilInventory.forEach(inventory::add)
     }
 
     companion object {
@@ -664,9 +662,9 @@ class FossilMultiblockStructure (
         const val PROTECTION_TIME = TICKS_PER_MINUTE * 5
 
         fun fromNbt(nbt: CompoundTag, registryLookup: HolderLookup.Provider, animAge: Int = -1, partialTicks: Float = 0f): FossilMultiblockStructure {
-            val monitorPos =  NbtUtils.readBlockPos(nbt, DataKeys.MONITOR_POS).get()
-            val compartmentPos = NbtUtils.readBlockPos(nbt, DataKeys.ANALYZER_POS).get()
-            val tankBasePos = NbtUtils.readBlockPos(nbt, DataKeys.TANK_BASE_POS).get()
+            val monitorPos =  LegacyNbt.readBlockPos(nbt, DataKeys.MONITOR_POS).get()
+            val compartmentPos = LegacyNbt.readBlockPos(nbt, DataKeys.ANALYZER_POS).get()
+            val tankBasePos = LegacyNbt.readBlockPos(nbt, DataKeys.TANK_BASE_POS).get()
 
             val result = FossilMultiblockStructure(monitorPos, compartmentPos, tankBasePos, animAge, partialTicks)
             result.organicMaterialInside = nbt.getIntOr(DataKeys.ORGANIC_MATERIAL, 0)

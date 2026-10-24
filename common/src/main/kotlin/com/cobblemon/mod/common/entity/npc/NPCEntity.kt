@@ -64,6 +64,9 @@ import java.net.URI
 import java.util.UUID
 import java.util.concurrent.CompletableFuture
 import net.minecraft.core.registries.BuiltInRegistries
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.IntTag
 import net.minecraft.nbt.ListTag
@@ -429,8 +432,9 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
         return false
     }
 
-    override fun saveWithoutId(nbt: CompoundTag): CompoundTag {
-        super.saveWithoutId(nbt)
+    override fun saveWithoutId(output: ValueOutput) {
+        val nbt = CompoundTag()
+        super.saveWithoutId(output)
         saveScriptingToNBT(nbt)
         nbt.put(DataKeys.NPC_LEVEL, IntTag.valueOf(level))
         nbt.putBoolean(DataKeys.NPC_HIDE_NAME_TAG, hideNameTag)
@@ -494,10 +498,11 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
         if (allowProjectileHits != null) {
             nbt.putBoolean(DataKeys.NPC_ALLOW_PROJECTILE_HITS, allowProjectileHits)
         }
-        return nbt
+        LegacyNbt.write(output, nbt)
     }
 
-    override fun load(nbt: CompoundTag) {
+    override fun load(input: ValueInput) {
+        val nbt = LegacyNbt.read(input)
         npc = NPCClasses.getByIdentifier(Identifier.parse(nbt.getStringOr(DataKeys.NPC_CLASS, ""))) ?: NPCClasses.classes.first()
         forcedResourceIdentifier = if (nbt.contains(DataKeys.NPC_FORCED_RESOURCE_IDENTIFIER)) {
             Identifier.parse(nbt.getStringOr(DataKeys.NPC_FORCED_RESOURCE_IDENTIFIER, ""))
@@ -506,7 +511,7 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
         }
         entityData.set(LEVEL, nbt.getIntOr(DataKeys.NPC_LEVEL, 0).takeIf { it != 0 } ?: 1)
         entityData.set(HIDE_NAME_TAG, nbt.getBooleanOr(DataKeys.NPC_HIDE_NAME_TAG, false))
-        super.load(nbt)
+        super.load(input)
         loadScriptingFromNBT(nbt)
         appliedAspects.addAll(nbt.getList(DataKeys.NPC_ASPECTS, Tag.TAG_STRING.toInt()).map { it.asString().orElse("") })
         variationAspects.addAll(nbt.getList(DataKeys.NPC_VARIATION_ASPECTS, Tag.TAG_STRING.toInt()).map { it.asString().orElse("") })

@@ -117,9 +117,11 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.component.DataComponents
 import net.minecraft.core.registries.BuiltInRegistries
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.NbtOps
-import net.minecraft.nbt.NbtUtils
 import net.minecraft.nbt.StringTag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
@@ -904,7 +906,8 @@ open class PokemonEntity(
         return future
     }
 
-    override fun saveWithoutId(nbt: CompoundTag): CompoundTag {
+    override fun saveWithoutId(output: ValueOutput) {
+        val nbt = CompoundTag()
         val tethering = this.tethering
         if (tethering != null) {
             val tetheringNbt = CompoundTag()
@@ -912,9 +915,9 @@ open class PokemonEntity(
             tetheringNbt.putUUID(DataKeys.POKEMON_UUID, tethering.pokemonId)
             tetheringNbt.putUUID(DataKeys.POKEMON_OWNER_ID, tethering.playerId)
             tetheringNbt.putUUID(DataKeys.PC_ID, tethering.pcId)
-            tetheringNbt.put(DataKeys.TETHER_MIN_ROAM_POS, NbtUtils.writeBlockPos(tethering.minRoamPos))
-            tetheringNbt.put(DataKeys.TETHER_MAX_ROAM_POS, NbtUtils.writeBlockPos(tethering.maxRoamPos))
-            tetheringNbt.put(DataKeys.TETHER_PASTURE_POS, NbtUtils.writeBlockPos(tethering.pasturePos))
+            tetheringNbt.put(DataKeys.TETHER_MIN_ROAM_POS, LegacyNbt.writeBlockPos(tethering.minRoamPos))
+            tetheringNbt.put(DataKeys.TETHER_MAX_ROAM_POS, LegacyNbt.writeBlockPos(tethering.maxRoamPos))
+            tetheringNbt.put(DataKeys.TETHER_PASTURE_POS, LegacyNbt.writeBlockPos(tethering.pasturePos))
             nbt.put(DataKeys.TETHERING, tetheringNbt)
         } else {
             nbt.put(DataKeys.POKEMON, pokemon.saveToNBT(registryAccess()))
@@ -943,7 +946,7 @@ open class PokemonEntity(
         if (!enablePoseTypeRecalculation) {
             nbt.putBoolean(DataKeys.POKEMON_RECALCULATE_POSE, enablePoseTypeRecalculation)
         }
-        val dataResult = this.brain.serializeStart(NbtOps.INSTANCE)
+        val dataResult = Brain.Packed.CODEC.encodeStart(registryAccess().createSerializationContext(NbtOps.INSTANCE), this.brain.pack())
         dataResult.resultOrPartial(::error).ifPresent { brain ->
             nbt.put("Brain", brain)
         }
@@ -954,20 +957,22 @@ open class PokemonEntity(
 
         CobblemonEvents.POKEMON_ENTITY_SAVE.post(PokemonEntitySaveEvent(this, nbt))
 
-        return super.saveWithoutId(nbt)
+        LegacyNbt.write(output, nbt)
+        super.saveWithoutId(output)
     }
 
-    override fun load(nbt: CompoundTag) {
-        super.load(nbt)
+    override fun load(input: ValueInput) {
+        val nbt = LegacyNbt.read(input)
+        super.load(input)
         if (nbt.contains(DataKeys.TETHERING)) {
             val tetheringNBT = nbt.getCompoundOrEmpty(DataKeys.TETHERING)
             val tetheringId = tetheringNBT.getUUID(DataKeys.TETHERING_ID)
             val pcId = tetheringNBT.getUUID(DataKeys.PC_ID)
             val pokemonId = tetheringNBT.getUUID(DataKeys.POKEMON_UUID)
             val playerId = tetheringNBT.getUUID(DataKeys.POKEMON_OWNER_ID)
-            val minRoamPos = NbtUtils.readBlockPos(tetheringNBT, DataKeys.TETHER_MIN_ROAM_POS).get()
-            val maxRoamPos = NbtUtils.readBlockPos(tetheringNBT, DataKeys.TETHER_MAX_ROAM_POS).get()
-            val pasturePos = NbtUtils.readBlockPos(tetheringNBT, DataKeys.TETHER_PASTURE_POS).get()
+            val minRoamPos = LegacyNbt.readBlockPos(tetheringNBT, DataKeys.TETHER_MIN_ROAM_POS).get()
+            val maxRoamPos = LegacyNbt.readBlockPos(tetheringNBT, DataKeys.TETHER_MAX_ROAM_POS).get()
+            val pasturePos = LegacyNbt.readBlockPos(tetheringNBT, DataKeys.TETHER_PASTURE_POS).get()
 
             val loadedPokemon = Cobblemon.storage.getPC(pcId, registryAccess())[pokemonId]
             if (loadedPokemon != null && loadedPokemon.tetheringId == tetheringId) {
@@ -1681,8 +1686,9 @@ open class PokemonEntity(
         nbt.putFloat(DataKeys.SHOULDER_SCALE_MODIFIER, this.pokemon.effectiveScale)
         nbt.put(
             DataKeys.SHOULDER_ITEM,
-            this.level().registryAccess()
-                .let { if (this.shownItem.isEmpty) CompoundTag() else this.shownItem.saveOptional(it) } as CompoundTag)
+            ItemStack.OPTIONAL_CODEC.encodeStart(
+                registryAccess().createSerializationContext(NbtOps.INSTANCE), this.shownItem
+            ).orThrow)
         if (isLeft) player.shoulderEntityLeft = nbt else player.shoulderEntityRight = nbt
         return true
     }

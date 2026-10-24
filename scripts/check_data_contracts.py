@@ -12,6 +12,7 @@ def main():
     parser.add_argument("--game-jar", type=Path, required=True)
     parser.add_argument("--gradle-cache", type=Path, required=True)
     parser.add_argument("--javac", type=Path, required=True)
+    parser.add_argument("--report", type=Path, default=Path("porting/logs/data-contracts.json"))
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     evidence = json.loads((root / "porting/version-evidence.json").read_text())
@@ -50,7 +51,7 @@ def main():
             # Vanilla bootstrap redirects stdout through the game logger.
             result_line = next(line for line in reversed(run.stdout.splitlines()) if '{"passed":' in line)
             report["result"] = json.loads(result_line[result_line.index('{"passed":'):])
-    (root / "porting/logs/sprint-03-data-contracts.json").write_text(json.dumps(report, indent=2) + "\n")
+    (root / args.report).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
     return code
 

@@ -10,6 +10,8 @@ package com.cobblemon.mod.common.entity.boat
 
 import com.cobblemon.mod.common.CobblemonEntities
 import net.minecraft.core.NonNullList
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.resources.ResourceKey
 import net.minecraft.world.Containers
@@ -58,14 +60,14 @@ class CobblemonChestBoatEntity(entityType: EntityType<CobblemonChestBoatEntity>,
 
     override fun getMaxPassengers() = 1
 
-    override fun addAdditionalSaveData(compound: CompoundTag) {
-        super.addAdditionalSaveData(compound)
-        this.addChestVehicleSaveData(compound, this.registryAccess())
+    override fun addAdditionalSaveData(output: ValueOutput) {
+        super.addAdditionalSaveData(output)
+        this.addChestVehicleSaveData(output)
     }
 
-    override fun readAdditionalSaveData(compound: CompoundTag) {
-        super.readAdditionalSaveData(compound)
-        this.readChestVehicleSaveData(compound, this.registryAccess())
+    override fun readAdditionalSaveData(input: ValueInput) {
+        super.readAdditionalSaveData(input)
+        this.readChestVehicleSaveData(input)
     }
 
     public override fun destroy(source: DamageSource) {

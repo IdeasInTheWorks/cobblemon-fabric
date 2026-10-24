@@ -151,6 +151,86 @@ final class Minecraft263DataContracts {
         check(loadedInventory.get(2).getCount() == 1, "non-contiguous inventory stack size");
         check(LegacyNbt.read(net.minecraft.world.level.storage.TagValueInput.create(
                 net.minecraft.util.ProblemReporter.DISCARDING, vanilla, savedInventory)).equals(savedInventory), "inventory and custom NBT merge round trip");
+        var position = new net.minecraft.core.BlockPos(-30000001, -64, 29999999);
+        root.put("pasture", LegacyNbt.writeBlockPos(position));
+        check(java.util.Arrays.equals(root.getIntArray("pasture").orElseThrow(),
+                new int[] {-30000001, -64, 29999999}), "legacy position is three untruncated ints");
+        check(LegacyNbt.readBlockPos(root, "pasture").orElseThrow().equals(position), "legacy position round trip");
+        root.putIntArray("bad_position", new int[] {1, 2});
+        check(LegacyNbt.readBlockPos(root, "bad_position").isEmpty(), "malformed position rejected");
+        check(LegacyNbt.readBlockPos(root, "missing").isEmpty(), "missing position rejected");
+        check(LegacyNbt.readBlockPos(root, "species").isEmpty(), "wrong position type rejected");
+        var metadata = new CompoundTag();
+        metadata.putString("addon_origin", "contract:fossil");
+        metadata.putInt("scan_progress", 73);
+        inventory.get(0).set(net.minecraft.core.component.DataComponents.CUSTOM_DATA,
+                net.minecraft.world.item.component.CustomData.of(metadata));
+        var fossilTag = LegacyNbt.toTag(vanilla, fossilOutput -> {
+            fossilOutput.putString("superclass_sentinel", "retained");
+            var structure = fossilOutput.child("MultiblockStore");
+            var scalars = new CompoundTag();
+            LegacyNbt.putUUID(scalars, "FossilOwner", owner);
+            scalars.put("MonitorPos", LegacyNbt.writeBlockPos(position));
+            scalars.putInt("TimeLeft", 14400);
+            scalars.putInt("ProtectedTimeLeft", -1);
+            scalars.putBoolean("HasCreatedPokemon", true);
+            LegacyNbt.write(structure, scalars);
+            var stacks = structure.list("InsertedFossilStacks", net.minecraft.world.item.ItemStack.CODEC);
+            stacks.add(inventory.get(0));
+            stacks.add(inventory.get(2));
+            fossilOutput.store("MonitorDisk", net.minecraft.world.item.ItemStack.CODEC, inventory.get(2));
+        });
+        var fossilInput = net.minecraft.world.level.storage.TagValueInput.create(
+                net.minecraft.util.ProblemReporter.DISCARDING, vanilla, fossilTag);
+        var fossilState = fossilInput.childOrEmpty("MultiblockStore");
+        var fossilRoot = LegacyNbt.read(fossilState);
+        check(fossilTag.getStringOr("superclass_sentinel", "").equals("retained"), "nested serialization keeps superclass fields");
+        check(LegacyNbt.getUUID(fossilRoot, "FossilOwner").equals(owner), "nested ownership retained");
+        check(fossilState.read("MonitorPos", net.minecraft.core.BlockPos.CODEC).orElseThrow().equals(position), "target codec reads legacy position shape");
+        check(fossilRoot.getIntOr("TimeLeft", 0) == 14400, "fossil progress retained");
+        check(fossilRoot.getIntOr("ProtectedTimeLeft", 0) == -1, "unprotected sentinel retained");
+        check(fossilRoot.getBooleanOr("HasCreatedPokemon", false), "created-Pokemon marker retained");
+        var fossilStacks = fossilState.listOrEmpty("InsertedFossilStacks", net.minecraft.world.item.ItemStack.CODEC).stream().toList();
+        check(fossilStacks.size() == 2, "context-aware nested list length");
+        check(fossilStacks.get(0).getItem() == net.minecraft.world.item.Items.STONE && fossilStacks.get(0).getCount() == 12, "nested first item identity and count");
+        check(fossilStacks.get(1).getItem() == net.minecraft.world.item.Items.DIAMOND, "nested item order");
+        check(fossilStacks.get(0).get(net.minecraft.core.component.DataComponents.CUSTOM_DATA).copyTag().equals(metadata), "item component payload survives nested save");
+        check(fossilInput.read("MonitorDisk", net.minecraft.world.item.ItemStack.CODEC).orElseThrow().getItem()
+                == net.minecraft.world.item.Items.DIAMOND, "monitor item uses parent registry context");
+        check(fossilInput.read("MissingDisk", net.minecraft.world.item.ItemStack.CODEC)
+                .orElse(net.minecraft.world.item.ItemStack.EMPTY).isEmpty(), "missing monitor disk defaults empty");
+        var emptyListTag = LegacyNbt.toTag(vanilla, emptyOutput -> emptyOutput.list("InsertedFossilStacks", net.minecraft.world.item.ItemStack.CODEC));
+        check(emptyListTag.getListOrEmpty("InsertedFossilStacks").isEmpty(), "empty fossil inventory round trip");
+        try {
+            LegacyNbt.toTag(vanilla, invalidOutput -> invalidOutput.store("invalid_stack", net.minecraft.world.item.ItemStack.CODEC,
+                    net.minecraft.world.item.ItemStack.EMPTY));
+            throw new AssertionError("Failed legacy save silently returned partial data");
+        } catch (IllegalStateException expected) { checks++; }
+        var optionalOps = vanilla.createSerializationContext(NbtOps.INSTANCE);
+        var emptyStackTag = net.minecraft.world.item.ItemStack.OPTIONAL_CODEC.encodeStart(optionalOps,
+                net.minecraft.world.item.ItemStack.EMPTY).getOrThrow();
+        check(emptyStackTag.equals(new CompoundTag()), "empty shoulder item keeps legacy empty compound");
+        check(net.minecraft.world.item.ItemStack.OPTIONAL_CODEC.parse(optionalOps, emptyStackTag)
+                .getOrThrow().isEmpty(), "empty shoulder item decodes");
+        var legacyBrain = new CompoundTag();
+        var legacyMemories = new CompoundTag();
+        var legacyAngryAt = new CompoundTag();
+        LegacyNbt.putUUID(legacyAngryAt, "value", owner);
+        legacyAngryAt.putLong("ttl", 123L);
+        legacyMemories.put("minecraft:angry_at", legacyAngryAt);
+        legacyBrain.put("memories", legacyMemories);
+        var packedBrain = net.minecraft.world.entity.ai.Brain.Packed.CODEC.parse(optionalOps, legacyBrain).getOrThrow();
+        var memory = packedBrain.memories().get(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT);
+        check(memory.value().equals(owner), "packed brain reads legacy UUID memory");
+        check(memory.timeToLive().orElseThrow() == 123L, "packed brain reads legacy memory expiry");
+        var savedBrain = net.minecraft.world.entity.ai.Brain.Packed.CODEC.encodeStart(optionalOps, packedBrain).getOrThrow();
+        check(savedBrain.equals(legacyBrain), "packed brain preserves legacy memory NBT shape");
+        check(net.minecraft.world.entity.ai.Brain.Packed.CODEC.parse(optionalOps, savedBrain).getOrThrow()
+                .memories().equals(packedBrain.memories()), "packed brain codec round trip");
+        check(net.minecraft.world.level.block.FlowerBedBlock.AMOUNT.getName().equals("flower_amount"), "flower amount property name retained");
+        check(new java.util.HashSet<>(net.minecraft.world.level.block.FlowerBedBlock.AMOUNT.getPossibleValues())
+                .equals(java.util.Set.of(1, 2, 3, 4)), "flower amount range retained");
+        check(net.minecraft.world.level.block.FlowerBedBlock.FACING.getName().equals("facing"), "flower facing property name retained");
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }

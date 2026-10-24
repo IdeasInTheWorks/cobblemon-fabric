@@ -16,6 +16,8 @@ import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.RandomSource
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.storage.ValueOutput
+import com.cobblemon.mod.common.util.LegacyNbt
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 
@@ -37,7 +39,8 @@ interface MultiblockStructure {
     fun syncToClient(world: Level)
 
     fun markDirty(world: Level)
-    fun writeToNbt(registryLookup: HolderLookup.Provider): CompoundTag
+    fun write(output: ValueOutput)
+    fun writeToNbt(registryLookup: HolderLookup.Provider): CompoundTag = LegacyNbt.toTag(registryLookup, ::write)
     fun getAnalogOutputSignal(state: BlockState, world: Level?, pos: BlockPos?): Int {
         return 0
     }
