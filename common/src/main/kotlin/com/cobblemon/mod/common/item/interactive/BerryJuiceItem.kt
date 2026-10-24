@@ -27,7 +27,7 @@ import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.level.Level
 import net.minecraft.world.item.Items
 
-class BerryJuiceItem : CobblemonItem(Properties()), PokemonSelectingItem, HealingSource {
+class BerryJuiceItem(registrationProperties: net.minecraft.world.item.Item.Properties) : CobblemonItem(registrationProperties), PokemonSelectingItem, HealingSource {
     override val bagItem = object : BagItem {
         override val itemName = "item.cobblemon.berry_juice"
         override val returnItem = Items.BOWL

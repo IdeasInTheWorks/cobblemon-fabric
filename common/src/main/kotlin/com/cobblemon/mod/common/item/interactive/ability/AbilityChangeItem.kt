@@ -21,9 +21,9 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.Rarity
 
-open class AbilityChangeItem<T : PotentialAbility>(
+open class AbilityChangeItem<T : PotentialAbility>(registrationProperties: net.minecraft.world.item.Item.Properties,
     val changer: AbilityChanger<T>
-) : CobblemonItem(Properties().apply {
+) : CobblemonItem(registrationProperties.apply {
     when(changer) {
         AbilityChanger.HIDDEN_ABILITY -> rarity(Rarity.EPIC)
         AbilityChanger.COMMON_ABILITY -> rarity(Rarity.RARE)

@@ -22,9 +22,9 @@ import net.minecraft.world.item.Rarity
 import net.minecraft.world.level.Level
 import kotlin.math.cos
 
-class PokeBallItem(
+class PokeBallItem(registrationProperties: net.minecraft.world.item.Item.Properties,
         val pokeBall: PokeBall
-) : CobblemonItem(Properties().apply {
+) : CobblemonItem(registrationProperties.apply {
     when (pokeBall.name) {
         // Master balls are a netherite product and should be fire immune
         PokeBalls.MASTER_BALL.name -> fireResistant().rarity(Rarity.EPIC)

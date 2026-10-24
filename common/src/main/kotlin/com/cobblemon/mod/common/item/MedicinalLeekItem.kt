@@ -14,7 +14,7 @@ import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.ItemNameBlockItem
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.PlaceOnWaterBlockItem
 import net.minecraft.world.item.context.BlockPlaceContext
@@ -22,7 +22,7 @@ import net.minecraft.world.item.context.UseOnContext
 import net.minecraft.world.level.ClipContext
 import net.minecraft.world.level.Level
 
-class MedicinalLeekItem(block: MedicinalLeekBlock, settings: Properties) : ItemNameBlockItem(block, settings) {
+class MedicinalLeekItem(block: MedicinalLeekBlock, settings: Properties) : BlockItem(block, settings.useItemDescriptionPrefix()) {
 
     init {
         Cobblemon.implementation.registerCompostable(this, .65F)

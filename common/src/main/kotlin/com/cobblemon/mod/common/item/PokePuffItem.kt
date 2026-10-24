@@ -27,7 +27,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.UseAnim
 import net.minecraft.world.level.Level
 
-class PokePuffItem : Item(Properties().stacksTo(64)), PokemonSelectingItem {
+class PokePuffItem(registrationProperties: net.minecraft.world.item.Item.Properties) : Item(registrationProperties.stacksTo(64)), PokemonSelectingItem {
     override val bagItem = null
 
     companion object {

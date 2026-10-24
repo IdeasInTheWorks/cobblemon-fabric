@@ -54,7 +54,7 @@ import net.minecraft.world.phys.shapes.EntityCollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class SaccharineLeafBlock(settings: Properties) : LeavesBlock(settings), BonemealableBlock {
+class SaccharineLeafBlock(settings: Properties) : LeavesBlock(net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer.noAmbientSound(), settings), BonemealableBlock {
     companion object {
         val AGE: IntegerProperty = BlockStateProperties.AGE_2
         val DISTANCE: IntegerProperty = BlockStateProperties.DISTANCE

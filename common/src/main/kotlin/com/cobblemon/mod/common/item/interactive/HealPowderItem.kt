@@ -28,7 +28,7 @@ import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
 
-class HealPowderItem : CobblemonItem(Properties()), PokemonSelectingItem {
+class HealPowderItem(registrationProperties: net.minecraft.world.item.Item.Properties) : CobblemonItem(registrationProperties), PokemonSelectingItem {
     override val bagItem = object : BagItem {
         override val itemName = "item.cobblemon.heal_powder"
         override val returnItem = Items.AIR

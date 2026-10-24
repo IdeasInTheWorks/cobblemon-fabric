@@ -26,7 +26,7 @@ import net.minecraft.world.item.UseAnim
 import net.minecraft.world.level.Level
 import net.minecraft.world.phys.AABB
 
-class PokedexItem(val type: PokedexType): CobblemonItem(Item.Properties().stacksTo(1)) {
+class PokedexItem(registrationProperties: net.minecraft.world.item.Item.Properties, val type: PokedexType): CobblemonItem(registrationProperties.stacksTo(1)) {
 
     override fun getUseAnimation(itemStack: ItemStack): UseAnim? = UseAnim.TOOT_HORN
 

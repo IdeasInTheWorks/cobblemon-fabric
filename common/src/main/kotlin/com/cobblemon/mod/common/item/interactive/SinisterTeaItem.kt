@@ -21,8 +21,8 @@ import net.minecraft.world.item.Items
 import net.minecraft.world.item.UseAnim
 import net.minecraft.world.level.Level
 
-class SinisterTeaItem : Item(
-        Properties().stacksTo(16)
+class SinisterTeaItem(registrationProperties: net.minecraft.world.item.Item.Properties) : Item(
+        registrationProperties.stacksTo(16)
                 .food(FoodProperties.Builder()
                         .alwaysEdible()
                         .nutrition(0)

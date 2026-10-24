@@ -1,0 +1,2136 @@
+{
+  "method": "Assign typed registry key to each explicit properties factory before constructor invocation; names unchanged; shared plant properties made fresh per access",
+  "initial_sites": [
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"nether_fire_stone_ore\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"dripstone_moon_stone_ore\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"terracotta_sun_stone_ore\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_planks\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_fence\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_fence_gate\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_pressure_plate\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_wall_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_hanging_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_wall_hanging_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_door\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"apricorn_trapdoor\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"black_apricorn_sapling\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"blue_apricorn_sapling\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"green_apricorn_sapling\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pink_apricorn_sapling\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"red_apricorn_sapling\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"white_apricorn_sapling\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"yellow_apricorn_sapling\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_log\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_log_slathered\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"stripped_saccharine_log\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"stripped_saccharine_wood\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_planks\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_leaves\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_fence\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_fence_gate\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_pressure_plate\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_wall_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_hanging_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_wall_hanging_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_door\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_trapdoor\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"saccharine_sapling\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"medicinal_leek\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"bugwort\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"energy_root\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"big_root\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"revival_herb\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"poke_cake\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"poke_snack\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"tumblestone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"sky_tumblestone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"black_tumblestone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"deepslate_crystal_core\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_tumblestone_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_tumblestone_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_tumblestone_wall\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"chiseled_polished_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_tumblestone_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_tumblestone_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"tumblestone_bricks\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"tumblestone_brick_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"tumblestone_brick_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"tumblestone_brick_wall\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"chiseled_tumblestone_bricks\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_sky_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_sky_tumblestone_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_sky_tumblestone_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_sky_tumblestone_wall\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"chiseled_polished_sky_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_sky_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_sky_tumblestone_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_sky_tumblestone_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"sky_tumblestone_bricks\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"sky_tumblestone_brick_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"sky_tumblestone_brick_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"sky_tumblestone_brick_wall\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"chiseled_sky_tumblestone_bricks\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_black_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_black_tumblestone_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_black_tumblestone_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"polished_black_tumblestone_wall\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"chiseled_polished_black_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_black_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_black_tumblestone_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_black_tumblestone_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"black_tumblestone_bricks\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"black_tumblestone_brick_stairs\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"black_tumblestone_brick_slab\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"black_tumblestone_brick_wall\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"chiseled_black_tumblestone_bricks\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"fire_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"water_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"thunder_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"leaf_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"ice_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"sun_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"moon_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"shiny_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"dawn_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"dusk_stone_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"campfire_pot_black\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"campfire_pot_blue\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"campfire_pot_green\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"campfire_pot_pink\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"campfire_pot_red\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"campfire_pot_white\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"campfire_pot_yellow\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"habitat_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"campfire\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"soul_campfire\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"relic_coin_pouch\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"relic_coin_sack\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"blue_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"black_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"yellow_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"white_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"green_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pink_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"gimmighoul_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"white_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"light_gray_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"gray_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"black_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"brown_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"red_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"orange_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"yellow_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"lime_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"green_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"cyan_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"light_blue_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"blue_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"purple_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"magenta_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pink_plaque\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"cleanse_tag\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"spell_tag\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"blunder_policy\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"weakness_policy\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"ring_target\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"magnet\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"galarica_wreath\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"flame_orb\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"toxic_orb\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"life_orb\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"light_ball\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smoke_ball\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"kings_rock\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"galarica_cuff\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"unremarkable_teacup\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"masterpiece_teacup\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"chipped_pot\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"cracked_pot\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"electirizer\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"magmarizer\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"sachet\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"metal_powder\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"quick_powder\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"bright_powder\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"soft_sand\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"never_melt_ice\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"scope_lens\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"wide_lens\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"zoom_lens\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"icy_rock\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"heat_rock\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"smooth_rock\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"damp_rock\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"destiny_knot\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"luminous_moss\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"metronome\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"eject_button\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"loaded_dice\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"iron_ball\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"metal_coat\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"upgrade\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"dubious_disc\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"throat_spray\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"terrain_extender\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"moomoo_milk\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"medicinal_brew\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"full_heal\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"antidote\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"awakening\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"burn_heal\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"ice_heal\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"paralyze_heal\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"ether\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"max_ether\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"elixir\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"max_elixir\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"potion\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"super_potion\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"hyper_potion\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"max_potion\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"full_restore\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"dire_hit\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"guard_spec\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"x_${Stats.ACCURACY.identifier.path}\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"x_${Stats.ATTACK.identifier.path}\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"x_${Stats.DEFENCE.identifier.path}\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"x_${Stats.SPECIAL_ATTACK.identifier.path}\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"x_${Stats.SPECIAL_DEFENCE.identifier.path}\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"x_${Stats.SPEED.identifier.path}\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"hp_up\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"protein\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"iron\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"carbos\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"calcium\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"zinc\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pp_up\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pp_max\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"monitor\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"damaged_monitor\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"fossil_analyzer\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"restoration_tank\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"healing_machine\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pc\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"tm_machine\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"lectern\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"disc_shelf\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"display_case\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"incense_sweet\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pasture\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"red_mint\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"blue_mint\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"cyan_mint\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pink_mint\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"green_mint\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"white_mint\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"vivichoke_seeds\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pep_up_flower\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"hearty_grains\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"galarica_nut_bush\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"lobaila\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pomohana\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"pauvillea\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"wistensu\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"wistensu_vine\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"hearty_grain_bale\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"tatami_block\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"tatami_mat\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "\"binding_soil\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "identifier.path",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonBlocks.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"npc_editor\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"apricorn_boat\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"apricorn_chest_boat\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"apricorn_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"apricorn_hanging_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"blue_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"yellow_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"pink_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"black_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"white_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"green_gilded_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"gimmighoul_chest\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"saccharine_boat\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"saccharine_chest_boat\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"saccharine_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"saccharine_hanging_sign\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"poke_cake\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"poke_snack\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"potato_mochi\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"candied_apple\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"candied_berry\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"vivichoke_dip\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"moomoo_milk\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"leek_and_potato_stew\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"black_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"sky_tumblestone\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"technical_machine\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"blank_tm\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"normal_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"fire_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"water_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"grass_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"electric_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"ice_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"fighting_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"poison_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"ground_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"flying_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"psychic_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"bug_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"rock_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"ghost_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"dragon_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"dark_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"steel_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "\"fairy_gem\"",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    },
+    {
+      "file": "CobblemonItems.kt",
+      "name_expression": "name",
+      "property_factories": 1
+    }
+  ],
+  "constructor_classes": [
+    "AbilityChangeItem",
+    "ApricornItem",
+    "ApricornSeedItem",
+    "AprijuiceItem",
+    "BerryItem",
+    "BerryJuiceItem",
+    "CampfirePotItem",
+    "CandyItem",
+    "DireHitItem",
+    "ElixirItem",
+    "EtherItem",
+    "FeatherItem",
+    "FreshStartMochiItem",
+    "FriendshipRaisingBerryItem",
+    "GuardSpecItem",
+    "HealPowderItem",
+    "HealingBerryItem",
+    "HyperTrainingItem",
+    "LinkCableItem",
+    "MintItem",
+    "MintLeafItem",
+    "MochiItem",
+    "MulchItem",
+    "PPRestoringBerryItem",
+    "PPUpItem",
+    "PokeBallItem",
+    "PokePuffItem",
+    "PokedexItem",
+    "PokemonItem",
+    "PonigiriItem",
+    "PortionHealingBerryItem",
+    "PotionItem",
+    "RemedyItem",
+    "RevivalHerbItem",
+    "ReviveItem",
+    "SinisterTeaItem",
+    "StatusCureItem",
+    "StatusCuringBerryItem",
+    "VitaminItem",
+    "VivichokeItem",
+    "WearableBlockItem",
+    "WearableHatItem",
+    "XStatItem"
+  ],
+  "keyed_constructor_calls": [
+    {
+      "class": "VivichokeItem",
+      "id_expression": "\"vivichoke_seeds\""
+    },
+    {
+      "class": "ApricornItem",
+      "id_expression": "(\"red\" + \"_apricorn\")"
+    },
+    {
+      "class": "ApricornItem",
+      "id_expression": "(\"yellow\" + \"_apricorn\")"
+    },
+    {
+      "class": "ApricornItem",
+      "id_expression": "(\"green\" + \"_apricorn\")"
+    },
+    {
+      "class": "ApricornItem",
+      "id_expression": "(\"blue\" + \"_apricorn\")"
+    },
+    {
+      "class": "ApricornItem",
+      "id_expression": "(\"pink\" + \"_apricorn\")"
+    },
+    {
+      "class": "ApricornItem",
+      "id_expression": "(\"black\" + \"_apricorn\")"
+    },
+    {
+      "class": "ApricornItem",
+      "id_expression": "(\"white\" + \"_apricorn\")"
+    },
+    {
+      "class": "ApricornSeedItem",
+      "id_expression": "(\"red\" + \"_apricorn_seed\")"
+    },
+    {
+      "class": "ApricornSeedItem",
+      "id_expression": "(\"yellow\" + \"_apricorn_seed\")"
+    },
+    {
+      "class": "ApricornSeedItem",
+      "id_expression": "(\"green\" + \"_apricorn_seed\")"
+    },
+    {
+      "class": "ApricornSeedItem",
+      "id_expression": "(\"blue\" + \"_apricorn_seed\")"
+    },
+    {
+      "class": "ApricornSeedItem",
+      "id_expression": "(\"pink\" + \"_apricorn_seed\")"
+    },
+    {
+      "class": "ApricornSeedItem",
+      "id_expression": "(\"black\" + \"_apricorn_seed\")"
+    },
+    {
+      "class": "ApricornSeedItem",
+      "id_expression": "(\"white\" + \"_apricorn_seed\")"
+    },
+    {
+      "class": "PonigiriItem",
+      "id_expression": "\"ponigiri\""
+    },
+    {
+      "class": "SinisterTeaItem",
+      "id_expression": "\"sinister_tea\""
+    },
+    {
+      "class": "LinkCableItem",
+      "id_expression": "\"link_cable\""
+    },
+    {
+      "class": "StatusCuringBerryItem",
+      "id_expression": "(\"cheri\" + \"_berry\")"
+    },
+    {
+      "class": "StatusCuringBerryItem",
+      "id_expression": "(\"chesto\" + \"_berry\")"
+    },
+    {
+      "class": "StatusCuringBerryItem",
+      "id_expression": "(\"pecha\" + \"_berry\")"
+    },
+    {
+      "class": "StatusCuringBerryItem",
+      "id_expression": "(\"rawst\" + \"_berry\")"
+    },
+    {
+      "class": "StatusCuringBerryItem",
+      "id_expression": "(\"aspear\" + \"_berry\")"
+    },
+    {
+      "class": "PPRestoringBerryItem",
+      "id_expression": "(\"leppa\" + \"_berry\")"
+    },
+    {
+      "class": "HealingBerryItem",
+      "id_expression": "(\"oran\" + \"_berry\")"
+    },
+    {
+      "class": "StatusCuringBerryItem",
+      "id_expression": "(\"persim\" + \"_berry\")"
+    },
+    {
+      "class": "StatusCuringBerryItem",
+      "id_expression": "(\"lum\" + \"_berry\")"
+    },
+    {
+      "class": "HealingBerryItem",
+      "id_expression": "(\"sitrus\" + \"_berry\")"
+    },
+    {
+      "class": "StatusCuringBerryItem",
+      "id_expression": "(\"eggant\" + \"_berry\")"
+    },
+    {
+      "class": "PortionHealingBerryItem",
+      "id_expression": "(\"figy\" + \"_berry\")"
+    },
+    {
+      "class": "PortionHealingBerryItem",
+      "id_expression": "(\"wiki\" + \"_berry\")"
+    },
+    {
+      "class": "PortionHealingBerryItem",
+      "id_expression": "(\"mago\" + \"_berry\")"
+    },
+    {
+      "class": "PortionHealingBerryItem",
+      "id_expression": "(\"aguav\" + \"_berry\")"
+    },
+    {
+      "class": "PortionHealingBerryItem",
+      "id_expression": "(\"iapapa\" + \"_berry\")"
+    },
+    {
+      "class": "FriendshipRaisingBerryItem",
+      "id_expression": "(\"pomeg\" + \"_berry\")"
+    },
+    {
+      "class": "FriendshipRaisingBerryItem",
+      "id_expression": "(\"kelpsy\" + \"_berry\")"
+    },
+    {
+      "class": "FriendshipRaisingBerryItem",
+      "id_expression": "(\"qualot\" + \"_berry\")"
+    },
+    {
+      "class": "FriendshipRaisingBerryItem",
+      "id_expression": "(\"hondew\" + \"_berry\")"
+    },
+    {
+      "class": "FriendshipRaisingBerryItem",
+      "id_expression": "(\"grepa\" + \"_berry\")"
+    },
+    {
+      "class": "FriendshipRaisingBerryItem",
+      "id_expression": "(\"tamato\" + \"_berry\")"
+    },
+    {
+      "class": "PPRestoringBerryItem",
+      "id_expression": "(\"hopo\" + \"_berry\")"
+    },
+    {
+      "class": "BerryJuiceItem",
+      "id_expression": "\"berry_juice\""
+    },
+    {
+      "class": "VitaminItem",
+      "id_expression": "\"calcium\""
+    },
+    {
+      "class": "VitaminItem",
+      "id_expression": "\"carbos\""
+    },
+    {
+      "class": "VitaminItem",
+      "id_expression": "\"hp_up\""
+    },
+    {
+      "class": "VitaminItem",
+      "id_expression": "\"iron\""
+    },
+    {
+      "class": "VitaminItem",
+      "id_expression": "\"protein\""
+    },
+    {
+      "class": "VitaminItem",
+      "id_expression": "\"zinc\""
+    },
+    {
+      "class": "MochiItem",
+      "id_expression": "\"health_mochi\""
+    },
+    {
+      "class": "MochiItem",
+      "id_expression": "\"muscle_mochi\""
+    },
+    {
+      "class": "MochiItem",
+      "id_expression": "\"resist_mochi\""
+    },
+    {
+      "class": "MochiItem",
+      "id_expression": "\"genius_mochi\""
+    },
+    {
+      "class": "MochiItem",
+      "id_expression": "\"clever_mochi\""
+    },
+    {
+      "class": "MochiItem",
+      "id_expression": "\"swift_mochi\""
+    },
+    {
+      "class": "FreshStartMochiItem",
+      "id_expression": "\"fresh_start_mochi\""
+    },
+    {
+      "class": "FeatherItem",
+      "id_expression": "\"genius_feather\""
+    },
+    {
+      "class": "FeatherItem",
+      "id_expression": "\"swift_feather\""
+    },
+    {
+      "class": "FeatherItem",
+      "id_expression": "\"health_feather\""
+    },
+    {
+      "class": "FeatherItem",
+      "id_expression": "\"resist_feather\""
+    },
+    {
+      "class": "FeatherItem",
+      "id_expression": "\"muscle_feather\""
+    },
+    {
+      "class": "FeatherItem",
+      "id_expression": "\"clever_feather\""
+    },
+    {
+      "class": "RevivalHerbItem",
+      "id_expression": "\"revival_herb\""
+    },
+    {
+      "class": "RemedyItem",
+      "id_expression": "\"remedy\""
+    },
+    {
+      "class": "RemedyItem",
+      "id_expression": "\"fine_remedy\""
+    },
+    {
+      "class": "RemedyItem",
+      "id_expression": "\"superb_remedy\""
+    },
+    {
+      "class": "PotionItem",
+      "id_expression": "\"potion\""
+    },
+    {
+      "class": "PotionItem",
+      "id_expression": "\"super_potion\""
+    },
+    {
+      "class": "PotionItem",
+      "id_expression": "\"hyper_potion\""
+    },
+    {
+      "class": "PotionItem",
+      "id_expression": "\"max_potion\""
+    },
+    {
+      "class": "PotionItem",
+      "id_expression": "\"full_restore\""
+    },
+    {
+      "class": "HealPowderItem",
+      "id_expression": "\"heal_powder\""
+    },
+    {
+      "class": "ReviveItem",
+      "id_expression": "\"revive\""
+    },
+    {
+      "class": "ReviveItem",
+      "id_expression": "\"max_revive\""
+    },
+    {
+      "class": "PPUpItem",
+      "id_expression": "\"pp_up\""
+    },
+    {
+      "class": "PPUpItem",
+      "id_expression": "\"pp_max\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"lonely_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"adamant_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"naughty_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"brave_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"bold_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"impish_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"lax_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"relaxed_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"modest_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"mild_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"rash_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"quiet_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"calm_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"gentle_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"careful_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"sassy_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"timid_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"hasty_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"jolly_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"naive_mint\""
+    },
+    {
+      "class": "MintItem",
+      "id_expression": "\"serious_mint\""
+    },
+    {
+      "class": "XStatItem",
+      "id_expression": "\"x_${Stats.ACCURACY.identifier.path}\""
+    },
+    {
+      "class": "XStatItem",
+      "id_expression": "\"x_${Stats.ATTACK.identifier.path}\""
+    },
+    {
+      "class": "XStatItem",
+      "id_expression": "\"x_${Stats.DEFENCE.identifier.path}\""
+    },
+    {
+      "class": "XStatItem",
+      "id_expression": "\"x_${Stats.SPECIAL_ATTACK.identifier.path}\""
+    },
+    {
+      "class": "XStatItem",
+      "id_expression": "\"x_${Stats.SPECIAL_DEFENCE.identifier.path}\""
+    },
+    {
+      "class": "XStatItem",
+      "id_expression": "\"x_${Stats.SPEED.identifier.path}\""
+    },
+    {
+      "class": "DireHitItem",
+      "id_expression": "\"dire_hit\""
+    },
+    {
+      "class": "GuardSpecItem",
+      "id_expression": "\"guard_spec\""
+    },
+    {
+      "class": "StatusCureItem",
+      "id_expression": "\"full_heal\""
+    },
+    {
+      "class": "StatusCureItem",
+      "id_expression": "\"antidote\""
+    },
+    {
+      "class": "StatusCureItem",
+      "id_expression": "\"awakening\""
+    },
+    {
+      "class": "StatusCureItem",
+      "id_expression": "\"burn_heal\""
+    },
+    {
+      "class": "StatusCureItem",
+      "id_expression": "\"ice_heal\""
+    },
+    {
+      "class": "StatusCureItem",
+      "id_expression": "\"paralyze_heal\""
+    },
+    {
+      "class": "EtherItem",
+      "id_expression": "\"ether\""
+    },
+    {
+      "class": "EtherItem",
+      "id_expression": "\"max_ether\""
+    },
+    {
+      "class": "ElixirItem",
+      "id_expression": "\"elixir\""
+    },
+    {
+      "class": "ElixirItem",
+      "id_expression": "\"max_elixir\""
+    },
+    {
+      "class": "AbilityChangeItem",
+      "id_expression": "\"ability_capsule\""
+    },
+    {
+      "class": "AbilityChangeItem",
+      "id_expression": "\"ability_patch\""
+    },
+    {
+      "class": "PokemonItem",
+      "id_expression": "\"pokemon_model\""
+    },
+    {
+      "class": "MulchItem",
+      "id_expression": "name"
+    },
+    {
+      "class": "PokeBallItem",
+      "id_expression": "pokeBall.name.path"
+    },
+    {
+      "class": "CandyItem",
+      "id_expression": "name"
+    },
+    {
+      "class": "PokedexItem",
+      "id_expression": "\"pokedex_${type.name.lowercase()}\""
+    },
+    {
+      "class": "WearableHatItem",
+      "id_expression": "name"
+    },
+    {
+      "class": "WearableBlockItem",
+      "id_expression": "name"
+    },
+    {
+      "class": "CampfirePotItem",
+      "id_expression": "\"campfire_pot_${color.suffix}\""
+    },
+    {
+      "class": "AprijuiceItem",
+      "id_expression": "\"aprijuice_${type.name.lowercase()}\""
+    },
+    {
+      "class": "PokePuffItem",
+      "id_expression": "\"poke_puff\""
+    },
+    {
+      "class": "BerryItem",
+      "id_expression": "finalName"
+    },
+    {
+      "class": "HyperTrainingItem",
+      "id_expression": "name"
+    }
+  ],
+  "unresolved_central_constructors": [],
+  "id_expression_comparison": [
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonItems.kt",
+      "before": 140,
+      "after": 140,
+      "same_ordered_id_expressions": true
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonBlocks.kt",
+      "before": 340,
+      "after": 340,
+      "same_ordered_id_expressions": true
+    }
+  ],
+  "license_files_unchanged": true,
+  "deleted_tracked_files": 0
+}

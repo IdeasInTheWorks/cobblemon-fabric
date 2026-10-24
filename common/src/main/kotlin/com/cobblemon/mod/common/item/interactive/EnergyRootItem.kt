@@ -26,12 +26,12 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.ItemNameBlockItem
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
 
-class EnergyRootItem(block: EnergyRootBlock, settings: Properties) : ItemNameBlockItem(block, settings), PokemonSelectingItem, HealingSource {
+class EnergyRootItem(block: EnergyRootBlock, settings: Properties) : BlockItem(block, settings.useItemDescriptionPrefix()), PokemonSelectingItem, HealingSource {
 
     private val runtime = MoLangRuntime().setup()
 

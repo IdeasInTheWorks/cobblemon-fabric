@@ -19,7 +19,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
-class MochiItem(override val stat: Stat): CobblemonItem(Properties()), EVIncreaseItem {
+class MochiItem(registrationProperties: net.minecraft.world.item.Item.Properties, override val stat: Stat): CobblemonItem(registrationProperties), EVIncreaseItem {
     override val evIncreaseAmount: Int = 4
 
     override fun applyToPokemon(player: ServerPlayer, stack: ItemStack, pokemon: Pokemon): InteractionResultHolder<ItemStack> {

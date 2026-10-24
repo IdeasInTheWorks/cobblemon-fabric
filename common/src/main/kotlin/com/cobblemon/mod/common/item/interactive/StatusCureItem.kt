@@ -23,7 +23,7 @@ import net.minecraft.world.item.Items
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
-import net.minecraft.world.item.ItemNameBlockItem
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 
@@ -33,7 +33,7 @@ import net.minecraft.world.level.block.Block
  * @author Hiroku
  * @since June 30th, 2023
  */
-class StatusCureItem(val itemName: String, vararg val status: Status, block: Block) : ItemNameBlockItem(block, Properties()), PokemonSelectingItem {
+class StatusCureItem(registrationProperties: net.minecraft.world.item.Item.Properties, val itemName: String, vararg val status: Status, block: Block) : BlockItem(block, registrationProperties.useItemDescriptionPrefix()), PokemonSelectingItem {
     override val bagItem = object : BagItem {
         override val itemName = this@StatusCureItem.itemName
         override val returnItem = Items.GLASS_BOTTLE

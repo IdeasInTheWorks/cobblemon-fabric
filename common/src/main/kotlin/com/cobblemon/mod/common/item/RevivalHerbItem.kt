@@ -30,11 +30,11 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
-import net.minecraft.world.item.ItemNameBlockItem
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
 
-class RevivalHerbItem(block: RevivalHerbBlock) : ItemNameBlockItem(block, Properties()), PokemonSelectingItem, HealingSource {
+class RevivalHerbItem(registrationProperties: net.minecraft.world.item.Item.Properties, block: RevivalHerbBlock) : BlockItem(block, registrationProperties.useItemDescriptionPrefix()), PokemonSelectingItem, HealingSource {
 
     init {
         // 65% to raise composter level

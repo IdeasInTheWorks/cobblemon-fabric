@@ -19,7 +19,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
-class FeatherItem(override val stat: Stat): CobblemonItem(Properties()), EVIncreaseItem {
+class FeatherItem(registrationProperties: net.minecraft.world.item.Item.Properties, override val stat: Stat): CobblemonItem(registrationProperties), EVIncreaseItem {
     override val evIncreaseAmount: Int = 1
 
     override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {

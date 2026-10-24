@@ -10,4 +10,4 @@ package com.cobblemon.mod.common.item
 
 import com.cobblemon.mod.common.block.MintBlock
 
-class MintLeafItem(val mintType: MintBlock.MintType) : CobblemonItem(Properties())
+class MintLeafItem(registrationProperties: net.minecraft.world.item.Item.Properties, val mintType: MintBlock.MintType) : CobblemonItem(registrationProperties)

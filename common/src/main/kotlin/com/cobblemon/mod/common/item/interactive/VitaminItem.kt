@@ -16,13 +16,13 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.ItemNameBlockItem
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 
-class VitaminItem(override val stat: Stat, block: Block): ItemNameBlockItem(block, Properties()), EVIncreaseItem {
+class VitaminItem(registrationProperties: net.minecraft.world.item.Item.Properties, override val stat: Stat, block: Block): BlockItem(block, registrationProperties.useItemDescriptionPrefix()), EVIncreaseItem {
     override val evIncreaseAmount: Int = 10
 
     override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {

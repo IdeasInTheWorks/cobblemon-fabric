@@ -33,17 +33,17 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class MistleafFlowerBlock(lightLevel: (BlockState) -> Int) :
+class MistleafFlowerBlock(settings: Properties, lightLevel: (BlockState) -> Int) :
     EntityBlock,
     TallFlowerBlock(
-        Properties.of()
+        settings
             .mapColor(MapColor.PLANT)
             .noCollision()
             .instabreak()
             .sound(SoundType.GRASS)
             .offsetType(OffsetType.XZ)
             .ignitedByLava()
-            .pushReaction(PushReaction.DESTROY)
+            .pushReaction(PushReaction.POPPED)
             .lightLevel(lightLevel)
     ) {
 

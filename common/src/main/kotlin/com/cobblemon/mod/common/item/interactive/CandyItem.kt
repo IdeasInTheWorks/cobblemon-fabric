@@ -32,10 +32,10 @@ import net.minecraft.world.level.Level
  * @author Licious
  * @since May 5th, 2022
  */
-class CandyItem(
+class CandyItem(registrationProperties: net.minecraft.world.item.Item.Properties,
     val item_rarity: Rarity,
     val calculator: Calculator
-) : CobblemonItem(Properties().apply {
+) : CobblemonItem(registrationProperties.apply {
     rarity(item_rarity)
 }), PokemonSelectingItem {
 

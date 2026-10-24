@@ -24,7 +24,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
-import net.minecraft.world.item.ItemNameBlockItem
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Rarity
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
@@ -35,7 +35,7 @@ import net.minecraft.world.level.block.Block
  * @author Hiroku
  * @since June 30th, 2023
  */
-class ElixirItem(val max: Boolean, block: Block) : ItemNameBlockItem(block, Properties().apply {
+class ElixirItem(registrationProperties: net.minecraft.world.item.Item.Properties, val max: Boolean, block: Block) : BlockItem(block, registrationProperties.useItemDescriptionPrefix().apply {
     if (max) rarity(Rarity.UNCOMMON)
 }), PokemonSelectingItem {
     override val bagItem = object : BagItem {
