@@ -81,7 +81,7 @@ tasks {
     val copyAccessWidener by registering(Copy::class) {
         from(loom.accessWidenerPath)
         into(generatedResources)
-        dependsOn(tasks.named("checkLicenses"))
+        dependsOn(project.tasks.named("checkLicenses"))
     }
 
     processResources {
@@ -95,8 +95,8 @@ tasks {
         filesMatching("fabric.mod.json") {
             expand(
                 "version" to rootProject.version,
-                "fabric_loader_version" to libs.fabric.loader.get().version,
-                "fabric_api_version" to libs.fabric.api.get().version,
+                "fabric_loader_version" to libs.versions.fabric.loader.get(),
+                "fabric_api_version" to libs.versions.fabric.api.get(),
                 "minecraft_version" to rootProject.property("mc_version").toString(),
                 "java_version" to rootProject.property("java_version").toString()
             )
