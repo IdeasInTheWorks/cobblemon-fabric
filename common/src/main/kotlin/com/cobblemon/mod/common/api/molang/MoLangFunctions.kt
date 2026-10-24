@@ -455,11 +455,11 @@ object MoLangFunctions {
     fun readMoValueFromNBT(nbt: Tag): MoValue =
         when (nbt) {
             is DoubleTag -> {
-                DoubleValue(nbt.asDouble)
+                DoubleValue(nbt.doubleValue())
             }
 
             is StringTag -> {
-                StringValue(nbt.asString)
+                StringValue(nbt.asString().orElse(""))
             }
 
             is ListTag -> {
@@ -475,7 +475,7 @@ object MoLangFunctions {
 
             is CompoundTag -> {
                 val variable = VariableStruct(hashMapOf())
-                nbt.allKeys.toList().forEach { key ->
+                nbt.keySet().toList().forEach { key ->
                     val value = readMoValueFromNBT(nbt[key]!!)
                     variable.map[key] = value
                 }

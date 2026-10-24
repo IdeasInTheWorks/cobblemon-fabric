@@ -8,6 +8,10 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonSounds
 import com.cobblemon.mod.common.block.chest.GildedChestBlock.Type
@@ -149,18 +153,22 @@ class GildedChestBlockEntity(pos: BlockPos, state: BlockState, val type: Type = 
         world.blockEvent(pos, block, 1, newViewerCount)
     }
 
-    override fun saveAdditional(nbt: CompoundTag, registryLookup: HolderLookup.Provider) {
-        super.saveAdditional(nbt, registryLookup)
-        if (!trySaveLootTable(nbt)) {
-            ContainerHelper.saveAllItems(nbt, inventoryContents, registryLookup)
+    override fun saveAdditional(output: ValueOutput) {
+        val nbt = CompoundTag()
+        super.saveAdditional(output)
+        if (!trySaveLootTable(output)) {
+            ContainerHelper.saveAllItems(output, inventoryContents)
         }
+
+        LegacyNbt.write(output, nbt)
     }
 
-    override fun loadAdditional(nbt: CompoundTag, registryLookup: HolderLookup.Provider) {
-        super.loadAdditional(nbt, registryLookup)
+    override fun loadAdditional(input: ValueInput) {
+        val nbt = LegacyNbt.read(input)
+        super.loadAdditional(input)
         inventoryContents= NonNullList.withSize(containerSize, ItemStack.EMPTY)
-        if (!tryLoadLootTable(nbt)) {
-            ContainerHelper.loadAllItems(nbt, inventoryContents, registryLookup)
+        if (!tryLoadLootTable(input)) {
+            ContainerHelper.loadAllItems(input, inventoryContents)
         }
     }
 

@@ -8,6 +8,10 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.block.DiscShelfBlock
@@ -235,17 +239,21 @@ class DiscShelfBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(Cobbl
         return ClientboundBlockEntityDataPacket.create(this)
     }
 
-    override fun saveAdditional(tag: CompoundTag, registries: HolderLookup.Provider) {
-        super.saveAdditional(tag, registries)
-        ContainerHelper.saveAllItems(tag, items, true, registries)
+    override fun saveAdditional(output: ValueOutput) {
+        val tag = CompoundTag()
+        super.saveAdditional(output)
+        ContainerHelper.saveAllItems(output, items, true)
         tag.putInt("LastInteractedSlot", lastInteractedSlot)
+
+        LegacyNbt.write(output, tag)
     }
 
-    override fun loadAdditional(tag: CompoundTag, registries: HolderLookup.Provider) {
-        super.loadAdditional(tag, registries)
+    override fun loadAdditional(input: ValueInput) {
+        val tag = LegacyNbt.read(input)
+        super.loadAdditional(input)
         items.clear()
-        ContainerHelper.loadAllItems(tag, items, registries)
-        lastInteractedSlot = tag.getInt("LastInteractedSlot")
+        ContainerHelper.loadAllItems(input, items)
+        lastInteractedSlot = tag.getIntOr("LastInteractedSlot", 0)
     }
 
     companion object {

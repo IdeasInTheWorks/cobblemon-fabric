@@ -960,7 +960,7 @@ open class PokemonEntity(
     override fun load(nbt: CompoundTag) {
         super.load(nbt)
         if (nbt.contains(DataKeys.TETHERING)) {
-            val tetheringNBT = nbt.getCompound(DataKeys.TETHERING)
+            val tetheringNBT = nbt.getCompoundOrEmpty(DataKeys.TETHERING)
             val tetheringId = tetheringNBT.getUUID(DataKeys.TETHERING_ID)
             val pcId = tetheringNBT.getUUID(DataKeys.PC_ID)
             val pokemonId = tetheringNBT.getUUID(DataKeys.POKEMON_UUID)
@@ -993,7 +993,7 @@ open class PokemonEntity(
             // this will fuck with storages, as they are tied to these very pokemon instances and their observables
             val ops = registryAccess().createSerializationContext(NbtOps.INSTANCE)
             pokemon = try {
-                this.sidedCodec().decode(ops, nbt.getCompound(DataKeys.POKEMON)).orThrow.first
+                this.sidedCodec().decode(ops, nbt.getCompoundOrEmpty(DataKeys.POKEMON)).orThrow.first
             } catch (_: IllegalStateException) {
                 health = 0F
                 this.createSidedPokemon()
@@ -1012,7 +1012,7 @@ open class PokemonEntity(
 
         // apply active effects
         if (nbt.contains(DataKeys.ENTITY_EFFECTS)) effects.loadFromNBT(
-            nbt.getCompound(DataKeys.ENTITY_EFFECTS),
+            nbt.getCompoundOrEmpty(DataKeys.ENTITY_EFFECTS),
             this.level().registryAccess()
         )
 
@@ -1021,27 +1021,27 @@ open class PokemonEntity(
         entityData.set(NICKNAME, pokemon.nickname ?: Component.empty())
         entityData.set(MARK, pokemon.activeMark?.identifier.toString())
         entityData.set(LABEL_LEVEL, pokemon.level)
-        entityData.set(POSE_TYPE, PoseType.valueOf(nbt.getString(DataKeys.POKEMON_POSE_TYPE)))
-        entityData.set(BEHAVIOUR_FLAGS, nbt.getByte(DataKeys.POKEMON_BEHAVIOUR_FLAGS))
+        entityData.set(POSE_TYPE, PoseType.valueOf(nbt.getStringOr(DataKeys.POKEMON_POSE_TYPE, "")))
+        entityData.set(BEHAVIOUR_FLAGS, nbt.getByteOr(DataKeys.POKEMON_BEHAVIOUR_FLAGS, 0))
         if (nbt.contains(DataKeys.POKEMON_FREEZE_FRAME)) {
-            entityData.set(FREEZE_FRAME, nbt.getFloat(DataKeys.POKEMON_FREEZE_FRAME))
+            entityData.set(FREEZE_FRAME, nbt.getFloatOr(DataKeys.POKEMON_FREEZE_FRAME, 0F))
         }
 
         if (nbt.contains(DataKeys.POKEMON_HIDE_LABEL)) {
-            entityData.set(HIDE_LABEL, nbt.getBoolean(DataKeys.POKEMON_HIDE_LABEL))
+            entityData.set(HIDE_LABEL, nbt.getBooleanOr(DataKeys.POKEMON_HIDE_LABEL, false))
         }
         if (nbt.contains(DataKeys.POKEMON_UNBATTLEABLE)) {
-            entityData.set(UNBATTLEABLE, nbt.getBoolean(DataKeys.POKEMON_UNBATTLEABLE))
+            entityData.set(UNBATTLEABLE, nbt.getBooleanOr(DataKeys.POKEMON_UNBATTLEABLE, false))
         }
         if (nbt.contains(DataKeys.POKEMON_COUNTS_TOWARDS_SPAWN_CAP)) {
-            countsTowardsSpawnCap = nbt.getBoolean(DataKeys.POKEMON_COUNTS_TOWARDS_SPAWN_CAP)
+            countsTowardsSpawnCap = nbt.getBooleanOr(DataKeys.POKEMON_COUNTS_TOWARDS_SPAWN_CAP, false)
         }
         if (nbt.contains(DataKeys.POKEMON_RECALCULATE_POSE)) {
-            enablePoseTypeRecalculation = nbt.getBoolean(DataKeys.POKEMON_RECALCULATE_POSE)
+            enablePoseTypeRecalculation = nbt.getBooleanOr(DataKeys.POKEMON_RECALCULATE_POSE, false)
         }
 
         if (nbt.contains(DataKeys.POKEMON_PLATFORM_TYPE)) {
-            entityData.set(PLATFORM_TYPE, PlatformType.valueOf(nbt.getString(DataKeys.POKEMON_PLATFORM_TYPE)))
+            entityData.set(PLATFORM_TYPE, PlatformType.valueOf(nbt.getStringOr(DataKeys.POKEMON_PLATFORM_TYPE, "")))
         }
 
         if (nbt.contains("Brain", 10)) {
@@ -1051,7 +1051,7 @@ open class PokemonEntity(
         remakeBrain()
 
         if (nbt.contains(DataKeys.POKEMON_SCALE_MODIFIER)) {
-            entityData.set(SCALE_MODIFIER, nbt.getFloat(DataKeys.POKEMON_SCALE_MODIFIER))
+            entityData.set(SCALE_MODIFIER, nbt.getFloatOr(DataKeys.POKEMON_SCALE_MODIFIER, 0F))
         }
 
         CobblemonEvents.POKEMON_ENTITY_LOAD.postThen(
@@ -1663,10 +1663,10 @@ open class PokemonEntity(
         var isLeft = false
         // Use copies because player doesn't expose a forceful update of shoulder data
         val nbt = when {
-            player.shoulderEntityRight.isPokemonEntity() && player.shoulderEntityRight.getCompound(DataKeys.POKEMON)
+            player.shoulderEntityRight.isPokemonEntity() && player.shoulderEntityRight.getCompoundOrEmpty(DataKeys.POKEMON)
                 .getUUID(DataKeys.POKEMON_UUID) == this.pokemon.uuid -> player.shoulderEntityRight.copy()
 
-            player.shoulderEntityLeft.isPokemonEntity() && player.shoulderEntityLeft.getCompound(DataKeys.POKEMON)
+            player.shoulderEntityLeft.isPokemonEntity() && player.shoulderEntityLeft.getCompoundOrEmpty(DataKeys.POKEMON)
                 .getUUID(DataKeys.POKEMON_UUID) == this.pokemon.uuid -> {
                 isLeft = true
                 player.shoulderEntityLeft.copy()

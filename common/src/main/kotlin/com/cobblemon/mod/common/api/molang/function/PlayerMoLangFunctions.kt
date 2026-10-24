@@ -94,7 +94,7 @@ object PlayerMoLangFunctions : AbstractMoLangFunctionHolder<Player>() {
                     is StringValue -> {
                         val id = Identifier.parse(value.value)
                         val item =
-                            player.registryAccess().registryOrThrow(Registries.ITEM).get(id)
+                            player.registryAccess().lookupOrThrow(Registries.ITEM).getValue(id)
                                 ?: return@setInvSlot DoubleValue.ZERO
                         ItemStack(item)
                     }
@@ -124,7 +124,7 @@ object PlayerMoLangFunctions : AbstractMoLangFunctionHolder<Player>() {
                     is StringValue -> {
                         val id = Identifier.parse(value.value)
                         val item =
-                            player.registryAccess().registryOrThrow(Registries.ITEM).get(id)
+                            player.registryAccess().lookupOrThrow(Registries.ITEM).getValue(id)
                                 ?: return@giveItem DoubleValue.ZERO
                         ItemStack(item)
                     }
@@ -412,7 +412,7 @@ object PlayerMoLangFunctions : AbstractMoLangFunctionHolder<Player>() {
 
                     val resourceLocation = Identifier.tryParse(statName) ?: return@getCustomStat DoubleValue.ZERO
                     val statResourceLocation =
-                        BuiltInRegistries.CUSTOM_STAT.get(resourceLocation) ?: return@getCustomStat DoubleValue.ZERO
+                        BuiltInRegistries.CUSTOM_STAT.getValue(resourceLocation) ?: return@getCustomStat DoubleValue.ZERO
 
                     val exists = Stats.CUSTOM.contains(statResourceLocation)
                     if (!exists) return@getCustomStat DoubleValue.ZERO

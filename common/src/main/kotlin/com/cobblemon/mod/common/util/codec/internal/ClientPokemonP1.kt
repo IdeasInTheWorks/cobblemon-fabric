@@ -8,6 +8,9 @@
 
 package com.cobblemon.mod.common.util.codec.internal
 
+import com.cobblemon.mod.common.util.getList
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.api.abilities.Ability
 import com.cobblemon.mod.common.api.moves.BenchedMoves
@@ -79,7 +82,7 @@ internal class ClientPokemonP1(
         other.benchedMoves.copyFrom(this.benchedMoves)
         other.scaleModifier = this.scaleModifier
         this.features.forEach { featureNbt ->
-            val featureId = featureNbt.getString(FEATURE_ID)
+            val featureId = featureNbt.getStringOr(FEATURE_ID, "")
             if (featureId.isEmpty()) {
                 return@forEach
             }

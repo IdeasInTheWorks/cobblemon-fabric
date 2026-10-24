@@ -8,6 +8,9 @@
 
 package com.cobblemon.mod.common.util
 
+import com.cobblemon.mod.common.util.putUUID
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.CobblemonSounds
 import com.cobblemon.mod.common.PlayerSpawnerAccessor

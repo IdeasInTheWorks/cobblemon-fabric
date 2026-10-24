@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.pokemon
 
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.CobblemonMovesetBuilders
 import com.cobblemon.mod.common.CobblemonNetwork.sendPacket

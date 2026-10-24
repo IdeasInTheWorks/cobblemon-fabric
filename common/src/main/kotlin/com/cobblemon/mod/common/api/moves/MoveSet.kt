@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.api.moves
 
+import com.cobblemon.mod.common.util.getList
+
 import com.bedrockk.molang.runtime.struct.QueryStruct
 import com.bedrockk.molang.runtime.value.DoubleValue
 import com.cobblemon.mod.common.net.IntSize

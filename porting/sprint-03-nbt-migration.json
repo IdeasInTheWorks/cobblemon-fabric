@@ -1,0 +1,381 @@
+{
+  "method": "Compiler-identified Optional read lines; explicit defaults; compound and typed list compatibility; UUID int-array format retained",
+  "files": [
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/MoLangScriptingEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/Pokemon.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/BufferUtils.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/CompoundTagUtilities.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/LegacyNbtExtensions.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/PlayerExtensions.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/habitats/HabitatPool.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/habitats/HabitatSpawn.kt",
+      "old_nbt_primitive_reads_rewritten": 8
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/molang/MoLangFunctions.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/moves/BenchedMove.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/moves/Move.kt",
+      "old_nbt_primitive_reads_rewritten": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/moves/MoveSet.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/PokemonProperties.kt",
+      "old_nbt_primitive_reads_rewritten": 25
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/BottomlessStore.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/entity/pokemon/EntityEffect.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/habitats/spawningstyle/ActivatedHabitatSpawning.kt",
+      "old_nbt_primitive_reads_rewritten": 5
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/habitats/spawningstyle/NaturalHabitatSpawning.kt",
+      "old_nbt_primitive_reads_rewritten": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/npc/configuration/NPCBattleConfiguration.kt",
+      "old_nbt_primitive_reads_rewritten": 3
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/npc/configuration/interaction/DialogueNPCInteractionConfiguration.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/npc/configuration/interaction/ScriptNPCInteractionConfiguration.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/feature/AbstractChoiceSpeciesFeatureProvider.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/feature/FlagSpeciesFeature.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/feature/IntSpeciesFeature.kt",
+      "old_nbt_primitive_reads_rewritten": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/feature/StringSpeciesFeature.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/molang/NbtMoLangDataStoreFactory.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/party/PartyStore.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/pc/PCBox.kt",
+      "old_nbt_primitive_reads_rewritten": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/pc/PCStore.kt",
+      "old_nbt_primitive_reads_rewritten": 3
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/adapter/conversions/ReforgedConversion.kt",
+      "old_nbt_primitive_reads_rewritten": 23
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/BerryBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 7
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/CampfireBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/DiscShelfBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/FossilMultiblockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/HealingMachineBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/PokemonPastureBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/PokeSnackBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/TintBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/TMMachineBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 4
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/ViewerCountBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/habitat/HabitatBlockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 3
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/multiblock/FossilMultiblockStructure.kt",
+      "old_nbt_primitive_reads_rewritten": 5
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PokemonOnShoulderRenderer.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/boat/CobblemonBoatEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/generic/GenericBedrockEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 6
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/npc/NPCEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 16
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/PokemonEntity.kt",
+      "old_nbt_primitive_reads_rewritten": 9
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/effects/EffectTracker.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/effects/IllusionEffect.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/effects/TransformEffect.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/activestate/PokemonState.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/feature/SlowpokeTailRegrowthSpeciesFeature.kt",
+      "old_nbt_primitive_reads_rewritten": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/codec/internal/ClientPokemonP1.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/codec/internal/PokemonP1.kt",
+      "old_nbt_primitive_reads_rewritten": 0
+    }
+  ],
+  "audited_followup": [
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/CompoundTagExtensions.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/habitats/HabitatPool.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/habitats/HabitatSpawn.kt",
+      "reads": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/moves/BenchedMove.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/moves/Move.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/PokemonProperties.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/PokemonStore.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/entity/pokemon/EntityEffect.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/habitats/spawningstyle/ActivatedHabitatSpawning.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/npc/configuration/NPCBattleConfiguration.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/npc/configuration/interaction/CustomScriptNPCInteractionConfiguration.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/feature/FlagSpeciesFeature.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/party/PartyStore.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/pc/PCStore.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/adapter/conversions/ReforgedConversion.kt",
+      "reads": 3
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/BerryBlockEntity.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/HealingMachineBlockEntity.kt",
+      "reads": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/PokemonPastureBlockEntity.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/ViewerCountBlockEntity.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/habitat/HabitatBlockEntity.kt",
+      "reads": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/multiblock/FossilMultiblockStructure.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PokemonOnShoulderRenderer.kt",
+      "reads": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/datafixer/fix/FeatureFix.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/entity/npc/NPCEntity.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/status/PersistentStatusContainer.kt",
+      "reads": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/codec/internal/ClientPokemonP1.kt",
+      "reads": 1
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/util/codec/internal/PokemonP1.kt",
+      "reads": 1
+    }
+  ],
+  "value_io_callbacks": [
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/BerryBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/PokemonPastureBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/PokeSnackBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/ViewerCountBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/habitat/HabitatBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/CampfireBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/DiscShelfBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/DisplayCaseBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/GildedChestBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/LecternBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/RestorationTankBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/TMMachineBlockEntity.kt",
+      "callbacks": 2
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/HealingMachineBlockEntity.kt",
+      "callbacks": 2
+    }
+  ]
+}

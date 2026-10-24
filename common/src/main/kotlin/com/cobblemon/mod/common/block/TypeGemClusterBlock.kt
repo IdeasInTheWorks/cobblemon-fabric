@@ -46,7 +46,7 @@ class TypeGemClusterBlock(
     settings: Properties,
     val nextStage: Block,
     val dropItemId: Identifier
-) : DirectionalBlock(settings.pushReaction(PushReaction.DESTROY)) {
+) : DirectionalBlock(settings.pushReaction(PushReaction.POPPED)) {
 
     companion object {
         val CODEC: MapCodec<TypeGemClusterBlock> = RecordCodecBuilder.mapCodec { instance ->

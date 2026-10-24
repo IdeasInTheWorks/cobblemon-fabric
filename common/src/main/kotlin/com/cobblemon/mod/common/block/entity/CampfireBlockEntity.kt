@@ -8,6 +8,12 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonRecipeTypes
 import com.cobblemon.mod.common.CobblemonSounds
@@ -408,32 +414,36 @@ class CampfireBlockEntity(pos: BlockPos, state: BlockState) : BaseContainerBlock
         level?.sendBlockUpdated(blockPos, blockState, blockState, Block.UPDATE_CLIENTS)
     }
 
-    override fun saveAdditional(tag: CompoundTag, registries: HolderLookup.Provider) {
-        super.saveAdditional(tag, registries)
+    override fun saveAdditional(output: ValueOutput) {
+        val tag = CompoundTag()
+        super.saveAdditional(output)
 
         tag.putInt("CookingProgress", this.cookingProgress)
 
-        ContainerHelper.saveAllItems(tag, this.items, registries)
+        ContainerHelper.saveAllItems(output, this.items)
         potComponent?.let { component ->
             PotComponent.CODEC.encodeStart(NbtOps.INSTANCE, component)
                 .result()
                 ?.ifPresent { encoded -> tag.put("PotComponent", encoded) }
         }
+
+        LegacyNbt.write(output, tag)
     }
 
-    override fun loadAdditional(tag: CompoundTag, registries: HolderLookup.Provider) {
-        super.loadAdditional(tag, registries)
+    override fun loadAdditional(input: ValueInput) {
+        val tag = LegacyNbt.read(input)
+        super.loadAdditional(input)
 
-        this.cookingProgress = tag.getInt("CookingProgress")
+        this.cookingProgress = tag.getIntOr("CookingProgress", 0)
 
         // Minecraft doesn't save empty item stacks to the items tag, so we have to manually clear them
         // otherwise they would never clear and seasonings would always render wrongly
 
         clearContent()
-        ContainerHelper.loadAllItems(tag, this.items, registries)
+        ContainerHelper.loadAllItems(input, this.items)
 
         if (tag.contains("PotComponent")) {
-            val component = PotComponent.CODEC.parse(NbtOps.INSTANCE, tag.getCompound("PotComponent"))
+            val component = PotComponent.CODEC.parse(NbtOps.INSTANCE, tag.getCompoundOrEmpty("PotComponent"))
                 .result()
                 ?.orElse(null)
             potComponent = component

@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.api.storage.molang
 
+import com.cobblemon.mod.common.util.contains
+
 import com.bedrockk.molang.runtime.struct.VariableStruct
 import com.cobblemon.mod.common.api.molang.MoLangFunctions.readMoValueFromNBT
 import com.cobblemon.mod.common.api.molang.MoLangFunctions.writeMoValueToNBT

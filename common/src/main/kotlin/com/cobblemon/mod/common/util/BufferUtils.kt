@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.util
 
+import com.cobblemon.mod.common.util.contains
+
 import com.bedrockk.molang.Expression
 import com.cobblemon.mod.common.api.molang.ExpressionLike
 import com.cobblemon.mod.common.api.riding.stats.RidingStat

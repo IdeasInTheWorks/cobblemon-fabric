@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.entity.pokemon.effects
 
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.api.entity.pokemon.EntityEffect
 import com.cobblemon.mod.common.api.entity.pokemon.MocKEffect
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
@@ -48,7 +50,7 @@ class EffectTracker(val entity: PokemonEntity) {
 
     fun loadFromNBT(nbt: CompoundTag, registryLookup: HolderLookup.Provider) {
         if (nbt.contains(DataKeys.ENTITY_EFFECT_MOCK)) {
-            val mockTag = nbt.getCompound(DataKeys.ENTITY_EFFECT_MOCK)
+            val mockTag = nbt.getCompoundOrEmpty(DataKeys.ENTITY_EFFECT_MOCK)
             this.mockEffect = EntityEffect.loadFromNbt(mockTag, registryLookup)?.takeIf { it is MocKEffect }?.let { it as MocKEffect }
         }
     }

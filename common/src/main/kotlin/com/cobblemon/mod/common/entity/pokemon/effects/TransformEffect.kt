@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.entity.pokemon.effects
 
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.api.entity.pokemon.MocKEffect
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonPropertyExtractor
@@ -66,8 +68,8 @@ class TransformEffect(
     }
 
     override fun loadFromNBT(nbt: CompoundTag, registryLookup: HolderLookup.Provider) {
-        if (nbt.contains(DataKeys.POKEMON_ENTITY_MOCK)) this.mock = PokemonProperties().loadFromNBT(nbt.getCompound(DataKeys.POKEMON_ENTITY_MOCK), registryLookup)
-        if (nbt.contains(DataKeys.POKEMON_ENTITY_SCALE)) this.scale = nbt.getFloat(DataKeys.POKEMON_ENTITY_SCALE)
+        if (nbt.contains(DataKeys.POKEMON_ENTITY_MOCK)) this.mock = PokemonProperties().loadFromNBT(nbt.getCompoundOrEmpty(DataKeys.POKEMON_ENTITY_MOCK), registryLookup)
+        if (nbt.contains(DataKeys.POKEMON_ENTITY_SCALE)) this.scale = nbt.getFloatOr(DataKeys.POKEMON_ENTITY_SCALE, 0F)
     }
 
     companion object {

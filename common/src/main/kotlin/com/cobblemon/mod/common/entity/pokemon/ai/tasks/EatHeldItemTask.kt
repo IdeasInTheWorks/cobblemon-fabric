@@ -78,7 +78,7 @@ class EatHeldItemTask(entity: PokemonEntity) : Behavior<PokemonEntity>(
                 if (this.timelastEaten + MAX_DURATION <= time) {
                     var resultItemStack = itemStack.finishUsingItem(world, entity)
                     val configuredReturnItem = itemConfig?.returnItem
-                    resultItemStack = if (configuredReturnItem != ItemStack.EMPTY) ItemStack(BuiltInRegistries.ITEM.get(configuredReturnItem))
+                    resultItemStack = if (configuredReturnItem != ItemStack.EMPTY) ItemStack(BuiltInRegistries.ITEM.getValue(configuredReturnItem))
                         else if (resultItemStack.item == itemStack.item)
                             ItemStack.EMPTY // Items that aren't normally edible return themselves
                         else

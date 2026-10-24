@@ -8,6 +8,10 @@
 
 package com.cobblemon.mod.common.block.multiblock
 
+import com.cobblemon.mod.common.util.getUUID
+import com.cobblemon.mod.common.util.putUUID
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.CobblemonBlocks
 import com.cobblemon.mod.common.CobblemonSounds
@@ -206,7 +210,7 @@ class FossilMultiblockStructure (
                     stack?.shrink(1)
                     player.giveOrDropItemStack(
                         ItemStack(
-                            BuiltInRegistries.ITEM.get(
+                            BuiltInRegistries.ITEM.getValue(
                                 returnItem
                             )
                         ), false)
@@ -665,9 +669,9 @@ class FossilMultiblockStructure (
             val tankBasePos = NbtUtils.readBlockPos(nbt, DataKeys.TANK_BASE_POS).get()
 
             val result = FossilMultiblockStructure(monitorPos, compartmentPos, tankBasePos, animAge, partialTicks)
-            result.organicMaterialInside = nbt.getInt(DataKeys.ORGANIC_MATERIAL)
-            result.timeRemaining = nbt.getInt(DataKeys.TIME_LEFT)
-            result.protectionTime = if (nbt.contains(DataKeys.PROTECTED_TIME_LEFT)) nbt.getInt(DataKeys.PROTECTED_TIME_LEFT) else -1
+            result.organicMaterialInside = nbt.getIntOr(DataKeys.ORGANIC_MATERIAL, 0)
+            result.timeRemaining = nbt.getIntOr(DataKeys.TIME_LEFT, 0)
+            result.protectionTime = if (nbt.contains(DataKeys.PROTECTED_TIME_LEFT)) nbt.getIntOr(DataKeys.PROTECTED_TIME_LEFT, 0) else -1
             result.fossilOwnerUUID = if (nbt.contains(DataKeys.FOSSIL_OWNER)) nbt.getUUID(DataKeys.FOSSIL_OWNER) else null
 
             val fossilInv = if (nbt.contains(DataKeys.FOSSIL_INVENTORY)) { (nbt.get(DataKeys.FOSSIL_INVENTORY) as ListTag) } else ListTag()
@@ -677,10 +681,10 @@ class FossilMultiblockStructure (
             fossilInv.forEach { ItemStack.CODEC.parse(ops, it).result().ifPresent(actualFossilList::add) }
 
             result.fossilInventory = actualFossilList
-            result.tankConnectorDirection = Direction.byName(nbt.getString(DataKeys.CONNECTOR_DIRECTION))
+            result.tankConnectorDirection = Direction.byName(nbt.getStringOr(DataKeys.CONNECTOR_DIRECTION, ""))
 
             if (nbt.contains(DataKeys.INSERTED_FOSSIL)) {
-                val id = Identifier.parse(nbt.getString(DataKeys.INSERTED_FOSSIL))
+                val id = Identifier.parse(nbt.getStringOr(DataKeys.INSERTED_FOSSIL, ""))
                 val fossil = Fossils.getByIdentifier(id)
 
                 if (fossil != null) {
@@ -694,7 +698,7 @@ class FossilMultiblockStructure (
                 // migration of instances that saved the created pokeon in the nbt
                 result.hasCreatedPokemon = true
             } else if (nbt.contains(DataKeys.HAS_CREATED_POKEMON)){
-                result.hasCreatedPokemon = nbt.getBoolean(DataKeys.HAS_CREATED_POKEMON)
+                result.hasCreatedPokemon = nbt.getBooleanOr(DataKeys.HAS_CREATED_POKEMON, false)
             }
             result.fillLevel = result.organicMaterialInside * 8 / MATERIAL_TO_START
             return result

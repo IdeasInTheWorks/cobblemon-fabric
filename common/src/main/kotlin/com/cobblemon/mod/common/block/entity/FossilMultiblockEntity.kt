@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.*
 import com.cobblemon.mod.common.CobblemonSounds
 import com.cobblemon.mod.common.api.multiblock.MultiblockEntity
@@ -144,9 +146,9 @@ open class FossilMultiblockEntity(
                 // Otherwise the fetus animation gets interrupted on every block update
                 val animAge = oldMultiblockStructure.fossilState.peekAge() // If someone knows a better way to fetch the age, please do.
                 val partialTicks = oldMultiblockStructure.fossilState.getPartialTicks()
-                FossilMultiblockStructure.fromNbt(nbt.getCompound(DataKeys.MULTIBLOCK_STORAGE), registryLookup, animAge, partialTicks)
+                FossilMultiblockStructure.fromNbt(nbt.getCompoundOrEmpty(DataKeys.MULTIBLOCK_STORAGE), registryLookup, animAge, partialTicks)
             } else {
-                FossilMultiblockStructure.fromNbt(nbt.getCompound(DataKeys.MULTIBLOCK_STORAGE), registryLookup)
+                FossilMultiblockStructure.fromNbt(nbt.getCompoundOrEmpty(DataKeys.MULTIBLOCK_STORAGE), registryLookup)
             }
         } else {
             null

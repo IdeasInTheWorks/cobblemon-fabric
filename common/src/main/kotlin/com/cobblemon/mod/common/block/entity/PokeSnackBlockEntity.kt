@@ -8,6 +8,14 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
+import com.cobblemon.mod.common.util.getUUID
+import com.cobblemon.mod.common.util.putUUID
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonItemComponents
@@ -238,8 +246,9 @@ open class PokeSnackBlockEntity(pos: BlockPos, state: BlockState) :
             .orEmpty()
     }
 
-    override fun saveAdditional(tag: CompoundTag, registries: HolderLookup.Provider) {
-        super.saveAdditional(tag, registries)
+    override fun saveAdditional(output: ValueOutput) {
+        val tag = CompoundTag()
+        super.saveAdditional(output)
 
         saveTint(tag)
 
@@ -277,14 +286,17 @@ open class PokeSnackBlockEntity(pos: BlockPos, state: BlockState) :
         placedBy?.let {
             tag.putUUID(DataKeys.PLACED_BY, it)
         }
+
+        LegacyNbt.write(output, tag)
     }
 
-    override fun loadAdditional(tag: CompoundTag, registries: HolderLookup.Provider) {
-        super.loadAdditional(tag, registries)
+    override fun loadAdditional(input: ValueInput) {
+        val tag = LegacyNbt.read(input)
+        super.loadAdditional(input)
 
         loadTint(tag)
 
-        amountSpawned = tag.getInt(DataKeys.AMOUNT_SPAWNED)
+        amountSpawned = tag.getIntOr(DataKeys.AMOUNT_SPAWNED, 0)
 
         if (tag.contains(DataKeys.FOOD_COLOUR)) {
             CobblemonItemComponents.FOOD_COLOUR.codec()
@@ -314,7 +326,7 @@ open class PokeSnackBlockEntity(pos: BlockPos, state: BlockState) :
         }
 
         if (tag.contains(DataKeys.TICKS_UNTIL_NEXT_SPAWN)) {
-            randomTicksUntilNextSpawn = tag.getFloat(DataKeys.TICKS_UNTIL_NEXT_SPAWN)
+            randomTicksUntilNextSpawn = tag.getFloatOr(DataKeys.TICKS_UNTIL_NEXT_SPAWN, 0F)
         }
 
         if (tag.contains(DataKeys.PLACED_BY)) {

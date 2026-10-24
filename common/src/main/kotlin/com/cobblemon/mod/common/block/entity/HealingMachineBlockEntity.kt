@@ -8,6 +8,10 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
 import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonSounds
@@ -152,11 +156,9 @@ class HealingMachineBlockEntity(
         clearData()
     }
 
-    override fun loadAdditional(
-        compoundTag: CompoundTag,
-        registryLookup: HolderLookup.Provider
-    ) {
-        super.loadAdditional(compoundTag, registryLookup)
+    override fun loadAdditional(input: ValueInput) {
+        val compoundTag = LegacyNbt.read(input)
+        super.loadAdditional(input)
 
         this.pokeBalls.clear()
 
@@ -164,11 +166,11 @@ class HealingMachineBlockEntity(
             this.currentUser = compoundTag.getUUID(DataKeys.HEALER_MACHINE_USER)
         }
         if (compoundTag.contains(DataKeys.HEALER_MACHINE_POKEBALLS)) {
-            val pokeBallsTag = compoundTag.getCompound(DataKeys.HEALER_MACHINE_POKEBALLS)
+            val pokeBallsTag = compoundTag.getCompoundOrEmpty(DataKeys.HEALER_MACHINE_POKEBALLS)
             // Keep around for compat with old format
             var index = 0
-            for (key in pokeBallsTag.allKeys) {
-                val pokeBallId = pokeBallsTag.getString(key)
+            for (key in pokeBallsTag.keySet()) {
+                val pokeBallId = pokeBallsTag.getStringOr(key, "")
                 if (pokeBallId.isEmpty()) {
                     continue
                 }
@@ -181,21 +183,19 @@ class HealingMachineBlockEntity(
             }
         }
         if (compoundTag.contains(DataKeys.HEALER_MACHINE_TIME_LEFT)) {
-            this.healTimeLeft = compoundTag.getInt(DataKeys.HEALER_MACHINE_TIME_LEFT)
+            this.healTimeLeft = compoundTag.getIntOr(DataKeys.HEALER_MACHINE_TIME_LEFT, 0)
         }
         if (compoundTag.contains(DataKeys.HEALER_MACHINE_CHARGE)) {
-            this.healingCharge = compoundTag.getFloat(DataKeys.HEALER_MACHINE_CHARGE).coerceIn(0F..maxCharge)
+            this.healingCharge = compoundTag.getFloatOr(DataKeys.HEALER_MACHINE_CHARGE, 0F).coerceIn(0F..maxCharge)
         }
         if (compoundTag.contains(DataKeys.HEALER_MACHINE_INFINITE)) {
-            this.infinite = compoundTag.getBoolean(DataKeys.HEALER_MACHINE_INFINITE)
+            this.infinite = compoundTag.getBooleanOr(DataKeys.HEALER_MACHINE_INFINITE, false)
         }
     }
 
-    override fun saveAdditional(
-        compoundTag: CompoundTag,
-        registryLookup: HolderLookup.Provider
-    ) {
-        super.saveAdditional(compoundTag, registryLookup)
+    override fun saveAdditional(output: ValueOutput) {
+        val compoundTag = CompoundTag()
+        super.saveAdditional(output)
 
         if (this.currentUser != null) {
             compoundTag.putUUID(DataKeys.HEALER_MACHINE_USER, this.currentUser!!)
@@ -216,6 +216,8 @@ class HealingMachineBlockEntity(
         compoundTag.putInt(DataKeys.HEALER_MACHINE_TIME_LEFT, this.healTimeLeft)
         compoundTag.putFloat(DataKeys.HEALER_MACHINE_CHARGE, this.healingCharge)
         compoundTag.putBoolean(DataKeys.HEALER_MACHINE_INFINITE, this.infinite)
+
+        LegacyNbt.write(output, compoundTag)
     }
 
     override fun getUpdatePacket(): Packet<ClientGamePacketListener>? = ClientboundBlockEntityDataPacket.create(this)

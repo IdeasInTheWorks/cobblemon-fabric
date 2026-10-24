@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.api.entity.pokemon
 
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.api.pokeball.PokeBalls
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
@@ -72,7 +74,7 @@ interface EntityEffect {
 
         fun loadFromNbt(nbt: CompoundTag, registryLookup: HolderLookup.Provider): EntityEffect? {
             if (nbt.contains(DataKeys.ENTITY_EFFECT_ID)) {
-                val id = nbt.getString(DataKeys.ENTITY_EFFECT_ID)
+                val id = nbt.getStringOr(DataKeys.ENTITY_EFFECT_ID, "")
                 return createDefault(id)?.also { it.loadFromNBT(nbt, registryLookup) }
             }
             return null

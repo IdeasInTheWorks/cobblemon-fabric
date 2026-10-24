@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.entity.boat
 
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.CobblemonEntities
 import com.cobblemon.mod.common.mixin.accessor.BoatEntityAccessor
 import net.minecraft.core.BlockPos
@@ -74,7 +76,7 @@ open class CobblemonBoatEntity(entityType: EntityType<out Boat>, world: Level) :
 
     override fun readAdditionalSaveData(nbt: CompoundTag) {
         if (nbt.contains(TYPE_KEY, Tag.TAG_STRING.toInt())) {
-            this.boatType = CobblemonBoatType.valueOf(nbt.getString(TYPE_KEY))
+            this.boatType = CobblemonBoatType.valueOf(nbt.getStringOr(TYPE_KEY, ""))
         }
     }
 

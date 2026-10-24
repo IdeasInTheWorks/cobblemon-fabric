@@ -8,6 +8,10 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.block.LecternBlock
 import net.minecraft.core.BlockPos
@@ -22,14 +26,18 @@ import net.minecraft.world.level.block.state.BlockState
 class LecternBlockEntity(blockPos: BlockPos, blockState: BlockState) : ViewerCountBlockEntity(CobblemonBlockEntities.LECTERN, blockPos, blockState) {
     val inventory: NonNullList<ItemStack> = NonNullList.withSize(1, ItemStack.EMPTY)
 
-    override fun saveAdditional(compoundTag: CompoundTag, registryLookup: HolderLookup.Provider) {
-        super.saveAdditional(compoundTag, registryLookup)
-        ContainerHelper.saveAllItems(compoundTag, inventory, true, registryLookup)
+    override fun saveAdditional(output: ValueOutput) {
+        val compoundTag = CompoundTag()
+        super.saveAdditional(output)
+        ContainerHelper.saveAllItems(output, inventory, true)
+
+        LegacyNbt.write(output, compoundTag)
     }
 
-    override fun loadAdditional(compoundTag: CompoundTag, registryLookup: HolderLookup.Provider) {
-        super.loadAdditional(compoundTag, registryLookup)
-        ContainerHelper.loadAllItems(compoundTag, inventory, registryLookup)
+    override fun loadAdditional(input: ValueInput) {
+        val compoundTag = LegacyNbt.read(input)
+        super.loadAdditional(input)
+        ContainerHelper.loadAllItems(input, inventory)
     }
 
     override fun getUpdateTag(registryLookup: HolderLookup.Provider): CompoundTag {

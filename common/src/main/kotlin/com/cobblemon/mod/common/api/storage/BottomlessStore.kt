@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.api.storage
 
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.Cobblemon.LOGGER
 import com.cobblemon.mod.common.api.reactive.SimpleObservable
 import com.cobblemon.mod.common.pokemon.Pokemon
@@ -57,7 +59,7 @@ open class BottomlessStore(override val uuid: UUID) : PokemonStore<BottomlessPos
     override fun loadFromNBT(nbt: CompoundTag, registryAccess: RegistryAccess): BottomlessStore {
         var i = -1
         while (nbt.contains(DataKeys.STORE_SLOT + ++i)) {
-            val pokemonNBT = nbt.getCompound(DataKeys.STORE_SLOT + i)
+            val pokemonNBT = nbt.getCompoundOrEmpty(DataKeys.STORE_SLOT + i)
             try {
                 pokemon.add(Pokemon.loadFromNBT(registryAccess, pokemonNBT))
             } catch(_: InvalidSpeciesException) {
@@ -90,7 +92,7 @@ open class BottomlessStore(override val uuid: UUID) : PokemonStore<BottomlessPos
     }
 
     override fun loadPositionFromNBT(nbt: CompoundTag): StoreCoordinates<BottomlessPosition> {
-        val slot = nbt.getByte(DataKeys.STORE_SLOT).toInt()
+        val slot = nbt.getByteOr(DataKeys.STORE_SLOT, 0).toInt()
         return StoreCoordinates(this, BottomlessPosition(slot))
     }
 

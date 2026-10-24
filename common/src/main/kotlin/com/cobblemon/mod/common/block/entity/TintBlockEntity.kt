@@ -8,6 +8,8 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.contains
+
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.IntTag
 import net.minecraft.world.level.block.Block
@@ -52,6 +54,6 @@ interface TintBlockEntity {
     }
 
     fun loadTint(tag: CompoundTag) {
-        if (tag.contains(TINT)) tint = tag.getInt(TINT)
+        if (tag.contains(TINT)) tint = tag.getIntOr(TINT, 0)
     }
 }

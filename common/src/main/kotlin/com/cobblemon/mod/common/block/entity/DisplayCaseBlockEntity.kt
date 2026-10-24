@@ -8,6 +8,10 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonSounds
 import com.cobblemon.mod.common.util.giveOrDropItemStack
@@ -98,15 +102,19 @@ class DisplayCaseBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(Cob
         onItemUpdated(level, oldState, level.getBlockState(blockPos))
     }
 
-    override fun saveAdditional(nbt: CompoundTag, registryLookup: HolderLookup.Provider) {
-        super.saveAdditional(nbt, registryLookup)
-        ContainerHelper.saveAllItems(nbt, inv, true, registryLookup)
+    override fun saveAdditional(output: ValueOutput) {
+        val nbt = CompoundTag()
+        super.saveAdditional(output)
+        ContainerHelper.saveAllItems(output, inv, true)
+
+        LegacyNbt.write(output, nbt)
     }
 
-    override fun loadAdditional(nbt: CompoundTag, registryLookup: HolderLookup.Provider) {
-        super.loadAdditional(nbt, registryLookup)
+    override fun loadAdditional(input: ValueInput) {
+        val nbt = LegacyNbt.read(input)
+        super.loadAdditional(input)
         inv.clear()
-        ContainerHelper.loadAllItems(nbt, inv, registryLookup)
+        ContainerHelper.loadAllItems(input, inv)
     }
 
     override fun getUpdatePacket(): Packet<ClientGamePacketListener>? {

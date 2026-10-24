@@ -8,6 +8,10 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
 import com.cobblemon.mod.common.CobblemonBlockEntities
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.CobblemonSounds
@@ -244,24 +248,28 @@ class TMMachineBlockEntity(pos: BlockPos, state: BlockState) :
         return TMMachineMenu(containerId, inventory, tmMachineInventory, containerData)
     }
 
-    override fun saveAdditional(compound: CompoundTag, registries: HolderLookup.Provider) {
-        super.saveAdditional(compound, registries)
+    override fun saveAdditional(output: ValueOutput) {
+        val compound = CompoundTag()
+        super.saveAdditional(output)
         saveTint(compound)
         compound.putBoolean(BURN_ACTIVE_TAG, burnActive)
         compound.putBoolean(REPEAT_PROCESS_TAG, repeatProcess)
         compound.putInt(BURN_PROGRESS_TAG, burnProgress)
         compound.putString(ACTIVE_MOVE_TAG, activeMove)
-        ContainerHelper.saveAllItems(compound, tmMachineInventory.items, registries)
+        ContainerHelper.saveAllItems(output, tmMachineInventory.items)
+
+        LegacyNbt.write(output, compound)
     }
 
-    override fun loadAdditional(compound: CompoundTag, registries: HolderLookup.Provider) {
-        super.loadAdditional(compound, registries)
+    override fun loadAdditional(input: ValueInput) {
+        val compound = LegacyNbt.read(input)
+        super.loadAdditional(input)
         loadTint(compound)
-        burnActive = compound.getBoolean(BURN_ACTIVE_TAG)
-        repeatProcess = compound.getBoolean(REPEAT_PROCESS_TAG)
-        burnProgress = compound.getInt(BURN_PROGRESS_TAG)
-        activeMove = compound.getString(ACTIVE_MOVE_TAG)
-        ContainerHelper.loadAllItems(compound, tmMachineInventory.items, registries)
+        burnActive = compound.getBooleanOr(BURN_ACTIVE_TAG, false)
+        repeatProcess = compound.getBooleanOr(REPEAT_PROCESS_TAG, false)
+        burnProgress = compound.getIntOr(BURN_PROGRESS_TAG, 0)
+        activeMove = compound.getStringOr(ACTIVE_MOVE_TAG, "")
+        ContainerHelper.loadAllItems(input, tmMachineInventory.items)
     }
 
     override fun getDisplayName(): Component = Component.translatable("block.cobblemon.tm_machine")

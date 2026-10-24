@@ -8,6 +8,12 @@
 
 package com.cobblemon.mod.common.block.entity
 
+import com.cobblemon.mod.common.util.LegacyNbt
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+
+import com.cobblemon.mod.common.util.contains
+
 import com.cobblemon.mod.common.util.DataKeys
 import net.minecraft.core.BlockPos
 import net.minecraft.core.HolderLookup
@@ -41,14 +47,18 @@ open class ViewerCountBlockEntity(type: BlockEntityType<*>?, blockPos: BlockPos,
         if (inRangeViewers < viewerCount) changeViewerCount(inRangeViewers)
     }
 
-    override fun saveAdditional(compoundTag: CompoundTag, registryLookup: HolderLookup.Provider) {
-        super.saveAdditional(compoundTag, registryLookup)
+    override fun saveAdditional(output: ValueOutput) {
+        val compoundTag = CompoundTag()
+        super.saveAdditional(output)
         compoundTag.putInt(DataKeys.BLOCK_ENTITY_USER_AMOUNT, viewerCount)
+
+        LegacyNbt.write(output, compoundTag)
     }
 
-    override fun loadAdditional(compoundTag: CompoundTag, registryLookup: HolderLookup.Provider) {
-        super.loadAdditional(compoundTag, registryLookup)
-        viewerCount = if (compoundTag.contains(DataKeys.BLOCK_ENTITY_USER_AMOUNT)) compoundTag.getInt(DataKeys.BLOCK_ENTITY_USER_AMOUNT) else 0
+    override fun loadAdditional(input: ValueInput) {
+        val compoundTag = LegacyNbt.read(input)
+        super.loadAdditional(input)
+        viewerCount = if (compoundTag.contains(DataKeys.BLOCK_ENTITY_USER_AMOUNT)) compoundTag.getIntOr(DataKeys.BLOCK_ENTITY_USER_AMOUNT, 0) else 0
     }
 
     override fun getUpdatePacket(): Packet<ClientGamePacketListener>? {

@@ -8,6 +8,9 @@
 
 package com.cobblemon.mod.common.entity
 
+import com.cobblemon.mod.common.util.getList
+import com.cobblemon.mod.common.util.contains
+
 import com.bedrockk.molang.runtime.struct.QueryStruct
 import com.bedrockk.molang.runtime.struct.VariableStruct
 import com.bedrockk.molang.runtime.value.DoubleValue
@@ -87,13 +90,13 @@ interface MoLangScriptingEntity {
     }
 
     fun loadScriptingFromNBT(nbt: CompoundTag) {
-        behavioursAreCustom = nbt.getBoolean(DataKeys.SCRIPTED_BEHAVIOURS_ARE_CUSTOM)
+        behavioursAreCustom = nbt.getBooleanOr(DataKeys.SCRIPTED_BEHAVIOURS_ARE_CUSTOM, false)
         behaviours.clear()
-        behaviours.addAll(nbt.getList(DataKeys.SCRIPTED_BEHAVIOURS, ListTag.TAG_STRING.toInt()).map { Identifier.parse(it.asString) })
+        behaviours.addAll(nbt.getList(DataKeys.SCRIPTED_BEHAVIOURS, ListTag.TAG_STRING.toInt()).map { Identifier.parse(it.asString().orElse("")) })
         val dataKey = if (nbt.contains(DataKeys.SCRIPTED_DATA)) DataKeys.SCRIPTED_DATA else "Data" // migrate old use of "Data"
-        data = MoLangFunctions.readMoValueFromNBT(nbt.getCompound(dataKey)) as VariableStruct
+        data = MoLangFunctions.readMoValueFromNBT(nbt.getCompoundOrEmpty(dataKey)) as VariableStruct
         val configKey = if (nbt.contains(DataKeys.SCRIPTED_CONFIG)) DataKeys.SCRIPTED_CONFIG else "Config" // migrate old use of "Config"
-        config = if (nbt.contains(configKey)) MoLangFunctions.readMoValueFromNBT(nbt.getCompound(configKey)) as VariableStruct else VariableStruct()
+        config = if (nbt.contains(configKey)) MoLangFunctions.readMoValueFromNBT(nbt.getCompoundOrEmpty(configKey)) as VariableStruct else VariableStruct()
     }
 
     fun registerFunctionsForScripting(struct: QueryStruct) {
