@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 16,
+  "generation": 17,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -113,6 +113,33 @@
       "minutes": 90,
       "checkpoint": "469d71b7817e315cabf016a3acb0231aa4109c13 pushed in three commits; 76 focused checks and 20 tooling tests pass; common compile 6733 diagnostic lines/998 files, AW 54 misses, common headers pass. R013/R015 acceptance remains open. CI run 40141974824 started on published head. Next: broader old-data/registry fixtures, R014 components and R019/R020 brain construction; see porting/RESUME.md and the same native Sheet. No installable JAR or gameplay validation.",
       "closed_at": "2026-10-24T23:16:16Z"
+    },
+    "S05-R014-R019-R020": {
+      "work_id": "S05-R014-R019-R020",
+      "owner": "codex-sprint05-01a16f8a",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "README.md",
+        "common/src",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "0172c24e-ff85-4166-a4db-72e6779e3d36",
+      "operation_id": "0172c24e-ff85-4166-a4db-72e6779e3d36",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-24T23:32:02Z",
+      "heartbeat_at": "2026-10-24T23:32:02Z",
+      "expires_at": "2026-10-25T01:02:02Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -275,6 +302,16 @@
       "lease_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
       "epoch": 1,
       "checkpoint": "469d71b7817e315cabf016a3acb0231aa4109c13 pushed in three commits; 76 focused checks and 20 tooling tests pass; common compile 6733 diagnostic lines/998 files, AW 54 misses, common headers pass. R013/R015 acceptance remains open. CI run 40141974824 started on published head. Next: broader old-data/registry fixtures, R014 components and R019/R020 brain construction; see porting/RESUME.md and the same native Sheet. No installable JAR or gameplay validation."
+    },
+    {
+      "generation": 17,
+      "at": "2026-10-24T23:32:02Z",
+      "kind": "acquire",
+      "work_id": "S05-R014-R019-R020",
+      "owner": "codex-sprint05-01a16f8a",
+      "lease_id": "0172c24e-ff85-4166-a4db-72e6779e3d36",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
