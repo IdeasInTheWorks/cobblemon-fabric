@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 15,
+  "generation": 16,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -106,12 +106,13 @@
       "lease_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
       "operation_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-24T22:48:59Z",
       "heartbeat_at": "2026-10-24T23:15:01Z",
       "expires_at": "2026-10-25T00:45:01Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "469d71b7817e315cabf016a3acb0231aa4109c13 pushed in three commits; 76 focused checks and 20 tooling tests pass; common compile 6733 diagnostic lines/998 files, AW 54 misses, common headers pass. R013/R015 acceptance remains open. CI run 40141974824 started on published head. Next: broader old-data/registry fixtures, R014 components and R019/R020 brain construction; see porting/RESUME.md and the same native Sheet. No installable JAR or gameplay validation.",
+      "closed_at": "2026-10-24T23:16:16Z"
     }
   },
   "events": [
@@ -264,6 +265,16 @@
       "lease_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 16,
+      "at": "2026-10-24T23:16:16Z",
+      "kind": "release",
+      "work_id": "S04-R013-R015",
+      "owner": "codex-sprint04-01a16f8a",
+      "lease_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
+      "epoch": 1,
+      "checkpoint": "469d71b7817e315cabf016a3acb0231aa4109c13 pushed in three commits; 76 focused checks and 20 tooling tests pass; common compile 6733 diagnostic lines/998 files, AW 54 misses, common headers pass. R013/R015 acceptance remains open. CI run 40141974824 started on published head. Next: broader old-data/registry fixtures, R014 components and R019/R020 brain construction; see porting/RESUME.md and the same native Sheet. No installable JAR or gameplay validation."
     }
   ]
 }
