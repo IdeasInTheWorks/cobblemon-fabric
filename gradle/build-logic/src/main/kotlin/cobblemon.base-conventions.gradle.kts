@@ -16,9 +16,8 @@ plugins {
     id("java")
     id("java-library")
 
-    id("org.cadixdev.licenser")
-    id("dev.architectury.loom")
-    id("architectury-plugin")
+    id("dev.yumi.gradle.licenser")
+    id("dev.architectury.loom-no-remap")
     kotlin("jvm")
 }
 
@@ -27,8 +26,9 @@ version = rootProject.version
 description = rootProject.description
 
 java {
+    withSourcesJar()
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(rootProject.property("java_version").toString().toInt()))
     }
 }
 
@@ -40,41 +40,34 @@ repositories {
 }
 
 license {
-    header(rootProject.file("HEADER"))
+    rule(rootProject.file("HEADER"))
     include("**/*.kt", "**/*.java")
 }
 
-architectury {
-    minecraft = project.property("mc_version").toString()
-    compileOnly()
-}
-
 loom {
-    silentMojangMappingsLicense()
     accessWidenerPath.set(project(":common").file(ACCESS_WIDENER))
 }
 
 dependencies {
     minecraft("net.minecraft:minecraft:${rootProject.property("mc_version")}")
-    mappings(loom.layered {
-        officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.21:${rootProject.property("parchment_version")}")
-    })
+    // Minecraft 26.x is distributed with official names; no Parchment/remap layer.
 }
 
 tasks {
     withType<JavaCompile> {
         options.encoding = "UTF-8"
-        options.release.set(21)
+        options.release.set(rootProject.property("java_version").toString().toInt())
         options.compilerArgs.add("-Xlint:-processing,-classfile,-serial")
     }
 
     withType<KotlinCompile> {
-        compilerOptions.jvmTarget.set(JvmTarget.JVM_21)
+        compilerOptions.jvmTarget.set(JvmTarget.fromTarget(rootProject.property("java_version").toString()))
     }
 
     withType<Jar> {
         from(rootProject.file("LICENSE"))
+        isPreserveFileTimestamps = false
+        isReproducibleFileOrder = true
     }
 
     // Dev/intermediate jars only feed remapJar, which writes the compressed release jar.

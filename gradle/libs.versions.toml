@@ -1,21 +1,21 @@
 [versions]
 # Kotlin
-kotlin = "2.2.20"
+kotlin = "2.4.21"
 
 # Plugins
-licenser = "0.6.1"
-shadow = "8.1.1"
+licenser = "4.0.0"
+shadow = "9.6.1"
 blossom = "2.1.0"
-idea-ext = "1.1.7"
+idea-ext = "1.4.1"
 
 # Minecraft Development
-loom = "1.11-SNAPSHOT"
+loom = "1.17.493"
 architectury-plugin = "3.4-SNAPSHOT"
 moddev = "1.0.11"
 
 # Common
 molang = "1.1.20"
-jei-api = "19.22.1.316"
+jei-api = "31.14.0.72"
 
 # Graal
 graal = "22.3.0"
@@ -24,13 +24,13 @@ regex = "22.3.0"
 truffle = "22.3.0"
 
 # Fabric
-fabric-loader = "0.17.2"
-fabric-api = "0.116.6+1.21.1"
-fabric-kotlin = "1.13.6+kotlin.2.2.20"
+fabric-loader = "0.20.1"
+fabric-api = "0.165.0+26.3"
+fabric-kotlin = "1.14.2+kotlin.2.4.21"
 fabric-permissions-api = "0.3.1"
-lambDynamicLights = "4.1.6+1.21.1"
+lambDynamicLights = "4.13.0+26.3"
 debugutils-fabric = "1.21.1-1.0.9-fabric"
-mod-menu = "11.0.3"
+mod-menu = "21.0.0"
 c2me-fabric = "0.3.0+alpha.0.320+1.21.1"
 
 # NeoForge
@@ -54,17 +54,17 @@ kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", versio
 loom = { group = "dev.architectury", name = "architectury-loom", version.ref = "loom" }
 neoforge-moddev = { group = "net.neoforged", name = "moddev-gradle", version.ref = "moddev" }
 architectury = { group = "architectury-plugin", name = "architectury-plugin.gradle.plugin", version.ref = "architectury-plugin" }
-shadow = { group = "com.github.johnrengelman", name = "shadow", version.ref = "shadow" }
+shadow = { group = "com.gradleup.shadow", name = "shadow-gradle-plugin", version.ref = "shadow" }
 blossom = { group = "net.kyori", name = "blossom", version.ref = "blossom" }
 ideaExt = { group = "org.jetbrains.gradle.plugin.idea-ext", name = "org.jetbrains.gradle.plugin.idea-ext.gradle.plugin", version.ref = "idea-ext"}
-licenser = { group = "gradle.plugin.org.cadixdev.gradle", name = "licenser", version.ref = "licenser" }
+licenser = { group = "dev.yumi", name = "yumi-gradle-licenser", version.ref = "licenser" }
 
 # Kotlin
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
 
 # Common
-jei-api = { group = "mezz.jei", name = "jei-1.21.1-common-api", version.ref = "jei-api"}
+jei-api = { group = "mezz.jei", name = "jei-26.3-common-api", version.ref = "jei-api"}
 molang = { group = "local.com.bedrockk", name = "molang", version.ref = "molang" }
 
 # Graal
@@ -81,7 +81,7 @@ fabric-kotlin = { group = "net.fabricmc", name = "fabric-language-kotlin", versi
 fabric-permissions = { group = "me.lucko", name = "fabric-permissions-api", version.ref = "fabric-permissions-api" }
 adorn-fabric = { group = "maven.modrinth", name = "adorn", version = "QbzMhTAO"}
 lambDynamicLights = { group = "dev.lambdaurora.lambdynamiclights", name = "lambdynamiclights-api", version.ref = "lambDynamicLights"}
-jei-fabric = { group = "mezz.jei", name = "jei-1.21.1-fabric", version.ref = "jei-api"}
+jei-fabric = { group = "mezz.jei", name = "jei-26.3-fabric", version.ref = "jei-api"}
 fabric-debugutils = { group = "maven.modrinth", name = "debugutils", version.ref = "debugutils-fabric"}
 mod-menu = { group = "com.terraformersmc", name = "modmenu", version.ref = "mod-menu" }
 c2me-fabric = { group = "maven.modrinth", name = "c2me-fabric", version.ref = "c2me-fabric" }

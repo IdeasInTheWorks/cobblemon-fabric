@@ -16,12 +16,6 @@ configurations.all {
 
 plugins {
     id("cobblemon.platform-conventions")
-    id("cobblemon.publish-conventions")
-}
-
-architectury {
-    platformSetupLoomIde()
-    fabric()
 }
 
 val generatedResources = file("src/generated/resources")
@@ -41,26 +35,22 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":common", configuration = "namedElements")) {
+    implementation(project(":common")) {
         isTransitive = false
     }
-    bundle(project(path = ":common", configuration = "transformProductionFabric")) {
-        isTransitive = false
-    }
-    modLocalRuntime(libs.fabric.debugutils)
-    modImplementation(libs.fabric.loader)
-    modApi(libs.fabric.api)
-    modApi(libs.bundles.fabric)
+    implementation(libs.fabric.loader)
+    api(libs.fabric.api)
+    api(libs.bundles.fabric)
 
-    modCompileOnly(libs.bundles.common.integrations.compileOnly) {
+    compileOnly(libs.bundles.common.integrations.compileOnly) {
         isTransitive = false
     }
 
-    modImplementation(libs.bundles.fabric.integrations.implementation)
-    modRuntimeOnly(libs.bundles.fabric.integrations.runtimeOnly)
-    modRuntimeOnly(libs.bundles.mongo)
+    implementation(libs.bundles.fabric.integrations.implementation)
+    runtimeOnly(libs.jei.fabric)
+    runtimeOnly(libs.bundles.mongo)
 
-//    modImplementation(libs.flywheelFabric)
+//    implementation(libs.flywheelFabric)
 //    include(libs.flywheelFabric)
 
     listOf(
@@ -72,9 +62,7 @@ dependencies {
     }
 
     // Added to make graal available in dev
-    modRuntimeOnly(libs.bundles.graal)
-
-    include(libs.fabric.kotlin)
+    runtimeOnly(libs.bundles.graal)
 
     listOf(
         libs.molang
@@ -87,34 +75,13 @@ dependencies {
 
 }
 
-publishing {
-    publications.named<MavenPublication>(project.name) {
-        pom.withXml {
-            val root = asNode()
-            val depsNode = (root["dependencies"] as? groovy.util.NodeList)
-                ?.firstOrNull() as? groovy.util.Node
-                ?: root.appendNode("dependencies")
-
-            configurations.getByName("include").allDependencies
-                .filterIsInstance<ExternalModuleDependency>()
-                .forEach { dep ->
-                    depsNode.appendNode("dependency").apply {
-                        appendNode("groupId", dep.group)
-                        appendNode("artifactId", dep.name)
-                        appendNode("version", dep.version)
-                        appendNode("scope", "compile")
-                    }
-                }
-        }
-    }
-}
 
 tasks {
     // The AW file is needed in :fabric project resources when the game is run.
     val copyAccessWidener by registering(Copy::class) {
         from(loom.accessWidenerPath)
         into(generatedResources)
-        dependsOn(checkLicenseMain)
+        dependsOn(tasks.named("checkLicenses"))
     }
 
     processResources {

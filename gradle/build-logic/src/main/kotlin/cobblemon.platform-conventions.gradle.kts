@@ -1,9 +1,10 @@
 import utilities.VersionType
 import utilities.writeVersion
+import utilities.gitShortCommit
 
 plugins {
     id("cobblemon.base-conventions")
-    id("com.github.johnrengelman.shadow")
+    id("com.gradleup.shadow")
 }
 
 writeVersion(type = VersionType.FULL)
@@ -43,24 +44,19 @@ tasks {
     }
 
     shadowJar {
-        archiveClassifier.set("dev-shadow")
-        entryCompression = ZipEntryCompression.STORED
-        archiveBaseName.set("Cobblemon-${project.name}")
+        archiveClassifier.set("")
+        archiveFileName.set("cobblemon-${rootProject.property("mod_version")}-mc${rootProject.property("mc_version")}-${rootProject.gitShortCommit()}.jar")
         configurations = listOf(bundle)
+        from(project(":common").sourceSets.main.get().output)
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        filesMatching("META-INF/services/**") { duplicatesStrategy = DuplicatesStrategy.INCLUDE }
         mergeServiceFiles()
 
         relocate ("com.oracle", "com.cobblemon.mod.relocations.oracle")
     }
 
-    remapJar {
-        dependsOn(shadowJar)
-        inputFile.set(shadowJar.flatMap { it.archiveFile })
-        archiveBaseName.set("Cobblemon-${project.name}")
-        archiveVersion.set("${rootProject.version}")
-    }
-
     val copyJar by registering(CopyFile::class) {
-        val productionJar = tasks.remapJar.flatMap { it.archiveFile }
+        val productionJar = tasks.shadowJar.flatMap { it.archiveFile }
         fileToCopy = productionJar
         destination = productionJar.flatMap {
             rootProject.layout.buildDirectory.file("libs/${it.asFile.name}")
@@ -72,3 +68,7 @@ tasks {
     }
 
 }
+
+// The release jar is Shadow's merged common/Fabric output. Nest all mandatory
+// runtime libraries there; Loom's default jar task is only the development jar.
+loom.nestJars(tasks.shadowJar, configurations.named("include"))

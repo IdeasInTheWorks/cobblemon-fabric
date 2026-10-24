@@ -16,14 +16,9 @@ import utilities.gitCommit
 
 plugins {
     id("cobblemon.base-conventions")
-    id("cobblemon.publish-conventions")
 
     id("net.kyori.blossom")
     id("org.jetbrains.gradle.plugin.idea-ext")
-}
-
-architectury {
-    common("neoforge", "fabric")
 }
 
 repositories {
@@ -36,28 +31,24 @@ repositories {
 
 dependencies {
     implementation(libs.bundles.kotlin)
-    modImplementation(libs.fabric.loader)
-    modApi(libs.molang)
+    implementation(libs.fabric.loader)
+    api(libs.molang)
 
     // Integrations
     compileOnlyApi(libs.jei.api)
-    modCompileOnly(libs.bundles.common.integrations.compileOnly) {
+    compileOnly(libs.bundles.common.integrations.compileOnly) {
         isTransitive = false
     }
     // LambDynamicLights is handled differently because we need the Mojang-mappings version of it.
-    modCompileOnly(libs.lambDynamicLights) {
-        capabilities {
-            requireCapability("dev.lambdaurora.lambdynamiclights:api-mojmap")
-        }
-    }
+    compileOnly(libs.lambDynamicLights)
     // Flywheel has no common dep so just pick one and don't use any platform specific code in common
     // modCompileOnly(libs.flywheelFabric)
 
     // Showdown
-    modCompileOnly(libs.graal.core)
+    compileOnly(libs.graal.core)
 
     // Data Storage
-    modCompileOnly(libs.bundles.mongo)
+    compileOnly(libs.bundles.mongo)
 
     // Unit Testing
     testImplementation(libs.bundles.unitTesting)
@@ -111,7 +102,3 @@ sourceSets {
     }
 }
 
-// The platform jars are built from :common:jar, so the remapped common jars are only needed by `publish`
-tasks.assemble {
-    setDependsOn(dependsOn.filterNot { (it as? TaskProvider<*>)?.name in setOf("remapJar", "remapSourcesJar") })
-}
