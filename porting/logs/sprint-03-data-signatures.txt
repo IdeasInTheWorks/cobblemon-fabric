@@ -1,0 +1,162 @@
+Compiled from "ListTag.java"
+public final class net.minecraft.nbt.ListTag extends java.util.AbstractList<net.minecraft.nbt.Tag> implements net.minecraft.nbt.CollectionTag {
+  public static final net.minecraft.nbt.TagType<net.minecraft.nbt.ListTag> TYPE;
+  public net.minecraft.nbt.ListTag();
+  net.minecraft.nbt.ListTag(java.util.List<net.minecraft.nbt.Tag>);
+  public void write(java.io.DataOutput) throws java.io.IOException;
+  byte identifyRawElementType();
+  public void addAndUnwrap(net.minecraft.nbt.Tag);
+  public int sizeInBytes();
+  public byte getId();
+  public net.minecraft.nbt.TagType<net.minecraft.nbt.ListTag> getType();
+  public java.lang.String toString();
+  public net.minecraft.nbt.Tag remove(int);
+  public boolean isEmpty();
+  public java.util.Optional<net.minecraft.nbt.CompoundTag> getCompound(int);
+  public net.minecraft.nbt.CompoundTag getCompoundOrEmpty(int);
+  public java.util.Optional<net.minecraft.nbt.ListTag> getList(int);
+  public net.minecraft.nbt.ListTag getListOrEmpty(int);
+  public java.util.Optional<java.lang.Short> getShort(int);
+  public short getShortOr(int, short);
+  public java.util.Optional<java.lang.Integer> getInt(int);
+  public int getIntOr(int, int);
+  public java.util.Optional<int[]> getIntArray(int);
+  public java.util.Optional<long[]> getLongArray(int);
+  public java.util.Optional<java.lang.Double> getDouble(int);
+  public double getDoubleOr(int, double);
+  public java.util.Optional<java.lang.Float> getFloat(int);
+  public float getFloatOr(int, float);
+  public java.util.Optional<java.lang.String> getString(int);
+  public java.lang.String getStringOr(int, java.lang.String);
+  public int size();
+  public net.minecraft.nbt.Tag get(int);
+  public net.minecraft.nbt.Tag set(int, net.minecraft.nbt.Tag);
+  public void add(int, net.minecraft.nbt.Tag);
+  public boolean setTag(int, net.minecraft.nbt.Tag);
+  public boolean addTag(int, net.minecraft.nbt.Tag);
+  public net.minecraft.nbt.ListTag copy();
+  public java.util.Optional<net.minecraft.nbt.ListTag> asList();
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  public java.util.stream.Stream<net.minecraft.nbt.Tag> stream();
+  public java.util.stream.Stream<net.minecraft.nbt.CompoundTag> compoundStream();
+  public void accept(net.minecraft.nbt.TagVisitor);
+  public void clear();
+  public net.minecraft.nbt.StreamTagVisitor$ValueResult accept(net.minecraft.nbt.StreamTagVisitor);
+  public java.lang.Object remove(int);
+  public void add(int, java.lang.Object);
+  public java.lang.Object set(int, java.lang.Object);
+  public java.lang.Object get(int);
+  public net.minecraft.nbt.Tag copy();
+  static {};
+}
+Compiled from "NumericTag.java"
+public interface net.minecraft.nbt.NumericTag extends net.minecraft.nbt.PrimitiveTag {
+  public abstract byte byteValue();
+  public abstract short shortValue();
+  public abstract int intValue();
+  public abstract long longValue();
+  public abstract float floatValue();
+  public abstract double doubleValue();
+  public abstract java.lang.Number box();
+  public default java.util.Optional<java.lang.Number> asNumber();
+  public default java.util.Optional<java.lang.Byte> asByte();
+  public default java.util.Optional<java.lang.Short> asShort();
+  public default java.util.Optional<java.lang.Integer> asInt();
+  public default java.util.Optional<java.lang.Long> asLong();
+  public default java.util.Optional<java.lang.Float> asFloat();
+  public default java.util.Optional<java.lang.Double> asDouble();
+  public default java.util.Optional<java.lang.Boolean> asBoolean();
+}
+Compiled from "StringTag.java"
+public final class net.minecraft.nbt.StringTag extends java.lang.Record implements net.minecraft.nbt.PrimitiveTag {
+  public static final net.minecraft.nbt.TagType<net.minecraft.nbt.StringTag> TYPE;
+  public net.minecraft.nbt.StringTag(java.lang.String);
+  public static void skipString(java.io.DataInput) throws java.io.IOException;
+  public static net.minecraft.nbt.StringTag valueOf(java.lang.String);
+  public void write(java.io.DataOutput) throws java.io.IOException;
+  public int sizeInBytes();
+  public byte getId();
+  public net.minecraft.nbt.TagType<net.minecraft.nbt.StringTag> getType();
+  public java.lang.String toString();
+  public net.minecraft.nbt.StringTag copy();
+  public java.util.Optional<java.lang.String> asString();
+  public void accept(net.minecraft.nbt.TagVisitor);
+  public static java.lang.String quoteAndEscape(java.lang.String);
+  public static void quoteAndEscape(java.lang.String, java.lang.StringBuilder);
+  public static java.lang.String escapeWithoutQuotes(java.lang.String);
+  public static void escapeWithoutQuotes(java.lang.String, java.lang.StringBuilder);
+  public net.minecraft.nbt.StreamTagVisitor$ValueResult accept(net.minecraft.nbt.StreamTagVisitor);
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public java.lang.String value();
+  public net.minecraft.nbt.Tag copy();
+  static {};
+}
+Compiled from "UUIDUtil.java"
+public final class net.minecraft.core.UUIDUtil {
+  public static final com.mojang.serialization.Codec<java.util.UUID> CODEC;
+  public static final com.mojang.serialization.Codec<java.util.Set<java.util.UUID>> CODEC_SET;
+  public static final com.mojang.serialization.Codec<java.util.Set<java.util.UUID>> CODEC_LINKED_SET;
+  public static final com.mojang.serialization.Codec<java.util.UUID> STRING_CODEC;
+  public static final com.mojang.serialization.Codec<java.util.UUID> AUTHLIB_CODEC;
+  public static final com.mojang.serialization.Codec<java.util.UUID> LENIENT_CODEC;
+  public static final net.minecraft.network.codec.StreamCodec<io.netty.buffer.ByteBuf, java.util.UUID> STREAM_CODEC;
+  public static final int UUID_BYTES;
+  public static java.util.UUID uuidFromIntArray(int[]);
+  public static int[] uuidToIntArray(java.util.UUID);
+  public static byte[] uuidToByteArray(java.util.UUID);
+  public static java.util.UUID readUUID(com.mojang.serialization.Dynamic<?>);
+  public static java.util.UUID createOfflinePlayerUUID(java.lang.String);
+  public static com.mojang.authlib.GameProfile createOfflineProfile(java.lang.String);
+  static {};
+}
+Compiled from "HolderGetter.java"
+public interface net.minecraft.core.HolderGetter<T> extends net.minecraft.core.HolderOwner<T> {
+  public abstract java.util.Optional<net.minecraft.core.Holder$Reference<T>> get(net.minecraft.resources.ResourceKey<T>);
+  public default net.minecraft.core.Holder$Reference<T> getOrThrow(net.minecraft.resources.ResourceKey<T>);
+  public abstract java.util.Optional<net.minecraft.core.HolderSet$Named<T>> get(net.minecraft.tags.TagKey<T>);
+  public default net.minecraft.core.HolderSet$Named<T> getOrThrow(net.minecraft.tags.TagKey<T>);
+  public default java.util.Optional<net.minecraft.core.Holder<T>> getRandomElementOf(net.minecraft.tags.TagKey<T>, net.minecraft.util.RandomSource);
+}
+Compiled from "HolderLookup.java"
+public interface net.minecraft.core.HolderLookup$Provider extends net.minecraft.core.HolderGetter$Provider {
+  public abstract java.util.stream.Stream<net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<?>>> listRegistryKeys();
+  public default java.util.stream.Stream<net.minecraft.core.HolderLookup$RegistryLookup<?>> listRegistries();
+  public abstract <T> java.util.Optional<? extends net.minecraft.core.HolderLookup$RegistryLookup<T>> lookup(net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<? extends T>>);
+  public default <T> net.minecraft.core.HolderLookup$RegistryLookup<T> lookupOrThrow(net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<? extends T>>);
+  public default <V> net.minecraft.resources.RegistryOps<V> createSerializationContext(com.mojang.serialization.DynamicOps<V>);
+  public static net.minecraft.core.HolderLookup$Provider create(java.util.stream.Stream<net.minecraft.core.HolderLookup$RegistryLookup<?>>);
+  public default com.mojang.serialization.Lifecycle allRegistriesLifecycle();
+  public default net.minecraft.core.HolderGetter lookupOrThrow(net.minecraft.resources.ResourceKey);
+}
+Compiled from "PushReaction.java"
+public final class net.minecraft.world.level.material.PushReaction extends java.lang.Enum<net.minecraft.world.level.material.PushReaction> {
+  public static final net.minecraft.world.level.material.PushReaction PUSH_PULL;
+  public static final net.minecraft.world.level.material.PushReaction PUSH;
+  public static final net.minecraft.world.level.material.PushReaction POPPED;
+  public static final net.minecraft.world.level.material.PushReaction IMMOVEABLE;
+  public static final net.minecraft.world.level.material.PushReaction IGNORE_ENTITY;
+  public static net.minecraft.world.level.material.PushReaction[] values();
+  public static net.minecraft.world.level.material.PushReaction valueOf(java.lang.String);
+  static {};
+}
+Compiled from "BlockItem.java"
+public class net.minecraft.world.item.BlockItem extends net.minecraft.world.item.Item {
+  public net.minecraft.world.item.BlockItem(net.minecraft.world.level.block.Block, net.minecraft.world.item.Item$Properties);
+  public net.minecraft.world.InteractionResult useOn(net.minecraft.world.item.context.UseOnContext);
+  public net.minecraft.world.InteractionResult place(net.minecraft.world.item.context.BlockPlaceContext);
+  protected net.minecraft.sounds.SoundEvent getPlaceSound(net.minecraft.world.level.block.state.BlockState);
+  public net.minecraft.world.item.context.BlockPlaceContext updatePlacementContext(net.minecraft.world.item.context.BlockPlaceContext);
+  protected net.minecraft.world.level.block.state.BlockState getPlacementState(net.minecraft.world.item.context.BlockPlaceContext);
+  protected boolean canPlace(net.minecraft.world.item.context.BlockPlaceContext, net.minecraft.world.level.block.state.BlockState);
+  protected boolean mustSurvive();
+  protected boolean placeBlock(net.minecraft.world.item.context.BlockPlaceContext, net.minecraft.world.level.block.state.BlockState);
+  public static boolean updateCustomBlockEntityTag(net.minecraft.world.level.Level, net.minecraft.world.entity.player.Player, net.minecraft.core.BlockPos, net.minecraft.world.item.ItemStack);
+  public boolean shouldPrintOpWarning(net.minecraft.world.item.ItemStack, net.minecraft.world.entity.player.Player);
+  public net.minecraft.world.level.block.Block getBlock();
+  public void registerBlocks(java.util.Map<net.minecraft.world.level.block.Block, net.minecraft.world.item.Item>, net.minecraft.world.item.Item);
+  public boolean canFitInsideContainerItems();
+  public void onDestroyed(net.minecraft.world.entity.item.ItemEntity);
+  public static void setBlockEntityData(net.minecraft.world.item.ItemStack, net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.storage.TagValueOutput);
+}

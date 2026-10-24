@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "game_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "compile_exit": 0,
+  "compile_stdout": "",
+  "compile_stderr": "",
+  "runtime_stdout": "[23:06:35] [main/INFO]: [STDERR]: java.lang.IllegalStateException: This registry can't create intrusive holders\n[23:06:35] [main/INFO]: [STDERR]: \tat net.minecraft.core.MappedRegistry.createIntrusiveHolder(MappedRegistry.java:328)\n[23:06:35] [main/INFO]: [STDERR]: \tat net.minecraft.world.item.Item.<init>(Item.java:140)\n[23:06:35] [main/INFO]: [STDERR]: \tat Minecraft263DataContracts.main(Minecraft263DataContracts.java:25)\n",
+  "runtime_stderr": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.joml.MemUtil$MemUtilUnsafe (file:/C:/Users/fizzl/OneDrive/Documents/ChatGPT/Minecraft%20Mods/tools/gradle-cache/caches/modules-2/files-2.1/org.joml/joml/1.10.9/438e036486bad66b189bff385dd07dea4f74a146/joml-1.10.9.jar)\nWARNING: Please consider reporting this to the maintainers of class org.joml.MemUtil$MemUtilUnsafe\nWARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release\nException in thread \"main\" "
+}

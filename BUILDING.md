@@ -55,6 +55,17 @@ The Kotlin toolchain is downloaded as a Gradle dependency. Game classes use Moja
 
 ## Outputs and test scope
 
+Sprint S03 adds a shared Java regression fixture and JUnit entry point in `common/src/test/java/com/cobblemon/mod/common/porting/`. Its 48 checks were executed through the standalone runner against the checksum-verified target JAR and matching libraries:
+
+```sh
+python3 scripts/check_data_contracts.py --game-jar /path/to/minecraft-26.3-client.jar --gradle-cache /path/to/gradle-user-home --javac /path/to/jdk25/bin/javac
+bash ./gradlew :common:test --tests '*Minecraft263DataMigrationTest' --stacktrace --console=plain
+```
+
+The Gradle/JUnit command is blocked until common compilation succeeds; its JUnit wrapper has not executed. Existing CI already runs `:common:test`, so it will include this regression after the compile gate is fixed. The standalone runner compiles the actual production registration/NBT/template helpers and runs the same fixture without compiling the rest of Cobblemon. It bootstraps vanilla registries, uses a synthetic registry and minimal components for two inventory test items, and exercises IDs, legacy UUID arrays, malformed/default reads, typed lists, binary NBT, registry codecs, root ValueInput/ValueOutput merging and inventory slot/count round trips. These are unit fixtures, not client/server startup, gameplay, vanilla datapack-default validation or production-world migration tests. JOML/Unsafe and the root MapCodec adapter emit warnings on Java 25; the successful result records them.
+
+Initial standalone probes exposed frozen intrusive registries and unbound item components. Their failed reports are retained as `sprint-03-data-contracts-01.json` and `-02.json`; the fixture now inspects construction metadata and initializes only missing test-item components. No runtime registry or component bypass was added to the mod itself.
+
 Sprint S02 executed 20 offline Python tests: six synthetic package-validator tests and 14 work-claim protocol tests. These do not run Minecraft. Additional signature and identifier wire-format checks use the checksum-verified official target JAR and its exact cached runtime-library versions:
 
 ```sh

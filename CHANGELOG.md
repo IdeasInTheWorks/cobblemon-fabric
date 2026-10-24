@@ -4,6 +4,10 @@
 
 Migration in progress. No validated release or gameplay claim.
 
+Sprint S03 (R013/R015, 2026-10-24) assigns registry keys before item/block construction, passes explicit properties through 43 custom item classes, replaces removed vanilla construction helpers, and migrates NBT/registry APIs and 26 persistence callbacks on 13 block entities. All 140 item and 340 block ordered create-ID expressions are unchanged. Original licences and assets remain intact.
+
+Five common compilation attempts end at 7,451 diagnostic lines in 1,005 files, down 728 (8.9%) from S02; compilation still fails. Forty-eight focused migration checks and 20 tooling tests passed. Inventory checks use minimal component fixtures, not vanilla gameplay defaults. A JUnit entry point shares the executed fixture; the JUnit wrapper has not run because common compilation is blocked. R013/R015 retain outstanding acceptance work, documented in the native roadmap and resume note.
+
 Sprint S02 (2026-10-24) migrates 37 verified class relocations, seven entity registration keys, collision naming and identifier payload methods. Common compilation executed and still fails: 8,179 diagnostic lines in 1,062 files versus 10,586 in 1,207 before this sprint. Twenty offline tooling tests, four real-library identifier wire checks and a live two-contender lease test passed. Access-widener validation still reports 54 missing targets; common licence checks passed. No client/server or gameplay tests ran.
 
 The native Google Sheets roadmap records 44 work packages, low/likely/high person-hour ranges, dashboard charts, build/sprint evidence, claim snapshots and handoff instructions. GitHub coordination uses scoped, expiring leases with stale-owner fencing, fast-forward claim transactions, isolated-worktree rules and a local push gate. These are cooperative safeguards; they do not create an atomic lock spanning claim and source pushes.
@@ -18,6 +22,13 @@ The native Google Sheets roadmap records 44 work packages, low/likely/high perso
 
 | Area | What changed | Why it changed | Why it would not work without the change | Blocker severity (1–10) |
 | --- | --- | --- | --- | --- |
+| S03 construction IDs | Typed item/block keys are set before property-derived descriptions, models and loot; shared plant properties are fresh | Modern constructors require identity before instantiation | Eager unkeyed construction fails startup or derives incorrect metadata | 10 |
+| S03 item constructor chain | Explicit keyed properties through 43 item classes and 128 central constructor calls | Internal default property builders cannot infer their registration key | Berries, balls, medicine, mints and other items construct without required IDs | 10 |
+| S03 vanilla helper removal | Supported log/leaf/pot constructors, keyed button invoker, sign placement and translation prefixes; custom template heading retained | Old Blocks helpers, SignItem and ItemNameBlockItem are absent | Missing classes/invokers fail compilation or mixin startup; lost prefixes change translations | 10 |
+| S03 NBT reads | Explicit legacy scalar defaults, compound reads, typed list filtering and strict four-int UUID helpers | Modern reads return Optional and lists may be heterogeneous | Old readers fail compilation or silently compare Optional values; ownership/data can be corrupted | 10 |
+| S03 persistence | Flat root MapCodec adapter, 26 ValueInput/ValueOutput callbacks and context-aware container helpers | Block-entity save/load signatures changed | Old overrides do not run; inventories and custom state cannot persist correctly | 10 |
+| S03 registries/codecs | Separate value/holder lookups, lookupOrThrow and registry adapter identifiers | Registry.get now yields optional holders; ResourceKey accessor changed | Serializers and gameplay callers receive the wrong type or cannot resolve IDs | 10 |
+| S03 regressions/handoff | Shared JUnit/standalone fixture with 48 checks, 20 tooling tests, five compile logs and re-estimated remainder | Migration needs reproducible evidence and safe continuation | Compilation alone cannot detect changed defaults, UUID formats, slot loss or root-field relocation | 8 |
 | S02 game class relocations | Migrate 37 exact class/package relocations and matching widener descriptors | Target moved entity, advancement, rendering, gamerule and library classes | Old qualified names cannot resolve, including PokemonEntity superclass | 10 |
 | S02 entity registration | Pass typed ENTITY_TYPE ResourceKeys into all seven entity builders, retaining IDs | Builder.build no longer accepts String ID | Every custom entity registration fails compilation | 10 |
 | S02 collision properties | Rename noCollission to noCollision at 33 callers | Target corrected the method name | Block property construction fails compilation | 10 |

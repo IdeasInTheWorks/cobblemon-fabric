@@ -1,0 +1,47 @@
+{
+  "sprint": "S03",
+  "date": "2026-10-24",
+  "work_ids": ["R013", "R015"],
+  "claim_work_id": "S03-R013-R015",
+  "target": {"minecraft": "26.3", "loader": "Fabric", "java": 25},
+  "installable": false,
+  "acceptance_complete": {"R013": false, "R015": false},
+  "source_changes": {
+    "initial_explicit_keyed_property_sites": 311,
+    "custom_item_constructor_classes": 43,
+    "central_explicit_constructor_calls": 128,
+    "ordered_item_create_id_expressions_preserved": 140,
+    "ordered_block_create_id_expressions_preserved": 340,
+    "block_entity_value_io_callbacks": 26,
+    "block_entity_classes": 13,
+    "features_removed": false,
+    "existing_license_files_changed": false
+  },
+  "executed_checks": {
+    "common_compile": {"passed": false, "diagnostic_lines": 7451, "affected_files": 1005, "baseline_lines": 8179, "baseline_files": 1062, "reduction": 728, "attempts": 5},
+    "access_widener": {"passed": false, "missing_targets": 54},
+    "common_license_headers": {"passed": true, "log": "porting/logs/sprint-03-validation-02.txt"},
+    "offline_tooling": {"passed": true, "tests": 20},
+    "real_target_migration_fixture": {"passed": true, "checks": 48, "inventory_components": "Minimal MAX_STACK_SIZE fixtures for two unbound items; not vanilla datapack defaults", "source": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java"},
+    "junit_wrapper": {"executed": false, "reason": "Blocked by common compilation; same fixture executed through standalone runner"},
+    "minecraft_client_server_gameplay_tests": {"executed": 0}
+  },
+  "planning": {
+    "units": "engineering person-hours; low/likely/high estimates, not actuals or AI wall-clock forecasts",
+    "R013_initial": [16, 32, 64],
+    "R013_remaining": [8, 16, 32],
+    "R015_initial": [20, 40, 80],
+    "R015_remaining": [12, 24, 48],
+    "confidence": "Low",
+    "actual_hours_measured": false
+  },
+  "next_work": [
+    "R015: registry-context-aware fossil multiblock serialization and remaining entity save/load APIs",
+    "R015: remaining local holder/value lookups, ItemStack codecs and broader legacy-data fixtures",
+    "R013: Pomohana/PinkPetals superclass migration and complete construction/startup validation",
+    "R014: food, consumable, use-result and component behavior",
+    "R019/R022-R026: entity lifecycle, rendering, animation, GUI and SDL input; reconcile associated wideners"
+  ],
+  "tracker": "https://docs.google.com/spreadsheets/d/1_H2BdYlb3f3CnsmP99R2GqlGeuOwax2-3NvjWuVqOQE/edit",
+  "handoff": "Read AGENTS.md, porting/RESUME.md and latest native Sheet; read live registry and acquire fresh scopes before continuing. Scoped sprint lease is released after the pushed checkpoint because R013/R015 acceptance remains open."
+}

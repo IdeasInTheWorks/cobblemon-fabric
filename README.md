@@ -6,7 +6,7 @@ This project ports [Cobblemon](https://gitlab.com/cable-mc/cobblemon) to stable 
 
 Development: [feature/latest-minecraft-fabric](https://github.com/IdeasInTheWorks/cobblemon-fabric/tree/feature/latest-minecraft-fabric). Binaries, once validated: [GitHub Releases](https://github.com/IdeasInTheWorks/cobblemon-fabric/releases). Current builds: [GitHub Actions](https://github.com/IdeasInTheWorks/cobblemon-fabric/actions).
 
-The [native Google Sheets roadmap and dashboard](https://docs.google.com/spreadsheets/d/1_H2BdYlb3f3CnsmP99R2GqlGeuOwax2-3NvjWuVqOQE/edit) tracks 44 work packages, effort ranges, sprint/build evidence and handoffs. Access follows its existing private Drive permissions. Continue from [porting/RESUME.md](porting/RESUME.md); read [AGENTS.md](AGENTS.md) and acquire a scoped work lease before editing. Sprint S02 reduced common Kotlin diagnostics from 10,586 to 8,179, but compilation and gameplay release gates remain open.
+The [native Google Sheets roadmap and dashboard](https://docs.google.com/spreadsheets/d/1_H2BdYlb3f3CnsmP99R2GqlGeuOwax2-3NvjWuVqOQE/edit) tracks 44 work packages, effort ranges, sprint/build evidence and handoffs. Access follows its existing private Drive permissions. Continue from [porting/RESUME.md](porting/RESUME.md); read [AGENTS.md](AGENTS.md) and acquire a scoped work lease before editing. Sprint S03 migrated item/block construction and NBT persistence, reducing common Kotlin diagnostic lines from 8,179 to 7,451. Compilation and gameplay release gates remain open; R013 and R015 still have outstanding acceptance work.
 
 ## Intended runtime requirements
 

@@ -2,7 +2,27 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S02 checkpoint (2026-10-24)
+## Sprint S03 checkpoint (2026-10-24)
+
+R013/R015 were claimed together as `S03-R013-R015` under owner `codex-sprint03-01a16f8a`, using an expiring remote lease and the exclusive integration resource. Read live registry state before resuming; a saved local lease or Sheet snapshot is not authority.
+
+Implemented typed item/block keys before construction, fresh plant properties, explicit properties through 43 custom item classes and 128 central constructor calls, removed vanilla-helper replacements, item/block translation prefixes and a template wrapper retaining the custom upgrade heading. All 140 item and 340 block ordered create-ID expressions match the pre-sprint source. Original licences and gameplay assets remain intact.
+
+R015 adds explicit legacy NBT defaults, strict four-int UUID preservation, typed-list checks, root ValueInput/ValueOutput merging and supported holder/value/registry lookups. Twenty-six callbacks across 13 block entities now use the target persistence interfaces; container fields use native context-aware ContainerHelper methods. The fossil multiblock writer and entity persistence still need work.
+
+Executed results:
+
+- Five `:common:compileKotlin` attempts: 7,822 / 7,580 / 7,539 / 7,458 / **7,451** diagnostic lines. Final result: **1,005 affected files**, down 728 lines (8.9%) and 57 files from S02. Counts include cascades, not independent bugs or gameplay completion. `sprint-03-compiler-summary.json` and all five full logs are preserved.
+- `scripts/check_data_contracts.py`: **48 checks passed**, compiling the actual production Java helpers and executing the shared common-test fixture against the verified official game JAR. It tests registration metadata, NBT defaults/types/UUIDs, binary data, registry codecs, root merging and inventory slots/counts. Inventory cases initialize minimal components for two fixture items; vanilla datapack defaults and gameplay are not tested. Failed setup probes are retained separately.
+- Python discovery: **20 tooling tests passed**. No game runtime tests executed.
+- `:fabric:validateAccessWidener :common:checkLicenses --continue`: 54 AW targets still fail; common main/test licence checks pass. The first header attempt failed on six new-file years; project headers plus separate 2026 attribution fixed that failure. Both validation logs are retained.
+- A JUnit entry point now invokes that same fixture during common tests, including existing CI once compilation is fixed. The JUnit wrapper itself has not executed.
+
+R013 and R015 remain open for their original acceptance gates. Planning remainder: R013 **8/16/32** and R015 **12/24/48** engineering person-hours (low/likely/high, low confidence). Original estimates were 16/32/64 and 20/40/80; actual person-hours were not measured. The same Google Sheet is the primary roadmap; no sharing changes or duplicate tracker.
+
+Next: finish the fossil multiblock's context-aware serialization and remaining local holder/ItemStack lookups (R015), port Pomohana's superclass and validate all construction paths (R013), then food/consumable components (R014). Rendering/input, entity lifecycle and the retained access-widener gate remain substantial separate work. Do not publish a binary or claim world/client/server/gameplay compatibility.
+
+## Sprint S02 checkpoint (historical, 2026-10-24)
 
 Human-facing planning is maintained in the same native Google Sheet recorded in [tracker.json](tracker.json): Dashboard, Roadmap, Sprint Log, Build History, Claims, Handoff and Assumptions. It contains 44 work packages with low/likely/high engineering person-hour ranges. These are uncertain planning estimates, not actual time or AI execution forecasts. Actual person-hours remain unmeasured. Re-estimate after each sprint and preserve human edits/sharing.
 
@@ -47,7 +67,7 @@ Adorn has no published 26.3 version in the listing checked. Its source integrati
 
 ## Next implementation work
 
-1. Continue from S02 common attempt 01 and `sprint-02-compiler-summary.json`. Claim **R013** item/block identifier and property lifecycle (16/32/64 person-hours) and/or **R015** NBT/codecs/holder APIs (20/40/80). Inspect exact affected-file scopes before claiming; both cut across callers. Preserve factories, IDs, data and gameplay. Resolve cascading errors by coherent API subsystem.
+1. Continue from S03 common attempt 05 and `sprint-03-compiler-summary.json`. Reclaim **R013/R015** for the remaining work listed above; their acceptance gates are not complete. Inspect current file scopes and handoff before claiming. Preserve factories, IDs, data and gameplay. Resolve cascading errors by coherent API subsystem.
 2. Port the rendering stack coherently: model baking, item model definitions, render-state extraction, GUI graphics extraction, renderer pipelines, particles, shaders and animation layers. `GuiGraphics`, `MultiBufferSource`, old RenderType and many RenderStateShard classes are gone or relocated. Update callers and wideners together.
 3. Port input to SDL-backed vanilla input events/constants, including text-input focus notification. Keep custom widgets functional.
 4. Migrate removed Fabric composting registration to data components/providers while preserving the existing chance calculations. Do not replace all probabilities with a constant or remove composting.

@@ -19,7 +19,7 @@ Original pins are preserved in Git history. Target configuration and resolved ve
 | Baseline build/tests (1.21.1) | Stopped after build-logic compilation to focus on target; no baseline build/test pass | `porting/logs/baseline-build.txt` |
 | Gradle 9.6 build-logic compilation | Passed after licence-plugin and Kotlin DSL fixes | `porting/logs/target-build-04.txt` |
 | Target build/tests (26.3) | Failed: 54 missing access-widener targets; mod tests did not run | `porting/logs/target-build-04.txt`, `porting/access-widener-blockers.json` |
-| Common Kotlin source compilation | Failed: S02 attempt 01 has 8,179 diagnostic lines across 1,062 files; 2,407 fewer lines than attempt 06 (22.7%). Counts include cascading errors | `porting/logs/sprint-02-common-compile-01.txt`, `porting/sprint-02-compiler-summary.json` |
+| Common Kotlin source compilation | Failed: S03 attempt 05 has 7,451 diagnostic lines across 1,005 files; 728 fewer lines (8.9%) and 57 fewer files than S02. Counts include cascading errors | `porting/logs/sprint-03-common-compile-05.txt`, `porting/sprint-03-compiler-summary.json` |
 | Block entity registration migration | All 26 diagnostics in CobblemonBlockEntities.kt from attempt 05 are absent after constructor migration in attempt 06; runtime untested | Comparison in `porting/compiler-summary.json` |
 | Fabric source-header checks | Passed in target build attempt 04 | `:fabric:checkLicenses` in build log |
 | Package validator regression tests | 6 passed locally and on GitHub Actions; synthetic ZIP fixtures only | `porting/logs/package-validator-tests-02.txt` |
@@ -27,6 +27,12 @@ Original pins are preserved in Git history. Target configuration and resolved ve
 | S02 real target API contracts | Four signatures compile against verified Minecraft 26.3; four identifier wire/round-trip checks execute successfully using actual game/Netty libraries | `porting/logs/sprint-02-api-contracts.json` |
 | S02 live claim contention | Two simultaneous contenders; one acquisition, one refusal and one observed remote fast-forward conflict; test lease released | `porting/logs/sprint-02-live-claim-race.json` |
 | S02 access widener and common source headers | Widener validation still fails on 54 targets; common main/test licence-header checks pass | `porting/logs/sprint-02-validation-01.txt`, `porting/sprint-02-validation-summary.json` |
+| S03 registration construction | Keyed central property factories and 43 custom item constructors; all 140 item and 340 block ordered create-ID expressions are unchanged | `porting/sprint-03-registration-migration.json` |
+| S03 focused migration fixtures | 48 checks passed with actual production helpers and real target classes; inventory cases use minimal fixture components; no game launch | `porting/logs/sprint-03-data-contracts.json` |
+| S03 persistence callbacks | 26 save/load callbacks on 13 block entities migrated to ValueInput/ValueOutput; root fields, superclass data and native container serialization retained | `porting/sprint-03-nbt-migration.json` |
+| S03 offline tooling | 20 tests passed; package/claim tooling only | `porting/logs/sprint-03-tool-tests-01.txt` |
+| S03 access widener and source headers | AW gate still fails on 54 targets; common main/test licence checks pass after correcting six new-file headers to the project template with separate 2026 attribution | `porting/logs/sprint-03-validation-02.txt`, `porting/sprint-03-validation-summary.json` |
+| S03 JUnit regression wrapper | Added to common tests; not executed because common compilation fails. The same fixture executed through the standalone runner | `common/src/test/java/com/cobblemon/mod/common/porting/` |
 | GitHub Actions | Executed; latest checked run reproduces access-widener failure on Linux; package upload skipped, diagnostics uploaded | [Run 40130623175](https://github.com/IdeasInTheWorks/cobblemon-fabric/actions/runs/40130623175) |
 | JAR validation | Not executed; no target JAR | Pending |
 | Client launch/world load | Not executed | Pending |
@@ -50,6 +56,8 @@ Minecraft 26.x changes vanilla world storage paths, and 26.3 changes feature reg
 Release gates require client and dedicated server launches, two simultaneous players, wild/PvP battles, capture, ownership, PC and party sync, disconnect/reconnect, restart/reload and log review. Every unexecuted test remains an outstanding issue.
 
 ## Current technical blockers
+
+S03 leaves R013/R015 open. R013 still needs Pomohana's removed PinkPetalsBlock superclass port and full registry/startup validation; its six remaining central item diagnostics concern food/consumable APIs tracked in R014. R015 still needs the fossil multiblock's registry-aware writer, remaining entity save/load APIs, ItemStack codecs and local holder lookups, and broader legacy-data fixtures. The root NBT adapter preserves keys and tested primitive/UUID/list behavior; this does not establish full 1.21.1 world compatibility. Addons constructing the 43 updated item classes must now supply keyed Item.Properties as the first argument. No gameplay implementation or asset licences were removed.
 
 The target build resolves the project configuration, processes resources and dependencies, and runs the retained access-widener validator. It reports 54 obsolete targets, including RenderStateShard subclasses, RenderType.CompositeState, shoulder-entity methods, particle registration, item colour APIs, texture-atlas access, block codecs and humanoid animation methods. These must be reconciled with their callers and replacement APIs; removing the validator or widening metadata compatibility is not a fix.
 
