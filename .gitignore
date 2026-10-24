@@ -45,3 +45,9 @@ common/.fabric
 # MacOS
 .DS_Store
 /common/config/*
+
+# Independent port build/test products
+/dist/
+/ci-logs/
+__pycache__/
+*.pyc
