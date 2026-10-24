@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 10,
+  "generation": 11,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -78,12 +78,13 @@
       "lease_id": "406bca15-b355-42db-90dc-973f8187d6be",
       "operation_id": "406bca15-b355-42db-90dc-973f8187d6be",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-24T21:52:52Z",
       "heartbeat_at": "2026-10-24T22:29:06Z",
       "expires_at": "2026-10-24T23:59:06Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "bc11e2f0580e5629c5f2f0c7d1f7a08b26c9b6a1 pushed in three commits; R013/R015 acceptance remains open. 48 focused data/ID fixture checks and 20 tooling tests pass; common headers pass; Linux CI run 40139161489 reproduces 7451 diagnostic lines/1005 files and 54 AW misses. Next: fossil multiblock/entity I/O, local holders/ItemStack codecs, Pomohana/startup acceptance; see porting/RESUME.md and existing native Sheet. No installable mod or gameplay validation.",
+      "closed_at": "2026-10-24T22:39:09Z"
     }
   },
   "events": [
@@ -186,6 +187,16 @@
       "lease_id": "406bca15-b355-42db-90dc-973f8187d6be",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 11,
+      "at": "2026-10-24T22:39:09Z",
+      "kind": "release",
+      "work_id": "S03-R013-R015",
+      "owner": "codex-sprint03-01a16f8a",
+      "lease_id": "406bca15-b355-42db-90dc-973f8187d6be",
+      "epoch": 1,
+      "checkpoint": "bc11e2f0580e5629c5f2f0c7d1f7a08b26c9b6a1 pushed in three commits; R013/R015 acceptance remains open. 48 focused data/ID fixture checks and 20 tooling tests pass; common headers pass; Linux CI run 40139161489 reproduces 7451 diagnostic lines/1005 files and 54 AW misses. Next: fossil multiblock/entity I/O, local holders/ItemStack codecs, Pomohana/startup acceptance; see porting/RESUME.md and existing native Sheet. No installable mod or gameplay validation."
     }
   ]
 }
