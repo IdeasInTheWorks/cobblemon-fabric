@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 5,
+  "generation": 6,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -57,6 +57,33 @@
       "minutes": 90,
       "checkpoint": "c296faa3f54050c00105b9c85dca1e183d2c8d71 pushed; 20 offline tests, 4 real wire checks, live race and guard probes passed; common compile 8179 diagnostics and 54 AW misses remain; CI run 40134786713; next R013/R015, see porting/RESUME.md and existing native Sheet. No installable mod or gameplay validation.",
       "closed_at": "2026-10-24T21:34:46Z"
+    },
+    "S03-R013-R015": {
+      "work_id": "S03-R013-R015",
+      "owner": "codex-sprint03-01a16f8a",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "README.md",
+        "common/src",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "406bca15-b355-42db-90dc-973f8187d6be",
+      "operation_id": "406bca15-b355-42db-90dc-973f8187d6be",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-24T21:52:52Z",
+      "heartbeat_at": "2026-10-24T21:52:52Z",
+      "expires_at": "2026-10-24T23:22:52Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -109,6 +136,16 @@
       "lease_id": "3def1b3d-72ac-4f5d-bf73-7347a8a4a32c",
       "epoch": 1,
       "checkpoint": "c296faa3f54050c00105b9c85dca1e183d2c8d71 pushed; 20 offline tests, 4 real wire checks, live race and guard probes passed; common compile 8179 diagnostics and 54 AW misses remain; CI run 40134786713; next R013/R015, see porting/RESUME.md and existing native Sheet. No installable mod or gameplay validation."
+    },
+    {
+      "generation": 6,
+      "at": "2026-10-24T21:52:52Z",
+      "kind": "acquire",
+      "work_id": "S03-R013-R015",
+      "owner": "codex-sprint03-01a16f8a",
+      "lease_id": "406bca15-b355-42db-90dc-973f8187d6be",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
