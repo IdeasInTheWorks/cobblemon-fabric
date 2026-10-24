@@ -2,6 +2,25 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
+## Sprint S02 checkpoint (2026-10-24)
+
+Human-facing planning is maintained in the same native Google Sheet recorded in [tracker.json](tracker.json): Dashboard, Roadmap, Sprint Log, Build History, Claims, Handoff and Assumptions. It contains 44 work packages with low/likely/high engineering person-hour ranges. These are uncertain planning estimates, not actual time or AI execution forecasts. Actual person-hours remain unmeasured. Re-estimate after each sprint and preserve human edits/sharing.
+
+Read root [AGENTS.md](../AGENTS.md) before editing. Use `scripts/work_claims.py status`, acquire narrow scopes on an isolated worker branch, heartbeat during work, verify before pushing, and close with a durable commit/handoff. The separate `coordination/work-claims` branch is the claim authority; Sheet rows are snapshots. Shared integration requires the exclusive `integration:feature/latest-minecraft-fabric` resource. The pre-push hook additionally requires `cobblemon.claimPython` to name an absolute Python executable. These safeguards are cooperative, not an atomic lock across source and coordination refs.
+
+S02 implemented 37 verified exact type relocations, seven typed entity registration keys, 33 collision-method renames, 30 identifier reads and 29 writes, and entity-tag holder lookup. No gameplay features or asset licences were removed. Relocation evidence is in `sprint-02-api-relocations.json`.
+
+Executed S02 checks:
+
+- `:common:compileKotlin --stacktrace --console=plain`: failed with **8,179 diagnostic lines across 1,062 files**, down 2,407 lines (22.7%) and 145 files from attempt 06. Counts include cascades, not independent defects or a gameplay completion percentage. PokemonEntity.kt diagnostics fell from 646 to 162. See `sprint-02-compiler-summary.json` and `logs/sprint-02-common-compile-01.txt`.
+- `:fabric:validateAccessWidener :common:checkLicenses --continue --stacktrace --console=plain`: 54 widener targets still fail; common main/test licence-header checks pass. See `sprint-02-validation-summary.json` and its full log. Do not bypass this gate.
+- `python -m unittest discover -s scripts -p 'test_*.py' -v`: **20 passed** (14 claim-protocol tests, six synthetic package fixtures). `logs/sprint-02-tool-tests-03.txt`.
+- `scripts/check_api_contracts.py`: four source contracts compile against the SHA-1-verified target game JAR and exact matching cached libraries; four identifier round-trip/wire-format cases pass against real game/Netty classes. No Minecraft process launched. `logs/sprint-02-api-contracts.json`.
+- `scripts/check_live_claim_race.py`: two simultaneous remote claim contenders, one winner, one refusal, one remote fast-forward conflict; temporary lease released. `logs/sprint-02-live-claim-race.json`.
+- Live CLI/push-guard probes: active in-scope lease accepted; out-of-scope path, wrong owner and stale lease refused. No source refs changed by probes. `logs/sprint-02-live-push-guard.json`.
+
+Full common/Fabric compilation, JAR packaging, Minecraft startup, client/server, multiplayer, Showdown and gameplay/data migration are still unvalidated. No installation-ready artifact is available.
+
 ## Completed work
 
 - Verified IdeasInTheWorks through both connected GitHub and existing local Git authentication. Created the requested public repository, imported unmodified Cobblemon 1.8.2 and its ancestor history, and pushed incremental development commits.
@@ -28,7 +47,7 @@ Adorn has no published 26.3 version in the listing checked. Its source integrati
 
 ## Next implementation work
 
-1. Continue from common compile attempt 06. The BlockEntityType constructor migration has eliminated its source-file diagnostics. Resolve remaining registration and properties-key changes while preserving all factories and valid-block sets.
+1. Continue from S02 common attempt 01 and `sprint-02-compiler-summary.json`. Claim **R013** item/block identifier and property lifecycle (16/32/64 person-hours) and/or **R015** NBT/codecs/holder APIs (20/40/80). Inspect exact affected-file scopes before claiming; both cut across callers. Preserve factories, IDs, data and gameplay. Resolve cascading errors by coherent API subsystem.
 2. Port the rendering stack coherently: model baking, item model definitions, render-state extraction, GUI graphics extraction, renderer pipelines, particles, shaders and animation layers. `GuiGraphics`, `MultiBufferSource`, old RenderType and many RenderStateShard classes are gone or relocated. Update callers and wideners together.
 3. Port input to SDL-backed vanilla input events/constants, including text-input focus notification. Keep custom widgets functional.
 4. Migrate removed Fabric composting registration to data components/providers while preserving the existing chance calculations. Do not replace all probabilities with a constant or remove composting.

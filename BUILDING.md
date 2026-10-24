@@ -22,11 +22,14 @@ git remote add upstream https://gitlab.com/cable-mc/cobblemon.git
 git remote set-url --push upstream DISABLED
 git config remote.pushDefault origin
 git config core.hooksPath .githooks
+git config cobblemon.claimPython /absolute/path/to/python3
 java -version
 javac -version
 ```
 
 Both Java commands must identify version 25. Set `JAVA_HOME` to the JDK root and include its `bin` directory in PATH. No project-specific secrets are required. Only common and Fabric projects are included in settings; imported NeoForge files remain preserved for history/reference.
+
+Reading/building needs no lease. Editing and pushing require the scoped lease protocol in [AGENTS.md](AGENTS.md), using existing IdeasInTheWorks Git authentication. Never put tokens in commands, tracked files or logs. Each concurrent worker uses an isolated worktree and branch; the shared development branch requires an exclusive integration resource lease.
 
 ## Exact build commands
 
@@ -51,6 +54,14 @@ python scripts/validate_jar.py "fabric/build/libs/cobblemon-1.8.2-fabric-custom.
 The Kotlin toolchain is downloaded as a Gradle dependency. Game classes use Mojang's official names directly; there is no Yarn/Parchment remapping stage for 26.3. The common source output is merged into the Fabric Shadow JAR and mandatory runtime dependencies are nested with Loom. A build must retain the bundled Showdown engine, Pokémon assets and individual asset licences.
 
 ## Outputs and test scope
+
+Sprint S02 executed 20 offline Python tests: six synthetic package-validator tests and 14 work-claim protocol tests. These do not run Minecraft. Additional signature and identifier wire-format checks use the checksum-verified official target JAR and its exact cached runtime-library versions:
+
+```sh
+python3 scripts/check_api_contracts.py --game-jar /path/to/minecraft-26.3-client.jar --gradle-cache /path/to/gradle-user-home --javac /path/to/jdk25/bin/javac
+```
+
+The checker compares the game SHA-1 with `porting/version-evidence.json`, compiles four source contracts and executes four identifier round-trip/wire checks against real game libraries. It neither launches a game nor validates Cobblemon networking end to end. The live two-contender claim-race probe is an explicit network test (`scripts/check_live_claim_race.py`), not an automatic CI mutation.
 
 - Candidate package: `fabric/build/libs/cobblemon-1.8.2-fabric-custom.1-mc26.3-<commit>.jar`, also copied to root `build/libs/` by assemble.
 - Other jars marked `dev-slim` or `sources` are development products; do not install them.

@@ -1,0 +1,39 @@
+{
+  "sprint": "S02",
+  "date": "2026-10-24",
+  "scoped_work": ["R007", "R008", "R009", "R010", "R011", "R012"],
+  "target": {"minecraft": "26.3", "loader": "Fabric", "java": 25},
+  "installable": false,
+  "source_changes": {
+    "verified_type_relocations": 37,
+    "entity_builder_keys": 7,
+    "collision_call_renames": 33,
+    "identifier_read_renames": 30,
+    "identifier_write_renames": 29,
+    "features_removed": false
+  },
+  "executed_checks": {
+    "common_compile": {"passed": false, "diagnostic_lines": 8179, "affected_files": 1062, "baseline_lines": 10586, "baseline_files": 1207},
+    "access_widener": {"passed": false, "missing_targets": 54},
+    "common_license_headers": {"passed": true},
+    "offline_tooling": {"passed": true, "tests": 20},
+    "real_target_api_contracts": {"passed": true, "compiled_contracts": 4, "executed_identifier_wire_checks": 4},
+    "live_claim_race": {"passed": true, "contenders": 2, "winners": 1, "refusals": 1},
+    "live_guard_probes": {"passed": true, "cases": 4},
+    "minecraft_gameplay_runtime_tests": {"executed": 0}
+  },
+  "planning": {
+    "primary_tracker": "https://docs.google.com/spreadsheets/d/1_H2BdYlb3f3CnsmP99R2GqlGeuOwax2-3NvjWuVqOQE/edit",
+    "work_packages": 44,
+    "units": "engineering person-hours; estimates, not actuals or elapsed forecasts",
+    "remaining_after_scoped_sprint": {"low": 612, "likely": 1224, "high": 2456},
+    "next_work": ["R013: item/block ID and property lifecycle", "R015: NBT/codecs/holders", "R019: entity lifecycle", "R022-R026: rendering, animation, GUI and SDL input"]
+  },
+  "coordination": {
+    "authority": "coordination/work-claims:state.json",
+    "protocol": "scoped expiring cooperative leases, non-forced single-parent ref updates, isolated workers, local pre-push verification",
+    "limitations": "Claim and source refs update separately; no server-side enforcement against bypassing clients",
+    "handoff": "Read AGENTS.md and porting/RESUME.md; re-read live registry, acquire before editing, close after pushed checkpoint"
+  },
+  "release_gates_open": ["full common/Fabric compilation", "54 access-widener targets", "integration/runtime libraries", "JAR/package reproducibility", "client and dedicated server", "essential gameplay and Showdown", "multiplayer", "world/player migration", "licensing review and validated release"]
+}

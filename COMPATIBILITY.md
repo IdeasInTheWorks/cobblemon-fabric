@@ -19,10 +19,14 @@ Original pins are preserved in Git history. Target configuration and resolved ve
 | Baseline build/tests (1.21.1) | Stopped after build-logic compilation to focus on target; no baseline build/test pass | `porting/logs/baseline-build.txt` |
 | Gradle 9.6 build-logic compilation | Passed after licence-plugin and Kotlin DSL fixes | `porting/logs/target-build-04.txt` |
 | Target build/tests (26.3) | Failed: 54 missing access-widener targets; mod tests did not run | `porting/logs/target-build-04.txt`, `porting/access-widener-blockers.json` |
-| Common Kotlin source compilation | Failed: latest attempt 06 has 10,586 diagnostic lines across 1,207 files, including cascading errors | `porting/logs/common-compile-06.txt`, `porting/compiler-summary.json` |
+| Common Kotlin source compilation | Failed: S02 attempt 01 has 8,179 diagnostic lines across 1,062 files; 2,407 fewer lines than attempt 06 (22.7%). Counts include cascading errors | `porting/logs/sprint-02-common-compile-01.txt`, `porting/sprint-02-compiler-summary.json` |
 | Block entity registration migration | All 26 diagnostics in CobblemonBlockEntities.kt from attempt 05 are absent after constructor migration in attempt 06; runtime untested | Comparison in `porting/compiler-summary.json` |
 | Fabric source-header checks | Passed in target build attempt 04 | `:fabric:checkLicenses` in build log |
 | Package validator regression tests | 6 passed locally and on GitHub Actions; synthetic ZIP fixtures only | `porting/logs/package-validator-tests-02.txt` |
+| S02 offline tooling regression tests | 20 passed: 14 lease/state tests plus six package fixtures; no gameplay tests | `porting/logs/sprint-02-tool-tests-03.txt` |
+| S02 real target API contracts | Four signatures compile against verified Minecraft 26.3; four identifier wire/round-trip checks execute successfully using actual game/Netty libraries | `porting/logs/sprint-02-api-contracts.json` |
+| S02 live claim contention | Two simultaneous contenders; one acquisition, one refusal and one observed remote fast-forward conflict; test lease released | `porting/logs/sprint-02-live-claim-race.json` |
+| S02 access widener and common source headers | Widener validation still fails on 54 targets; common main/test licence-header checks pass | `porting/logs/sprint-02-validation-01.txt`, `porting/sprint-02-validation-summary.json` |
 | GitHub Actions | Executed; latest checked run reproduces access-widener failure on Linux; package upload skipped, diagnostics uploaded | [Run 40130623175](https://github.com/IdeasInTheWorks/cobblemon-fabric/actions/runs/40130623175) |
 | JAR validation | Not executed; no target JAR | Pending |
 | Client launch/world load | Not executed | Pending |

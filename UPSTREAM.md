@@ -19,12 +19,15 @@ git remote set-url --push upstream DISABLED
 git config remote.pushDefault origin
 git config push.default current
 git config core.hooksPath .githooks
+git config cobblemon.claimPython /absolute/path/to/python3
 git switch feature/latest-minecraft-fabric
 git config branch.feature/latest-minecraft-fabric.pushRemote origin
 git remote -v
 ```
 
 Verify that the origin push URL is the IdeasInTheWorks repository and the upstream push URL is `DISABLED`. The repository pre-push hook also rejects other remote names and URLs. Hooks are local safeguards; Git configuration and explicit destination checks remain required.
+
+Acquire a scoped work lease before modifying source, following [AGENTS.md](AGENTS.md). The separate `coordination/work-claims` branch contains the append-only lease registry; do not merge it into source branches or rewrite its history. Keep each worker in an isolated checkout. The native roadmap, effort ranges and handoff are recorded in `porting/tracker.json`; reuse that same Sheet and preserve its sharing. Coordination-only commits do not launch build CI.
 
 ## Fetch future upstream changes
 

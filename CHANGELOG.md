@@ -4,6 +4,10 @@
 
 Migration in progress. No validated release or gameplay claim.
 
+Sprint S02 (2026-10-24) migrates 37 verified class relocations, seven entity registration keys, collision naming and identifier payload methods. Common compilation executed and still fails: 8,179 diagnostic lines in 1,062 files versus 10,586 in 1,207 before this sprint. Twenty offline tooling tests, four real-library identifier wire checks and a live two-contender lease test passed. Access-widener validation still reports 54 missing targets; common licence checks passed. No client/server or gameplay tests ran.
+
+The native Google Sheets roadmap records 44 work packages, low/likely/high person-hour ranges, dashboard charts, build/sprint evidence, claim snapshots and handoff instructions. GitHub coordination uses scoped, expiring leases with stale-owner fencing, fast-forward claim transactions, isolated-worktree rules and a local push gate. These are cooperative safeguards; they do not create an atomic lock spanning claim and source pushes.
+
 - Imported the original 1.8.2 release with its ancestor Git history and all source/assets/licences.
 - Created the independent public IdeasInTheWorks development destination and development branch.
 - Recorded target-version evidence, migration blockers, validation status and upstream maintenance instructions.
@@ -14,6 +18,13 @@ Migration in progress. No validated release or gameplay claim.
 
 | Area | What changed | Why it changed | Why it would not work without the change | Blocker severity (1–10) |
 | --- | --- | --- | --- | --- |
+| S02 game class relocations | Migrate 37 exact class/package relocations and matching widener descriptors | Target moved entity, advancement, rendering, gamerule and library classes | Old qualified names cannot resolve, including PokemonEntity superclass | 10 |
+| S02 entity registration | Pass typed ENTITY_TYPE ResourceKeys into all seven entity builders, retaining IDs | Builder.build no longer accepts String ID | Every custom entity registration fails compilation | 10 |
+| S02 collision properties | Rename noCollission to noCollision at 33 callers | Target corrected the method name | Block property construction fails compilation | 10 |
+| S02 payload identifiers | Replace 30 reads and 29 writes with readIdentifier/writeIdentifier | ResourceLocation methods no longer exist; Identifier retains namespaced UTF-8 wire format | Storage, riding, spawning and UI payloads fail compilation; end-to-end behavior needs tests | 10 |
+| S02 entity tag membership | Query entity type holder before testing a tag | EntityType.is(TagKey) was removed | Entity name-tag restriction check fails compilation | 10 |
+| S02 work coordination | Atomic claim-ref updates, lease IDs/epochs/expiry, scoped push guard and isolated-worker handoffs | Multiple sessions need durable ownership and collision handling | Concurrent agents can overlap work or publish stale/out-of-scope changes | 8 |
+| S02 planning/evidence | Native Sheets dashboard, 44-package roadmap, estimates, checks and resume pointers | Port spans multiple sprints with substantial unresolved APIs | Future sessions lack an evidence-based queue, ownership and release status | 6 |
 | Repository | GitHub origin, disabled upstream push URL, origin-only pre-push hook | Keep development under IdeasInTheWorks and protect upstream | An unguarded clone can accidentally push to the original project | 8 |
 | Compatibility evidence | Added assessment and explicit test status | Pin the actual stable target and expose unresolved work | Version-only edits could be mistaken for a working port | 10 |
 | Game/toolchain | Target 26.3, Java 25, Kotlin 2.4.21, Gradle 9.6.0 with checksum-pinned official wrapper | Minecraft now requires Java 25; old Gradle does not support this JVM | Compilation/build tooling cannot handle the target runtime | 10 |
