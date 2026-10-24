@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 11,
+  "generation": 12,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -85,6 +85,33 @@
       "minutes": 90,
       "checkpoint": "bc11e2f0580e5629c5f2f0c7d1f7a08b26c9b6a1 pushed in three commits; R013/R015 acceptance remains open. 48 focused data/ID fixture checks and 20 tooling tests pass; common headers pass; Linux CI run 40139161489 reproduces 7451 diagnostic lines/1005 files and 54 AW misses. Next: fossil multiblock/entity I/O, local holders/ItemStack codecs, Pomohana/startup acceptance; see porting/RESUME.md and existing native Sheet. No installable mod or gameplay validation.",
       "closed_at": "2026-10-24T22:39:09Z"
+    },
+    "S04-R013-R015": {
+      "work_id": "S04-R013-R015",
+      "owner": "codex-sprint04-01a16f8a",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "README.md",
+        "common/src",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
+      "operation_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-24T22:48:59Z",
+      "heartbeat_at": "2026-10-24T22:48:59Z",
+      "expires_at": "2026-10-25T00:18:59Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -197,6 +224,16 @@
       "lease_id": "406bca15-b355-42db-90dc-973f8187d6be",
       "epoch": 1,
       "checkpoint": "bc11e2f0580e5629c5f2f0c7d1f7a08b26c9b6a1 pushed in three commits; R013/R015 acceptance remains open. 48 focused data/ID fixture checks and 20 tooling tests pass; common headers pass; Linux CI run 40139161489 reproduces 7451 diagnostic lines/1005 files and 54 AW misses. Next: fossil multiblock/entity I/O, local holders/ItemStack codecs, Pomohana/startup acceptance; see porting/RESUME.md and existing native Sheet. No installable mod or gameplay validation."
+    },
+    {
+      "generation": 12,
+      "at": "2026-10-24T22:48:59Z",
+      "kind": "acquire",
+      "work_id": "S04-R013-R015",
+      "owner": "codex-sprint04-01a16f8a",
+      "lease_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
