@@ -4,3 +4,9 @@
 src/generated/**/.cache/cache text eol=lf
 src/generated/**/*.json text eol=lf
 CHANGELOG.md merge=union
+
+# Executable scripts must remain usable after Windows checkouts.
+.githooks/* text eol=lf
+gradlew text eol=lf
+gradlew.bat text eol=crlf
+.github/workflows/*.yml text eol=lf

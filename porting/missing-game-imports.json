@@ -1,0 +1,2821 @@
+{
+  "target": "26.3",
+  "scope": "Presence scan of game-owned imports against official 26.3 client JAR only, excluding separately distributed Mojang libraries (Brigadier, DataFixerUpper, Authlib). No signature or behavioral validation. Static import owners accepted when present.",
+  "unique_missing_imports": 111,
+  "source_locations": 540,
+  "imports": {
+    "net.minecraft.client.gui.GuiGraphics": 150,
+    "net.minecraft.world.InteractionResultHolder": 38,
+    "net.minecraft.client.renderer.MultiBufferSource": 33,
+    "net.minecraft.client.renderer.RenderType": 31,
+    "net.minecraft.world.item.ItemNameBlockItem": 20,
+    "net.minecraft.advancements.critereon.ContextAwarePredicate": 17,
+    "net.minecraft.util.FastColor": 13,
+    "net.minecraft.advancements.critereon.EntityPredicate": 11,
+    "net.minecraft.world.ItemInteractionResult": 10,
+    "net.minecraft.advancements.critereon.ItemPredicate": 9,
+    "net.minecraft.world.level.GameRules": 8,
+    "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext": 7,
+    "net.minecraft.client.color.item.ItemColor": 7,
+    "net.minecraft.Util": 7,
+    "net.minecraft.client.resources.model.ModelResourceLocation": 6,
+    "net.minecraft.advancements.critereon.MinMaxBounds": 6,
+    "net.minecraft.world.item.UseAnim": 6,
+    "com.mojang.blaze3d.vertex.VertexFormat": 6,
+    "net.minecraft.client.renderer.LightTexture": 6,
+    "net.minecraft.client.renderer.entity.ItemRenderer": 5,
+    "net.minecraft.world.entity.npc.VillagerProfession": 4,
+    "net.minecraft.client.RecipeBookCategories": 4,
+    "net.minecraft.client.model.PlayerModel": 4,
+    "net.minecraft.world.level.block.state.properties.DirectionProperty": 4,
+    "net.minecraft.world.entity.MobSpawnType": 4,
+    "net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration": 4,
+    "net.minecraft.client.resources.model.BakedModel": 3,
+    "net.minecraft.client.color.block.BlockColor": 3,
+    "net.minecraft.commands.arguments.ResourceLocationArgument": 3,
+    "net.minecraft.ResourceLocationException": 3,
+    "net.minecraft.world.level.levelgen.feature.ConfiguredFeature": 3,
+    "com.mojang.blaze3d.platform.GlStateManager": 3,
+    "com.mojang.blaze3d.vertex.Tesselator": 3,
+    "net.minecraft.client.resources.PlayerSkin": 2,
+    "net.minecraft.world.entity.npc.Villager": 2,
+    "net.minecraft.client.renderer.item.ItemProperties": 2,
+    "net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration": 2,
+    "net.minecraft.world.entity.vehicle.Boat": 2,
+    "net.minecraft.client.gui.components.StateSwitchingButton": 2,
+    "net.minecraft.client.player.Input": 2,
+    "net.minecraft.client.model.BoatModel": 2,
+    "net.minecraft.client.model.ChestBoatModel": 2,
+    "net.minecraft.world.level.storage.loot.providers.number.UniformGenerator": 2,
+    "net.minecraft.advancements.critereon.EntitySubPredicate": 2,
+    "com.mojang.blaze3d.vertex.BufferUploader": 2,
+    "net.minecraft.util.LowerCaseEnumTypeAdapterFactory": 2,
+    "net.minecraft.advancements.critereon.BlockPredicate": 2,
+    "net.minecraft.world.inventory.ClickType": 2,
+    "net.minecraft.client.resources.TextureAtlasHolder": 2,
+    "net.minecraft.client.renderer.ItemBlockRenderTypes": 2,
+    "net.minecraft.client.renderer.RenderStateShard": 2,
+    "net.minecraft.client.renderer.ShaderInstance": 2,
+    "net.minecraft.network.protocol.game.DebugPackets": 2,
+    "net.minecraft.world.level.levelgen.placement.PlacementModifierType": 2,
+    "net.minecraft.world.entity.projectile.AbstractArrow": 1,
+    "net.minecraft.world.entity.animal.Bee": 1,
+    "net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer": 1,
+    "net.minecraft.world.level.chunk.storage.ChunkStorage": 1,
+    "net.minecraft.world.level.storage.DimensionDataStorage": 1,
+    "net.minecraft.world.entity.animal.Fox": 1,
+    "net.minecraft.world.entity.monster.AbstractSkeleton": 1,
+    "net.minecraft.client.resources.sounds.UnderwaterAmbientSoundInstances": 1,
+    "net.minecraft.world.entity.monster.ZombieVillager": 1,
+    "net.minecraft.world.item.alchemy.PotionBrewing": 1,
+    "net.minecraft.client.model.AgeableListModel": 1,
+    "net.minecraft.client.renderer.ItemInHandRenderer": 1,
+    "net.minecraft.client.renderer.ItemModelShaper": 1,
+    "net.minecraft.client.renderer.entity.player.PlayerRenderer": 1,
+    "net.minecraft.world.item.SignItem": 1,
+    "net.minecraft.world.entity.npc.VillagerData": 1,
+    "net.minecraft.world.entity.npc.VillagerTrades": 1,
+    "net.minecraft.advancements.CriterionTrigger": 1,
+    "net.minecraft.world.item.ShovelItem": 1,
+    "net.minecraft.world.level.block.FarmBlock": 1,
+    "net.minecraft.client.renderer.blockentity.SignRenderer": 1,
+    "net.minecraft.entity.player.PlayerEntity": 1,
+    "net.minecraft.entity.projectile.thrown.SnowballEntity": 1,
+    "net.minecraft.item.Item": 1,
+    "net.minecraft.item.ItemStack": 1,
+    "net.minecraft.sound.SoundCategory": 1,
+    "net.minecraft.sound.SoundEvents": 1,
+    "net.minecraft.stat.Stats": 1,
+    "net.minecraft.util.Hand": 1,
+    "net.minecraft.util.TypedActionResult": 1,
+    "net.minecraft.world.World": 1,
+    "net.minecraft.world.item.Equipable": 1,
+    "net.minecraft.advancements.critereon.SimpleCriterionTrigger": 1,
+    "net.minecraft.world.entity.schedule.Schedule": 1,
+    "net.minecraft.client.ParticleStatus": 1,
+    "net.minecraft.server.network.ServerPlayer": 1,
+    "net.minecraft.world.level.block.PinkPetalsBlock": 1,
+    "net.minecraft.advancements.critereon.StatePropertiesPredicate": 1,
+    "net.minecraft.client.gui.components.toasts.ToastComponent": 1,
+    "com.mojang.blaze3d.vertex.VertexBuffer": 1,
+    "net.minecraft.world.level.BlockAndTintGetter": 1,
+    "com.mojang.blaze3d.vertex.VertexMultiConsumer": 1,
+    "net.minecraft.world.item.ArmorItem": 1,
+    "net.minecraft.advancements.CriteriaTriggers": 1,
+    "net.minecraft.world.entity.projectile.ThrowableItemProjectile": 1,
+    "net.minecraft.world.entity.animal.ShoulderRidingEntity": 1,
+    "net.minecraft.world.entity.monster.Slime": 1,
+    "net.minecraft.advancements.critereon.ItemCustomDataPredicate": 1,
+    "net.minecraft.advancements.critereon.ItemSubPredicates": 1,
+    "net.minecraft.advancements.critereon.NbtPredicate": 1,
+    "net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration": 1,
+    "net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration": 1,
+    "com.mojang.blaze3d.shaders.Program": 1,
+    "net.minecraft.client.gui.LayeredDraw": 1,
+    "net.minecraft.world.level.storage.loot.IntRange": 1,
+    "net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition": 1,
+    "net.minecraft.world.level.storage.loot.providers.number.ConstantValue": 1
+  },
+  "locations": [
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/AbstractArrowMixin.java",
+      "line": 16,
+      "import": "net.minecraft.world.entity.projectile.AbstractArrow"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/BeeEntityMixin.java",
+      "line": 14,
+      "import": "net.minecraft.world.entity.animal.Bee"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/BuiltinModelItemRendererMixin.java",
+      "line": 14,
+      "import": "net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/BuiltinModelItemRendererMixin.java",
+      "line": 15,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/ChunkStorageMixin.java",
+      "line": 25,
+      "import": "net.minecraft.world.level.chunk.storage.ChunkStorage"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/ChunkStorageMixin.java",
+      "line": 26,
+      "import": "net.minecraft.world.level.storage.DimensionDataStorage"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/EnderPearlItemMixin.java",
+      "line": 13,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/EntityFoxMixin.java",
+      "line": 16,
+      "import": "net.minecraft.world.entity.animal.Fox"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/EntityRenderDispatcherMixin.java",
+      "line": 19,
+      "import": "net.minecraft.client.resources.PlayerSkin"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/EntitySkeletonMixin.java",
+      "line": 17,
+      "import": "net.minecraft.world.entity.monster.AbstractSkeleton"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/EntityVillagerMixin.java",
+      "line": 18,
+      "import": "net.minecraft.world.entity.npc.Villager"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/EntityVillagerMixin.java",
+      "line": 19,
+      "import": "net.minecraft.world.entity.npc.VillagerProfession"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/ItemPropertiesMixin.java",
+      "line": 13,
+      "import": "net.minecraft.client.renderer.item.ItemProperties"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/LecternBlockMixin.java",
+      "line": 19,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/SimpleBlockFeatureMixin.java",
+      "line": 18,
+      "import": "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/SimpleBlockFeatureMixin.java",
+      "line": 20,
+      "import": "net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/SoundManagerMixin.java",
+      "line": 17,
+      "import": "net.minecraft.client.resources.sounds.UnderwaterAmbientSoundInstances"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/VillagerProfessionLayerMixin.java",
+      "line": 18,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/VillagerProfessionLayerMixin.java",
+      "line": 19,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/VillagerProfessionLayerMixin.java",
+      "line": 24,
+      "import": "net.minecraft.world.entity.monster.ZombieVillager"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/VillagerProfessionLayerMixin.java",
+      "line": 25,
+      "import": "net.minecraft.world.entity.npc.Villager"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/VillagerProfessionLayerMixin.java",
+      "line": 26,
+      "import": "net.minecraft.world.entity.npc.VillagerProfession"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/accessor/BoatEntityAccessor.java",
+      "line": 11,
+      "import": "net.minecraft.world.entity.vehicle.Boat"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/accessor/RecipeBookComponentAccessor.java",
+      "line": 11,
+      "import": "net.minecraft.client.gui.components.StateSwitchingButton"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/brewing/BrewingStandBlockEntityMixin.java",
+      "line": 23,
+      "import": "net.minecraft.world.item.alchemy.PotionBrewing"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/AgeableListModelMixin.java",
+      "line": 14,
+      "import": "net.minecraft.client.model.AgeableListModel"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ClientRecipeBookMixin.java",
+      "line": 20,
+      "import": "net.minecraft.client.RecipeBookCategories"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemInHandLayerMixin.java",
+      "line": 13,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemInHandRendererMixin.java",
+      "line": 17,
+      "import": "net.minecraft.client.renderer.ItemInHandRenderer"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemInHandRendererMixin.java",
+      "line": 18,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemRendererMixin.java",
+      "line": 21,
+      "import": "net.minecraft.client.renderer.ItemModelShaper"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemRendererMixin.java",
+      "line": 22,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemRendererMixin.java",
+      "line": 23,
+      "import": "net.minecraft.client.renderer.entity.ItemRenderer"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemRendererMixin.java",
+      "line": 24,
+      "import": "net.minecraft.client.resources.model.BakedModel"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemRendererMixin.java",
+      "line": 25,
+      "import": "net.minecraft.client.resources.model.ModelResourceLocation"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/LocalPlayerMixin.java",
+      "line": 33,
+      "import": "net.minecraft.client.player.Input"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ModelLoaderMixin.java",
+      "line": 17,
+      "import": "net.minecraft.client.resources.model.ModelResourceLocation"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/PlayerRendererMixin.java",
+      "line": 16,
+      "import": "net.minecraft.client.model.PlayerModel"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/PlayerRendererMixin.java",
+      "line": 18,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/PlayerRendererMixin.java",
+      "line": 21,
+      "import": "net.minecraft.client.renderer.entity.player.PlayerRenderer"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeBookComponentMixin.java",
+      "line": 14,
+      "import": "net.minecraft.client.RecipeBookCategories"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/invoker/BooleanRuleInvoker.java",
+      "line": 11,
+      "import": "net.minecraft.world.level.GameRules"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/BakingOverride.kt",
+      "line": 12,
+      "import": "net.minecraft.client.resources.model.BakedModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/BakingOverride.kt",
+      "line": 13,
+      "import": "net.minecraft.client.resources.model.ModelResourceLocation"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonClientImplementation.kt",
+      "line": 12,
+      "import": "net.minecraft.client.color.block.BlockColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonClientImplementation.kt",
+      "line": 13,
+      "import": "net.minecraft.client.color.item.ItemColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonClientImplementation.kt",
+      "line": 18,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonImplementation.kt",
+      "line": 24,
+      "import": "net.minecraft.world.level.GameRules"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonItems.kt",
+      "line": 60,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonItems.kt",
+      "line": 64,
+      "import": "net.minecraft.world.item.SignItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonRecipeCategories.kt",
+      "line": 11,
+      "import": "net.minecraft.client.RecipeBookCategories"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonRideSettings.kt",
+      "line": 36,
+      "import": "net.minecraft.advancements.critereon.MinMaxBounds"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonTradeOffers.kt",
+      "line": 14,
+      "import": "net.minecraft.world.entity.npc.VillagerData"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonTradeOffers.kt",
+      "line": 15,
+      "import": "net.minecraft.world.entity.npc.VillagerProfession"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonTradeOffers.kt",
+      "line": 16,
+      "import": "net.minecraft.world.entity.npc.VillagerTrades"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonVillagerProfessions.kt",
+      "line": 20,
+      "import": "net.minecraft.world.entity.npc.VillagerProfession"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/CobblemonCriteria.kt",
+      "line": 13,
+      "import": "net.minecraft.advancements.CriterionTrigger"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/berry/BiomeDownfallGrowthFactor.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.MinMaxBounds"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/berry/BiomeTemperatureGrowthFactor.kt",
+      "line": 13,
+      "import": "net.minecraft.advancements.critereon.MinMaxBounds"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/BerryBlock.kt",
+      "line": 37,
+      "import": "net.minecraft.world.item.ShovelItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/DiscShelfBlock.kt",
+      "line": 17,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/DiscShelfBlock.kt",
+      "line": 27,
+      "import": "net.minecraft.world.level.block.state.properties.DirectionProperty"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/DisplayCaseBlock.kt",
+      "line": 32,
+      "import": "net.minecraft.world.level.block.state.properties.DirectionProperty"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/MonitorBlock.kt",
+      "line": 22,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/NutBushBlock.kt",
+      "line": 21,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/PokeSnackBlock.kt",
+      "line": 28,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/PokeSnackBlock.kt",
+      "line": 32,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/RevivalHerbBlock.kt",
+      "line": 26,
+      "import": "net.minecraft.world.level.block.FarmBlock"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/SaccharineLeafBlock.kt",
+      "line": 27,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/SaccharineLogBlock.kt",
+      "line": 23,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/SaccharineLogSlatheredBlock.kt",
+      "line": 21,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/SweetIncenseBlock.kt",
+      "line": 34,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/TypeGemClusterBlock.kt",
+      "line": 37,
+      "import": "net.minecraft.world.level.block.state.properties.DirectionProperty"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonBakingOverrides.kt",
+      "line": 14,
+      "import": "net.minecraft.client.resources.model.ModelResourceLocation"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "line": 77,
+      "import": "net.minecraft.client.color.block.BlockColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "line": 78,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "line": 81,
+      "import": "net.minecraft.client.model.BoatModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "line": 82,
+      "import": "net.minecraft.client.model.ChestBoatModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "line": 83,
+      "import": "net.minecraft.client.model.PlayerModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "line": 84,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "line": 86,
+      "import": "net.minecraft.client.renderer.blockentity.SignRenderer"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "line": 89,
+      "import": "net.minecraft.client.resources.PlayerSkin"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/command/BedrockParticleCommand.kt",
+      "line": 27,
+      "import": "net.minecraft.commands.arguments.ResourceLocationArgument"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/command/RunMolangScriptCommand.kt",
+      "line": 31,
+      "import": "net.minecraft.commands.arguments.ResourceLocationArgument"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/command/SpawnAllPokemon.kt",
+      "line": 23,
+      "import": "net.minecraft.world.entity.MobSpawnType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/command/SpawnPokemon.kt",
+      "line": 28,
+      "import": "net.minecraft.world.entity.MobSpawnType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ApricornItem.kt",
+      "line": 12,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ApricornSeedItem.kt",
+      "line": 13,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/AprijuiceItem.kt",
+      "line": 23,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/AprijuiceItem.kt",
+      "line": 27,
+      "import": "net.minecraft.world.item.UseAnim"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/CobblemonBoatItem.kt",
+      "line": 16,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/GlowItem.kt",
+      "line": 14,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/MedicinalLeekItem.kt",
+      "line": 15,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/MedicinalLeekItem.kt",
+      "line": 17,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/MoomooMilk.kt",
+      "line": 16,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokeBallItem.kt",
+      "line": 20,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokedexItem.kt",
+      "line": 20,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokedexItem.kt",
+      "line": 25,
+      "import": "net.minecraft.world.item.UseAnim"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokePuffItem.kt",
+      "line": 22,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokePuffItem.kt",
+      "line": 27,
+      "import": "net.minecraft.world.item.UseAnim"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/RegionalFoodItem.kt",
+      "line": 18,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/RegionalFoodItem.kt",
+      "line": 23,
+      "import": "net.minecraft.world.item.UseAnim"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/RevivalHerbItem.kt",
+      "line": 32,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/RevivalHerbItem.kt",
+      "line": 33,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 15,
+      "import": "net.minecraft.entity.player.PlayerEntity"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 16,
+      "import": "net.minecraft.entity.projectile.thrown.SnowballEntity"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 17,
+      "import": "net.minecraft.item.Item"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 18,
+      "import": "net.minecraft.item.ItemStack"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 19,
+      "import": "net.minecraft.sound.SoundCategory"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 20,
+      "import": "net.minecraft.sound.SoundEvents"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 21,
+      "import": "net.minecraft.stat.Stats"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 22,
+      "import": "net.minecraft.util.Hand"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 23,
+      "import": "net.minecraft.util.TypedActionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/ScatterBangItem.kt",
+      "line": 24,
+      "import": "net.minecraft.world.World"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/VivichokeItem.kt",
+      "line": 13,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/VivichokeItem.kt",
+      "line": 16,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableBlockItem.kt",
+      "line": 11,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableHatItem.kt",
+      "line": 14,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableItem.kt",
+      "line": 15,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableItem.kt",
+      "line": 18,
+      "import": "net.minecraft.world.item.Equipable"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/loot/LootInjector.kt",
+      "line": 19,
+      "import": "net.minecraft.world.level.storage.loot.providers.number.UniformGenerator"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/Pokemon.kt",
+      "line": 159,
+      "import": "net.minecraft.world.entity.MobSpawnType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/util/CommandContextExtensions.kt",
+      "line": 14,
+      "import": "net.minecraft.commands.arguments.ResourceLocationArgument"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/util/MiscUtils.kt",
+      "line": 25,
+      "import": "net.minecraft.client.resources.model.ModelResourceLocation"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/util/ResourceLocationExtensions.kt",
+      "line": 15,
+      "import": "net.minecraft.ResourceLocationException"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/util/ShaderRegistryData.kt",
+      "line": 11,
+      "import": "com.mojang.blaze3d.vertex.VertexFormat"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/AspectCriterion.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/BattleCountableCriterion.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/CastPokeRodCriterionCondition.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/CastPokeRodCriterionCondition.kt",
+      "line": 16,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/CatchPokemonCriterion.kt",
+      "line": 13,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/CatchPokemonCriterion.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/CountableCriterion.kt",
+      "line": 13,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/CountableCriterion.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/EvolvePokemonCriterion.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/LearnTMCriterion.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/LearnTMCriterion.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/LevelUpCriterion.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/LevelUpCriterion.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/PartyCheckCriterion.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/PartyCheckCriterion.kt",
+      "line": 16,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/PlantTumblestoneCriterionCondition.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/PlantTypeGemCriterionCondition.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/PokemonCriterion.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/PokemonCriterion.kt",
+      "line": 16,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/PokemonInteractCriterion.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/PokemonInteractCriterion.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/ReelInPokemonCriterionCondition.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/ReelInPokemonCriterionCondition.kt",
+      "line": 16,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/RidingStatBoostCriterion.kt",
+      "line": 16,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/RidingStatBoostCriterion.kt",
+      "line": 17,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/SimpleCriterion.kt",
+      "line": 12,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/SimpleCriterion.kt",
+      "line": 13,
+      "import": "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/TradePokemonCriterionCondition.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.ContextAwarePredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/criterion/TradePokemonCriterionCondition.kt",
+      "line": 16,
+      "import": "net.minecraft.advancements.critereon.EntityPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/predicate/CobblemonEntitySubPredicates.kt",
+      "line": 13,
+      "import": "net.minecraft.advancements.critereon.EntitySubPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/advancement/predicate/FishingBobberPredicate.kt",
+      "line": 15,
+      "import": "net.minecraft.advancements.critereon.EntitySubPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/ai/BehaviourConfigurationContext.kt",
+      "line": 35,
+      "import": "net.minecraft.world.entity.schedule.Schedule"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/apricorn/Apricorn.kt",
+      "line": 21,
+      "import": "net.minecraft.world.level.levelgen.feature.ConfiguredFeature"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/berry/Berries.kt",
+      "line": 24,
+      "import": "net.minecraft.advancements.critereon.MinMaxBounds"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/cooking/FlavourColourHelper.kt",
+      "line": 12,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/fossil/Fossil.kt",
+      "line": 12,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/fossil/Fossils.kt",
+      "line": 24,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt",
+      "line": 19,
+      "import": "com.mojang.blaze3d.platform.GlStateManager"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt",
+      "line": 22,
+      "import": "com.mojang.blaze3d.vertex.BufferUploader"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt",
+      "line": 25,
+      "import": "com.mojang.blaze3d.vertex.Tesselator"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt",
+      "line": 26,
+      "import": "com.mojang.blaze3d.vertex.VertexFormat"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt",
+      "line": 29,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt",
+      "line": 31,
+      "import": "net.minecraft.client.renderer.LightTexture"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt",
+      "line": 32,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/MultiLineLabelK.kt",
+      "line": 12,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/interaction/PokemonInteractions.kt",
+      "line": 28,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/interaction/PokemonInteractions.kt",
+      "line": 33,
+      "import": "net.minecraft.util.LowerCaseEnumTypeAdapterFactory"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonAndMoveSelectingItem.kt",
+      "line": 28,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+      "line": 25,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/PokemonProperties.kt",
+      "line": 54,
+      "import": "net.minecraft.ResourceLocationException"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/PokemonSpecies.kt",
+      "line": 63,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/snowstorm/ParticleMaterials.kt",
+      "line": 11,
+      "import": "com.mojang.blaze3d.platform.GlStateManager"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/snowstorm/ParticleMaterials.kt",
+      "line": 15,
+      "import": "com.mojang.blaze3d.vertex.Tesselator"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/snowstorm/ParticleMaterials.kt",
+      "line": 16,
+      "import": "com.mojang.blaze3d.vertex.VertexFormat"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/moves/animations/ActionEffects.kt",
+      "line": 23,
+      "import": "net.minecraft.advancements.critereon.MinMaxBounds"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/multiblock/condition/BlockRelativeCondition.kt",
+      "line": 12,
+      "import": "net.minecraft.advancements.critereon.BlockPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/pokemon/aspect/AspectParticleMap.kt",
+      "line": 19,
+      "import": "net.minecraft.client.ParticleStatus"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/spawning/detail/SingleEntitySpawnAction.kt",
+      "line": 18,
+      "import": "net.minecraft.world.entity.MobSpawnType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/storage/player/factory/MongoGeneralPlayerDataAdapter.kt",
+      "line": 21,
+      "import": "net.minecraft.server.network.ServerPlayer"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/campfirepot/CampfireBlock.kt",
+      "line": 46,
+      "import": "net.minecraft.world.level.block.state.properties.DirectionProperty"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/decor/PomohanaFlowerBlock.kt",
+      "line": 14,
+      "import": "net.minecraft.world.level.block.PinkPetalsBlock"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/BerryBlockEntity.kt",
+      "line": 19,
+      "import": "net.minecraft.ResourceLocationException"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/CampfireBlockEntity.kt",
+      "line": 40,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/entity/FossilMultiblockEntity.kt",
+      "line": 42,
+      "import": "net.minecraft.world.ItemInteractionResult"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/multiblock/FossilMultiblockBuilder.kt",
+      "line": 22,
+      "import": "net.minecraft.advancements.critereon.BlockPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/multiblock/FossilMultiblockBuilder.kt",
+      "line": 23,
+      "import": "net.minecraft.advancements.critereon.StatePropertiesPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/ExitButton.kt",
+      "line": 13,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/MoveCategoryIcon.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/PartyOverlay.kt",
+      "line": 38,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/PokemonGuiUtils.kt",
+      "line": 25,
+      "import": "net.minecraft.client.renderer.LightTexture"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/PokemonGuiUtils.kt",
+      "line": 26,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/RideControlsOverlay.kt",
+      "line": 29,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/RideControlsOverlay.kt",
+      "line": 32,
+      "import": "net.minecraft.client.player.Input"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/ScrollingWidget.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/ScrollingWidget.kt",
+      "line": 17,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/TypeIcon.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/VariableObjectSelectionList.kt",
+      "line": 12,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/VariableObjectSelectionScrollbar.kt",
+      "line": 13,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/pokedex/PokedexScannerRenderer.kt",
+      "line": 31,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/RenderHelper.kt",
+      "line": 15,
+      "import": "com.mojang.blaze3d.platform.GlStateManager"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/RenderHelper.kt",
+      "line": 21,
+      "import": "net.minecraft.Util"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/RenderHelper.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/RenderHelper.kt",
+      "line": 25,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/RenderHelper.kt",
+      "line": 26,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/BattleGUI.kt",
+      "line": 30,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/BattleOverlay.kt",
+      "line": 52,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/BattleOverlay.kt",
+      "line": 54,
+      "import": "net.minecraft.client.renderer.LightTexture"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/BattleOverlay.kt",
+      "line": 55,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/behaviour/BehaviourEditorScreen.kt",
+      "line": 19,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/behaviour/BehaviourOptionsList.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/common/MarkIcon.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/config/CobblemonConfigVariableList.kt",
+      "line": 28,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/cookingpot/CookButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/cookingpot/CookingPotScreen.kt",
+      "line": 28,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/cookingpot/CookingPotScreen.kt",
+      "line": 30,
+      "import": "net.minecraft.client.gui.components.StateSwitchingButton"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/cookingpot/CookingPotScreen.kt",
+      "line": 39,
+      "import": "net.minecraft.world.inventory.ClickType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/dialogue/DialogueScreen.kt",
+      "line": 43,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/dialogue/RenderableFace.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/habitat/HabitatEditGUI.kt",
+      "line": 27,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/habitat/HabitatPoolEditorGUI.kt",
+      "line": 20,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/habitat/HabitatPoolSelectionGUI.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/habitat/HabitatSpawnEditorGUI.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/npc/NPCEditorButton.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/npc/NPCEditorScreen.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pasture/PasturePokemonScrollList.kt",
+      "line": 34,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pasture/PastureSlotIconButton.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pasture/PastureSlotIconConflictButton.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pasture/PastureWidget.kt",
+      "line": 22,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pasture/RecallButton.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/BoxNameWidget.kt",
+      "line": 20,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/FilterWidget.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/GrabbedStorageSlot.kt",
+      "line": 12,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/IconButton.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/NavigationButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/PCGUI.kt",
+      "line": 46,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/ReleaseButton.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/ReleaseConfirmButton.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/StorageSlot.kt",
+      "line": 26,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/StorageWidget.kt",
+      "line": 37,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/TextWidget.kt",
+      "line": 17,
+      "import": "net.minecraft.Util"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/TextWidget.kt",
+      "line": 19,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/TextWidget.kt",
+      "line": 22,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pc/WallpapersScrollingWidget.kt",
+      "line": 23,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/PokedexGUI.kt",
+      "line": 65,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/PokedexTooltip.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/ScaledButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokenav/PokeNav.kt",
+      "line": 25,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokenav/PokeNavFillerButton.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokenav/PokeNavImageButton.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/startselection/StarterSelectionScreen.kt",
+      "line": 40,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/Summary.kt",
+      "line": 44,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/SummaryButton.kt",
+      "line": 17,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/IconButton.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/MoveSearchWidget.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/MovesScrollingWidget.kt",
+      "line": 28,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/MovesScrollingWidget.kt",
+      "line": 32,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/StartButton.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/TMMachineScreen.kt",
+      "line": 51,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/TMMachineScreen.kt",
+      "line": 61,
+      "import": "net.minecraft.world.inventory.ClickType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/TypesScrollingWidget.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/tmmachine/TypesScrollingWidget.kt",
+      "line": 24,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/toast/CobblemonToast.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/toast/CobblemonToast.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.components.toasts.ToastComponent"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/trade/ModelWidget.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/trade/PartySlot.kt",
+      "line": 22,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/trade/TradeButton.kt",
+      "line": 19,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/trade/TradeGUI.kt",
+      "line": 38,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/subscreen/BattleBackButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/subscreen/BattleGeneralActionSelection.kt",
+      "line": 20,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/subscreen/BattleMoveSelection.kt",
+      "line": 29,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/subscreen/BattleShiftButton.kt",
+      "line": 13,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/subscreen/BattleSwitchPokemonSelection.kt",
+      "line": 36,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/subscreen/BattleTargetSelection.kt",
+      "line": 37,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/subscreen/ForfeitConfirmationSelection.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/widgets/BattleMessagePane.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/widgets/BattleOptionTile.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/config/variable/CobblemonConfigButtonVariable.kt",
+      "line": 19,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/config/variable/CobblemonConfigEditBoxVariable.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/config/variable/CobblemonConfigVariable.kt",
+      "line": 23,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/debug/riding/RideSettingsEditor.kt",
+      "line": 26,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/debug/riding/RidingStatsDebugGUI.kt",
+      "line": 22,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/dialogue/widgets/DialogueBox.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/dialogue/widgets/DialogueNameWidget.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/dialogue/widgets/DialogueOptionWidget.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/dialogue/widgets/DialoguePortraitWidget.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/dialogue/widgets/DialogueTextInputWidget.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/dialogue/widgets/DialogueTimerWidget.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/battleRequest/BattleConfigureGUI.kt",
+      "line": 28,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/battleRequest/BattleRequestNavigationButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/battleRequest/BattleResponseButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/battleRequest/BatttleRequestButton.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/moveselect/MoveSelectGUI.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/moveselect/MoveSlotButton.kt",
+      "line": 25,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/partyselect/PartySelectGUI.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/partyselect/PartySlotButton.kt",
+      "line": 29,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/wheel/ArrowButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/wheel/InteractWheelButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/interact/wheel/InteractWheelGUI.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/npc/widgets/ConfigVariableList.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/npc/widgets/NPCRenderWidget.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/npc/widgets/SimpleNPCTextInputWidget.kt",
+      "line": 15,
+      "import": "net.minecraft.Util"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/npc/widgets/SimpleNPCTextInputWidget.kt",
+      "line": 17,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/npc/widgets/SimpleNPCTextInputWidget.kt",
+      "line": 20,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/AbilitiesWidget.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/DescriptionWidget.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/DropsScrollingWidget.kt",
+      "line": 25,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/DropsScrollingWidget.kt",
+      "line": 28,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/EntriesScrollingWidget.kt",
+      "line": 33,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/EvolutionTreeWidget.kt",
+      "line": 48,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/FormsWidget.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/InfoTextScrollWidget.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/MovesLearnsetWidget.kt",
+      "line": 52,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/PokemonInfoWidget.kt",
+      "line": 54,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/PokemonNameWidget.kt",
+      "line": 27,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/PokemonSlotWidget.kt",
+      "line": 23,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/SearchWidget.kt",
+      "line": 23,
+      "import": "net.minecraft.Util"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/SearchWidget.kt",
+      "line": 25,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/SearchWidget.kt",
+      "line": 27,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/SizeWidget.kt",
+      "line": 28,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/StatsWidget.kt",
+      "line": 29,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/pokedex/widgets/StatsWidget.kt",
+      "line": 31,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/startselection/widgets/CategoryList.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/startselection/widgets/ExitButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/startselection/widgets/SelectionButton.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/startselection/widgets/preview/ArrowButton.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/startselection/widgets/preview/StarterRoundabout.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/featurerenderers/BarSummarySpeciesFeatureRenderer.kt",
+      "line": 19,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/featurerenderers/SummarySpeciesFeatureRenderer.kt",
+      "line": 13,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/EvolutionSelectScreen.kt",
+      "line": 28,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/MarkingButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/MarkingsWidget.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/ModelWidget.kt",
+      "line": 21,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/NicknameEntryWidget.kt",
+      "line": 22,
+      "import": "net.minecraft.Util"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/NicknameEntryWidget.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/NicknameEntryWidget.kt",
+      "line": 26,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/PartySlotWidget.kt",
+      "line": 28,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/PartyWidget.kt",
+      "line": 22,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/common/SummaryScrollList.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/SummaryTab.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/type/DualTypeWidget.kt",
+      "line": 12,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/type/SingleTypeWidget.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/info/InfoBlockWidget.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/info/InfoOneLineWidget.kt",
+      "line": 14,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/info/InfoWidget.kt",
+      "line": 27,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/marks/MarksScrollingWidget.kt",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/marks/MarksScrollingWidget.kt",
+      "line": 20,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/marks/MarksWidget.kt",
+      "line": 24,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/moves/MoveDescriptionEntry.kt",
+      "line": 12,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/moves/MoveDescriptionScrollList.kt",
+      "line": 13,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/moves/MoveSlotWidget.kt",
+      "line": 27,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/moves/MoveSwapScreen.kt",
+      "line": 29,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/moves/MovesWidget.kt",
+      "line": 25,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/moves/ReorderMoveButton.kt",
+      "line": 15,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/moves/SwapMoveButton.kt",
+      "line": 16,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/stats/StatWidget.kt",
+      "line": 34,
+      "import": "com.mojang.blaze3d.vertex.BufferUploader"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/stats/StatWidget.kt",
+      "line": 37,
+      "import": "com.mojang.blaze3d.vertex.Tesselator"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/stats/StatWidget.kt",
+      "line": 38,
+      "import": "com.mojang.blaze3d.vertex.VertexFormat"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/stats/StatWidget.kt",
+      "line": 40,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/stats/features/FriendshipFeatureRenderer.kt",
+      "line": 17,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/summary/widgets/screens/stats/features/FullnessFeatureRenderer.kt",
+      "line": 17,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/atlas/CobblemonAtlas.kt",
+      "line": 12,
+      "import": "net.minecraft.client.resources.TextureAtlasHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/atlas/CobblemonAtlases.kt",
+      "line": 13,
+      "import": "net.minecraft.client.resources.TextureAtlasHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/BerryBlockEntityRenderState.kt",
+      "line": 12,
+      "import": "com.mojang.blaze3d.vertex.VertexBuffer"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/BerryBlockRenderer.kt",
+      "line": 23,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/BerryBlockRenderer.kt",
+      "line": 24,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/CampfireBlockEntityRenderer.kt",
+      "line": 19,
+      "import": "net.minecraft.client.renderer.ItemBlockRenderTypes"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/CampfireBlockEntityRenderer.kt",
+      "line": 20,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/CampfireBlockEntityRenderer.kt",
+      "line": 24,
+      "import": "net.minecraft.client.resources.model.BakedModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/CampfireBlockEntityRenderer.kt",
+      "line": 26,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DiscShelfBlockEntityRenderer.kt",
+      "line": 20,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DiscShelfBlockEntityRenderer.kt",
+      "line": 21,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DiscShelfBlockEntityRenderer.kt",
+      "line": 27,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DiscShelfBlockEntityRenderer.kt",
+      "line": 29,
+      "import": "net.minecraft.world.level.BlockAndTintGetter"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DisplayCaseRenderer.kt",
+      "line": 21,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/FossilAnalyzerRenderer.kt",
+      "line": 17,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/GildedChestBlockRenderer.kt",
+      "line": 17,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/GildedChestBlockRenderer.kt",
+      "line": 18,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HabitatBlockRenderer.kt",
+      "line": 26,
+      "import": "net.minecraft.client.renderer.ItemBlockRenderTypes"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HabitatBlockRenderer.kt",
+      "line": 28,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HabitatBlockRenderer.kt",
+      "line": 29,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HealingMachineRenderer.kt",
+      "line": 16,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/LecternBlockEntityRenderer.kt",
+      "line": 20,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/LecternBlockEntityRenderer.kt",
+      "line": 23,
+      "import": "net.minecraft.client.resources.model.ModelResourceLocation"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/PokeSnackBlockEntityRenderer.kt",
+      "line": 22,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/PokeSnackBlockEntityRenderer.kt",
+      "line": 23,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/RestorationTankRenderer.kt",
+      "line": 26,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/RestorationTankRenderer.kt",
+      "line": 27,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/boat/CobblemonBoatRenderer.kt",
+      "line": 14,
+      "import": "net.minecraft.client.model.BoatModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/boat/CobblemonBoatRenderer.kt",
+      "line": 15,
+      "import": "net.minecraft.client.model.ChestBoatModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/boat/CobblemonBoatRenderer.kt",
+      "line": 17,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/boat/CobblemonBoatRenderer.kt",
+      "line": 22,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/color/AprijuiceItemColorProvider.kt",
+      "line": 13,
+      "import": "net.minecraft.client.color.item.ItemColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/color/PokeBaitItemColorProvider.kt",
+      "line": 12,
+      "import": "net.minecraft.client.color.item.ItemColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/color/PokeSnackItemColorProvider.kt",
+      "line": 13,
+      "import": "net.minecraft.client.color.item.ItemColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/color/PonigiriItemColorProvider.kt",
+      "line": 16,
+      "import": "net.minecraft.client.color.item.ItemColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/color/PonigiriItemColorProvider.kt",
+      "line": 17,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/color/SinisterTeaItemColorProvider.kt",
+      "line": 16,
+      "import": "net.minecraft.client.color.item.ItemColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/color/SinisterTeaItemColorProvider.kt",
+      "line": 17,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/entity/PokeBobberEntityRenderer.kt",
+      "line": 21,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/entity/PokeBobberEntityRenderer.kt",
+      "line": 23,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/generic/GenericBedrockRenderer.kt",
+      "line": 17,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/generic/GenericBedrockRenderer.kt",
+      "line": 18,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/CobblemonBuiltinItemRenderer.kt",
+      "line": 11,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/CobblemonModelPredicateRegistry.kt",
+      "line": 20,
+      "import": "net.minecraft.client.renderer.item.ItemProperties"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/HeldItemRenderer.kt",
+      "line": 22,
+      "import": "net.minecraft.client.renderer.LightTexture"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/HeldItemRenderer.kt",
+      "line": 23,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/HeldItemRenderer.kt",
+      "line": 24,
+      "import": "net.minecraft.client.renderer.entity.ItemRenderer"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/PokemonItemRenderer.kt",
+      "line": 20,
+      "import": "com.mojang.blaze3d.vertex.VertexMultiConsumer"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/PokemonItemRenderer.kt",
+      "line": 21,
+      "import": "net.minecraft.client.renderer.LightTexture"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/PokemonItemRenderer.kt",
+      "line": 22,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/PokemonItemRenderer.kt",
+      "line": 23,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/CobblemonRenderLayers.kt",
+      "line": 13,
+      "import": "com.mojang.blaze3d.vertex.VertexFormat"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/CobblemonRenderLayers.kt",
+      "line": 14,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/CobblemonRenderLayers.kt",
+      "line": 18,
+      "import": "net.minecraft.Util"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/CobblemonRenderLayers.kt",
+      "line": 19,
+      "import": "net.minecraft.client.renderer.RenderStateShard"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PlayerRecallBallRenderer.kt",
+      "line": 15,
+      "import": "net.minecraft.client.model.PlayerModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PlayerRecallBallRenderer.kt",
+      "line": 16,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PokemonOnShoulderRenderer.kt",
+      "line": 29,
+      "import": "net.minecraft.client.model.PlayerModel"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PokemonOnShoulderRenderer.kt",
+      "line": 30,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PokemonOnShoulderRenderer.kt",
+      "line": 31,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PokemonOnShoulderRenderer.kt",
+      "line": 43,
+      "import": "net.minecraft.world.item.ArmorItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/npc/NPCRenderer.kt",
+      "line": 19,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/FirstPersonRecallBallRenderer.kt",
+      "line": 14,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/RecallArmAnimationTracker.kt",
+      "line": 17,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/RecallArmAnimationTracker.kt",
+      "line": 18,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/RecallArmAnimationTracker.kt",
+      "line": 19,
+      "import": "net.minecraft.client.renderer.entity.ItemRenderer"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokeball/PokeBallRenderer.kt",
+      "line": 18,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokeball/PokeBallRenderer.kt",
+      "line": 19,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokeball/PokeBallRenderer.kt",
+      "line": 22,
+      "import": "net.minecraft.client.renderer.entity.ItemRenderer"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/AlphaEyeRenderer.kt",
+      "line": 23,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/AlphaEyeRenderer.kt",
+      "line": 24,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt",
+      "line": 51,
+      "import": "net.minecraft.client.renderer.LightTexture"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt",
+      "line": 52,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt",
+      "line": 53,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt",
+      "line": 55,
+      "import": "net.minecraft.client.renderer.entity.ItemRenderer"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/shader/CobblemonShaders.kt",
+      "line": 14,
+      "import": "net.minecraft.client.renderer.ShaderInstance"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel.kt",
+      "line": 14,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.kt",
+      "line": 50,
+      "import": "com.mojang.blaze3d.vertex.VertexFormat"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.kt",
+      "line": 52,
+      "import": "net.minecraft.Util"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.kt",
+      "line": 54,
+      "import": "net.minecraft.client.renderer.MultiBufferSource"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.kt",
+      "line": 55,
+      "import": "net.minecraft.client.renderer.RenderStateShard"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.kt",
+      "line": 56,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/boat/CobblemonBoatEntity.kt",
+      "line": 25,
+      "import": "net.minecraft.world.entity.vehicle.Boat"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/boat/CobblemonBoatEntity.kt",
+      "line": 28,
+      "import": "net.minecraft.world.level.GameRules"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/fishing/PokeRodFishingBobberEntity.kt",
+      "line": 39,
+      "import": "net.minecraft.advancements.CriteriaTriggers"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/npc/NPCEntity.kt",
+      "line": 73,
+      "import": "net.minecraft.network.protocol.game.DebugPackets"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokeball/EmptyPokeBallEntity.kt",
+      "line": 70,
+      "import": "net.minecraft.world.entity.projectile.ThrowableItemProjectile"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/PokemonEntity.kt",
+      "line": 131,
+      "import": "net.minecraft.network.protocol.game.DebugPackets"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/PokemonEntity.kt",
+      "line": 159,
+      "import": "net.minecraft.world.entity.animal.ShoulderRidingEntity"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/ai/sensors/PokemonItemSensor.kt",
+      "line": 23,
+      "import": "net.minecraft.world.level.GameRules"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/ai/tasks/AttackHostileMobsTask.kt",
+      "line": 20,
+      "import": "net.minecraft.world.entity.monster.Slime"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/ai/tasks/EatGrassTask.kt",
+      "line": 20,
+      "import": "net.minecraft.world.level.GameRules"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/ai/tasks/HarvestSweetBerryBushTask.kt",
+      "line": 22,
+      "import": "net.minecraft.world.level.GameRules"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/integration/jei/cooking/CampfirePotRecipeCategory.kt",
+      "line": 35,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/battle/DireHitItem.kt",
+      "line": 14,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/battle/GuardSpecItem.kt",
+      "line": 14,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/battle/XStatItem.kt",
+      "line": 15,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/BerryItem.kt",
+      "line": 12,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/FriendshipRaisingBerryItem.kt",
+      "line": 23,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/HealingBerryItem.kt",
+      "line": 27,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/PortionHealingBerryItem.kt",
+      "line": 28,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/PPRestoringBerryItem.kt",
+      "line": 28,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/StatusCuringBerryItem.kt",
+      "line": 24,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/components/FoodColourComponent.kt",
+      "line": 15,
+      "import": "net.minecraft.util.FastColor"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/BerryJuiceItem.kt",
+      "line": 26,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/CandyItem.kt",
+      "line": 20,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/ElixirItem.kt",
+      "line": 26,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/ElixirItem.kt",
+      "line": 27,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EnergyRootItem.kt",
+      "line": 27,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EnergyRootItem.kt",
+      "line": 29,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EtherItem.kt",
+      "line": 27,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EtherItem.kt",
+      "line": 28,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EVIncreaseItem.kt",
+      "line": 20,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/FeatherItem.kt",
+      "line": 17,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/FreshStartMochiItem.kt",
+      "line": 16,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/HealPowderItem.kt",
+      "line": 27,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/HyperTrainingItem.kt",
+      "line": 19,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/MintItem.kt",
+      "line": 21,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/MochiItem.kt",
+      "line": 17,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PokerodItem.kt",
+      "line": 32,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PonigiriItem.kt",
+      "line": 20,
+      "import": "net.minecraft.world.item.UseAnim"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PotionItem.kt",
+      "line": 32,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PotionItem.kt",
+      "line": 33,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PPUpItem.kt",
+      "line": 20,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PPUpItem.kt",
+      "line": 21,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/RemedyItem.kt",
+      "line": 28,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/ReviveItem.kt",
+      "line": 32,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/SinisterTeaItem.kt",
+      "line": 21,
+      "import": "net.minecraft.world.item.UseAnim"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/StatusCureItem.kt",
+      "line": 25,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/StatusCureItem.kt",
+      "line": 26,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/VitaminItem.kt",
+      "line": 17,
+      "import": "net.minecraft.world.InteractionResultHolder"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/VitaminItem.kt",
+      "line": 19,
+      "import": "net.minecraft.world.item.ItemNameBlockItem"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokedex/scanner/PokedexUsageContext.kt",
+      "line": 26,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/adapters/CobbledRequirementAdapter.kt",
+      "line": 23,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/adapters/CobbledRequirementAdapter.kt",
+      "line": 26,
+      "import": "net.minecraft.util.LowerCaseEnumTypeAdapterFactory"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/requirements/HeldItemRequirement.kt",
+      "line": 13,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/requirements/OwnerHoldsItemRequirement.kt",
+      "line": 14,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/evolution/adapters/LegacyItemConditionWrapperAdapter.kt",
+      "line": 19,
+      "import": "net.minecraft.advancements.critereon.ItemCustomDataPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/evolution/adapters/LegacyItemConditionWrapperAdapter.kt",
+      "line": 20,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/evolution/adapters/LegacyItemConditionWrapperAdapter.kt",
+      "line": 21,
+      "import": "net.minecraft.advancements.critereon.ItemSubPredicates"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/evolution/adapters/LegacyItemConditionWrapperAdapter.kt",
+      "line": 22,
+      "import": "net.minecraft.advancements.critereon.NbtPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/pokemon/evolution/variants/ItemInteractionEvolution.kt",
+      "line": 17,
+      "import": "net.minecraft.advancements.critereon.ItemPredicate"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/util/adapters/FloatNumberRangeAdapter.kt",
+      "line": 13,
+      "import": "net.minecraft.advancements.critereon.MinMaxBounds"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/ApricornTreeFeature.kt",
+      "line": 30,
+      "import": "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/ApricornTreeFeature.kt",
+      "line": 32,
+      "import": "net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/BerryGroveFeature.kt",
+      "line": 24,
+      "import": "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/BerryGroveFeature.kt",
+      "line": 25,
+      "import": "net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/BerryGroveFeature.kt",
+      "line": 26,
+      "import": "net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/CobblemonConfiguredFeatures.kt",
+      "line": 14,
+      "import": "net.minecraft.world.level.levelgen.feature.ConfiguredFeature"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/MintBlockFeature.kt",
+      "line": 17,
+      "import": "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/MintBlockFeature.kt",
+      "line": 18,
+      "import": "net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/SaccharineTreeFeature.kt",
+      "line": 32,
+      "import": "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/SaccharineTreeFeature.kt",
+      "line": 34,
+      "import": "net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/TypeGemFeature.kt",
+      "line": 21,
+      "import": "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/TypeGemFeature.kt",
+      "line": 22,
+      "import": "net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/gamerules/CobblemonGameRules.kt",
+      "line": 13,
+      "import": "net.minecraft.world.level.GameRules"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/placementmodifier/CobblemonPlacementModifiers.kt",
+      "line": 16,
+      "import": "net.minecraft.world.level.levelgen.placement.PlacementModifierType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/placementmodifier/LocatePredicatePlacementModifier.kt",
+      "line": 19,
+      "import": "net.minecraft.world.level.levelgen.placement.PlacementModifierType"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/ore/CobblemonOreConfiguredFeatures.kt",
+      "line": 14,
+      "import": "net.minecraft.world.level.levelgen.feature.ConfiguredFeature"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/structure/CobblemonFeature.kt",
+      "line": 18,
+      "import": "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/world/feature/structure/CobblemonFeatureConfiguration.kt",
+      "line": 15,
+      "import": "net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration"
+    },
+    {
+      "path": "fabric/src/main/java/com/cobblemon/mod/fabric/mixin/GameRendererMixin.java",
+      "line": 13,
+      "import": "com.mojang.blaze3d.shaders.Program"
+    },
+    {
+      "path": "fabric/src/main/java/com/cobblemon/mod/fabric/mixin/GameRendererMixin.java",
+      "line": 17,
+      "import": "net.minecraft.client.renderer.ShaderInstance"
+    },
+    {
+      "path": "fabric/src/main/java/com/cobblemon/mod/fabric/mixin/GuiMixin.java",
+      "line": 18,
+      "import": "net.minecraft.client.gui.GuiGraphics"
+    },
+    {
+      "path": "fabric/src/main/java/com/cobblemon/mod/fabric/mixin/GuiMixin.java",
+      "line": 19,
+      "import": "net.minecraft.client.gui.LayeredDraw"
+    },
+    {
+      "path": "fabric/src/main/java/com/cobblemon/mod/fabric/mixin/RecipeBookCategoriesMixin.java",
+      "line": 16,
+      "import": "net.minecraft.client.RecipeBookCategories"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt",
+      "line": 78,
+      "import": "net.minecraft.world.level.GameRules"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt",
+      "line": 54,
+      "import": "net.minecraft.client.color.block.BlockColor"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt",
+      "line": 55,
+      "import": "net.minecraft.client.color.item.ItemColor"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt",
+      "line": 60,
+      "import": "net.minecraft.client.renderer.RenderType"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt",
+      "line": 22,
+      "import": "net.minecraft.world.level.storage.loot.IntRange"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt",
+      "line": 31,
+      "import": "net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt",
+      "line": 33,
+      "import": "net.minecraft.world.level.storage.loot.providers.number.ConstantValue"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt",
+      "line": 34,
+      "import": "net.minecraft.world.level.storage.loot.providers.number.UniformGenerator"
+    }
+  ]
+}

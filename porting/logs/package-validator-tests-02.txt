@@ -1,0 +1,11 @@
+test_complete_structural_fixture (test_validate_jar.PackageValidationTests.test_complete_structural_fixture) ... ok
+test_missing_asset_licence_is_rejected (test_validate_jar.PackageValidationTests.test_missing_asset_licence_is_rejected) ... ok
+test_missing_battle_engine_is_rejected (test_validate_jar.PackageValidationTests.test_missing_battle_engine_is_rejected) ... ok
+test_missing_runtime_dependency_is_rejected (test_validate_jar.PackageValidationTests.test_missing_runtime_dependency_is_rejected) ... ok
+test_unsupported_classfile_is_rejected (test_validate_jar.PackageValidationTests.test_unsupported_classfile_is_rejected) ... ok
+test_wrong_minecraft_is_rejected (test_validate_jar.PackageValidationTests.test_wrong_minecraft_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.078s
+
+OK

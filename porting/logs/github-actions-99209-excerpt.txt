@@ -1,0 +1,61 @@
+2026-10-24T20:38:55.1436698Z > Task :fabric:validateAccessWidener FAILED
+2026-10-24T20:38:55.1438378Z Could not find method (setShoulderEntityLeft(Lnet/minecraft/nbt/CompoundTag;)V) in class (net/minecraft/world/entity/player/Player) on line 12
+2026-10-24T20:38:55.1441153Z Could not find method (setShoulderEntityRight(Lnet/minecraft/nbt/CompoundTag;)V) in class (net/minecraft/world/entity/player/Player) on line 13
+2026-10-24T20:38:55.1443427Z Could not find method (respawnEntityOnShoulder(Lnet/minecraft/nbt/CompoundTag;)V) in class (net/minecraft/world/entity/player/Player) on line 14
+2026-10-24T20:38:55.1445718Z Could not find method (getShoulderEntityLeft()Lnet/minecraft/nbt/CompoundTag;) in class (net/minecraft/world/entity/player/Player) on line 15
+2026-10-24T20:38:55.1503979Z Could not find method (getShoulderEntityRight()Lnet/minecraft/nbt/CompoundTag;) in class (net/minecraft/world/entity/player/Player) on line 16
+2026-10-24T20:38:55.1506205Z Could not find field (itemColors:Lnet/minecraft/client/color/item/ItemColors;) in class (net/minecraft/client/Minecraft) on line 18
+2026-10-24T20:38:55.1508179Z Could not find field (origin:Lorg/joml/Vector3f;) in class (net/minecraft/client/model/geom/builders/CubeDefinition) on line 25
+2026-10-24T20:38:55.1510288Z Could not find field (dimensions:Lorg/joml/Vector3f;) in class (net/minecraft/client/model/geom/builders/CubeDefinition) on line 26
+2026-10-24T20:38:55.1512368Z Could not find method (codec()Lcom/mojang/serialization/MapCodec;) in class (net/minecraft/world/level/block/state/BlockBehaviour) on line 37
+2026-10-24T20:38:55.1514358Z Could not find field (compartments:Ljava/util/List;) in class (net/minecraft/world/entity/player/Inventory) on line 40
+2026-10-24T20:38:55.1516428Z Could not find method (calculateParticleLevel(Z)Lnet/minecraft/client/ParticleStatus;) in class (net/minecraft/client/renderer/LevelRenderer) on line 46
+2026-10-24T20:38:55.1519245Z Could not find method (register(Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration;)V) in class (net/minecraft/client/particle/ParticleEngine) on line 47
+2026-10-24T20:38:55.1522782Z Could not find field (textureAtlas:Lnet/minecraft/client/renderer/texture/TextureAtlas;) in class (net/minecraft/client/particle/ParticleEngine) on line 48
+2026-10-24T20:38:55.1525105Z Could not find field (cullingFrustum:Lnet/minecraft/client/renderer/culling/Frustum;) in class (net/minecraft/client/renderer/LevelRenderer) on line 49
+2026-10-24T20:38:55.1527019Z Could not find class (net/minecraft/client/renderer/RenderType$CompositeRenderType) on line 50
+2026-10-24T20:38:55.1528978Z Could not find class (net/minecraft/client/renderer/RenderType$CompositeState) on line 51
+2026-10-24T20:38:55.1532293Z Could not find method (create(Ljava/lang/String;Lcom/mojang/blaze3d/vertex/VertexFormat;Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;IZZLnet/minecraft/client/renderer/RenderType$CompositeState;)Lnet/minecraft/client/renderer/RenderType$CompositeRenderType;) in class (net/minecraft/client/renderer/RenderType) on line 52
+2026-10-24T20:38:55.1535468Z Could not find class (net/minecraft/client/renderer/RenderStateShard$TransparencyStateShard) on line 53
+2026-10-24T20:38:55.1541687Z Could not find field (RENDERTYPE_ENTITY_TRANSLUCENT_EMISSIVE_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 54
+2026-10-24T20:38:55.1544636Z Could not find field (RENDERTYPE_ENTITY_TRANSLUCENT_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 55
+2026-10-24T20:38:55.1547872Z Could not find field (RENDERTYPE_ENTITY_TRANSLUCENT_CULL_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 56
+2026-10-24T20:38:55.1550978Z Could not find field (RENDERTYPE_ENTITY_CUTOUT_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 57
+2026-10-24T20:38:55.1553240Z Could not find class (net/minecraft/client/renderer/RenderStateShard$TextureStateShard) on line 58
+2026-10-24T20:38:55.1555437Z Could not find field (TRANSLUCENT_TRANSPARENCY:Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 59
+2026-10-24T20:38:55.1558175Z Could not find field (NO_TRANSPARENCY:Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 60
+2026-10-24T20:38:55.1560594Z Could not find class (net/minecraft/client/renderer/RenderStateShard$CullStateShard) on line 61
+2026-10-24T20:38:55.1562575Z Could not find field (CULL:Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 62
+2026-10-24T20:38:55.1564581Z Could not find class (net/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard) on line 63
+2026-10-24T20:38:55.1566662Z Could not find field (COLOR_DEPTH_WRITE:Lnet/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 64
+2026-10-24T20:38:55.1568841Z Could not find class (net/minecraft/client/renderer/RenderStateShard$OverlayStateShard) on line 65
+2026-10-24T20:38:55.1571078Z Could not find field (OVERLAY:Lnet/minecraft/client/renderer/RenderStateShard$OverlayStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 66
+2026-10-24T20:38:55.1573889Z Could not find field (RENDERTYPE_CUTOUT_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 67
+2026-10-24T20:38:55.1576883Z Could not find field (LIGHTMAP:Lnet/minecraft/client/renderer/RenderStateShard$LightmapStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 68
+2026-10-24T20:38:55.1579556Z Could not find field (NO_CULL:Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 69
+2026-10-24T20:38:55.1582655Z Could not find field (COLOR_WRITE:Lnet/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 70
+2026-10-24T20:38:55.1585351Z Could not find field (NO_DEPTH_TEST:Lnet/minecraft/client/renderer/RenderStateShard$DepthTestStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 71
+2026-10-24T20:38:55.1587858Z Could not find class (net/minecraft/client/renderer/RenderStateShard$DepthTestStateShard) on line 72
+2026-10-24T20:38:55.1590453Z Could not find field (LEQUAL_DEPTH_TEST:Lnet/minecraft/client/renderer/RenderStateShard$DepthTestStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 73
+2026-10-24T20:38:55.1593284Z Could not find field (GLINT_TRANSPARENCY:Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 74
+2026-10-24T20:38:55.1596220Z Could not find field (ADDITIVE_TRANSPARENCY:Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 75
+2026-10-24T20:38:55.1598481Z Could not find class (net/minecraft/world/item/alchemy/PotionBrewing$Mix) on line 81
+2026-10-24T20:38:55.1600535Z Could not find field (shaderLightDirections:[Lorg/joml/Vector3f;) in class (com/mojang/blaze3d/systems/RenderSystem) on line 87
+2026-10-24T20:38:55.1602707Z Could not find class (net/minecraft/world/entity/npc/VillagerTrades$ItemsForEmeralds) on line 95
+2026-10-24T20:38:55.1605619Z Could not find method (getSprite(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;) in class (net/minecraft/client/resources/TextureAtlasHolder) on line 105
+2026-10-24T20:38:55.1608671Z Could not find field (textureAtlas:Lnet/minecraft/client/renderer/texture/TextureAtlas;) in class (net/minecraft/client/resources/TextureAtlasHolder) on line 106
+2026-10-24T20:38:55.1612076Z Could not find method (register(Lnet/minecraft/world/item/Item;Lnet/minecraft/resources/Identifier;Lnet/minecraft/client/renderer/item/ClampedItemPropertyFunction;)V) in class (net/minecraft/client/renderer/item/ItemProperties) on line 117
+2026-10-24T20:38:55.1615132Z Could not find class (net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard) on line 127
+2026-10-24T20:38:55.1616920Z Could not find class (net/minecraft/client/renderer/RenderStateShard$LightmapStateShard) on line 128
+2026-10-24T20:38:55.1618356Z Could not find class (net/minecraft/client/gui/Font$StringRenderOutput) on line 133
+2026-10-24T20:38:55.1619346Z Could not find field (states:Ljava/util/Map;) in class (net/minecraft/stats/RecipeBookSettings) on line 141
+2026-10-24T20:38:55.1622040Z Could not find method (spawnDestroyParticles(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V) in class (net/minecraft/world/level/block/Block) on line 152
+2026-10-24T20:38:55.1623807Z Could not find method (setupAttackAnimation(Lnet/minecraft/world/entity/LivingEntity;F)V) in class (net/minecraft/client/model/HumanoidModel) on line 156
+2026-10-24T20:38:55.1625012Z Could not find method (poseRightArm(Lnet/minecraft/world/entity/LivingEntity;)V) in class (net/minecraft/client/model/HumanoidModel) on line 157
+2026-10-24T20:38:55.1626297Z Could not find method (poseLeftArm(Lnet/minecraft/world/entity/LivingEntity;)V) in class (net/minecraft/client/model/HumanoidModel) on line 158
+2026-10-24T20:38:55.1627220Z access-widener validation failed for cobblemon-common.accesswidener
+2026-10-24T20:38:55.7494388Z * What went wrong:
+2026-10-24T20:38:55.7498015Z > access-widener validation failed for cobblemon-common.accesswidener
+2026-10-24T20:38:55.7628441Z Caused by: java.lang.RuntimeException: access-widener validation failed for cobblemon-common.accesswidener
+2026-10-24T20:38:55.7806023Z BUILD FAILED in 47s
+2026-10-24T20:38:57.4817905Z Artifact download URL: https://github.com/IdeasInTheWorks/cobblemon-fabric/actions/runs/40130623175/artifacts/12574124716

@@ -1,0 +1,75 @@
+{
+  "assessed_on": "2026-10-24",
+  "timezone": "Europe/London",
+  "latest": {
+    "release": "26.3",
+    "snapshot": "26.4-snapshot-5"
+  },
+  "target": {
+    "id": "26.3",
+    "java": {
+      "component": "java-runtime-epsilon",
+      "majorVersion": 25
+    },
+    "type": "release",
+    "release_time": "2026-09-15T12:23:02+01:00"
+  },
+  "fabric_loader": {
+    "separator": ".",
+    "build": 1,
+    "maven": "net.fabricmc:fabric-loader:0.20.1",
+    "version": "0.20.1",
+    "stable": true
+  },
+  "fabric_api": "0.165.0+26.3",
+  "dependencies": [
+    {
+      "project": "modmenu",
+      "compatibleVersions": 2,
+      "stableVersions": 1,
+      "latestStable": "21.0.0",
+      "versionId": "kyy7dbrZ"
+    },
+    {
+      "project": "jei",
+      "compatibleVersions": 75,
+      "stableVersions": 1,
+      "latestStable": "31.14.0.72",
+      "versionId": "Zebwcvua"
+    },
+    {
+      "project": "lambdynamiclights",
+      "compatibleVersions": 1,
+      "stableVersions": 1,
+      "latestStable": "4.13.0+26.3",
+      "versionId": "rylKnJ4M"
+    },
+    {
+      "project": "debugutils",
+      "compatibleVersions": 1,
+      "stableVersions": 1,
+      "latestStable": "26.2-1.0.9-fabric",
+      "versionId": "wXr8Tsak"
+    },
+    {
+      "project": "c2me-fabric",
+      "compatibleVersions": 9,
+      "stableVersions": 0,
+      "latestStable": null,
+      "versionId": null
+    },
+    {
+      "project": "adorn",
+      "compatibleVersions": 0,
+      "stableVersions": 0,
+      "latestStable": null,
+      "versionId": null
+    }
+  ],
+  "sources": [
+    "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json",
+    "https://meta.fabricmc.net/v2/versions/loader/26.3",
+    "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/maven-metadata.xml",
+    "https://api.modrinth.com/v2/"
+  ]
+}
