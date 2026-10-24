@@ -52,7 +52,7 @@ import net.minecraft.client.gui.Gui
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.screens.ChatScreen
 import net.minecraft.client.renderer.LightTexture
-import net.minecraft.client.renderer.RenderType
+import net.minecraft.client.renderer.rendertype.RenderType
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.util.Mth.ceil

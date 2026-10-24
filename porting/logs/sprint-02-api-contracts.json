@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "target": "26.3",
+  "game_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "scope": "javac signature contracts and identifier wire checks against real target classes; no game launch/gameplay test",
+  "contracts": [
+    "entity resource key builder",
+    "block noCollision",
+    "identifier payload read/write",
+    "entity holder tag test"
+  ],
+  "stdout": "",
+  "stderr": "Note: C:\\Users\\fizzl\\OneDrive\\Documents\\ChatGPT\\Minecraft Mods\\cobblemon-fabric\\scripts\\fixtures\\Minecraft263ApiContracts.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n",
+  "wire_checks_passed": 4,
+  "runtime_stdout": "4 real Minecraft identifier wire-format/round-trip checks passed; no game launch\n",
+  "runtime_stderr": ""
+}

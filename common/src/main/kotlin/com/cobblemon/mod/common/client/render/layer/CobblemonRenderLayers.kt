@@ -10,12 +10,12 @@ package com.cobblemon.mod.common.client.render.layer
 
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.mojang.blaze3d.vertex.DefaultVertexFormat
-import com.mojang.blaze3d.vertex.VertexFormat
-import net.minecraft.client.renderer.RenderType
+import com.mojang.renderpearl.api.vertex.VertexFormat
+import net.minecraft.client.renderer.rendertype.RenderType
 import net.minecraft.resources.Identifier
 import java.util.function.BiFunction
 import java.util.function.Function
-import net.minecraft.Util
+import net.minecraft.util.Util
 import net.minecraft.client.renderer.RenderStateShard
 import net.minecraft.client.renderer.RenderStateShard.*
 

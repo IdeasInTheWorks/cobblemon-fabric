@@ -43,13 +43,13 @@ transitive-accessible method net/minecraft/world/level/block/LeavesBlock updateD
 transitive-accessible method net/minecraft/world/entity/ai/navigation/PathNavigation shouldTargetNextNodeInDirection (Lnet/minecraft/world/phys/Vec3;)Z
 transitive-accessible field net/minecraft/world/effect/MobEffectInstance duration I
 transitive-accessible field net/minecraft/world/effect/MobEffectInstance ambient Z
-transitive-accessible method net/minecraft/client/renderer/LevelRenderer calculateParticleLevel (Z)Lnet/minecraft/client/ParticleStatus;
+transitive-accessible method net/minecraft/client/renderer/LevelRenderer calculateParticleLevel (Z)Lnet/minecraft/server/level/ParticleStatus;
 transitive-accessible method net/minecraft/client/particle/ParticleEngine register (Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration;)V
 transitive-accessible field net/minecraft/client/particle/ParticleEngine textureAtlas Lnet/minecraft/client/renderer/texture/TextureAtlas;
 transitive-accessible field net/minecraft/client/renderer/LevelRenderer cullingFrustum Lnet/minecraft/client/renderer/culling/Frustum;
-transitive-accessible class net/minecraft/client/renderer/RenderType$CompositeRenderType
-transitive-accessible class net/minecraft/client/renderer/RenderType$CompositeState
-transitive-accessible method net/minecraft/client/renderer/RenderType create (Ljava/lang/String;Lcom/mojang/blaze3d/vertex/VertexFormat;Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;IZZLnet/minecraft/client/renderer/RenderType$CompositeState;)Lnet/minecraft/client/renderer/RenderType$CompositeRenderType;
+transitive-accessible class net/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType
+transitive-accessible class net/minecraft/client/renderer/rendertype/RenderType$CompositeState
+transitive-accessible method net/minecraft/client/renderer/rendertype/RenderType create (Ljava/lang/String;Lcom/mojang/renderpearl/api/vertex/VertexFormat;Lcom/mojang/renderpearl/api/vertex/VertexFormat$Mode;IZZLnet/minecraft/client/renderer/rendertype/RenderType$CompositeState;)Lnet/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType;
 transitive-accessible class net/minecraft/client/renderer/RenderStateShard$TransparencyStateShard
 transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_TRANSLUCENT_EMISSIVE_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_TRANSLUCENT_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
@@ -92,7 +92,7 @@ accessible field net/minecraft/client/gui/components/toasts/AdvancementToast BAC
 
 transitive-accessible method net/minecraft/world/entity/ai/behavior/RandomStroll getTargetSwimPos (Lnet/minecraft/world/entity/PathfinderMob;)Lnet/minecraft/world/phys/Vec3;
 
-transitive-accessible class net/minecraft/world/entity/npc/VillagerTrades$ItemsForEmeralds
+transitive-accessible class net/minecraft/world/item/trading/VillagerTrades$ItemsForEmeralds
 transitive-accessible field net/minecraft/server/PlayerAdvancements progress Ljava/util/Map;
 
 transitive-accessible field net/minecraft/world/entity/ai/goal/FollowOwnerGoal startDistance F

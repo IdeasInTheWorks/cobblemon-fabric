@@ -10,7 +10,7 @@ package com.cobblemon.mod.common.advancement.criterion
 
 import com.mojang.serialization.Codec
 import net.minecraft.advancements.critereon.ContextAwarePredicate
-import net.minecraft.advancements.critereon.SimpleCriterionTrigger
+import net.minecraft.advancements.triggers.SimpleCriterionTrigger
 import net.minecraft.server.level.ServerPlayer
 import java.util.*
 

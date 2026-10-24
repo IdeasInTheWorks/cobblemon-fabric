@@ -17,9 +17,9 @@ import com.google.gson.JsonSerializationContext
 import com.google.gson.JsonSerializer
 import com.mojang.serialization.JsonOps
 import net.minecraft.advancements.critereon.ItemCustomDataPredicate
-import net.minecraft.advancements.critereon.ItemPredicate
+import net.minecraft.advancements.predicates.ItemPredicate
 import net.minecraft.advancements.critereon.ItemSubPredicates
-import net.minecraft.advancements.critereon.NbtPredicate
+import net.minecraft.advancements.predicates.NbtPredicate
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries

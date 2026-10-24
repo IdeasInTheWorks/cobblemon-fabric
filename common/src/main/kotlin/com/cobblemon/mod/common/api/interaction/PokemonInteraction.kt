@@ -61,7 +61,7 @@ data class PokemonInteraction(
     lateinit var grouping: Identifier
 
     fun encode(buffer: FriendlyByteBuf) {
-        buffer.writeResourceLocation(grouping)
+        buffer.writeIdentifier(grouping)
         buffer.writeCollection(requirements) { it, requirement ->
             CobblemonRequirementAdapter.encode(requirement, it)
         }
@@ -70,7 +70,7 @@ data class PokemonInteraction(
 
     companion object {
         fun decode(buffer: FriendlyByteBuf): PokemonInteraction {
-            val grouping = buffer.readResourceLocation()
+            val grouping = buffer.readIdentifier()
             val requirements = buffer.readList { it ->
                 CobblemonRequirementAdapter.decode(it)
             }

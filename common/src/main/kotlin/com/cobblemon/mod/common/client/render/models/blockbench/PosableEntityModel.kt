@@ -11,7 +11,7 @@ package com.cobblemon.mod.common.client.render.models.blockbench
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.entity.PosableEntity
 import net.minecraft.client.renderer.texture.OverlayTexture
-import net.minecraft.client.renderer.RenderType
+import net.minecraft.client.renderer.rendertype.RenderType
 import com.mojang.blaze3d.vertex.VertexConsumer
 import net.minecraft.client.renderer.entity.LivingEntityRenderer
 import com.mojang.blaze3d.vertex.PoseStack

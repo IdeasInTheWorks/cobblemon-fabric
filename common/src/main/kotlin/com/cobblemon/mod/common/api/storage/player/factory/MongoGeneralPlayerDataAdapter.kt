@@ -18,7 +18,7 @@ import com.cobblemon.mod.common.util.getPlayer
 import com.cobblemon.mod.common.util.removeIf
 import com.mongodb.client.MongoClient
 import net.minecraft.server.MinecraftServer
-import net.minecraft.server.network.ServerPlayer
+import net.minecraft.server.level.ServerPlayer
 import java.util.UUID
 
 class MongoPlayerDataStoreFactory(mongoClient: MongoClient, databaseName: String) : PlayerInstancedDataFactory<GeneralPlayerData> {

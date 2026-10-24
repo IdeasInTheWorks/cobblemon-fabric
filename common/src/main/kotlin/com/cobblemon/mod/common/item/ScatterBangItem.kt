@@ -14,11 +14,11 @@ package com.cobblemon.mod.common.item
 import com.cobblemon.mod.common.entity.throwable.ScatterBangEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.projectile.thrown.SnowballEntity
-import net.minecraft.item.Item
-import net.minecraft.item.ItemStack
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.ItemStack
 import net.minecraft.sound.SoundCategory
-import net.minecraft.sound.SoundEvents
-import net.minecraft.stat.Stats
+import net.minecraft.sounds.SoundEvents
+import net.minecraft.stats.Stats
 import net.minecraft.util.Hand
 import net.minecraft.util.TypedActionResult
 import net.minecraft.world.World

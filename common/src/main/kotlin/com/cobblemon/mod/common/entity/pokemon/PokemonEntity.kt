@@ -156,7 +156,7 @@ import net.minecraft.world.entity.ai.memory.MemoryStatus
 import net.minecraft.world.entity.ai.sensing.Sensor
 import net.minecraft.world.entity.ai.sensing.SensorType
 import net.minecraft.world.entity.animal.Animal
-import net.minecraft.world.entity.animal.ShoulderRidingEntity
+import net.minecraft.world.entity.animal.parrot.ShoulderRidingEntity
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.entity.vehicle.DismountHelper
 import net.minecraft.world.item.DyeItem

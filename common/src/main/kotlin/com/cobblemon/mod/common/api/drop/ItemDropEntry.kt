@@ -87,14 +87,14 @@ open class ItemDropEntry : DropEntry {
     fun encode(buffer: RegistryFriendlyByteBuf) {
         buffer.writeFloat(this.percentage)
         buffer.writeVarInt(this.quantity)
-        buffer.writeResourceLocation(this.item)
+        buffer.writeIdentifier(this.item)
         buffer.writeNullable(this.quantityRange) { _, it -> buffer.writeVarInt(it.first); buffer.writeVarInt(it.last) }
     }
 
     fun decode(buffer: RegistryFriendlyByteBuf): ItemDropEntry {
         this.percentage = buffer.readFloat()
         this.quantity = buffer.readVarInt()
-        this.item = buffer.readResourceLocation()
+        this.item = buffer.readIdentifier()
         this.quantityRange = buffer.readNullable { buffer.readVarInt()..buffer.readVarInt() }
         return this
     }

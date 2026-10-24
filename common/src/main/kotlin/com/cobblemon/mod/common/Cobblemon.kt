@@ -266,7 +266,7 @@ object Cobblemon {
         }
 
         PlatformEvents.RIGHT_CLICK_ENTITY.subscribe { event ->
-            if (event.player.getItemInHand(event.hand).item is NameTagItem && event.entity.type.`is`(CobblemonEntityTypeTags.CANNOT_HAVE_NAME_TAG)) {
+            if (event.player.getItemInHand(event.hand).item is NameTagItem && event.entity.type.builtInRegistryHolder().`is`(CobblemonEntityTypeTags.CANNOT_HAVE_NAME_TAG)) {
                 event.cancel()
             }
         }
