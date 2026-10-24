@@ -1,6 +1,36 @@
 {
   "schema": 1,
-  "generation": 0,
-  "claims": {},
-  "events": []
+  "generation": 1,
+  "claims": {
+    "RACE-23263caf2384": {
+      "work_id": "RACE-23263caf2384",
+      "owner": "race-agent-a",
+      "branch": "work/coordination-race-test",
+      "scopes": [
+        "__claim_test__/23263caf2384"
+      ],
+      "resources": [],
+      "lease_id": "d8c6ffc3-c66a-43da-832c-c43b22fab92f",
+      "operation_id": "d8c6ffc3-c66a-43da-832c-c43b22fab92f",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-24T21:08:25Z",
+      "heartbeat_at": "2026-10-24T21:08:25Z",
+      "expires_at": "2026-10-24T21:13:25Z",
+      "minutes": 5,
+      "checkpoint": ""
+    }
+  },
+  "events": [
+    {
+      "generation": 1,
+      "at": "2026-10-24T21:08:25Z",
+      "kind": "acquire",
+      "work_id": "RACE-23263caf2384",
+      "owner": "race-agent-a",
+      "lease_id": "d8c6ffc3-c66a-43da-832c-c43b22fab92f",
+      "epoch": 1,
+      "checkpoint": ""
+    }
+  ]
 }
