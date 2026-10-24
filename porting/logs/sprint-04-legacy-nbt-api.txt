@@ -1,0 +1,1522 @@
+Compiled from "SourceFile"
+public final class uq {
+  public static final java.lang.String a;
+
+  public static boolean a(uy, uy, boolean);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: if_acmpne     7
+         5: iconst_1
+         6: ireturn
+         7: aload_0
+         8: ifnonnull     13
+        11: iconst_1
+        12: ireturn
+        13: aload_1
+        14: ifnonnull     19
+        17: iconst_0
+        18: ireturn
+        19: aload_0
+        20: invokeinterface #58,  1           // InterfaceMethod uy.getClass:()Ljava/lang/Class;
+        25: aload_1
+        26: invokeinterface #58,  1           // InterfaceMethod uy.getClass:()Ljava/lang/Class;
+        31: invokevirtual #62                 // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+        34: ifne          39
+        37: iconst_0
+        38: ireturn
+        39: aload_0
+        40: instanceof    #64                 // class ub
+        43: ifeq          135
+        46: aload_0
+        47: checkcast     #64                 // class ub
+        50: astore_3
+        51: aload_1
+        52: checkcast     #64                 // class ub
+        55: astore        5
+        57: aload         5
+        59: invokevirtual #67                 // Method ub.f:()I
+        62: aload_3
+        63: invokevirtual #67                 // Method ub.f:()I
+        66: if_icmpge     71
+        69: iconst_0
+        70: ireturn
+        71: aload_3
+        72: invokevirtual #70                 // Method ub.e:()Ljava/util/Set;
+        75: invokeinterface #76,  1           // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+        80: astore        6
+        82: aload         6
+        84: invokeinterface #82,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+        89: ifeq          133
+        92: aload         6
+        94: invokeinterface #86,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        99: checkcast     #88                 // class java/lang/String
+       102: astore        7
+       104: aload_3
+       105: aload         7
+       107: invokevirtual #91                 // Method ub.c:(Ljava/lang/String;)Luy;
+       110: astore        8
+       112: aload         8
+       114: aload         5
+       116: aload         7
+       118: invokevirtual #91                 // Method ub.c:(Ljava/lang/String;)Luy;
+       121: iload_2
+       122: invokestatic  #93                 // Method a:(Luy;Luy;Z)Z
+       125: ifne          130
+       128: iconst_0
+       129: ireturn
+       130: goto          82
+       133: iconst_1
+       134: ireturn
+       135: aload_0
+       136: instanceof    #95                 // class uh
+       139: ifeq          280
+       142: aload_0
+       143: checkcast     #95                 // class uh
+       146: astore        4
+       148: iload_2
+       149: ifeq          280
+       152: aload_1
+       153: checkcast     #95                 // class uh
+       156: astore        5
+       158: aload         4
+       160: invokevirtual #98                 // Method uh.isEmpty:()Z
+       163: ifeq          172
+       166: aload         5
+       168: invokevirtual #98                 // Method uh.isEmpty:()Z
+       171: ireturn
+       172: aload         5
+       174: invokevirtual #101                // Method uh.size:()I
+       177: aload         4
+       179: invokevirtual #101                // Method uh.size:()I
+       182: if_icmpge     187
+       185: iconst_0
+       186: ireturn
+       187: aload         4
+       189: invokevirtual #102                // Method uh.iterator:()Ljava/util/Iterator;
+       192: astore        6
+       194: aload         6
+       196: invokeinterface #82,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+       201: ifeq          278
+       204: aload         6
+       206: invokeinterface #86,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       211: checkcast     #54                 // class uy
+       214: astore        7
+       216: iconst_0
+       217: istore        8
+       219: aload         5
+       221: invokevirtual #102                // Method uh.iterator:()Ljava/util/Iterator;
+       224: astore        9
+       226: aload         9
+       228: invokeinterface #82,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+       233: ifeq          268
+       236: aload         9
+       238: invokeinterface #86,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       243: checkcast     #54                 // class uy
+       246: astore        10
+       248: aload         7
+       250: aload         10
+       252: iload_2
+       253: invokestatic  #93                 // Method a:(Luy;Luy;Z)Z
+       256: ifeq          265
+       259: iconst_1
+       260: istore        8
+       262: goto          268
+       265: goto          226
+       268: iload         8
+       270: ifne          275
+       273: iconst_0
+       274: ireturn
+       275: goto          194
+       278: iconst_1
+       279: ireturn
+       280: aload_0
+       281: aload_1
+       282: invokeinterface #103,  2          // InterfaceMethod uy.equals:(Ljava/lang/Object;)Z
+       287: ireturn
+
+  public static uf a(java.util.UUID);
+    Code:
+         0: new           #122                // class uf
+         3: dup
+         4: aload_0
+         5: invokestatic  #127                // Method kg.a:(Ljava/util/UUID;)[I
+         8: invokespecial #130                // Method uf."<init>":([I)V
+        11: areturn
+
+  public static java.util.UUID a(uy);
+    Code:
+         0: aload_0
+         1: invokeinterface #135,  1          // InterfaceMethod uy.c:()Lva;
+         6: getstatic     #138                // Field uf.a:Lva;
+         9: if_acmpeq     44
+        12: new           #140                // class java/lang/IllegalArgumentException
+        15: dup
+        16: getstatic     #138                // Field uf.a:Lva;
+        19: invokeinterface #145,  1          // InterfaceMethod va.a:()Ljava/lang/String;
+        24: aload_0
+        25: invokeinterface #135,  1          // InterfaceMethod uy.c:()Lva;
+        30: invokeinterface #145,  1          // InterfaceMethod va.a:()Ljava/lang/String;
+        35: invokedynamic #157,  0            // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        40: invokespecial #160                // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        43: athrow
+        44: aload_0
+        45: checkcast     #122                // class uf
+        48: invokevirtual #163                // Method uf.g:()[I
+        51: astore_1
+        52: aload_1
+        53: arraylength
+        54: iconst_4
+        55: if_icmpeq     73
+        58: new           #140                // class java/lang/IllegalArgumentException
+        61: dup
+        62: aload_1
+        63: arraylength
+        64: invokedynamic #168,  0            // InvokeDynamic #1:makeConcatWithConstants:(I)Ljava/lang/String;
+        69: invokespecial #160                // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        72: athrow
+        73: aload_1
+        74: invokestatic  #173                // Method kg.a:([I)Ljava/util/UUID;
+        77: areturn
+
+  public static java.util.Optional<jd> a(ub, java.lang.String);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokevirtual #179                // Method ub.n:(Ljava/lang/String;)[I
+         5: astore_2
+         6: aload_2
+         7: arraylength
+         8: iconst_3
+         9: if_icmpne     32
+        12: new           #181                // class jd
+        15: dup
+        16: aload_2
+        17: iconst_0
+        18: iaload
+        19: aload_2
+        20: iconst_1
+        21: iaload
+        22: aload_2
+        23: iconst_2
+        24: iaload
+        25: invokespecial #184                // Method jd."<init>":(III)V
+        28: invokestatic  #190                // Method java/util/Optional.of:(Ljava/lang/Object;)Ljava/util/Optional;
+        31: areturn
+        32: invokestatic  #194                // Method java/util/Optional.empty:()Ljava/util/Optional;
+        35: areturn
+
+  public static uy a(jd);
+    Code:
+         0: new           #122                // class uf
+         3: dup
+         4: iconst_3
+         5: newarray       int
+         7: dup
+         8: iconst_0
+         9: aload_0
+        10: invokevirtual #198                // Method jd.u:()I
+        13: iastore
+        14: dup
+        15: iconst_1
+        16: aload_0
+        17: invokevirtual #201                // Method jd.v:()I
+        20: iastore
+        21: dup
+        22: iconst_2
+        23: aload_0
+        24: invokevirtual #204                // Method jd.w:()I
+        27: iastore
+        28: invokespecial #130                // Method uf."<init>":([I)V
+        31: areturn
+
+  public static dtc a(jn<dfy>, ub);
+    Code:
+         0: aload_1
+         1: ldc           #209                // String Name
+         3: bipush        8
+         5: invokevirtual #212                // Method ub.b:(Ljava/lang/String;I)Z
+         8: ifne          18
+        11: getstatic     #217                // Field dga.a:Ldfy;
+        14: invokevirtual #223                // Method dfy.o:()Ldtc;
+        17: areturn
+        18: aload_1
+        19: ldc           #209                // String Name
+        21: invokevirtual #226                // Method ub.l:(Ljava/lang/String;)Ljava/lang/String;
+        24: invokestatic  #231                // Method akr.a:(Ljava/lang/String;)Lakr;
+        27: astore_2
+        28: aload_0
+        29: getstatic     #236                // Field lu.f:Lakq;
+        32: aload_2
+        33: invokestatic  #241                // Method akq.a:(Lakq;Lakr;)Lakq;
+        36: invokeinterface #246,  2          // InterfaceMethod jn.a:(Lakq;)Ljava/util/Optional;
+        41: astore_3
+        42: aload_3
+        43: invokevirtual #247                // Method java/util/Optional.isEmpty:()Z
+        46: ifeq          56
+        49: getstatic     #217                // Field dga.a:Ldfy;
+        52: invokevirtual #223                // Method dfy.o:()Ldtc;
+        55: areturn
+        56: aload_3
+        57: invokevirtual #250                // Method java/util/Optional.get:()Ljava/lang/Object;
+        60: checkcast     #252                // class jm
+        63: invokeinterface #254,  1          // InterfaceMethod jm.a:()Ljava/lang/Object;
+        68: checkcast     #219                // class dfy
+        71: astore        4
+        73: aload         4
+        75: invokevirtual #223                // Method dfy.o:()Ldtc;
+        78: astore        5
+        80: aload_1
+        81: ldc_w         #256                // String Properties
+        84: bipush        10
+        86: invokevirtual #212                // Method ub.b:(Ljava/lang/String;I)Z
+        89: ifeq          176
+        92: aload_1
+        93: ldc_w         #256                // String Properties
+        96: invokevirtual #260                // Method ub.p:(Ljava/lang/String;)Lub;
+        99: astore        6
+       101: aload         4
+       103: invokevirtual #263                // Method dfy.l:()Ldtd;
+       106: astore        7
+       108: aload         6
+       110: invokevirtual #70                 // Method ub.e:()Ljava/util/Set;
+       113: invokeinterface #76,  1           // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+       118: astore        8
+       120: aload         8
+       122: invokeinterface #82,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+       127: ifeq          176
+       130: aload         8
+       132: invokeinterface #86,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       137: checkcast     #88                 // class java/lang/String
+       140: astore        9
+       142: aload         7
+       144: aload         9
+       146: invokevirtual #270                // Method dtd.a:(Ljava/lang/String;)Lduf;
+       149: astore        10
+       151: aload         10
+       153: ifnull        173
+       156: aload         5
+       158: aload         10
+       160: aload         9
+       162: aload         6
+       164: aload_1
+       165: invokestatic  #273                // Method a:(Ldte;Lduf;Ljava/lang/String;Lub;Lub;)Ldte;
+       168: checkcast     #265                // class dtc
+       171: astore        5
+       173: goto          120
+       176: aload         5
+       178: areturn
+
+  public static ub a(dtc);
+    Code:
+         0: new           #64                 // class ub
+         3: dup
+         4: invokespecial #315                // Method ub."<init>":()V
+         7: astore_1
+         8: aload_1
+         9: ldc           #209                // String Name
+        11: getstatic     #320                // Field lt.e:Ljh;
+        14: aload_0
+        15: invokevirtual #323                // Method dtc.b:()Ldfy;
+        18: invokeinterface #328,  2          // InterfaceMethod jh.b:(Ljava/lang/Object;)Lakr;
+        23: invokevirtual #331                // Method akr.toString:()Ljava/lang/String;
+        26: invokevirtual #334                // Method ub.a:(Ljava/lang/String;Ljava/lang/String;)V
+        29: aload_0
+        30: invokevirtual #337                // Method dtc.C:()Ljava/util/Map;
+        33: astore_2
+        34: aload_2
+        35: invokeinterface #338,  1          // InterfaceMethod java/util/Map.isEmpty:()Z
+        40: ifne          134
+        43: new           #64                 // class ub
+        46: dup
+        47: invokespecial #315                // Method ub."<init>":()V
+        50: astore_3
+        51: aload_2
+        52: invokeinterface #341,  1          // InterfaceMethod java/util/Map.entrySet:()Ljava/util/Set;
+        57: invokeinterface #76,  1           // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+        62: astore        4
+        64: aload         4
+        66: invokeinterface #82,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+        71: ifeq          125
+        74: aload         4
+        76: invokeinterface #86,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        81: checkcast     #7                  // class java/util/Map$Entry
+        84: astore        5
+        86: aload         5
+        88: invokeinterface #344,  1          // InterfaceMethod java/util/Map$Entry.getKey:()Ljava/lang/Object;
+        93: checkcast     #286                // class duf
+        96: astore        6
+        98: aload_3
+        99: aload         6
+       101: invokevirtual #346                // Method duf.f:()Ljava/lang/String;
+       104: aload         6
+       106: aload         5
+       108: invokeinterface #349,  1          // InterfaceMethod java/util/Map$Entry.getValue:()Ljava/lang/Object;
+       113: checkcast     #294                // class java/lang/Comparable
+       116: invokestatic  #352                // Method a:(Lduf;Ljava/lang/Comparable;)Ljava/lang/String;
+       119: invokevirtual #334                // Method ub.a:(Ljava/lang/String;Ljava/lang/String;)V
+       122: goto          64
+       125: aload_1
+       126: ldc_w         #256                // String Properties
+       129: aload_3
+       130: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       133: pop
+       134: aload_1
+       135: areturn
+
+  public static ub a(epe);
+    Code:
+         0: new           #64                 // class ub
+         3: dup
+         4: invokespecial #315                // Method ub."<init>":()V
+         7: astore_1
+         8: aload_1
+         9: ldc           #209                // String Name
+        11: getstatic     #362                // Field lt.c:Ljh;
+        14: aload_0
+        15: invokevirtual #367                // Method epe.a:()Lepd;
+        18: invokeinterface #328,  2          // InterfaceMethod jh.b:(Ljava/lang/Object;)Lakr;
+        23: invokevirtual #331                // Method akr.toString:()Ljava/lang/String;
+        26: invokevirtual #334                // Method ub.a:(Ljava/lang/String;Ljava/lang/String;)V
+        29: aload_0
+        30: invokevirtual #368                // Method epe.C:()Ljava/util/Map;
+        33: astore_2
+        34: aload_2
+        35: invokeinterface #338,  1          // InterfaceMethod java/util/Map.isEmpty:()Z
+        40: ifne          134
+        43: new           #64                 // class ub
+        46: dup
+        47: invokespecial #315                // Method ub."<init>":()V
+        50: astore_3
+        51: aload_2
+        52: invokeinterface #341,  1          // InterfaceMethod java/util/Map.entrySet:()Ljava/util/Set;
+        57: invokeinterface #76,  1           // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+        62: astore        4
+        64: aload         4
+        66: invokeinterface #82,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+        71: ifeq          125
+        74: aload         4
+        76: invokeinterface #86,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        81: checkcast     #7                  // class java/util/Map$Entry
+        84: astore        5
+        86: aload         5
+        88: invokeinterface #344,  1          // InterfaceMethod java/util/Map$Entry.getKey:()Ljava/lang/Object;
+        93: checkcast     #286                // class duf
+        96: astore        6
+        98: aload_3
+        99: aload         6
+       101: invokevirtual #346                // Method duf.f:()Ljava/lang/String;
+       104: aload         6
+       106: aload         5
+       108: invokeinterface #349,  1          // InterfaceMethod java/util/Map$Entry.getValue:()Ljava/lang/Object;
+       113: checkcast     #294                // class java/lang/Comparable
+       116: invokestatic  #352                // Method a:(Lduf;Ljava/lang/Comparable;)Ljava/lang/String;
+       119: invokevirtual #334                // Method ub.a:(Ljava/lang/String;Ljava/lang/String;)V
+       122: goto          64
+       125: aload_1
+       126: ldc_w         #256                // String Properties
+       129: aload_3
+       130: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       133: pop
+       134: aload_1
+       135: areturn
+
+  public static java.lang.String b(uy);
+    Code:
+         0: aload_0
+         1: iconst_0
+         2: invokestatic  #379                // Method a:(Luy;Z)Ljava/lang/String;
+         5: areturn
+
+  public static java.lang.String a(uy, boolean);
+    Code:
+         0: new           #381                // class java/lang/StringBuilder
+         3: dup
+         4: invokespecial #382                // Method java/lang/StringBuilder."<init>":()V
+         7: aload_0
+         8: iconst_0
+         9: iload_1
+        10: invokestatic  #385                // Method a:(Ljava/lang/StringBuilder;Luy;IZ)Ljava/lang/StringBuilder;
+        13: invokevirtual #386                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        16: areturn
+
+  public static java.lang.StringBuilder a(java.lang.StringBuilder, uy, int, boolean);
+    Code:
+         0: aload_1
+         1: invokeinterface #389,  1          // InterfaceMethod uy.b:()B
+         6: tableswitch   { // 0 to 12
+                       0: 81
+                       1: 72
+                       2: 72
+                       3: 72
+                       4: 72
+                       5: 72
+                       6: 72
+                       7: 84
+                       8: 72
+                       9: 291
+                      10: 732
+                      11: 459
+                      12: 978
+                 default: 1253
+            }
+        72: aload_0
+        73: aload_1
+        74: invokevirtual #393                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+        77: pop
+        78: goto          1261
+        81: goto          1261
+        84: aload_1
+        85: checkcast     #395                // class ty
+        88: astore        4
+        90: aload         4
+        92: invokevirtual #398                // Method ty.e:()[B
+        95: astore        5
+        97: aload         5
+        99: arraylength
+       100: istore        6
+       102: iload_2
+       103: aload_0
+       104: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       107: ldc_w         #403                // String byte[
+       110: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       113: iload         6
+       115: invokevirtual #409                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+       118: ldc_w         #411                // String ] {\n
+       121: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       124: pop
+       125: iload_3
+       126: ifeq          256
+       129: iload_2
+       130: iconst_1
+       131: iadd
+       132: aload_0
+       133: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       136: pop
+       137: iconst_0
+       138: istore        7
+       140: iload         7
+       142: aload         5
+       144: arraylength
+       145: if_icmpge     253
+       148: iload         7
+       150: ifeq          160
+       153: aload_0
+       154: bipush        44
+       156: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       159: pop
+       160: iload         7
+       162: bipush        16
+       164: irem
+       165: ifne          202
+       168: iload         7
+       170: bipush        16
+       172: idiv
+       173: ifle          202
+       176: aload_0
+       177: bipush        10
+       179: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       182: pop
+       183: iload         7
+       185: aload         5
+       187: arraylength
+       188: if_icmpge     214
+       191: iload_2
+       192: iconst_1
+       193: iadd
+       194: aload_0
+       195: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       198: pop
+       199: goto          214
+       202: iload         7
+       204: ifeq          214
+       207: aload_0
+       208: bipush        32
+       210: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       213: pop
+       214: aload_0
+       215: getstatic     #422                // Field java/util/Locale.ROOT:Ljava/util/Locale;
+       218: ldc_w         #424                // String 0x%02X
+       221: iconst_1
+       222: anewarray     #4                  // class java/lang/Object
+       225: dup
+       226: iconst_0
+       227: aload         5
+       229: iload         7
+       231: baload
+       232: sipush        255
+       235: iand
+       236: invokestatic  #430                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       239: aastore
+       240: invokestatic  #434                // Method java/lang/String.format:(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+       243: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       246: pop
+       247: iinc          7, 1
+       250: goto          140
+       253: goto          270
+       256: iload_2
+       257: iconst_1
+       258: iadd
+       259: aload_0
+       260: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       263: ldc_w         #436                // String  // Skipped, supply withBinaryBlobs true
+       266: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       269: pop
+       270: aload_0
+       271: bipush        10
+       273: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       276: pop
+       277: iload_2
+       278: aload_0
+       279: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       282: bipush        125
+       284: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       287: pop
+       288: goto          1261
+       291: aload_1
+       292: checkcast     #95                 // class uh
+       295: astore        4
+       297: aload         4
+       299: invokevirtual #101                // Method uh.size:()I
+       302: istore        5
+       304: aload         4
+       306: invokevirtual #438                // Method uh.f:()B
+       309: istore        6
+       311: iload         6
+       313: ifne          322
+       316: ldc_w         #440                // String undefined
+       319: goto          332
+       322: iload         6
+       324: invokestatic  #445                // Method vb.a:(I)Lva;
+       327: invokeinterface #447,  1          // InterfaceMethod va.b:()Ljava/lang/String;
+       332: astore        7
+       334: iload_2
+       335: aload_0
+       336: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       339: ldc_w         #449                // String list<
+       342: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       345: aload         7
+       347: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       350: ldc_w         #451                // String >[
+       353: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       356: iload         5
+       358: invokevirtual #409                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+       361: ldc_w         #453                // String ] [
+       364: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       367: pop
+       368: iload         5
+       370: ifeq          380
+       373: aload_0
+       374: bipush        10
+       376: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       379: pop
+       380: iconst_0
+       381: istore        8
+       383: iload         8
+       385: iload         5
+       387: if_icmpge     433
+       390: iload         8
+       392: ifeq          403
+       395: aload_0
+       396: ldc_w         #455                // String ,\n
+       399: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       402: pop
+       403: iload_2
+       404: iconst_1
+       405: iadd
+       406: aload_0
+       407: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       410: pop
+       411: aload_0
+       412: aload         4
+       414: iload         8
+       416: invokevirtual #458                // Method uh.k:(I)Luy;
+       419: iload_2
+       420: iconst_1
+       421: iadd
+       422: iload_3
+       423: invokestatic  #385                // Method a:(Ljava/lang/StringBuilder;Luy;IZ)Ljava/lang/StringBuilder;
+       426: pop
+       427: iinc          8, 1
+       430: goto          383
+       433: iload         5
+       435: ifeq          445
+       438: aload_0
+       439: bipush        10
+       441: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       444: pop
+       445: iload_2
+       446: aload_0
+       447: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       450: bipush        93
+       452: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       455: pop
+       456: goto          1261
+       459: aload_1
+       460: checkcast     #122                // class uf
+       463: astore        4
+       465: aload         4
+       467: invokevirtual #163                // Method uf.g:()[I
+       470: astore        5
+       472: iconst_0
+       473: istore        6
+       475: aload         5
+       477: astore        7
+       479: aload         7
+       481: arraylength
+       482: istore        8
+       484: iconst_0
+       485: istore        9
+       487: iload         9
+       489: iload         8
+       491: if_icmpge     538
+       494: aload         7
+       496: iload         9
+       498: iaload
+       499: istore        10
+       501: iload         6
+       503: getstatic     #422                // Field java/util/Locale.ROOT:Ljava/util/Locale;
+       506: ldc_w         #460                // String %X
+       509: iconst_1
+       510: anewarray     #4                  // class java/lang/Object
+       513: dup
+       514: iconst_0
+       515: iload         10
+       517: invokestatic  #430                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       520: aastore
+       521: invokestatic  #434                // Method java/lang/String.format:(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+       524: invokevirtual #463                // Method java/lang/String.length:()I
+       527: invokestatic  #469                // Method java/lang/Math.max:(II)I
+       530: istore        6
+       532: iinc          9, 1
+       535: goto          487
+       538: aload         5
+       540: arraylength
+       541: istore        7
+       543: iload_2
+       544: aload_0
+       545: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       548: ldc_w         #471                // String int[
+       551: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       554: iload         7
+       556: invokevirtual #409                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+       559: ldc_w         #411                // String ] {\n
+       562: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       565: pop
+       566: iload_3
+       567: ifeq          697
+       570: iload_2
+       571: iconst_1
+       572: iadd
+       573: aload_0
+       574: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       577: pop
+       578: iconst_0
+       579: istore        8
+       581: iload         8
+       583: aload         5
+       585: arraylength
+       586: if_icmpge     694
+       589: iload         8
+       591: ifeq          601
+       594: aload_0
+       595: bipush        44
+       597: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       600: pop
+       601: iload         8
+       603: bipush        16
+       605: irem
+       606: ifne          643
+       609: iload         8
+       611: bipush        16
+       613: idiv
+       614: ifle          643
+       617: aload_0
+       618: bipush        10
+       620: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       623: pop
+       624: iload         8
+       626: aload         5
+       628: arraylength
+       629: if_icmpge     655
+       632: iload_2
+       633: iconst_1
+       634: iadd
+       635: aload_0
+       636: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       639: pop
+       640: goto          655
+       643: iload         8
+       645: ifeq          655
+       648: aload_0
+       649: bipush        32
+       651: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       654: pop
+       655: aload_0
+       656: getstatic     #422                // Field java/util/Locale.ROOT:Ljava/util/Locale;
+       659: iload         6
+       661: invokedynamic #474,  0            // InvokeDynamic #2:makeConcatWithConstants:(I)Ljava/lang/String;
+       666: iconst_1
+       667: anewarray     #4                  // class java/lang/Object
+       670: dup
+       671: iconst_0
+       672: aload         5
+       674: iload         8
+       676: iaload
+       677: invokestatic  #430                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       680: aastore
+       681: invokestatic  #434                // Method java/lang/String.format:(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+       684: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       687: pop
+       688: iinc          8, 1
+       691: goto          581
+       694: goto          711
+       697: iload_2
+       698: iconst_1
+       699: iadd
+       700: aload_0
+       701: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       704: ldc_w         #436                // String  // Skipped, supply withBinaryBlobs true
+       707: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       710: pop
+       711: aload_0
+       712: bipush        10
+       714: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       717: pop
+       718: iload_2
+       719: aload_0
+       720: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       723: bipush        125
+       725: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       728: pop
+       729: goto          1261
+       732: aload_1
+       733: checkcast     #64                 // class ub
+       736: astore        4
+       738: aload         4
+       740: invokevirtual #70                 // Method ub.e:()Ljava/util/Set;
+       743: invokestatic  #480                // Method com/google/common/collect/Lists.newArrayList:(Ljava/lang/Iterable;)Ljava/util/ArrayList;
+       746: astore        5
+       748: aload         5
+       750: invokestatic  #486                // Method java/util/Collections.sort:(Ljava/util/List;)V
+       753: iload_2
+       754: aload_0
+       755: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       758: bipush        123
+       760: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       763: pop
+       764: aload_0
+       765: invokevirtual #487                // Method java/lang/StringBuilder.length:()I
+       768: aload_0
+       769: ldc_w         #489                // String \n
+       772: invokevirtual #493                // Method java/lang/StringBuilder.lastIndexOf:(Ljava/lang/String;)I
+       775: isub
+       776: iconst_2
+       777: iload_2
+       778: iconst_1
+       779: iadd
+       780: imul
+       781: if_icmple     799
+       784: aload_0
+       785: bipush        10
+       787: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       790: pop
+       791: iload_2
+       792: iconst_1
+       793: iadd
+       794: aload_0
+       795: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       798: pop
+       799: aload         5
+       801: invokeinterface #501,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+       806: invokedynamic #516,  0            // InvokeDynamic #3:applyAsInt:()Ljava/util/function/ToIntFunction;
+       811: invokeinterface #522,  2          // InterfaceMethod java/util/stream/Stream.mapToInt:(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
+       816: invokeinterface #527,  1          // InterfaceMethod java/util/stream/IntStream.max:()Ljava/util/OptionalInt;
+       821: iconst_0
+       822: invokevirtual #533                // Method java/util/OptionalInt.orElse:(I)I
+       825: istore        6
+       827: ldc_w         #535                // String
+       830: iload         6
+       832: invokestatic  #541                // Method com/google/common/base/Strings.repeat:(Ljava/lang/String;I)Ljava/lang/String;
+       835: astore        7
+       837: iconst_0
+       838: istore        8
+       840: iload         8
+       842: aload         5
+       844: invokeinterface #542,  1          // InterfaceMethod java/util/List.size:()I
+       849: if_icmpge     947
+       852: iload         8
+       854: ifeq          865
+       857: aload_0
+       858: ldc_w         #455                // String ,\n
+       861: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       864: pop
+       865: aload         5
+       867: iload         8
+       869: invokeinterface #545,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+       874: checkcast     #88                 // class java/lang/String
+       877: astore        9
+       879: iload_2
+       880: iconst_1
+       881: iadd
+       882: aload_0
+       883: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       886: bipush        34
+       888: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       891: aload         9
+       893: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       896: bipush        34
+       898: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       901: aload         7
+       903: iconst_0
+       904: aload         7
+       906: invokevirtual #463                // Method java/lang/String.length:()I
+       909: aload         9
+       911: invokevirtual #463                // Method java/lang/String.length:()I
+       914: isub
+       915: invokevirtual #548                // Method java/lang/StringBuilder.append:(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+       918: ldc_w         #550                // String :
+       921: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       924: pop
+       925: aload_0
+       926: aload         4
+       928: aload         9
+       930: invokevirtual #91                 // Method ub.c:(Ljava/lang/String;)Luy;
+       933: iload_2
+       934: iconst_1
+       935: iadd
+       936: iload_3
+       937: invokestatic  #385                // Method a:(Ljava/lang/StringBuilder;Luy;IZ)Ljava/lang/StringBuilder;
+       940: pop
+       941: iinc          8, 1
+       944: goto          840
+       947: aload         5
+       949: invokeinterface #551,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+       954: ifne          964
+       957: aload_0
+       958: bipush        10
+       960: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       963: pop
+       964: iload_2
+       965: aload_0
+       966: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+       969: bipush        125
+       971: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       974: pop
+       975: goto          1261
+       978: aload_1
+       979: checkcast     #553                // class ui
+       982: astore        4
+       984: aload         4
+       986: invokevirtual #556                // Method ui.g:()[J
+       989: astore        5
+       991: lconst_0
+       992: lstore        6
+       994: aload         5
+       996: astore        8
+       998: aload         8
+      1000: arraylength
+      1001: istore        9
+      1003: iconst_0
+      1004: istore        10
+      1006: iload         10
+      1008: iload         9
+      1010: if_icmpge     1058
+      1013: aload         8
+      1015: iload         10
+      1017: laload
+      1018: lstore        11
+      1020: lload         6
+      1022: getstatic     #422                // Field java/util/Locale.ROOT:Ljava/util/Locale;
+      1025: ldc_w         #460                // String %X
+      1028: iconst_1
+      1029: anewarray     #4                  // class java/lang/Object
+      1032: dup
+      1033: iconst_0
+      1034: lload         11
+      1036: invokestatic  #563                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      1039: aastore
+      1040: invokestatic  #434                // Method java/lang/String.format:(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+      1043: invokevirtual #463                // Method java/lang/String.length:()I
+      1046: i2l
+      1047: invokestatic  #566                // Method java/lang/Math.max:(JJ)J
+      1050: lstore        6
+      1052: iinc          10, 1
+      1055: goto          1006
+      1058: aload         5
+      1060: arraylength
+      1061: i2l
+      1062: lstore        8
+      1064: iload_2
+      1065: aload_0
+      1066: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+      1069: ldc_w         #568                // String long[
+      1072: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      1075: lload         8
+      1077: invokevirtual #571                // Method java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+      1080: ldc_w         #411                // String ] {\n
+      1083: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      1086: pop
+      1087: iload_3
+      1088: ifeq          1218
+      1091: iload_2
+      1092: iconst_1
+      1093: iadd
+      1094: aload_0
+      1095: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+      1098: pop
+      1099: iconst_0
+      1100: istore        10
+      1102: iload         10
+      1104: aload         5
+      1106: arraylength
+      1107: if_icmpge     1215
+      1110: iload         10
+      1112: ifeq          1122
+      1115: aload_0
+      1116: bipush        44
+      1118: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      1121: pop
+      1122: iload         10
+      1124: bipush        16
+      1126: irem
+      1127: ifne          1164
+      1130: iload         10
+      1132: bipush        16
+      1134: idiv
+      1135: ifle          1164
+      1138: aload_0
+      1139: bipush        10
+      1141: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      1144: pop
+      1145: iload         10
+      1147: aload         5
+      1149: arraylength
+      1150: if_icmpge     1176
+      1153: iload_2
+      1154: iconst_1
+      1155: iadd
+      1156: aload_0
+      1157: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+      1160: pop
+      1161: goto          1176
+      1164: iload         10
+      1166: ifeq          1176
+      1169: aload_0
+      1170: bipush        32
+      1172: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      1175: pop
+      1176: aload_0
+      1177: getstatic     #422                // Field java/util/Locale.ROOT:Ljava/util/Locale;
+      1180: lload         6
+      1182: invokedynamic #574,  0            // InvokeDynamic #2:makeConcatWithConstants:(J)Ljava/lang/String;
+      1187: iconst_1
+      1188: anewarray     #4                  // class java/lang/Object
+      1191: dup
+      1192: iconst_0
+      1193: aload         5
+      1195: iload         10
+      1197: laload
+      1198: invokestatic  #563                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      1201: aastore
+      1202: invokestatic  #434                // Method java/lang/String.format:(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+      1205: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      1208: pop
+      1209: iinc          10, 1
+      1212: goto          1102
+      1215: goto          1232
+      1218: iload_2
+      1219: iconst_1
+      1220: iadd
+      1221: aload_0
+      1222: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+      1225: ldc_w         #436                // String  // Skipped, supply withBinaryBlobs true
+      1228: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      1231: pop
+      1232: aload_0
+      1233: bipush        10
+      1235: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      1238: pop
+      1239: iload_2
+      1240: aload_0
+      1241: invokestatic  #401                // Method a:(ILjava/lang/StringBuilder;)Ljava/lang/StringBuilder;
+      1244: bipush        125
+      1246: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      1249: pop
+      1250: goto          1261
+      1253: aload_0
+      1254: ldc_w         #576                // String <UNKNOWN :(>
+      1257: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      1260: pop
+      1261: aload_0
+      1262: areturn
+
+  public static wz c(uy);
+    Code:
+         0: new           #605                // class vd
+         3: dup
+         4: ldc_w         #607                // String
+         7: invokespecial #608                // Method vd."<init>":(Ljava/lang/String;)V
+        10: aload_0
+        11: invokevirtual #610                // Method vd.a:(Luy;)Lwz;
+        14: areturn
+
+  public static java.lang.String a(ub);
+    Code:
+         0: new           #613                // class uu
+         3: dup
+         4: invokespecial #614                // Method uu."<init>":()V
+         7: aload_0
+         8: invokestatic  #617                // Method b:(Lub;)Lub;
+        11: invokevirtual #619                // Method uu.a:(Luy;)Ljava/lang/String;
+        14: areturn
+
+  public static ub a(java.lang.String) throws com.mojang.brigadier.exceptions.CommandSyntaxException;
+    Code:
+         0: aload_0
+         1: invokestatic  #625                // Method uz.a:(Ljava/lang/String;)Lub;
+         4: invokestatic  #627                // Method c:(Lub;)Lub;
+         7: areturn
+
+  static ub b(ub);
+    Code:
+         0: aload_0
+         1: ldc_w         #629                // String palettes
+         4: bipush        9
+         6: invokevirtual #212                // Method ub.b:(Ljava/lang/String;I)Z
+         9: istore_2
+        10: iload_2
+        11: ifeq          31
+        14: aload_0
+        15: ldc_w         #629                // String palettes
+        18: bipush        9
+        20: invokevirtual #632                // Method ub.c:(Ljava/lang/String;I)Luh;
+        23: iconst_0
+        24: invokevirtual #635                // Method uh.b:(I)Luh;
+        27: astore_1
+        28: goto          41
+        31: aload_0
+        32: ldc_w         #637                // String palette
+        35: bipush        10
+        37: invokevirtual #632                // Method ub.c:(Ljava/lang/String;I)Luh;
+        40: astore_1
+        41: aload_1
+        42: invokevirtual #638                // Method uh.stream:()Ljava/util/stream/Stream;
+        45: ldc           #64                 // class ub
+        47: dup
+        48: invokestatic  #644                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        51: pop
+        52: invokedynamic #657,  0            // InvokeDynamic #4:apply:(Ljava/lang/Class;)Ljava/util/function/Function;
+        57: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        62: invokedynamic #668,  0            // InvokeDynamic #5:apply:()Ljava/util/function/Function;
+        67: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        72: invokedynamic #676,  0            // InvokeDynamic #6:apply:()Ljava/util/function/Function;
+        77: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        82: invokedynamic #684,  0            // InvokeDynamic #7:get:()Ljava/util/function/Supplier;
+        87: invokestatic  #690                // Method java/util/stream/Collectors.toCollection:(Ljava/util/function/Supplier;)Ljava/util/stream/Collector;
+        90: invokeinterface #694,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+        95: checkcast     #95                 // class uh
+        98: astore_3
+        99: aload_0
+       100: ldc_w         #637                // String palette
+       103: aload_3
+       104: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       107: pop
+       108: iload_2
+       109: ifeq          177
+       112: new           #95                 // class uh
+       115: dup
+       116: invokespecial #678                // Method uh."<init>":()V
+       119: astore        4
+       121: aload_0
+       122: ldc_w         #629                // String palettes
+       125: bipush        9
+       127: invokevirtual #632                // Method ub.c:(Ljava/lang/String;I)Luh;
+       130: astore        5
+       132: aload         5
+       134: invokevirtual #638                // Method uh.stream:()Ljava/util/stream/Stream;
+       137: ldc           #95                 // class uh
+       139: dup
+       140: invokestatic  #644                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+       143: pop
+       144: invokedynamic #697,  0            // InvokeDynamic #8:apply:(Ljava/lang/Class;)Ljava/util/function/Function;
+       149: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       154: aload_3
+       155: aload         4
+       157: invokedynamic #709,  0            // InvokeDynamic #9:accept:(Luh;Luh;)Ljava/util/function/Consumer;
+       162: invokeinterface #713,  2          // InterfaceMethod java/util/stream/Stream.forEach:(Ljava/util/function/Consumer;)V
+       167: aload_0
+       168: ldc_w         #629                // String palettes
+       171: aload         4
+       173: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       176: pop
+       177: aload_0
+       178: ldc_w         #715                // String entities
+       181: bipush        9
+       183: invokevirtual #212                // Method ub.b:(Ljava/lang/String;I)Z
+       186: ifeq          266
+       189: aload_0
+       190: ldc_w         #715                // String entities
+       193: bipush        10
+       195: invokevirtual #632                // Method ub.c:(Ljava/lang/String;I)Luh;
+       198: astore        4
+       200: aload         4
+       202: invokevirtual #638                // Method uh.stream:()Ljava/util/stream/Stream;
+       205: ldc           #64                 // class ub
+       207: dup
+       208: invokestatic  #644                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+       211: pop
+       212: invokedynamic #657,  0            // InvokeDynamic #4:apply:(Ljava/lang/Class;)Ljava/util/function/Function;
+       217: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       222: invokedynamic #721,  0            // InvokeDynamic #10:apply:()Ljava/util/function/Function;
+       227: getstatic     #723                // Field c:Ljava/util/Comparator;
+       230: invokestatic  #729                // InterfaceMethod java/util/Comparator.comparing:(Ljava/util/function/Function;Ljava/util/Comparator;)Ljava/util/Comparator;
+       233: invokeinterface #733,  2          // InterfaceMethod java/util/stream/Stream.sorted:(Ljava/util/Comparator;)Ljava/util/stream/Stream;
+       238: invokedynamic #684,  0            // InvokeDynamic #7:get:()Ljava/util/function/Supplier;
+       243: invokestatic  #690                // Method java/util/stream/Collectors.toCollection:(Ljava/util/function/Supplier;)Ljava/util/stream/Collector;
+       246: invokeinterface #694,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       251: checkcast     #95                 // class uh
+       254: astore        5
+       256: aload_0
+       257: ldc_w         #715                // String entities
+       260: aload         5
+       262: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       265: pop
+       266: aload_0
+       267: ldc_w         #735                // String blocks
+       270: bipush        10
+       272: invokevirtual #632                // Method ub.c:(Ljava/lang/String;I)Luh;
+       275: invokevirtual #638                // Method uh.stream:()Ljava/util/stream/Stream;
+       278: ldc           #64                 // class ub
+       280: dup
+       281: invokestatic  #644                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+       284: pop
+       285: invokedynamic #657,  0            // InvokeDynamic #4:apply:(Ljava/lang/Class;)Ljava/util/function/Function;
+       290: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       295: invokedynamic #739,  0            // InvokeDynamic #11:apply:()Ljava/util/function/Function;
+       300: getstatic     #741                // Field b:Ljava/util/Comparator;
+       303: invokestatic  #729                // InterfaceMethod java/util/Comparator.comparing:(Ljava/util/function/Function;Ljava/util/Comparator;)Ljava/util/Comparator;
+       306: invokeinterface #733,  2          // InterfaceMethod java/util/stream/Stream.sorted:(Ljava/util/Comparator;)Ljava/util/stream/Stream;
+       311: aload_3
+       312: invokedynamic #750,  0            // InvokeDynamic #12:accept:(Luh;)Ljava/util/function/Consumer;
+       317: invokeinterface #754,  2          // InterfaceMethod java/util/stream/Stream.peek:(Ljava/util/function/Consumer;)Ljava/util/stream/Stream;
+       322: invokedynamic #684,  0            // InvokeDynamic #7:get:()Ljava/util/function/Supplier;
+       327: invokestatic  #690                // Method java/util/stream/Collectors.toCollection:(Ljava/util/function/Supplier;)Ljava/util/stream/Collector;
+       330: invokeinterface #694,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       335: checkcast     #95                 // class uh
+       338: astore        4
+       340: aload_0
+       341: ldc           #23                 // String data
+       343: aload         4
+       345: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       348: pop
+       349: aload_0
+       350: ldc_w         #735                // String blocks
+       353: invokevirtual #757                // Method ub.r:(Ljava/lang/String;)V
+       356: aload_0
+       357: areturn
+
+  static ub c(ub);
+    Code:
+         0: aload_0
+         1: ldc_w         #637                // String palette
+         4: bipush        8
+         6: invokevirtual #632                // Method ub.c:(Ljava/lang/String;I)Luh;
+         9: astore_1
+        10: aload_1
+        11: invokevirtual #638                // Method uh.stream:()Ljava/util/stream/Stream;
+        14: ldc_w         #670                // class uw
+        17: dup
+        18: invokestatic  #644                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        21: pop
+        22: invokedynamic #760,  0            // InvokeDynamic #13:apply:(Ljava/lang/Class;)Ljava/util/function/Function;
+        27: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        32: invokedynamic #767,  0            // InvokeDynamic #14:apply:()Ljava/util/function/Function;
+        37: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        42: invokestatic  #772                // InterfaceMethod java/util/function/Function.identity:()Ljava/util/function/Function;
+        45: invokedynamic #777,  0            // InvokeDynamic #15:apply:()Ljava/util/function/Function;
+        50: invokestatic  #783                // Method com/google/common/collect/ImmutableMap.toImmutableMap:(Ljava/util/function/Function;Ljava/util/function/Function;)Ljava/util/stream/Collector;
+        53: invokeinterface #694,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+        58: checkcast     #9                  // class java/util/Map
+        61: astore_2
+        62: aload_0
+        63: ldc_w         #629                // String palettes
+        66: bipush        9
+        68: invokevirtual #212                // Method ub.b:(Ljava/lang/String;I)Z
+        71: ifeq          148
+        74: aload_0
+        75: ldc_w         #629                // String palettes
+        78: aload_0
+        79: ldc_w         #629                // String palettes
+        82: bipush        10
+        84: invokevirtual #632                // Method ub.c:(Ljava/lang/String;I)Luh;
+        87: invokevirtual #638                // Method uh.stream:()Ljava/util/stream/Stream;
+        90: ldc           #64                 // class ub
+        92: dup
+        93: invokestatic  #644                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        96: pop
+        97: invokedynamic #657,  0            // InvokeDynamic #4:apply:(Ljava/lang/Class;)Ljava/util/function/Function;
+       102: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       107: aload_2
+       108: invokedynamic #790,  0            // InvokeDynamic #16:apply:(Ljava/util/Map;)Ljava/util/function/Function;
+       113: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       118: invokedynamic #684,  0            // InvokeDynamic #7:get:()Ljava/util/function/Supplier;
+       123: invokestatic  #690                // Method java/util/stream/Collectors.toCollection:(Ljava/util/function/Supplier;)Ljava/util/stream/Collector;
+       126: invokeinterface #694,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       131: checkcast     #54                 // class uy
+       134: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       137: pop
+       138: aload_0
+       139: ldc_w         #637                // String palette
+       142: invokevirtual #757                // Method ub.r:(Ljava/lang/String;)V
+       145: goto          183
+       148: aload_0
+       149: ldc_w         #637                // String palette
+       152: aload_2
+       153: invokeinterface #794,  1          // InterfaceMethod java/util/Map.values:()Ljava/util/Collection;
+       158: invokeinterface #797,  1          // InterfaceMethod java/util/Collection.stream:()Ljava/util/stream/Stream;
+       163: invokedynamic #684,  0            // InvokeDynamic #7:get:()Ljava/util/function/Supplier;
+       168: invokestatic  #690                // Method java/util/stream/Collectors.toCollection:(Ljava/util/function/Supplier;)Ljava/util/stream/Collector;
+       171: invokeinterface #694,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       176: checkcast     #54                 // class uy
+       179: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       182: pop
+       183: aload_0
+       184: ldc           #23                 // String data
+       186: bipush        9
+       188: invokevirtual #212                // Method ub.b:(Ljava/lang/String;I)Z
+       191: ifeq          347
+       194: new           #799                // class it/unimi/dsi/fastutil/objects/Object2IntOpenHashMap
+       197: dup
+       198: invokespecial #800                // Method it/unimi/dsi/fastutil/objects/Object2IntOpenHashMap."<init>":()V
+       201: astore_3
+       202: aload_3
+       203: iconst_m1
+       204: invokeinterface #806,  2          // InterfaceMethod it/unimi/dsi/fastutil/objects/Object2IntMap.defaultReturnValue:(I)V
+       209: iconst_0
+       210: istore        4
+       212: iload         4
+       214: aload_1
+       215: invokevirtual #101                // Method uh.size:()I
+       218: if_icmpge     242
+       221: aload_3
+       222: aload_1
+       223: iload         4
+       225: invokevirtual #808                // Method uh.j:(I)Ljava/lang/String;
+       228: iload         4
+       230: invokeinterface #812,  3          // InterfaceMethod it/unimi/dsi/fastutil/objects/Object2IntMap.put:(Ljava/lang/Object;I)I
+       235: pop
+       236: iinc          4, 1
+       239: goto          212
+       242: aload_0
+       243: ldc           #23                 // String data
+       245: bipush        10
+       247: invokevirtual #632                // Method ub.c:(Ljava/lang/String;I)Luh;
+       250: astore        4
+       252: iconst_0
+       253: istore        5
+       255: iload         5
+       257: aload         4
+       259: invokevirtual #101                // Method uh.size:()I
+       262: if_icmpge     331
+       265: aload         4
+       267: iload         5
+       269: invokevirtual #815                // Method uh.a:(I)Lub;
+       272: astore        6
+       274: aload         6
+       276: ldc_w         #817                // String state
+       279: invokevirtual #226                // Method ub.l:(Ljava/lang/String;)Ljava/lang/String;
+       282: astore        7
+       284: aload_3
+       285: aload         7
+       287: invokeinterface #820,  2          // InterfaceMethod it/unimi/dsi/fastutil/objects/Object2IntMap.getInt:(Ljava/lang/Object;)I
+       292: istore        8
+       294: iload         8
+       296: iconst_m1
+       297: if_icmpne     315
+       300: new           #822                // class java/lang/IllegalStateException
+       303: dup
+       304: aload         7
+       306: invokedynamic #826,  0            // InvokeDynamic #17:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+       311: invokespecial #827                // Method java/lang/IllegalStateException."<init>":(Ljava/lang/String;)V
+       314: athrow
+       315: aload         6
+       317: ldc_w         #817                // String state
+       320: iload         8
+       322: invokevirtual #830                // Method ub.a:(Ljava/lang/String;I)V
+       325: iinc          5, 1
+       328: goto          255
+       331: aload_0
+       332: ldc_w         #735                // String blocks
+       335: aload         4
+       337: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+       340: pop
+       341: aload_0
+       342: ldc           #23                 // String data
+       344: invokevirtual #757                // Method ub.r:(Ljava/lang/String;)V
+       347: aload_0
+       348: areturn
+
+  static java.lang.String d(ub);
+    Code:
+         0: new           #381                // class java/lang/StringBuilder
+         3: dup
+         4: aload_0
+         5: ldc           #209                // String Name
+         7: invokevirtual #226                // Method ub.l:(Ljava/lang/String;)Ljava/lang/String;
+        10: invokespecial #834                // Method java/lang/StringBuilder."<init>":(Ljava/lang/String;)V
+        13: astore_1
+        14: aload_0
+        15: ldc_w         #256                // String Properties
+        18: bipush        10
+        20: invokevirtual #212                // Method ub.b:(Ljava/lang/String;I)Z
+        23: ifeq          89
+        26: aload_0
+        27: ldc_w         #256                // String Properties
+        30: invokevirtual #260                // Method ub.p:(Ljava/lang/String;)Lub;
+        33: astore_2
+        34: aload_2
+        35: invokevirtual #70                 // Method ub.e:()Ljava/util/Set;
+        38: invokeinterface #835,  1          // InterfaceMethod java/util/Set.stream:()Ljava/util/stream/Stream;
+        43: invokeinterface #837,  1          // InterfaceMethod java/util/stream/Stream.sorted:()Ljava/util/stream/Stream;
+        48: aload_2
+        49: invokedynamic #845,  0            // InvokeDynamic #18:apply:(Lub;)Ljava/util/function/Function;
+        54: invokeinterface #661,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        59: ldc           #31                 // String ,
+        61: invokestatic  #849                // Method java/util/stream/Collectors.joining:(Ljava/lang/CharSequence;)Ljava/util/stream/Collector;
+        64: invokeinterface #694,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+        69: checkcast     #88                 // class java/lang/String
+        72: astore_3
+        73: aload_1
+        74: bipush        123
+        76: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+        79: aload_3
+        80: invokevirtual #406                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        83: bipush        125
+        85: invokevirtual #416                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+        88: pop
+        89: aload_1
+        90: invokevirtual #386                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        93: areturn
+
+  static ub b(java.lang.String);
+    Code:
+         0: new           #64                 // class ub
+         3: dup
+         4: invokespecial #315                // Method ub."<init>":()V
+         7: astore_1
+         8: aload_0
+         9: bipush        123
+        11: invokevirtual #852                // Method java/lang/String.indexOf:(I)I
+        14: istore_2
+        15: iload_2
+        16: iflt          95
+        19: aload_0
+        20: iconst_0
+        21: iload_2
+        22: invokevirtual #856                // Method java/lang/String.substring:(II)Ljava/lang/String;
+        25: astore_3
+        26: new           #64                 // class ub
+        29: dup
+        30: invokespecial #315                // Method ub."<init>":()V
+        33: astore        4
+        35: iload_2
+        36: iconst_2
+        37: iadd
+        38: aload_0
+        39: invokevirtual #463                // Method java/lang/String.length:()I
+        42: if_icmpgt     92
+        45: aload_0
+        46: iload_2
+        47: iconst_1
+        48: iadd
+        49: aload_0
+        50: bipush        125
+        52: iload_2
+        53: invokevirtual #858                // Method java/lang/String.indexOf:(II)I
+        56: invokevirtual #856                // Method java/lang/String.substring:(II)Ljava/lang/String;
+        59: astore        5
+        61: getstatic     #860                // Field h:Lcom/google/common/base/Splitter;
+        64: aload         5
+        66: invokevirtual #866                // Method com/google/common/base/Splitter.split:(Ljava/lang/CharSequence;)Ljava/lang/Iterable;
+        69: aload         4
+        71: aload_0
+        72: invokedynamic #874,  0            // InvokeDynamic #19:accept:(Lub;Ljava/lang/String;)Ljava/util/function/Consumer;
+        77: invokeinterface #877,  2          // InterfaceMethod java/lang/Iterable.forEach:(Ljava/util/function/Consumer;)V
+        82: aload_1
+        83: ldc_w         #256                // String Properties
+        86: aload         4
+        88: invokevirtual #355                // Method ub.a:(Ljava/lang/String;Luy;)Luy;
+        91: pop
+        92: goto          97
+        95: aload_0
+        96: astore_3
+        97: aload_1
+        98: ldc           #209                // String Name
+       100: aload_3
+       101: invokevirtual #334                // Method ub.a:(Ljava/lang/String;Ljava/lang/String;)V
+       104: aload_1
+       105: areturn
+
+  public static ub e(ub);
+    Code:
+         0: invokestatic  #882                // Method ab.b:()Lae;
+         3: invokeinterface #887,  1          // InterfaceMethod ae.d:()Leqx;
+         8: invokevirtual #891                // Method eqx.c:()I
+        11: istore_1
+        12: aload_0
+        13: iload_1
+        14: invokestatic  #894                // Method a:(Lub;I)Lub;
+        17: areturn
+
+  public static ub a(ub, int);
+    Code:
+         0: aload_0
+         1: ldc_w         #896                // String DataVersion
+         4: iload_1
+         5: invokevirtual #830                // Method ub.a:(Ljava/lang/String;I)V
+         8: aload_0
+         9: areturn
+
+  public static int b(ub, int);
+    Code:
+         0: aload_0
+         1: ldc_w         #896                // String DataVersion
+         4: bipush        99
+         6: invokevirtual #212                // Method ub.b:(Ljava/lang/String;I)Z
+         9: ifeq          22
+        12: aload_0
+        13: ldc_w         #896                // String DataVersion
+        16: invokevirtual #899                // Method ub.h:(Ljava/lang/String;)I
+        19: goto          23
+        22: iload_1
+        23: ireturn
+
+  static {};
+    Code:
+         0: invokedynamic #940,  0            // InvokeDynamic #23:applyAsInt:()Ljava/util/function/ToIntFunction;
+         5: invokestatic  #944                // InterfaceMethod java/util/Comparator.comparingInt:(Ljava/util/function/ToIntFunction;)Ljava/util/Comparator;
+         8: invokedynamic #948,  0            // InvokeDynamic #24:applyAsInt:()Ljava/util/function/ToIntFunction;
+        13: invokeinterface #951,  2          // InterfaceMethod java/util/Comparator.thenComparingInt:(Ljava/util/function/ToIntFunction;)Ljava/util/Comparator;
+        18: invokedynamic #955,  0            // InvokeDynamic #25:applyAsInt:()Ljava/util/function/ToIntFunction;
+        23: invokeinterface #951,  2          // InterfaceMethod java/util/Comparator.thenComparingInt:(Ljava/util/function/ToIntFunction;)Ljava/util/Comparator;
+        28: putstatic     #741                // Field b:Ljava/util/Comparator;
+        31: invokedynamic #965,  0            // InvokeDynamic #26:applyAsDouble:()Ljava/util/function/ToDoubleFunction;
+        36: invokestatic  #969                // InterfaceMethod java/util/Comparator.comparingDouble:(Ljava/util/function/ToDoubleFunction;)Ljava/util/Comparator;
+        39: invokedynamic #973,  0            // InvokeDynamic #27:applyAsDouble:()Ljava/util/function/ToDoubleFunction;
+        44: invokeinterface #976,  2          // InterfaceMethod java/util/Comparator.thenComparingDouble:(Ljava/util/function/ToDoubleFunction;)Ljava/util/Comparator;
+        49: invokedynamic #980,  0            // InvokeDynamic #28:applyAsDouble:()Ljava/util/function/ToDoubleFunction;
+        54: invokeinterface #976,  2          // InterfaceMethod java/util/Comparator.thenComparingDouble:(Ljava/util/function/ToDoubleFunction;)Ljava/util/Comparator;
+        59: putstatic     #723                // Field c:Ljava/util/Comparator;
+        62: ldc           #31                 // String ,
+        64: invokestatic  #984                // Method com/google/common/base/Splitter.on:(Ljava/lang/String;)Lcom/google/common/base/Splitter;
+        67: putstatic     #860                // Field h:Lcom/google/common/base/Splitter;
+        70: bipush        58
+        72: invokestatic  #987                // Method com/google/common/base/Splitter.on:(C)Lcom/google/common/base/Splitter;
+        75: iconst_2
+        76: invokevirtual #991                // Method com/google/common/base/Splitter.limit:(I)Lcom/google/common/base/Splitter;
+        79: putstatic     #901                // Field i:Lcom/google/common/base/Splitter;
+        82: invokestatic  #997                // Method com/mojang/logging/LogUtils.getLogger:()Lorg/slf4j/Logger;
+        85: putstatic     #301                // Field j:Lorg/slf4j/Logger;
+        88: return
+}

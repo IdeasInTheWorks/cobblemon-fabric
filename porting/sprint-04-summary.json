@@ -1,0 +1,73 @@
+{
+  "sprint": "S04",
+  "baseline_commit": "bc11e2f0580e5629c5f2f0c7d1f7a08b26c9b6a1",
+  "work_id": "S04-R013-R015",
+  "owner": "codex-sprint04-01a16f8a",
+  "lease_id": "48da7679-fdfc-414f-a495-f4c594d4532e",
+  "source_status": "partial migration; original R013/R015 acceptance open",
+  "compile": {
+    "diagnostics": 6733,
+    "files": 998,
+    "baseline_diagnostics": 7451,
+    "reduction": 718,
+    "passed": false
+  },
+  "focused_checks": 76,
+  "tooling_tests": 20,
+  "aw_missing": 54,
+  "common_license_headers": "passed",
+  "minecraft_runtime_tests_executed": 0,
+  "junit_wrapper_executed": false,
+  "jar_produced": false,
+  "upstream_pushes": 0,
+  "remaining_estimates_engineering_hours": {
+    "R013": {
+      "previous": [
+        8,
+        16,
+        32
+      ],
+      "remaining": [
+        6,
+        12,
+        24
+      ]
+    },
+    "R015": {
+      "previous": [
+        12,
+        24,
+        48
+      ],
+      "remaining": [
+        8,
+        16,
+        32
+      ]
+    },
+    "confidence": "low",
+    "actual_person_hours": null
+  },
+  "next": [
+    "R015 registry/serialization audit and representative legacy fixtures",
+    "R013 startup/construction validation after compile gate",
+    "R014 consumable/CustomModelData APIs",
+    "R019/R020 Brain.Packed construction/provider/activity migration; do not discard memories",
+    "R021 remaining boat/projectile APIs"
+  ],
+  "notes": [
+    "Compiler diagnostics include cascades, not independent defects or gameplay percent complete",
+    "Fixture items use minimal components, not vanilla datapack defaults",
+    "Remote CI should be inspected at the published development head; actual run/evidence is recorded in the same native Sheet and Actions artifacts"
+  ],
+  "source_commits": [
+    {
+      "sha": "0f4a36525000f5a2c87fd93f919650b0289f0828",
+      "subject": "Migrate fossil and entity persistence to registry-aware value I/O"
+    },
+    {
+      "sha": "f6a9c932e49abb52dea1c585955fefa4c852718a",
+      "subject": "Restore Pomohana and creative-tab access and resolve registry values"
+    }
+  ]
+}

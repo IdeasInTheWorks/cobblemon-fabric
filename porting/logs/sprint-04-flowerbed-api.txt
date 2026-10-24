@@ -1,0 +1,177 @@
+Compiled from "FlowerBedBlock.java"
+public class net.minecraft.world.level.block.FlowerBedBlock extends net.minecraft.world.level.block.VegetationBlock implements net.minecraft.world.level.block.BonemealableBlock,net.minecraft.world.level.block.SegmentableBlock {
+  public static final net.minecraft.world.level.block.state.properties.EnumProperty<net.minecraft.core.Direction> FACING;
+
+  public static final net.minecraft.world.level.block.state.properties.IntegerProperty AMOUNT;
+
+  protected net.minecraft.world.level.block.FlowerBedBlock(net.minecraft.world.level.block.state.BlockBehaviour$Properties, int);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokespecial #1                  // Method net/minecraft/world/level/block/VegetationBlock."<init>":(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V
+         5: aload_0
+         6: iload_2
+         7: putfield      #7                  // Field shapeHeight:I
+        10: aload_0
+        11: aload_0
+        12: getfield      #13                 // Field stateDefinition:Lnet/minecraft/world/level/block/state/StateDefinition;
+        15: invokevirtual #17                 // Method net/minecraft/world/level/block/state/StateDefinition.any:()Lnet/minecraft/world/level/block/state/StateHolder;
+        18: checkcast     #23                 // class net/minecraft/world/level/block/state/BlockState
+        21: getstatic     #25                 // Field FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+        24: getstatic     #29                 // Field net/minecraft/core/Direction.NORTH:Lnet/minecraft/core/Direction;
+        27: invokevirtual #35                 // Method net/minecraft/world/level/block/state/BlockState.setValue:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;
+        30: checkcast     #23                 // class net/minecraft/world/level/block/state/BlockState
+        33: getstatic     #39                 // Field AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+        36: iconst_1
+        37: invokestatic  #43                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        40: invokevirtual #35                 // Method net/minecraft/world/level/block/state/BlockState.setValue:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;
+        43: checkcast     #23                 // class net/minecraft/world/level/block/state/BlockState
+        46: invokevirtual #49                 // Method registerDefaultState:(Lnet/minecraft/world/level/block/state/BlockState;)V
+        49: aload_0
+        50: aload_0
+        51: invokevirtual #53                 // Method makeShapes:()Ljava/util/function/Function;
+        54: putfield      #57                 // Field shapes:Ljava/util/function/Function;
+        57: return
+
+  public net.minecraft.world.level.block.state.BlockState rotate(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.Rotation);
+    Code:
+         0: aload_1
+         1: getstatic     #25                 // Field FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+         4: aload_2
+         5: aload_1
+         6: getstatic     #25                 // Field FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+         9: invokevirtual #69                 // Method net/minecraft/world/level/block/state/BlockState.getValue:(Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Comparable;
+        12: checkcast     #30                 // class net/minecraft/core/Direction
+        15: invokevirtual #73                 // Method net/minecraft/world/level/block/Rotation.rotate:(Lnet/minecraft/core/Direction;)Lnet/minecraft/core/Direction;
+        18: invokevirtual #35                 // Method net/minecraft/world/level/block/state/BlockState.setValue:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;
+        21: checkcast     #23                 // class net/minecraft/world/level/block/state/BlockState
+        24: areturn
+
+  public net.minecraft.world.level.block.state.BlockState mirror(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.Mirror);
+    Code:
+         0: aload_1
+         1: aload_2
+         2: aload_1
+         3: getstatic     #25                 // Field FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+         6: invokevirtual #69                 // Method net/minecraft/world/level/block/state/BlockState.getValue:(Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Comparable;
+         9: checkcast     #30                 // class net/minecraft/core/Direction
+        12: invokevirtual #79                 // Method net/minecraft/world/level/block/Mirror.getRotation:(Lnet/minecraft/core/Direction;)Lnet/minecraft/world/level/block/Rotation;
+        15: invokevirtual #85                 // Method net/minecraft/world/level/block/state/BlockState.rotate:(Lnet/minecraft/world/level/block/Rotation;)Lnet/minecraft/world/level/block/state/BlockState;
+        18: areturn
+
+  public boolean canBeReplaced(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.item.context.BlockPlaceContext);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: getstatic     #39                 // Field AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+         6: invokevirtual #88                 // Method canBeReplaced:(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/item/context/BlockPlaceContext;Lnet/minecraft/world/level/block/state/properties/IntegerProperty;)Z
+         9: ifeq          14
+        12: iconst_1
+        13: ireturn
+        14: aload_0
+        15: aload_1
+        16: aload_2
+        17: invokespecial #92                 // Method net/minecraft/world/level/block/VegetationBlock.canBeReplaced:(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/item/context/BlockPlaceContext;)Z
+        20: ireturn
+
+  public net.minecraft.world.phys.shapes.VoxelShape getShape(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.BlockGetter, net.minecraft.core.BlockPos, net.minecraft.world.phys.shapes.CollisionContext);
+    Code:
+         0: aload_0
+         1: getfield      #57                 // Field shapes:Ljava/util/function/Function;
+         4: aload_1
+         5: invokeinterface #95,  2           // InterfaceMethod java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+        10: checkcast     #101                // class net/minecraft/world/phys/shapes/VoxelShape
+        13: areturn
+
+  public double getShapeHeight();
+    Code:
+         0: aload_0
+         1: getfield      #7                  // Field shapeHeight:I
+         4: i2d
+         5: dreturn
+
+  public net.minecraft.world.level.block.state.properties.IntegerProperty getSegmentAmountProperty();
+    Code:
+         0: getstatic     #39                 // Field AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+         3: areturn
+
+  public net.minecraft.world.level.block.state.BlockState getStateForPlacement(net.minecraft.world.item.context.BlockPlaceContext);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_0
+         3: getstatic     #39                 // Field AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+         6: getstatic     #25                 // Field FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+         9: invokevirtual #103                // Method getStateForPlacement:(Lnet/minecraft/world/item/context/BlockPlaceContext;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/state/properties/IntegerProperty;Lnet/minecraft/world/level/block/state/properties/EnumProperty;)Lnet/minecraft/world/level/block/state/BlockState;
+        12: areturn
+
+  protected void createBlockStateDefinition(net.minecraft.world.level.block.state.StateDefinition$Builder<net.minecraft.world.level.block.Block, net.minecraft.world.level.block.state.BlockState>);
+    Code:
+         0: aload_1
+         1: iconst_2
+         2: anewarray     #107                // class net/minecraft/world/level/block/state/properties/Property
+         5: dup
+         6: iconst_0
+         7: getstatic     #25                 // Field FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+        10: aastore
+        11: dup
+        12: iconst_1
+        13: getstatic     #39                 // Field AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+        16: aastore
+        17: invokevirtual #109                // Method net/minecraft/world/level/block/state/StateDefinition$Builder.add:([Lnet/minecraft/world/level/block/state/properties/Property;)Lnet/minecraft/world/level/block/state/StateDefinition$Builder;
+        20: pop
+        21: return
+
+  public boolean isValidBonemealTarget(net.minecraft.world.level.LevelReader, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.BonemealSource);
+    Code:
+         0: iconst_1
+         1: ireturn
+
+  public boolean isBonemealSuccess(net.minecraft.world.level.Level, net.minecraft.util.RandomSource, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.BonemealSource);
+    Code:
+         0: iconst_1
+         1: ireturn
+
+  public void performBonemeal(net.minecraft.server.level.ServerLevel, net.minecraft.util.RandomSource, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.BonemealSource);
+    Code:
+         0: aload         4
+         2: getstatic     #39                 // Field AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+         5: invokevirtual #69                 // Method net/minecraft/world/level/block/state/BlockState.getValue:(Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Comparable;
+         8: checkcast     #44                 // class java/lang/Integer
+        11: invokevirtual #115                // Method java/lang/Integer.intValue:()I
+        14: istore        6
+        16: iload         6
+        18: iconst_4
+        19: if_icmpge     50
+        22: aload_1
+        23: aload_3
+        24: aload         4
+        26: getstatic     #39                 // Field AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+        29: iload         6
+        31: iconst_1
+        32: iadd
+        33: invokestatic  #43                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        36: invokevirtual #35                 // Method net/minecraft/world/level/block/state/BlockState.setValue:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;
+        39: checkcast     #23                 // class net/minecraft/world/level/block/state/BlockState
+        42: iconst_2
+        43: invokevirtual #123                // Method net/minecraft/server/level/ServerLevel.setBlock:(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z
+        46: pop
+        47: goto          63
+        50: aload_1
+        51: aload_3
+        52: new           #129                // class net/minecraft/world/item/ItemStack
+        55: dup
+        56: aload_0
+        57: invokespecial #131                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+        60: invokestatic  #134                // Method popResource:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V
+        63: return
+
+  static {};
+    Code:
+         0: getstatic     #138                // Field net/minecraft/world/level/block/state/properties/BlockStateProperties.HORIZONTAL_FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+         3: putstatic     #25                 // Field FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+         6: getstatic     #143                // Field net/minecraft/world/level/block/state/properties/BlockStateProperties.FLOWER_AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+         9: putstatic     #39                 // Field AMOUNT:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+        12: return
+}

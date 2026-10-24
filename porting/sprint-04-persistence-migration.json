@@ -1,0 +1,94 @@
+{
+  "sprint": "S04",
+  "baseline_commit": "bc11e2f0580e5629c5f2f0c7d1f7a08b26c9b6a1",
+  "callbacks": {
+    "api/multiblock/MultiblockEntity.kt": [
+      [
+        "saveAdditional",
+        "output: ValueOutput"
+      ],
+      [
+        "loadAdditional",
+        "input: ValueInput"
+      ]
+    ],
+    "block/entity/FossilMultiblockEntity.kt": [
+      [
+        "loadAdditional",
+        "input: ValueInput"
+      ],
+      [
+        "saveAdditional",
+        "output: ValueOutput"
+      ]
+    ],
+    "entity/pokemon/PokemonEntity.kt": [
+      [
+        "saveWithoutId",
+        "output: ValueOutput"
+      ],
+      [
+        "load",
+        "input: ValueInput"
+      ]
+    ],
+    "entity/npc/NPCEntity.kt": [
+      [
+        "saveWithoutId",
+        "output: ValueOutput"
+      ],
+      [
+        "load",
+        "input: ValueInput"
+      ]
+    ],
+    "entity/generic/GenericBedrockEntity.kt": [
+      [
+        "readAdditionalSaveData",
+        "input: ValueInput"
+      ],
+      [
+        "addAdditionalSaveData",
+        "output: ValueOutput"
+      ]
+    ],
+    "entity/boat/CobblemonBoatEntity.kt": [
+      [
+        "readAdditionalSaveData",
+        "input: ValueInput"
+      ],
+      [
+        "addAdditionalSaveData",
+        "output: ValueOutput"
+      ]
+    ],
+    "entity/boat/CobblemonChestBoatEntity.kt": [
+      [
+        "addAdditionalSaveData",
+        "output: ValueOutput"
+      ],
+      [
+        "readAdditionalSaveData",
+        "input: ValueInput"
+      ]
+    ]
+  },
+  "callback_count": 14,
+  "legacy_position_format": "Exactly three signed ints in IntArrayTag; absent/malformed arrays return Optional.empty, matching original 1.21.1 bytecode",
+  "context": "Nested structure inventory and monitor discs use caller-provided ValueOutput/ValueInput; old NBT writer uses strict context-aware adapter",
+  "preserved": "UUID arrays, fossil progress/protection/created marker, animation age/partial ticks, Pokemon/NPC root fields, scripting/event hooks, superclass order, native chest inventory and target boat leash calls",
+  "remaining": "Brain.Packed construction/activity-provider migration, entity lifecycle, broader legacy fixtures and full compilation/runtime validation",
+  "registration_ids": {
+    "CobblemonItems.kt": {
+      "source_unchanged_from_baseline": true,
+      "ordered_create_id_expressions_from_S03_audit": 140,
+      "unchanged": true
+    },
+    "CobblemonBlocks.kt": {
+      "source_unchanged_from_baseline": true,
+      "ordered_create_id_expressions_from_S03_audit": 340,
+      "unchanged": true
+    }
+  },
+  "registration_audit": "Entire two central source files compare equal to S03 baseline; retains the prior detailed 140/340 call-expression audit, rather than recounting generic declarations."
+}

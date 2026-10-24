@@ -2,7 +2,29 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S03 checkpoint (2026-10-24)
+## Sprint S04 checkpoint (2026-10-24/25)
+
+Work is claimed as `S04-R013-R015`, owner `codex-sprint04-01a16f8a`, with the exclusive integration resource. Always re-read the live registry before resuming; this paragraph is a historical handoff, not a lock.
+
+The fossil multiblock now writes into `ValueOutput`, including nested structure data and registry-aware item lists. Monitor discs use the save/load context supplied by Minecraft. The original `writeToNbt(provider)` caller API remains as a context-aware adapter that throws if serialization reports errors rather than returning a partial save. Implementors of `MultiblockStructure` must implement `write(ValueOutput)` now. Existing field names, owner UUIDs, progress/protection values, created-Pokémon migration flag and previous animation age/partial ticks are retained.
+
+Pokémon and NPC root save/load overrides use the target ValueInput/ValueOutput APIs, retaining their original superclass ordering, scripting, party/battle data, tethering, effects, event hooks and synchronized fields. Generic entity and boat callbacks are migrated; chest boats use native context-aware inventory callbacks, and boats call the superclass so target leash data is retained. Removed block-position helpers are replaced with the exact legacy three-int array format, verified against the original 1.21.1 bytecode. Pomohana now extends FlowerBedBlock; the target still uses `flower_amount` and horizontal `facing`, and its custom collision shape is retained.
+
+Executed S04 results:
+
+- Two source compilations failed: 7,396 lines / 1,002 files (attempt 02), then **6,733 / 998** (attempt 03). This is 718 fewer diagnostic lines (9.6%) and seven fewer affected files than S03. Counts include cascades, not independent bugs or gameplay completion. Attempt 01 failed before compilation because the restricted process could not open local daemon sockets; all logs are retained.
+- **76 focused checks passed** through the shared standalone/JUnit fixture source. New cases cover nested item components/ownership/progress, empty inventories, malformed positions, strict partial-save refusal, optional empty shoulder items and the legacy brain-memory UUID/expiry format. These execute production helpers and target classes, not full fossil/Pokemon/NPC gameplay. The two failed fixture reports (Java lambda naming and collection-versus-set comparison in a property assertion) are retained separately from the successful 67- and 76-check runs.
+- **20 tooling tests passed**; no Minecraft game processes were launched. The JUnit wrapper remains blocked by common compilation.
+- `:fabric:validateAccessWidener :common:checkLicenses --continue` still fails on **54 obsolete widener targets**; the two new creative callback class targets are found. Common main/test licence headers pass. See `sprint-04-validation-summary.json` and the full log. The validator remains enabled.
+- CreativeModeTab.Output and TabVisibility became protected. Two valid class wideners retain existing creative collectors without suppressing the validator. That file's diagnostics fall from 646 to four CustomModelData component errors, assigned to R014. Pomohana and MultiblockEntity now have zero diagnostics in the attempted common compile; full startup remains untested.
+
+Source milestones: `0f4a36525000f5a2c87fd93f919650b0289f0828` (persistence/fixtures) and `f6a9c932e49abb52dea1c585955fefa4c852718a` (registration/access/value lookups). The final checkpoint also archives logs, summaries and this handoff. Inspect the latest Actions run at the published development head; CI results are retained as workflow artifacts and in the existing native Sheet. Close the current lease only after confirming that head was pushed.
+
+Remaining planning effort: R013 **6/12/24** and R015 **8/16/32** engineering person-hours (low/likely/high, low confidence). Previous remaining ranges were 8/16/32 and 12/24/48; original plans were 16/32/64 and 20/40/80. Actual person-hours are unmeasured. Both tasks retain their original acceptance gates and stay open. The native Sheet is the primary roadmap.
+
+Next: continue the registry/serialization audit and representative old-data fixtures (R015), validate construction/startup once compilation allows (R013), then consumable/CustomModelData APIs (R014). Coordinate entity brain construction/provider/activity changes with R019/R020: Brain.Packed's tested serialization format is supported, but old Dynamic-based brain construction remains unported. R021 contains remaining boat/projectile interaction and lifecycle APIs. Do not remove brain memories, activities, assets or gameplay to reduce diagnostics. Rendering/input and 54 previously observed obsolete widener targets remain substantial work. No installable JAR, release, completed-work PR, client/server or multiplayer success is claimed.
+
+## Sprint S03 checkpoint (historical, 2026-10-24)
 
 R013/R015 were claimed together as `S03-R013-R015` under owner `codex-sprint03-01a16f8a`, using an expiring remote lease and the exclusive integration resource. Read live registry state before resuming; a saved local lease or Sheet snapshot is not authority.
 
