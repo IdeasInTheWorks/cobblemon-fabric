@@ -1,0 +1,84 @@
+{
+  "sprint": "S07",
+  "baseline_commit": "a77051e78d2c3237566e1657ec61b8226cf4b5b1",
+  "work_id": "S07-R019",
+  "owner": "codex-sprint07-01a16f8a",
+  "lease_id": "d3082f1d-53c0-4940-8ed8-851578e20202",
+  "source_status": "Partial R019/R016 migration; original acceptance stays open",
+  "source_commits": [
+    {
+      "sha": "099c76edfeb82816e0e5065f3a89fe465577ba9f",
+      "subject": "Restore Pokemon shoulder data, lifecycle counters and typed gamerules"
+    }
+  ],
+  "compile": {
+    "passed": false,
+    "diagnostics": 6005,
+    "files": 940,
+    "baseline_diagnostics": 6088,
+    "reduction": 83
+  },
+  "focused_assertions": 286,
+  "tooling_tests": 20,
+  "aw_missing": 49,
+  "aw_previous_missing": 54,
+  "source_headers": "common main/test and Fabric passed",
+  "minecraft_runtime_tests_executed": 0,
+  "junit_wrapper_executed": false,
+  "jar_produced": false,
+  "upstream_pushes": 0,
+  "roadmap": {
+    "total": 44,
+    "accepted_done": 12,
+    "remaining": 32,
+    "accepted_proportion": 0.2727272727272727,
+    "remaining_proportion": 0.7272727272727273,
+    "interpretation": "Equal task counts, not effort-weighted or gameplay completion"
+  },
+  "remaining_estimates_engineering_hours": {
+    "R019": {
+      "previous": [
+        24,
+        48,
+        96
+      ],
+      "remaining": [
+        20,
+        40,
+        80
+      ]
+    },
+    "R016": {
+      "previous": [
+        12,
+        24,
+        48
+      ],
+      "remaining": [
+        10,
+        20,
+        40
+      ]
+    },
+    "whole_roadmap": [
+      566,
+      1132,
+      2272
+    ],
+    "confidence": "low",
+    "actual_person_hours": null
+  },
+  "next": [
+    "R019 remaining generic entities, attributes/equipment and initialization; verify actual shoulder save/sync/recall and evolution/XP after full build",
+    "R016 advancement/commands/permissions and runtime gamerule registration/DFU migration",
+    "R020 remaining AI/path-node/attributes and live movement/riding tests",
+    "R013/R015 full construction/old-data fixtures remain open",
+    "Rendering/input, networking and AW49 are major release blockers"
+  ],
+  "notes": [
+    "Two local common compiles failed with 6024/947 then6005/940; no release/JAR",
+    "Validation attempts01-03 failed before real gates due generated-cache locks; attempt04 runs normal gates via local output redirection",
+    "286 assertions pass twice;20 tooling tests pass; JUnit and Minecraft runtime are unexecuted",
+    "Read live claim registry before continuing; post-push CI and closure belong to same Sheet/Actions"
+  ]
+}

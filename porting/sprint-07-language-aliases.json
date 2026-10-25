@@ -1,0 +1,117 @@
+{
+  "preserved_all_existing_values": true,
+  "files": [
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/cs_cz.json",
+      "aliases": 3
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/de_de.json",
+      "aliases": 4
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/el_cy.json",
+      "aliases": 3
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/en_pt.json",
+      "aliases": 3
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/en_us.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/eo_eo.json",
+      "aliases": 2
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/es_ec.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/es_es.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/es_mx.json",
+      "aliases": 5
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/fr_ca.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/fr_fr.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/hu_hu.json",
+      "aliases": 3
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/it_it.json",
+      "aliases": 3
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/ja_jp.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/ko_kr.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/nl_nl.json",
+      "aliases": 3
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/pl_pl.json",
+      "aliases": 3
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/pt_br.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/pt_pt.json",
+      "aliases": 5
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/ru_ru.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/sv_se.json",
+      "aliases": 2
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/th_th.json",
+      "aliases": 5
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/tr_tr.json",
+      "aliases": 1
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/uk_ua.json",
+      "aliases": 5
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/vi_vn.json",
+      "aliases": 5
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/zh_cn.json",
+      "aliases": 6
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/zh_hk.json",
+      "aliases": 1
+    },
+    {
+      "path": "common/src/main/resources/assets/cobblemon/lang/zh_tw.json",
+      "aliases": 6
+    }
+  ]
+}

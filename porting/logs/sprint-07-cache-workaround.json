@@ -1,0 +1,13 @@
+{
+  "generated_only": true,
+  "source_deleted": false,
+  "attempts01_03": "Validation preparation stopped in locked or read-only gradle/build-logic/build outputs",
+  "preservation_attempt": {
+    "source": "gradle/build-logic/build",
+    "destination": "build/sprint-07-cache-backups/build-logic-build",
+    "paths_verified_inside_checkout": true,
+    "result": "Partial move; several generated children refused access; no force deletion or permission changes"
+  },
+  "successful_workaround": "scripts/isolated_build_logic.gradle redirects included-build outputs to ignored build/local-build-logic",
+  "validation04": "Normal AW and common/Fabric header gates execute; AW49 fails, headers pass"
+}

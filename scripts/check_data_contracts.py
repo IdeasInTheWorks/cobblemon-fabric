@@ -27,7 +27,12 @@ def main():
     out = root / "build/data-contracts"
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
-    sources = [root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyNbt.java",
+    sources = [root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyMovement.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/util/ShoulderData.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/api/net/serializers/ShoulderTagDataSerializer.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/world/gamerules/CobblemonGameRuleDefinitions.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/world/gamerules/LegacyGameRules.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyNbt.java",
                root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyBlockState.java",
                root / "common/src/main/java/com/cobblemon/mod/common/api/net/serializers/OptionalUuidDataSerializer.java",
                root / "common/src/main/java/com/cobblemon/mod/common/entity/ai/NullableGroundPathNavigation.java",

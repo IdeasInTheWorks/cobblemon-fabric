@@ -432,6 +432,98 @@ final class Minecraft263DataContracts {
         check(!noOwner.contains("Owner"), "clearing ownership omits saved reference");
         check(net.minecraft.world.entity.EntityReference.read(
                 net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, vanilla, noOwner), "Owner") == null, "missing owner reloads as unowned");
+        // Walking uses only horizontal displacement, including on climbable blocks.
+        check(com.cobblemon.mod.common.util.LegacyMovement.walkIncrement(new net.minecraft.world.phys.Vec3(0, 4, 0)) == 0F, "vertical movement does not trigger walking");
+        check(com.cobblemon.mod.common.util.LegacyMovement.walkIncrement(new net.minecraft.world.phys.Vec3(3, 100, 4)) == 3F, "walking uses horizontal 3-4-5 distance");
+        check(com.cobblemon.mod.common.util.LegacyMovement.walkIncrement(new net.minecraft.world.phys.Vec3(-3, -100, -4)) == 3F, "walking handles negative directions");
+        check(com.cobblemon.mod.common.util.LegacyMovement.walkIncrement(net.minecraft.world.phys.Vec3.ZERO) == 0F, "stationary walking counter remains still");
+        check(com.cobblemon.mod.common.util.LegacyMovement.walkIncrement(new net.minecraft.world.phys.Vec3(0.001, 1, 0)) <= 0.005F, "legacy tiny-step threshold retained");
+        net.minecraft.world.entity.Entity.class.getDeclaredMethod("applyMovementEmissionAndPlaySound", net.minecraft.world.entity.Entity.MovementEmission.class, net.minecraft.world.phys.Vec3.class, net.minecraft.core.BlockPos.class, net.minecraft.world.level.block.state.BlockState.class);
+        checks++;
+        var definitions = com.cobblemon.mod.common.world.gamerules.CobblemonGameRuleDefinitions.BY_LEGACY_NAME;
+        check(definitions.size() == 6, "all six custom gamerules retained");
+        boolean[] defaults = {false, true, true, true, false, false};
+        int ruleIndex = 0;
+        for (var entry : definitions.entrySet()) {
+            var definition = entry.getValue();
+            var rule = definition.createRule();
+            check(definition.identifier().getNamespace().equals("cobblemon"), "custom gamerules use own namespace");
+            check(rule.defaultValue() == defaults[ruleIndex++], "legacy gamerule default retained for " + entry.getKey());
+            check(rule.category().equals(definition.category()), "gamerule category retained");
+            check(rule.gameRuleType() == net.minecraft.world.level.gamerules.GameRuleType.BOOL, "boolean gamerule type");
+            var gameRules = new net.minecraft.world.level.gamerules.GameRules(java.util.List.of(rule));
+            check(gameRules.get(rule).equals(rule.defaultValue()), "native typed gamerule default lookup");
+            gameRules.set(rule, !rule.defaultValue(), null);
+            check(gameRules.get(rule) != rule.defaultValue(), "native typed gamerule update");
+            check(rule.getCommandResult(true) == 1 && rule.getCommandResult(false) == 0, "boolean command result semantics");
+            var legacyRules = new CompoundTag();
+            legacyRules.putString(entry.getKey(), "TrUe");
+            legacyRules.putString("unrelated:addon_rule", "preserve");
+            var migrated = (CompoundTag) com.cobblemon.mod.common.world.gamerules.LegacyGameRules.migrate(new com.mojang.serialization.Dynamic<>(NbtOps.INSTANCE, legacyRules)).getValue();
+            check(migrated.getBooleanOr(definition.identifier().toString(), false), "legacy true converts to boolean at stable ID");
+            check(!migrated.contains(entry.getKey()), "successful conversion removes old name");
+            check(migrated.getStringOr("unrelated:addon_rule", "").equals("preserve"), "other addon settings retained");
+            check(legacyRules.contains(entry.getKey()), "conversion does not mutate original NBT input");
+            legacyRules.putString(entry.getKey(), "false");
+            migrated = (CompoundTag) com.cobblemon.mod.common.world.gamerules.LegacyGameRules.migrate(new com.mojang.serialization.Dynamic<>(NbtOps.INSTANCE, legacyRules)).getValue();
+            check(!migrated.getBooleanOr(definition.identifier().toString(), true), "legacy false is retained");
+            legacyRules.putBoolean(definition.identifier().toString(), true);
+            migrated = (CompoundTag) com.cobblemon.mod.common.world.gamerules.LegacyGameRules.migrate(new com.mojang.serialization.Dynamic<>(NbtOps.INSTANCE, legacyRules)).getValue();
+            check(migrated.getBooleanOr(definition.identifier().toString(), false), "explicit modern value wins conflict");
+            check(!migrated.contains(entry.getKey()), "conflicting legacy copy is removed");
+            check(com.cobblemon.mod.common.world.gamerules.LegacyGameRules.migrate(new com.mojang.serialization.Dynamic<>(NbtOps.INSTANCE, migrated)).getValue().equals(migrated), "gamerule conversion is idempotent");
+        }
+        var invalidRules = new CompoundTag();
+        invalidRules.putString("doPokemonLoot", "yes");
+        try {
+            com.cobblemon.mod.common.world.gamerules.LegacyGameRules.migrate(new com.mojang.serialization.Dynamic<>(NbtOps.INSTANCE, invalidRules));
+            throw new AssertionError("Malformed gamerule silently defaulted");
+        } catch (IllegalArgumentException expected) { checks++; }
+        var jsonRules = new com.google.gson.JsonObject();
+        jsonRules.addProperty("doPokemonSpawning", "false");
+        var jsonMigrated = com.cobblemon.mod.common.world.gamerules.LegacyGameRules.migrate(new com.mojang.serialization.Dynamic<>(com.mojang.serialization.JsonOps.INSTANCE, jsonRules)).getValue();
+        check(!jsonMigrated.getAsJsonObject().get("cobblemon:do_pokemon_spawning").getAsBoolean(), "conversion supports JSON ops too");
+        // Exercise actual vanilla conversion followed by the production return-value adapter.
+        var vanillaFix = net.minecraft.util.datafix.fixes.GameRuleRegistryFix.class.getDeclaredMethod("lambda$makeRule$2", com.mojang.serialization.Dynamic.class);
+        vanillaFix.setAccessible(true);
+        var oldRuleSet = new CompoundTag();
+        oldRuleSet.putString("doMobLoot", "false");
+        oldRuleSet.putString("doPokemonLoot", "false");
+        var vanillaConverted = (com.mojang.serialization.Dynamic<?>) vanillaFix.invoke(null, new com.mojang.serialization.Dynamic<>(NbtOps.INSTANCE, oldRuleSet));
+        var allConverted = (CompoundTag) com.cobblemon.mod.common.world.gamerules.LegacyGameRules.migrate(vanillaConverted).getValue();
+        check(!allConverted.getBooleanOr("minecraft:mob_drops", true), "vanilla gamerule conversion remains effective");
+        check(!allConverted.getBooleanOr("cobblemon:do_pokemon_loot", true), "custom gamerule survives vanilla conversion chain");
+        var shoulderSerializer = com.cobblemon.mod.common.api.net.serializers.ShoulderTagDataSerializer.INSTANCE;
+        net.minecraft.network.syncher.EntityDataSerializers.registerSerializer(shoulderSerializer);
+        check(net.minecraft.network.syncher.EntityDataSerializers.getSerializedId(shoulderSerializer) > net.minecraft.network.syncher.EntityDataSerializers.getSerializedId(battleSerializer), "shoulder serializer appends after existing battle registration");
+        var shoulder = new CompoundTag();
+        shoulder.putString("id", "cobblemon:pokemon");
+        shoulder.put("Pokemon", loaded.copy());
+        var shoulderCopy = shoulderSerializer.copy(shoulder);
+        check(shoulderCopy.equals(shoulder) && shoulderCopy != shoulder, "shoulder snapshot owns tag copy");
+        shoulder.getCompoundOrEmpty("Pokemon").putString("species", "cobblemon:eevee");
+        check(shoulderCopy.getCompoundOrEmpty("Pokemon").getStringOr("species", "").equals("cobblemon:bulbasaur"), "nested shoulder snapshot cannot be mutated by caller");
+        var shoulderBuffer = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), vanilla);
+        try {
+            for (var accessor : java.util.List.of(com.cobblemon.mod.common.util.ShoulderData.LEFT, com.cobblemon.mod.common.util.ShoulderData.RIGHT)) {
+                shoulderBuffer.clear();
+                new net.minecraft.network.syncher.SynchedEntityData.DataValue<>(accessor.id(), shoulderSerializer, shoulderCopy).write(shoulderBuffer);
+                int index = shoulderBuffer.readUnsignedByte();
+                var received = net.minecraft.network.syncher.SynchedEntityData.DataValue.read(shoulderBuffer, index);
+                check(received.id() == accessor.id(), "native shoulder frame retains left/right field ID");
+                check(received.value().equals(shoulderCopy) && !shoulderBuffer.isReadable(), "shoulder frame preserves full legacy Pokemon NBT");
+                check(LegacyNbt.getUUID(((CompoundTag) received.value()).getCompoundOrEmpty("Pokemon"), "owner").equals(owner), "shoulder frame retains owner UUID");
+                shoulderBuffer.clear();
+                new net.minecraft.network.syncher.SynchedEntityData.DataValue<>(accessor.id(), shoulderSerializer, new CompoundTag()).write(shoulderBuffer);
+                index = shoulderBuffer.readUnsignedByte();
+                check(((CompoundTag) net.minecraft.network.syncher.SynchedEntityData.DataValue.read(shoulderBuffer, index).value()).isEmpty(), "empty shoulder frame clears client representation");
+            }
+        } finally { shoulderBuffer.release(); }
+        check(com.cobblemon.mod.common.util.ShoulderData.LEFT.id() != com.cobblemon.mod.common.util.ShoulderData.RIGHT.id(), "left and right shoulder metadata are independent");
+        net.minecraft.server.level.ServerPlayer.class.getDeclaredMethod("setShoulderEntityLeft", CompoundTag.class);
+        net.minecraft.server.level.ServerPlayer.class.getDeclaredMethod("setShoulderEntityRight", CompoundTag.class);
+        net.minecraft.server.level.ServerPlayer.class.getDeclaredMethod("respawnEntityOnShoulder", CompoundTag.class);
+        checks += 3;
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }

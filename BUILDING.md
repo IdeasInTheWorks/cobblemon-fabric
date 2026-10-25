@@ -94,6 +94,14 @@ S05 local source compilation used the following PowerShell command after generat
 
 Stop Gradle/IDE compilers before moving generated caches. Verify absolute paths stay inside the checkout, preserve old outputs in an ignored backup directory, and regenerate only build outputs. S05 preserved old `common/build` and `gradle/build-logic/build` under ignored `build/sprint-05-cache-backups/`; no source or release artifacts were deleted. Prefer a fresh checkout outside OneDrive for future builds.
 
+S07 repeated the source compile (6,005 lines /940 files, still failed) and executed286 focused assertions plus20 tooling tests. Both common and Fabric licence checks pass;49 widener targets remain. The default build-logic output directory hit locked/read-only OneDrive files. Attempts to preserve generated output partly succeeded; nothing in source was deleted. Use this optional local-only init script to regenerate included-build outputs under ignored `build/local-build-logic`:
+
+```powershell
+.\gradlew.bat --init-script scripts/isolated_build_logic.gradle :fabric:validateAccessWidener :common:checkLicenses :fabric:checkLicenses --continue '-Pkotlin.incremental=false' '-Pkotlin.compiler.execution.strategy=in-process' --stacktrace --console=plain
+```
+
+It changes generated output location only. Validation, source compilation and release gates remain enabled; CI uses the normal wrapper. The standalone runner now compiles shoulder/gamerule/movement helpers too. Its286 assertions do not run full entities, mixin transformation, JUnit, Minecraft or world migration. See `porting/sprint-07-summary.json` and the same native roadmap for current estimates, post-push CI and continuation.
+
 Read the first error in the Gradle log before the stack trace. Do not suppress missing Minecraft APIs or widen Fabric's version requirement to make an older binary load. Resolve obsolete access-widener entries against the actual target classes. Verify integration coordinates and official-name compatibility; old intermediary-mapped mods cannot be assumed compatible.
 
 The old Cadix licence plugin crashes on Gradle 9; it was replaced by Yumi Licenser with header checks retained. If the checker reports a mismatch, preserve existing copyright notices while fixing the rule or missing headers; do not bulk rewrite attribution. A missing Adorn release or other integration is a real dependency issue, not permission to remove its source.

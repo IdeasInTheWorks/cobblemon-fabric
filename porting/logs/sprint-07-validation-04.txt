@@ -1,0 +1,252 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Type-safe project accessors is an incubating feature.
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:generateExternalPluginSpecBuilders
+> Task :build-logic:extractPrecompiledScriptPluginPlugins FROM-CACHE
+> Task :build-logic:compilePluginsBlocks FROM-CACHE
+> Task :build-logic:generatePrecompiledScriptPluginAccessors FROM-CACHE
+> Task :build-logic:generateScriptPluginAdapters FROM-CACHE
+> Task :build-logic:compileKotlin FROM-CACHE
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors
+> Task :build-logic:processResources
+> Task :build-logic:classes
+> Task :build-logic:jar
+
+> Configure project :common
+Architectury Loom: 1.17.493
+Project directory 'C:\Users\fizzl\OneDrive\Documents\ChatGPT\Minecraft Mods\cobblemon-fabric\common' is located in OneDrive. This is known to cause issues and slower performance. Consider moving the project to a different location.
+
+> Configure project :fabric
+Project directory 'C:\Users\fizzl\OneDrive\Documents\ChatGPT\Minecraft Mods\cobblemon-fabric\fabric' is located in OneDrive. This is known to cause issues and slower performance. Consider moving the project to a different location.
+
+> Task :common:generateKotlinTemplates UP-TO-DATE
+
+> Task :fabric:validateAccessWidener FAILED
+Could not find field (itemColors:Lnet/minecraft/client/color/item/ItemColors;) in class (net/minecraft/client/Minecraft) on line 23
+Could not find field (origin:Lorg/joml/Vector3f;) in class (net/minecraft/client/model/geom/builders/CubeDefinition) on line 30
+Could not find field (dimensions:Lorg/joml/Vector3f;) in class (net/minecraft/client/model/geom/builders/CubeDefinition) on line 31
+Could not find method (codec()Lcom/mojang/serialization/MapCodec;) in class (net/minecraft/world/level/block/state/BlockBehaviour) on line 42
+Could not find field (compartments:Ljava/util/List;) in class (net/minecraft/world/entity/player/Inventory) on line 45
+Could not find method (calculateParticleLevel(Z)Lnet/minecraft/server/level/ParticleStatus;) in class (net/minecraft/client/renderer/LevelRenderer) on line 51
+Could not find method (register(Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration;)V) in class (net/minecraft/client/particle/ParticleEngine) on line 52
+Could not find field (textureAtlas:Lnet/minecraft/client/renderer/texture/TextureAtlas;) in class (net/minecraft/client/particle/ParticleEngine) on line 53
+Could not find field (cullingFrustum:Lnet/minecraft/client/renderer/culling/Frustum;) in class (net/minecraft/client/renderer/LevelRenderer) on line 54
+Could not find class (net/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType) on line 55
+Could not find class (net/minecraft/client/renderer/rendertype/RenderType$CompositeState) on line 56
+Could not find method (create(Ljava/lang/String;Lcom/mojang/renderpearl/api/vertex/VertexFormat;Lcom/mojang/renderpearl/api/vertex/VertexFormat$Mode;IZZLnet/minecraft/client/renderer/rendertype/RenderType$CompositeState;)Lnet/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType;) in class (net/minecraft/client/renderer/rendertype/RenderType) on line 57
+Could not find class (net/minecraft/client/renderer/RenderStateShard$TransparencyStateShard) on line 58
+Could not find field (RENDERTYPE_ENTITY_TRANSLUCENT_EMISSIVE_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 59
+Could not find field (RENDERTYPE_ENTITY_TRANSLUCENT_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 60
+Could not find field (RENDERTYPE_ENTITY_TRANSLUCENT_CULL_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 61
+Could not find field (RENDERTYPE_ENTITY_CUTOUT_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 62
+Could not find class (net/minecraft/client/renderer/RenderStateShard$TextureStateShard) on line 63
+Could not find field (TRANSLUCENT_TRANSPARENCY:Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 64
+Could not find field (NO_TRANSPARENCY:Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 65
+Could not find class (net/minecraft/client/renderer/RenderStateShard$CullStateShard) on line 66
+Could not find field (CULL:Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 67
+Could not find class (net/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard) on line 68
+Could not find field (COLOR_DEPTH_WRITE:Lnet/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 69
+Could not find class (net/minecraft/client/renderer/RenderStateShard$OverlayStateShard) on line 70
+Could not find field (OVERLAY:Lnet/minecraft/client/renderer/RenderStateShard$OverlayStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 71
+Could not find field (RENDERTYPE_CUTOUT_SHADER:Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 72
+Could not find field (LIGHTMAP:Lnet/minecraft/client/renderer/RenderStateShard$LightmapStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 73
+Could not find field (NO_CULL:Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 74
+Could not find field (COLOR_WRITE:Lnet/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 75
+Could not find field (NO_DEPTH_TEST:Lnet/minecraft/client/renderer/RenderStateShard$DepthTestStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 76
+Could not find class (net/minecraft/client/renderer/RenderStateShard$DepthTestStateShard) on line 77
+Could not find field (LEQUAL_DEPTH_TEST:Lnet/minecraft/client/renderer/RenderStateShard$DepthTestStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 78
+Could not find field (GLINT_TRANSPARENCY:Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 79
+Could not find field (ADDITIVE_TRANSPARENCY:Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;) in class (net/minecraft/client/renderer/RenderStateShard) on line 80
+Could not find class (net/minecraft/world/item/alchemy/PotionBrewing$Mix) on line 86
+Could not find field (shaderLightDirections:[Lorg/joml/Vector3f;) in class (com/mojang/blaze3d/systems/RenderSystem) on line 92
+Could not find class (net/minecraft/world/item/trading/VillagerTrades$ItemsForEmeralds) on line 100
+Could not find method (getSprite(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;) in class (net/minecraft/client/resources/TextureAtlasHolder) on line 110
+Could not find field (textureAtlas:Lnet/minecraft/client/renderer/texture/TextureAtlas;) in class (net/minecraft/client/resources/TextureAtlasHolder) on line 111
+Could not find method (register(Lnet/minecraft/world/item/Item;Lnet/minecraft/resources/Identifier;Lnet/minecraft/client/renderer/item/ClampedItemPropertyFunction;)V) in class (net/minecraft/client/renderer/item/ItemProperties) on line 122
+Could not find class (net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard) on line 132
+Could not find class (net/minecraft/client/renderer/RenderStateShard$LightmapStateShard) on line 133
+Could not find class (net/minecraft/client/gui/Font$StringRenderOutput) on line 138
+Could not find field (states:Ljava/util/Map;) in class (net/minecraft/stats/RecipeBookSettings) on line 146
+Could not find method (spawnDestroyParticles(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V) in class (net/minecraft/world/level/block/Block) on line 157
+Could not find method (setupAttackAnimation(Lnet/minecraft/world/entity/LivingEntity;F)V) in class (net/minecraft/client/model/HumanoidModel) on line 161
+Could not find method (poseRightArm(Lnet/minecraft/world/entity/LivingEntity;)V) in class (net/minecraft/client/model/HumanoidModel) on line 162
+Could not find method (poseLeftArm(Lnet/minecraft/world/entity/LivingEntity;)V) in class (net/minecraft/client/model/HumanoidModel) on line 163
+access-widener validation failed for cobblemon-common.accesswidener
+
+> Task :fabric:checkLicenseMain
+All license header checks passed (22 files).
+
+> Task :fabric:checkLicenseTest NO-SOURCE
+> Task :fabric:checkLicenses
+
+> Task :common:checkLicenseMain
+All license header checks passed (2992 files).
+
+> Task :common:checkLicenseTest
+All license header checks passed (16 files).
+
+> Task :common:checkLicenses
+
+[Incubating] Problems report is available at: file:///C:/Users/fizzl/OneDrive/Documents/ChatGPT/Minecraft%20Mods/cobblemon-fabric/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':fabric:validateAccessWidener' (registered by plugin 'dev.architectury.loom').
+> access-widener validation failed for cobblemon-common.accesswidener
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':fabric:validateAccessWidener' (registered by plugin 'dev.architectury.loom').
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:135)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:288)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:133)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:121)
+	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:41)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.DefaultNodeExecutor.executeLocalTaskNode(DefaultNodeExecutor.java:55)
+	at org.gradle.execution.plan.DefaultNodeExecutor.execute(DefaultNodeExecutor.java:34)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:355)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:343)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:339)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:339)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:328)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+Caused by: java.lang.RuntimeException: access-widener validation failed for cobblemon-common.accesswidener
+	at net.fabricmc.loom.task.ValidateAccessWidenerTask.run(ValidateAccessWidenerTask.java:103)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:259)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:244)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:227)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:210)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:176)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:167)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:47)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:137)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:134)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:134)
+	at org.gradle.internal.execution.steps.ExecuteStep$Mutable.execute(ExecuteStep.java:80)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:51)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:29)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutable(RemovePreviousOutputsStep.java:67)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutable(RemovePreviousOutputsStep.java:39)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:42)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:24)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(ResolveInputChangesStep.java:39)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(ResolveInputChangesStep.java:28)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:76)
+	at org.gradle.internal.Either$Right.fold(Either.java:176)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:74)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:49)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.executeMutable(StoreExecutionStateStep.java:46)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.executeMutable(StoreExecutionStateStep.java:35)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveMutableCachingStateStep.executeDelegate(ResolveMutableCachingStateStep.java:70)
+	at org.gradle.internal.execution.steps.ResolveMutableCachingStateStep.executeDelegate(ResolveMutableCachingStateStep.java:32)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:69)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:37)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(ResolveChangesStep.java:63)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(ResolveChangesStep.java:34)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.ValidateStep$Mutable.executeDelegate(ValidateStep.java:79)
+	at org.gradle.internal.execution.steps.ValidateStep$Mutable.executeDelegate(ValidateStep.java:65)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:105)
+	at org.gradle.internal.execution.steps.ValidateStep$Mutable.execute(ValidateStep.java:65)
+	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.executeMutable(CaptureMutableStateBeforeExecutionStep.java:86)
+	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.execute(CaptureMutableStateBeforeExecutionStep.java:65)
+	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.execute(CaptureMutableStateBeforeExecutionStep.java:45)
+	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeWithNonEmptySources(SkipEmptyMutableWorkStep.java:210)
+	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeMutable(SkipEmptyMutableWorkStep.java:90)
+	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeMutable(SkipEmptyMutableWorkStep.java:53)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.executeMutable(LoadPreviousExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.executeMutable(LoadPreviousExecutionStateStep.java:23)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(HandleStaleOutputsStep.java:77)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(HandleStaleOutputsStep.java:43)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$executeMutable$0(AssignMutableWorkspaceStep.java:34)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:305)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.executeMutable(AssignMutableWorkspaceStep.java:30)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.executeMutable(AssignMutableWorkspaceStep.java:21)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:56)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:38)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:68)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:132)
+	... 30 more
+
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.6.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 1m 13s
+14 actionable tasks: 8 executed, 5 from cache, 1 up-to-date

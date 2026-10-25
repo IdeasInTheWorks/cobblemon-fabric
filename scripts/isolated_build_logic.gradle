@@ -1,0 +1,8 @@
+// Local OneDrive workaround: redirect only generated included-build output.
+// Usage: gradlew --init-script scripts/isolated_build_logic.gradle <normal tasks>
+// Source compilation, access-widener validation and licence gates remain enabled.
+gradle.beforeProject { project ->
+    if (project.projectDir.name == 'build-logic' && project.projectDir.parentFile.name == 'gradle') {
+        project.layout.buildDirectory.set(project.layout.projectDirectory.dir('../../build/local-build-logic'))
+    }
+}

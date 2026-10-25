@@ -2,7 +2,28 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S06 checkpoint (2026-10-25)
+## Sprint S07 checkpoint (2026-10-25)
+
+Partial R019/R016 work under `S07-R019`, owner `codex-sprint07-01a16f8a`, with exclusive integration resource. Source milestone `099c76edfeb82816e0e5065f3a89fe465577ba9f` restores shoulder storage/synchronization, walking counters, experience callbacks, evolution cleanup and six typed gamerules. Read the live registry before resuming; a saved lease or Sheet snapshot never grants editing/push authority. Release only after the durable checkpoint is pushed, then acquire a fresh scoped lease for later work.
+
+Native shoulder NBT now lives on ServerPlayer; vanilla clients receive parrot variants only. The native server save fields remain authoritative, while two copied NBT metadata fields restore Cobblemon client representation. They allocate IDs during Player static initialization before subclass IDs, and their serializer appends after all prior custom serializers. Native setters synchronize updates, loads and player restore paths. Recall/dismount hooks moved to ServerPlayer and preserve the native 20-tick grace period, party ownership and non-Pokemon respawn policy. Scanner/render callers use the new reader. Matching client/server builds are required; real tracking, scanning, rendering, disconnect/restart and mixin application remain untested.
+
+All six gamerule defaults/categories are retained under namespaced registry IDs. A strict adapter participates in vanilla GameRuleRegistryFix's old-world conversion: legacy true/false strings become booleans, explicit modern settings win, unknown addon fields remain and conversion is idempotent. Invalid legacy values fail rather than silently reset. New command IDs are listed in sprint-07-source-audit.json and source definitions; e.g. `/gamerule cobblemon:do_pokemon_loot false`. 122 namespaced translation aliases were added in 28 languages without replacing old keys/values. An earlier upgrade that already discarded unknown custom gamerules cannot be repaired from absent data; retain untouched backups.
+
+Walking retains the original horizontal-distance float accumulator at the native movement-emission site instead of target moveDist, which also counts vertical climbing. XP uses the new ServerLevel callback and retains the consumed/player-hit/always-drop/loot-rule guard and base reward policy. The cosmetic evolution helper keeps KILLED removal plus the death game event on both sides. Removed ServerPlayer.serverLevel calls now use covariant level across party/battle/sendout and related handlers.
+
+Executed results:
+
+- Two common Kotlin compiles fail at **6,024/947**, then **6,005 diagnostic lines /940 files**; 83 fewer lines (1.4%) than S06. Counts include cascades, not independent defects or completion percentage. PokemonEntity, PokemonServerDelegate, CobblemonGameRules and CobblemonImplementation have zero diagnostics in the final pass. Full Java/common/Fabric compilation remains blocked.
+- **286 focused assertions pass twice**, compiling actual production Java helpers against the checksum-verified target JAR. Includes legacy/modern gamerule conflicts/defaults, the actual vanilla converter followed by our adapter, shoulder NBT frames/copy isolation/clearing, left/right IDs and walking math, plus previous cases. This does not execute full entities, mixin transformations, JUnit or Minecraft processes. **20 tooling tests pass**.
+- Validation attempts01-03 stop in locked generated build-logic outputs. The attempted in-workspace move could only partly preserve generated files; source was untouched. Attempt04 uses `--init-script scripts/isolated_build_logic.gradle`, redirecting only generated included-build outputs to ignored `build/local-build-logic`; normal validation stays enabled. Common main/test and Fabric headers pass. AW misses fall **54 ->49** by migrating the five shoulder targets to ServerPlayer; the remaining49 still fail. All logs retained.
+- No client/server/gameplay/multiplayer/world-migration tests, installable JAR, validated release or completed-work PR. No upstream push or production-world changes.
+
+Roadmap accepted tasks remain **12/44 (27.3%)**, **32/44 (72.7%)** left. The dashboard now shows this prominently with a native doughnut chart. These are equal task counts, not effort-weighted progress or gameplay readiness. Original task acceptance is unchanged. Remaining engineering person-hours (low/likely/high; Low confidence): R019 **20/40/80** (previous24/48/96), R016 **10/20/40** (previous12/24/48); whole roadmap **566/1132/2272**. Actual hours unmeasured. Other estimates unchanged.
+
+Next: finish R019 generic entities/attributes/equipment and initialization; R016 advancements/commands/permissions and real gamerule/DFU validation; R020 remaining AI/path-node/attributes and live walking/riding tests. R013/R015 construction/legacy-data gates remain open. Rendering/input, networking and AW49 still block release. Dashboard trend is now A61:C68 before the S07 insertion; the final Sheet Handoff records the current location and CI/lease closure. Preserve all native Sheet structure and use fresh scoped claims/isolated worktrees for any future concurrent workers.
+
+## Sprint S06 checkpoint (historical, 2026-10-25)
 
 Partial R019/R020 work, ID `S06-R019-R020`, owner `codex-sprint06-01a16f8a`, with exclusive integration resource and scoped expiring lease. Read the live registry before resuming; saved local lease and Sheet are not authority. Release only after the durable checkpoint is pushed; acquire a fresh lease before later edits. The same native Sheet records actual CI and closure.
 

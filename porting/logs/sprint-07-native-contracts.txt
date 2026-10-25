@@ -1,0 +1,463 @@
+SOURCE s07-old-entity.txt
+        50: getfield      #712                // Field K:I
+        53: iconst_1
+        54: isub
+        55: putfield      #712                // Field K:I
+        58: aload_0
+        59: aload_0
+        60: getfield      #714                // Field Z:F
+        63: putfield      #716                // Field Y:F
+        66: aload_0
+        67: aload_0
+        68: invokevirtual #672                // Method dG:()F
+        71: putfield      #682                // Field P:F
+        74: aload_0
+        75: aload_0
+        76: invokevirtual #675                // Method dE:()F
+        79: putfield      #684                // Field O:F
+        82: aload_0
+        83: invokevirtual #719                // Method bP:()V
+        86: aload_0
+        87: invokevirtual #722                // Method br:()Z
+        90: ifeq          97
+        93: aload_0
+        94: invokevirtual #725                // Method bs:()V
+        97: aload_0
+        98: aload_0
+        99: getfield      #727                // Field az:Z
+       102: putfield      #729                // Field aA:Z
+       105: aload_0
+       106: iconst_0
+       107: putfield      #727                // Field az:Z
+       110: aload_0
+       111: invokevirtual #732                // Method bm:()Z
+       114: pop
+       115: aload_0
+       116: invokevirtual #734                // Method H:()V
+       119: aload_0
+       120: invokevirtual #737                // Method bl:()V
+       123: aload_0
+       124: invokevirtual #485                // Method dO:()Ldcw;
+       127: getfield      #739                // Field dcw.B:Z
+       130: ifeq          140
+       133: aload_0
+       134: invokevirtual #741                // Method aD:()V
+       137: goto          246
+       140: aload_0
+       141: getfield      #325                // Field aJ:I
+       144: ifle          246
+       147: aload_0
+       148: invokevirtual #743                // Method be:()Z
+       151: ifeq          178
+       154: aload_0
+       650: iload         20
+       652: ifne          658
+       655: dconst_0
+       656: dstore        14
+       658: aload_0
+       659: dup
+       660: getfield      #714                // Field Z:F
+       663: aload_3
+       664: invokevirtual #996                // Method exc.h:()D
+       667: d2f
+       668: ldc           #190                // float 0.6f
+       670: fmul
+       671: fadd
+       672: putfield      #714                // Field Z:F
+       675: aload_0
+       676: dup
+       677: getfield      #998                // Field aa:F
+       680: dload         12
+       682: dload         12
+       684: dmul
+       685: dload         14
+       687: dload         14
+       689: dmul
+       690: dadd
+       691: dload         16
+       693: dload         16
+       695: dmul
+       696: dadd
+       697: invokestatic  #1003               // Method java/lang/Math.sqrt:(D)D
+       700: d2f
+       701: ldc           #190                // float 0.6f
+       703: fmul
+       704: fadd
+       705: putfield      #998                // Field aa:F
+       708: aload_0
+       709: getfield      #998                // Field aa:F
+       712: aload_0
+       713: getfield      #313                // Field aI:F
+       716: fcmpl
+       717: ifle          841
+       720: aload         19
+       722: invokevirtual #1005               // Method dtc.i:()Z
+       725: ifne          841
+       728: aload         18
+       730: aload         8
+       732: invokevirtual #859                // Method jd.equals:(Ljava/lang/Object;)Z
+       735: istore        21
+       737: aload_0
+       738: aload         8
+       740: aload         9
+       742: aload         11
+       663: aload_3
+       664: invokevirtual #996                // Method exc.h:()D
+       667: d2f
+       668: ldc           #190                // float 0.6f
+       670: fmul
+       671: fadd
+       672: putfield      #714                // Field Z:F
+       675: aload_0
+       676: dup
+       677: getfield      #998                // Field aa:F
+       680: dload         12
+       682: dload         12
+       684: dmul
+       685: dload         14
+       687: dload         14
+       689: dmul
+       690: dadd
+       691: dload         16
+       693: dload         16
+       695: dmul
+       696: dadd
+       697: invokestatic  #1003               // Method java/lang/Math.sqrt:(D)D
+       700: d2f
+       701: ldc           #190                // float 0.6f
+       703: fmul
+       704: fadd
+       705: putfield      #998                // Field aa:F
+       708: aload_0
+       709: getfield      #998                // Field aa:F
+       712: aload_0
+       713: getfield      #313                // Field aI:F
+       716: fcmpl
+       717: ifle          841
+       720: aload         19
+       722: invokevirtual #1005               // Method dtc.i:()Z
+       725: ifne          841
+       728: aload         18
+       730: aload         8
+       732: invokevirtual #859                // Method jd.equals:(Ljava/lang/Object;)Z
+       735: istore        21
+       737: aload_0
+       738: aload         8
+       740: aload         9
+       742: aload         11
+       744: invokevirtual #1007               // Method bsr$b.c:()Z
+       747: iload         21
+       749: aload_2
+       750: invokevirtual #1010               // Method a:(Ljd;Ldtc;ZZLexc;)Z
+       753: istore        22
+       755: iload         21
+       757: ifne          780
+SOURCE s07-entity.txt
+         0: aload_0
+         1: getfield      #121                // Field tags:Ljava/util/Set;
+         4: aload_1
+         5: invokeinterface #431,  2          // InterfaceMethod java/util/Set.remove:(Ljava/lang/Object;)Z
+        10: ireturn
+
+  public void kill(net.minecraft.server.level.ServerLevel);
+    Code:
+         0: aload_0
+         1: getstatic     #434                // Field net/minecraft/world/entity/Entity$RemovalReason.KILLED:Lnet/minecraft/world/entity/Entity$RemovalReason;
+         4: invokevirtual #440                // Method remove:(Lnet/minecraft/world/entity/Entity$RemovalReason;)V
+         7: aload_0
+         8: getstatic     #443                // Field net/minecraft/world/level/gameevent/GameEvent.ENTITY_DIE:Lnet/minecraft/core/Holder$Reference;
+        11: invokevirtual #449                // Method gameEvent:(Lnet/minecraft/core/Holder;)V
+        14: return
+
+  public final void discard();
+    Code:
+         0: aload_0
+         1: getstatic     #453                // Field net/minecraft/world/entity/Entity$RemovalReason.DISCARDED:Lnet/minecraft/world/entity/Entity$RemovalReason;
+         4: invokevirtual #440                // Method remove:(Lnet/minecraft/world/entity/Entity$RemovalReason;)V
+         7: return
+
+  protected abstract void defineSynchedData(net.minecraft.network.syncher.SynchedEntityData$Builder);
+
+  public net.minecraft.network.syncher.SynchedEntityData getEntityData();
+    Code:
+         0: aload_0
+         1: getfield      #297                // Field entityData:Lnet/minecraft/network/syncher/SynchedEntityData;
+         4: areturn
+
+  public boolean equals(java.lang.Object);
+    Code:
+         0: aload_1
+         1: instanceof    #7                  // class net/minecraft/world/entity/Entity
+         4: ifeq          29
+         7: aload_1
+         8: checkcast     #7                  // class net/minecraft/world/entity/Entity
+        11: astore_2
+        12: aload_2
+        13: invokevirtual #456                // Method getId:()I
+        16: aload_0
+        17: invokevirtual #456                // Method getId:()I
+        20: if_icmpne     27
+        23: iconst_1
+        24: goto          28
+        27: iconst_0
+        28: ireturn
+        29: iconst_0
+        30: ireturn
+
+
+  protected boolean omnidirectionalAirMover();
+    Code:
+         0: iconst_0
+         1: ireturn
+
+  private void applyMovementEmissionAndPlaySound(net.minecraft.world.entity.Entity$MovementEmission, net.minecraft.world.phys.Vec3, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState);
+    Code:
+         0: ldc_w         #1107               // float 0.6f
+         3: fstore        5
+         5: aload_2
+         6: invokevirtual #902                // Method net/minecraft/world/phys/Vec3.length:()D
+         9: ldc2_w        #1108               // double 0.6000000238418579d
+        12: dmul
+        13: d2f
+        14: fstore        6
+        16: aload_2
+        17: invokevirtual #1110               // Method net/minecraft/world/phys/Vec3.horizontalDistance:()D
+        20: ldc2_w        #1108               // double 0.6000000238418579d
+        23: dmul
+        24: d2f
+        25: fstore        7
+        27: aload_0
+        28: invokevirtual #1113               // Method getOnPos:()Lnet/minecraft/core/BlockPos;
+        31: astore        8
+        33: aload_0
+        34: invokevirtual #321                // Method level:()Lnet/minecraft/world/level/Level;
+        37: aload         8
+        39: invokevirtual #984                // Method net/minecraft/world/level/Level.getBlockState:(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+        42: astore        9
+        44: aload_0
+        45: aload         9
+        47: invokevirtual #1116               // Method isStateClimbable:(Lnet/minecraft/world/level/block/state/BlockState;)Z
+        50: istore        10
+        52: aload_0
+        53: dup
+        54: getfield      #1120               // Field moveDist:F
+        57: iload         10
+        59: ifeq          67
+        62: fload         6
+        64: goto          69
+        67: fload         7
+        69: fadd
+        70: putfield      #1120               // Field moveDist:F
+        73: aload_0
+        74: dup
+        75: getfield      #1123               // Field flyDist:F
+        78: fload         6
+        80: fadd
+        81: putfield      #1123               // Field flyDist:F
+        84: aload_0
+SOURCE s07-living.txt
+        49: return
+
+  protected void dropEquipment(net.minecraft.server.level.ServerLevel);
+    Code:
+         0: return
+
+  protected void dropExperience(net.minecraft.server.level.ServerLevel, net.minecraft.world.entity.Entity);
+    Code:
+         0: aload_0
+         1: invokevirtual #2130               // Method wasExperienceConsumed:()Z
+         4: ifne          61
+         7: aload_0
+         8: invokevirtual #2133               // Method isAlwaysExperienceDropper:()Z
+        11: ifne          47
+        14: aload_0
+        15: getfield      #695                // Field lastHurtByPlayerMemoryTime:I
+        18: ifle          61
+        21: aload_0
+        22: invokevirtual #2136               // Method shouldDropExperience:()Z
+        25: ifeq          61
+        28: aload_1
+        29: invokevirtual #825                // Method net/minecraft/server/level/ServerLevel.getGameRules:()Lnet/minecraft/world/level/gamerules/GameRules;
+        32: getstatic     #829                // Field net/minecraft/world/level/gamerules/GameRules.MOB_DROPS:Lnet/minecraft/world/level/gamerules/GameRule;
+        35: invokevirtual #835                // Method net/minecraft/world/level/gamerules/GameRules.get:(Lnet/minecraft/world/level/gamerules/GameRule;)Ljava/lang/Object;
+        38: checkcast     #246                // class java/lang/Boolean
+        41: invokevirtual #838                // Method java/lang/Boolean.booleanValue:()Z
+        44: ifeq          61
+        47: aload_1
+        48: aload_0
+        49: invokevirtual #1819               // Method position:()Lnet/minecraft/world/phys/Vec3;
+        52: aload_0
+        53: aload_1
+        54: aload_2
+        55: invokevirtual #2139               // Method getExperienceReward:(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/Entity;)I
+        58: invokestatic  #2143               // Method net/minecraft/world/entity/ExperienceOrb.award:(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/phys/Vec3;I)V
+        61: return
+
+  protected void dropCustomDeathLoot(net.minecraft.server.level.ServerLevel, net.minecraft.world.damagesource.DamageSource, boolean);
+    Code:
+         0: return
+
+  public long getLootTableSeed();
+    Code:
+         0: lconst_0
+         1: lreturn
+
+  protected float getKnockback(net.minecraft.world.entity.Entity, net.minecraft.world.damagesource.DamageSource);
+    Code:
+         0: aload_0
+         1: getstatic     #337                // Field net/minecraft/world/entity/ai/attributes/Attributes.ATTACK_KNOCKBACK:Lnet/minecraft/core/Holder;
+         4: invokevirtual #733                // Method getAttributeValue:(Lnet/minecraft/core/Holder;)D
+SOURCE s07-server-player.txt
+        81: putfield      #1206               // Field timeEntitySatOnShoulder:J
+        84: iconst_1
+        85: ireturn
+        86: iconst_0
+        87: ireturn
+
+  protected void removeEntitiesOnShoulder();
+    Code:
+         0: aload_0
+         1: getfield      #1206               // Field timeEntitySatOnShoulder:J
+         4: ldc2_w        #1209               // long 20l
+         7: ladd
+         8: aload_0
+         9: invokevirtual #457                // Method level:()Lnet/minecraft/server/level/ServerLevel;
+        12: invokevirtual #1203               // Method net/minecraft/server/level/ServerLevel.getGameTime:()J
+        15: lcmp
+        16: ifge          57
+        19: aload_0
+        20: aload_0
+        21: invokevirtual #484                // Method getShoulderEntityLeft:()Lnet/minecraft/nbt/CompoundTag;
+        24: invokevirtual #1211               // Method respawnEntityOnShoulder:(Lnet/minecraft/nbt/CompoundTag;)V
+        27: aload_0
+        28: new           #157                // class net/minecraft/nbt/CompoundTag
+        31: dup
+        32: invokespecial #159                // Method net/minecraft/nbt/CompoundTag."<init>":()V
+        35: invokevirtual #419                // Method setShoulderEntityLeft:(Lnet/minecraft/nbt/CompoundTag;)V
+        38: aload_0
+        39: aload_0
+        40: invokevirtual #491                // Method getShoulderEntityRight:()Lnet/minecraft/nbt/CompoundTag;
+        43: invokevirtual #1211               // Method respawnEntityOnShoulder:(Lnet/minecraft/nbt/CompoundTag;)V
+        46: aload_0
+        47: new           #157                // class net/minecraft/nbt/CompoundTag
+        50: dup
+        51: invokespecial #159                // Method net/minecraft/nbt/CompoundTag."<init>":()V
+        54: invokevirtual #425                // Method setShoulderEntityRight:(Lnet/minecraft/nbt/CompoundTag;)V
+        57: return
+
+  private void respawnEntityOnShoulder(net.minecraft.nbt.CompoundTag);
+    Code:
+         0: aload_0
+         1: invokevirtual #457                // Method level:()Lnet/minecraft/server/level/ServerLevel;
+         4: astore_2
+         5: aload_1
+         6: invokevirtual #488                // Method net/minecraft/nbt/CompoundTag.isEmpty:()Z
+         9: ifne          97
+        12: new           #1214               // class net/minecraft/util/ProblemReporter$ScopedCollector
+        15: dup
+        16: aload_0
+        17: invokevirtual #1216               // Method problemPath:()Lnet/minecraft/util/ProblemReporter$PathElement;
+        20: getstatic     #584                // Field LOGGER:Lorg/slf4j/Logger;
+        23: invokespecial #1220               // Method net/minecraft/util/ProblemReporter$ScopedCollector."<init>":(Lnet/minecraft/util/ProblemReporter$PathElement;Lorg/slf4j/Logger;)V
+  public net.minecraft.nbt.CompoundTag getShoulderEntityLeft();
+    Code:
+         0: aload_0
+         1: getfield      #160                // Field shoulderEntityLeft:Lnet/minecraft/nbt/CompoundTag;
+         4: areturn
+
+  protected void setShoulderEntityLeft(net.minecraft.nbt.CompoundTag);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: putfield      #160                // Field shoulderEntityLeft:Lnet/minecraft/nbt/CompoundTag;
+         5: aload_0
+         6: aload_1
+         7: invokestatic  #3192               // Method extractParrotVariant:(Lnet/minecraft/nbt/CompoundTag;)Ljava/util/Optional;
+        10: invokevirtual #3196               // Method setShoulderParrotLeft:(Ljava/util/Optional;)V
+        13: return
+
+  public net.minecraft.nbt.CompoundTag getShoulderEntityRight();
+    Code:
+         0: aload_0
+         1: getfield      #164                // Field shoulderEntityRight:Lnet/minecraft/nbt/CompoundTag;
+         4: areturn
+
+  protected void setShoulderEntityRight(net.minecraft.nbt.CompoundTag);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: putfield      #164                // Field shoulderEntityRight:Lnet/minecraft/nbt/CompoundTag;
+         5: aload_0
+         6: aload_1
+         7: invokestatic  #3192               // Method extractParrotVariant:(Lnet/minecraft/nbt/CompoundTag;)Ljava/util/Optional;
+        10: invokevirtual #3199               // Method setShoulderParrotRight:(Ljava/util/Optional;)V
+        13: return
+
+  public long registerAndUpdateEnderPearlTicket(net.minecraft.world.entity.projectile.throwableitemprojectile.ThrownEnderpearl);
+    Code:
+         0: aload_1
+         1: invokevirtual #628                // Method net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.level:()Lnet/minecraft/world/level/Level;
+         4: astore_3
+         5: aload_3
+         6: instanceof    #462                // class net/minecraft/server/level/ServerLevel
+         9: ifeq          39
+        12: aload_3
+        13: checkcast     #462                // class net/minecraft/server/level/ServerLevel
+        16: astore_2
+        17: aload_1
+        18: invokevirtual #3202               // Method net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.chunkPosition:()Lnet/minecraft/world/level/ChunkPos;
+        21: astore_3
+        22: aload_0
+        23: aload_1
+        24: invokevirtual #3203               // Method registerEnderPearl:(Lnet/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl;)V
+  public net.minecraft.nbt.CompoundTag getShoulderEntityRight();
+    Code:
+         0: aload_0
+         1: getfield      #164                // Field shoulderEntityRight:Lnet/minecraft/nbt/CompoundTag;
+         4: areturn
+
+  protected void setShoulderEntityRight(net.minecraft.nbt.CompoundTag);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: putfield      #164                // Field shoulderEntityRight:Lnet/minecraft/nbt/CompoundTag;
+         5: aload_0
+         6: aload_1
+         7: invokestatic  #3192               // Method extractParrotVariant:(Lnet/minecraft/nbt/CompoundTag;)Ljava/util/Optional;
+        10: invokevirtual #3199               // Method setShoulderParrotRight:(Ljava/util/Optional;)V
+        13: return
+
+  public long registerAndUpdateEnderPearlTicket(net.minecraft.world.entity.projectile.throwableitemprojectile.ThrownEnderpearl);
+    Code:
+         0: aload_1
+         1: invokevirtual #628                // Method net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.level:()Lnet/minecraft/world/level/Level;
+         4: astore_3
+         5: aload_3
+         6: instanceof    #462                // class net/minecraft/server/level/ServerLevel
+         9: ifeq          39
+        12: aload_3
+        13: checkcast     #462                // class net/minecraft/server/level/ServerLevel
+        16: astore_2
+        17: aload_1
+        18: invokevirtual #3202               // Method net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.chunkPosition:()Lnet/minecraft/world/level/ChunkPos;
+        21: astore_3
+        22: aload_0
+        23: aload_1
+        24: invokevirtual #3203               // Method registerEnderPearl:(Lnet/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl;)V
+        27: aload_2
+        28: invokevirtual #3207               // Method net/minecraft/server/level/ServerLevel.resetEmptyTime:()V
+        31: aload_2
+        32: aload_3
+        33: invokestatic  #655                // Method placeEnderPearlTicket:(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/ChunkPos;)J
+        36: lconst_1
+        37: lsub
+        38: lreturn
+        39: lconst_0
+        40: lreturn
+
+  public static long placeEnderPearlTicket(net.minecraft.server.level.ServerLevel, net.minecraft.world.level.ChunkPos);
+    Code:
+         0: aload_0
+         1: invokevirtual #805                // Method net/minecraft/server/level/ServerLevel.getChunkSource:()Lnet/minecraft/server/level/ServerChunkCache;
+         4: getstatic     #3210               // Field net/minecraft/server/level/TicketType.ENDER_PEARL:Lnet/minecraft/server/level/TicketType;
+         7: aload_1
