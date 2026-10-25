@@ -649,6 +649,7 @@ final class Minecraft263DataContracts {
         } finally { particleBuffer.release(); }
         checks += Minecraft263VehicleContracts.run(vanilla);
         checks += Minecraft263ModelContracts.run();
+        checks += Minecraft263RenderContracts.run();
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }

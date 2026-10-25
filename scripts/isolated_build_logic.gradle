@@ -3,6 +3,10 @@
 // Source compilation, access-widener validation and licence gates remain enabled.
 gradle.beforeProject { project ->
     if (project.projectDir.name == 'build-logic' && project.projectDir.parentFile.name == 'gradle') {
-        project.layout.buildDirectory.set(project.layout.projectDirectory.dir('../../build/local-build-logic'))
+        def output = System.getProperty('cobblemon.localBuildLogicOutput', 'local-build-logic')
+        if (!(output ==~ /[A-Za-z0-9][A-Za-z0-9._-]*/)) {
+            throw new GradleException('cobblemon.localBuildLogicOutput must be a directory name inside build/')
+        }
+        project.layout.buildDirectory.set(project.layout.projectDirectory.dir('../../build/' + output))
     }
 }

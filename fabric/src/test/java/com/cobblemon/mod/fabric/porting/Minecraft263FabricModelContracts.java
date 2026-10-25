@@ -11,6 +11,7 @@ package com.cobblemon.mod.fabric.porting;
 
 import com.cobblemon.mod.common.client.model.StandaloneModelKey;
 import com.cobblemon.mod.fabric.client.model.StandaloneModels;
+import com.cobblemon.mod.fabric.client.model.AtlasReloadListener;
 import com.google.gson.JsonParser;
 import java.lang.reflect.Proxy;
 import java.nio.file.Files;
@@ -78,6 +79,32 @@ public final class Minecraft263FabricModelContracts {
         String bone="com/cobblemon/mod/common/client/render/models/blockbench/pose/Bone";
         check(common.getAsJsonObject("injected_interfaces").getAsJsonArray(modelPart).get(0).getAsString().equals(bone),"common injection names the actual official target class");
         check(fabric.getAsJsonObject("custom").getAsJsonObject("loom:injected_interfaces").getAsJsonArray(modelPart).get(0).getAsString().equals(bone),"Fabric/common compile-time Bone contracts agree");
-        System.out.println("{\"passed\":true,\"checks\":"+checks+",\"scope\":\"production standalone registry with native Fabric API context; no bake/reload/GPU\"}");
+        var atlasTexture = Identifier.parse("contract:textures/atlas/berries.png");
+        var atlasDefinition = Identifier.parse("contract:berries");
+        // Actual AtlasRegistry initialization needs Fabric's applied accessor mixin: game-bootstrap gate.
+        var atlas = AtlasReloadListener.configuration(atlasTexture, atlasDefinition);
+        check(atlas.textureId().equals(atlasTexture), "native atlas descriptor retains the texture path");
+        check(atlas.definitionLocation().equals(atlasDefinition), "native atlas descriptor retains the source definition");
+        check(atlas.createMipmaps(), "berries retain mipmap generation");
+        var manager = (net.minecraft.server.packs.resources.ResourceManager) Proxy.newProxyInstance(
+                Minecraft263FabricModelContracts.class.getClassLoader(), new Class<?>[] {net.minecraft.server.packs.resources.ResourceManager.class},
+                (proxy, method, arguments) -> null);
+        var applied = new AtomicReference<net.minecraft.server.packs.resources.ResourceManager>();
+        var listener = new AtlasReloadListener(Identifier.parse("contract:atlas_reload"), applied::set);
+        check(listener.getFabricDependencies().equals(List.of(net.fabricmc.fabric.api.resource.ResourceReloadListenerKeys.MODELS)),
+                "coded geometry declares native model/atlas application dependency");
+        var ready = new java.util.concurrent.CompletableFuture<Void>();
+        var barrier = new net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier() {
+            public <T> java.util.concurrent.CompletableFuture<T> wait(T value) { return ready.thenApply(ignored -> value); }
+        };
+        var tasks = new ArrayList<Runnable>();
+        var completion = listener.reload(new net.minecraft.server.packs.resources.PreparableReloadListener.SharedState(manager),
+                Runnable::run, barrier, tasks::add);
+        check(applied.get() == null && tasks.isEmpty() && !completion.isDone(), "coded assets wait for the preparation barrier");
+        ready.complete(null);
+        check(applied.get() == null && tasks.size() == 1, "coded assets run only on the supplied apply executor");
+        tasks.removeFirst().run();
+        check(completion.isDone() && !completion.isCompletedExceptionally() && applied.get() == manager, "native shared resource manager reaches the apply callback");
+        System.out.println("{\"passed\":true,\"checks\":"+checks+",\"scope\":\"production standalone registry, atlas descriptors and reload callback with native Fabric API; no real atlas registration/bake/reload/GPU\"}");
     }
 }

@@ -53,7 +53,13 @@ def main():
     out = root / "build/data-contracts"
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
-    sources = [root / "common/src/main/java/com/cobblemon/mod/common/client/model/StandaloneModelKey.java",
+    sources = [root / "common/src/main/java/com/cobblemon/mod/common/client/model/BlockModelGeometry.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/ModelBufferSource.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/NativeRenderSetups.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/FrameResources.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/TextureInterpolation.java",
+               root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263RenderContracts.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/StandaloneModelKey.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/LegacyItemModels.java",
                root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263ModelContracts.java",
                root / "common/src/main/java/com/cobblemon/mod/common/entity/boat/BoatDropItem.java",
@@ -78,7 +84,8 @@ def main():
                root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java",
                root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft121RandomContracts.java"]
     if fabric_info:
-        sources.extend([root / "fabric/src/main/java/com/cobblemon/mod/fabric/client/model/StandaloneModels.java",
+        sources.extend([root / "fabric/src/main/java/com/cobblemon/mod/fabric/client/model/AtlasReloadListener.java",
+                        root / "fabric/src/main/java/com/cobblemon/mod/fabric/client/model/StandaloneModels.java",
                         root / "fabric/src/test/java/com/cobblemon/mod/fabric/porting/Minecraft263FabricModelContracts.java"])
     argfile = out / "javac.args"
     argfile.write_text("\n".join(["--release", "25", "-proc:none", "-classpath", quoted(classpath),
