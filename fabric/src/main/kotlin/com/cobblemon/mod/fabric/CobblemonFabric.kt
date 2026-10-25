@@ -254,6 +254,7 @@ object CobblemonFabric : CobblemonImplementation {
         EntityDataSerializers.registerSerializer(UUIDSetDataSerializer)
         EntityDataSerializers.registerSerializer(NPCPlayerTextureSerializer)
         EntityDataSerializers.registerSerializer(RideBoostsDataSerializer)
+        EntityDataSerializers.registerSerializer(OptionalUuidDataSerializer.INSTANCE)
     }
 
     override fun registerItems() {

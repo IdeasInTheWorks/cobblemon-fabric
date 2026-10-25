@@ -25,7 +25,11 @@ public final class ItemUseResults {
     public static InteractionResult pass(ItemStack stack) { return InteractionResult.PASS; }
     public static InteractionResult fail(ItemStack stack) { return InteractionResult.FAIL; }
     public static InteractionResult sidedSuccess(ItemStack stack, boolean clientSide) {
-        return withStack(clientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME, stack);
+        return withStack(sidedSuccess(clientSide), stack);
+    }
+    /** Entity interactions retain sided swing behavior without replacing an in-hand stack. */
+    public static InteractionResult sidedSuccess(boolean clientSide) {
+        return clientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
     }
     public static InteractionResult withStack(InteractionResult result, ItemStack stack) {
         return result instanceof InteractionResult.Success success ? success.heldItemTransformedTo(stack) : result;

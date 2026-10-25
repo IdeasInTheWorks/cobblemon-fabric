@@ -208,11 +208,12 @@ class PokemonServerDelegate : PokemonSideDelegate {
                             opponentValue.obj as ServerPlayer
                         } else {
                             val paramString = opponentValue.asString()
+                            val server = (entity.level() as? ServerLevel)?.server ?: return@addFunction DoubleValue.ZERO
                             val playerUUID = paramString.asUUID
                             if (playerUUID != null) {
-                                entity.server!!.playerList.getPlayer(playerUUID) ?: return@addFunction DoubleValue.ZERO
+                                server.playerList.getPlayer(playerUUID) ?: return@addFunction DoubleValue.ZERO
                             } else {
-                                entity.server!!.playerList.getPlayerByName(paramString) ?: return@addFunction DoubleValue.ZERO
+                                server.playerList.getPlayerByName(paramString) ?: return@addFunction DoubleValue.ZERO
                             }
                         }
 
