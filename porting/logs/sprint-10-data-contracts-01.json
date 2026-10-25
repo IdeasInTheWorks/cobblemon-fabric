@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "game_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "compile_exit": 1,
+  "compile_stdout": "",
+  "compile_stderr": "C:\\Users\\fizzl\\OneDrive\\Documents\\ChatGPT\\Minecraft Mods\\cobblemon-fabric\\common\\src\\main\\java\\com\\cobblemon\\mod\\common\\client\\model\\LegacyItemModels.java:126: error: incompatible types: no instance(s) of type variable(s) A exist so that Codec<A> conforms to MapCodec<Unbaked>\n        @Override public MapCodec<Unbaked> type() { return MapCodec.unitCodec(this); }\n                                                                             ^\n  where A is a type-variable:\n    A extends Object declared in method <A>unitCodec(A)\nC:\\Users\\fizzl\\OneDrive\\Documents\\ChatGPT\\Minecraft Mods\\cobblemon-fabric\\common\\src\\main\\java\\com\\cobblemon\\mod\\common\\client\\model\\LegacyItemModels.java:143: error: incompatible types: no instance(s) of type variable(s) A exist so that Codec<A> conforms to MapCodec<Tint>\n        @Override public MapCodec<Tint> type() { return MapCodec.unitCodec(this); }\n                                                                          ^\n  where A is a type-variable:\n    A extends Object declared in method <A>unitCodec(A)\nNote: Some input files use or override a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n2 errors\n",
+  "inventory_fixture": "Only missing MAX_STACK_SIZE components are bound for two test items; game/datapack defaults and gameplay are not tested"
+}

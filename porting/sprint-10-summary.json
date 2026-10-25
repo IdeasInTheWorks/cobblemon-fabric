@@ -1,0 +1,96 @@
+{
+  "sprint": "S10",
+  "baseline_commit": "3a5c251da4f475558bbe7464dbde928dadc489da",
+  "work_id": "S10-R022-R023",
+  "owner": "codex-sprint10-01a16f8a",
+  "lease_id": "c1f25346-a850-47ef-8fd7-efdf3bb480fc",
+  "source_status": "Partial R022/R023 model migration; original bake/render acceptance stays open",
+  "source_commits": [
+    {
+      "sha": "a0250106a0c80742c54d355c14efb31e6db85ac7",
+      "subject": "Migrate legacy item models, predicates and tints to native model updates"
+    },
+    {
+      "sha": "0e4d8e3cc7211ccc85ff2f747856e41fbaca4123",
+      "subject": "Restore common bone injection and verify stable Fabric standalone model loading"
+    }
+  ],
+  "compile": {
+    "passed": false,
+    "diagnostics": 4845,
+    "files": 558,
+    "baseline_diagnostics": 5804,
+    "reduction": 959
+  },
+  "focused_assertions": 1559,
+  "fabric_registry_assertions": 12,
+  "model_assets_parsed": 1153,
+  "legacy_overrides_parsed": 287,
+  "legacy_random_cases": 810,
+  "legacy_random_assertions": 1620,
+  "tooling_tests": 20,
+  "aw_missing": 47,
+  "aw_previous_missing": 49,
+  "source_headers": "common/Fabric main/test gates pass; some inputs incremental or up-to-date",
+  "minecraft_runtime_tests_executed": 0,
+  "actual_model_bakes_executed": 0,
+  "actual_resource_reloads_executed": 0,
+  "gpu_tests_executed": 0,
+  "junit_wrapper_executed": false,
+  "jar_produced": false,
+  "upstream_pushes": 0,
+  "roadmap": {
+    "total": 44,
+    "accepted_done": 12,
+    "remaining": 32,
+    "accepted_proportion": 0.2727272727272727,
+    "remaining_proportion": 0.7272727272727273,
+    "interpretation": "Equal task counts, not effort-weighted or gameplay completion"
+  },
+  "remaining_estimates_engineering_hours": {
+    "R022": {
+      "previous": [
+        32,
+        64,
+        128
+      ],
+      "remaining": [
+        20,
+        40,
+        80
+      ]
+    },
+    "R023": {
+      "previous": [
+        48,
+        96,
+        192
+      ],
+      "remaining": [
+        42,
+        84,
+        168
+      ]
+    },
+    "whole_roadmap": [
+      532,
+      1064,
+      2136
+    ],
+    "confidence": "low",
+    "actual_person_hours": null
+  },
+  "next": [
+    "R023 native render-state extraction/submission and block-entity/special item renderers, especially pokemon_model and restoration/mulch",
+    "R022 real model bake/reload/atlas validation, legacy/native pack precedence and addon compatibility/performance",
+    "Reconcile47 widener targets with actual rendering callers; do not disable validation",
+    "R013/R015 startup and copied-world data fixtures, networking/integrations, then real client/server/multiplayer gameplay"
+  ],
+  "notes": [
+    "Three common compiles fail5762/883,4845/558,4845/558; metadata fix clears all Pokemon model-file diagnostics without changing those sources",
+    "Focused01 fails on Codec versus MapCodec return;02/03 pass1557;04 adds per-update property evaluation check1558;05 preserves native old ARGB alpha1559",
+    "Final focused05 passes1559 core +12 native Fabric registry assertions plus810 legacy random cases;20 tool tests pass",
+    "Native Fabric API0.165.0+26.3 aggregate SHA25618442e2ad466d6ef41c37dbb4cb68495e6ca6658b1f1ee9be76143d155ef2c88; no loader/game/GPU bootstrap",
+    "No full Java/mixin/bake/reload/gameplay/JAR pass; post-push CI and closure recorded in same native Sheet/Actions"
+  ]
+}

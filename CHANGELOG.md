@@ -4,6 +4,8 @@
 
 Migration in progress. No validated release or gameplay claim.
 
+Sprint S10 (2026-10-25): restored official-name ModelPart/Bone injection; migrated legacy item JSON discovery, ordered predicates, ARGB tints, contextual item models and stable Fabric standalone baking. Original model/assets and callback bodies retained. Final common4845/558 (959 fewer lines);1559 focused +12 native Fabric registry assertions,810 legacy navigation cases and20 tooling pass.1153 item JSONs/287 overrides parse. Headers pass;AW49->47 after replaced API wideners removed. No actual bake/reload/GPU/full Java/mixins/JUnit/gameplay/JAR. Original R022/R023 acceptance open; see porting/sprint-10-summary.json and same native Sheet.
+
 Sprint S09 (2026-10-25): migrated capture/fishing owner references, server drops/leash calls, dynamic boat drops, container/interaction APIs and rod/bait properties. Preserved custom boat height, variants,27 slots and loot keys. Final common compile5804/889 (76 fewer lines);375 focused assertions,810 actual legacy navigation cases and20 tool tests pass. Headers pass;AW49 remains. No full Java/mixin/JUnit/Minecraft/gameplay/multiplayer or JAR; original R021 acceptance open. See porting/sprint-09-summary.json and same native Sheet.
 
 Sprint S08 (2026-10-25): migrated AI clocks/schedules/memories, nullable navigation, targeting/server combat and typed Pokemon hives with legacy-placeholder conversion. Corrected pre-existing discarded navigation scores and solid/fluid predicates. Final common compile5880/895 (125 fewer lines);352 focused assertions,810 actual old/target random cases and20 tool tests pass. Headers pass;49 AW targets remain. No full Java/mixin/JUnit/Minecraft/gameplay/multiplayer or JAR. Original R019/R020/R015 acceptance remains open. See porting/sprint-08-summary.json and the same native Sheet.
@@ -34,6 +36,11 @@ The native Google Sheets roadmap records 44 work packages, low/likely/high perso
 
 | Area | What changed | Why it changed | Why it would not work without the change | Blocker severity (1–10) |
 | --- | --- | --- | --- | --- |
+| S10 common model ABI | Official ModelPart name in common Bone interface injection | Old intermediary class_630 no longer resolves | Existing Pokemon models fail type checking despite retained runtime mixin | 10/10 |
+| S10 item model graph | Native ClientItemInfoLoader synthesis and contextual ITEM_MODEL selection; explicit native definitions win | Removed ModelBakery and ItemRenderer hooks | Legacy models/addon eggs/TMs and 2D/3D state selection do not load through target APIs | 10/10 |
+| S10 predicates and tints | Last-match thresholds, one evaluation/property/update, missing-function behavior and full ARGB native tint sources | Old ItemProperties/ItemColors APIs removed | Rod/food/custom data variants and colors lose their selection/appearance | 10/10 |
+| S10 standalone baking | Stable Fabric extra-model keys and live lookups; fossil fluid descriptors resolve at render | Removed model keys and reload-owned baked objects | Standalone fluids/mulches cannot bake or retain stale resources | 10/10 |
+| S10 validation |1559 focused +12 Fabric registry assertions;1153 JSONs/287 overrides;2 replaced API wideners removed | Verify model contracts while retaining release gates | Model compatibility lacks executed evidence; actual bake/render remains pending | 8/10 |
 | S09 capture/fishing ownership | Resolve EntityReference via getOwner; native setOwner, constructor stack, server drops and leash overload | Ownership and spawn/drop signatures changed | Capture/fishing callers fail compilation or use reference objects as entities | 10/10 |
 | S09 boats | Dynamic supplier for final drop getter; preserve BAMBOO height/custom offsets; retarget accessor | Variant/drop contract and declaring class changed | Wrong variant drops or failed constructor/accessor; passenger height changes | 10/10 |
 | S09 chest vehicles | Native container loot getters, server destruction, location-aware interactions and ContainerUser close | Container callbacks changed |27-slot inventory/loot or interactions fail compilation and lifecycle hooks | 10/10 |

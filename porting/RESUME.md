@@ -2,7 +2,28 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S09 checkpoint (2026-10-25)
+## Sprint S10 checkpoint (2026-10-25)
+
+Partial R022/R023 under `S10-R022-R023`, owner `codex-sprint10-01a16f8a`, exclusive integration resource. Source milestones `a0250106a0c80742c54d355c14efb31e6db85ac7` and `0e4d8e3cc7211ccc85ff2f747856e41fbaca4123`. Read live registry before editing; saved leases/Sheet rows are snapshots. Release only after this checkpoint is pushed. Further work needs a fresh claim; concurrent workers require isolated branches/worktrees and one integration owner.
+
+Legacy item JSON now enters native ClientItemInfoLoader; explicit native item definitions win, including when malformed. All namespace/subfolder identities and ordered override predicates are retained. Last match wins, all predicates are required, each distinct function evaluates once per update, missing functions stay unavailable, and custom_model_data uses the first native float. Callback bodies, including inactive PokePuff code, remain unchanged. Native per-model tint sources preserve ARGB including alpha and use the actual geometry tint indices. ItemModelResolver lookup redirects preserve native render-state/property updates and existing 2D/3D, Pokedex scanning/off, TM and wearable contexts. Native rod-cast mixin preserves the other-hand PokeRod guard.
+
+Standalone fluids/mulches use Fabric extra-model keys stable across reload preparation, with live model-manager lookups. Restoration tank stores ordered descriptors and resolves during rendering rather than retaining stale/eager baked objects. Common interface injection still named old class_630; changing it to the official ModelPart name restores the existing Bone contract without editing Pokemon models. The runtime Bone mixin remains. Two obsolete wideners were removed only after predicate/color callers moved to supported APIs.
+
+Executed results:
+
+- Three common Kotlin compiles fail5762/883,4845/558,then **4845 diagnostic lines /558 files**,959 fewer (16.5%) thanS09. Counts include cascades. All Pokemon model-file diagnostics clear via metadata; full Java/Fabric build remains blocked.
+- **1559 focused assertions pass**, including parsing all **1153 shipped item JSONs /287 overrides**, selection/dependency/native-precedence/tint/context contracts. **12 additional assertions** compile and execute the production standalone registry against pinned Fabric API0.165.0+26.3. Captured plugin registration and simulated lookup changes are not real reloads/bakes. **810 actual legacy navigation cases /1620 assertions** also pass. Earlier Codec/MapCodec fixture failure and intermediate successful reports are retained; final color tests preserve old native ARGB alpha.
+- **20 tooling tests pass**. Normal common/Fabric main/test header gates pass (some incremental/up-to-date inputs). Access-widener misses fall49 ->48 ->**47** after the replaced ItemProperties registration and ItemColors field entries are removed. Remaining gates still fail.
+- **No full Java/mixin/JUnit/model bake/actual resource reload/atlas/GPU/gameplay/client/server/multiplayer/world-migration tests executed; no installable JAR/release/completed-work PR.** One pokemon_model builtin/entity root and custom special renderer remain on old submission APIs. Existing geometry/textures/models/licences remain unchanged. Cross-namespace fallback bake cost/addon behavior needs runtime profiling. Old binary addons need the new model-key/predicate/color APIs.
+
+Evidence: `sprint-10-summary.json`, compiler/validation/source audits and `logs/sprint-10-*`. BUILDING.md includes the optional pinned Fabric API fixture. Actual post-push CI/claim closure belongs to Actions and the same native Sheet. No upstream push or production data changes.
+
+Remaining engineering person-hours (low/likely/high, Low confidence): R022 **20/40/80** (prior32/64/128), R023 **42/84/168** (prior48/96/192); whole **532/1064/2136**. Actuals unmeasured. **12/44 accepted tasks complete (27.3%),32 remaining (72.7%)**. Equal tasks, not effort-weighted/gameplay completion. Original bake/render acceptance stays open.
+
+Next coherent sprint: R023 native render-state extraction/submission, block-entity and special item renderers, especially pokemon_model and fossil/mulch, plus47 AW targets. Then execute R022 real baking/reloading/atlas and legacy/native resource-pack precedence with addon models. R013/R015 startup/copied-world fixtures, networking/integrations and all real client/server/multiplayer gameplay remain. Preserve features, pinned26.3, architecture, validators and original acceptance gates.
+
+## Sprint S09 checkpoint (historical,2026-10-25)
 
 Partial R021 work under `S09-R021`, owner `codex-sprint09-01a16f8a`, exclusive integration resource. Source milestones `aab41626335a3f726179096bb3b12a3d83fb69ac` and `0cf1b461330d4fa383ea5a0c21c354babda41de5`. Read the live registry before editing; saved leases and Sheet rows are snapshots. Release after this durable checkpoint is pushed; new work needs a fresh claim. Concurrent workers require separate worktrees/branches and nonoverlapping scopes, with one integration owner.
 

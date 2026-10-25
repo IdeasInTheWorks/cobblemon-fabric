@@ -1,0 +1,405 @@
+S10 model contracts; javap against official target26.3 client SHA1 e877b6a07acd633fb3bb475002175cec036e7b87
+Legacy1.21.1 client SHA1 30c73b1c5da787909b2f73340419fdf13b9def88
+Fabric API0.165.0+26.3 SHA25618442e2ad466d6ef41c37dbb4cb68495e6ca6658b1f1ee9be76143d155ef2c88
+Native Fabric fixture captures registration and dependencies only; no real reload/bake/GPU.
+
+SOURCE build/s10-extra-fabric-api.txt
+Compiled from "SimpleUnbakedExtraModel.java"
+public final class net.fabricmc.fabric.api.client.model.loading.v1.SimpleUnbakedExtraModel<T> implements net.fabricmc.fabric.api.client.model.loading.v1.UnbakedExtraModel<T> {
+  private static final org.slf4j.Logger LOGGER;
+  private final net.minecraft.resources.Identifier model;
+  private final java.util.function.BiFunction<net.minecraft.client.resources.model.ResolvedModel, net.minecraft.client.resources.model.ModelBaker, T> bake;
+  public net.fabricmc.fabric.api.client.model.loading.v1.SimpleUnbakedExtraModel(net.minecraft.resources.Identifier, java.util.function.BiFunction<net.minecraft.client.resources.model.ResolvedModel, net.minecraft.client.resources.model.ModelBaker, T>);
+  public static net.fabricmc.fabric.api.client.model.loading.v1.SimpleUnbakedExtraModel<net.minecraft.client.renderer.block.dispatch.BlockStateModel> blockStateModel(net.minecraft.resources.Identifier);
+  public static net.fabricmc.fabric.api.client.model.loading.v1.SimpleUnbakedExtraModel<net.minecraft.client.renderer.block.dispatch.BlockStateModel> blockStateModel(net.minecraft.resources.Identifier, net.minecraft.client.renderer.block.dispatch.ModelState);
+  private static net.minecraft.client.renderer.block.dispatch.BlockStateModelPart bakeResolved(net.minecraft.client.resources.model.ModelBaker, net.minecraft.client.resources.model.ResolvedModel, net.minecraft.client.renderer.block.dispatch.ModelState);
+  public void resolveDependencies(net.minecraft.client.resources.model.ResolvableModel$Resolver);
+  public T bake(net.minecraft.client.resources.model.ModelBaker);
+  private static void lambda$bakeResolved$0(org.apache.commons.lang3.mutable.MutableObject, net.minecraft.client.resources.model.ModelBaker, net.fabricmc.fabric.api.client.renderer.v1.mesh.QuadView);
+  private static net.minecraft.client.renderer.block.dispatch.BlockStateModel lambda$blockStateModel$0(net.minecraft.client.renderer.block.dispatch.ModelState, net.minecraft.client.resources.model.ResolvedModel, net.minecraft.client.resources.model.ModelBaker);
+  static {};
+}
+Compiled from "UnbakedExtraModel.java"
+public interface net.fabricmc.fabric.api.client.model.loading.v1.UnbakedExtraModel<T> extends net.minecraft.client.resources.model.ResolvableModel {
+  public abstract T bake(net.minecraft.client.resources.model.ModelBaker);
+}
+Compiled from "FabricModelManager.java"
+public interface net.fabricmc.fabric.api.client.model.loading.v1.FabricModelManager {
+  public default <T> T getModel(net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey<T>);
+}
+Compiled from "PreparableModelLoadingPlugin.java"
+public interface net.fabricmc.fabric.api.client.model.loading.v1.PreparableModelLoadingPlugin$DataLoader<T> {
+  public abstract java.util.concurrent.CompletableFuture<T> load(net.minecraft.server.packs.resources.PreparableReloadListener$SharedState, java.util.concurrent.Executor);
+}
+
+
+SOURCE build/s10-fabric-api.txt
+Compiled from "ModelLoadingPlugin.java"
+public interface net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin {
+  public static void register(net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin);
+  public static java.util.List<net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin> getAll();
+  public abstract void initialize(net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin$Context);
+}
+Compiled from "ModelLoadingPlugin.java"
+public interface net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin$Context {
+  public abstract void registerBlockStateResolver(net.minecraft.world.level.block.Block, net.fabricmc.fabric.api.client.model.loading.v1.BlockStateResolver);
+  public abstract <T> void addModel(net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey<T>, net.fabricmc.fabric.api.client.model.loading.v1.UnbakedExtraModel<T>);
+  public abstract net.fabricmc.fabric.api.event.Event<net.fabricmc.fabric.api.client.model.loading.v1.ModelModifier$OnLoad> modifyModelOnLoad();
+  public abstract net.fabricmc.fabric.api.event.Event<net.fabricmc.fabric.api.client.model.loading.v1.ModelModifier$OnLoadBlock> modifyBlockModelOnLoad();
+  public abstract net.fabricmc.fabric.api.event.Event<net.fabricmc.fabric.api.client.model.loading.v1.ModelModifier$BeforeBakeBlock> modifyBlockModelBeforeBake();
+  public abstract net.fabricmc.fabric.api.event.Event<net.fabricmc.fabric.api.client.model.loading.v1.ModelModifier$AfterBakeBlock> modifyBlockModelAfterBake();
+  public abstract net.fabricmc.fabric.api.event.Event<net.fabricmc.fabric.api.client.model.loading.v1.ModelModifier$BeforeBakeItem> modifyItemModelBeforeBake();
+  public abstract net.fabricmc.fabric.api.event.Event<net.fabricmc.fabric.api.client.model.loading.v1.ModelModifier$AfterBakeItem> modifyItemModelAfterBake();
+}
+Compiled from "ExtraModelKey.java"
+public final class net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey<T> {
+  private final java.util.function.Supplier<java.lang.String> name;
+  private net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey(java.util.function.Supplier<java.lang.String>);
+  public static <T> net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey<T> create();
+  public static <T> net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey<T> create(java.util.function.Supplier<java.lang.String>);
+  public java.lang.String toString();
+  private static java.lang.String lambda$create$0();
+}
+Compiled from "PreparableModelLoadingPlugin.java"
+public interface net.fabricmc.fabric.api.client.model.loading.v1.PreparableModelLoadingPlugin<T> {
+  public static <T> void register(net.fabricmc.fabric.api.client.model.loading.v1.PreparableModelLoadingPlugin$DataLoader<T>, net.fabricmc.fabric.api.client.model.loading.v1.PreparableModelLoadingPlugin<T>);
+  public static java.util.List<net.fabricmc.fabric.api.client.model.loading.v1.PreparableModelLoadingPlugin$Holder<?>> getAll();
+  public abstract void initialize(T, net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin$Context);
+}
+
+
+SOURCE build/s10-compat-api.txt
+Compiled from "ItemModel.java"
+public interface net.minecraft.client.renderer.item.ItemModel$Unbaked extends net.minecraft.client.resources.model.ResolvableModel {
+  public abstract com.mojang.serialization.MapCodec<? extends net.minecraft.client.renderer.item.ItemModel$Unbaked> type();
+  public abstract net.minecraft.client.renderer.item.ItemModel bake(net.minecraft.client.renderer.item.ItemModel$BakingContext, org.joml.Matrix4fc);
+}
+Compiled from "ClientItem.java"
+public final class net.minecraft.client.renderer.item.ClientItem$Properties extends java.lang.Record {
+  private final boolean handAnimationOnSwap;
+  private final boolean oversizedInGui;
+  private final float swapAnimationScale;
+  public static final net.minecraft.client.renderer.item.ClientItem$Properties DEFAULT;
+  public static final com.mojang.serialization.MapCodec<net.minecraft.client.renderer.item.ClientItem$Properties> MAP_CODEC;
+  public net.minecraft.client.renderer.item.ClientItem$Properties(boolean, boolean, float);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public boolean handAnimationOnSwap();
+  public boolean oversizedInGui();
+  public float swapAnimationScale();
+  private static com.mojang.datafixers.kinds.App lambda$static$0(com.mojang.serialization.codecs.RecordCodecBuilder$Instance);
+  static {};
+}
+Compiled from "ItemOwner.java"
+public interface net.minecraft.world.entity.ItemOwner {
+  public abstract net.minecraft.world.level.Level level();
+  public abstract net.minecraft.world.phys.Vec3 position();
+  public abstract float getVisualRotationYInDegrees();
+  public default net.minecraft.world.entity.LivingEntity asLivingEntity();
+  public static net.minecraft.world.entity.ItemOwner offsetFromOwner(net.minecraft.world.entity.ItemOwner, net.minecraft.world.phys.Vec3);
+}
+Compiled from "ResolvableModel.java"
+public interface net.minecraft.client.resources.model.ResolvableModel {
+  public abstract void resolveDependencies(net.minecraft.client.resources.model.ResolvableModel$Resolver);
+}
+Compiled from "ResolvableModel.java"
+public interface net.minecraft.client.resources.model.ResolvableModel$Resolver {
+  public abstract void markDependency(net.minecraft.resources.Identifier);
+}
+Compiled from "CustomModelData.java"
+public final class net.minecraft.world.item.component.CustomModelData extends java.lang.Record {
+  private final java.util.List<java.lang.Float> floats;
+  private final java.util.List<java.lang.Boolean> flags;
+  private final java.util.List<java.lang.String> strings;
+  private final java.util.List<java.lang.Integer> colors;
+  public static final net.minecraft.world.item.component.CustomModelData EMPTY;
+  public static final com.mojang.serialization.Codec<net.minecraft.world.item.component.CustomModelData> CODEC;
+  public static final net.minecraft.network.codec.StreamCodec<io.netty.buffer.ByteBuf, net.minecraft.world.item.component.CustomModelData> STREAM_CODEC;
+  public net.minecraft.world.item.component.CustomModelData(java.util.List<java.lang.Float>, java.util.List<java.lang.Boolean>, java.util.List<java.lang.String>, java.util.List<java.lang.Integer>);
+  private static <T> T getSafe(java.util.List<T>, int);
+  public java.lang.Float getFloat(int);
+  public java.lang.Boolean getBoolean(int);
+  public java.lang.String getString(int);
+  public java.lang.Integer getColor(int);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public java.util.List<java.lang.Float> floats();
+  public java.util.List<java.lang.Boolean> flags();
+  public java.util.List<java.lang.String> strings();
+  public java.util.List<java.lang.Integer> colors();
+  private static com.mojang.datafixers.kinds.App lambda$static$0(com.mojang.serialization.codecs.RecordCodecBuilder$Instance);
+  static {};
+}
+Compiled from "FishingRodCast.java"
+public final class net.minecraft.client.renderer.item.properties.conditional.FishingRodCast extends java.lang.Record implements net.minecraft.client.renderer.item.properties.conditional.ConditionalItemModelProperty {
+  public static final com.mojang.serialization.MapCodec<net.minecraft.client.renderer.item.properties.conditional.FishingRodCast> MAP_CODEC;
+  public net.minecraft.client.renderer.item.properties.conditional.FishingRodCast();
+  public boolean get(net.minecraft.world.item.ItemStack, net.minecraft.client.multiplayer.ClientLevel, net.minecraft.world.entity.LivingEntity, int, net.minecraft.world.item.ItemDisplayContext);
+  public com.mojang.serialization.MapCodec<net.minecraft.client.renderer.item.properties.conditional.FishingRodCast> type();
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  static {};
+}
+
+
+SOURCE build/s10-resolver-bytecode.txt
+  public void appendItemLayers(net.minecraft.client.renderer.item.ItemStackRenderState, net.minecraft.world.item.ItemStack, net.minecraft.world.item.ItemDisplayContext, net.minecraft.world.level.Level, net.minecraft.world.entity.ItemOwner, int);
+    Code:
+         0: aload_2
+         1: getstatic     #64                 // Field net/minecraft/core/component/DataComponents.ITEM_MODEL:Lnet/minecraft/core/component/DataComponentType;
+         4: invokevirtual #70                 // Method net/minecraft/world/item/ItemStack.get:(Lnet/minecraft/core/component/DataComponentType;)Ljava/lang/Object;
+         7: checkcast     #74                 // class net/minecraft/resources/Identifier
+        10: astore        7
+        12: aload         7
+        14: ifnonnull     18
+        17: return
+        18: aload_1
+        19: aload_0
+        20: aload         7
+        22: invokevirtual #76                 // Method getItemProperties:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/item/ClientItem$Properties;
+        25: invokevirtual #77                 // Method net/minecraft/client/renderer/item/ClientItem$Properties.oversizedInGui:()Z
+        28: invokevirtual #82                 // Method net/minecraft/client/renderer/item/ItemStackRenderState.setOversizedInGui:(Z)V
+        31: aload_0
+        32: aload         7
+        34: invokevirtual #86                 // Method getItemModel:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/item/ItemModel;
+        37: aload_1
+        38: aload_2
+        39: aload_0
+        40: aload_3
+        41: aload         4
+        43: instanceof    #87                 // class net/minecraft/client/multiplayer/ClientLevel
+        46: ifeq          61
+        49: aload         4
+        51: checkcast     #87                 // class net/minecraft/client/multiplayer/ClientLevel
+        54: astore        8
+        56: aload         8
+        58: goto          62
+        61: aconst_null
+        62: aload         5
+        64: iload         6
+        66: invokeinterface #89,  8           // InterfaceMethod net/minecraft/client/renderer/item/ItemModel.update:(Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/client/renderer/item/ItemModelResolver;Lnet/minecraft/world/item/ItemDisplayContext;Lnet/minecraft/client/multiplayer/ClientLevel;Lnet/minecraft/world/entity/ItemOwner;I)V
+        71: return
+
+
+SOURCE build/s10-item-bake-bytecode.txt
+  public net.minecraft.client.renderer.item.ItemModel bake(net.minecraft.client.renderer.item.ItemModel$BakingContext, org.joml.Matrix4fc);
+    Code:
+         0: aload_1
+         1: invokevirtual #27                 // Method net/minecraft/client/renderer/item/ItemModel$BakingContext.blockModelBaker:()Lnet/minecraft/client/resources/model/ModelBaker;
+         4: astore_3
+         5: aload_3
+         6: aload_0
+         7: getfield      #7                  // Field model:Lnet/minecraft/resources/Identifier;
+        10: invokeinterface #33,  2           // InterfaceMethod net/minecraft/client/resources/model/ModelBaker.getModel:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/resources/model/ResolvedModel;
+        15: astore        4
+        17: aload         4
+        19: invokeinterface #39,  1           // InterfaceMethod net/minecraft/client/resources/model/ResolvedModel.getTopTextureSlots:()Lnet/minecraft/client/resources/model/sprite/TextureSlots;
+        24: astore        5
+        26: aload         4
+        28: aload         5
+        30: aload_3
+        31: getstatic     #45                 // Field net/minecraft/client/renderer/block/dispatch/BlockModelRotation.IDENTITY:Lnet/minecraft/client/renderer/block/dispatch/BlockModelRotation;
+        34: invokeinterface #51,  4           // InterfaceMethod net/minecraft/client/resources/model/ResolvedModel.bakeTopGeometry:(Lnet/minecraft/client/resources/model/sprite/TextureSlots;Lnet/minecraft/client/resources/model/ModelBaker;Lnet/minecraft/client/renderer/block/dispatch/ModelState;)Lnet/minecraft/client/resources/model/geometry/QuadCollection;
+        39: astore        6
+        41: aload_3
+        42: aload         4
+        44: aload         5
+        46: invokestatic  #55                 // Method net/minecraft/client/renderer/item/ModelRenderProperties.fromResolvedModel:(Lnet/minecraft/client/resources/model/ModelBaker;Lnet/minecraft/client/resources/model/ResolvedModel;Lnet/minecraft/client/resources/model/sprite/TextureSlots;)Lnet/minecraft/client/renderer/item/ModelRenderProperties;
+        49: astore        7
+        51: aload         6
+        53: invokevirtual #61                 // Method net/minecraft/client/resources/model/geometry/QuadCollection.getAll:()Ljava/util/List;
+        56: invokestatic  #67                 // Method net/minecraft/client/renderer/item/CuboidItemModelWrapper.validateAtlasUsage:(Ljava/util/List;)V
+        59: aload_2
+        60: aload_0
+        61: getfield      #13                 // Field transformation:Ljava/util/Optional;
+        64: invokestatic  #73                 // Method com/mojang/math/Transformation.compose:(Lorg/joml/Matrix4fc;Ljava/util/Optional;)Lorg/joml/Matrix4fc;
+        67: astore        8
+        69: new           #68                 // class net/minecraft/client/renderer/item/CuboidItemModelWrapper
+        72: dup
+        73: aload_0
+        74: getfield      #17                 // Field tints:Ljava/util/List;
+        77: aload         6
+        79: aload         7
+        81: aload         8
+        83: invokespecial #79                 // Method net/minecraft/client/renderer/item/CuboidItemModelWrapper."<init>":(Ljava/util/List;Lnet/minecraft/client/resources/model/geometry/QuadCollection;Lnet/minecraft/client/renderer/item/ModelRenderProperties;Lorg/joml/Matrix4fc;)V
+        86: areturn
+
+
+SOURCE build/s10-old-colors.txt
+  public int a(cuq, int);
+    Code:
+         0: aload_0
+         1: getfield      #31                 // Field b:Ljs;
+         4: getstatic     #215                // Field lt.g:Ljh;
+         7: aload_1
+         8: invokevirtual #220                // Method cuq.g:()Lcul;
+        11: invokeinterface #225,  2          // InterfaceMethod jh.a:(Ljava/lang/Object;)I
+        16: invokevirtual #228                // Method js.a:(I)Ljava/lang/Object;
+        19: checkcast     #230                // class fht
+        22: astore_3
+        23: aload_3
+        24: ifnonnull     31
+        27: iconst_m1
+        28: goto          39
+        31: aload_3
+        32: aload_1
+        33: iload_2
+        34: invokeinterface #232,  3          // InterfaceMethod fht.getColor:(Lcuq;I)I
+        39: ireturn
+
+
+SOURCE build/s10-old-item-bytecode.txt
+  public gsm a(gsm, cuq, fzf, btn, int);
+    Code:
+         0: aload_0
+         1: getfield      #33                 // Field c:[Lggg$a;
+         4: arraylength
+         5: ifeq          148
+         8: aload_0
+         9: getfield      #37                 // Field d:[Lakr;
+        12: arraylength
+        13: istore        6
+        15: iload         6
+        17: newarray       float
+        19: astore        7
+        21: iconst_0
+        22: istore        8
+        24: iload         8
+        26: iload         6
+        28: if_icmpge     87
+        31: aload_0
+        32: getfield      #37                 // Field d:[Lakr;
+        35: iload         8
+        37: aaload
+        38: astore        9
+        40: aload_2
+        41: aload         9
+        43: invokestatic  #205                // Method gps.a:(Lcuq;Lakr;)Lgpt;
+        46: astore        10
+        48: aload         10
+        50: ifnull        74
+        53: aload         7
+        55: iload         8
+        57: aload         10
+        59: aload_2
+        60: aload_3
+        61: aload         4
+        63: iload         5
+        65: invokeinterface #211,  5          // InterfaceMethod gpt.call:(Lcuq;Lfzf;Lbtn;I)F
+        70: fastore
+        71: goto          81
+        74: aload         7
+        76: iload         8
+        78: ldc           #23                 // float -Infinityf
+        80: fastore
+        81: iinc          8, 1
+        84: goto          24
+        87: aload_0
+        88: getfield      #33                 // Field c:[Lggg$a;
+        91: astore        8
+        93: aload         8
+        95: arraylength
+        96: istore        9
+        98: iconst_0
+        99: istore        10
+       101: iload         10
+       103: iload         9
+       105: if_icmpge     148
+       108: aload         8
+       110: iload         10
+       112: aaload
+       113: astore        11
+       115: aload         11
+       117: aload         7
+       119: invokevirtual #216                // Method ggg$a.a:([F)Z
+       122: ifeq          142
+       125: aload         11
+       127: getfield      #218                // Field ggg$a.b:Lgsm;
+       130: astore        12
+       132: aload         12
+       134: ifnonnull     139
+       137: aload_1
+       138: areturn
+       139: aload         12
+       141: areturn
+       142: iinc          10, 1
+       145: goto          101
+       148: aload_1
+       149: areturn
+
+  private void a(fbi, fbm, java.util.List<gfw>, cuq, int, int);
+    Code:
+         0: aload         4
+         2: invokevirtual #168                // Method cuq.e:()Z
+         5: ifne          12
+         8: iconst_1
+         9: goto          13
+        12: iconst_0
+        13: istore        7
+        15: aload_1
+        16: invokevirtual #256                // Method fbi.c:()Lfbi$a;
+        19: astore        8
+        21: aload_3
+        22: invokeinterface #343,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        27: astore        9
+        29: aload         9
+        31: invokeinterface #86,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+        36: ifeq          156
+        39: aload         9
+        41: invokeinterface #90,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        46: checkcast     #345                // class gfw
+        49: astore        10
+        51: iconst_m1
+        52: istore        11
+        54: iload         7
+        56: ifeq          83
+        59: aload         10
+        61: invokevirtual #347                // Method gfw.c:()Z
+        64: ifeq          83
+        67: aload_0
+        68: getfield      #113                // Field q:Lfhu;
+        71: aload         4
+        73: aload         10
+        75: invokevirtual #350                // Method gfw.d:()I
+        78: invokevirtual #353                // Method fhu.a:(Lcuq;I)I
+        81: istore        11
+        83: iload         11
+        85: invokestatic  #356                // Method axy$b.a:(I)I
+        88: i2f
+        89: ldc_w         #357                // float 255.0f
+        92: fdiv
+        93: fstore        12
+        95: iload         11
+        97: invokestatic  #359                // Method axy$b.b:(I)I
+       100: i2f
+       101: ldc_w         #357                // float 255.0f
+       104: fdiv
+       105: fstore        13
+       107: iload         11
+       109: invokestatic  #361                // Method axy$b.c:(I)I
+       112: i2f
+       113: ldc_w         #357                // float 255.0f
+       116: fdiv
+       117: fstore        14
+       119: iload         11
+       121: invokestatic  #363                // Method axy$b.d:(I)I
+       124: i2f
+       125: ldc_w         #357                // float 255.0f
+       128: fdiv
+       129: fstore        15
+       131: aload_2
+       132: aload         8
+       134: aload         10
+       136: fload         13
+       138: fload         14
+       140: fload         15
+       142: fload         12
+       144: iload         5
+       146: iload         6
+       148: invokeinterface #366,  9          // InterfaceMethod fbm.a:(Lfbi$a;Lgfw;FFFFII)V
+       153: goto          29
+       156: return
+

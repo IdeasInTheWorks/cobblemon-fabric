@@ -123,3 +123,17 @@ The optional inputs must be paired. The runner verifies both game checksums and 
 The same standalone data-contract command above now compiles production BoatDropItem and a native reference/container fixture. S09 passes375 assertions (23 new cases) plus the optional810 actual legacy navigation cases/1620 checks. The fixture covers owner UUID saves and unload/reload lookup, current variant drop selection, sparse27-slot chest contents/custom components and unopened loot-table/seed saves. It deliberately throws if save/load unexpectedly requests a world or menu. This does not construct real boats, players or Pokemon, transform mixins, execute JUnit or validate capture/fishing/gameplay. First fixture attempt fails on private CODEC access; the public save/read replacement passes. See committed `porting/logs/sprint-09-data-contracts-02.json`.
 
 Final S09 Kotlin compile5804/889 andAW49 still fail;20 tooling tests and normal common/Fabric headers pass. Use the existing official wrapper/init-script commands, without suppressing validation. See `porting/sprint-09-summary.json` and the same native roadmap for CI, estimates and continuation.
+
+## S10 model and Fabric registry fixtures
+
+The standalone runner now compiles the production legacy item-model/key helpers. The final run passes1559 assertions, including parsing1153 shipped item JSONs/287 overrides and native update selection, dependencies, callback evaluation, ARGB tint and explicit-native precedence contracts. A real model bake, resource reload, texture atlas and GPU are not exercised. The one pokemon_model builtin/entity root still needs the special-renderer port.
+
+Add the pinned aggregate JAR to also compile the production Fabric standalone registry and execute12 captured-context assertions:
+
+```sh
+python3 scripts/check_data_contracts.py --game-jar /path/to/minecraft-26.3-client.jar --gradle-cache /path/to/gradle-user-home --javac /path/to/jdk25/bin/javac --legacy-game-jar /path/to/minecraft-1.21.1-client.jar --legacy-version-json /path/to/1.21.1/mojang_minecraft_info.json --fabric-api-jar /path/to/fabric-api-0.165.0+26.3.jar --report porting/logs/data-contracts-local.json
+```
+
+Gradle resolves the aggregate under `caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/`. The fixture checks its id/version and records SHA25618442e2ad466d6ef41c37dbb4cb68495e6ca6658b1f1ee9be76143d155ef2c88 for the executed input. Nested modules extract only into ignored `build/data-contracts/fabric-api`; game checksums remain enforced. Registration/lookup simulations are not a Fabric game startup or actual reload. Run from the checkout root for asset/metadata fixtures.
+
+Common compile4845/558 andAW47 still fail. Do not remove remaining validators to package a JAR. Native ColorProviderRegistry.ITEM and old ItemProperties are replaced by public legacy predicate/color adapters; addon implementors must update those APIs. Original assets remain; modern explicit item definitions take precedence over runtime legacy synthesis. See `porting/sprint-10-summary.json` for commands, attempts and limits.
