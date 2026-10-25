@@ -55,7 +55,7 @@ The Kotlin toolchain is downloaded as a Gradle dependency. Game classes use Moja
 
 ## Outputs and test scope
 
-The shared Java regression fixture and JUnit entry point are in `common/src/test/java/com/cobblemon/mod/common/porting/`. S03 executed 48 checks; S04 extended the fixture to 76. S05 passes 127 assertions, adding actual scripted-brain construction, live runtime memories/expiry, sensor requirements, activity transitions, item-use result semantics and food/drink/model component metadata. Run it against the checksum-verified target JAR and matching libraries, choosing a new report path to preserve prior evidence:
+The shared Java regression fixture and JUnit entry point are in `common/src/test/java/com/cobblemon/mod/common/porting/`. S03 executed 48 checks; S04 extended the fixture to 76. S05 passes 127 assertions, adding actual scripted-brain construction, live runtime memories/expiry, sensor requirements, activity transitions, item-use result semantics and food/drink/model component metadata. S06 passes 170 assertions, adding registered battle UUID framing/truncation, native owner storage, all 16 wool registry IDs and legacy teleport-support policy. It also compiles the Java nullable-navigation bridge against the actual game API. Run it against the checksum-verified target JAR and matching libraries, choosing a new report path to preserve prior evidence:
 
 ```sh
 python3 scripts/check_data_contracts.py --game-jar /path/to/minecraft-26.3-client.jar --gradle-cache /path/to/gradle-user-home --javac /path/to/jdk25/bin/javac --report porting/logs/data-contracts-new-run.json

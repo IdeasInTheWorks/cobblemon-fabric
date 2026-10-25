@@ -28,6 +28,9 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
     sources = [root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyNbt.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyBlockState.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/api/net/serializers/OptionalUuidDataSerializer.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/entity/ai/NullableGroundPathNavigation.java",
                root / "common/src/main/java/com/cobblemon/mod/common/util/ScriptedBrain.java",
                root / "common/src/main/java/com/cobblemon/mod/common/util/ItemUseResults.java",
                root / "common/src/main/java/com/cobblemon/mod/common/util/RegistrationProperties.java",

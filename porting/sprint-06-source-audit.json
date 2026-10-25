@@ -1,0 +1,120 @@
+{
+  "baseline": "809c272c97830e8633d15296265998696a363e99",
+  "active_ridden_travel_body_unchanged_except_supported_API_substitutions": true,
+  "old_friction_ridden_branch_unreachable_via_current_travel_guard": true,
+  "synced_field_order_unchanged": [
+    "SPECIES",
+    "NICKNAME",
+    "NICKNAME_VISIBLE",
+    "MARK",
+    "SHOULD_RENDER_NAME",
+    "MOVING",
+    "BEHAVIOUR_FLAGS",
+    "PHASING_TARGET_ID",
+    "PLATFORM_TYPE",
+    "BEAM_MODE",
+    "BATTLE_ID",
+    "ASPECTS",
+    "DYING_EFFECTS_STARTED",
+    "POSE_TYPE",
+    "LABEL_LEVEL",
+    "HIDE_LABEL",
+    "UNBATTLEABLE",
+    "COUNTS_TOWARDS_SPAWN_CAP",
+    "SPAWN_DIRECTION",
+    "FRIENDSHIP",
+    "FREEZE_FRAME",
+    "CAUGHT_BALL",
+    "EVOLUTION_STARTED",
+    "SHOWN_HELD_ITEM",
+    "RIDE_BOOSTS",
+    "RIDE_STAMINA",
+    "SCALE_MODIFIER",
+    "IS_ALPHA"
+  ],
+  "existing_custom_serializer_registration_order_unchanged": [
+    "Vec3DataSerializer",
+    "StringSetDataSerializer",
+    "PoseTypeDataSerializer",
+    "PlatformTypeDataSerializer",
+    "IdentifierDataSerializer",
+    "UUIDSetDataSerializer",
+    "NPCPlayerTextureSerializer",
+    "RideBoostsDataSerializer"
+  ],
+  "new_serializer_appended": "OptionalUuidDataSerializer.INSTANCE",
+  "shearing": {
+    "color_cases_unchanged": [
+      [
+        "black",
+        "BLACK_WOOL"
+      ],
+      [
+        "blue",
+        "BLUE_WOOL"
+      ],
+      [
+        "brown",
+        "BROWN_WOOL"
+      ],
+      [
+        "cyan",
+        "CYAN_WOOL"
+      ],
+      [
+        "gray",
+        "GRAY_WOOL"
+      ],
+      [
+        "green",
+        "GREEN_WOOL"
+      ],
+      [
+        "light_blue",
+        "LIGHT_BLUE_WOOL"
+      ],
+      [
+        "light_gray",
+        "LIGHT_GRAY_WOOL"
+      ],
+      [
+        "lime",
+        "LIME_WOOL"
+      ],
+      [
+        "magenta",
+        "MAGENTA_WOOL"
+      ],
+      [
+        "orange",
+        "ORANGE_WOOL"
+      ],
+      [
+        "purple",
+        "PURPLE_WOOL"
+      ],
+      [
+        "red",
+        "RED_WOOL"
+      ],
+      [
+        "yellow",
+        "YELLOW_WOOL"
+      ],
+      [
+        "pink",
+        "PINK_WOOL"
+      ]
+    ],
+    "default": "minecraft:white_wool",
+    "loop": "i=random.nextInt(3)+1; j in 0..i (original inclusive loop)",
+    "item_count_per_drop": 1,
+    "vertical_drop_offset": 1.0,
+    "slowpoke_tail_callback_and_regrowth_retained": true,
+    "mutation_and_tool_damage_server_side": true,
+    "native_color_collection": "Items.WOOL.pick(DyeColor); all16 actual target registry IDs tested"
+  },
+  "owner_bridge": "Native TamableAnimal EntityReference, using the same synchronized owner data; nullable UUID getter/setter remain exposed on PokemonEntity",
+  "limits": "Source preservation and real helper/codec contracts; no actual entity, shearing, movement, skin retrieval or multiplayer gameplay executed",
+  "teleport_support": "Production LegacyBlockState.blocksMotion retains isSolid plus original COBWEB/BAMBOO_SAPLING exclusions; six real-block contracts executed, actual pasture teleport gameplay not run"
+}

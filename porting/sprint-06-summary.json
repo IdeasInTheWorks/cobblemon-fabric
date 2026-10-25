@@ -1,0 +1,84 @@
+{
+  "sprint": "S06",
+  "baseline_commit": "809c272c97830e8633d15296265998696a363e99",
+  "work_id": "S06-R019-R020",
+  "owner": "codex-sprint06-01a16f8a",
+  "lease_id": "ae6ea849-6414-4550-a964-9c39a8ae0caf",
+  "source_status": "Partial migration; original R019/R020 acceptance remains open",
+  "source_commits": [
+    {
+      "sha": "e0388ef5b1eba416f31fef70262d7e6ce4c58a08",
+      "subject": "Migrate typed navigation and NPC server lifecycle contracts"
+    },
+    {
+      "sha": "3e1fa7753be3614d0ff5a7a0402f30da886fca47",
+      "subject": "Preserve entity ownership synchronization and interaction semantics"
+    }
+  ],
+  "compile": {
+    "passed": false,
+    "diagnostics": 6088,
+    "files": 952,
+    "baseline_diagnostics": 6420,
+    "reduction": 332
+  },
+  "focused_assertions": 170,
+  "tooling_tests": 20,
+  "aw_missing": 54,
+  "source_headers": "common/Fabric passed",
+  "minecraft_runtime_tests_executed": 0,
+  "junit_wrapper_executed": false,
+  "jar_produced": false,
+  "upstream_pushes": 0,
+  "remaining_estimates_engineering_hours": {
+    "R019": {
+      "original": [
+        32,
+        64,
+        128
+      ],
+      "previous": [
+        28,
+        56,
+        112
+      ],
+      "remaining": [
+        24,
+        48,
+        96
+      ]
+    },
+    "R020": {
+      "original": [
+        24,
+        48,
+        96
+      ],
+      "previous": [
+        22,
+        44,
+        88
+      ],
+      "remaining": [
+        18,
+        36,
+        72
+      ]
+    },
+    "confidence": "low",
+    "actual_person_hours": null
+  },
+  "next": [
+    "R019 walking/animation state, shoulder storage/client representation, experience callbacks/gamerules and evolution cleanup",
+    "R020 remaining AI/path-node and attribute APIs; actual walking/flying/swimming/riding/pasture tests after build",
+    "R014 item/equipment; R013/R015 full construction/legacy-data audit remain open",
+    "Rendering/input, networking and retained AW54 gate remain separate major blockers"
+  ],
+  "notes": [
+    "Native battle UUID payload remains optional-presence plus two longs; serializer ID is target/mod specific, requiring matching client/server builds",
+    "Existing custom serializer order and synchronized field order retained",
+    "Active ridden travel body unchanged except verified API substitutions; redundant old friction hook removed after guard audit",
+    "Live NPC/entity initialization, profile downloads, damage, drops and multiplayer not run",
+    "Read live claim registry before resuming; actual post-push CI and lease closure are in same native Sheet and Actions artifacts"
+  ]
+}

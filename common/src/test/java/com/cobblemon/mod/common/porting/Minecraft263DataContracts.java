@@ -343,6 +343,8 @@ final class Minecraft263DataContracts {
         var serverUse = (net.minecraft.world.InteractionResult.Success) com.cobblemon.mod.common.util.ItemUseResults.sidedSuccess(changedStack, false);
         check(clientUse.shouldSwing() && clientUse.heldItemTransformedTo() == changedStack, "client sided result retains swing and replacement");
         check(!serverUse.shouldSwing() && serverUse.heldItemTransformedTo() == changedStack, "server sided result retains consume and replacement");
+        check(com.cobblemon.mod.common.util.ItemUseResults.sidedSuccess(true) == net.minecraft.world.InteractionResult.SUCCESS, "entity sided success retains client swing without stack replacement");
+        check(com.cobblemon.mod.common.util.ItemUseResults.sidedSuccess(false) == net.minecraft.world.InteractionResult.CONSUME, "entity sided success retains server consume without stack replacement");
         check(com.cobblemon.mod.common.util.ItemUseResults.withStack(net.minecraft.world.InteractionResult.PASS, changedStack)
                 == net.minecraft.world.InteractionResult.PASS, "placement pass stays pass");
         check(com.cobblemon.mod.common.util.ItemUseResults.withStack(net.minecraft.world.InteractionResult.FAIL, changedStack)
@@ -365,6 +367,71 @@ final class Minecraft263DataContracts {
         check(dipComponents.get(net.minecraft.core.component.DataComponents.FOOD).canAlwaysEat(), "dip always-edible flag retained");
         check(dipComponents.get(net.minecraft.core.component.DataComponents.MAX_STACK_SIZE) == 1, "dip stack limit retained");
         check(dipComponents.get(net.minecraft.core.component.DataComponents.CONSUMABLE).equals(dip), "dip consumption and nutrition coexist");
+        check(com.cobblemon.mod.common.util.LegacyBlockState.blocksMotion(net.minecraft.world.level.block.Blocks.STONE.defaultBlockState()), "solid stone supports legacy pasture teleport");
+        check(com.cobblemon.mod.common.util.LegacyBlockState.blocksMotion(net.minecraft.world.level.block.Blocks.GLASS.defaultBlockState()), "transparent solid glass supports legacy pasture teleport");
+        check(!com.cobblemon.mod.common.util.LegacyBlockState.blocksMotion(net.minecraft.world.level.block.Blocks.COBWEB.defaultBlockState()), "legacy teleport excludes cobweb even when solid");
+        check(!com.cobblemon.mod.common.util.LegacyBlockState.blocksMotion(net.minecraft.world.level.block.Blocks.BAMBOO_SAPLING.defaultBlockState()), "legacy teleport excludes bamboo sapling");
+        check(!com.cobblemon.mod.common.util.LegacyBlockState.blocksMotion(net.minecraft.world.level.block.Blocks.AIR.defaultBlockState()), "air cannot support legacy pasture teleport");
+        check(!com.cobblemon.mod.common.util.LegacyBlockState.blocksMotion(net.minecraft.world.level.block.Blocks.WATER.defaultBlockState()), "water cannot support legacy pasture teleport");
+        for (var color : net.minecraft.world.item.DyeColor.values()) {
+            var wool = net.minecraft.world.item.Items.WOOL.pick(color);
+            check(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(wool).toString().equals("minecraft:" + color.getName() + "_wool"), "native wool collection retains legacy registry ID for " + color.getName());
+        }
+        var battleSerializer = com.cobblemon.mod.common.api.net.serializers.OptionalUuidDataSerializer.INSTANCE;
+        net.minecraft.network.syncher.EntityDataSerializers.registerSerializer(battleSerializer);
+        check(net.minecraft.network.syncher.EntityDataSerializers.getSerializedId(battleSerializer) >= 0, "battle serializer registered with native registry");
+        var battleBuffer = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), vanilla);
+        try {
+            battleSerializer.codec().encode(battleBuffer, java.util.Optional.empty());
+            check(battleBuffer.readableBytes() == 1 && battleBuffer.getByte(0) == 0, "absent battle keeps one false presence byte");
+            check(battleSerializer.codec().decode(battleBuffer).isEmpty() && !battleBuffer.isReadable(), "empty battle clears without trailing bytes");
+            var battleUuid = UUID.fromString("ffffffff-0000-ffff-8000-0123456789ab");
+            battleBuffer.clear();
+            battleSerializer.codec().encode(battleBuffer, java.util.Optional.of(battleUuid));
+            byte[] expectedWire = java.nio.ByteBuffer.allocate(17).put((byte) 1)
+                    .putLong(battleUuid.getMostSignificantBits()).putLong(battleUuid.getLeastSignificantBits()).array();
+            byte[] actualWire = new byte[battleBuffer.readableBytes()];
+            battleBuffer.getBytes(0, actualWire);
+            check(java.util.Arrays.equals(expectedWire, actualWire), "present battle keeps presence plus full UUID longs in legacy wire order");
+            check(battleSerializer.codec().decode(battleBuffer).orElseThrow().equals(battleUuid), "signed UUID bits survive battle synchronization");
+            check(!battleBuffer.isReadable(), "battle decode consumes exactly one value");
+            check(battleSerializer.copy(java.util.Optional.of(battleUuid)).orElseThrow().equals(battleUuid), "immutable battle UUID copy retains value");
+            battleBuffer.clear();
+            var dataValue = new net.minecraft.network.syncher.SynchedEntityData.DataValue<>(7, battleSerializer, java.util.Optional.of(battleUuid));
+            dataValue.write(battleBuffer);
+            int fieldId = battleBuffer.readUnsignedByte();
+            var receivedValue = net.minecraft.network.syncher.SynchedEntityData.DataValue.read(battleBuffer, fieldId);
+            check(receivedValue.id() == 7, "native entity data frame retains field ID");
+            check(receivedValue.serializer() == battleSerializer, "native entity data frame resolves registered custom serializer");
+            check(receivedValue.value().equals(java.util.Optional.of(battleUuid)) && !battleBuffer.isReadable(), "native entity data frame round trip retains battle UUID");
+            battleBuffer.clear();
+            new net.minecraft.network.syncher.SynchedEntityData.DataValue<>(7, battleSerializer, java.util.Optional.empty()).write(battleBuffer);
+            fieldId = battleBuffer.readUnsignedByte();
+            check(net.minecraft.network.syncher.SynchedEntityData.DataValue.read(battleBuffer, fieldId).value().equals(java.util.Optional.empty()), "native entity data frame clears battle UUID");
+            battleBuffer.clear();
+            battleBuffer.writeBoolean(true).writeLong(battleUuid.getMostSignificantBits());
+            try {
+                battleSerializer.codec().decode(battleBuffer);
+                throw new AssertionError("Truncated UUID accepted");
+            } catch (IndexOutOfBoundsException expected) { checks++; }
+        } finally {
+            battleBuffer.release();
+        }
+        var ownerReference = net.minecraft.world.entity.EntityReference.<net.minecraft.world.entity.LivingEntity>of(owner);
+        check(ownerReference.getUUID().equals(owner), "unresolved vanilla owner reference retains UUID");
+        var ownerReferenceCodec = net.minecraft.world.entity.EntityReference.<net.minecraft.world.entity.LivingEntity>codec();
+        var referenceTag = ownerReferenceCodec.encodeStart(optionalOps, ownerReference).getOrThrow();
+        check(referenceTag instanceof IntArrayTag && java.util.Arrays.equals(((IntArrayTag) referenceTag).getAsIntArray(), net.minecraft.core.UUIDUtil.uuidToIntArray(owner)), "native owner reference retains legacy four-int UUID shape");
+        check(ownerReferenceCodec.parse(optionalOps, referenceTag).getOrThrow().getUUID().equals(owner), "native owner reference codec round trip");
+        var savedOwner = LegacyNbt.toTag(vanilla, out -> net.minecraft.world.entity.EntityReference.store(ownerReference, out, "Owner"));
+        check(LegacyNbt.getUUID(savedOwner, "Owner").equals(owner), "native owner save is readable by legacy UUID adapter");
+        var loadedOwner = net.minecraft.world.entity.EntityReference.<net.minecraft.world.entity.LivingEntity>read(
+                net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, vanilla, savedOwner), "Owner");
+        check(loadedOwner != null && loadedOwner.getUUID().equals(owner), "native structured owner reload retains UUID");
+        var noOwner = LegacyNbt.toTag(vanilla, out -> net.minecraft.world.entity.EntityReference.store(null, out, "Owner"));
+        check(!noOwner.contains("Owner"), "clearing ownership omits saved reference");
+        check(net.minecraft.world.entity.EntityReference.read(
+                net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, vanilla, noOwner), "Owner") == null, "missing owner reloads as unowned");
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }

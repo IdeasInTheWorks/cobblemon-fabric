@@ -2,7 +2,29 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S05 checkpoint (2026-10-25)
+## Sprint S06 checkpoint (2026-10-25)
+
+Partial R019/R020 work, ID `S06-R019-R020`, owner `codex-sprint06-01a16f8a`, with exclusive integration resource and scoped expiring lease. Read the live registry before resuming; saved local lease and Sheet are not authority. Release only after the durable checkpoint is pushed; acquire a fresh lease before later edits. The same native Sheet records actual CI and closure.
+
+Movement control now supplies PokemonEntity as its generic type. Activity memory parameters have native non-null bounds. Navigation uses minY/inclusive maxY and position-independent solidity queries. A Java bridge exposes the actual nullable GroundPathNavigation result to Kotlin: native bytecode returns null for unloaded chunks despite the non-null signature Kotlin sees. No fake path or non-null assertion replaces failure.
+
+Pokemon ownership retains its nullable UUID getter/setter while native TamableAnimal synchronizes EntityReference. Battle UUIDs use a separately registered optional serializer (presence byte + two longs); battle identifiers are not living entities. Existing serializer registration and synchronized-field order are unchanged; the new serializer is appended. A matching target build on both sides is required. Server AI, damage, invulnerability and fall/pickup callbacks use target contexts, preserving guards/HP/illusion behavior. NPC scale uses sanitizeScale; profile lookup uses current Services/Authlib callbacks. Inherited Mob debug subscriptions retain brain/goal/path dumps.
+
+Shearing uses serverLevel/tool callbacks and server-only effects/tool damage, preserving slowpoke regrowth, all 16 wool IDs, the inclusive random drop loop and 1.0-block vertical offset (verified against the checksum-verified 1.21.1 client bytecode). Dyes use their native component, and entity interactions retain sided swing behavior without stack replacement. Native needsSync/local-authority flags and double fall distance/trig inputs are migrated. Null nickname clears as documented. The active ridden-travel body is unchanged except API substitutions: its guard makes the removed friction hook's ridden branch unreachable through the native call path. Addon subclasses of the old hook require source changes.
+
+Executed results:
+
+- Four common source attempts end at **6,088 diagnostic lines /952 files**, down 332 (5.2%) from S05. Attempts and per-file counts are in sprint-06-compiler-summary.json. NPCEntity, PokemonMoveControl, OmniPathNavigation and SwapActivityTask have zero diagnostics in this pass; this does not prove runtime correctness. Counts include cascades, not independent bugs or completion percent.
+- **170 focused assertions pass**: actual production Java helpers/serializer/nullable bridge compile with real verified 26.3 classes; native entity-data framing, truncation refusal, owner reference/legacy storage, all 16 wool IDs, old teleport support exceptions and sided action semantics execute. Prior NBT/inventory/brain/food cases remain. Minimal missing components are bound only for two inventory fixture items. Full entity classes and the common JUnit wrapper have not run.
+- **20 tooling tests pass**. The final common/Fabric licence checks pass; the retained access-widener validator still fails on **54 targets**. All build/test attempts and summaries are archived. No Minecraft processes, client/server/world/multiplayer tests, JAR or validated release.
+
+Source milestones are listed in sprint-06-summary.json. Actual post-push CI belongs to Actions/the same Sheet; do not assume a Linux source compile occurred if the AW gate stopped it first. Preserve all original licences and assets. Nothing was pushed to GitLab or changed in production data.
+
+Planning remainder (low/likely/high engineering person-hours, low confidence): R019 **24/48/96** (prior 28/56/112; original 32/64/128), R020 **18/36/72** (prior 22/44/88; original 24/48/96). Actual hours unmeasured. Whole-roadmap remainder 572/1144/2296; 12/44 rows Done. Both original acceptance gates remain open.
+
+Next: R019 walking/animation state, shoulder storage/client representation, experience callbacks/gamerules and evolution cleanup; R020 remaining AI/path-node/attribute contracts and live movement/riding/pasture tests after compilation. R014 equipment, R013/R015 construction/legacy fixtures, rendering/input/networking and AW54 remain open. Use isolated worker branches/worktrees if parallel work is later requested, with narrow scopes and fresh live claims. Local quoted nonincremental/in-process commands remain in BUILDING.md.
+
+## Sprint S05 checkpoint (historical,2026-10-25)
 
 Partial work: R014/R019/R020, work ID `S05-R014-R019-R020`, owner `codex-sprint05-01a16f8a`, exclusive integration resource. This is a historical handoff, not authority: read the live registry and acquire a new scoped lease before editing after closure. Release this lease only after its durable checkpoint is pushed. The native Sheet remains the primary roadmap and has the current CI and closure snapshot.
 
@@ -114,7 +136,7 @@ Adorn has no published 26.3 version in the listing checked. Its source integrati
 
 ## Next implementation work
 
-1. Continue from S05 common attempt 07 and `sprint-05-compiler-summary.json`. Claim the next narrow R014/R019/R020 slice or remaining **R013/R015** audit; their acceptance gates are not complete. Inspect current file scopes and handoff before claiming. Preserve factories, IDs, data and gameplay. Resolve cascading errors by coherent API subsystem.
+1. Continue from S06 common attempt 04 and `sprint-06-compiler-summary.json`. Claim the next narrow R014/R019/R020 slice or remaining **R013/R015** audit; their acceptance gates are not complete. Inspect current file scopes and handoff before claiming. Preserve factories, IDs, data and gameplay. Resolve cascading errors by coherent API subsystem.
 2. Port the rendering stack coherently: model baking, item model definitions, render-state extraction, GUI graphics extraction, renderer pipelines, particles, shaders and animation layers. `GuiGraphics`, `MultiBufferSource`, old RenderType and many RenderStateShard classes are gone or relocated. Update callers and wideners together.
 3. Port input to SDL-backed vanilla input events/constants, including text-input focus notification. Keep custom widgets functional.
 4. Migrate removed Fabric composting registration to data components/providers while preserving the existing chance calculations. Do not replace all probabilities with a constant or remove composting.

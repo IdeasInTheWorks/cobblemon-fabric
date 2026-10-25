@@ -1,0 +1,185 @@
+Official Minecraft 26.3 client JAR; SHA1 e877b6a07acd633fb3bb475002175cec036e7b87
+Selected javap -c -p output
+
+public void registerDebugValues(net.minecraft.server.level.ServerLevel, net.minecraft.util.debug.DebugValueSource$Registration);
+    Code:
+         0: aload_2
+         1: getstatic     #1865               // Field net/minecraft/util/debug/DebugSubscriptions.ENTITY_PATHS:Lnet/minecraft/util/debug/DebugSubscription;
+         4: aload_0
+         5: invokedynamic #1871,  0           // InvokeDynamic #6:get:(Lnet/minecraft/world/entity/Mob;)Lnet/minecraft/util/debug/DebugValueSource$ValueGetter;
+        10: invokeinterface #1874,  3         // InterfaceMethod net/minecraft/util/debug/DebugValueSource$Registration.register:(Lnet/minecraft/util/debug/DebugSubscription;Lnet/minecraft/util/debug/DebugValueSource$ValueGetter;)V
+        15: aload_2
+        16: getstatic     #1880               // Field net/minecraft/util/debug/DebugSubscriptions.GOAL_SELECTORS:Lnet/minecraft/util/debug/DebugSubscription;
+        19: aload_0
+        20: invokedynamic #1883,  0           // InvokeDynamic #7:get:(Lnet/minecraft/world/entity/Mob;)Lnet/minecraft/util/debug/DebugValueSource$ValueGetter;
+        25: invokeinterface #1874,  3         // InterfaceMethod net/minecraft/util/debug/DebugValueSource$Registration.register:(Lnet/minecraft/util/debug/DebugSubscription;Lnet/minecraft/util/debug/DebugValueSource$ValueGetter;)V
+        30: aload_0
+        31: getfield      #1884               // Field brain:Lnet/minecraft/world/entity/ai/Brain;
+        34: invokevirtual #1888               // Method net/minecraft/world/entity/ai/Brain.isBrainDead:()Z
+        37: ifne          56
+        40: aload_2
+        41: getstatic     #1891               // Field net/minecraft/util/debug/DebugSubscriptions.BRAINS:Lnet/minecraft/util/debug/DebugSubscription;
+        44: aload_0
+        45: aload_1
+        46: invokedynamic #1894,  0           // InvokeDynamic #8:get:(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/util/debug/DebugValueSource$ValueGetter;
+        51: invokeinterface #1874,  3         // InterfaceMethod net/minecraft/util/debug/DebugValueSource$Registration.register:(Lnet/minecraft/util/debug/DebugSubscription;Lnet/minecraft/util/debug/DebugValueSource$ValueGetter;)V
+        56: return
+
+public final float getScale();
+    Code:
+         0: aload_0
+         1: invokevirtual #794                // Method getAttributes:()Lnet/minecraft/world/entity/ai/attributes/AttributeMap;
+         4: astore_1
+         5: aload_1
+         6: ifnonnull     11
+         9: fconst_1
+        10: freturn
+        11: aload_0
+        12: aload_1
+        13: getstatic     #304                // Field net/minecraft/world/entity/ai/attributes/Attributes.SCALE:Lnet/minecraft/core/Holder;
+        16: invokevirtual #798                // Method net/minecraft/world/entity/ai/attributes/AttributeMap.getValue:(Lnet/minecraft/core/Holder;)D
+        19: d2f
+        20: invokevirtual #801                // Method sanitizeScale:(F)F
+        23: freturn
+
+
+Original1.21.1 official client SHA1 30c73b1c5da787909b2f73340419fdf13b9def88; official-name mapping Entity.spawnAtLocation(ItemLike,int) -> bsr.a(dcv,int)
+
+  public cjh a(dcv, int);
+    Code:
+         0: aload_0
+         1: new           #2102               // class cuq
+         4: dup
+         5: aload_1
+         6: invokespecial #2105               // Method cuq."<init>":(Ldcv;)V
+         9: iload_2
+        10: i2f
+        11: invokevirtual #2108               // Method a:(Lcuq;F)Lcjh;
+        14: areturn
+
+
+Target26.3 native method
+public default void dropLeash();
+    Code:
+         0: aload_0
+         1: checkcast     #26                 // class net/minecraft/world/entity/Entity
+         4: iconst_1
+         5: iconst_1
+         6: invokestatic  #51                 // InterfaceMethod dropLeash:(Lnet/minecraft/world/entity/Entity;ZZ)V
+         9: return
+
+
+Target26.3 native method
+public void jumpFromGround();
+    Code:
+         0: aload_0
+         1: invokevirtual #2848               // Method getJumpPower:()F
+         4: fstore_1
+         5: fload_1
+         6: ldc_w         #2850               // float 1.0E-5f
+         9: fcmpg
+        10: ifgt          14
+        13: return
+        14: aload_0
+        15: invokevirtual #482                // Method getDeltaMovement:()Lnet/minecraft/world/phys/Vec3;
+        18: astore_2
+        19: aload_0
+        20: aload_2
+        21: getfield      #1826               // Field net/minecraft/world/phys/Vec3.x:D
+        24: fload_1
+        25: f2d
+        26: aload_2
+        27: getfield      #1882               // Field net/minecraft/world/phys/Vec3.y:D
+        30: invokestatic  #427                // Method java/lang/Math.max:(DD)D
+        33: aload_2
+        34: getfield      #1828               // Field net/minecraft/world/phys/Vec3.z:D
+        37: invokevirtual #2293               // Method setDeltaMovement:(DDD)V
+        40: aload_0
+        41: invokevirtual #2851               // Method isSprinting:()Z
+        44: ifeq          89
+        47: aload_0
+        48: invokevirtual #174                // Method getYRot:()F
+        51: ldc_w         #2854               // float 0.017453292f
+        54: fmul
+        55: fstore_3
+        56: aload_0
+        57: new           #487                // class net/minecraft/world/phys/Vec3
+        60: dup
+        61: fload_3
+        62: f2d
+        63: invokestatic  #2855               // Method net/minecraft/util/Mth.sin:(D)F
+        66: fneg
+        67: f2d
+        68: ldc2_w        #2859               // double 0.2d
+        71: dmul
+        72: dconst_0
+        73: fload_3
+        74: f2d
+        75: invokestatic  #2861               // Method net/minecraft/util/Mth.cos:(D)F
+        78: f2d
+        79: ldc2_w        #2859               // double 0.2d
+        82: dmul
+        83: invokespecial #1830               // Method net/minecraft/world/phys/Vec3."<init>":(DDD)V
+        86: invokevirtual #2864               // Method addDeltaMovement:(Lnet/minecraft/world/phys/Vec3;)V
+        89: aload_0
+        90: iconst_1
+        91: putfield      #2277               // Field needsSync:Z
+        94: return
+
+
+Native GroundPathNavigation null result for unloaded chunk (base signature is treated non-null by Kotlin)
+public net.minecraft.world.level.pathfinder.Path createPath(net.minecraft.core.BlockPos, int);
+    Code:
+         0: aload_0
+         1: getfield      #55                 // Field level:Lnet/minecraft/world/level/Level;
+         4: invokevirtual #59                 // Method net/minecraft/world/level/Level.getChunkSource:()Lnet/minecraft/world/level/chunk/ChunkSource;
+         7: aload_1
+         8: invokevirtual #65                 // Method net/minecraft/core/BlockPos.getX:()I
+        11: invokestatic  #69                 // Method net/minecraft/core/SectionPos.blockToSectionCoord:(I)I
+        14: aload_1
+        15: invokevirtual #75                 // Method net/minecraft/core/BlockPos.getZ:()I
+        18: invokestatic  #69                 // Method net/minecraft/core/SectionPos.blockToSectionCoord:(I)I
+        21: invokevirtual #77                 // Method net/minecraft/world/level/chunk/ChunkSource.getChunkNow:(II)Lnet/minecraft/world/level/chunk/LevelChunk;
+        24: astore_3
+        25: aload_3
+        26: ifnonnull     31
+        29: aconst_null
+        30: areturn
+        31: aload_0
+        32: getfield      #83                 // Field canPathToTargetsBelowSurface:Z
+        35: ifne          46
+        38: aload_0
+        39: aload_3
+        40: aload_1
+        41: iload_2
+        42: invokevirtual #87                 // Method findSurfacePosition:(Lnet/minecraft/world/level/chunk/LevelChunk;Lnet/minecraft/core/BlockPos;I)Lnet/minecraft/core/BlockPos;
+        45: astore_1
+        46: aload_0
+        47: aload_1
+        48: iload_2
+        49: invokespecial #91                 // Method net/minecraft/world/entity/ai/navigation/PathNavigation.createPath:(Lnet/minecraft/core/BlockPos;I)Lnet/minecraft/world/level/pathfinder/Path;
+        52: areturn
+
+
+Original1.21.1 blocksMotion mapping c	dtb$a	net/minecraft/class_4970$class_4971	net/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase
+
+  public boolean d();
+    Code:
+         0: aload_0
+         1: invokevirtual #243                // Method b:()Ldfy;
+         4: astore_1
+         5: aload_1
+         6: getstatic     #262                // Field dga.bs:Ldfy;
+         9: if_acmpeq     30
+        12: aload_1
+        13: getstatic     #265                // Field dga.mY:Ldfy;
+        16: if_acmpeq     30
+        19: aload_0
+        20: invokevirtual #267                // Method e:()Z
+        23: ifeq          30
+        26: iconst_1
+        27: goto          31
+        30: iconst_0
+        31: ireturn
+
+Original mapped Blocks.COBWEB = dga.bs; Blocks.BAMBOO_SAPLING = dga.mY. The old blocksMotion predicate excludes these two blocks before its isSolid check.
