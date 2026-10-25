@@ -24,8 +24,10 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
+import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerEntity
 import net.minecraft.tags.FluidTags
+import net.minecraft.world.entity.EntityDimensions
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.vehicle.boat.Boat
 import net.minecraft.world.item.Item
@@ -37,7 +39,13 @@ import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.WoodType
 
 @Suppress("unused")
-open class CobblemonBoatEntity(entityType: EntityType<out Boat>, world: Level) : Boat(entityType, world) {
+open class CobblemonBoatEntity private constructor(entityType: EntityType<out Boat>, world: Level, dropItem: BoatDropItem) : Boat(entityType, world, dropItem) {
+
+    constructor(entityType: EntityType<out Boat>, world: Level) : this(entityType, world, BoatDropItem())
+
+    init {
+        dropItem.bind { boatItemForDrop() }
+    }
 
     constructor(world: Level) : this(CobblemonEntities.BOAT, world)
 
@@ -68,7 +76,7 @@ open class CobblemonBoatEntity(entityType: EntityType<out Boat>, world: Level) :
      */
     val baseBlock: Block get() = this.boatType.baseBlock
 
-    override fun getDropItem(): Item = this.boatType.boatItem
+    protected open fun boatItemForDrop(): Item = this.boatType.boatItem
 
     override fun getAddEntityPacket(entityTrackerEntry: ServerEntity): Packet<ClientGamePacketListener> = ClientboundAddEntityPacket(this, entityTrackerEntry)
 
@@ -92,13 +100,8 @@ open class CobblemonBoatEntity(entityType: EntityType<out Boat>, world: Level) :
         LegacyNbt.write(output, nbt)
     }
 
-    override fun setVariant(type: Type) {
-        throw UnsupportedOperationException("The vanilla boat type is not present in the Cobblemon implementation use the boatType property")
-    }
-
-    override fun getVariant(): Type {
-        return Type.BAMBOO //have to return something here as otherwise it breaks vanilla interactions (e.g. player getting into boat)
-    }
+    // The original vanilla variant was BAMBOO; preserve its passenger ride height.
+    override fun rideHeight(dimensions: EntityDimensions): Double = (dimensions.height() * 0.8888889F).toDouble()
 
     override fun getSinglePassengerXOffset(): Float = this.boatType.mountedOffset
 
@@ -122,13 +125,14 @@ open class CobblemonBoatEntity(entityType: EntityType<out Boat>, world: Level) :
         if (this.level().isClientSide || this.isRemoved) {
             return
         }
-        this.kill()
-        if (this.level().gameRules.get(GameRules.ENTITY_DROPS)) {
+        val world = this.level() as ServerLevel
+        this.kill(world)
+        if (world.gameRules.get(GameRules.ENTITY_DROPS)) {
             repeat(3) {
-                this.spawnAtLocation(this.boatType.baseBlock)
+                this.spawnAtLocation(world, this.boatType.baseBlock)
             }
             repeat(2) {
-                this.spawnAtLocation(Items.STICK)
+                this.spawnAtLocation(world, Items.STICK)
             }
         }
     }
