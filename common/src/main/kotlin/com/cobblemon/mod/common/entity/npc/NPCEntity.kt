@@ -56,7 +56,6 @@ import com.cobblemon.mod.common.util.DataKeys
 import com.cobblemon.mod.common.util.getBattleState
 import com.cobblemon.mod.common.util.getPlayer
 import com.cobblemon.mod.common.util.withNPCValue
-import com.mojang.authlib.GameProfile
 import com.mojang.authlib.ProfileLookupCallback
 import com.cobblemon.mod.common.util.ScriptedBrain
 import com.mojang.serialization.Dynamic
@@ -76,7 +75,6 @@ import net.minecraft.network.protocol.Packet
 import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket
 import net.minecraft.network.protocol.game.ClientGamePacketListener
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
-import net.minecraft.network.protocol.game.DebugPackets
 import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
@@ -374,9 +372,9 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
     fun makeBrain(dynamic: Dynamic<*>): Brain<out NPCEntity> =
         makeBrain(ScriptedBrain.read(dynamic, registryAccess()))
 
-    override fun doHurtTarget(target: Entity): Boolean {
+    override fun doHurtTarget(serverLevel: ServerLevel, target: Entity): Boolean {
         val source = this.damageSources().mobAttack(this)
-        val hurt = target.hurt(source, attributes.getValue(Attributes.ATTACK_DAMAGE).toFloat() * 5F)
+        val hurt = target.hurtServer(serverLevel, source, attributes.getValue(Attributes.ATTACK_DAMAGE).toFloat() * 5F)
         if (hurt) {
             playAttackSound()
         }
@@ -401,17 +399,12 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
         schedulingTracker.update(1/20F)
     }
 
-    override fun customServerAiStep() {
-        super.customServerAiStep()
-        getBrain().tick(level() as ServerLevel, this)
+    override fun customServerAiStep(serverLevel: ServerLevel) {
+        super.customServerAiStep(serverLevel)
+        getBrain().tick(serverLevel, this)
     }
 
-    override fun sendDebugPackets() {
-        super.sendDebugPackets()
-        DebugPackets.sendEntityBrain(this)
-        DebugPackets.sendGoalSelector(level(), this, this.goalSelector)
-        DebugPackets.sendPathFindingPacket(level(), this, this.navigation.path, this.navigation.path?.distToTarget ?: 0F)
-    }
+    // Mob.registerDebugValues supplies the native brain, goal and path subscriptions.
 
     override fun broadcastToPlayer(player: ServerPlayer): Boolean {
         if (shouldHideFrom(player)) {
@@ -568,12 +561,12 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
     }
 
     fun loadTextureFromGameProfileName(username: String) {
-        val server = server ?: return
-        server.profileRepository.findProfilesByNames(arrayOf(username), object : ProfileLookupCallback {
-            override fun onProfileLookupSucceeded(profile: GameProfile) {
-                val deepProfile = server.sessionService.fetchProfile(profile.id, false)?.profile ?: return Cobblemon.LOGGER.error("Failed to fetch profile for game profile name: $username")
-                val textures = server.sessionService.getTextures(deepProfile)
-                val skin = textures.skin!!
+        val server = (level() as? ServerLevel)?.server ?: return
+        server.services().profileRepository().findProfilesByNames(arrayOf(username), object : ProfileLookupCallback {
+            override fun onProfileLookupSucceeded(profileName: String, profileId: UUID) {
+                val deepProfile = server.services().sessionService().fetchProfile(profileId, false)?.profile() ?: return Cobblemon.LOGGER.error("Failed to fetch profile for game profile name: $username")
+                val textures = server.services().sessionService().getTextures(deepProfile)
+                val skin = textures.skin() ?: return Cobblemon.LOGGER.warn("No skin found for game profile name: $username")
                 val url = skin.url
                 val model = NPCPlayerModelType.valueOf((skin.getMetadata("model") ?: "default").uppercase())
                 loadTexture(URI(url), model)
@@ -605,7 +598,7 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
     override fun hasCustomName() = true
     override fun isCustomNameVisible() = true
     override fun isPersistenceRequired() = super.isPersistenceRequired() || !npc.canDespawn
-    override fun getScale() = hitboxScale
+    override fun sanitizeScale(scale: Float) = hitboxScale
 
     override fun getDimensions(pose: Pose): EntityDimensions {
         val hitbox = hitbox ?: npc.hitbox
@@ -614,7 +607,7 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
     }
 
     override fun isPushable() = isMovable ?: npc.isMovable
-    override fun isInvulnerableTo(source: DamageSource) = (isInvulnerable ?: npc.isInvulnerable) && !source.`is`(BYPASSES_INVULNERABILITY)
+    override fun isInvulnerableTo(serverLevel: ServerLevel, source: DamageSource) = (isInvulnerable ?: npc.isInvulnerable) && !source.`is`(BYPASSES_INVULNERABILITY)
     override fun canBeLeashed() = isLeashable ?: npc.isLeashable
     override fun canBeHitByProjectile() = allowProjectileHits ?: npc.allowProjectileHits
 

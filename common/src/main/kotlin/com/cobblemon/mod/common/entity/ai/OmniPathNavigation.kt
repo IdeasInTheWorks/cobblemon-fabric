@@ -23,7 +23,6 @@ import net.minecraft.util.Mth
 import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.Mob
-import net.minecraft.world.entity.ai.navigation.GroundPathNavigation
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.pathfinder.Node
@@ -44,7 +43,7 @@ import kotlin.math.acos
  * @author Hiroku
  * @since April 18th, 2025
  */
-class OmniPathNavigation(val world: Level, val entity: Mob) : GroundPathNavigation(entity, world) {
+class OmniPathNavigation(val world: Level, val entity: Mob) : NullableGroundPathNavigation(entity, world) {
     val pather = entity as OmniPathingEntity
 
     var cachedCurrentNode: Node? = null
@@ -175,10 +174,10 @@ class OmniPathNavigation(val world: Level, val entity: Mob) : GroundPathNavigati
         var blockPos: BlockPos
         if (this.world.getBlockState(target).isAir && !pather.canFly()) {
             blockPos = target.below()
-            while (blockPos.y > this.world.minBuildHeight && this.world.getBlockState(blockPos).isAir) {
+            while (blockPos.y > this.world.minY && this.world.getBlockState(blockPos).isAir) {
                 blockPos = blockPos.below()
             }
-            while (blockPos.y < this.world.maxBuildHeight && this.world.getBlockState(blockPos).isAir) {
+            while (blockPos.y <= this.world.maxY && this.world.getBlockState(blockPos).isAir) {
                 blockPos = blockPos.above()
             }
             target = blockPos
@@ -190,7 +189,7 @@ class OmniPathNavigation(val world: Level, val entity: Mob) : GroundPathNavigati
             findPath(target, distance)
         } else {
             blockPos = target.above()
-            while (blockPos.y < this.world.maxBuildHeight && this.world.getBlockState(blockPos).isSolid) {
+            while (blockPos.y <= this.world.maxY && this.world.getBlockState(blockPos).isSolid) {
                 blockPos = blockPos.above()
             }
             findPath(blockPos, distance)
@@ -237,19 +236,19 @@ class OmniPathNavigation(val world: Level, val entity: Mob) : GroundPathNavigati
             val blockGetter: BlockGetter = level
             if (blockGetter.getFluidState(pos).`is`(FluidTags.WATER)) {
                 val blockPos = pos.below()
-                return level.getBlockState(blockPos).isSolidRender(this.level, blockPos)
+                return level.getBlockState(blockPos).isSolidRender()
             }
         }
         if (pather.canWalkOnWater()) {
             val blockGetter: BlockGetter = level
             if (blockGetter.getFluidState(pos.below()).`is`(FluidTags.WATER)) {
-                return !level.getBlockState(pos).isSolidRender(this.level, pos)
+                return !level.getBlockState(pos).isSolidRender()
             }
         }
         if (pather.canWalkOnLava()) {
             val blockGetter: BlockGetter = level
             if (blockGetter.getFluidState(pos.below()).`is`(FluidTags.LAVA)) {
-                return !level.getBlockState(pos).isSolidRender(this.level, pos)
+                return !level.getBlockState(pos).isSolidRender()
             }
         }
         if (pather.canFly()) {
