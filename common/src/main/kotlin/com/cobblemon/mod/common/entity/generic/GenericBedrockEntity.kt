@@ -133,8 +133,14 @@ class GenericBedrockEntity(world: Level) : Entity(CobblemonEntities.GENERIC_BEDR
     override fun isPickable() = true
     override fun canBeCollidedWith(entity: Entity?) = true
 
-    // Non-living model helpers inherited Entity.hurt's false result on 1.21.1.
-    override fun hurtServer(world: ServerLevel, source: DamageSource, amount: Float) = false
+    // Retain Entity.hurt's synchronization side effect as well as its false result.
+    override fun hurtServer(world: ServerLevel, source: DamageSource, amount: Float) = legacyHurt(source)
+    override fun hurtClient(source: DamageSource) = legacyHurt(source)
+
+    private fun legacyHurt(source: DamageSource): Boolean {
+        if (!isInvulnerableToBase(source)) markHurt()
+        return false
+    }
 
     override fun shouldBeSaved() = super.shouldBeSaved() && this.savesToWorld
     override fun getDimensions(pose: Pose) = EntityDimensions.scalable(colliderWidth, colliderHeight).scale(scale)

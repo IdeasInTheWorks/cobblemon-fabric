@@ -53,7 +53,7 @@ object PlaceHoneyInHiveTask {
                             // Erase Hive memory and give the bee a moment to locate a new hive
                             entity.brain.eraseMemory(CobblemonMemories.HIVE_LOCATION)
                         } else {
-                            blockEntity.addOccupant(entity)
+                            (blockEntity as com.cobblemon.mod.common.duck.PokemonHiveAccess).`cobblemon$addPokemon`(entity)
                         }
                     }
 

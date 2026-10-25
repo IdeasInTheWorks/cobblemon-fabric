@@ -10,6 +10,8 @@ package com.cobblemon.mod.common.mixin;
 
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
+import com.cobblemon.mod.common.CobblemonEntities;
+import com.cobblemon.mod.common.duck.PokemonHiveAccess;
 import com.cobblemon.mod.common.mixin.accessor.BeeDataAccessor;
 import com.cobblemon.mod.common.mixin.accessor.BeehiveBlockEntityAccessor;
 import com.cobblemon.mod.common.mixin.accessor.BlockEntityAccessor;
@@ -20,6 +22,12 @@ import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BeehiveBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,7 +39,30 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 
 @Mixin(BeehiveBlockEntity.class)
-public abstract class BeehiveBlockEntityMixin {
+public abstract class BeehiveBlockEntityMixin extends BlockEntity implements PokemonHiveAccess {
+
+    protected BeehiveBlockEntityMixin(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
+    }
+
+    @Override
+    public boolean cobblemon$addPokemon(Entity entity) {
+        var hive = (BeehiveBlockEntity) (Object) this;
+        if (hive.isFull()) return false;
+        entity.stopRiding();
+        entity.ejectPassengers();
+        hive.storeBee(BeehiveBlockEntity.Occupant.of(entity));
+        var level = getLevel();
+        if (level != null) {
+            var pos = getBlockPos();
+            level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BEEHIVE_ENTER, SoundSource.BLOCKS, 1F, 1F);
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(entity, getBlockState()));
+        }
+        entity.discard();
+        // Match vanilla entry's base call, rather than the hive's fire-checking override.
+        super.setChanged();
+        return true;
+    }
 
 
     // Accessor for the private 'stored' field in BeehiveBlockEntity
@@ -43,7 +74,7 @@ public abstract class BeehiveBlockEntityMixin {
         if (player != null) {
             final BeehiveBlockEntity blockEntity = (BeehiveBlockEntity) (Object) this;
             // if the block is sedated or the player is too far away, no aggro should be applied
-            if (blockEntity.isSedated() || player.position().distanceToSqr(blockEntity.getBlockPos().getCenter()) > 16.0)
+            if (blockEntity.isSedated() || player.position().distanceToSqr(Vec3.atCenterOf(blockEntity.getBlockPos())) > 16.0)
                 return;
             // from this point need to access private members of the block entity
             final BeehiveBlockEntityAccessor blockEntityAccessor = (BeehiveBlockEntityAccessor) this;
@@ -53,14 +84,11 @@ public abstract class BeehiveBlockEntityMixin {
             storedList.removeIf((beeData) -> {
                         BeehiveBlockEntity.Occupant occupant = ((BeeDataAccessor) beeData).invokeToOccupant();
                         // Checking the for the tag allows us to make sure it's one of our pokemon before trying to rehydrate it into an entity
-                        boolean isPokemon = false;
-                        if (occupant.entityData().contains("id")) {
-                            isPokemon = "cobblemon:pokemon".equals(occupant.entityData().getUnsafe().getString("id"));
-                        }
+                        boolean isPokemon = occupant.entityData().type() == CobblemonEntities.POKEMON;
                         if (isPokemon) {
                             return BeehiveBlockEntityAccessor.releaseOccupant(
-                                    ((BlockEntityAccessor) blockEntityAccessor).getLevel(),
-                                    ((BlockEntityAccessor) blockEntityAccessor).getWorldPosition(),
+                                    blockEntity.getLevel(),
+                                    blockEntity.getBlockPos(),
                                     state,
                                     occupant,
                                     list,

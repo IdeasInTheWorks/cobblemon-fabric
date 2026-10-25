@@ -36,10 +36,7 @@ class CobblemonRandomSurfacePos {
                 radius,
                 verticalRange,
                  { pos: BlockPos? ->
-                     if (pos != null) {
-                         mob.getWalkTargetValue(pos).toDouble()
-                     }
-                     0.0
+                     pos?.let { mob.getWalkTargetValue(it).toDouble() } ?: Double.NEGATIVE_INFINITY
                  })
         }
 
@@ -115,9 +112,14 @@ class CobblemonRandomSurfacePos {
                 pos,
                 mob.level().maxY + 1
             ) { blockPos: BlockPos ->
-                if (GoalUtils.isSolid(mob, blockPos)) true
-                val fluidState = mob.level().getFluidState(blockPos)
-                !fluidState.isEmpty && (mob !is OmniPathingEntity || ((mob.canWalkOnWater() && fluidState.type == FluidTags.WATER) || (mob.canWalkOnLava() && fluidState.type == FluidTags.LAVA)))
+                if (GoalUtils.isSolid(mob, blockPos)) {
+                    true
+                } else {
+                    val fluidState = mob.level().getFluidState(blockPos)
+                    !fluidState.isEmpty && (mob !is OmniPathingEntity ||
+                        (mob.canWalkOnWater() && fluidState.`is`(FluidTags.WATER)) ||
+                        (mob.canWalkOnLava() && fluidState.`is`(FluidTags.LAVA)))
+                }
             }
             return if (!GoalUtils.hasMalus(mob, pos)) pos else null
         }

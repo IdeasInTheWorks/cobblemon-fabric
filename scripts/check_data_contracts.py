@@ -12,6 +12,8 @@ def main():
     parser.add_argument("--game-jar", type=Path, required=True)
     parser.add_argument("--gradle-cache", type=Path, required=True)
     parser.add_argument("--javac", type=Path, required=True)
+    parser.add_argument("--legacy-game-jar", type=Path)
+    parser.add_argument("--legacy-version-json", type=Path)
     parser.add_argument("--report", type=Path, default=Path("porting/logs/data-contracts.json"))
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
@@ -19,6 +21,14 @@ def main():
     sha1 = hashlib.sha1(args.game_jar.read_bytes()).hexdigest()
     if sha1 != evidence["target"]["client"]["sha1"]:
         raise SystemExit("Game JAR differs from recorded official Mojang SHA-1")
+    legacy_sha1 = None
+    if bool(args.legacy_game_jar) != bool(args.legacy_version_json):
+        raise SystemExit("Legacy JAR and its official version metadata must be supplied together")
+    if args.legacy_game_jar:
+        legacy_metadata = json.loads(args.legacy_version_json.read_text())
+        legacy_sha1 = hashlib.sha1(args.legacy_game_jar.read_bytes()).hexdigest()
+        if legacy_metadata["id"] != "1.21.1" or legacy_sha1 != legacy_metadata["downloads"]["client"]["sha1"]:
+            raise SystemExit("Legacy fixture requires the checksum-verified official 1.21.1 client")
     libraries = []
     for coordinate in evidence["target"]["libraries"]:
         group, artifact, version, *_ = coordinate.split(":")
@@ -27,7 +37,10 @@ def main():
     out = root / "build/data-contracts"
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
-    sources = [root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyMovement.java",
+    sources = [root / "common/src/main/java/com/cobblemon/mod/common/util/HiveOccupants.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/entity/ai/LegacyRandomPos.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/entity/ai/LegacyEntityQueries.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyMovement.java",
                root / "common/src/main/java/com/cobblemon/mod/common/util/ShoulderData.java",
                root / "common/src/main/java/com/cobblemon/mod/common/api/net/serializers/ShoulderTagDataSerializer.java",
                root / "common/src/main/java/com/cobblemon/mod/common/world/gamerules/CobblemonGameRuleDefinitions.java",
@@ -41,7 +54,8 @@ def main():
                root / "common/src/main/java/com/cobblemon/mod/common/util/RegistrationProperties.java",
                root / "common/src/main/java/com/cobblemon/mod/common/item/CobblemonSmithingTemplateItem.java",
                root / "common/src/main/java/com/cobblemon/mod/common/item/CobblemonConsumables.java",
-               root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java"]
+               root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java",
+               root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft121RandomContracts.java"]
     argfile = out / "javac.args"
     argfile.write_text("\n".join(["--release", "25", "-proc:none", "-classpath", quoted(classpath),
                                   "-d", quoted(out), *map(quoted, sources)]), encoding="utf-8")
@@ -62,6 +76,18 @@ def main():
             # Vanilla bootstrap redirects stdout through the game logger.
             result_line = next(line for line in reversed(run.stdout.splitlines()) if '{"passed":' in line)
             report["result"] = json.loads(result_line[result_line.index('{"passed":'):])
+    if code == 0 and args.legacy_game_jar:
+        legacy_args = out / "legacy-java.args"
+        legacy_args.write_text("\n".join(["-classpath", quoted(str(out) + os.pathsep + classpath + os.pathsep +
+                                         str(args.legacy_game_jar.resolve())),
+                                         "com.cobblemon.mod.common.porting.Minecraft121RandomContracts"]), encoding="utf-8")
+        run = subprocess.run([str(args.javac.with_name("java.exe" if os.name == "nt" else "java")),
+                              "@" + str(legacy_args)], capture_output=True, text=True)
+        code = run.returncode
+        report.update({"passed": code == 0, "legacy_game_sha1": legacy_sha1,
+                       "legacy_random_stdout": run.stdout, "legacy_random_stderr": run.stderr})
+        if code == 0:
+            report["legacy_random_result"] = json.loads(run.stdout.strip().splitlines()[-1])
     (root / args.report).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
     return code

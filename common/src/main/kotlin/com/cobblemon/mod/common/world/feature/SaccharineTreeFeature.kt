@@ -235,11 +235,9 @@ class SaccharineTreeFeature : Feature<BlockStateConfiguration>(BlockStateConfigu
                             // So instead we create custom compound tag that is a placeholder for an incomplete Pokemon.
                             // This is caught and handled by BeeOccupantMixin.java, which turns it into a complete entity.
                             val properties = "${POKEMON_ARGS} lvl=${LEVEL_RANGE.random()}"
-                            val compoundTag = CompoundTag()
-                            compoundTag.putString("id", POKEMON_PLACEHOLD_ID)
-                            compoundTag.putString("pokemonProperties", properties)
-                            val occupant = BeehiveBlockEntity.Occupant(
-                                CustomData.of(compoundTag), randomSource.nextInt(599), 600
+                            val occupant = com.cobblemon.mod.common.util.HiveOccupants.placeholder(
+                                com.cobblemon.mod.common.CobblemonEntities.POKEMON,
+                                properties, randomSource.nextInt(599)
                             )
                             beehiveBlockEntity?.storeBee(occupant)
                         }

@@ -524,6 +524,129 @@ final class Minecraft263DataContracts {
         net.minecraft.server.level.ServerPlayer.class.getDeclaredMethod("setShoulderEntityRight", CompoundTag.class);
         net.minecraft.server.level.ServerPlayer.class.getDeclaredMethod("respawnEntityOnShoulder", CompoundTag.class);
         checks += 3;
+        var failedCandidates = new java.util.concurrent.atomic.AtomicInteger();
+        var nullScoreCalls = new java.util.concurrent.atomic.AtomicInteger();
+        var noRandomPosition = com.cobblemon.mod.common.entity.ai.LegacyRandomPos.select(
+                () -> { failedCandidates.incrementAndGet(); return null; },
+                pos -> { nullScoreCalls.incrementAndGet(); return 1.0; });
+        check(noRandomPosition == null, "all failed random candidates retain nullable failure");
+        check(failedCandidates.get() == 10 && nullScoreCalls.get() == 0, "native random selection makes ten attempts without scoring null");
+        var candidates = new java.util.concurrent.atomic.AtomicInteger();
+        var selectedPosition = com.cobblemon.mod.common.entity.ai.LegacyRandomPos.select(
+                () -> { int i = candidates.getAndIncrement(); return i == 4 ? new net.minecraft.core.BlockPos(-8, 63, 7) : new net.minecraft.core.BlockPos(2, 64, 3); },
+                pos -> pos.getX() == -8 ? 10.0 : -1.0);
+        check(selectedPosition.equals(new net.minecraft.world.phys.Vec3(-7.5, 63, 7.5)), "native random selector keeps best scored bottom-center including negative coordinates");
+        check(candidates.get() == 10, "successful random search still compares all ten candidates");
+        record Positioned(String name, net.minecraft.world.phys.Vec3 pos, boolean accepted) {}
+        var nearPlayers = java.util.List.of(
+                new Positioned("lower boundary", new net.minecraft.world.phys.Vec3(-8, -8, -8), true),
+                new Positioned("upper boundary", new net.minecraft.world.phys.Vec3(8, 0, 0), true),
+                new Positioned("rejected", net.minecraft.world.phys.Vec3.ZERO, false),
+                new Positioned("near edge outside", new net.minecraft.world.phys.Vec3(8.001, 0, 0), true),
+                new Positioned("inside", new net.minecraft.world.phys.Vec3(0, 7.999, 0), true));
+        var testedTargets = new java.util.ArrayList<String>();
+        var foundPlayers = com.cobblemon.mod.common.entity.ai.LegacyEntityQueries.select(nearPlayers,
+                net.minecraft.world.phys.AABB.ofSize(net.minecraft.world.phys.Vec3.ZERO, 16, 16, 16), Positioned::pos,
+                player -> { testedTargets.add(player.name()); return player.accepted(); });
+        check(foundPlayers.stream().map(Positioned::name).toList().equals(java.util.List.of("lower boundary", "inside")), "nearby query keeps old half-open position bounds and player order");
+        check(testedTargets.equals(java.util.List.of("lower boundary", "rejected", "inside")), "out-of-bounds positions are rejected before targeting tests");
+        check(nearPlayers.size() == 5, "nearby query does not mutate source players");
+        check(com.cobblemon.mod.common.entity.ai.LegacyEntityQueries.select(java.util.List.<Positioned>of(),
+                new net.minecraft.world.phys.AABB(0, 0, 0, 1, 1, 1), Positioned::pos, player -> true).isEmpty(), "empty nearby query stays empty");
+        var hiveSaved = new CompoundTag();
+        hiveSaved.putString("id", "minecraft:bee");
+        for (String key : com.cobblemon.mod.common.util.HiveOccupants.IGNORED_TAGS) hiveSaved.putInt(key, 99);
+        var pokemonPayload = new CompoundTag();
+        LegacyNbt.putUUID(pokemonPayload, "UUID", pokemon);
+        LegacyNbt.putUUID(pokemonPayload, "owner", owner);
+        pokemonPayload.putString("species", "cobblemon:combee");
+        hiveSaved.put("Pokemon", pokemonPayload);
+        hiveSaved.putString("addon_payload", "retain");
+        var hiveNectar = com.cobblemon.mod.common.util.HiveOccupants.snapshot(net.minecraft.world.entity.EntityTypes.BEE, hiveSaved, true);
+        check(hiveNectar.entityData().type() == net.minecraft.world.entity.EntityTypes.BEE, "hive stores explicit native entity type");
+        check(hiveNectar.ticksInHive() == 0 && hiveNectar.minTicksInHive() == 2400, "nectar retains 2400 tick residence");
+        var hiveTag = hiveNectar.entityData().copyTagWithoutId();
+        for (String key : com.cobblemon.mod.common.util.HiveOccupants.IGNORED_TAGS) {
+            check(!hiveTag.contains(key), "root hive exclusion retained: " + key);
+        }
+        check(!hiveTag.contains("id"), "native typed data separates the entity ID from payload");
+        check(LegacyNbt.getUUID(hiveTag.getCompoundOrEmpty("Pokemon"), "UUID").equals(pokemon), "hive filtering retains nested Pokemon identity");
+        check(LegacyNbt.getUUID(hiveTag.getCompoundOrEmpty("Pokemon"), "owner").equals(owner), "hive filtering retains nested Pokemon ownership");
+        check(hiveTag.getStringOr("addon_payload", "").equals("retain"), "hive retains unknown addon data");
+        check(hiveSaved.contains("UUID"), "hive snapshot does not mutate source save");
+        check(com.cobblemon.mod.common.util.HiveOccupants.snapshot(net.minecraft.world.entity.EntityTypes.BEE, hiveSaved, false).minTicksInHive() == 600, "non-nectar residence remains 600 ticks");
+        var hiveEncoded = net.minecraft.world.level.block.entity.BeehiveBlockEntity.Occupant.CODEC.encodeStart(optionalOps, hiveNectar).getOrThrow();
+        var hiveDecoded = net.minecraft.world.level.block.entity.BeehiveBlockEntity.Occupant.CODEC.parse(optionalOps, hiveEncoded).getOrThrow();
+        check(hiveDecoded.equals(hiveNectar), "native occupant codec round trip with full custom payload");
+        var hiveBuffer = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), vanilla);
+        try {
+            net.minecraft.world.level.block.entity.BeehiveBlockEntity.Occupant.STREAM_CODEC.encode(hiveBuffer, hiveNectar);
+            check(net.minecraft.world.level.block.entity.BeehiveBlockEntity.Occupant.STREAM_CODEC.decode(hiveBuffer).equals(hiveNectar), "native occupant network codec retains type and custom payload");
+            check(!hiveBuffer.isReadable(), "native hive frame has no unconsumed bytes");
+        } finally { hiveBuffer.release(); }
+        var placeholder = com.cobblemon.mod.common.util.HiveOccupants.placeholder(net.minecraft.world.entity.EntityTypes.BEE, "combee lvl=12", 598);
+        check(placeholder.ticksInHive() == 598 && placeholder.minTicksInHive() == 600, "worldgen placeholder keeps original timer values");
+        check(placeholder.entityData().copyTagWithoutId().getStringOr("pokemonProperties", "").equals("combee lvl=12"), "worldgen placeholder retains property string without creating an entity");
+        // String IDs exercise native TypedEntityData without inventing a Pokemon registration in the fixture registry.
+        var nativeStringHive = net.minecraft.world.item.component.TypedEntityData.codec(com.mojang.serialization.Codec.STRING);
+        var migratedHive = com.cobblemon.mod.common.util.HiveOccupants.legacyCodec(nativeStringHive);
+        for (String placeholderId : java.util.List.of("cobblemon_pokemon_entity_placeholder", "minecraft:cobblemon_pokemon_entity_placeholder")) {
+            var legacyHive = new CompoundTag();
+            legacyHive.putString("id", placeholderId);
+            legacyHive.putString("pokemonProperties", "combee lvl=12");
+            legacyHive.put("nested", pokemonPayload.copy());
+            var restoredHive = migratedHive.parse(NbtOps.INSTANCE, legacyHive).getOrThrow();
+            check(restoredHive.type().equals("cobblemon:pokemon"), "legacy placeholder ID becomes registered Pokemon ID before typed decoding");
+            check(restoredHive.copyTagWithoutId().getStringOr("pokemonProperties", "").equals("combee lvl=12"), "legacy placeholder properties survive typed decoding");
+            check(LegacyNbt.getUUID(restoredHive.copyTagWithoutId().getCompoundOrEmpty("nested"), "owner").equals(owner), "legacy placeholder retains unknown nested ownership data");
+            check(legacyHive.getStringOr("id", "").equals(placeholderId), "legacy placeholder input remains unchanged");
+            var modernHive = migratedHive.encodeStart(NbtOps.INSTANCE, restoredHive).getOrThrow();
+            check(((CompoundTag) modernHive).getStringOr("id", "").equals("cobblemon:pokemon"), "upgraded placeholder writes the modern ID");
+            check(migratedHive.parse(NbtOps.INSTANCE, modernHive).getOrThrow().equals(restoredHive), "placeholder migration is idempotent");
+        }
+        for (String badProperties : new String[] {"", "   "}) {
+            var invalidHive = new CompoundTag();
+            invalidHive.putString("id", "cobblemon_pokemon_entity_placeholder");
+            invalidHive.putString("pokemonProperties", badProperties);
+            check(migratedHive.parse(NbtOps.INSTANCE, invalidHive).error().isPresent(), "malformed legacy placeholder is refused instead of creating a random Pokemon");
+        }
+        var ordinaryHive = new CompoundTag();
+        ordinaryHive.putString("id", "another_mod:occupant");
+        ordinaryHive.putString("pokemonProperties", "preserve");
+        check(migratedHive.parse(NbtOps.INSTANCE, ordinaryHive).getOrThrow().type().equals("another_mod:occupant"), "unrelated occupant IDs are unchanged");
+        var jsonPlaceholder = new com.google.gson.JsonObject();
+        jsonPlaceholder.addProperty("id", "cobblemon_pokemon_entity_placeholder");
+        jsonPlaceholder.addProperty("pokemonProperties", "combee lvl=12");
+        check(migratedHive.parse(com.mojang.serialization.JsonOps.INSTANCE, jsonPlaceholder).getOrThrow().type().equals("cobblemon:pokemon"), "placeholder conversion retains ops for JSON as well as NBT");
+        var emptyScheduleBrain = new com.cobblemon.mod.common.util.ScriptedBrain<net.minecraft.world.entity.LivingEntity>(
+                java.util.List.of(), java.util.List.of(), new net.minecraft.world.entity.ai.Brain.Packed(new net.minecraft.world.entity.ai.memory.MemoryMap.Builder().build()), net.minecraft.util.RandomSource.create(17));
+        for (var activity : java.util.List.of(net.minecraft.world.entity.schedule.Activity.IDLE, net.minecraft.world.entity.schedule.Activity.FIGHT)) {
+            emptyScheduleBrain.addActivity(activity, com.google.common.collect.ImmutableList.of(), java.util.Set.of(), java.util.Set.of());
+        }
+        emptyScheduleBrain.setDefaultActivity(net.minecraft.world.entity.schedule.Activity.IDLE);
+        emptyScheduleBrain.setActiveActivityIfPossible(net.minecraft.world.entity.schedule.Activity.FIGHT);
+        var environment = net.minecraft.world.attribute.EnvironmentAttributeSystem.builder().build();
+        emptyScheduleBrain.updateActivityFromSchedule(environment, 0L, net.minecraft.world.phys.Vec3.ZERO);
+        check(emptyScheduleBrain.isActive(net.minecraft.world.entity.schedule.Activity.IDLE), "native unset environmental schedule retains old empty-schedule IDLE fallback");
+        emptyScheduleBrain.setActiveActivityIfPossible(net.minecraft.world.entity.schedule.Activity.FIGHT);
+        emptyScheduleBrain.updateActivityFromSchedule(environment, 20L, net.minecraft.world.phys.Vec3.ZERO);
+        check(emptyScheduleBrain.isActive(net.minecraft.world.entity.schedule.Activity.FIGHT), "schedule retains twenty-tick update throttle");
+        emptyScheduleBrain.updateActivityFromSchedule(environment, 21L, new net.minecraft.world.phys.Vec3(123, 70, -45));
+        check(emptyScheduleBrain.isActive(net.minecraft.world.entity.schedule.Activity.IDLE), "schedule can exit custom activity after throttle at an actual position");
+        var particleStack = new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.DIAMOND, 2);
+        particleStack.set(net.minecraft.core.component.DataComponents.CUSTOM_NAME, net.minecraft.network.chat.Component.literal("held particle"));
+        var foodParticle = new net.minecraft.core.particles.ItemParticleOption(net.minecraft.core.particles.ParticleTypes.ITEM,
+                net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(particleStack));
+        check(foodParticle.getItem().count() == 2, "held-item particle template retains stack count");
+        var particleBuffer = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), vanilla);
+        try {
+            var particleCodec = net.minecraft.core.particles.ItemParticleOption.streamCodec(net.minecraft.core.particles.ParticleTypes.ITEM);
+            particleCodec.encode(particleBuffer, foodParticle);
+            var decodedParticle = particleCodec.decode(particleBuffer);
+            check(decodedParticle.getItem().create().getItem() == net.minecraft.world.item.Items.DIAMOND, "held-item particle codec retains item identity");
+            check(decodedParticle.getItem().create().get(net.minecraft.core.component.DataComponents.CUSTOM_NAME).getString().equals("held particle"), "held-item particle codec retains custom components");
+            check(!particleBuffer.isReadable(), "held-item particle frame consumes its complete payload");
+        } finally { particleBuffer.release(); }
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }
