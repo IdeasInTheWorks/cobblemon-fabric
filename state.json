@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 52,
+  "generation": 53,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -282,6 +282,33 @@
       "minutes": 90,
       "checkpoint": "34bce10c4fb6aade08fe406d9b946c698df24013; S10 partial model/baking source and logs preserved;1559 core+12 Fabric/810 legacy cases/20 tooling pass;compile4845/558 and AW47 fail;next R023 native render submission and special renderer;porting/RESUME.md;same native Sheet",
       "closed_at": "2026-10-25T14:53:18Z"
+    },
+    "S11-R023-BLOCKERS": {
+      "work_id": "S11-R023-BLOCKERS",
+      "owner": "codex-sprint11-01a16f8a",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "README.md",
+        "common/src",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
+      "operation_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-25T16:13:02Z",
+      "heartbeat_at": "2026-10-25T16:13:02Z",
+      "expires_at": "2026-10-25T17:43:02Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -804,6 +831,16 @@
       "lease_id": "c1f25346-a850-47ef-8fd7-efdf3bb480fc",
       "epoch": 1,
       "checkpoint": "34bce10c4fb6aade08fe406d9b946c698df24013; S10 partial model/baking source and logs preserved;1559 core+12 Fabric/810 legacy cases/20 tooling pass;compile4845/558 and AW47 fail;next R023 native render submission and special renderer;porting/RESUME.md;same native Sheet"
+    },
+    {
+      "generation": 53,
+      "at": "2026-10-25T16:13:02Z",
+      "kind": "acquire",
+      "work_id": "S11-R023-BLOCKERS",
+      "owner": "codex-sprint11-01a16f8a",
+      "lease_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
