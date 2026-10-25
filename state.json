@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 59,
+  "generation": 60,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -303,12 +303,13 @@
       "lease_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
       "operation_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-25T16:13:02Z",
       "heartbeat_at": "2026-10-25T16:57:14Z",
       "expires_at": "2026-10-25T18:27:14Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "7da74a7f435cc9528eefbe89e73f3de8f8aae435; S11 native materials/immutable fossil geometry/atlas ownership preserved in three commits;2723 core+19 Fabric/810 legacy cases/20 tool tests pass;common4556/548 and AW13 fail;next native entrypoints/mixins/remaining widener callers;porting/RESUME.md;same native Sheet;no game/JAR",
+      "closed_at": "2026-10-25T16:57:51Z"
     }
   },
   "events": [
@@ -901,6 +902,16 @@
       "lease_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 60,
+      "at": "2026-10-25T16:57:51Z",
+      "kind": "release",
+      "work_id": "S11-R023-BLOCKERS",
+      "owner": "codex-sprint11-01a16f8a",
+      "lease_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
+      "epoch": 1,
+      "checkpoint": "7da74a7f435cc9528eefbe89e73f3de8f8aae435; S11 native materials/immutable fossil geometry/atlas ownership preserved in three commits;2723 core+19 Fabric/810 legacy cases/20 tool tests pass;common4556/548 and AW13 fail;next native entrypoints/mixins/remaining widener callers;porting/RESUME.md;same native Sheet;no game/JAR"
     }
   ]
 }
