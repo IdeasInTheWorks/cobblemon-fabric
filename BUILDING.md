@@ -1,5 +1,30 @@
 # Building the independent Fabric port
 
+## S11 native rendering checkpoint
+
+The latest common compile fails at 4,556 diagnostic lines / 548 files; normal widener validation still fails on 13 targets. These commands preserve all normal gates. No release JAR has been produced.
+
+The OneDrive generated build-logic directory locked again in validation attempts01/03. Keep the old outputs and select a fresh basename for generated included-build outputs, for example:
+
+```powershell
+$env:JAVA_HOME=(Resolve-Path '../tools/jdk25/jdk-25.0.4.1+1').Path
+$env:GRADLE_USER_HOME=(Resolve-Path '../tools/gradle-cache').Path
+.\gradlew.bat --init-script scripts/isolated_build_logic.gradle '-Dcobblemon.localBuildLogicOutput=local-build-logic-s11-compile04' :common:compileKotlin '-Pkotlin.incremental=false' '-Pkotlin.compiler.execution.strategy=in-process' --stacktrace --console=plain
+.\gradlew.bat --init-script scripts/isolated_build_logic.gradle '-Dcobblemon.localBuildLogicOutput=local-build-logic-s11-validation04' :fabric:validateAccessWidener :common:checkLicenses :fabric:checkLicenses --continue --stacktrace --console=plain
+```
+
+If a generated directory locks, choose a new basename under build/ rather than deleting or moving it. The optional script redirects only included-build generated output. Normal CI/Linux builds continue to use the wrapper without this local init script.
+
+Exact focused fixture command from the checkout (Python 3 and the workspace's resolved libraries):
+
+```powershell
+python scripts/check_data_contracts.py --game-jar ../tools/minecraft-26.3-client.jar --gradle-cache ../tools/gradle-cache --javac ../tools/jdk25/jdk-25.0.4.1+1/bin/javac.exe --fabric-api-jar ../tools/gradle-cache/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar --legacy-game-jar ../tools/gradle-cache/caches/fabric-loom/1.21.1/minecraft-client.jar --legacy-version-json ../tools/gradle-cache/caches/fabric-loom/1.21.1/mojang_minecraft_info.json --report porting/logs/sprint-11-data-contracts-04.json
+python -m unittest discover -s scripts -p 'test_*.py' -v
+```
+
+Final focused result: 2,723 core checks (including 1,024 interpolation cases), 19 Fabric contracts and 810 legacy cases / 1,620 checks pass. Tooling: 20 pass. Native descriptor construction uses reflection only in the fixture to invoke the private RenderType factory; production uses its validated widener. The atlas registry requires an applied Fabric accessor mixin: attempt03 preserves that failure. Attempt04 tests descriptors, a controlled reload barrier and apply executor; it does not start Fabric or stitch/upload an atlas. Existing minimal inventory components are still fixture-only. No full Java/JUnit/mixins/GPU/client/server/gameplay pass is claimed. Other render entrypoints and original acceptance remain open; see the S11 source audit and COMPATIBILITY.md.
+
+
 Status: migration in progress. These commands reproduce the current build attempt; they do not yet produce a validated Minecraft 26.3 mod. See [COMPATIBILITY.md](COMPATIBILITY.md) and committed logs before installing anything.
 
 ## Requirements

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "game_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "compile_exit": 0,
+  "compile_stdout": "",
+  "compile_stderr": "Note: Some input files use or override a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n",
+  "inventory_fixture": "Only missing MAX_STACK_SIZE components are bound for two test items; game/datapack defaults and gameplay are not tested",
+  "runtime_stdout": "[16:22:38] [main/INFO]: [STDOUT]: {\"model_assets_parsed\":1153,\"legacy_overrides_parsed\":287,\"builtin_entity_roots_pending_special_renderer\":1,\"scope\":\"production model discovery, selection and tint adapters; no bake/GPU/reload\"}\n[16:22:39] [main/INFO]: [STDOUT]: {\"passed\":true,\"checks\":2703,\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}\n",
+  "runtime_stderr": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.joml.MemUtil$MemUtilUnsafe (file:/C:/Users/fizzl/OneDrive/Documents/ChatGPT/Minecraft%20Mods/tools/gradle-cache/caches/modules-2/files-2.1/org.joml/joml/1.10.9/438e036486bad66b189bff385dd07dea4f74a146/joml-1.10.9.jar)\nWARNING: Please consider reporting this to the maintainers of class org.joml.MemUtil$MemUtilUnsafe\nWARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release\n",
+  "result": {
+    "passed": true,
+    "checks": 2703,
+    "scope": "production migration helpers with real target classes and minimal inventory component fixtures; no game launch"
+  },
+  "legacy_game_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+  "legacy_random_stdout": "{\"passed\":true,\"cases\":810,\"checks\":1620,\"scope\":\"actual legacy versus target random positions and RNG consumption; no game launch\"}\n",
+  "legacy_random_stderr": "",
+  "legacy_random_result": {
+    "passed": true,
+    "cases": 810,
+    "checks": 1620,
+    "scope": "actual legacy versus target random positions and RNG consumption; no game launch"
+  },
+  "fabric_api": {
+    "version": "0.165.0+26.3",
+    "sha256": "18442e2ad466d6ef41c37dbb4cb68495e6ca6658b1f1ee9be76143d155ef2c88"
+  },
+  "fabric_stdout": "{\"passed\":true,\"checks\":12,\"scope\":\"production standalone registry with native Fabric API context; no bake/reload/GPU\"}\n",
+  "fabric_stderr": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.joml.MemUtil$MemUtilUnsafe (file:/C:/Users/fizzl/OneDrive/Documents/ChatGPT/Minecraft%20Mods/tools/gradle-cache/caches/modules-2/files-2.1/org.joml/joml/1.10.9/438e036486bad66b189bff385dd07dea4f74a146/joml-1.10.9.jar)\nWARNING: Please consider reporting this to the maintainers of class org.joml.MemUtil$MemUtilUnsafe\nWARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release\n",
+  "fabric_result": {
+    "passed": true,
+    "checks": 12,
+    "scope": "production standalone registry with native Fabric API context; no bake/reload/GPU"
+  }
+}

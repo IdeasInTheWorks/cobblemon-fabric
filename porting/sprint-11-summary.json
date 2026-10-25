@@ -1,0 +1,203 @@
+{
+  "sprint": "S11",
+  "recorded_utc": "2026-10-25T16:53:49.830081+00:00",
+  "work_id": "S11-R023-BLOCKERS",
+  "owner": "codex-sprint11-01a16f8a",
+  "lease_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
+  "branch": "feature/latest-minecraft-fabric",
+  "baseline": "34bce10c4fb6aade08fe406d9b946c698df24013",
+  "code_commit": "0fb2f05ad7b155cdd1664e5d8ba0f769b3efc2f4",
+  "test_commit": "5342673544ca1fdeda7cc3453c53f4963bb2c48d",
+  "outcome": "Partial R022/R023; no installable build. Native materials, fossil extraction and atlas handles migrated; acceptance remains open.",
+  "compilation": [
+    {
+      "attempt": 1,
+      "log": "porting/logs/sprint-11-common-compile-01.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4745,
+      "files": 556
+    },
+    {
+      "attempt": 2,
+      "log": "porting/logs/sprint-11-common-compile-02.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4626,
+      "files": 552
+    },
+    {
+      "attempt": 3,
+      "log": "porting/logs/sprint-11-common-compile-03.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4556,
+      "files": 548
+    },
+    {
+      "attempt": 4,
+      "log": "porting/logs/sprint-11-common-compile-04.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4556,
+      "files": 548
+    }
+  ],
+  "validation": [
+    {
+      "attempt": 1,
+      "log": "porting/logs/sprint-11-validation-01.txt",
+      "exit_code": 1,
+      "stage": "generated build-logic cache lock",
+      "missing_targets": null,
+      "diagnostics": [],
+      "header_signals": []
+    },
+    {
+      "attempt": 2,
+      "log": "porting/logs/sprint-11-validation-02.txt",
+      "exit_code": 1,
+      "stage": "access widener validation",
+      "missing_targets": 15,
+      "diagnostics": [
+        "Could not find method (codec()Lcom/mojang/serialization/MapCodec;) in class (net/minecraft/world/level/block/state/BlockBehaviour) on line 41",
+        "Could not find field (compartments:Ljava/util/List;) in class (net/minecraft/world/entity/player/Inventory) on line 44",
+        "Could not find method (calculateParticleLevel(Z)Lnet/minecraft/server/level/ParticleStatus;) in class (net/minecraft/client/renderer/LevelRenderer) on line 50",
+        "Could not find method (register(Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration;)V) in class (net/minecraft/client/particle/ParticleEngine) on line 51",
+        "Could not find field (textureAtlas:Lnet/minecraft/client/renderer/texture/TextureAtlas;) in class (net/minecraft/client/particle/ParticleEngine) on line 52",
+        "Could not find field (cullingFrustum:Lnet/minecraft/client/renderer/culling/Frustum;) in class (net/minecraft/client/renderer/LevelRenderer) on line 53",
+        "Could not find class (net/minecraft/world/item/trading/VillagerTrades$ItemsForEmeralds) on line 71",
+        "Could not find method (getSprite(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;) in class (net/minecraft/client/resources/TextureAtlasHolder) on line 81",
+        "Could not find field (textureAtlas:Lnet/minecraft/client/renderer/texture/TextureAtlas;) in class (net/minecraft/client/resources/TextureAtlasHolder) on line 82",
+        "Could not find class (net/minecraft/client/gui/Font$StringRenderOutput) on line 106",
+        "Could not find field (states:Ljava/util/Map;) in class (net/minecraft/stats/RecipeBookSettings) on line 114",
+        "Could not find method (spawnDestroyParticles(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V) in class (net/minecraft/world/level/block/Block) on line 125",
+        "Could not find method (setupAttackAnimation(Lnet/minecraft/world/entity/LivingEntity;F)V) in class (net/minecraft/client/model/HumanoidModel) on line 129",
+        "Could not find method (poseRightArm(Lnet/minecraft/world/entity/LivingEntity;)V) in class (net/minecraft/client/model/HumanoidModel) on line 130",
+        "Could not find method (poseLeftArm(Lnet/minecraft/world/entity/LivingEntity;)V) in class (net/minecraft/client/model/HumanoidModel) on line 131"
+      ],
+      "header_signals": [
+        "> Task :fabric:checkLicenseMain UP-TO-DATE",
+        "> Task :fabric:checkLicenseTest UP-TO-DATE",
+        "> Task :fabric:checkLicenses UP-TO-DATE",
+        "> Task :common:checkLicenseMain",
+        "All license header checks passed (24 files).",
+        "> Task :common:checkLicenseTest",
+        "All license header checks passed (2 files).",
+        "> Task :common:checkLicenses"
+      ]
+    },
+    {
+      "attempt": 3,
+      "log": "porting/logs/sprint-11-validation-03.txt",
+      "exit_code": 1,
+      "stage": "generated build-logic cache lock",
+      "missing_targets": null,
+      "diagnostics": [],
+      "header_signals": []
+    },
+    {
+      "attempt": 4,
+      "log": "porting/logs/sprint-11-validation-04.txt",
+      "exit_code": 1,
+      "stage": "access widener validation",
+      "missing_targets": 13,
+      "diagnostics": [
+        "Could not find method (codec()Lcom/mojang/serialization/MapCodec;) in class (net/minecraft/world/level/block/state/BlockBehaviour) on line 41",
+        "Could not find field (compartments:Ljava/util/List;) in class (net/minecraft/world/entity/player/Inventory) on line 44",
+        "Could not find method (calculateParticleLevel(Z)Lnet/minecraft/server/level/ParticleStatus;) in class (net/minecraft/client/renderer/LevelRenderer) on line 50",
+        "Could not find method (register(Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration;)V) in class (net/minecraft/client/particle/ParticleEngine) on line 51",
+        "Could not find field (textureAtlas:Lnet/minecraft/client/renderer/texture/TextureAtlas;) in class (net/minecraft/client/particle/ParticleEngine) on line 52",
+        "Could not find field (cullingFrustum:Lnet/minecraft/client/renderer/culling/Frustum;) in class (net/minecraft/client/renderer/LevelRenderer) on line 53",
+        "Could not find class (net/minecraft/world/item/trading/VillagerTrades$ItemsForEmeralds) on line 71",
+        "Could not find class (net/minecraft/client/gui/Font$StringRenderOutput) on line 104",
+        "Could not find field (states:Ljava/util/Map;) in class (net/minecraft/stats/RecipeBookSettings) on line 112",
+        "Could not find method (spawnDestroyParticles(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V) in class (net/minecraft/world/level/block/Block) on line 123",
+        "Could not find method (setupAttackAnimation(Lnet/minecraft/world/entity/LivingEntity;F)V) in class (net/minecraft/client/model/HumanoidModel) on line 127",
+        "Could not find method (poseRightArm(Lnet/minecraft/world/entity/LivingEntity;)V) in class (net/minecraft/client/model/HumanoidModel) on line 128",
+        "Could not find method (poseLeftArm(Lnet/minecraft/world/entity/LivingEntity;)V) in class (net/minecraft/client/model/HumanoidModel) on line 129"
+      ],
+      "header_signals": [
+        "> Task :fabric:checkLicenseMain",
+        "All license header checks passed (2 files).",
+        "> Task :fabric:checkLicenseTest",
+        "All license header checks passed (1 files).",
+        "> Task :fabric:checkLicenses",
+        "> Task :common:checkLicenseMain",
+        "All license header checks passed (41 files).",
+        "> Task :common:checkLicenseTest",
+        "All license header checks passed (1 files).",
+        "> Task :common:checkLicenses"
+      ]
+    }
+  ],
+  "focused_contracts": [
+    {
+      "attempt": 1,
+      "log": "porting/logs/sprint-11-data-contracts-01.json",
+      "passed": true,
+      "core_checks": 2703,
+      "fabric_checks": 12,
+      "legacy_cases": 810
+    },
+    {
+      "attempt": 2,
+      "log": "porting/logs/sprint-11-data-contracts-02.json",
+      "passed": true,
+      "core_checks": 2723,
+      "fabric_checks": 12,
+      "legacy_cases": 810
+    },
+    {
+      "attempt": 3,
+      "log": "porting/logs/sprint-11-data-contracts-03.json",
+      "passed": false,
+      "core_checks": 2723,
+      "fabric_checks": null,
+      "legacy_cases": 810
+    },
+    {
+      "attempt": 4,
+      "log": "porting/logs/sprint-11-data-contracts-04.json",
+      "passed": true,
+      "core_checks": 2723,
+      "fabric_checks": 19,
+      "legacy_cases": 810
+    }
+  ],
+  "tool_tests": {
+    "passed": 20,
+    "log": "porting/logs/sprint-11-tool-tests-01.txt"
+  },
+  "focused_scope": "2723 core checks include 1153 item JSON parses, 1024 interpolation cases and immutable vertex/material/lifetime contracts; 19 Fabric checks use fake plugin context and manually controlled reload barrier. Actual registration hit required Fabric mixin in attempt03; retained as failure, not bypassed.",
+  "acceptance": {
+    "done": 12,
+    "total": 44,
+    "remaining": 32,
+    "complete_percent": 27.272727272727273,
+    "basis": "Equal accepted work packages; partial migrations remain open, not effort or gameplay completion."
+  },
+  "remaining_person_hours": {
+    "R022": [
+      18,
+      36,
+      72
+    ],
+    "R023": [
+      30,
+      60,
+      120
+    ],
+    "whole": [
+      518,
+      1036,
+      2080
+    ],
+    "confidence": "Low",
+    "actuals": null
+  },
+  "next": [
+    "Migrate remaining native entity/player/block/special item renderer entrypoints and old mixins; CPU capture alone does not fix an entrypoint",
+    "Resolve remaining 13 access-widener targets with their callers: particles/frustum, inventory/block codec/trades, fonts/recipe settings and humanoid callbacks",
+    "Run actual bootstrap, atlas registration/bake/reload, visual parity and snapshot performance after a successful build",
+    "Preserve original gameplay, data and licensing; real client/server/multiplayer and R013/R015 copied-data tests remain",
+    "Preserve native fossil breaking overlay when adding remaining native model submission paths"
+  ],
+  "publication": "Archive commit, actual post-push CI and claim closure recorded in Actions and the same native Google Sheet; no upstream push, release or completed-work PR."
+}

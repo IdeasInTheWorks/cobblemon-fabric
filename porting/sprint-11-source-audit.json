@@ -1,0 +1,708 @@
+{
+  "sprint": "S11",
+  "baseline": "34bce10c4fb6aade08fe406d9b946c698df24013",
+  "code_commit": "0fb2f05ad7b155cdd1664e5d8ba0f769b3efc2f4",
+  "test_commit": "5342673544ca1fdeda7cc3453c53f4963bb2c48d",
+  "target": {
+    "minecraft": "26.3",
+    "client_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87"
+  },
+  "changed_sources": [
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/BlockModelGeometry.java",
+      "sha256": "02c3dc9622d0fddd670c0573c25b6295e8bcdbcec5bbf7400bbaee3ab94a43a6"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/FrameResources.java",
+      "sha256": "d7a651d8d783eeec55e26e225cb8008bd814b325a3a0355126c5e70b5dc62773"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/ModelBufferSource.java",
+      "sha256": "8627cdf9072fddea3dce95819a5de3244c40ecbe87791faf70db1f70d29c823c"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeRenderSetups.java",
+      "sha256": "7a536e3d906098d0bae7c9d8b4e281b60428d6490befa5d2bef025bffaea38e9"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/TextureInterpolation.java",
+      "sha256": "e3322ddc26e6fb8666f854a4a7501912fb2112b4d52de7dd4895d72f67e2a455"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/FrameResourcesMixin.java",
+      "sha256": "6a7b591fe59bd5d828196aab2b2aabf03fadb64b4b405c1d3b39d12071ba1142"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt",
+      "sha256": "b5f481da6a9514456e823f9cdde6d0b8cd3ac0ebd60f6df2724d183a2c06eb51"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "sha256": "89da85f0ae25d3f58f9ba9d27cf4567c44741756b955f70b46e345a6a2f4d339"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/PokemonGuiUtils.kt",
+      "sha256": "482abf972bedda85564cf0c5cd5222c21b1ec6173190ac591d84cf57f68e213d"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/BattleOverlay.kt",
+      "sha256": "5ff8f1eac1aaf200394ce8d006475a4510afe6a07b3e8790fb9ca4138e5a9dea"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/pokedex/PokedexScannerRenderer.kt",
+      "sha256": "c6485f15566b84dffa281a517b7f26955d54fa512a17fb1376dbe09aa60e99a8"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/ClientPlayerIcon.kt",
+      "sha256": "4d5851a73f172dcecb6220383290e3e1afd214afea8125fd120b0b3d3f14319c"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/RenderHelper.kt",
+      "sha256": "3d984b6575f8aae07daa3ccfa9b92599a67ad423c97b5664a75bc47106fe851f"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/VaryingRenderableResolver.kt",
+      "sha256": "3b6ff5e8f2f41b4125faae3852e2f76b212b9c981bfd2861889cd6dfcf4cf656"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/atlas/CobblemonAtlas.kt",
+      "sha256": "97390962034eff806f9244c726e1b90ff266b91624ad7127a8cf4b6f52ec8ba1"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/atlas/CobblemonAtlases.kt",
+      "sha256": "4ab900d31f20459393255b037826868ba3e404e2d3ed5f30a3538d0c88133f6a"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/BerryBlockRenderer.kt",
+      "sha256": "56ec0243285145b27e53c28fdc245f573648fbdb78f093927317d590142a8479"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/CampfireBlockEntityRenderer.kt",
+      "sha256": "0a30d193442dfbb5b714b22eb157f142b0b4f8adc54ef592b93d3d585a256f45"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DiscShelfBlockEntityRenderer.kt",
+      "sha256": "163577ad922f124d0e0995954110a2ea9562d54bd4515929dba6d576f85e32a2"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DisplayCaseRenderer.kt",
+      "sha256": "0b2a1a931a2c7f1de94c17319faf6d95c9f75ecc8aa3403f9e4f0ef6675669b8"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/FossilAnalyzerRenderer.kt",
+      "sha256": "db621aa4ffa4d526281501f2764774cc8967e76eace81f209e3cf8f9b9608306"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/GildedChestBlockRenderer.kt",
+      "sha256": "3daef5d6a104a99856b64744921f53e05c61f8a1af7e52880601df4b20a87cb9"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HabitatBlockRenderer.kt",
+      "sha256": "83132352ce107d4285d4d96fb0b19e6fe6bba6d37c8d7ed9cbd044e8c1876bc4"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HealingMachineRenderer.kt",
+      "sha256": "4044730ced1f501e37edce63de5090bc71d18a09d38195b439a5b45599f706b9"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/LecternBlockEntityRenderer.kt",
+      "sha256": "db8a728d3c601d00e40baba7aff66b7f2bef90423632f698bd66b7e79c827840"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/PokeSnackBlockEntityRenderer.kt",
+      "sha256": "b7d7050de1170a377c2222345fa9d8dd762b2c0ebc8bcc598ff786165a1fdbe1"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/RestorationTankRenderer.kt",
+      "sha256": "de753cbe73abf5b0f6899598f79da071e075c5da0f850261ccce76ab3d826e59"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/boat/CobblemonBoatRenderer.kt",
+      "sha256": "af397057157a6ddc692d2234e35afc98bb68f47451dd5987793235b3d992379d"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/entity/PokeBobberEntityRenderer.kt",
+      "sha256": "56be2c747990a4ce1e03628f7d53ca0f90149780ac50ae613214f77795620c4e"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/generic/GenericBedrockRenderer.kt",
+      "sha256": "30f2e948a3bc69cb30f26c786df1c528943990112995110b5c26ee8c56f96d76"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/CobblemonBuiltinItemRenderer.kt",
+      "sha256": "5143795deb3ad695f1e4298770950e97e804bf468c04e68bac8b1341c6b09760"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/HeldItemRenderer.kt",
+      "sha256": "1c6e315548c001a3146769779192544dee31824d23b92eac4fce52b77f27efc7"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/PokemonItemRenderer.kt",
+      "sha256": "215492f33b80cf026ce2d35c951cf9367af591e0ad45295904b2a6d83ed4bc49"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/CobblemonRenderLayers.kt",
+      "sha256": "4a1b2c7d08b44dbe39897b4d00defa63e672cc4b7e10b3ed9487ebddf683f9b3"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PlayerRecallBallRenderer.kt",
+      "sha256": "caf0b08b58a3822466b3d2c80daad227fde78c99757fc5ca08d2dd9fff5ff985"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PokemonOnShoulderRenderer.kt",
+      "sha256": "6919bc2fd081970a5995f9f17f89f3bad1fa0bc63604fec1ca451a14d85c4a3f"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/LocatorAccess.kt",
+      "sha256": "bc9b8d32631fe80528cc7efc42a8021d118bd69b26647361801a2da1488d5150"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.kt",
+      "sha256": "adf5e0061ef5aab68cc7f5c45a220a19b1bda692a16f1dc1f2b02e1418a3d27a"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/npc/NPCRenderer.kt",
+      "sha256": "7986abc43050d8be9bf24000f97df65fb1ee4727a29d5007c62207bd03da734b"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/FirstPersonRecallBallRenderer.kt",
+      "sha256": "a21d6241d273de8d8d0463ab9ed8caeb66746e254218145cdfdd0f16687f46e2"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/MountedPlayerRenderer.kt",
+      "sha256": "291363ab30f9f16123b9f4c384f2747ab6caa9b56103bc94676f9e828b64402e"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/RecallArmAnimationTracker.kt",
+      "sha256": "b7a7533225ea1c12b58f0098be4319095c40e4374e05243aee3420e818f71135"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokeball/PokeBallRenderer.kt",
+      "sha256": "3e8dd09419a8238ef7e69a811de404d2e6c0580c172f0a4fac97be69926ddc05"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/AlphaEyeRenderer.kt",
+      "sha256": "9963d9fe4f05513c01a2d132ead496118564a65249c5a3c4737dffcdd1d205f8"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt",
+      "sha256": "ee1b0f4041d5fabc56a8e91e7ca980cda8e2b8fc8f72c50858d889fcf7b2b312"
+    },
+    {
+      "path": "common/src/main/resources/cobblemon-common.accesswidener",
+      "sha256": "afb0b5e3732a61ff32194a3359f7c766171a8c0a2b0dbab84c8fff28213d9f37"
+    },
+    {
+      "path": "common/src/main/resources/mixins.cobblemon-common.json",
+      "sha256": "7dea40e261fbb43a426ec94bdbeca21ea1516689a8d682d927fc30170a2b2467"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java",
+      "sha256": "db78174d6a07309a53de2ee9da091ba6eff6c19899fc516f4bedae9f1d62fa7e"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263RenderContracts.java",
+      "sha256": "fcc43e2791c272f477b656b436298c2109929b6c4a8ca523f75cefbcaf40c772"
+    },
+    {
+      "path": "fabric/src/main/java/com/cobblemon/mod/fabric/client/model/AtlasReloadListener.java",
+      "sha256": "13ff1c3b898113b0e0e10af8613b59b352d99417e95ca6e44157b2b16f99b239"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt",
+      "sha256": "5ef094ec66ec710f3797c28eb87ceb9779bd579ddda5f535f4c1c253f1cf1387"
+    },
+    {
+      "path": "fabric/src/test/java/com/cobblemon/mod/fabric/porting/Minecraft263FabricModelContracts.java",
+      "sha256": "b8f5b2535f76659e0c3c9a4e287a3ad0c782d01355abe97bb3ca2497fe4f4a8d"
+    }
+  ],
+  "changed_assets": [],
+  "deleted_paths": [],
+  "licence_files_changed": [],
+  "fossil_animation_body_unchanged_after_type_factory_and_rotation_rename": true,
+  "quaternion_migration": {
+    "files": 28,
+    "calls": 70,
+    "changes": {
+      "common/src/main/kotlin/com/cobblemon/mod/common/api/gui/GuiUtils.kt": [
+        {
+          "line": 262,
+          "before": "matrixStack.mulPose(quaternion1)",
+          "after": "matrixStack.rotate(quaternion1)"
+        },
+        {
+          "line": 263,
+          "before": "matrixStack.mulPose(quaternion2)",
+          "after": "matrixStack.rotate(quaternion2)"
+        },
+        {
+          "line": 330,
+          "before": "matrixStack.mulPose(quaternion1)",
+          "after": "matrixStack.rotate(quaternion1)"
+        },
+        {
+          "line": 331,
+          "before": "matrixStack.mulPose(quaternion2)",
+          "after": "matrixStack.rotate(quaternion2)"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/PokemonGuiUtils.kt": [
+        {
+          "line": 158,
+          "before": "matrixStack.mulPose(rotation)",
+          "after": "matrixStack.rotate(rotation)"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/BattleOverlay.kt": [
+        {
+          "line": 512,
+          "before": "matrixStack.mulPose(quaternion1)",
+          "after": "matrixStack.rotate(quaternion1)"
+        },
+        {
+          "line": 513,
+          "before": "matrixStack.mulPose(quaternion2)",
+          "after": "matrixStack.rotate(quaternion2)"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/pokedex/PokedexScannerRenderer.kt": [
+        {
+          "line": 255,
+          "before": "poseStack.mulPose(Quaternionf().rotateZ(Math.toRadians((-rotation) * 0.5).toFloat()))",
+          "after": "poseStack.rotate(Quaternionf().rotateZ(Math.toRadians((-rotation) * 0.5).toFloat()))"
+        },
+        {
+          "line": 273,
+          "before": "poseStack.mulPose(rotationQuaternion)",
+          "after": "poseStack.rotate(rotationQuaternion)"
+        },
+        {
+          "line": 279,
+          "before": "poseStack.mulPose(Quaternionf().rotateZ(Math.toRadians(-usageContext.innerRingRotation.toDouble()).toFloat()))",
+          "after": "poseStack.rotate(Quaternionf().rotateZ(Math.toRadians(-usageContext.innerRingRotation.toDouble()).toFloat()))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/ClientPlayerIcon.kt": [
+        {
+          "line": 101,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees((180f - entityRenderDispatcher.camera.yRot)))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees((180f - entityRenderDispatcher.camera.yRot)))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/RenderHelper.kt": [
+        {
+          "line": 311,
+          "before": "matrixStack.mulPose(Axis.YP.rotationDegrees(beamRotation * 2.25f - 45.0f))",
+          "after": "matrixStack.rotate(Axis.YP.rotationDegrees(beamRotation * 2.25f - 45.0f))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/CampfireBlockEntityRenderer.kt": [
+        {
+          "line": 66,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(rotationAngle))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(rotationAngle))"
+        },
+        {
+          "line": 143,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees((-Math.toDegrees(",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees((-Math.toDegrees("
+        },
+        {
+          "line": 151,
+          "before": "poseStack.mulPose(Axis.XP.rotationDegrees(22.5F))",
+          "after": "poseStack.rotate(Axis.XP.rotationDegrees(22.5F))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DiscShelfBlockEntityRenderer.kt": [
+        {
+          "line": 76,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(rotation))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(rotation))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DisplayCaseRenderer.kt": [
+        {
+          "line": 77,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(-yRot))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(-yRot))"
+        },
+        {
+          "line": 78,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(posType.rotY))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(posType.rotY))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/FossilAnalyzerRenderer.kt": [
+        {
+          "line": 57,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(yRot))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(yRot))"
+        },
+        {
+          "line": 58,
+          "before": "matrices.mulPose(Axis.ZP.rotationDegrees(180F))",
+          "after": "matrices.rotate(Axis.ZP.rotationDegrees(180F))"
+        },
+        {
+          "line": 59,
+          "before": "matrices.mulPose(Axis.XP.rotationDegrees(90F))",
+          "after": "matrices.rotate(Axis.XP.rotationDegrees(90F))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/GildedChestBlockRenderer.kt": [
+        {
+          "line": 57,
+          "before": "matrices.mulPose(Axis.ZP.rotationDegrees(180f))",
+          "after": "matrices.rotate(Axis.ZP.rotationDegrees(180f))"
+        },
+        {
+          "line": 59,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(entity.blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot()))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(entity.blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot()))"
+        },
+        {
+          "line": 60,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(180f))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(180f))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HabitatBlockRenderer.kt": [
+        {
+          "line": 151,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(interpolatedSpin))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(interpolatedSpin))"
+        },
+        {
+          "line": 153,
+          "before": "poseStack.mulPose(Axis.XP.rotationDegrees(SPAWNER_X_TILT_DEGREES))",
+          "after": "poseStack.rotate(Axis.XP.rotationDegrees(SPAWNER_X_TILT_DEGREES))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HealingMachineRenderer.kt": [
+        {
+          "line": 50,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(-yRot))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(-yRot))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/LecternBlockEntityRenderer.kt": [
+        {
+          "line": 44,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(-yRot))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(-yRot))"
+        },
+        {
+          "line": 45,
+          "before": "poseStack.mulPose(Axis.XP.rotationDegrees(22.5F))",
+          "after": "poseStack.rotate(Axis.XP.rotationDegrees(22.5F))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/PokeSnackBlockEntityRenderer.kt": [
+        {
+          "line": 45,
+          "before": "poseStack.mulPose(com.mojang.math.Axis.YP.rotationDegrees(rotationAngle))",
+          "after": "poseStack.rotate(com.mojang.math.Axis.YP.rotationDegrees(rotationAngle))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/RestorationTankRenderer.kt": [
+        {
+          "line": 177,
+          "before": "matrices.mulPose(Axis.ZP.rotationDegrees(180F))",
+          "after": "matrices.rotate(Axis.ZP.rotationDegrees(180F))"
+        },
+        {
+          "line": 179,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(-90F))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(-90F))"
+        },
+        {
+          "line": 181,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(180F))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(180F))"
+        },
+        {
+          "line": 183,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(90F))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(90F))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/boat/CobblemonBoatRenderer.kt": [
+        {
+          "line": 45,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(180F - yaw))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(180F - yaw))"
+        },
+        {
+          "line": 49,
+          "before": "matrices.mulPose(Axis.XP.rotationDegrees(Mth.sin(h) * h * j / 10F * entity.hurtDir))",
+          "after": "matrices.rotate(Axis.XP.rotationDegrees(Mth.sin(h) * h * j / 10F * entity.hurtDir))"
+        },
+        {
+          "line": 53,
+          "before": "matrices.mulPose(Quaternionf().setAngleAxis(entity.getBubbleAngle(tickDelta) * 0.017453292F, 1F, 0F, 1F))",
+          "after": "matrices.rotate(Quaternionf().setAngleAxis(entity.getBubbleAngle(tickDelta) * 0.017453292F, 1F, 0F, 1F))"
+        },
+        {
+          "line": 57,
+          "before": "matrices.mulPose(Axis.YP.rotationDegrees(90F))",
+          "after": "matrices.rotate(Axis.YP.rotationDegrees(90F))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/entity/PokeBobberEntityRenderer.kt": [
+        {
+          "line": 99,
+          "before": "matrixStack.mulPose(Axis.XN.rotationDegrees(fishingBobberEntity.randomPitch))",
+          "after": "matrixStack.rotate(Axis.XN.rotationDegrees(fishingBobberEntity.randomPitch))"
+        },
+        {
+          "line": 100,
+          "before": "matrixStack.mulPose(Axis.YN.rotationDegrees(fishingBobberEntity.randomYaw))",
+          "after": "matrixStack.rotate(Axis.YN.rotationDegrees(fishingBobberEntity.randomYaw))"
+        },
+        {
+          "line": 103,
+          "before": "matrixStack.mulPose(Axis.YN.rotationDegrees(fishingBobberEntity.lastSpinAngle))",
+          "after": "matrixStack.rotate(Axis.YN.rotationDegrees(fishingBobberEntity.lastSpinAngle))"
+        },
+        {
+          "line": 164,
+          "before": "matrixStack.mulPose(rotation)",
+          "after": "matrixStack.rotate(rotation)"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/generic/GenericBedrockRenderer.kt": [
+        {
+          "line": 41,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(yaw))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(yaw))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/HeldItemRenderer.kt": [
+        {
+          "line": 88,
+          "before": "poseStack.mulPose(Axis.XP.rotationDegrees(90.0f))",
+          "after": "poseStack.rotate(Axis.XP.rotationDegrees(90.0f))"
+        },
+        {
+          "line": 93,
+          "before": "poseStack.mulPose(Axis.XP.rotationDegrees(-90.0f))",
+          "after": "poseStack.rotate(Axis.XP.rotationDegrees(-90.0f))"
+        },
+        {
+          "line": 98,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(-90.0f * if (isLeft) -1f else 1f))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(-90.0f * if (isLeft) -1f else 1f))"
+        },
+        {
+          "line": 99,
+          "before": "poseStack.mulPose(Axis.ZP.rotationDegrees(90.0f * if (isLeft) -1f else 1f))",
+          "after": "poseStack.rotate(Axis.ZP.rotationDegrees(90.0f * if (isLeft) -1f else 1f))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/PokemonItemRenderer.kt": [
+        {
+          "line": 66,
+          "before": "matrices.mulPose(rotation)",
+          "after": "matrices.rotate(rotation)"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PlayerRecallBallRenderer.kt": [
+        {
+          "line": 46,
+          "before": "matrixStack.mulPose(Axis.XP.rotationDegrees(-90F))",
+          "after": "matrixStack.rotate(Axis.XP.rotationDegrees(-90F))"
+        },
+        {
+          "line": 47,
+          "before": "matrixStack.mulPose(Axis.YP.rotationDegrees(180F))",
+          "after": "matrixStack.rotate(Axis.YP.rotationDegrees(180F))"
+        },
+        {
+          "line": 51,
+          "before": "matrixStack.mulPose(Axis.YP.rotationDegrees(180F))",
+          "after": "matrixStack.rotate(Axis.YP.rotationDegrees(180F))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/LocatorAccess.kt": [
+        {
+          "line": 79,
+          "before": "matrixStack.mulPose(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip",
+          "after": "matrixStack.rotate(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip"
+        },
+        {
+          "line": 87,
+          "before": "matrixStack.mulPose(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip",
+          "after": "matrixStack.rotate(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip"
+        },
+        {
+          "line": 96,
+          "before": "matrixStack.mulPose(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip",
+          "after": "matrixStack.rotate(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip"
+        },
+        {
+          "line": 103,
+          "before": "matrixStack.mulPose(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip",
+          "after": "matrixStack.rotate(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip"
+        },
+        {
+          "line": 113,
+          "before": "matrixStack.mulPose(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip",
+          "after": "matrixStack.rotate(Axis.ZP.rotationDegrees(180f)) //Undo rotation from previous flip"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.kt": [
+        {
+          "line": 778,
+          "before": "matrixStack.mulPose(Axis.YP.rotationDegrees(yRot))",
+          "after": "matrixStack.rotate(Axis.YP.rotationDegrees(yRot))"
+        },
+        {
+          "line": 781,
+          "before": "if(entity != null) matrixStack.mulPose(Axis.ZP.rotationDegrees(180f))",
+          "after": "if(entity != null) matrixStack.rotate(Axis.ZP.rotationDegrees(180f))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/FirstPersonRecallBallRenderer.kt": [
+        {
+          "line": 25,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(180F))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(180F))"
+        },
+        {
+          "line": 26,
+          "before": "poseStack.mulPose(Axis.XP.rotationDegrees(15F))",
+          "after": "poseStack.rotate(Axis.XP.rotationDegrees(15F))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/MountedPlayerRenderer.kt": [
+        {
+          "line": 149,
+          "before": "stack.mulPose(Axis.ZP.rotation(rotation.z.toFloat()))",
+          "after": "stack.rotate(Axis.ZP.rotation(rotation.z.toFloat()))"
+        },
+        {
+          "line": 150,
+          "before": "stack.mulPose(Axis.YP.rotation(rotation.y.toFloat()))",
+          "after": "stack.rotate(Axis.YP.rotation(rotation.y.toFloat()))"
+        },
+        {
+          "line": 151,
+          "before": "stack.mulPose(Axis.XP.rotation(rotation.x.toFloat()))",
+          "after": "stack.rotate(Axis.XP.rotation(rotation.x.toFloat()))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokeball/PokeBallRenderer.kt": [
+        {
+          "line": 45,
+          "before": "poseStack.mulPose(Axis.YP.rotationDegrees(yaw))",
+          "after": "poseStack.rotate(Axis.YP.rotationDegrees(yaw))"
+        }
+      ],
+      "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt": [
+        {
+          "line": 278,
+          "before": "poseMatrix.mulPose(Axis.YP.rotation(-angle.toFloat() + (180 * Math.PI / 180).toFloat()))",
+          "after": "poseMatrix.rotate(Axis.YP.rotation(-angle.toFloat() + (180 * Math.PI / 180).toFloat()))"
+        },
+        {
+          "line": 284,
+          "before": "poseMatrix.mulPose(Axis.XP.rotation(-xAngleFacingDir.toFloat()))",
+          "after": "poseMatrix.rotate(Axis.XP.rotation(-xAngleFacingDir.toFloat()))"
+        },
+        {
+          "line": 381,
+          "before": "matrixStack.mulPose(q)",
+          "after": "matrixStack.rotate(q)"
+        },
+        {
+          "line": 503,
+          "before": "matrixStack.mulPose(Axis.ZN.rotationDegrees(Math.lerp(0F, rot, scale)))",
+          "after": "matrixStack.rotate(Axis.ZN.rotationDegrees(Math.lerp(0F, rot, scale)))"
+        },
+        {
+          "line": 505,
+          "before": "matrixStack.mulPose(Axis.XN.rotationDegrees(Math.lerp(0F, rot, scale)))",
+          "after": "matrixStack.rotate(Axis.XN.rotationDegrees(Math.lerp(0F, rot, scale)))"
+        },
+        {
+          "line": 535,
+          "before": "matrixStack.mulPose(Axis.ZP.rotationDegrees(180f))",
+          "after": "matrixStack.rotate(Axis.ZP.rotationDegrees(180f))"
+        }
+      ]
+    }
+  },
+  "wideners": {
+    "removed_or_retargeted": [
+      "transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition origin Lorg/joml/Vector3f;",
+      "transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition dimensions Lorg/joml/Vector3f;",
+      "transitive-accessible class net/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType",
+      "transitive-accessible class net/minecraft/client/renderer/rendertype/RenderType$CompositeState",
+      "transitive-accessible method net/minecraft/client/renderer/rendertype/RenderType create (Ljava/lang/String;Lcom/mojang/renderpearl/api/vertex/VertexFormat;Lcom/mojang/renderpearl/api/vertex/VertexFormat$Mode;IZZLnet/minecraft/client/renderer/rendertype/RenderType$CompositeState;)Lnet/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType;",
+      "transitive-accessible class net/minecraft/client/renderer/RenderStateShard$TransparencyStateShard",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_TRANSLUCENT_EMISSIVE_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_TRANSLUCENT_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_TRANSLUCENT_CULL_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_CUTOUT_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;",
+      "transitive-accessible class net/minecraft/client/renderer/RenderStateShard$TextureStateShard",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard TRANSLUCENT_TRANSPARENCY Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard NO_TRANSPARENCY Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;",
+      "transitive-accessible class net/minecraft/client/renderer/RenderStateShard$CullStateShard",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard CULL Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;",
+      "transitive-accessible class net/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard COLOR_DEPTH_WRITE Lnet/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard;",
+      "transitive-accessible class net/minecraft/client/renderer/RenderStateShard$OverlayStateShard",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard OVERLAY Lnet/minecraft/client/renderer/RenderStateShard$OverlayStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_CUTOUT_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard LIGHTMAP Lnet/minecraft/client/renderer/RenderStateShard$LightmapStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard NO_CULL Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard COLOR_WRITE Lnet/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard NO_DEPTH_TEST Lnet/minecraft/client/renderer/RenderStateShard$DepthTestStateShard;",
+      "transitive-accessible class net/minecraft/client/renderer/RenderStateShard$DepthTestStateShard",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard LEQUAL_DEPTH_TEST Lnet/minecraft/client/renderer/RenderStateShard$DepthTestStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard GLINT_TRANSPARENCY Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;",
+      "transitive-accessible field net/minecraft/client/renderer/RenderStateShard ADDITIVE_TRANSPARENCY Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;",
+      "transitive-accessible class net/minecraft/world/item/alchemy/PotionBrewing$Mix",
+      "transitive-accessible field com/mojang/blaze3d/systems/RenderSystem shaderLightDirections [Lorg/joml/Vector3f;",
+      "transitive-accessible method net/minecraft/client/resources/TextureAtlasHolder getSprite (Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;",
+      "transitive-accessible field net/minecraft/client/resources/TextureAtlasHolder textureAtlas Lnet/minecraft/client/renderer/texture/TextureAtlas;",
+      "transitive-accessible class net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard",
+      "transitive-accessible class net/minecraft/client/renderer/RenderStateShard$LightmapStateShard"
+    ],
+    "added_or_retargeted": [
+      "transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition origin Lorg/joml/Vector3fc;",
+      "transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition dimensions Lorg/joml/Vector3fc;",
+      "transitive-accessible method net/minecraft/client/renderer/rendertype/RenderType create (Ljava/lang/String;Lnet/minecraft/client/renderer/rendertype/RenderSetup;)Lnet/minecraft/client/renderer/rendertype/RenderType;",
+      "transitive-accessible method net/minecraft/client/renderer/RenderPipelines register (Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;)Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;"
+    ],
+    "replacements": [
+      "Native RenderPipeline/RenderSetup plus OIT passes replace both CompositeState consumers",
+      "RenderTypes public factories replace relocated methods; entityCutout maps to culling variant",
+      "Vector3fc descriptors retain the two CubeDefinition fields",
+      "Native AtlasManager/Fabric AtlasRegistry replace TextureAtlasHolder access",
+      "Removed shader-light field and PotionBrewing.Mix have no source consumers"
+    ],
+    "validation_retained": true
+  },
+  "api_changes": [
+    "Final archive also removes eager TextureManager access during atlas definition initialization while retaining the old constructor overload",
+    "ModelBufferSource is mod-owned immutable CPU capture, not an emulation of a removed native renderer entrypoint; remaining callbacks/mixins require native state migration",
+    "RestorationTankRenderer extracts world/animation data into immutable geometry and submits through native collector",
+    "Frame cleanup uses Minecraft.renderFrame TAIL, excluding early acquired-surface return, then native GPU fence queue",
+    "Interpolated images retain float/floor color policy; source streams and temporary images close; unique textures survive drawing",
+    "Atlas handle resolves current native atlas; coded berry reload declares MODELS dependency"
+  ],
+  "unexecuted": [
+    "Full Java/Fabric/JUnit and actual mixin bootstrap",
+    "Actual atlas registration, stitch, reload and GPU drawing",
+    "Backend parity, custom shader visual parity and snapshot allocation/performance",
+    "Client/server/multiplayer/gameplay and copied-world migration",
+    "Fossil native breaking-overlay playback; other native renderer entrypoints and old Java mixins remain open"
+  ],
+  "primary_references": [
+    "https://www.fabricmc.net/2026/09/15/263.html",
+    "https://docs.fabricmc.net/develop/rendering/basic-concepts"
+  ],
+  "source_content_checked_from_working_tree": true
+}

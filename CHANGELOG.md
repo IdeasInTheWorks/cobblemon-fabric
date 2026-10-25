@@ -1,5 +1,22 @@
 # Changelog
 
+## S11 - Native render materials, immutable fossil geometry and atlas ownership (2026-10-25)
+
+Partial R022/R023. Four common compiles end at 4,556 diagnostics / 548 files (289 fewer, 6.0%); widener misses fall 47 -> 13 (34 reconciled). 2,723 core checks, 19 Fabric contracts, 810 legacy cases and 20 tooling tests pass; headers pass. Focused atlas registry initialization fails on Fabric's required accessor mixin in attempt03; attempt04 covers descriptors and controlled reload ordering. No game/GPU/actual atlas reload, full Java/mixins/JUnit or installable build has passed. Original models, assets, licences and tracked paths are retained.
+
+| Area | What changed | Why it changed | Why it would not work without the change | Blocker severity (1-10) |
+| --- | --- | --- | --- | --- |
+| Model materials | Native RenderPipeline/RenderSetup and OIT companions replace both CompositeState users; preserve cull/blend/depth/lightmap/overlay/sort/outline policy | RenderStateShard and old factories were removed | Compilation and custom model material creation fail | 10/10 |
+| Fossil geometry | Immutable CPU vertex snapshots and native extractRenderState/submit callbacks; original fetus math retained | Rendering now separates extraction and drawing | Old callback is not invoked; mutable live model/world state cannot be a safe draw payload | 10/10 |
+| Animated textures | Native ARGB pixel/constructor APIs, closed streams/images and frame/fence-owned unique textures | Native image APIs and deferred texture lifetimes changed | Removed calls do not compile; early texture closure leaves deferred drawing invalid | 10/10 |
+| Atlases | Fabric AtlasRegistry descriptors, native live atlas handle and post-MODELS reload callback; no eager TextureManager dependency | TextureAtlasHolder was removed | Berry sprite lookup and reload cannot use the old holder; early initialization may lack services | 10/10 |
+| Rotations | 70 compiler-confirmed quaternion calls in 28 files use PoseStack.rotate with identical arguments/order | mulPose now accepts matrices/Transformation | Quaternion callers fail compilation | 10/10 |
+| Wideners | Two Vector3fc descriptors, retired replaced/unused obsolete targets, native factory/registration access; validator retained | Removed/retargeted engine members cannot be widened | Build validation stops before source compilation | 10/10 |
+| Local build output | Optional fresh generated-output basename; previous outputs preserved | OneDrive locks prevent restoring/replacing generated build logic | Local checks stop before validating source; this is not a game API result | 8/10 |
+
+Remaining: 13 widener targets, other renderer entrypoints/mixins, fossil breaking overlay, special item renderer, actual bootstrap/bake/reload/graphics parity and allocation profiling. Source/source-contract evidence is separate from gameplay readiness. Remaining estimates: R022 18/36/72 h, R023 30/60/120 h; whole 518/1,036/2,080 engineering person-hours, Low confidence, actuals unmeasured. Accepted work packages remain 12/44 (27.3%). See porting/RESUME.md and the native Sheet for continuation and actual post-push CI.
+
+
 ## Unreleased — Cobblemon 1.8.2 custom Fabric port targeting Minecraft 26.3
 
 Migration in progress. No validated release or gameplay claim.

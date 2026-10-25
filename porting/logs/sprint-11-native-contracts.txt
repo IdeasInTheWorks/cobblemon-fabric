@@ -1,0 +1,114 @@
+Compiled from "PoseStack.java"
+public class com.mojang.blaze3d.vertex.PoseStack {
+  private final java.util.List<com.mojang.blaze3d.vertex.PoseStack$Pose> poses;
+  private int lastIndex;
+  public com.mojang.blaze3d.vertex.PoseStack();
+  public void translate(double, double, double);
+  public void translate(float, float, float);
+  public void translate(net.minecraft.world.phys.Vec3);
+  public void scale(float, float, float);
+  public void rotate(org.joml.Quaternionfc);
+  public void rotate(com.mojang.math.Axis, float);
+  public void rotateDegrees(com.mojang.math.Axis, float);
+  public void rotateAround(org.joml.Quaternionfc, float, float, float);
+  public void pushPose();
+  public void popPose();
+  public com.mojang.blaze3d.vertex.PoseStack$Pose last();
+  public boolean isEmpty();
+  public void setIdentity();
+  public void mulPose(org.joml.Matrix4fc);
+  public void mulPose(com.mojang.math.Transformation);
+}
+Compiled from "VertexConsumer.java"
+public interface com.mojang.blaze3d.vertex.VertexConsumer {
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer addVertex(float, float, float);
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer setColor(int, int, int, int);
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer setColor(int);
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer setUv(float, float);
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer setUv1(int, int);
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer setUv2(int, int);
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer setUv3(float, float);
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer setNormal(float, float, float);
+  public abstract com.mojang.blaze3d.vertex.VertexConsumer setLineWidth(float);
+  public default void addVertex(float, float, float, int, float, float, int, int, float, float, float);
+  public default com.mojang.blaze3d.vertex.VertexConsumer setColor(float, float, float, float);
+  public default com.mojang.blaze3d.vertex.VertexConsumer setLight(int);
+  public default com.mojang.blaze3d.vertex.VertexConsumer setOverlay(int);
+  public default void putBlockBakedQuad(float, float, float, net.minecraft.client.resources.model.geometry.BakedQuad, com.mojang.blaze3d.vertex.QuadInstance);
+  public default void putBakedQuad(com.mojang.blaze3d.vertex.PoseStack$Pose, net.minecraft.client.resources.model.geometry.BakedQuad, com.mojang.blaze3d.vertex.QuadInstance);
+  public default void putBakedQuadWithGlint(com.mojang.blaze3d.vertex.PoseStack$Pose, net.minecraft.client.resources.model.geometry.BakedQuad, com.mojang.blaze3d.vertex.QuadInstance, com.mojang.blaze3d.vertex.PoseStack$Pose);
+  public default com.mojang.blaze3d.vertex.VertexConsumer addVertex(org.joml.Vector3fc);
+  public default com.mojang.blaze3d.vertex.VertexConsumer addVertex(com.mojang.blaze3d.vertex.PoseStack$Pose, org.joml.Vector3fc);
+  public default com.mojang.blaze3d.vertex.VertexConsumer addVertex(com.mojang.blaze3d.vertex.PoseStack$Pose, float, float, float);
+  public default com.mojang.blaze3d.vertex.VertexConsumer addVertex(org.joml.Matrix4fc, float, float, float);
+  public default com.mojang.blaze3d.vertex.VertexConsumer addVertexWith2DPose(org.joml.Matrix3x2fc, float, float);
+  public default com.mojang.blaze3d.vertex.VertexConsumer setNormal(com.mojang.blaze3d.vertex.PoseStack$Pose, float, float, float);
+  public default com.mojang.blaze3d.vertex.VertexConsumer setNormal(com.mojang.blaze3d.vertex.PoseStack$Pose, org.joml.Vector3fc);
+}
+Compiled from "BlockEntityRenderer.java"
+public interface net.minecraft.client.renderer.blockentity.BlockEntityRenderer<T extends net.minecraft.world.level.block.entity.BlockEntity, S extends net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState> {
+  public abstract S createRenderState();
+  public default void extractRenderState(T, S, float, net.minecraft.world.phys.Vec3, net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay);
+  public abstract void submit(S, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.SubmitNodeCollector, net.minecraft.client.renderer.state.level.CameraRenderState);
+  public default boolean shouldRenderOffScreen();
+  public default int getViewDistance();
+  public default boolean shouldRender(T, net.minecraft.world.phys.Vec3);
+}
+Compiled from "RenderSetup.java"
+public class net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder {
+  private final com.mojang.renderpearl.api.pipeline.RenderPipeline pipeline;
+  private net.minecraft.client.renderer.oit.OitPipelineSet oitPipelineSet;
+  private boolean useLightmap;
+  private boolean useOverlay;
+  private net.minecraft.client.renderer.rendertype.LayeringTransform layeringTransform;
+  private net.minecraft.client.renderer.rendertype.TextureTransform textureTransform;
+  private boolean affectsCrumbling;
+  private boolean sortOnUpload;
+  private net.minecraft.client.renderer.rendertype.RenderSetup$OutlineProperty outlineProperty;
+  private java.lang.String outlineTextureName;
+  private final java.util.Map<java.lang.String, net.minecraft.client.renderer.rendertype.RenderSetup$TextureBinding> textures;
+  private boolean forceSolidModelPhase;
+  private net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder(com.mojang.renderpearl.api.pipeline.RenderPipeline);
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder withTexture(java.lang.String, net.minecraft.resources.Identifier);
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder withTexture(java.lang.String, net.minecraft.resources.Identifier, java.util.function.Supplier<com.mojang.renderpearl.api.textures.GpuSampler>);
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder useLightmap();
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder useOverlay();
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder affectsCrumbling();
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder sortOnUpload();
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder setLayeringTransform(net.minecraft.client.renderer.rendertype.LayeringTransform);
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder setTextureTransform(net.minecraft.client.renderer.rendertype.TextureTransform);
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder setOutline(net.minecraft.client.renderer.rendertype.RenderSetup$OutlineProperty);
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder setOutline(net.minecraft.client.renderer.rendertype.RenderSetup$OutlineProperty, java.lang.String);
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder setOitPipelines(net.minecraft.client.renderer.oit.OitPipelineSet);
+  public net.minecraft.client.renderer.rendertype.RenderSetup$RenderSetupBuilder withForcedSolidModelPhase();
+  public net.minecraft.client.renderer.rendertype.RenderSetup createRenderSetup();
+  private static com.mojang.renderpearl.api.textures.GpuSampler lambda$withTexture$1(java.util.function.Supplier);
+  private static com.mojang.renderpearl.api.textures.GpuSampler lambda$withTexture$0();
+}
+Compiled from "AtlasManager.java"
+public final class net.minecraft.client.resources.model.sprite.AtlasManager$AtlasConfig extends java.lang.Record {
+  private final net.minecraft.resources.Identifier textureId;
+  private final net.minecraft.resources.Identifier definitionLocation;
+  private final boolean createMipmaps;
+  private final java.util.Set<net.minecraft.server.packs.metadata.MetadataSectionType<?>> additionalMetadata;
+  public net.minecraft.client.resources.model.sprite.AtlasManager$AtlasConfig(net.minecraft.resources.Identifier, net.minecraft.resources.Identifier, boolean);
+  public net.minecraft.client.resources.model.sprite.AtlasManager$AtlasConfig(net.minecraft.resources.Identifier, net.minecraft.resources.Identifier, boolean, java.util.Set<net.minecraft.server.packs.metadata.MetadataSectionType<?>>);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public net.minecraft.resources.Identifier textureId();
+  public net.minecraft.resources.Identifier definitionLocation();
+  public boolean createMipmaps();
+  public java.util.Set<net.minecraft.server.packs.metadata.MetadataSectionType<?>> additionalMetadata();
+}
+Compiled from "ModelFeatureRenderer.java"
+public final class net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay extends java.lang.Record {
+  private final int progress;
+  private final com.mojang.blaze3d.vertex.PoseStack$Pose cameraPose;
+  public net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay(int, com.mojang.blaze3d.vertex.PoseStack$Pose);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public int progress();
+  public com.mojang.blaze3d.vertex.PoseStack$Pose cameraPose();
+}

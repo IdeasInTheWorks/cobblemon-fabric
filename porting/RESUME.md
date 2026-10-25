@@ -2,7 +2,29 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S10 checkpoint (2026-10-25)
+## Sprint S11 checkpoint (2026-10-25)
+
+Partial R022/R023 under `S11-R023-BLOCKERS`, owner `codex-sprint11-01a16f8a`, exclusive integration resource. Initial source milestone `0fb2f05ad7b155cdd1664e5d8ba0f769b3efc2f4`; focused-test milestone `5342673544ca1fdeda7cc3453c53f4963bb2c48d`. This archive also removes eager TextureManager access from atlas definition initialization while retaining the compatibility constructor. Read the live registry before editing. Close this lease after publishing; subsequent work needs a fresh claim. Actual publication, CI and closure belong to Actions and the same native Sheet.
+
+Native RenderPipeline/RenderSetup descriptors replace both CompositeState consumers, retaining culling, blending, depth writes, lightmap/overlay, sort and outline decisions, nearest texture sampling and native OIT companions. ModelBufferSource captures immutable CPU vertices and all native attributes for deferred submission. It is a mod-owned capture API, not a replacement native renderer entrypoint: the other entity/player/block/item callbacks and old Java mixins still need migration. Seventy compiler-confirmed quaternion calls in 28 files use PoseStack.rotate with unchanged arguments/order.
+
+The fossil tank now implements createRenderState/extractRenderState/submit. Extraction snapshots connector/fluid quads and animated fetus geometry; drawing does not read the live fossil structure or mutable animation model. Empty state clears prior geometry. Fetus/embryo selection, scale curves and animation body are unchanged after type/factory/rotation renames. Native atlas handles resolve the currently applied atlas; Fabric owns atlas upload/reload and coded berry geometry waits for the MODELS dependency/barrier/apply executor. Actual registry initialization requires Fabric's mixins. Animated interpolation retains float/floor color behavior and transparent-edge colors; temporary streams/images close. Unique dynamic textures remain alive until normal renderFrame TAIL and the native GPU fence queue. TAIL excludes the early acquired-surface return. These lifecycle/mixin paths need an actual game test.
+
+Executed results:
+
+- Four common Kotlin compiles fail: 4,745/556, 4,626/552, 4,556/548 and **4,556 diagnostic lines / 548 files**. Final reduction vs S10: **289 (6.0%)**; counts include cascades. PosableModel, VaryingRenderableResolver, CobblemonRenderLayers, both atlas wrappers and RestorationTankRenderer have zero diagnostics in the final pass.
+- **2,723 focused core checks pass**, including 1,024 interpolation cases, immutable geometry/replay, native material descriptors, fossil quads and fenced-cleanup contracts. **19 Fabric checks pass** using captured plugin registration, native atlas descriptors and a manually controlled reload barrier/executor. **810 legacy navigation cases / 1,620 checks** and **20 tooling tests** also pass. The existing 1,153 item JSONs / 287 overrides still parse.
+- Focused attempt03 fails when actual AtlasRegistry initialization calls a required Fabric accessor mixin. That failure is preserved. Attempt04 tests production descriptors and reload callbacks; it does not claim actual atlas registration. Full native renderer bootstrap is a separate gate.
+- Normal widener validation falls **47 -> 15 -> 13 misses**; **34/47 missing targets reconciled (72.3%)**. Two CubeDefinition descriptors now name Vector3fc; replaced shard/atlas and unused removed targets are retired; native material factory/registration targets validate. Normal common/Fabric main/test licence headers pass. Validation01/03 stop on OneDrive generated-output locks, not on game API checks; 02/04 execute validation. The optional init script accepts a fresh output-directory name without deleting prior generated files or disabling gates.
+- **No full Java/Fabric/JUnit, actual atlas registration/stitch/reload, GPU/backend/shader parity, client/server/multiplayer/gameplay, copied-world migration or installable JAR validation has run.** CPU snapshot allocations need profiling. The fossil breaking-overlay path still needs native playback; pokemon_model special rendering, remaining block/entity/player entrypoints, item locators and old mixins remain open. No assets, licence files or tracked paths were removed; the original gameplay source remains.
+
+Evidence: `sprint-11-summary.json`, compiler/validation/source audits and `logs/sprint-11-*`. BUILDING.md records exact commands and the local generated-output workaround. No upstream push or production data changes.
+
+Remaining engineering person-hours (low/likely/high; Low confidence): R022 **18/36/72** (prior 20/40/80), R023 **30/60/120** (prior 42/84/168); whole **518/1,036/2,080**. Actuals unmeasured. **12/44 accepted tasks complete (27.3%); 32 remain (72.7%)**. Equal packages, not effort-weighted/gameplay completion. Original bake/render acceptance stays open.
+
+Next: migrate native entity/player/block/special-item entrypoints and old Java mixins, then resolve the remaining 13 widener targets with their callers (particles/frustum; inventory/block codec/trades; fonts/recipe settings; humanoid callbacks). Execute real bootstrap, native atlas registration, bake/reload, visual parity and allocation profiling after a successful build. Preserve R013/R015 copied-data and real multiplayer/gameplay gates.
+
+## Sprint S10 checkpoint (historical, 2026-10-25)
 
 Partial R022/R023 under `S10-R022-R023`, owner `codex-sprint10-01a16f8a`, exclusive integration resource. Source milestones `a0250106a0c80742c54d355c14efb31e6db85ac7` and `0e4d8e3cc7211ccc85ff2f747856e41fbaca4123`. Read live registry before editing; saved leases/Sheet rows are snapshots. Release only after this checkpoint is pushed. Further work needs a fresh claim; concurrent workers require isolated branches/worktrees and one integration owner.
 

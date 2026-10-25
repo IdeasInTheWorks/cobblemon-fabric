@@ -16,10 +16,13 @@ import net.minecraft.resources.Identifier
 
 /** A live handle to an atlas owned and reloaded by Minecraft's AtlasManager. */
 class CobblemonAtlas(
-    @Suppress("UNUSED_PARAMETER") textureManager: TextureManager,
     val atlasId: Identifier,
     val sourcePath: Identifier
 ) {
+    // Compatibility overload; registering a definition does not require an initialized texture manager.
+    constructor(@Suppress("UNUSED_PARAMETER") textureManager: TextureManager?, atlasId: Identifier,
+                sourcePath: Identifier) : this(atlasId, sourcePath)
+
     val textureAtlas: TextureAtlas
         get() = Minecraft.getInstance().atlasManager.getAtlasOrThrow(atlasId)
 
