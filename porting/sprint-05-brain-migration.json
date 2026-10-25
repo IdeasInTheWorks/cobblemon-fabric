@@ -1,0 +1,21 @@
+{
+  "sprint": "S05",
+  "baseline_commit": "469d71b7817e315cabf016a3acb0231aa4109c13",
+  "target": "Minecraft 26.3 official classes",
+  "production_helper": "common/src/main/java/com/cobblemon/mod/common/util/ScriptedBrain.java",
+  "construction": "Supported protected Brain constructor receives configured memories/sensors, empty initial activities, packed memories, entity random; matches Provider.makeBrain bytecode. Full activities installed afterward by BehaviourConfigurationContext.",
+  "native_lifecycle": "PokemonEntity and NPCEntity override makeBrain(Brain.Packed); NPC returns the final configured instance to vanilla. Legacy Dynamic callers retained through registry-aware codec adapters.",
+  "live_reconfiguration": "Brain.Visitor snapshots all present runtime values and their expiry, including types with no disk codec. Native Brain.pack() intentionally excludes those types; disk saves continue to use native pack.",
+  "activity_contract": "Native four-argument addActivity retains task weights, original memory conditions and no erase-on-stop entries. Growing crop still requires LOOK_TARGET VALUE_PRESENT.",
+  "schedule": "Former immutable Schedule.EMPTY selected no timetable; nullable EnvironmentAttribute<Activity> leaves native schedule unset. Explicit custom core/default/manual activity selection retained.",
+  "source_compatibility": "Addon MoLangScriptingEntity implementors must implement Packed overload; old Dynamic callers remain supported. Public schedule type changes to EnvironmentAttribute<Activity>? for target API.",
+  "scripted_nbt": "VariableStruct data/config roots are explicitly required nonnull before put; generic writer continues filtering unsupported child values exactly as before.",
+  "tests": "127 focused assertions total against production helpers and real game classes; includes runtime-only LOOK_TARGET identity, UUID/TTL, sensors, activity transition and strict malformed-data refusal.",
+  "limits": [
+    "No actual NPC/Pokemon initialization or AI tick in a Minecraft process",
+    "Full entity lifecycle, navigation, rendering and movement remain unported",
+    "Existing behavior scripts and full legacy worlds not exercised",
+    "Strict malformed dynamic brain decode throws rather than silently resetting memories"
+  ],
+  "bytecode_evidence": "porting/logs/sprint-05-provider-api.txt"
+}

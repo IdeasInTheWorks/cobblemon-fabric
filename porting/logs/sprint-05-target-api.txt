@@ -1,0 +1,132 @@
+Compiled from "Brain.java"
+public final class net.minecraft.world.entity.ai.Brain$Provider<E extends net.minecraft.world.entity.LivingEntity> {
+  public net.minecraft.world.entity.ai.Brain<E> makeBrain(E, net.minecraft.world.entity.ai.Brain$Packed);
+}
+Compiled from "Brain.java"
+public interface net.minecraft.world.entity.ai.Brain$ActivitySupplier<E extends net.minecraft.world.entity.LivingEntity> {
+  public abstract java.util.List<net.minecraft.world.entity.ai.ActivityData<E>> createActivities(E);
+}
+Compiled from "ActivityData.java"
+public final class net.minecraft.world.entity.ai.ActivityData<E extends net.minecraft.world.entity.LivingEntity> extends java.lang.Record {
+  public net.minecraft.world.entity.ai.ActivityData(net.minecraft.world.entity.schedule.Activity, com.google.common.collect.ImmutableList<? extends com.mojang.datafixers.util.Pair<java.lang.Integer, ? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>>, java.util.Set<com.mojang.datafixers.util.Pair<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>, net.minecraft.world.entity.ai.memory.MemoryStatus>>, java.util.Set<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.ActivityData<E> create(net.minecraft.world.entity.schedule.Activity, int, com.google.common.collect.ImmutableList<? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.ActivityData<E> create(net.minecraft.world.entity.schedule.Activity, int, com.google.common.collect.ImmutableList<? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>, net.minecraft.world.entity.ai.memory.MemoryModuleType<?>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.ActivityData<E> create(net.minecraft.world.entity.schedule.Activity, com.google.common.collect.ImmutableList<? extends com.mojang.datafixers.util.Pair<java.lang.Integer, ? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.ActivityData<E> create(net.minecraft.world.entity.schedule.Activity, int, com.google.common.collect.ImmutableList<? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>, java.util.Set<com.mojang.datafixers.util.Pair<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>, net.minecraft.world.entity.ai.memory.MemoryStatus>>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.ActivityData<E> create(net.minecraft.world.entity.schedule.Activity, com.google.common.collect.ImmutableList<? extends com.mojang.datafixers.util.Pair<java.lang.Integer, ? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>>, java.util.Set<com.mojang.datafixers.util.Pair<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>, net.minecraft.world.entity.ai.memory.MemoryStatus>>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.ActivityData<E> create(net.minecraft.world.entity.schedule.Activity, com.google.common.collect.ImmutableList<? extends com.mojang.datafixers.util.Pair<java.lang.Integer, ? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>>, java.util.Set<com.mojang.datafixers.util.Pair<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>, net.minecraft.world.entity.ai.memory.MemoryStatus>>, java.util.Set<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> com.google.common.collect.ImmutableList<? extends com.mojang.datafixers.util.Pair<java.lang.Integer, ? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>> createPriorityPairs(int, com.google.common.collect.ImmutableList<? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public net.minecraft.world.entity.schedule.Activity activityType();
+  public com.google.common.collect.ImmutableList<? extends com.mojang.datafixers.util.Pair<java.lang.Integer, ? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>> behaviorPriorityPairs();
+  public java.util.Set<com.mojang.datafixers.util.Pair<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>, net.minecraft.world.entity.ai.memory.MemoryStatus>> conditions();
+  public java.util.Set<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>> memoriesToEraseWhenStopped();
+}
+Compiled from "Brain.java"
+public class net.minecraft.world.entity.ai.Brain<E extends net.minecraft.world.entity.LivingEntity> {
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.Brain$Provider<E> provider(java.util.Collection<? extends net.minecraft.world.entity.ai.sensing.SensorType<? extends net.minecraft.world.entity.ai.sensing.Sensor<? super E>>>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.Brain$Provider<E> provider(java.util.Collection<? extends net.minecraft.world.entity.ai.sensing.SensorType<? extends net.minecraft.world.entity.ai.sensing.Sensor<? super E>>>, net.minecraft.world.entity.ai.Brain$ActivitySupplier<E>);
+  public static <E extends net.minecraft.world.entity.LivingEntity> net.minecraft.world.entity.ai.Brain$Provider<E> provider(java.util.Collection<? extends net.minecraft.world.entity.ai.memory.MemoryModuleType<?>>, java.util.Collection<? extends net.minecraft.world.entity.ai.sensing.SensorType<? extends net.minecraft.world.entity.ai.sensing.Sensor<? super E>>>, net.minecraft.world.entity.ai.Brain$ActivitySupplier<E>);
+  protected net.minecraft.world.entity.ai.Brain(java.util.Collection<? extends net.minecraft.world.entity.ai.memory.MemoryModuleType<?>>, java.util.Collection<? extends net.minecraft.world.entity.ai.sensing.SensorType<? extends net.minecraft.world.entity.ai.sensing.Sensor<? super E>>>, java.util.List<net.minecraft.world.entity.ai.ActivityData<E>>, net.minecraft.world.entity.ai.memory.MemoryMap, net.minecraft.util.RandomSource);
+  public net.minecraft.world.entity.ai.Brain();
+  public net.minecraft.world.entity.ai.Brain$Packed pack();
+  public boolean hasMemoryValue(net.minecraft.world.entity.ai.memory.MemoryModuleType<?>);
+  public void clearMemories();
+  public <U> void eraseMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType<U>);
+  public <U> void setMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType<U>, U);
+  public <U> void setMemoryWithExpiry(net.minecraft.world.entity.ai.memory.MemoryModuleType<U>, U, long);
+  public <U> void setMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType<U>, java.util.Optional<? extends U>);
+  public <U> java.util.Optional<U> getMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType<U>);
+  public <U> java.util.Optional<U> getMemoryInternal(net.minecraft.world.entity.ai.memory.MemoryModuleType<U>);
+  public <U> long getTimeUntilExpiry(net.minecraft.world.entity.ai.memory.MemoryModuleType<U>);
+  public void forEach(net.minecraft.world.entity.ai.Brain$Visitor);
+  public <U> boolean isMemoryValue(net.minecraft.world.entity.ai.memory.MemoryModuleType<U>, U);
+  public boolean checkMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType<?>, net.minecraft.world.entity.ai.memory.MemoryStatus);
+  public void setSchedule(net.minecraft.world.attribute.EnvironmentAttribute<net.minecraft.world.entity.schedule.Activity>);
+  public void setCoreActivities(java.util.Set<net.minecraft.world.entity.schedule.Activity>);
+  public java.util.Set<net.minecraft.world.entity.schedule.Activity> getActiveActivities();
+  public java.util.List<net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>> getRunningBehaviors();
+  public void useDefaultActivity();
+  public java.util.Optional<net.minecraft.world.entity.schedule.Activity> getActiveNonCoreActivity();
+  public void setActiveActivityIfPossible(net.minecraft.world.entity.schedule.Activity);
+  public void updateActivityFromSchedule(net.minecraft.world.attribute.EnvironmentAttributeSystem, long, net.minecraft.world.phys.Vec3);
+  public void setActiveActivityToFirstValid(java.util.List<net.minecraft.world.entity.schedule.Activity>);
+  public void setDefaultActivity(net.minecraft.world.entity.schedule.Activity);
+  public void addActivity(net.minecraft.world.entity.schedule.Activity, com.google.common.collect.ImmutableList<? extends com.mojang.datafixers.util.Pair<java.lang.Integer, ? extends net.minecraft.world.entity.ai.behavior.BehaviorControl<? super E>>>, java.util.Set<com.mojang.datafixers.util.Pair<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>, net.minecraft.world.entity.ai.memory.MemoryStatus>>, java.util.Set<net.minecraft.world.entity.ai.memory.MemoryModuleType<?>>);
+  public void removeAllBehaviors();
+  public boolean isActive(net.minecraft.world.entity.schedule.Activity);
+  public void tick(net.minecraft.server.level.ServerLevel, E);
+  public void stopAll(net.minecraft.server.level.ServerLevel, E);
+  public boolean isBrainDead();
+}
+Compiled from "Consumable.java"
+public final class net.minecraft.world.item.component.Consumable extends java.lang.Record {
+  public static final float DEFAULT_CONSUME_SECONDS;
+  public static final com.mojang.serialization.Codec<net.minecraft.world.item.component.Consumable> CODEC;
+  public static final net.minecraft.network.codec.StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, net.minecraft.world.item.component.Consumable> STREAM_CODEC;
+  public net.minecraft.world.item.component.Consumable(float, net.minecraft.world.item.ItemUseAnimation, net.minecraft.core.Holder<net.minecraft.sounds.SoundEvent>, boolean, java.util.List<net.minecraft.world.item.consume_effects.ConsumeEffect>);
+  public net.minecraft.world.InteractionResult startConsuming(net.minecraft.world.entity.LivingEntity, net.minecraft.world.item.ItemStack, net.minecraft.world.InteractionHand);
+  public net.minecraft.world.item.ItemStack onConsume(net.minecraft.world.level.Level, net.minecraft.world.entity.LivingEntity, net.minecraft.world.item.ItemStack);
+  public boolean canConsume(net.minecraft.world.entity.LivingEntity, net.minecraft.world.item.ItemStack);
+  public int consumeTicks();
+  public void emitParticlesAndSounds(net.minecraft.util.RandomSource, net.minecraft.world.entity.LivingEntity, net.minecraft.world.item.ItemStack, int);
+  public boolean shouldEmitParticlesAndSounds(int);
+  public static net.minecraft.world.item.component.Consumable$Builder builder();
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public float consumeSeconds();
+  public net.minecraft.world.item.ItemUseAnimation animation();
+  public net.minecraft.core.Holder<net.minecraft.sounds.SoundEvent> sound();
+  public boolean hasConsumeParticles();
+  public java.util.List<net.minecraft.world.item.consume_effects.ConsumeEffect> onConsumeEffects();
+  static {};
+}
+Compiled from "Consumable.java"
+public class net.minecraft.world.item.component.Consumable$Builder {
+  public net.minecraft.world.item.component.Consumable$Builder consumeSeconds(float);
+  public net.minecraft.world.item.component.Consumable$Builder animation(net.minecraft.world.item.ItemUseAnimation);
+  public net.minecraft.world.item.component.Consumable$Builder sound(net.minecraft.core.Holder<net.minecraft.sounds.SoundEvent>);
+  public net.minecraft.world.item.component.Consumable$Builder soundAfterConsume(net.minecraft.core.Holder<net.minecraft.sounds.SoundEvent>);
+  public net.minecraft.world.item.component.Consumable$Builder hasConsumeParticles(boolean);
+  public net.minecraft.world.item.component.Consumable$Builder onConsume(net.minecraft.world.item.consume_effects.ConsumeEffect);
+  public net.minecraft.world.item.component.Consumable build();
+}
+Compiled from "CustomModelData.java"
+public final class net.minecraft.world.item.component.CustomModelData extends java.lang.Record {
+  public static final net.minecraft.world.item.component.CustomModelData EMPTY;
+  public static final com.mojang.serialization.Codec<net.minecraft.world.item.component.CustomModelData> CODEC;
+  public static final net.minecraft.network.codec.StreamCodec<io.netty.buffer.ByteBuf, net.minecraft.world.item.component.CustomModelData> STREAM_CODEC;
+  public net.minecraft.world.item.component.CustomModelData(java.util.List<java.lang.Float>, java.util.List<java.lang.Boolean>, java.util.List<java.lang.String>, java.util.List<java.lang.Integer>);
+  public java.lang.Float getFloat(int);
+  public java.lang.Boolean getBoolean(int);
+  public java.lang.String getString(int);
+  public java.lang.Integer getColor(int);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public java.util.List<java.lang.Float> floats();
+  public java.util.List<java.lang.Boolean> flags();
+  public java.util.List<java.lang.String> strings();
+  public java.util.List<java.lang.Integer> colors();
+  static {};
+}
+Compiled from "ApplyStatusEffectsConsumeEffect.java"
+public final class net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect extends java.lang.Record implements net.minecraft.world.item.consume_effects.ConsumeEffect {
+  public static final com.mojang.serialization.MapCodec<net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect> CODEC;
+  public static final net.minecraft.network.codec.StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect> STREAM_CODEC;
+  public net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect(net.minecraft.world.effect.MobEffectInstance, float);
+  public net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect(java.util.List<net.minecraft.world.effect.MobEffectInstance>);
+  public net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect(net.minecraft.world.effect.MobEffectInstance);
+  public net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect(java.util.List<net.minecraft.world.effect.MobEffectInstance>, float);
+  public net.minecraft.world.item.consume_effects.ConsumeEffect$Type<net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect> getType();
+  public boolean apply(net.minecraft.world.level.Level, net.minecraft.world.item.ItemStack, net.minecraft.world.entity.LivingEntity);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public java.util.List<net.minecraft.world.effect.MobEffectInstance> effects();
+  public float probability();
+  static {};
+}

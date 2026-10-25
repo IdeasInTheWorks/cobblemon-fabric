@@ -1,0 +1,42 @@
+{
+  "baseline": "469d71b7817e315cabf016a3acb0231aa4109c13",
+  "source_audits": {
+    "ordered_create_arguments": {
+      "matched_expressions": 136,
+      "ordered_values_unchanged": true
+    },
+    "nutrition": {
+      "matched_expressions": 9,
+      "ordered_values_unchanged": true
+    },
+    "saturation_modifiers": {
+      "matched_expressions": 9,
+      "ordered_values_unchanged": true
+    },
+    "central_block_source_unchanged": true
+  },
+  "remainders": {
+    "candied_apple": "minecraft:stick",
+    "candied_berry": "minecraft:stick",
+    "vivichoke_dip": "minecraft:bowl",
+    "leek_and_potato_stew": "minecraft:bowl",
+    "regional_foods": "existing Item.Properties.usingConvertsTo retained",
+    "sinister_tea": "minecraft:bowl"
+  },
+  "production_consumables": {
+    "quick_food_seconds": 0.8,
+    "vivichoke_effect": "minecraft:absorption",
+    "duration_ticks": 900,
+    "amplifier": 0,
+    "probability": 1,
+    "manual_food_seconds": 1.6,
+    "manual_drink_seconds": 1.6,
+    "manual_food_sound": "minecraft:entity.generic.eat",
+    "manual_drink_sound": "minecraft:entity.generic.drink",
+    "manual_handlers": "Aprijuice/PokePuff retain existing conditional nutrition and consume once; return stack instead of invoking native consumption a second time. No FOOD component added. SinisterTea retains native food flow and custom effects before superclass consumption."
+  },
+  "model_data": "legacy numeric value moved to float channel zero; flags/strings/colors empty; item model assets remain separate unported work",
+  "test_limits": "Standalone production helpers and target component initializers; no actual player item use or complete item registry startup executed",
+  "sound_migration": "Removed obsolete Item sound overrides in five food classes; food defaults provide eat sound, custom consumables provide drink metadata. Regional Pokemon sound holder resolved to value.",
+  "instant_effects": "Sinister tea preserves instant/noninstant branches and source/target/amplifier/scale; native applyInstantaneousEffect now receives the actual ServerLevel. Full effect execution untested."
+}

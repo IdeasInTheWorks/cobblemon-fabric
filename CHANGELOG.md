@@ -4,6 +4,8 @@
 
 Migration in progress. No validated release or gameplay claim.
 
+Sprint S05 (R014/R019/R020, 2026-10-25) ports item-use results and animations in 39 files, food/consumable/drink/model-data metadata and native scripted brain construction. Live rebuilds preserve current runtime-only memories and expiry; final NPC brain return is retained. Dynamic callers keep registry-aware adapters. Common compile still fails: 6,420 diagnostic lines / 959 files, down 313 (4.6%) from S04. 127 focused assertions and 20 tooling tests pass; AW54 still fails, source headers pass. No game launch or JAR; original task acceptance remains open.
+
 Sprint S04 (R013/R015, 2026-10-24/25) migrates 14 multiblock/entity persistence callbacks, fossil context-aware inventories/discs, strict legacy NBT adapters, three-int positions, shoulder item codecs and packed brain-memory serialization. Pomohana retains flower_amount/facing through FlowerBedBlock. Two valid creative-tab class wideners preserve the existing collectors. Central item/block registry source files remain identical to S03. Common compile still fails: 6,733 diagnostic lines / 998 files, down 718 (9.6%) from S03; 76 focused checks and 20 tooling tests pass. Full entities, gameplay, JUnit and packaging remain unvalidated. R013/R015 remain open.
 
 Sprint S03 (R013/R015, 2026-10-24) assigns registry keys before item/block construction, passes explicit properties through 43 custom item classes, replaces removed vanilla construction helpers, and migrates NBT/registry APIs and 26 persistence callbacks on 13 block entities. All 140 item and 340 block ordered create-ID expressions are unchanged. Original licences and assets remain intact.
@@ -24,6 +26,10 @@ The native Google Sheets roadmap records 44 work packages, low/likely/high perso
 
 | Area | What changed | Why it changed | Why it would not work without the change | Blocker severity (1–10) |
 | --- | --- | --- | --- | --- |
+| S05 item results | InteractionResult with held-stack transforms and sided swing source; animation enum migrated | InteractionResultHolder and UseAnim removed | Old signatures and factories fail; lost stack transforms break use behavior | 10 |
+| S05 food components | Remainders on Item.Properties; quick/dip/drink consumables, custom nutrition owns one consume; float model data | Food builder and Item sound overrides removed; model payload changed | Food registration fails and drink/audio/consumption semantics are lost | 10 |
+| S05 scripted brains | Packed constructor/lifecycle, live all-memory snapshot, sensor requirements and four-argument activities | Dynamic-based provider, empty schedule and old activity methods removed | Entity construction fails or a rebuild loses current memories, expiry or configured NPC brain | 10 |
+| S05 regressions and evidence | 127 focused production-helper/target-class assertions; full failed compiler and AW logs retained | Validate behavior contracts before whole mod can build | Compile-only changes could lose ownership memory, item remainder or result transforms undetected | 9 |
 | S04 fossil storage | ValueInput/ValueOutput callbacks, nested context-aware item lists/discs and strict old NBT writer adapter | Save callbacks no longer receive a provider argument | Old callbacks do not override; context-free item codecs lose registry-dependent component data | 10 |
 | S04 entity storage | Ten Pokemon/NPC/generic/boat callbacks, root-field merging, event/scripting order and native chest/leash saves | Entity persistence moved to structured value I/O | Old overrides fail or do not execute, losing custom entity/player-linked state | 10 |
 | S04 legacy formats | Exact three-int position arrays, optional ItemStack codecs and Brain.Packed memory codec | Old NbtUtils and stack/brain helpers were removed | Tether/fossil positions, shoulder items and brain payloads cannot compile or persist | 10 |

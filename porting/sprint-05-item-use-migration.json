@@ -1,0 +1,351 @@
+{
+  "files": [
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/AprijuiceItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/CobblemonBoatItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/MedicinalLeekItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/PokeBallItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/PokedexItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/PokePuffItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/RegionalFoodItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/RevivalHerbItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/VivichokeItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableHatItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonAndMoveSelectingItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/FriendshipRaisingBerryItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/HealingBerryItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/PortionHealingBerryItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/PPRestoringBerryItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/StatusCuringBerryItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/BerryJuiceItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/CandyItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/ElixirItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EnergyRootItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EtherItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EVIncreaseItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/FeatherItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/FreshStartMochiItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/HealPowderItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/HyperTrainingItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/MintItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/MochiItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PokerodItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PonigiriItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PotionItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PPUpItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/RemedyItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/ReviveItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/SinisterTeaItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/StatusCureItem.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/VitaminItem.kt"
+  ],
+  "pass_fail_call_audit": [
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/AprijuiceItem.kt",
+      "line": 49,
+      "text": "InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/AprijuiceItem.kt",
+      "line": 92,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/CobblemonBoatItem.kt",
+      "line": 32,
+      "text": "return InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/CobblemonBoatItem.kt",
+      "line": 39,
+      "text": "return InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/CobblemonBoatItem.kt",
+      "line": 43,
+      "text": "return InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/CobblemonBoatItem.kt",
+      "line": 49,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokedexItem.kt",
+      "line": 50,
+      "text": "return InteractionResultHolder.pass(itemStack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokedexItem.kt",
+      "line": 60,
+      "text": "return InteractionResultHolder.fail(itemStack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokePuffItem.kt",
+      "line": 81,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokePuffItem.kt",
+      "line": 89,
+      "text": "InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokePuffItem.kt",
+      "line": 96,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/PokePuffItem.kt",
+      "line": 115,
+      "text": "return InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/RegionalFoodItem.kt",
+      "line": 33,
+      "text": "return InteractionResultHolder.pass(stack);"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/RegionalFoodItem.kt",
+      "line": 48,
+      "text": "return InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/RegionalFoodItem.kt",
+      "line": 63,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/RevivalHerbItem.kt",
+      "line": 74,
+      "text": "CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/RevivalHerbItem.kt",
+      "line": 84,
+      "text": "InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableHatItem.kt",
+      "line": 27,
+      "text": "if (player.isCrouching && hitPokemon != null && hitPokemon.isOwnedBy(player)) return InteractionResultHolder.fail(player.getItemInHand(usedHand))"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableItem.kt",
+      "line": 57,
+      "text": "if (!player.canUseSlot(equipmentSlot)) return InteractionResultHolder.pass(itemStack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/WearableItem.kt",
+      "line": 61,
+      "text": "if (!(!EnchantmentHelper.has(slotStack, PREVENT_ARMOR_CHANGE) || player.isCreative) || ItemStack.matches(itemStack, slotStack)) return InteractionResultHolder.fail(itemStack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonAndMoveSelectingItem.kt",
+      "line": 50,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonAndMoveSelectingItem.kt",
+      "line": 54,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonAndMoveSelectingItem.kt",
+      "line": 68,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonAndMoveSelectingItem.kt",
+      "line": 108,
+      "text": "return InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonAndMoveSelectingItem.kt",
+      "line": 131,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+      "line": 49,
+      "text": "if (bagItem == null) return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+      "line": 54,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+      "line": 74,
+      "text": "InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+      "line": 77,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+      "line": 85,
+      "text": "return InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+      "line": 124,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/api/item/PokemonSelectingItem.kt",
+      "line": 131,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/FriendshipRaisingBerryItem.kt",
+      "line": 47,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/FriendshipRaisingBerryItem.kt",
+      "line": 63,
+      "text": "InteractionResultHolder.pass(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/HealingBerryItem.kt",
+      "line": 54,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/PortionHealingBerryItem.kt",
+      "line": 58,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/PortionHealingBerryItem.kt",
+      "line": 65,
+      "text": "CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/PPRestoringBerryItem.kt",
+      "line": 70,
+      "text": "return use(user, user.getItemInHand(hand)) ?: InteractionResultHolder.pass(user.getItemInHand(hand))"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/berry/StatusCuringBerryItem.kt",
+      "line": 67,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/BerryJuiceItem.kt",
+      "line": 54,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/BerryJuiceItem.kt",
+      "line": 59,
+      "text": "CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/CandyItem.kt",
+      "line": 71,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/CandyItem.kt",
+      "line": 74,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/ElixirItem.kt",
+      "line": 73,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EnergyRootItem.kt",
+      "line": 55,
+      "text": "CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EnergyRootItem.kt",
+      "line": 64,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EtherItem.kt",
+      "line": 70,
+      "text": "return use(user, user.getItemInHand(hand)) ?: InteractionResultHolder.pass(user.getItemInHand(hand))"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/EVIncreaseItem.kt",
+      "line": 44,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/FreshStartMochiItem.kt",
+      "line": 33,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/HealPowderItem.kt",
+      "line": 62,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/HyperTrainingItem.kt",
+      "line": 46,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/MintItem.kt",
+      "line": 41,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/MochiItem.kt",
+      "line": 27,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PokerodItem.kt",
+      "line": 159,
+      "text": "return InteractionResultHolder.fail(itemStack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PokerodItem.kt",
+      "line": 183,
+      "text": "{ event -> return InteractionResultHolder.fail(itemStack) },"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PokerodItem.kt",
+      "line": 220,
+      "text": "{ event -> return InteractionResultHolder.fail(itemStack) },"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PotionItem.kt",
+      "line": 60,
+      "text": "return InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PotionItem.kt",
+      "line": 64,
+      "text": "CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, potionHealAmount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/RemedyItem.kt",
+      "line": 58,
+      "text": "CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/RemedyItem.kt",
+      "line": 67,
+      "text": "InteractionResultHolder.fail(stack)"
+    },
+    {
+      "file": "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/StatusCureItem.kt",
+      "line": 60,
+      "text": "InteractionResultHolder.fail(stack)"
+    }
+  ],
+  "note": "All pass/fail factories receive the original in-hand stack; source gameplay decisions retained. Success/consume preserve transformed stacks and legacy sided swing behavior."
+}

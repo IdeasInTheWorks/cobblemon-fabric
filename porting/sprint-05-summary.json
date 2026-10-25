@@ -1,0 +1,86 @@
+{
+  "sprint": "S05",
+  "baseline_commit": "469d71b7817e315cabf016a3acb0231aa4109c13",
+  "work_id": "S05-R014-R019-R020",
+  "owner": "codex-sprint05-01a16f8a",
+  "lease_id": "0172c24e-ff85-4166-a4db-72e6779e3d36",
+  "source_status": "partial migration; original R014/R019/R020 acceptance remains open",
+  "compile": {
+    "diagnostics": 6420,
+    "files": 959,
+    "baseline_diagnostics": 6733,
+    "reduction": 313,
+    "passed": false
+  },
+  "focused_checks": 127,
+  "tooling_tests": 20,
+  "aw_missing": 54,
+  "common_license_headers": "passed",
+  "minecraft_runtime_tests_executed": 0,
+  "junit_wrapper_executed": false,
+  "jar_produced": false,
+  "upstream_pushes": 0,
+  "remaining_estimates_engineering_hours": {
+    "R014": {
+      "original": [
+        20,
+        40,
+        80
+      ],
+      "remaining": [
+        16,
+        32,
+        64
+      ]
+    },
+    "R019": {
+      "original": [
+        32,
+        64,
+        128
+      ],
+      "remaining": [
+        28,
+        56,
+        112
+      ]
+    },
+    "R020": {
+      "original": [
+        24,
+        48,
+        96
+      ],
+      "remaining": [
+        22,
+        44,
+        88
+      ]
+    },
+    "confidence": "low",
+    "actual_person_hours": null
+  },
+  "next": [
+    "R014 remaining item/component/equipment contracts, dynamic consumption gameplay and R022 item model assets",
+    "R019/R020 remaining entity lifecycle, synchronized data, movement, navigation, AI and attributes",
+    "R013/R015 broader construction/registry/legacy data audit and representative fixtures; acceptance still open",
+    "R021 boat/projectile lifecycle and interaction; rendering/input/access-widener callers remain separate blockers"
+  ],
+  "notes": [
+    "Compiler counts include cascades; not independent defects or completion percent",
+    "Fixtures compile production Java helpers with actual verified target classes, minimal MAX_STACK_SIZE setup for two inventory items; no game processes",
+    "The common JUnit wrapper has not run; standalone fixture assertions have",
+    "Read current live registry before editing; Sheet is only a snapshot. Release this partial lease after durable origin push.",
+    "Inspect Actions at published head; actual CI evidence belongs to native Sheet and retained diagnostic artifacts"
+  ],
+  "source_commits": [
+    {
+      "sha": "1d3933d97ae9543f39a0c77f440d7e26014b3ac8",
+      "subject": "Port scripted brain construction and preserve live memory state"
+    },
+    {
+      "sha": "b08693a76c5026598570eaa490f7e4cd69d957fa",
+      "subject": "Migrate item use results and food consumption components"
+    }
+  ]
+}

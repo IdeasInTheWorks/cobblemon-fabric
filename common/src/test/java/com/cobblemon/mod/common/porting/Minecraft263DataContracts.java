@@ -23,6 +23,19 @@ final class Minecraft263DataContracts {
         checks++;
     }
 
+    @SuppressWarnings("unchecked")
+    private static net.minecraft.core.component.DataComponentMap itemComponents(
+            net.minecraft.world.item.Item.Properties properties, net.minecraft.core.HolderLookup.Provider lookup)
+            throws ReflectiveOperationException {
+        var field = net.minecraft.world.item.Item.Properties.class.getDeclaredField("componentInitializer");
+        field.setAccessible(true);
+        var initializer = (net.minecraft.core.component.DataComponentInitializers.Initializer<net.minecraft.world.item.Item>) field.get(properties);
+        var builder = net.minecraft.core.component.DataComponentMap.builder();
+        initializer.run(builder, lookup, net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.ITEM,
+                net.minecraft.resources.Identifier.parse("cobblemon:contract_food")));
+        return builder.build();
+    }
+
     public static void main(String[] args) throws Exception {
         checks = 0;
         net.minecraft.SharedConstants.tryDetectVersion();
@@ -231,6 +244,127 @@ final class Minecraft263DataContracts {
         check(new java.util.HashSet<>(net.minecraft.world.level.block.FlowerBedBlock.AMOUNT.getPossibleValues())
                 .equals(java.util.Set.of(1, 2, 3, 4)), "flower amount range retained");
         check(net.minecraft.world.level.block.FlowerBedBlock.FACING.getName().equals("facing"), "flower facing property name retained");
+        var scripted = new com.cobblemon.mod.common.util.ScriptedBrain<net.minecraft.world.entity.LivingEntity>(
+                java.util.List.of(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT,
+                        net.minecraft.world.entity.ai.memory.MemoryModuleType.LOOK_TARGET),
+                java.util.List.of(net.minecraft.world.entity.ai.sensing.SensorType.HURT_BY), packedBrain,
+                net.minecraft.util.RandomSource.create(123));
+        check(scripted.getMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT).orElseThrow().equals(owner), "constructed brain restores UUID memory");
+        check(scripted.getTimeUntilExpiry(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT) == 123L, "constructed brain restores expiry");
+        check(scripted.checkMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType.LOOK_TARGET,
+                net.minecraft.world.entity.ai.memory.MemoryStatus.REGISTERED), "configured memory registered");
+        check(scripted.checkMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType.HURT_BY,
+                net.minecraft.world.entity.ai.memory.MemoryStatus.REGISTERED), "sensor-required memory registered");
+        scripted.setMemoryWithExpiry(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT, pokemon, 50L);
+        var currentDynamic = com.cobblemon.mod.common.util.ScriptedBrain.dynamic(scripted.pack(), vanilla);
+        var rebuilt = new com.cobblemon.mod.common.util.ScriptedBrain<net.minecraft.world.entity.LivingEntity>(
+                java.util.List.of(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT), java.util.List.of(),
+                com.cobblemon.mod.common.util.ScriptedBrain.read(currentDynamic, vanilla), net.minecraft.util.RandomSource.create(456));
+        check(rebuilt.getMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT).orElseThrow().equals(pokemon), "brain rebuild preserves current memory rather than initial snapshot");
+        check(rebuilt.getTimeUntilExpiry(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT) == 50L, "brain rebuild preserves current expiry");
+        var runtimeLookTarget = new net.minecraft.world.entity.ai.behavior.BlockPosTracker(new net.minecraft.core.BlockPos(1, 2, 3));
+        scripted.setMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType.LOOK_TARGET, runtimeLookTarget);
+        check(scripted.pack().memories().get(net.minecraft.world.entity.ai.memory.MemoryModuleType.LOOK_TARGET) == null,
+                "disk-oriented pack omits runtime-only memories");
+        var liveRebuild = new com.cobblemon.mod.common.util.ScriptedBrain<net.minecraft.world.entity.LivingEntity>(
+                java.util.List.of(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT, net.minecraft.world.entity.ai.memory.MemoryModuleType.LOOK_TARGET),
+                java.util.List.of(), com.cobblemon.mod.common.util.ScriptedBrain.snapshot(scripted), net.minecraft.util.RandomSource.create(789));
+        check(liveRebuild.getMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType.LOOK_TARGET).orElseThrow() == runtimeLookTarget,
+                "live rebuild retains runtime-only memory identity");
+        check(liveRebuild.getTimeUntilExpiry(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT) == 50L,
+                "live rebuild retains persisted memory expiry too");
+        scripted.eraseMemory(net.minecraft.world.entity.ai.memory.MemoryModuleType.LOOK_TARGET);
+        scripted.addActivity(net.minecraft.world.entity.schedule.Activity.CORE, com.google.common.collect.ImmutableList.of(), java.util.Set.of(), java.util.Set.of());
+        scripted.addActivity(net.minecraft.world.entity.schedule.Activity.IDLE, com.google.common.collect.ImmutableList.of(),
+                java.util.Set.of(com.mojang.datafixers.util.Pair.of(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT,
+                        net.minecraft.world.entity.ai.memory.MemoryStatus.VALUE_PRESENT)), java.util.Set.of());
+        scripted.addActivity(net.minecraft.world.entity.schedule.Activity.FIGHT, com.google.common.collect.ImmutableList.of(),
+                java.util.Set.of(com.mojang.datafixers.util.Pair.of(net.minecraft.world.entity.ai.memory.MemoryModuleType.LOOK_TARGET,
+                        net.minecraft.world.entity.ai.memory.MemoryStatus.VALUE_PRESENT)), java.util.Set.of());
+        scripted.setCoreActivities(java.util.Set.of(net.minecraft.world.entity.schedule.Activity.CORE));
+        scripted.setDefaultActivity(net.minecraft.world.entity.schedule.Activity.IDLE);
+        scripted.setActiveActivityIfPossible(net.minecraft.world.entity.schedule.Activity.IDLE);
+        check(scripted.isActive(net.minecraft.world.entity.schedule.Activity.CORE), "core activity retained");
+        check(scripted.isActive(net.minecraft.world.entity.schedule.Activity.IDLE), "satisfied activity condition permits activation");
+        scripted.setActiveActivityIfPossible(net.minecraft.world.entity.schedule.Activity.FIGHT);
+        check(!scripted.isActive(net.minecraft.world.entity.schedule.Activity.FIGHT), "unsatisfied activity condition blocks activation");
+        scripted.addActivity(net.minecraft.world.entity.schedule.Activity.REST, com.google.common.collect.ImmutableList.of(), java.util.Set.of(),
+                java.util.Set.of(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT));
+        scripted.setActiveActivityIfPossible(net.minecraft.world.entity.schedule.Activity.REST);
+        check(scripted.isActive(net.minecraft.world.entity.schedule.Activity.REST), "rest activity activated before stop transition");
+        scripted.addActivity(net.minecraft.world.entity.schedule.Activity.WORK, com.google.common.collect.ImmutableList.of(), java.util.Set.of(), java.util.Set.of());
+        scripted.setActiveActivityIfPossible(net.minecraft.world.entity.schedule.Activity.WORK);
+        check(!scripted.hasMemoryValue(net.minecraft.world.entity.ai.memory.MemoryModuleType.ANGRY_AT), "activity stop erases only configured memory");
+        try {
+            com.cobblemon.mod.common.util.ScriptedBrain.read(new com.mojang.serialization.Dynamic<>(NbtOps.INSTANCE, StringTag.valueOf("invalid")), vanilla);
+            throw new AssertionError("Malformed brain data silently discarded");
+        } catch (IllegalStateException expected) { checks++; }
+        var quickFood = com.cobblemon.mod.common.item.CobblemonConsumables.QUICK_FOOD;
+        check(quickFood.consumeTicks() == 16, "quick food retains legacy 0.8 second consumption");
+        check(quickFood.animation() == net.minecraft.world.item.ItemUseAnimation.EAT, "quick food keeps eating animation");
+        var manualFood = com.cobblemon.mod.common.item.CobblemonConsumables.MANUAL_FOOD;
+        var manualDrink = com.cobblemon.mod.common.item.CobblemonConsumables.MANUAL_DRINK;
+        check(manualFood.consumeTicks() == 32 && manualFood.animation() == net.minecraft.world.item.ItemUseAnimation.EAT, "custom food retains eating duration and animation");
+        check(manualFood.sound().equals(net.minecraft.sounds.SoundEvents.GENERIC_EAT), "custom food retains eating sound");
+        check(manualDrink.consumeTicks() == 32 && manualDrink.animation() == net.minecraft.world.item.ItemUseAnimation.DRINK, "custom drink retains duration and animation");
+        check(manualDrink.sound().equals(net.minecraft.sounds.SoundEvents.GENERIC_DRINK), "custom drink retains drinking sound");
+        check(manualFood.onConsumeEffects().isEmpty() && manualDrink.onConsumeEffects().isEmpty(), "custom handlers have no duplicate component effects");
+        var manualComponents = itemComponents(RegistrationProperties.item("contract_manual_drink")
+                .component(net.minecraft.core.component.DataComponents.CONSUMABLE, manualDrink), vanilla);
+        check(manualComponents.get(net.minecraft.core.component.DataComponents.FOOD) == null, "manual nutrition is not duplicated by a food component");
+        check(manualComponents.get(net.minecraft.core.component.DataComponents.CONSUMABLE).equals(manualDrink), "manual drink sound metadata installed");
+        var teaComponents = itemComponents(RegistrationProperties.item("contract_tea").stacksTo(16)
+                .usingConvertsTo(net.minecraft.world.item.Items.BOWL)
+                .food(new net.minecraft.world.food.FoodProperties.Builder().nutrition(0).saturationModifier(0F).alwaysEdible().build(), manualDrink), vanilla);
+        check(teaComponents.get(net.minecraft.core.component.DataComponents.FOOD).canAlwaysEat(), "tea remains usable at full hunger");
+        check(teaComponents.get(net.minecraft.core.component.DataComponents.USE_REMAINDER).convertInto().item().value() == net.minecraft.world.item.Items.BOWL, "tea bowl remainder retained");
+        check(teaComponents.get(net.minecraft.core.component.DataComponents.CONSUMABLE).equals(manualDrink), "tea uses native drinking component");
+        var dip = com.cobblemon.mod.common.item.CobblemonConsumables.VIVICHOKE_DIP;
+        var dipEffect = (net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect) dip.onConsumeEffects().getFirst();
+        check(dipEffect.probability() == 1F, "dip absorption probability retained");
+        check(dipEffect.effects().getFirst().getEffect().equals(net.minecraft.world.effect.MobEffects.ABSORPTION), "dip absorption effect retained");
+        check(dipEffect.effects().getFirst().getDuration() == 900 && dipEffect.effects().getFirst().getAmplifier() == 0, "dip effect duration and amplifier retained");
+        var dipData = net.minecraft.world.item.component.Consumable.CODEC.encodeStart(optionalOps, dip).getOrThrow();
+        check(net.minecraft.world.item.component.Consumable.CODEC.parse(optionalOps, dipData).getOrThrow().equals(dip), "consumable effect codec round trip");
+        var modelData = new net.minecraft.world.item.component.CustomModelData(java.util.List.of(5F), java.util.List.of(), java.util.List.of(), java.util.List.of());
+        check(modelData.getFloat(0) == 5F && modelData.flags().isEmpty() && modelData.strings().isEmpty() && modelData.colors().isEmpty(), "legacy model number occupies first float channel only");
+        check(net.minecraft.world.item.component.CustomModelData.CODEC.parse(optionalOps,
+                net.minecraft.world.item.component.CustomModelData.CODEC.encodeStart(optionalOps, modelData).getOrThrow()).getOrThrow().equals(modelData), "model data component codec round trip");
+        var changedStack = inventory.get(2);
+        var useSuccess = (net.minecraft.world.InteractionResult.Success) com.cobblemon.mod.common.util.ItemUseResults.success(changedStack);
+        check(useSuccess.consumesAction() && useSuccess.shouldSwing(), "item success consumes action and swings");
+        check(useSuccess.heldItemTransformedTo() == changedStack, "success retains replacement stack identity");
+        var consumeResult = (net.minecraft.world.InteractionResult.Success) com.cobblemon.mod.common.util.ItemUseResults.consume(changedStack);
+        check(consumeResult.consumesAction() && !consumeResult.shouldSwing(), "consume preserves no-swing action");
+        check(consumeResult.heldItemTransformedTo() == changedStack, "consume retains replacement stack identity");
+        check(com.cobblemon.mod.common.util.ItemUseResults.pass(changedStack) == net.minecraft.world.InteractionResult.PASS, "item pass remains pass");
+        check(com.cobblemon.mod.common.util.ItemUseResults.fail(changedStack) == net.minecraft.world.InteractionResult.FAIL, "item failure remains failure");
+        var clientUse = (net.minecraft.world.InteractionResult.Success) com.cobblemon.mod.common.util.ItemUseResults.sidedSuccess(changedStack, true);
+        var serverUse = (net.minecraft.world.InteractionResult.Success) com.cobblemon.mod.common.util.ItemUseResults.sidedSuccess(changedStack, false);
+        check(clientUse.shouldSwing() && clientUse.heldItemTransformedTo() == changedStack, "client sided result retains swing and replacement");
+        check(!serverUse.shouldSwing() && serverUse.heldItemTransformedTo() == changedStack, "server sided result retains consume and replacement");
+        check(com.cobblemon.mod.common.util.ItemUseResults.withStack(net.minecraft.world.InteractionResult.PASS, changedStack)
+                == net.minecraft.world.InteractionResult.PASS, "placement pass stays pass");
+        check(com.cobblemon.mod.common.util.ItemUseResults.withStack(net.minecraft.world.InteractionResult.FAIL, changedStack)
+                == net.minecraft.world.InteractionResult.FAIL, "placement failure stays failure");
+        var serverSuccess = (net.minecraft.world.InteractionResult.Success) com.cobblemon.mod.common.util.ItemUseResults.withStack(
+                net.minecraft.world.InteractionResult.SUCCESS_SERVER, changedStack);
+        check(serverSuccess.swingSource() == net.minecraft.world.InteractionResult.SUCCESS_SERVER.swingSource(), "placement keeps server swing source");
+        var candyComponents = itemComponents(RegistrationProperties.item("contract_candy")
+                .usingConvertsTo(net.minecraft.world.item.Items.STICK)
+                .food(new net.minecraft.world.food.FoodProperties.Builder().nutrition(6).saturationModifier(0.2F).build()), vanilla);
+        check(candyComponents.get(net.minecraft.core.component.DataComponents.USE_REMAINDER).convertInto().item().value()
+                == net.minecraft.world.item.Items.STICK, "food setup retains stick remainder");
+        check(candyComponents.get(net.minecraft.core.component.DataComponents.FOOD).nutrition() == 6, "food nutrition retained");
+        check(Math.abs(candyComponents.get(net.minecraft.core.component.DataComponents.FOOD).saturation() - 2.4F) < 0.00001F, "food saturation modifier retained");
+        var dipComponents = itemComponents(RegistrationProperties.item("contract_dip").stacksTo(1)
+                .usingConvertsTo(net.minecraft.world.item.Items.BOWL)
+                .food(new net.minecraft.world.food.FoodProperties.Builder().nutrition(10).saturationModifier(0.6F).alwaysEdible().build(), dip), vanilla);
+        check(dipComponents.get(net.minecraft.core.component.DataComponents.USE_REMAINDER).convertInto().item().value()
+                == net.minecraft.world.item.Items.BOWL, "dip setup retains bowl remainder");
+        check(dipComponents.get(net.minecraft.core.component.DataComponents.FOOD).canAlwaysEat(), "dip always-edible flag retained");
+        check(dipComponents.get(net.minecraft.core.component.DataComponents.MAX_STACK_SIZE) == 1, "dip stack limit retained");
+        check(dipComponents.get(net.minecraft.core.component.DataComponents.CONSUMABLE).equals(dip), "dip consumption and nutrition coexist");
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }

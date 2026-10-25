@@ -1,0 +1,23 @@
+Compiled from "Brain.java"
+public final class net.minecraft.world.entity.ai.Brain$Provider<E extends net.minecraft.world.entity.LivingEntity> {
+  public net.minecraft.world.entity.ai.Brain<E> makeBrain(E, net.minecraft.world.entity.ai.Brain$Packed);
+    Code:
+         0: aload_0
+         1: getfield      #16                 // Field activities:Lnet/minecraft/world/entity/ai/Brain$ActivitySupplier;
+         4: aload_1
+         5: invokeinterface #20,  2           // InterfaceMethod net/minecraft/world/entity/ai/Brain$ActivitySupplier.createActivities:(Lnet/minecraft/world/entity/LivingEntity;)Ljava/util/List;
+        10: astore_3
+        11: new           #26                 // class net/minecraft/world/entity/ai/Brain
+        14: dup
+        15: aload_0
+        16: getfield      #7                  // Field memoryTypes:Ljava/util/Collection;
+        19: aload_0
+        20: getfield      #13                 // Field sensorTypes:Ljava/util/Collection;
+        23: aload_3
+        24: aload_2
+        25: getfield      #28                 // Field net/minecraft/world/entity/ai/Brain$Packed.memories:Lnet/minecraft/world/entity/ai/memory/MemoryMap;
+        28: aload_1
+        29: invokevirtual #34                 // Method net/minecraft/world/entity/LivingEntity.getRandom:()Lnet/minecraft/util/RandomSource;
+        32: invokespecial #40                 // Method net/minecraft/world/entity/ai/Brain."<init>":(Ljava/util/Collection;Ljava/util/Collection;Ljava/util/List;Lnet/minecraft/world/entity/ai/memory/MemoryMap;Lnet/minecraft/util/RandomSource;)V
+        35: areturn
+}

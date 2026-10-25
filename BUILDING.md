@@ -55,7 +55,7 @@ The Kotlin toolchain is downloaded as a Gradle dependency. Game classes use Moja
 
 ## Outputs and test scope
 
-The shared Java regression fixture and JUnit entry point are in `common/src/test/java/com/cobblemon/mod/common/porting/`. S03 executed 48 checks; S04 extends the same fixture with nested fossil-style item data and legacy positions. Run it against the checksum-verified target JAR and matching libraries, choosing a new report path to preserve prior evidence:
+The shared Java regression fixture and JUnit entry point are in `common/src/test/java/com/cobblemon/mod/common/porting/`. S03 executed 48 checks; S04 extended the fixture to 76. S05 passes 127 assertions, adding actual scripted-brain construction, live runtime memories/expiry, sensor requirements, activity transitions, item-use result semantics and food/drink/model component metadata. Run it against the checksum-verified target JAR and matching libraries, choosing a new report path to preserve prior evidence:
 
 ```sh
 python3 scripts/check_data_contracts.py --game-jar /path/to/minecraft-26.3-client.jar --gradle-cache /path/to/gradle-user-home --javac /path/to/jdk25/bin/javac --report porting/logs/data-contracts-new-run.json
@@ -84,6 +84,15 @@ The checker compares the game SHA-1 with `porting/version-evidence.json`, compil
 Package validation checks metadata, entrypoint/mixin classes, runtime dependencies, licences, assets, Showdown presence, namespace and classfile compatibility. It does not establish game startup or gameplay correctness. Reproducibility between two clean successful builds has not been demonstrated. Stable build/dependency pins and deterministic archive ordering/timestamps are configured, but a reproducible release requires completing and comparing those builds.
 
 ## Troubleshooting and release gates
+
+S05 local source compilation used the following PowerShell command after generated Kotlin caches were locked. Quote the properties to keep PowerShell from splitting them. This changes compiler execution only; it does not bypass source or release checks.
+
+```powershell
+.\gradlew.bat :common:compileKotlin '-Pkotlin.incremental=false' '-Pkotlin.compiler.execution.strategy=in-process' --stacktrace --console=plain
+.\gradlew.bat :fabric:validateAccessWidener :common:checkLicenses --continue '-Pkotlin.incremental=false' '-Pkotlin.compiler.execution.strategy=in-process' --stacktrace --console=plain
+```
+
+Stop Gradle/IDE compilers before moving generated caches. Verify absolute paths stay inside the checkout, preserve old outputs in an ignored backup directory, and regenerate only build outputs. S05 preserved old `common/build` and `gradle/build-logic/build` under ignored `build/sprint-05-cache-backups/`; no source or release artifacts were deleted. Prefer a fresh checkout outside OneDrive for future builds.
 
 Read the first error in the Gradle log before the stack trace. Do not suppress missing Minecraft APIs or widen Fabric's version requirement to make an older binary load. Resolve obsolete access-widener entries against the actual target classes. Verify integration coordinates and official-name compatibility; old intermediary-mapped mods cannot be assumed compatible.
 

@@ -2,7 +2,32 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S04 checkpoint (2026-10-24/25)
+## Sprint S05 checkpoint (2026-10-25)
+
+Partial work: R014/R019/R020, work ID `S05-R014-R019-R020`, owner `codex-sprint05-01a16f8a`, exclusive integration resource. This is a historical handoff, not authority: read the live registry and acquire a new scoped lease before editing after closure. Release this lease only after its durable checkpoint is pushed. The native Sheet remains the primary roadmap and has the current CI and closure snapshot.
+
+Implemented food remainders and separate consumables, quick-food duration, dip absorption, tea drinking metadata, model-data float payloads, and modern item results across 39 use/animation files. Success preserves transformed held stacks and legacy sided swing semantics; audited pass/fail callers retain their incoming stack. Aprijuice/PokePuff retain custom conditional nutrition and consume once; they return the handled stack rather than invoking native consumption twice. Source create-ID and central nutrition/saturation expression ordering is unchanged. Model assets and real eating are not validated.
+
+Native `makeBrain(Brain.Packed)` now constructs configured Pokemon/NPC brains. Live reconfiguration snapshots current values, expiry and runtime-only memories with Brain.Visitor instead of replaying stale initial data or using disk-filtered pack. Native disk saves stay unchanged. Sensor-required memories, original task weights/conditions and manual core/default activities are retained; unset environmental schedule matches the previous empty timetable. NPC returns its final configured brain to vanilla. Legacy Dynamic callers retain registry-aware adapters; addon implementors need the new Packed method. Scripted VariableStruct data/config roots explicitly fail if unexpectedly null; supported child serialization is unchanged.
+
+Executed results:
+
+- Four source compiler runs: attempts 04/05 each 6,442 lines /965 files, attempt 06 6,422 /960, then attempt 07 **6,420 /959**, down 313 (4.6%) from S04. Compilation still fails. Counts include cascades, not independent defects or a completion percentage. Attempts 01-03 failed before source diagnostics (locked generated caches, malformed PowerShell property argument, locked build-logic output); all logs retained.
+- **127 focused assertions pass**, compiling production ScriptedBrain, ItemUseResults, CobblemonConsumables and prior helpers against the SHA-1-verified official target JAR and matching libraries. Includes runtime-only memory identity/expiry, sensor memories, activity transition/conditions, strict malformed brain refusal, food/drink metadata/codecs and held-stack/swing results. Minimal missing components are supplied only for two inventory fixture items. Earlier activity/assertion and tea fixture type failures are retained, not counted as passes.
+- **20 Python tooling tests pass**; the common JUnit wrapper has not run because common compilation fails. No Minecraft client/server, gameplay, multiplayer or world-migration processes executed; no candidate JAR or validated release.
+- Final `:fabric:validateAccessWidener :common:checkLicenses --continue` still reports **54 missing targets**. Common main/test licence headers pass. Retain the validator and reconcile it with migrated callers.
+
+Source milestones: `1d3933d97ae9543f39a0c77f440d7e26014b3ac8` (brains) and `b08693a76c5026598570eaa490f7e4cd69d957fa` (items). The final checkpoint archives tests, evidence and this handoff.
+
+Logs and machine summaries: `sprint-05-compiler-summary.json`, `sprint-05-validation-summary.json`, `sprint-05-summary.json`, food/item-use/brain migration audits and `logs/sprint-05-*`. Inspect Actions at the final published head; actual CI outcome is in the same Sheet and Actions diagnostics, not an assumed pass.
+
+Remaining planning ranges (low/likely/high engineering person-hours, low confidence): R014 **16/32/64** (original 20/40/80), R019 **28/56/112** (original 32/64/128), R020 **22/44/88** (original 24/48/96). Actual hours unmeasured. Original acceptance gates stay open. R013 remains 6/12/24 and R015 8/16/32.
+
+Next: finish remaining item/equipment contracts (R014), entity lifecycle/synchronized data (R019) and movement/navigation/AI APIs (R020), then validate real construction and legacy-data fixtures (R013/R015). Coordinate item model assets with R022 and boat/projectile changes with R021. Keep ownership, memories, tasks, gameplay and assets. Rendering/input, networking and AW54 remain release blockers.
+
+For local locked generated outputs, use the quoted nonincremental/in-process command in BUILDING.md. Old common/build and build-logic/build were preserved under ignored `build/sprint-05-cache-backups/` after checking absolute paths and stopping compilers. Do not delete another worker's files or production data. Source scopes and shared integration must be leased; parallel workers need isolated branches/worktrees.
+
+## Sprint S04 checkpoint (historical, 2026-10-24/25)
 
 Work is claimed as `S04-R013-R015`, owner `codex-sprint04-01a16f8a`, with the exclusive integration resource. Always re-read the live registry before resuming; this paragraph is a historical handoff, not a lock.
 
@@ -89,7 +114,7 @@ Adorn has no published 26.3 version in the listing checked. Its source integrati
 
 ## Next implementation work
 
-1. Continue from S03 common attempt 05 and `sprint-03-compiler-summary.json`. Reclaim **R013/R015** for the remaining work listed above; their acceptance gates are not complete. Inspect current file scopes and handoff before claiming. Preserve factories, IDs, data and gameplay. Resolve cascading errors by coherent API subsystem.
+1. Continue from S05 common attempt 07 and `sprint-05-compiler-summary.json`. Claim the next narrow R014/R019/R020 slice or remaining **R013/R015** audit; their acceptance gates are not complete. Inspect current file scopes and handoff before claiming. Preserve factories, IDs, data and gameplay. Resolve cascading errors by coherent API subsystem.
 2. Port the rendering stack coherently: model baking, item model definitions, render-state extraction, GUI graphics extraction, renderer pipelines, particles, shaders and animation layers. `GuiGraphics`, `MultiBufferSource`, old RenderType and many RenderStateShard classes are gone or relocated. Update callers and wideners together.
 3. Port input to SDL-backed vanilla input events/constants, including text-input focus notification. Keep custom widgets functional.
 4. Migrate removed Fabric composting registration to data components/providers while preserving the existing chance calculations. Do not replace all probabilities with a constant or remove composting.
