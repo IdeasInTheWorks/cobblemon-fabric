@@ -53,6 +53,7 @@ import net.minecraft.resources.Identifier
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.entity.LivingEntity
+import com.cobblemon.mod.common.item.CobblemonConsumables
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.HangingSignItem
@@ -428,17 +429,15 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
             .build())))
     @JvmField
     val CANDIED_APPLE = create("candied_apple",  CobblemonItem(RegistrationProperties.item("candied_apple", Properties()).stacksTo(64)
-        .food(FoodProperties.Builder()
+        .usingConvertsTo(Items.STICK).food(FoodProperties.Builder()
             .nutrition(6)
             .saturationModifier(0.2F)
-            .usingConvertsTo(Items.STICK)
             .build())))
     @JvmField
     val CANDIED_BERRY = create("candied_berry",  CobblemonItem(RegistrationProperties.item("candied_berry", Properties()).stacksTo(64)
-        .food(FoodProperties.Builder()
+        .usingConvertsTo(Items.STICK).food(FoodProperties.Builder()
             .nutrition(5)
             .saturationModifier(0.22F)
-            .usingConvertsTo(Items.STICK)
             .build())))
 
     //@JvmField
@@ -688,18 +687,16 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val CLEVER_FEATHER = create("clever_feather", FeatherItem(RegistrationProperties.item("clever_feather"), Stats.SPECIAL_DEFENCE))
     @JvmField
-    val MEDICINAL_LEEK = heldItem("medicinal_leek", MedicinalLeekItem(CobblemonBlocks.MEDICINAL_LEEK, RegistrationProperties.item("medicinal_leek").food(FoodProperties.Builder().fast().nutrition(1).saturationModifier(0.2f).build())), "leek")
+    val MEDICINAL_LEEK = heldItem("medicinal_leek", MedicinalLeekItem(CobblemonBlocks.MEDICINAL_LEEK, RegistrationProperties.item("medicinal_leek").food(FoodProperties.Builder().nutrition(1).saturationModifier(0.2f).build(), CobblemonConsumables.QUICK_FOOD)), "leek")
     @JvmField
-    val ROASTED_LEEK = compostableItem("roasted_leek", CobblemonItem(RegistrationProperties.item("roasted_leek").food(FoodProperties.Builder().fast().nutrition(3).saturationModifier(0.2f).build())), 0.85f)
+    val ROASTED_LEEK = compostableItem("roasted_leek", CobblemonItem(RegistrationProperties.item("roasted_leek").food(FoodProperties.Builder().nutrition(3).saturationModifier(0.2f).build(), CobblemonConsumables.QUICK_FOOD)), 0.85f)
     @JvmField
     val VIVICHOKE_DIP = create("vivichoke_dip", object : CobblemonItem(RegistrationProperties.item("vivichoke_dip", Properties()).stacksTo(1)
-        .food(FoodProperties.Builder()
+        .usingConvertsTo(Items.BOWL).food(FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(0.6F)
-            .effect(MobEffectInstance(MobEffects.ABSORPTION, 900, 0), 1F)
             .alwaysEdible()
-            .usingConvertsTo(Items.BOWL)
-            .build())) {
+            .build(), CobblemonConsumables.VIVICHOKE_DIP)) {
         override fun finishUsingItem(stack: ItemStack, world: Level, user: LivingEntity): ItemStack {
             user.removeAllEffects()
             return super.finishUsingItem(stack, world, user)
@@ -736,7 +733,7 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
     @JvmField
     val HEAL_POWDER = create("heal_powder", HealPowderItem(RegistrationProperties.item("heal_powder")))
     @JvmField
-    val LEEK_AND_POTATO_STEW = create("leek_and_potato_stew", CobblemonItem(RegistrationProperties.item("leek_and_potato_stew", Item.Properties()).food(FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).usingConvertsTo(Items.BOWL).build()).stacksTo(1)))
+    val LEEK_AND_POTATO_STEW = create("leek_and_potato_stew", CobblemonItem(RegistrationProperties.item("leek_and_potato_stew", Item.Properties()).usingConvertsTo(Items.BOWL).food(FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build()).stacksTo(1)))
     @JvmField
     val REVIVE = create("revive", ReviveItem(RegistrationProperties.item("revive"), max = false))
     @JvmField
@@ -1663,10 +1660,6 @@ object CobblemonItems : PlatformRegistry<Registry<Item>, ResourceKey<Registry<It
 
         if (alwaysEdible == true) {
             foodPropertiesBuilder.alwaysEdible()
-        }
-
-        if (convertsToOnUse != null && !convertsToOnUse.isEmpty) {
-            // The remainder belongs to Item.Properties in the target API.
         }
 
         val properties = RegistrationProperties.item(name)

@@ -21,7 +21,8 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
 
@@ -57,14 +58,14 @@ class StatusCuringBerryItem(registrationProperties: net.minecraft.world.item.Ite
         player: ServerPlayer,
         stack: ItemStack,
         pokemon: Pokemon
-    ): InteractionResultHolder<ItemStack>? {
+    ): InteractionResult? {
         return if (canUseOnPokemon(stack, pokemon)) {
             pokemon.feedPokemon(1)
             pokemon.status = null
             stack.consume(1, player)
-            InteractionResultHolder.success(stack)
+            ItemUseResults.success(stack)
         } else {
-            InteractionResultHolder.fail(stack)
+            ItemUseResults.fail(stack)
         }
     }
 
@@ -73,7 +74,7 @@ class StatusCuringBerryItem(registrationProperties: net.minecraft.world.item.Ite
         battlePokemon.originalPokemon.feedPokemon(1)
     }
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         if (user is ServerPlayer) {
             return use(user, user.getItemInHand(hand))
         }

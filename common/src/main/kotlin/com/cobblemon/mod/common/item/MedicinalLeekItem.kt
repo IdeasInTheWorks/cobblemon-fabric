@@ -12,7 +12,7 @@ import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.block.MedicinalLeekBlock
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.ItemStack
@@ -30,7 +30,7 @@ class MedicinalLeekItem(block: MedicinalLeekBlock, settings: Properties) : Block
 
     override fun useOn(context: UseOnContext): InteractionResult = InteractionResult.PASS
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         val blockHitResult = PlaceOnWaterBlockItem.getPlayerPOVHitResult(world, user, ClipContext.Fluid.SOURCE_ONLY)
         val blockHitResult2 = blockHitResult.withPosition(blockHitResult.blockPos.above())
         val placeResult = this.place(BlockPlaceContext(UseOnContext(user, hand, blockHitResult2)))
@@ -39,7 +39,7 @@ class MedicinalLeekItem(block: MedicinalLeekBlock, settings: Properties) : Block
         if (!placeResult.consumesAction()) {
             return super.use(world, user, hand)
         }
-        return InteractionResultHolder(placeResult, stack)
+        return ItemUseResults.withStack(placeResult, stack)
     }
 
 }

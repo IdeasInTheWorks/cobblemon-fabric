@@ -24,7 +24,8 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
 
@@ -49,15 +50,15 @@ class HealingBerryItem(registrationProperties: net.minecraft.world.item.Item.Pro
         player: ServerPlayer,
         stack: ItemStack,
         pokemon: Pokemon
-    ): InteractionResultHolder<ItemStack>? {
+    ): InteractionResult? {
         if (!canUseOnPokemon(stack, pokemon)) {
-            return InteractionResultHolder.fail(stack)
+            return ItemUseResults.fail(stack)
         }
 
         pokemon.feedPokemon(1)
         pokemon.currentHealth = Integer.min(pokemon.currentHealth + genericRuntime.resolveInt(amount(), pokemon), pokemon.maxHealth)
         stack.consume(1, player)
-        return InteractionResultHolder.success(stack)
+        return ItemUseResults.success(stack)
     }
 
     override fun applyToBattlePokemon(player: ServerPlayer, stack: ItemStack, battlePokemon: BattlePokemon) {
@@ -65,7 +66,7 @@ class HealingBerryItem(registrationProperties: net.minecraft.world.item.Item.Pro
         battlePokemon.originalPokemon.feedPokemon(1)
     }
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         if (world is ServerLevel && user is ServerPlayer) {
             return use(user, user.getItemInHand(hand))
         }

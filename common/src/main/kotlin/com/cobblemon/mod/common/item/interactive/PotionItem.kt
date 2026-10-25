@@ -29,7 +29,8 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Rarity
 import net.minecraft.world.level.Level
@@ -44,24 +45,24 @@ class PotionItem(registrationProperties: net.minecraft.world.item.Item.Propertie
 
     override val bagItem = type
     override fun canUseOnPokemon(stack: ItemStack, pokemon: Pokemon) = !pokemon.isFullHealth() && pokemon.currentHealth > 0
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         if (user is ServerPlayer) {
             return use(user, user.getItemInHand(hand))
         }
-        return InteractionResultHolder.success(user.getItemInHand(hand))
+        return ItemUseResults.success(user.getItemInHand(hand))
     }
 
     override fun applyToPokemon(
         player: ServerPlayer,
         stack: ItemStack,
         pokemon: Pokemon
-    ): InteractionResultHolder<ItemStack>? {
+    ): InteractionResult? {
         if (pokemon.isFullHealth()) {
-            return InteractionResultHolder.fail(stack)
+            return ItemUseResults.fail(stack)
         }
         val potionHealAmount = genericRuntime.resolveInt(type.amountToHeal())
         var healthToRestore = potionHealAmount
-        CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, potionHealAmount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->
+        CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, potionHealAmount, this), { cancelledEvent -> return ItemUseResults.fail(stack)}) { event ->
             healthToRestore = event.amount
         }
         pokemon.currentHealth = min(pokemon.currentHealth + healthToRestore, pokemon.maxHealth)
@@ -73,7 +74,7 @@ class PotionItem(registrationProperties: net.minecraft.world.item.Item.Propertie
             stack.shrink(1)
             player.giveOrDropItemStack(ItemStack(Items.GLASS_BOTTLE))
         }
-        return InteractionResultHolder.success(stack)
+        return ItemUseResults.success(stack)
     }
 
     override fun applyToBattlePokemon(player: ServerPlayer, stack: ItemStack, battlePokemon: BattlePokemon) {

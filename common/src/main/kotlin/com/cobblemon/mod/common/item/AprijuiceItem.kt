@@ -15,19 +15,19 @@ import com.cobblemon.mod.common.api.riding.stats.RidingStat
 import com.cobblemon.mod.common.client.pot.CookingQuality
 import com.cobblemon.mod.common.pokemon.Pokemon
 import net.minecraft.network.chat.Component
+import net.minecraft.core.component.DataComponents
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.sounds.SoundEvent
-import net.minecraft.sounds.SoundEvents
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.item.UseAnim
+import net.minecraft.world.item.ItemUseAnimation
 import net.minecraft.world.level.Level
 
-class AprijuiceItem(registrationProperties: net.minecraft.world.item.Item.Properties, val type: Apricorn): CobblemonItem(registrationProperties.stacksTo(16)), PokemonSelectingItem {
+class AprijuiceItem(registrationProperties: net.minecraft.world.item.Item.Properties, val type: Apricorn): CobblemonItem(registrationProperties.stacksTo(16).component(DataComponents.CONSUMABLE, CobblemonConsumables.MANUAL_DRINK)), PokemonSelectingItem {
     override val bagItem = null
 
     fun hasRideBoosts(stack: ItemStack): Boolean {
@@ -35,18 +35,18 @@ class AprijuiceItem(registrationProperties: net.minecraft.world.item.Item.Proper
         return rideBoostComponent?.boosts?.isNotEmpty() == true
     }
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         val stack = user.getItemInHand(hand)
 
         return if (!hasRideBoosts(stack)) {
             // act like a drink :D
             user.startUsingItem(hand)
-            InteractionResultHolder.consume(stack)
+            ItemUseResults.consume(stack)
         } else {
             if (world is ServerLevel && user is ServerPlayer) {
                 return super<PokemonSelectingItem>.use(user, stack, false)
             }
-            InteractionResultHolder.pass(stack)
+            ItemUseResults.pass(stack)
         }
     }
 
@@ -87,9 +87,9 @@ class AprijuiceItem(registrationProperties: net.minecraft.world.item.Item.Proper
         player: ServerPlayer,
         stack: ItemStack,
         pokemon: Pokemon
-    ): InteractionResultHolder<ItemStack>? {
+    ): InteractionResult? {
         if (!canUseOnPokemon(stack, pokemon)) {
-            return InteractionResultHolder.fail(stack)
+            return ItemUseResults.fail(stack)
         }
 
         pokemon.feedPokemon(1)
@@ -99,7 +99,7 @@ class AprijuiceItem(registrationProperties: net.minecraft.world.item.Item.Proper
 
         stack.consume(1, player)
 
-        return InteractionResultHolder.success(stack)
+        return ItemUseResults.success(stack)
     }
 
     override fun finishUsingItem(stack: ItemStack, world: Level, user: LivingEntity): ItemStack {
@@ -108,23 +108,17 @@ class AprijuiceItem(registrationProperties: net.minecraft.world.item.Item.Proper
             stack.consume(1, user)
         }
 
-        return super.finishUsingItem(stack, world, user)
+        // This handler owns nutrition and consumption; running the component again would consume twice.
+        return stack
     }
 
-    override fun getUseAnimation(stack: ItemStack): UseAnim {
-        return if (hasRideBoosts(stack)) UseAnim.NONE else UseAnim.DRINK
+    override fun getUseAnimation(stack: ItemStack): ItemUseAnimation {
+        return if (hasRideBoosts(stack)) ItemUseAnimation.NONE else ItemUseAnimation.DRINK
     }
 
     override fun getUseDuration(stack: ItemStack, entity: LivingEntity): Int {
         return if (hasRideBoosts(stack)) 0 else 32 // 32 ticks like drinking a potion
     }
 
-    // todo not sure which one is needed at the moment, but I assume just the eating sound?
-    override fun getDrinkingSound(): SoundEvent {
-        return SoundEvents.GENERIC_DRINK
-    }
 
-    override fun getEatingSound(): SoundEvent {
-        return SoundEvents.GENERIC_DRINK
-    }
 }

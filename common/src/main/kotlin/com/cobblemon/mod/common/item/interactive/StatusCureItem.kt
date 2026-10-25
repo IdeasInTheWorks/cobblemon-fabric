@@ -22,7 +22,8 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
@@ -46,7 +47,7 @@ class StatusCureItem(registrationProperties: net.minecraft.world.item.Item.Prope
         player: ServerPlayer,
         stack: ItemStack,
         pokemon: Pokemon
-    ): InteractionResultHolder<ItemStack>? {
+    ): InteractionResult? {
         val currentStatus = pokemon.status?.status
         return if (currentStatus != null && (status.isEmpty() || currentStatus in status)) {
             pokemon.status = null
@@ -55,9 +56,9 @@ class StatusCureItem(registrationProperties: net.minecraft.world.item.Item.Prope
                 stack.shrink(1)
                 player.giveOrDropItemStack(ItemStack(bagItem.returnItem))
             }
-            InteractionResultHolder.success(stack)
+            ItemUseResults.success(stack)
         } else {
-            InteractionResultHolder.fail(stack)
+            ItemUseResults.fail(stack)
         }
     }
 
@@ -66,10 +67,10 @@ class StatusCureItem(registrationProperties: net.minecraft.world.item.Item.Prope
         battlePokemon.entity?.playSound(CobblemonSounds.MEDICINE_SPRAY_USE, 1F, 1F)
     }
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         if (user is ServerPlayer) {
             return use(user, user.getItemInHand(hand))
         }
-        return InteractionResultHolder.success(user.getItemInHand(hand))
+        return ItemUseResults.success(user.getItemInHand(hand))
     }
 }

@@ -29,7 +29,8 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundSource
 import net.minecraft.stats.Stats
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.SlotAccess
 import net.minecraft.world.entity.player.Player
@@ -148,7 +149,7 @@ class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodI
         return false
     }
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
 
         val itemStack = user.getItemInHand(hand)
         val offHandItem = user.getItemInHand(InteractionHand.OFF_HAND)
@@ -156,7 +157,7 @@ class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodI
         // Check if offhand item is valid bait and the rod is not in use, if so then apply bait from offhand
         if (!world.isClientSide && user.fishing == null && SpawnBaitEffects.isFishingBait(offHandItem)) {
             CobblemonEvents.BAIT_SET_PRE.postThen(BaitSetEvent(itemStack, offHandItem), { event ->
-                return InteractionResultHolder.fail(itemStack)
+                return ItemUseResults.fail(itemStack)
             }, {
                 playAttachSound(user)
 
@@ -180,7 +181,7 @@ class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodI
             if (!world.isClientSide) {
                 CobblemonEvents.POKEROD_REEL.postThen(
                     PokerodReelEvent(user, itemStack),
-                    { event -> return InteractionResultHolder.fail(itemStack) },
+                    { event -> return ItemUseResults.fail(itemStack) },
                     { event ->
                         i = user.fishing!!.retrieve(itemStack)
                         itemStack.hurtAndBreak(i, user, hand.toEquipmentSlot())
@@ -217,7 +218,7 @@ class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodI
                 )
                 CobblemonEvents.POKEROD_CAST_PRE.postThen(
                     PokerodCastEvent.Pre(itemStack, bobberEntity, getBaitStackOnRod(itemStack)),
-                    { event -> return InteractionResultHolder.fail(itemStack) },
+                    { event -> return ItemUseResults.fail(itemStack) },
                     { event ->
                         world.addFreshEntity(bobberEntity)
                         var baitId = getBaitStackOnRod(itemStack).takeUnless { it.isEmpty }?.itemHolder?.unwrapKey()?.orElse(null)?.location() ?: cobblemonResource("empty_bait")
@@ -233,7 +234,7 @@ class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodI
             user.awardStat(Stats.ITEM_USED.get(this))
             user.gameEvent(GameEvent.ITEM_INTERACT_START)
         }
-        return InteractionResultHolder.sidedSuccess(itemStack, world.isClientSide)
+        return ItemUseResults.sidedSuccess(itemStack, world.isClientSide)
     }
 
     override fun getEnchantmentValue(): Int {

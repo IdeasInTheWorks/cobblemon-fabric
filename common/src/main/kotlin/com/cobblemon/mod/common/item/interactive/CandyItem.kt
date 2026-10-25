@@ -17,7 +17,8 @@ import com.cobblemon.mod.common.item.CobblemonItem
 import com.cobblemon.mod.common.pokemon.Pokemon
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Rarity
@@ -41,14 +42,14 @@ class CandyItem(registrationProperties: net.minecraft.world.item.Item.Properties
 
     override val bagItem = null
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         if (user is ServerPlayer) {
             return use(user, user.getItemInHand(hand))
         }
-        return InteractionResultHolder.success(user.getItemInHand(hand))
+        return ItemUseResults.success(user.getItemInHand(hand))
     }
 
-    override fun applyToPokemon(player: ServerPlayer, stack: ItemStack, pokemon: Pokemon): InteractionResultHolder<ItemStack>? {
+    override fun applyToPokemon(player: ServerPlayer, stack: ItemStack, pokemon: Pokemon): InteractionResult? {
         val experience = this.calculator.calculate(player, pokemon)
         CobblemonEvents.EXPERIENCE_CANDY_USE_PRE.postThen(
                 event = ExperienceCandyUseEvent.Pre(player, pokemon, this, experience, experience),
@@ -66,12 +67,12 @@ class CandyItem(registrationProperties: net.minecraft.world.item.Item.Properties
                     CobblemonEvents.EXPERIENCE_CANDY_USE_POST.post(ExperienceCandyUseEvent.Post(player, pokemon, this, result))
 
                     return if (returnValue)
-                        InteractionResultHolder.success(stack)
+                        ItemUseResults.success(stack)
                     else
-                        InteractionResultHolder.fail(stack)
+                        ItemUseResults.fail(stack)
                 }
         )
-        return InteractionResultHolder.fail(stack)
+        return ItemUseResults.fail(stack)
     }
 
     override fun canUseOnPokemon(stack: ItemStack, pokemon: Pokemon): Boolean {

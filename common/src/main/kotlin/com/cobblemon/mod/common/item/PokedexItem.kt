@@ -17,18 +17,19 @@ import com.cobblemon.mod.common.util.traceFirstEntityCollision
 import net.minecraft.client.player.LocalPlayer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.item.UseAnim
+import net.minecraft.world.item.ItemUseAnimation
 import net.minecraft.world.level.Level
 import net.minecraft.world.phys.AABB
 
 class PokedexItem(registrationProperties: net.minecraft.world.item.Item.Properties, val type: PokedexType): CobblemonItem(registrationProperties.stacksTo(1)) {
 
-    override fun getUseAnimation(itemStack: ItemStack): UseAnim? = UseAnim.TOOT_HORN
+    override fun getUseAnimation(itemStack: ItemStack): ItemUseAnimation? = ItemUseAnimation.TOOT_HORN
 
     override fun getUseDuration(stack: ItemStack, user: LivingEntity): Int = 72000
 
@@ -36,7 +37,7 @@ class PokedexItem(registrationProperties: net.minecraft.world.item.Item.Properti
         world: Level,
         player: Player,
         usedHand: InteractionHand
-    ): InteractionResultHolder<ItemStack> {
+    ): InteractionResult {
         val itemStack = player.getItemInHand(usedHand)
 
         if (player.isCrouching) {
@@ -47,17 +48,17 @@ class PokedexItem(registrationProperties: net.minecraft.world.item.Item.Properti
 
             // If the player is looking at a Pokémon within range, block Pokedex usage
             if (hitPokemon != null && hitPokemon.isOwnedBy(player)) {
-                return InteractionResultHolder.pass(itemStack)
+                return ItemUseResults.pass(itemStack)
             }
         }
 
         if (world.isClientSide && player is LocalPlayer) {
             CobblemonClient.pokedexUsageContext.type = type
         }
-        if (player !is ServerPlayer) return InteractionResultHolder.consume(itemStack)
+        if (player !is ServerPlayer) return ItemUseResults.consume(itemStack)
         //Disables breaking blocks and damaging entities
         player.startUsingItem(usedHand)
-        return InteractionResultHolder.fail(itemStack)
+        return ItemUseResults.fail(itemStack)
     }
 
     override fun onUseTick(

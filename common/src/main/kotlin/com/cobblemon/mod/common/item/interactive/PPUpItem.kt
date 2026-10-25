@@ -17,7 +17,8 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.Rarity
@@ -48,10 +49,10 @@ class PPUpItem(registrationProperties: net.minecraft.world.item.Item.Properties,
         }
     }
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         if (user is ServerPlayer) {
             use(user, user.getItemInHand(hand))?.let { return it }
         }
-        return InteractionResultHolder.success(user.getItemInHand(hand))
+        return ItemUseResults.success(user.getItemInHand(hand))
     }
 }

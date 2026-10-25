@@ -10,7 +10,7 @@ package com.cobblemon.mod.common.item
 
 import com.cobblemon.mod.common.block.VivichokeBlock
 import net.minecraft.world.InteractionResult
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.BlockItem
@@ -21,10 +21,10 @@ import net.minecraft.world.level.ClipContext
 import net.minecraft.world.level.Level
 
 class VivichokeItem(registrationProperties: net.minecraft.world.item.Item.Properties, block: VivichokeBlock) : BlockItem(block, registrationProperties.useItemDescriptionPrefix()) {
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         val blockHitResult = PlaceOnWaterBlockItem.getPlayerPOVHitResult(world, user, ClipContext.Fluid.SOURCE_ONLY)
         val blockHitResult2 = blockHitResult.withPosition(blockHitResult.blockPos.above())
         val actionResult: InteractionResult = super.useOn(UseOnContext(user, hand, blockHitResult2))
-        return InteractionResultHolder(actionResult, user.getItemInHand(hand))
+        return ItemUseResults.withStack(actionResult, user.getItemInHand(hand))
     }
 }

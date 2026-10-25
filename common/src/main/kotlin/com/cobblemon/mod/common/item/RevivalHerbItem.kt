@@ -29,7 +29,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
@@ -53,14 +53,14 @@ class RevivalHerbItem(registrationProperties: net.minecraft.world.item.Item.Prop
         }
     }
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         if (user is ServerPlayer) {
             val result = use(user, user.getItemInHand(hand))
-            if (result.result != InteractionResult.PASS) {
+            if (result != InteractionResult.PASS) {
                 return result
             }
         }
-        return InteractionResultHolder.success(user.getItemInHand(hand))
+        return ItemUseResults.success(user.getItemInHand(hand))
     }
 
     override fun canUseOnPokemon(stack: ItemStack, pokemon: Pokemon) = pokemon.isFainted()
@@ -68,10 +68,10 @@ class RevivalHerbItem(registrationProperties: net.minecraft.world.item.Item.Prop
         player: ServerPlayer,
         stack: ItemStack,
         pokemon: Pokemon
-    ): InteractionResultHolder<ItemStack>? {
+    ): InteractionResult? {
         return if (pokemon.isFainted()) {
             var amount = ceil(pokemon.maxHealth / 4F).toInt()
-            CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->
+            CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return ItemUseResults.fail(stack)}) { event ->
                 amount = event.amount
             }
             pokemon.entity?.playSound(CobblemonSounds.MEDICINE_HERB_USE, 1F, 1F)
@@ -79,9 +79,9 @@ class RevivalHerbItem(registrationProperties: net.minecraft.world.item.Item.Prop
             pokemon.currentHealth = amount
             pokemon.decrementFriendship(CobblemonMechanics.remedies.getFriendshipDrop("revival_herb", runtime))
             stack.consume(1, player)
-            InteractionResultHolder.success(stack)
+            ItemUseResults.success(stack)
         } else {
-            InteractionResultHolder.pass(stack)
+            ItemUseResults.pass(stack)
         }
     }
 

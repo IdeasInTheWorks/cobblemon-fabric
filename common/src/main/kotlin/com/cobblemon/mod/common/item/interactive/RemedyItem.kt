@@ -25,7 +25,8 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import com.cobblemon.mod.common.util.ItemUseResults
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
 
@@ -52,19 +53,19 @@ class RemedyItem(registrationProperties: net.minecraft.world.item.Item.Propertie
         player: ServerPlayer,
         stack: ItemStack,
         pokemon: Pokemon
-    ): InteractionResultHolder<ItemStack> {
+    ): InteractionResult {
         return if (!pokemon.isFullHealth() && pokemon.currentHealth > 0) {
             var amount = CobblemonMechanics.remedies.getHealingAmount(remedyStrength, runtime, 20)
-            CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return InteractionResultHolder.fail(stack)}) { event ->
+            CobblemonEvents.POKEMON_HEALED.postThen(PokemonHealedEvent(pokemon, amount, this), { cancelledEvent -> return ItemUseResults.fail(stack)}) { event ->
                 amount = event.amount
             }
             pokemon.currentHealth += amount
             pokemon.entity?.playSound(CobblemonSounds.MEDICINE_HERB_USE, 1F, 1F)
             pokemon.decrementFriendship(CobblemonMechanics.remedies.getFriendshipDrop(remedyStrength, runtime))
             stack.consume(1, player)
-            InteractionResultHolder.success(stack)
+            ItemUseResults.success(stack)
         } else {
-            InteractionResultHolder.fail(stack)
+            ItemUseResults.fail(stack)
         }
     }
 
@@ -73,10 +74,10 @@ class RemedyItem(registrationProperties: net.minecraft.world.item.Item.Propertie
         battlePokemon.entity?.playSound(CobblemonSounds.MEDICINE_HERB_USE, 1F, 1F)
     }
 
-    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+    override fun use(world: Level, user: Player, hand: InteractionHand): InteractionResult {
         if (user is ServerPlayer) {
             return use(user, user.getItemInHand(hand))
         }
-        return InteractionResultHolder.success(user.getItemInHand(hand))
+        return ItemUseResults.success(user.getItemInHand(hand))
     }
 }
