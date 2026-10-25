@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 51,
+  "generation": 52,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -275,12 +275,13 @@
       "lease_id": "c1f25346-a850-47ef-8fd7-efdf3bb480fc",
       "operation_id": "c1f25346-a850-47ef-8fd7-efdf3bb480fc",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-25T14:15:42Z",
       "heartbeat_at": "2026-10-25T14:52:16Z",
       "expires_at": "2026-10-25T16:22:16Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "34bce10c4fb6aade08fe406d9b946c698df24013; S10 partial model/baking source and logs preserved;1559 core+12 Fabric/810 legacy cases/20 tooling pass;compile4845/558 and AW47 fail;next R023 native render submission and special renderer;porting/RESUME.md;same native Sheet",
+      "closed_at": "2026-10-25T14:53:18Z"
     }
   },
   "events": [
@@ -793,6 +794,16 @@
       "lease_id": "c1f25346-a850-47ef-8fd7-efdf3bb480fc",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 52,
+      "at": "2026-10-25T14:53:18Z",
+      "kind": "release",
+      "work_id": "S10-R022-R023",
+      "owner": "codex-sprint10-01a16f8a",
+      "lease_id": "c1f25346-a850-47ef-8fd7-efdf3bb480fc",
+      "epoch": 1,
+      "checkpoint": "34bce10c4fb6aade08fe406d9b946c698df24013; S10 partial model/baking source and logs preserved;1559 core+12 Fabric/810 legacy cases/20 tooling pass;compile4845/558 and AW47 fail;next R023 native render submission and special renderer;porting/RESUME.md;same native Sheet"
     }
   ]
 }
