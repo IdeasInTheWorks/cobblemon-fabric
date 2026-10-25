@@ -44,7 +44,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.gameevent.GameEvent
 import net.minecraft.world.phys.Vec3
 
-class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodItem(settings) {
+class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodItem(settings.enchantable(1).overrideDescription("item.cobblemon.poke_rod")) {
 
     companion object {
         fun getBaitStackOnRod(stack: ItemStack): ItemStack {
@@ -165,7 +165,7 @@ class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodI
                 val baitStack = getBaitStackOnRod(itemStack)
 
                 if (baitStack != ItemStack.EMPTY && offHandItem.item != baitStack.item) {
-                    user.drop(baitStack, true) // Drop the full stack
+                    user.drop(baitStack, true, net.minecraft.util.Prediction.SERVER_ONLY) // Drop the full stack
 
                     // apply single bait item from offhand
                     val singleBait = offHandItem.copy()
@@ -221,7 +221,7 @@ class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodI
                     { event -> return ItemUseResults.fail(itemStack) },
                     { event ->
                         world.addFreshEntity(bobberEntity)
-                        var baitId = getBaitStackOnRod(itemStack).takeUnless { it.isEmpty }?.itemHolder?.unwrapKey()?.orElse(null)?.location() ?: cobblemonResource("empty_bait")
+                        var baitId = getBaitStackOnRod(itemStack).takeUnless { it.isEmpty }?.typeHolder()?.unwrapKey()?.orElse(null)?.identifier() ?: cobblemonResource("empty_bait")
                         CobblemonCriteria.CAST_POKE_ROD.trigger(user as ServerPlayer, CastPokeRodContext(baitId))
 
                         CobblemonEvents.POKEROD_CAST_POST.post(
@@ -235,14 +235,6 @@ class PokerodItem(val pokeRodId: Identifier, settings: Properties) : FishingRodI
             user.gameEvent(GameEvent.ITEM_INTERACT_START)
         }
         return ItemUseResults.sidedSuccess(itemStack, world.isClientSide)
-    }
-
-    override fun getEnchantmentValue(): Int {
-        return 1
-    }
-
-    override fun getDescriptionId(): String {
-        return "item.cobblemon.poke_rod"
     }
 
     private fun playAttachSound(entity: Entity) {

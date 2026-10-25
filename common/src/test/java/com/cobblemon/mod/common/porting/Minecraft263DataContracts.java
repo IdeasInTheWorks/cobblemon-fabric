@@ -647,6 +647,7 @@ final class Minecraft263DataContracts {
             check(decodedParticle.getItem().create().get(net.minecraft.core.component.DataComponents.CUSTOM_NAME).getString().equals("held particle"), "held-item particle codec retains custom components");
             check(!particleBuffer.isReadable(), "held-item particle frame consumes its complete payload");
         } finally { particleBuffer.release(); }
+        checks += Minecraft263VehicleContracts.run(vanilla);
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }

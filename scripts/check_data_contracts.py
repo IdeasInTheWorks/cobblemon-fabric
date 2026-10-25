@@ -37,7 +37,9 @@ def main():
     out = root / "build/data-contracts"
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
-    sources = [root / "common/src/main/java/com/cobblemon/mod/common/util/HiveOccupants.java",
+    sources = [root / "common/src/main/java/com/cobblemon/mod/common/entity/boat/BoatDropItem.java",
+               root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263VehicleContracts.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/util/HiveOccupants.java",
                root / "common/src/main/java/com/cobblemon/mod/common/entity/ai/LegacyRandomPos.java",
                root / "common/src/main/java/com/cobblemon/mod/common/entity/ai/LegacyEntityQueries.java",
                root / "common/src/main/java/com/cobblemon/mod/common/util/LegacyMovement.java",
