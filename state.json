@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 41,
+  "generation": 42,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -226,6 +226,33 @@
       "minutes": 90,
       "checkpoint": "7288e261932b0271530804bd4e9c3c4852be08a0; S08 partial AI/hive source and all logs preserved;352 focused/810 legacy cases/20 tool tests pass;compile5880/895 and AW49 fail;next R021/R015; porting/RESUME.md; same native Sheet",
       "closed_at": "2026-10-25T12:37:09Z"
+    },
+    "S09-R021": {
+      "work_id": "S09-R021",
+      "owner": "codex-sprint09-01a16f8a",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "README.md",
+        "common/src",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "c0034cd5-19fe-413b-95c2-009b98fc0cbd",
+      "operation_id": "c0034cd5-19fe-413b-95c2-009b98fc0cbd",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-25T13:26:18Z",
+      "heartbeat_at": "2026-10-25T13:26:18Z",
+      "expires_at": "2026-10-25T14:56:18Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -638,6 +665,16 @@
       "lease_id": "278f6ba6-1cab-468a-a89b-4a3174b01072",
       "epoch": 1,
       "checkpoint": "7288e261932b0271530804bd4e9c3c4852be08a0; S08 partial AI/hive source and all logs preserved;352 focused/810 legacy cases/20 tool tests pass;compile5880/895 and AW49 fail;next R021/R015; porting/RESUME.md; same native Sheet"
+    },
+    {
+      "generation": 42,
+      "at": "2026-10-25T13:26:18Z",
+      "kind": "acquire",
+      "work_id": "S09-R021",
+      "owner": "codex-sprint09-01a16f8a",
+      "lease_id": "c0034cd5-19fe-413b-95c2-009b98fc0cbd",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
