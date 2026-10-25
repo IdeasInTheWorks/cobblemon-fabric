@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 22,
+  "generation": 23,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -141,6 +141,33 @@
       "minutes": 90,
       "checkpoint": "809c272c97830e8633d15296265998696a363e99 pushed and verified; 127 focused checks and 20 tooling tests pass; local compile6420/959, AW54 fails, common headers pass; R014/R019/R020 original acceptance open; no game/JAR. See porting/RESUME.md and same Sheet for remaining scopes, estimates and actual CI.",
       "closed_at": "2026-10-25T00:10:54Z"
+    },
+    "S06-R019-R020": {
+      "work_id": "S06-R019-R020",
+      "owner": "codex-sprint06-01a16f8a",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "README.md",
+        "common/src",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "ae6ea849-6414-4550-a964-9c39a8ae0caf",
+      "operation_id": "ae6ea849-6414-4550-a964-9c39a8ae0caf",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-25T00:17:10Z",
+      "heartbeat_at": "2026-10-25T00:17:10Z",
+      "expires_at": "2026-10-25T01:47:10Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -363,6 +390,16 @@
       "lease_id": "0172c24e-ff85-4166-a4db-72e6779e3d36",
       "epoch": 1,
       "checkpoint": "809c272c97830e8633d15296265998696a363e99 pushed and verified; 127 focused checks and 20 tooling tests pass; local compile6420/959, AW54 fails, common headers pass; R014/R019/R020 original acceptance open; no game/JAR. See porting/RESUME.md and same Sheet for remaining scopes, estimates and actual CI."
+    },
+    {
+      "generation": 23,
+      "at": "2026-10-25T00:17:10Z",
+      "kind": "acquire",
+      "work_id": "S06-R019-R020",
+      "owner": "codex-sprint06-01a16f8a",
+      "lease_id": "ae6ea849-6414-4550-a964-9c39a8ae0caf",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
