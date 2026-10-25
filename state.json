@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 40,
+  "generation": 41,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -219,12 +219,13 @@
       "lease_id": "278f6ba6-1cab-468a-a89b-4a3174b01072",
       "operation_id": "278f6ba6-1cab-468a-a89b-4a3174b01072",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-25T11:48:47Z",
       "heartbeat_at": "2026-10-25T12:36:01Z",
       "expires_at": "2026-10-25T14:06:01Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "7288e261932b0271530804bd4e9c3c4852be08a0; S08 partial AI/hive source and all logs preserved;352 focused/810 legacy cases/20 tool tests pass;compile5880/895 and AW49 fail;next R021/R015; porting/RESUME.md; same native Sheet",
+      "closed_at": "2026-10-25T12:37:09Z"
     }
   },
   "events": [
@@ -627,6 +628,16 @@
       "lease_id": "278f6ba6-1cab-468a-a89b-4a3174b01072",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 41,
+      "at": "2026-10-25T12:37:09Z",
+      "kind": "release",
+      "work_id": "S08-R019-R020",
+      "owner": "codex-sprint08-01a16f8a",
+      "lease_id": "278f6ba6-1cab-468a-a89b-4a3174b01072",
+      "epoch": 1,
+      "checkpoint": "7288e261932b0271530804bd4e9c3c4852be08a0; S08 partial AI/hive source and all logs preserved;352 focused/810 legacy cases/20 tool tests pass;compile5880/895 and AW49 fail;next R021/R015; porting/RESUME.md; same native Sheet"
     }
   ]
 }
