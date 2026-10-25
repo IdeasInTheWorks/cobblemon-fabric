@@ -1,0 +1,25 @@
+test_complete_structural_fixture (test_validate_jar.PackageValidationTests.test_complete_structural_fixture) ... ok
+test_missing_asset_licence_is_rejected (test_validate_jar.PackageValidationTests.test_missing_asset_licence_is_rejected) ... ok
+test_missing_battle_engine_is_rejected (test_validate_jar.PackageValidationTests.test_missing_battle_engine_is_rejected) ... ok
+test_missing_runtime_dependency_is_rejected (test_validate_jar.PackageValidationTests.test_missing_runtime_dependency_is_rejected) ... ok
+test_unsupported_classfile_is_rejected (test_validate_jar.PackageValidationTests.test_unsupported_classfile_is_rejected) ... ok
+test_wrong_minecraft_is_rejected (test_validate_jar.PackageValidationTests.test_wrong_minecraft_is_rejected) ... ok
+test_close_requires_checkpoint (test_work_claims.WorkClaimsTests.test_close_requires_checkpoint) ... ok
+test_closed_claim_is_not_valid_for_push (test_work_claims.WorkClaimsTests.test_closed_claim_is_not_valid_for_push) ... ok
+test_disjoint_paths_and_resources_can_run_concurrently (test_work_claims.WorkClaimsTests.test_disjoint_paths_and_resources_can_run_concurrently) ... ok
+test_expired_lease_cannot_heartbeat (test_work_claims.WorkClaimsTests.test_expired_lease_cannot_heartbeat) ... ok
+test_expiry_takeover_fences_old_holder (test_work_claims.WorkClaimsTests.test_expiry_takeover_fences_old_holder) ... ok
+test_idempotent_acquire_and_input_state_not_mutated (test_work_claims.WorkClaimsTests.test_idempotent_acquire_and_input_state_not_mutated) ... ok
+test_parent_child_scope_collision (test_work_claims.WorkClaimsTests.test_parent_child_scope_collision) ... ok
+test_path_prefix_without_separator_does_not_collide (test_work_claims.WorkClaimsTests.test_path_prefix_without_separator_does_not_collide) ... ok
+test_public_lease_id_does_not_transfer_ownership (test_work_claims.WorkClaimsTests.test_public_lease_id_does_not_transfer_ownership) ... ok
+test_push_outside_scope_is_rejected (test_work_claims.WorkClaimsTests.test_push_outside_scope_is_rejected) ... ok
+test_reject_traversal_and_absolute_scopes (test_work_claims.WorkClaimsTests.test_reject_traversal_and_absolute_scopes) ... ok
+test_replayed_expired_operation_cannot_reuse_fencing_id (test_work_claims.WorkClaimsTests.test_replayed_expired_operation_cannot_reuse_fencing_id) ... ok
+test_shared_branch_requires_integration_lease (test_work_claims.WorkClaimsTests.test_shared_branch_requires_integration_lease) ... ok
+test_wrong_branch_or_owner_is_rejected (test_work_claims.WorkClaimsTests.test_wrong_branch_or_owner_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.045s
+
+OK

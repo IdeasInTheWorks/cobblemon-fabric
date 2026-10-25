@@ -1,0 +1,671 @@
+S08 native contracts; javap -p -c against official checksum-verified clients.
+Target26.3 SHA1 e877b6a07acd633fb3bb475002175cec036e7b87
+Legacy1.21.1 SHA1 30c73b1c5da787909b2f73340419fdf13b9def88
+Actual old and target random implementations compared in Minecraft121RandomContracts (810 cases/1620 checks); no game launch.
+
+SOURCE build/s08-contract-bytecode.txt
+  public boolean isBrightOutside();
+    Code:
+         0: aload_0
+         1: invokevirtual #366                // Method dimensionType:()Lnet/minecraft/world/level/dimension/DimensionType;
+         4: invokevirtual #370                // Method net/minecraft/world/level/dimension/DimensionType.hasFixedTime:()Z
+         7: ifne          22
+        10: aload_0
+        11: getfield      #375                // Field skyDarken:I
+        14: iconst_4
+        15: if_icmpge     22
+        18: iconst_1
+        19: goto          23
+        22: iconst_0
+        23: ireturn
+
+  public boolean isDarkOutside();
+    Code:
+         0: aload_0
+         1: invokevirtual #366                // Method dimensionType:()Lnet/minecraft/world/level/dimension/DimensionType;
+         4: invokevirtual #370                // Method net/minecraft/world/level/dimension/DimensionType.hasFixedTime:()Z
+         7: ifne          21
+        10: aload_0
+        11: invokevirtual #378                // Method isBrightOutside:()Z
+        14: ifne          21
+        17: iconst_1
+        18: goto          22
+        21: iconst_0
+        22: ireturn
+
+  public long getOverworldClockTime();
+    Code:
+         0: aload_0
+         1: aload_0
+         2: invokevirtual #775                // Method registryAccess:()Lnet/minecraft/core/RegistryAccess;
+         5: getstatic     #778                // Field net/minecraft/world/clock/WorldClocks.OVERWORLD:Lnet/minecraft/resources/ResourceKey;
+         8: invokeinterface #783,  2          // InterfaceMethod net/minecraft/core/RegistryAccess.get:(Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;
+        13: invokevirtual #788                // Method getClockTimeTicks:(Ljava/util/Optional;)J
+        16: lreturn
+
+  public static net.minecraft.core.BlockPos generateRandomDirectionWithinRadians(net.minecraft.util.RandomSource, double, double, int, int, double, double, double);
+    Code:
+         0: dload         9
+         2: dload         7
+         4: invokestatic  #18                 // Method net/minecraft/util/Mth.atan2:(DD)D
+         7: ldc2_w        #24                 // double 1.5707963705062866d
+        10: dsub
+        11: dstore        13
+        13: dload         13
+        15: fconst_2
+        16: aload_0
+        17: invokeinterface #26,  1           // InterfaceMethod net/minecraft/util/RandomSource.nextFloat:()F
+        22: fmul
+        23: fconst_1
+        24: fsub
+        25: f2d
+        26: dload         11
+        28: dmul
+        29: dadd
+        30: dstore        15
+        32: aload_0
+        33: invokeinterface #30,  1           // InterfaceMethod net/minecraft/util/RandomSource.nextDouble:()D
+        38: invokestatic  #34                 // Method java/lang/Math.sqrt:(D)D
+        41: dload_1
+        42: dload_3
+        43: invokestatic  #40                 // Method net/minecraft/util/Mth.lerp:(DDD)D
+        46: getstatic     #44                 // Field net/minecraft/util/Mth.SQRT_OF_TWO:F
+        49: f2d
+        50: dmul
+        51: dstore        17
+        53: dload         17
+        55: dneg
+        56: dload         15
+        58: invokestatic  #48                 // Method java/lang/Math.sin:(D)D
+        61: dmul
+        62: dstore        19
+        64: dload         17
+        66: dload         15
+        68: invokestatic  #51                 // Method java/lang/Math.cos:(D)D
+        71: dmul
+        72: dstore        21
+        74: dload         19
+        76: invokestatic  #54                 // Method java/lang/Math.abs:(D)D
+        79: dload_3
+        80: dcmpl
+        81: ifgt          94
+        84: dload         21
+        86: invokestatic  #54                 // Method java/lang/Math.abs:(D)D
+        89: dload_3
+        90: dcmpl
+        91: ifle          96
+        94: aconst_null
+        95: areturn
+        96: aload_0
+        97: iconst_2
+        98: iload         5
+       100: imul
+       101: iconst_1
+       102: iadd
+       103: invokeinterface #7,  2            // InterfaceMethod net/minecraft/util/RandomSource.nextInt:(I)I
+       108: iload         5
+       110: isub
+       111: iload         6
+       113: iadd
+       114: istore        23
+       116: dload         19
+       118: iload         23
+       120: i2d
+       121: dload         21
+       123: invokestatic  #57                 // Method net/minecraft/core/BlockPos.containing:(DDD)Lnet/minecraft/core/BlockPos;
+       126: areturn
+
+
+SOURCE build/s08-brain-bytecode.txt
+  public void updateActivityFromSchedule(net.minecraft.world.attribute.EnvironmentAttributeSystem, long, net.minecraft.world.phys.Vec3);
+    Code:
+         0: lload_2
+         1: aload_0
+         2: getfield      #78                 // Field lastScheduleUpdate:J
+         5: lsub
+         6: ldc2_w        #388                // long 20l
+         9: lcmp
+        10: ifle          66
+        13: aload_0
+        14: lload_2
+        15: putfield      #78                 // Field lastScheduleUpdate:J
+        18: aload_0
+        19: getfield      #335                // Field schedule:Lnet/minecraft/world/attribute/EnvironmentAttribute;
+        22: ifnull        41
+        25: aload_1
+        26: aload_0
+        27: getfield      #335                // Field schedule:Lnet/minecraft/world/attribute/EnvironmentAttribute;
+        30: aload         4
+        32: invokevirtual #390                // Method net/minecraft/world/attribute/EnvironmentAttributeSystem.getValue:(Lnet/minecraft/world/attribute/EnvironmentAttribute;Lnet/minecraft/world/phys/Vec3;)Ljava/lang/Object;
+        35: checkcast     #68                 // class net/minecraft/world/entity/schedule/Activity
+        38: goto          44
+        41: getstatic     #67                 // Field net/minecraft/world/entity/schedule/Activity.IDLE:Lnet/minecraft/world/entity/schedule/Activity;
+        44: astore        5
+        46: aload_0
+        47: getfield      #64                 // Field activeActivities:Ljava/util/Set;
+        50: aload         5
+        52: invokeinterface #361,  2          // InterfaceMethod java/util/Set.contains:(Ljava/lang/Object;)Z
+        57: ifne          66
+        60: aload_0
+        61: aload         5
+        63: invokevirtual #396                // Method setActiveActivityIfPossible:(Lnet/minecraft/world/entity/schedule/Activity;)V
+        66: return
+
+
+SOURCE build/s08-hive-bytecode.txt
+  public void addOccupant(net.minecraft.world.entity.animal.bee.Bee);
+    Code:
+         0: aload_0
+         1: getfield      #21                 // Field stored:Ljava/util/List;
+         4: invokeinterface #91,  1           // InterfaceMethod java/util/List.size:()I
+         9: iconst_3
+        10: if_icmplt     14
+        13: return
+        14: aload_1
+        15: invokevirtual #172                // Method net/minecraft/world/entity/animal/bee/Bee.stopRiding:()V
+        18: aload_1
+        19: invokevirtual #175                // Method net/minecraft/world/entity/animal/bee/Bee.ejectPassengers:()V
+        22: aload_1
+        23: invokevirtual #178                // Method net/minecraft/world/entity/animal/bee/Bee.dropLeash:()V
+        26: aload_0
+        27: aload_1
+        28: invokestatic  #181                // Method net/minecraft/world/level/block/entity/BeehiveBlockEntity$Occupant.of:(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity$Occupant;
+        31: invokevirtual #187                // Method storeBee:(Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity$Occupant;)V
+        34: aload_0
+        35: getfield      #31                 // Field level:Lnet/minecraft/world/level/Level;
+        38: ifnull        133
+        41: aload_1
+        42: invokevirtual #191                // Method net/minecraft/world/entity/animal/bee/Bee.hasSavedFlowerPos:()Z
+        45: ifeq          78
+        48: aload_0
+        49: invokevirtual #194                // Method hasSavedFlowerPos:()Z
+        52: ifeq          70
+        55: aload_0
+        56: getfield      #31                 // Field level:Lnet/minecraft/world/level/Level;
+        59: invokevirtual #195                // Method net/minecraft/world/level/Level.getRandom:()Lnet/minecraft/util/RandomSource;
+        62: invokeinterface #199,  1          // InterfaceMethod net/minecraft/util/RandomSource.nextBoolean:()Z
+        67: ifeq          78
+        70: aload_0
+        71: aload_1
+        72: invokevirtual #204                // Method net/minecraft/world/entity/animal/bee/Bee.getSavedFlowerPos:()Lnet/minecraft/core/BlockPos;
+        75: putfield      #207                // Field savedFlowerPos:Lnet/minecraft/core/BlockPos;
+        78: aload_0
+        79: invokevirtual #35                 // Method getBlockPos:()Lnet/minecraft/core/BlockPos;
+        82: astore_2
+        83: aload_0
+        84: getfield      #31                 // Field level:Lnet/minecraft/world/level/Level;
+        87: aconst_null
+        88: aload_2
+        89: invokevirtual #210                // Method net/minecraft/core/BlockPos.getX:()I
+        92: i2d
+        93: aload_2
+        94: invokevirtual #213                // Method net/minecraft/core/BlockPos.getY:()I
+        97: i2d
+        98: aload_2
+        99: invokevirtual #216                // Method net/minecraft/core/BlockPos.getZ:()I
+       102: i2d
+       103: getstatic     #219                // Field net/minecraft/sounds/SoundEvents.BEEHIVE_ENTER:Lnet/minecraft/sounds/SoundEvent;
+       106: getstatic     #225                // Field net/minecraft/sounds/SoundSource.BLOCKS:Lnet/minecraft/sounds/SoundSource;
+       109: fconst_1
+       110: fconst_1
+       111: invokevirtual #231                // Method net/minecraft/world/level/Level.playSound:(Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
+       114: aload_0
+       115: getfield      #31                 // Field level:Lnet/minecraft/world/level/Level;
+       118: getstatic     #235                // Field net/minecraft/world/level/gameevent/GameEvent.BLOCK_CHANGE:Lnet/minecraft/core/Holder$Reference;
+       121: aload_2
+       122: aload_1
+       123: aload_0
+       124: invokevirtual #241                // Method getBlockState:()Lnet/minecraft/world/level/block/state/BlockState;
+       127: invokestatic  #244                // Method net/minecraft/world/level/gameevent/GameEvent$Context.of:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/gameevent/GameEvent$Context;
+       130: invokevirtual #249                // Method net/minecraft/world/level/Level.gameEvent:(Lnet/minecraft/core/Holder;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/gameevent/GameEvent$Context;)V
+       133: aload_1
+       134: invokevirtual #253                // Method net/minecraft/world/entity/animal/bee/Bee.discard:()V
+       137: aload_0
+       138: invokespecial #55                 // Method net/minecraft/world/level/block/entity/BlockEntity.setChanged:()V
+       141: return
+
+  public void storeBee(net.minecraft.world.level.block.entity.BeehiveBlockEntity$Occupant);
+    Code:
+         0: aload_0
+         1: getfield      #21                 // Field stored:Ljava/util/List;
+         4: new           #256                // class net/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeData
+         7: dup
+         8: aload_1
+         9: invokespecial #258                // Method net/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeData."<init>":(Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity$Occupant;)V
+        12: invokeinterface #260,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+        17: pop
+        18: return
+
+  private static boolean releaseOccupant(net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.entity.BeehiveBlockEntity$Occupant, java.util.List<net.minecraft.world.entity.Entity>, net.minecraft.world.level.block.entity.BeehiveBlockEntity$BeeReleaseStatus, net.minecraft.core.BlockPos);
+    Code:
+         0: aload_0
+         1: invokevirtual #264                // Method net/minecraft/world/level/Level.environmentAttributes:()Lnet/minecraft/world/attribute/EnvironmentAttributeSystem;
+         4: getstatic     #268                // Field net/minecraft/world/attribute/EnvironmentAttributes.BEES_STAY_IN_HIVE:Lnet/minecraft/world/attribute/EnvironmentAttribute;
+         7: aload_1
+         8: invokevirtual #274                // Method net/minecraft/world/attribute/EnvironmentAttributeSystem.getValue:(Lnet/minecraft/world/attribute/EnvironmentAttribute;Lnet/minecraft/core/BlockPos;)Ljava/lang/Object;
+        11: checkcast     #279                // class java/lang/Boolean
+        14: invokevirtual #281                // Method java/lang/Boolean.booleanValue:()Z
+        17: ifeq          30
+        20: aload         5
+        22: getstatic     #45                 // Field net/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeReleaseStatus.EMERGENCY:Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeReleaseStatus;
+        25: if_acmpeq     30
+        28: iconst_0
+        29: ireturn
+        30: aload_2
+        31: getstatic     #284                // Field net/minecraft/world/level/block/BeehiveBlock.FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+        34: invokevirtual #155                // Method net/minecraft/world/level/block/state/BlockState.getValue:(Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Comparable;
+        37: checkcast     #288                // class net/minecraft/core/Direction
+        40: astore        7
+        42: aload_1
+        43: aload         7
+        45: invokevirtual #290                // Method net/minecraft/core/BlockPos.relative:(Lnet/minecraft/core/Direction;)Lnet/minecraft/core/BlockPos;
+        48: astore        8
+        50: aload_0
+        51: aload         8
+        53: invokevirtual #39                 // Method net/minecraft/world/level/Level.getBlockState:(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+        56: aload_0
+        57: aload         8
+        59: invokevirtual #294                // Method net/minecraft/world/level/block/state/BlockState.getCollisionShape:(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/phys/shapes/VoxelShape;
+        62: invokevirtual #298                // Method net/minecraft/world/phys/shapes/VoxelShape.isEmpty:()Z
+        65: ifne          72
+        68: iconst_1
+        69: goto          73
+        72: iconst_0
+        73: istore        9
+        75: iload         9
+        77: ifeq          90
+        80: aload         5
+        82: getstatic     #45                 // Field net/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeReleaseStatus.EMERGENCY:Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeReleaseStatus;
+        85: if_acmpeq     90
+        88: iconst_0
+        89: ireturn
+        90: aload_3
+        91: aload_0
+        92: aload_1
+        93: invokevirtual #301                // Method net/minecraft/world/level/block/entity/BeehiveBlockEntity$Occupant.createEntity:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/entity/Entity;
+        96: astore        10
+        98: aload         10
+       100: ifnull        417
+       103: aload         10
+       105: instanceof    #114                // class net/minecraft/world/entity/animal/bee/Bee
+       108: ifeq          378
+       111: aload         10
+       113: checkcast     #114                // class net/minecraft/world/entity/animal/bee/Bee
+       116: astore        11
+       118: aload_0
+       119: invokevirtual #195                // Method net/minecraft/world/level/Level.getRandom:()Lnet/minecraft/util/RandomSource;
+       122: astore        12
+       124: aload         6
+       126: ifnull        158
+       129: aload         11
+       131: invokevirtual #191                // Method net/minecraft/world/entity/animal/bee/Bee.hasSavedFlowerPos:()Z
+       134: ifne          158
+       137: aload         12
+       139: invokeinterface #305,  1          // InterfaceMethod net/minecraft/util/RandomSource.nextFloat:()F
+       144: ldc_w         #309                // float 0.9f
+       147: fcmpg
+       148: ifge          158
+       151: aload         11
+       153: aload         6
+       155: invokevirtual #310                // Method net/minecraft/world/entity/animal/bee/Bee.setSavedFlowerPos:(Lnet/minecraft/core/BlockPos;)V
+       158: aload         5
+       160: getstatic     #314                // Field net/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeReleaseStatus.HONEY_DELIVERED:Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeReleaseStatus;
+       163: if_acmpne     253
+       166: aload         11
+       168: invokevirtual #317                // Method net/minecraft/world/entity/animal/bee/Bee.dropOffNectar:()V
+       171: aload_2
+       172: getstatic     #320                // Field net/minecraft/tags/BlockTags.BEEHIVES:Lnet/minecraft/tags/TagKey;
+       175: invokedynamic #326,  0            // InvokeDynamic #2:test:()Ljava/util/function/Predicate;
+       180: invokevirtual #327                // Method net/minecraft/world/level/block/state/BlockState.is:(Lnet/minecraft/tags/TagKey;Ljava/util/function/Predicate;)Z
+       183: ifeq          253
+       186: aload_2
+       187: invokestatic  #331                // Method getHoneyLevel:(Lnet/minecraft/world/level/block/state/BlockState;)I
+       190: istore        13
+       192: iload         13
+       194: iconst_5
+       195: if_icmpge     253
+       198: aload         12
+       200: bipush        100
+       202: invokeinterface #335,  2          // InterfaceMethod net/minecraft/util/RandomSource.nextInt:(I)I
+       207: ifne          214
+       210: iconst_2
+       211: goto          215
+       214: iconst_1
+       215: istore        14
+       217: iload         13
+       219: iload         14
+       221: iadd
+       222: iconst_5
+       223: if_icmple     229
+       226: iinc          14, -1
+       229: aload_0
+       230: aload_1
+       231: aload_2
+       232: getstatic     #149                // Field net/minecraft/world/level/block/BeehiveBlock.HONEY_LEVEL:Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
+       235: iload         13
+       237: iload         14
+       239: iadd
+       240: invokestatic  #339                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       243: invokevirtual #343                // Method net/minecraft/world/level/block/state/BlockState.setValue:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;
+       246: checkcast     #156                // class net/minecraft/world/level/block/state/BlockState
+       249: invokevirtual #347                // Method net/minecraft/world/level/Level.setBlockAndUpdate:(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z
+       252: pop
+       253: aload         4
+       255: ifnull        268
+       258: aload         4
+       260: aload         11
+       262: invokeinterface #260,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+       267: pop
+       268: aload         10
+       270: invokevirtual #351                // Method net/minecraft/world/entity/Entity.getBbWidth:()F
+       273: fstore        13
+       275: iload         9
+       277: ifeq          284
+       280: dconst_0
+       281: goto          293
+       284: ldc2_w        #354                // double 0.55d
+       287: fload         13
+       289: fconst_2
+       290: fdiv
+       291: f2d
+       292: dadd
+       293: dstore        14
+       295: aload_1
+       296: invokevirtual #210                // Method net/minecraft/core/BlockPos.getX:()I
+       299: i2d
+       300: ldc2_w        #356                // double 0.5d
+       303: dadd
+       304: dload         14
+       306: aload         7
+       308: invokevirtual #358                // Method net/minecraft/core/Direction.getStepX:()I
+       311: i2d
+       312: dmul
+       313: dadd
+       314: dstore        16
+       316: aload_1
+       317: invokevirtual #213                // Method net/minecraft/core/BlockPos.getY:()I
+       320: i2d
+       321: ldc2_w        #356                // double 0.5d
+       324: dadd
+       325: aload         10
+       327: invokevirtual #361                // Method net/minecraft/world/entity/Entity.getBbHeight:()F
+       330: fconst_2
+       331: fdiv
+       332: f2d
+       333: dsub
+       334: dstore        18
+       336: aload_1
+       337: invokevirtual #216                // Method net/minecraft/core/BlockPos.getZ:()I
+       340: i2d
+       341: ldc2_w        #356                // double 0.5d
+       344: dadd
+       345: dload         14
+       347: aload         7
+       349: invokevirtual #364                // Method net/minecraft/core/Direction.getStepZ:()I
+       352: i2d
+       353: dmul
+       354: dadd
+       355: dstore        20
+       357: aload         10
+       359: dload         16
+       361: dload         18
+       363: dload         20
+       365: aload         10
+       367: invokevirtual #367                // Method net/minecraft/world/entity/Entity.getYRot:()F
+       370: aload         10
+       372: invokevirtual #370                // Method net/minecraft/world/entity/Entity.getXRot:()F
+       375: invokevirtual #373                // Method net/minecraft/world/entity/Entity.snapTo:(DDDFF)V
+       378: aload_0
+       379: aconst_null
+       380: aload_1
+       381: getstatic     #377                // Field net/minecraft/sounds/SoundEvents.BEEHIVE_EXIT:Lnet/minecraft/sounds/SoundEvent;
+       384: getstatic     #225                // Field net/minecraft/sounds/SoundSource.BLOCKS:Lnet/minecraft/sounds/SoundSource;
+       387: fconst_1
+       388: fconst_1
+       389: invokevirtual #380                // Method net/minecraft/world/level/Level.playSound:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
+       392: aload_0
+       393: getstatic     #235                // Field net/minecraft/world/level/gameevent/GameEvent.BLOCK_CHANGE:Lnet/minecraft/core/Holder$Reference;
+       396: aload_1
+       397: aload         10
+       399: aload_0
+       400: aload_1
+       401: invokevirtual #39                 // Method net/minecraft/world/level/Level.getBlockState:(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+       404: invokestatic  #244                // Method net/minecraft/world/level/gameevent/GameEvent$Context.of:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/gameevent/GameEvent$Context;
+       407: invokevirtual #249                // Method net/minecraft/world/level/Level.gameEvent:(Lnet/minecraft/core/Holder;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/gameevent/GameEvent$Context;)V
+       410: aload_0
+       411: aload         10
+       413: invokevirtual #383                // Method net/minecraft/world/level/Level.addFreshEntity:(Lnet/minecraft/world/entity/Entity;)Z
+       416: ireturn
+       417: iconst_0
+       418: ireturn
+
+
+SOURCE build/s08-occupant.txt
+  public static net.minecraft.world.level.block.entity.BeehiveBlockEntity$Occupant of(net.minecraft.world.entity.Entity);
+    Code:
+         0: new           #22                 // class net/minecraft/util/ProblemReporter$ScopedCollector
+         3: dup
+         4: aload_0
+         5: invokevirtual #24                 // Method net/minecraft/world/entity/Entity.problemPath:()Lnet/minecraft/util/ProblemReporter$PathElement;
+         8: getstatic     #30                 // Field net/minecraft/world/level/block/entity/BeehiveBlockEntity.LOGGER:Lorg/slf4j/Logger;
+        11: invokespecial #34                 // Method net/minecraft/util/ProblemReporter$ScopedCollector."<init>":(Lnet/minecraft/util/ProblemReporter$PathElement;Lorg/slf4j/Logger;)V
+        14: astore_1
+        15: aload_1
+        16: aload_0
+        17: invokevirtual #37                 // Method net/minecraft/world/entity/Entity.registryAccess:()Lnet/minecraft/core/RegistryAccess;
+        20: invokestatic  #41                 // Method net/minecraft/world/level/storage/TagValueOutput.createWithContext:(Lnet/minecraft/util/ProblemReporter;Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/world/level/storage/TagValueOutput;
+        23: astore_2
+        24: aload_0
+        25: aload_2
+        26: invokevirtual #47                 // Method net/minecraft/world/entity/Entity.save:(Lnet/minecraft/world/level/storage/ValueOutput;)Z
+        29: pop
+        30: getstatic     #51                 // Field net/minecraft/world/level/block/entity/BeehiveBlockEntity.IGNORED_BEE_TAGS:Ljava/util/List;
+        33: aload_2
+        34: dup
+        35: invokestatic  #55                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        38: pop
+        39: invokedynamic #61,  0             // InvokeDynamic #0:accept:(Lnet/minecraft/world/level/storage/TagValueOutput;)Ljava/util/function/Consumer;
+        44: invokeinterface #65,  2           // InterfaceMethod java/util/List.forEach:(Ljava/util/function/Consumer;)V
+        49: aload_2
+        50: invokevirtual #71                 // Method net/minecraft/world/level/storage/TagValueOutput.buildResult:()Lnet/minecraft/nbt/CompoundTag;
+        53: astore_3
+        54: aload_3
+        55: ldc           #77                 // String HasNectar
+        57: iconst_0
+        58: invokevirtual #79                 // Method net/minecraft/nbt/CompoundTag.getBooleanOr:(Ljava/lang/String;Z)Z
+        61: istore        4
+        63: new           #10                 // class net/minecraft/world/level/block/entity/BeehiveBlockEntity$Occupant
+        66: dup
+        67: aload_0
+        68: invokevirtual #85                 // Method net/minecraft/world/entity/Entity.getType:()Lnet/minecraft/world/entity/EntityType;
+        71: aload_3
+        72: invokestatic  #89                 // Method net/minecraft/world/item/component/TypedEntityData.of:(Ljava/lang/Object;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/item/component/TypedEntityData;
+        75: iconst_0
+        76: iload         4
+        78: ifeq          87
+        81: sipush        2400
+        84: goto          90
+        87: sipush        600
+        90: invokespecial #95                 // Method "<init>":(Lnet/minecraft/world/item/component/TypedEntityData;II)V
+        93: astore        5
+        95: aload_1
+        96: invokevirtual #98                 // Method net/minecraft/util/ProblemReporter$ScopedCollector.close:()V
+        99: aload         5
+       101: areturn
+       102: astore_2
+       103: aload_1
+       104: invokevirtual #98                 // Method net/minecraft/util/ProblemReporter$ScopedCollector.close:()V
+       107: goto          116
+       110: astore_3
+       111: aload_2
+       112: aload_3
+       113: invokevirtual #103                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       116: aload_2
+       117: athrow
+      Exception table:
+         from    to  target type
+            15    95   102   Class java/lang/Throwable
+           103   107   110   Class java/lang/Throwable
+
+  public net.minecraft.world.entity.Entity createEntity(net.minecraft.world.level.Level, net.minecraft.core.BlockPos);
+    Code:
+         0: aload_0
+         1: getfield      #9                  // Field entityData:Lnet/minecraft/world/item/component/TypedEntityData;
+         4: invokevirtual #114                // Method net/minecraft/world/item/component/TypedEntityData.copyTagWithoutId:()Lnet/minecraft/nbt/CompoundTag;
+         7: astore_3
+         8: getstatic     #51                 // Field net/minecraft/world/level/block/entity/BeehiveBlockEntity.IGNORED_BEE_TAGS:Ljava/util/List;
+        11: aload_3
+        12: dup
+        13: invokestatic  #55                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        16: pop
+        17: invokedynamic #117,  0            // InvokeDynamic #1:accept:(Lnet/minecraft/nbt/CompoundTag;)Ljava/util/function/Consumer;
+        22: invokeinterface #65,  2           // InterfaceMethod java/util/List.forEach:(Ljava/util/function/Consumer;)V
+        27: aload_0
+        28: getfield      #9                  // Field entityData:Lnet/minecraft/world/item/component/TypedEntityData;
+        31: invokevirtual #120                // Method net/minecraft/world/item/component/TypedEntityData.type:()Ljava/lang/Object;
+        34: checkcast     #124                // class net/minecraft/world/entity/EntityType
+        37: aload_3
+        38: aload_1
+        39: getstatic     #126                // Field net/minecraft/world/entity/EntitySpawnReason.LOAD:Lnet/minecraft/world/entity/EntitySpawnReason;
+        42: getstatic     #132                // Field net/minecraft/world/entity/EntityProcessor.NOP:Lnet/minecraft/world/entity/EntityProcessor;
+        45: invokestatic  #138                // Method net/minecraft/world/entity/EntityType.loadEntityRecursive:(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/EntityProcessor;)Lnet/minecraft/world/entity/Entity;
+        48: astore        4
+        50: aload         4
+        52: ifnull        66
+        55: aload         4
+        57: getstatic     #142                // Field net/minecraft/tags/EntityTypeTags.BEEHIVE_INHABITORS:Lnet/minecraft/tags/TagKey;
+        60: invokevirtual #148                // Method net/minecraft/world/entity/Entity.is:(Lnet/minecraft/tags/TagKey;)Z
+        63: ifne          68
+        66: aconst_null
+        67: areturn
+        68: aload         4
+        70: iconst_1
+        71: invokevirtual #152                // Method net/minecraft/world/entity/Entity.setNoGravity:(Z)V
+        74: aload         4
+        76: instanceof    #75                 // class net/minecraft/world/entity/animal/bee/Bee
+        79: ifeq          104
+        82: aload         4
+        84: checkcast     #75                 // class net/minecraft/world/entity/animal/bee/Bee
+        87: astore        5
+        89: aload         5
+        91: aload_2
+        92: invokevirtual #156                // Method net/minecraft/world/entity/animal/bee/Bee.setHivePos:(Lnet/minecraft/core/BlockPos;)V
+        95: aload_0
+        96: getfield      #15                 // Field ticksInHive:I
+        99: aload         5
+       101: invokestatic  #160                // Method setBeeReleaseData:(ILnet/minecraft/world/entity/animal/bee/Bee;)V
+       104: aload         4
+       106: areturn
+
+  static {};
+    Code:
+         0: invokedynamic #259,  0            // InvokeDynamic #7:apply:()Ljava/util/function/Function;
+         5: invokestatic  #260                // Method com/mojang/serialization/codecs/RecordCodecBuilder.create:(Ljava/util/function/Function;)Lcom/mojang/serialization/Codec;
+         8: putstatic     #266                // Field CODEC:Lcom/mojang/serialization/Codec;
+        11: getstatic     #266                // Field CODEC:Lcom/mojang/serialization/Codec;
+        14: invokeinterface #267,  1          // InterfaceMethod com/mojang/serialization/Codec.listOf:()Lcom/mojang/serialization/Codec;
+        19: putstatic     #271                // Field LIST_CODEC:Lcom/mojang/serialization/Codec;
+        22: getstatic     #274                // Field net/minecraft/world/entity/EntityType.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+        25: invokestatic  #278                // Method net/minecraft/world/item/component/TypedEntityData.streamCodec:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/network/codec/StreamCodec;
+        28: invokedynamic #222,  0            // InvokeDynamic #3:apply:()Ljava/util/function/Function;
+        33: getstatic     #282                // Field net/minecraft/network/codec/ByteBufCodecs.VAR_INT:Lnet/minecraft/network/codec/StreamCodec;
+        36: invokedynamic #241,  0            // InvokeDynamic #4:apply:()Ljava/util/function/Function;
+        41: getstatic     #282                // Field net/minecraft/network/codec/ByteBufCodecs.VAR_INT:Lnet/minecraft/network/codec/StreamCodec;
+        44: invokedynamic #244,  0            // InvokeDynamic #5:apply:()Ljava/util/function/Function;
+        49: invokedynamic #251,  0            // InvokeDynamic #6:apply:()Lcom/mojang/datafixers/util/Function3;
+        54: invokestatic  #287                // InterfaceMethod net/minecraft/network/codec/StreamCodec.composite:(Lnet/minecraft/network/codec/StreamCodec;Ljava/util/function/Function;Lnet/minecraft/network/codec/StreamCodec;Ljava/util/function/Function;Lnet/minecraft/network/codec/StreamCodec;Ljava/util/function/Function;Lcom/mojang/datafixers/util/Function3;)Lnet/minecraft/network/codec/StreamCodec;
+        57: putstatic     #293                // Field STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+        60: return
+}
+
+SOURCE build/s08-old-hive.txt
+  public void a(bsr);
+    Code:
+         0: aload_0
+         1: getfield      #83                 // Field i:Ljava/util/List;
+         4: invokeinterface #156,  1          // InterfaceMethod java/util/List.size:()I
+         9: iconst_3
+        10: if_icmplt     14
+        13: return
+        14: aload_1
+        15: invokevirtual #245                // Method bsr.ad:()V
+        18: aload_1
+        19: invokevirtual #248                // Method bsr.bI:()V
+        22: aload_0
+        23: aload_1
+        24: invokestatic  #251                // Method dqe$c.a:(Lbsr;)Ldqe$c;
+        27: invokevirtual #254                // Method a:(Ldqe$c;)V
+        30: aload_0
+        31: getfield      #96                 // Field n:Ldcw;
+        34: ifnull        141
+        37: aload_1
+        38: instanceof    #166                // class cff
+        41: ifeq          86
+        44: aload_1
+        45: checkcast     #166                // class cff
+        48: astore_2
+        49: aload_2
+        50: invokevirtual #256                // Method cff.t:()Z
+        53: ifeq          86
+        56: aload_0
+        57: invokevirtual #259                // Method k:()Z
+        60: ifeq          78
+        63: aload_0
+        64: getfield      #96                 // Field n:Ldcw;
+        67: getfield      #263                // Field dcw.z:Layw;
+        70: invokeinterface #267,  1          // InterfaceMethod ayw.h:()Z
+        75: ifeq          86
+        78: aload_0
+        79: aload_2
+        80: invokevirtual #270                // Method cff.s:()Ljd;
+        83: putfield      #272                // Field j:Ljd;
+        86: aload_0
+        87: invokevirtual #100                // Method aD_:()Ljd;
+        90: astore_2
+        91: aload_0
+        92: getfield      #96                 // Field n:Ldcw;
+        95: aconst_null
+        96: aload_2
+        97: invokevirtual #275                // Method jd.u:()I
+       100: i2d
+       101: aload_2
+       102: invokevirtual #278                // Method jd.v:()I
+       105: i2d
+       106: aload_2
+       107: invokevirtual #281                // Method jd.w:()I
+       110: i2d
+       111: getstatic     #287                // Field avp.bV:Lavo;
+       114: getstatic     #292                // Field avq.e:Lavq;
+       117: fconst_1
+       118: fconst_1
+       119: invokevirtual #295                // Method dcw.a:(Lcmx;DDDLavo;Lavq;FF)V
+       122: aload_0
+       123: getfield      #96                 // Field n:Ldcw;
+       126: getstatic     #298                // Field dxz.c:Ljm$c;
+       129: aload_2
+       130: aload_1
+       131: aload_0
+       132: invokevirtual #301                // Method n:()Ldtc;
+       135: invokestatic  #304                // Method dxz$a.a:(Lbsr;Ldtc;)Ldxz$a;
+       138: invokevirtual #307                // Method dcw.a:(Ljm;Ljd;Ldxz$a;)V
+       141: aload_1
+       142: invokevirtual #310                // Method bsr.aq:()V
+       145: aload_0
+       146: invokespecial #114                // Method dqh.e:()V
+       149: return
+
+
+SOURCE build/s07-old-entity.txt
+  public boolean a(brk, float);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokevirtual #1784               // Method b:(Lbrk;)Z
+         5: ifeq          10
+         8: iconst_0
+         9: ireturn
+        10: aload_0
+        11: invokevirtual #1786               // Method bw:()V
+        14: iconst_0
+        15: ireturn
+

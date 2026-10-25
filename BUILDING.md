@@ -107,3 +107,13 @@ Read the first error in the Gradle log before the stack trace. Do not suppress m
 The old Cadix licence plugin crashes on Gradle 9; it was replaced by Yumi Licenser with header checks retained. If the checker reports a mismatch, preserve existing copyright notices while fixing the rule or missing headers; do not bulk rewrite attribution. A missing Adorn release or other integration is a real dependency issue, not permission to remove its source.
 
 After compilation, use separate disposable `fabric/runClient` and `fabric/runServer` directories. Dedicated server testing requires the server operator's Minecraft EULA acceptance. Keep test databases isolated. Do not use production worlds or change a running production server. Complete the gameplay, two-player networking and persistence matrix in COMPATIBILITY.md before tagging or publishing a release.
+
+## S08 hive, AI and legacy-random checks
+
+The standard focused runner now compiles typed hive, random-position and targeting helpers as well. S08 passed352 assertions; this does not compile the entire Java module or transform mixins. To also compare actual old and target direction generation, supply both official1.21.1 inputs:
+
+```sh
+python3 scripts/check_data_contracts.py --game-jar /path/to/minecraft-26.3-client.jar --gradle-cache /path/to/gradle-user-home --javac /path/to/jdk25/bin/javac --legacy-game-jar /path/to/gradle-user-home/caches/fabric-loom/1.21.1/minecraft-client.jar --legacy-version-json /path/to/gradle-user-home/caches/fabric-loom/1.21.1/mojang_minecraft_info.json --report porting/logs/data-contracts-local.json
+```
+
+The optional inputs must be paired. The runner verifies both game checksums and the old metadata version, then compares810 cases/1620 assertions including null candidates and subsequent RNG draws. It launches Java fixtures, not Minecraft. Hive fixtures use real vanilla registry entries and native codecs, not full Pokemon construction. S08 final common compile still fails5880/895;49 widener misses remain,20 tooling tests and headers pass. See `porting/sprint-08-summary.json`; use the same isolated-build-logic command above for local OneDrive output locks.

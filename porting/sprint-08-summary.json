@@ -1,0 +1,89 @@
+{
+  "sprint": "S08",
+  "baseline_commit": "5996ef57cf2aca8fd75106953695943ea043746f",
+  "work_id": "S08-R019-R020",
+  "owner": "codex-sprint08-01a16f8a",
+  "lease_id": "278f6ba6-1cab-468a-a89b-4a3174b01072",
+  "source_status": "Partial R019/R020 plus hive R015 migration; original acceptance stays open",
+  "source_commits": [
+    {
+      "sha": "4025e9180dbbb6098a15a5080f993f5f8043b924",
+      "subject": "Migrate entity AI clocks, task memories and server combat contexts"
+    },
+    {
+      "sha": "986dbe35d1d0dfffb262fd767fdb58ec007cba9c",
+      "subject": "Preserve typed Pokemon hive data and complete remaining AI API callers"
+    }
+  ],
+  "compile": {
+    "passed": false,
+    "diagnostics": 5880,
+    "files": 895,
+    "baseline_diagnostics": 6005,
+    "reduction": 125
+  },
+  "focused_assertions": 352,
+  "legacy_random_cases": 810,
+  "legacy_random_assertions": 1620,
+  "tooling_tests": 20,
+  "aw_missing": 49,
+  "source_headers": "common main/test and Fabric passed",
+  "minecraft_runtime_tests_executed": 0,
+  "junit_wrapper_executed": false,
+  "jar_produced": false,
+  "upstream_pushes": 0,
+  "roadmap": {
+    "total": 44,
+    "accepted_done": 12,
+    "remaining": 32,
+    "accepted_proportion": 0.2727272727272727,
+    "remaining_proportion": 0.7272727272727273,
+    "interpretation": "Equal task counts, not effort-weighted or gameplay completion"
+  },
+  "remaining_estimates_engineering_hours": {
+    "R019": {
+      "previous": [
+        20,
+        40,
+        80
+      ],
+      "remaining": [
+        18,
+        36,
+        72
+      ]
+    },
+    "R020": {
+      "previous": [
+        18,
+        36,
+        72
+      ],
+      "remaining": [
+        12,
+        24,
+        48
+      ]
+    },
+    "whole_roadmap": [
+      558,
+      1116,
+      2240
+    ],
+    "confidence": "low",
+    "actual_person_hours": null
+  },
+  "next": [
+    "R021 projectile/boat lifecycle and interactions, preserving capture/fishing/ownership",
+    "R015 representative old-data/entity construction fixtures; R013 registry/startup acceptance",
+    "R019/R020 full Java/mixins and live hive/navigation/sleep/combat after build",
+    "R022/R023 rendering/input and49 AW targets; networking and integrations remain major blockers"
+  ],
+  "notes": [
+    "Five common compiles failed:5896/905,5881/896,5881/896,5880/895,5880/895; all logs retained",
+    "352 focused assertions and810 actual legacy random cases pass;20 tool tests pass",
+    "AI directories/generic entity/NPC server delegate have zero diagnostic lines in final attempted Kotlin compile; no full build/gameplay claim",
+    "No installable binary, validated release or completed-work PR; no production data touched",
+    "Read live claim registry before continuing; post-push CI and claim closure recorded in same native Sheet and Actions"
+  ]
+}

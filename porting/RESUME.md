@@ -2,7 +2,27 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S07 checkpoint (2026-10-25)
+## Sprint S08 checkpoint (2026-10-25)
+
+Partial R019/R020 and hive R015 migration under `S08-R019-R020`, owner `codex-sprint08-01a16f8a`, exclusive integration resource. Source milestones `4025e9180dbbb6098a15a5080f993f5f8043b924` and `986dbe35d1d0dfffb262fd767fdb58ec007cba9c`. Read the live registry before editing; saved leases and Sheet rows are snapshots. Release only after this checkpoint is pushed; reacquire a fresh scoped lease for later work. Concurrent workers need separate branches/worktrees and nonoverlapping leases, with one integration owner.
+
+Migrated generic/NPC server callbacks, overworld clocks and original light predicates, environmental activity schedules, required task memories, nullable random navigation, server-aware targeting/combat, crop/berry/fire/owner-following and held-item particle APIs. Two pre-existing surface-navigation bugs are explicitly corrected: discarded walk scores and ignored solid/fluid predicates. Direction generation retains zero minimum radius and matches actual1.21.1 positions/RNG consumption in810 cases. Sleep queries retain ordered position containment rather than hitbox intersection; their native target context is server-only.
+
+Pokemon hives now store native typed entity data with registry-aware saves. Root-only exclusions preserve nested ownership/Pokemon UUIDs; residence remains2400 ticks with nectar and600 without. Entry retains generic legacy ride/passenger/sound/event/discard behavior; worldgen stores properties without constructing Pokemon. A codec adapter rewrites both historical placeholder-ID forms before registry decode, retaining unknown fields and refusing malformed properties. Release preserves hive memories, nectar/honey policy and retains occupants when restoration fails. Real mixin application and live hive behavior are untested. SaccharineTreeFeature still has14 diagnostics in its broader worldgen APIs.
+
+Executed results:
+
+- Five common Kotlin attempts fail:5896/905,5881/896,5881/896,5880/895,then **5880 diagnostic lines /895 files**. Down125 (2.1%) fromS07; counts include cascades. AI directories, generic entity and NPC server delegate have zero diagnostics in this attempted compile; full Java/Fabric build remains blocked.
+- **352 focused data/API assertions pass**, compiling actual production Java helpers against the SHA-1-verified target. **810 actual legacy random cases /1620 assertions pass** against the official1.21.1 JAR. Native hive registry/wire fixtures use vanilla BEE plus custom data; legacy-placeholder tests use native typed string IDs. No fake Pokemon registration, Minecraft launch or world migration is claimed.
+- **20 tooling tests pass**; common main/test and Fabric licence checks pass. **49 access-widener targets still fail**. Full Java/mixin/JUnit and all client/server/gameplay/multiplayer tests are unexecuted; no JAR/release/completed-work PR.
+
+Evidence: `sprint-08-summary.json`, `sprint-08-compiler-summary.json`, `sprint-08-validation-summary.json`, `sprint-08-source-audit.json`, and `logs/sprint-08-*`. Reproduce focused and actual-legacy comparisons using BUILDING.md. Inspect Actions at the published checkpoint; actual CI and closure belong to the same native roadmap, not an assumed pass. All original licences/assets retained; no upstream pushes or production-world changes.
+
+Remaining planning ranges (low/likely/high engineering person-hours, low confidence): R019 **18/36/72** (prior20/40/80), R020 **12/24/48** (prior18/36/72). Whole roadmap **558/1116/2240**. Actual hours unmeasured. Accepted completion remains **12/44 (27.3%),32/44 left (72.7%)**; equal packages, not effort-weighted/gameplay completion. Original acceptance remains open.
+
+Next coherent sprint: R021 projectile/boat interactions and capture/fishing lifecycle; coordinate R015 old-data/entity construction and R013 startup fixtures. R019/R020 still require full Java/mixins and real movement/hive/sleep/combat. R014 equipment, R016 commands/advancements, R022/R023 rendering/input, networking/integrations and AW49 remain. Keep the pinned26.3 target, all gameplay/assets, normal validators and original acceptance rules.
+
+## Sprint S07 checkpoint (historical,2026-10-25)
 
 Partial R019/R016 work under `S07-R019`, owner `codex-sprint07-01a16f8a`, with exclusive integration resource. Source milestone `099c76edfeb82816e0e5065f3a89fe465577ba9f` restores shoulder storage/synchronization, walking counters, experience callbacks, evolution cleanup and six typed gamerules. Read the live registry before resuming; a saved lease or Sheet snapshot never grants editing/push authority. Release only after the durable checkpoint is pushed, then acquire a fresh scoped lease for later work.
 
