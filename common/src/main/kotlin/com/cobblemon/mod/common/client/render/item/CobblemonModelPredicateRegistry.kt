@@ -15,9 +15,8 @@ import com.cobblemon.mod.common.client.pot.CookingQuality
 import com.cobblemon.mod.common.entity.fishing.PokeRodFishingBobberEntity
 import com.cobblemon.mod.common.item.interactive.PokerodItem
 import com.cobblemon.mod.common.util.cobblemonResource
-import com.cobblemon.mod.common.util.cobblemonResource
 import net.minecraft.ChatFormatting
-import net.minecraft.client.renderer.item.ItemProperties
+import com.cobblemon.mod.common.client.model.LegacyItemModels as ItemProperties
 import net.minecraft.resources.Identifier
 import net.minecraft.world.entity.player.Player
 

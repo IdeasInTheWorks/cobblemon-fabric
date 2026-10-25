@@ -8,22 +8,23 @@
 
 package com.cobblemon.mod.common
 
-import net.minecraft.client.Minecraft
-import net.minecraft.client.resources.model.BakedModel
-import net.minecraft.client.resources.model.ModelResourceLocation
+import net.minecraft.client.renderer.block.dispatch.BlockStateModel
+import com.cobblemon.mod.common.client.model.StandaloneModelKey
 import net.minecraft.resources.Identifier
 
 /**
  * Contains information for forcing a model to be baked
  *
  * @param modelLocation The location of the model
- * @param modelIdentifier The identifier that the BakedModel will be registered to
+ * @param modelIdentifier The logical identifier and variant used for standalone baking
  */
 data class BakingOverride(
     val modelLocation: Identifier,
-    val modelIdentifier: ModelResourceLocation
+    val modelIdentifier: StandaloneModelKey
 ) {
-    fun getModel(): BakedModel {
-        return Minecraft.getInstance().modelManager.getModel(modelIdentifier)
-    }
+    private var lookup: (() -> BlockStateModel)? = null
+
+    fun bindModelLookup(provider: () -> BlockStateModel) { lookup = provider }
+
+    fun getModel(): BlockStateModel = checkNotNull(lookup) { "Standalone model is not registered: $modelIdentifier" }.invoke()
 }

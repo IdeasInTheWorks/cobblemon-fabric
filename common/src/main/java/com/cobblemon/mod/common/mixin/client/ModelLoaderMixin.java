@@ -5,91 +5,41 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+// Additional compatibility work Copyright (C) 2026 Cobblemon Contributors and IdeasInTheWorks.
 
 package com.cobblemon.mod.common.mixin.client;
 
-import com.cobblemon.mod.common.client.CobblemonBakingOverrides;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.renderer.block.model.BlockModel;
-import net.minecraft.client.resources.model.BlockStateModelLoader;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.client.resources.model.UnbakedModel;
+import com.cobblemon.mod.common.client.model.LegacyItemModels;
+import com.google.gson.JsonParser;
+import com.mojang.logging.LogUtils;
+import java.util.LinkedHashMap;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
+import net.minecraft.client.resources.model.ClientItemInfoLoader;
 import net.minecraft.resources.Identifier;
-import net.minecraft.server.packs.resources.Resource;
-import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraft.server.packs.resources.ResourceManager;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-
-@Mixin(ModelBakery.class)
+@Mixin(ClientItemInfoLoader.class)
 public abstract class ModelLoaderMixin {
-    @Shadow abstract UnbakedModel getModel(Identifier resourceLocation);
-
-    @Shadow protected abstract void registerModel(ModelResourceLocation modelId, UnbakedModel unbakedModel);
-
-    @Shadow protected abstract void loadItemModelAndDependencies(Identifier resourceLocation);
-
-    @Unique
-    List<String> dynamicFolders = Arrays.asList("egg", "tm");
-
-    @Inject(
-            method = "<init>",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/util/profiling/ProfilerFiller;popPush(Ljava/lang/String;)V",
-                    ordinal = 1
-            )
-    )
-    public void loadCustomItemModels(BlockColors blockColors,
-                                     ProfilerFiller profiler,
-                                     Map<Identifier, BlockModel> jsonUnbakedModels,
-                                     Map<Identifier, List<BlockStateModelLoader.LoadedJson>> blockStates,
-                                     CallbackInfo ci
-    ) {
-        /*
-         * The models/item/*.json's only get loaded if there's an item in the registry that actually asks for it. It
-         * naively looks for things in the root with an item ID and calls upon it, and some of those JSONs reference
-         * other model JSONs and so it cascades a little bit. Used for block models but more importantly here, sprites.
-         *
-         * The thing about the eggs (and TMs) is, we really want the eggs to be addon-compatible in a way that doesn't restrict
-         * the species that can have eggs, so we can't pre-plan all of them. This mixin looks for the things inside the
-         * egg subfolder (which won't get loaded automagically) and manually inserts them into the unbaked model list so
-         * Minecraft loads them for us. We'll then dynamically call these models from the ItemRendererMixin; so it's
-         * hacky at the init stage and hacky at the render stage. Pretty cool in the gameplay stage though.
-         *
-         * - Hiro
-         */
-
-        dynamicFolders.forEach(folder -> {
-            Map<Identifier, Resource> map = Minecraft.getInstance().getResourceManager().listResources("models/item/" + folder, (t) -> true);
-            map.forEach((key, value) -> {
-                Identifier resourceLocation = new Identifier(key.getNamespace(), key.getPath().replace("models/item/", "").replace(".json", ""));
-                this.loadItemModelAndDependencies(resourceLocation);
+    @ModifyReturnValue(method = "scheduleLoad", at = @At("RETURN"), require = 1)
+    private static CompletableFuture<ClientItemInfoLoader.LoadedClientInfos> cobblemon$legacyItemInfos(
+            CompletableFuture<ClientItemInfoLoader.LoadedClientInfos> original, ResourceManager resources, Executor executor) {
+        return original.thenApplyAsync(loaded -> {
+            var definitions = new LinkedHashMap<Identifier, LegacyItemModels.Definition>();
+            resources.listResources("models/item", LegacyItemModels::supportsResource).forEach((resourceId, resource) -> {
+                var model = LegacyItemModels.modelId(resourceId);
+                var item = LegacyItemModels.itemId(model);
+                if (loaded.contents().containsKey(item) || resources.getResource(item.withPath(path -> "items/" + path + ".json")).isPresent()) return;
+                try (var reader = resource.openAsReader()) {
+                    definitions.put(item, LegacyItemModels.parse(model, JsonParser.parseReader(reader).getAsJsonObject()));
+                } catch (Exception error) {
+                    LogUtils.getLogger().error("Cannot load legacy Cobblemon item model {}", resourceId, error);
+                }
             });
-        });
-    }
-
-    @Inject(
-            method = "<init>",
-            at = @At("TAIL")
-    )
-    public void init(BlockColors blockColors,
-                     ProfilerFiller profiler,
-                     Map<Identifier, BlockModel> jsonUnbakedModels,
-                     Map<Identifier, List<BlockStateModelLoader.LoadedJson>> blockStates,
-                     CallbackInfo ci) {
-        CobblemonBakingOverrides.INSTANCE.getModels().forEach(bakingOverride -> {
-            var unbakedModel = this.getModel(bakingOverride.getModelLocation());
-            this.registerModel(bakingOverride.getModelIdentifier(), unbakedModel);
-        });
+            return new ClientItemInfoLoader.LoadedClientInfos(LegacyItemModels.merge(loaded.contents(), definitions));
+        }, executor);
     }
 }
