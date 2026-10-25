@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 45,
+  "generation": 46,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -247,12 +247,13 @@
       "lease_id": "c0034cd5-19fe-413b-95c2-009b98fc0cbd",
       "operation_id": "c0034cd5-19fe-413b-95c2-009b98fc0cbd",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-25T13:26:18Z",
       "heartbeat_at": "2026-10-25T13:45:02Z",
       "expires_at": "2026-10-25T15:15:02Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "3a5c251da4f475558bbe7464dbde928dadc489da; S09 partial capture/fishing/boat source and all logs preserved;375 focused/810 legacy cases/20 tooling pass;compile5804/889 and AW49 fail;next R022/R023 and R015;porting/RESUME.md;same native Sheet",
+      "closed_at": "2026-10-25T13:46:12Z"
     }
   },
   "events": [
@@ -705,6 +706,16 @@
       "lease_id": "c0034cd5-19fe-413b-95c2-009b98fc0cbd",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 46,
+      "at": "2026-10-25T13:46:12Z",
+      "kind": "release",
+      "work_id": "S09-R021",
+      "owner": "codex-sprint09-01a16f8a",
+      "lease_id": "c0034cd5-19fe-413b-95c2-009b98fc0cbd",
+      "epoch": 1,
+      "checkpoint": "3a5c251da4f475558bbe7464dbde928dadc489da; S09 partial capture/fishing/boat source and all logs preserved;375 focused/810 legacy cases/20 tooling pass;compile5804/889 and AW49 fail;next R022/R023 and R015;porting/RESUME.md;same native Sheet"
     }
   ]
 }
