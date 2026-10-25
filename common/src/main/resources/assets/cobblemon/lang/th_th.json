@@ -6377,5 +6377,10 @@
     "cobblemon.ui.pokedex.info.form.goodra-hisui": "ฮิซุย",
     "cobblemon.ui.pokedex.info.form.decidueye-hisui": "ฮิซุย",
     "cobblemon.ui.pokedex.info.form.hatterene-gmax": "กิกะแมกซ์",
-    "cobblemon.ui.pokedex.info.form.grimmsnarl-gmax": "กิกะแมกซ์"
+    "cobblemon.ui.pokedex.info.form.grimmsnarl-gmax": "กิกะแมกซ์",
+  "gamerule.cobblemon.battle_invulnerability": "ความคงกระพันในการแบตเทิล",
+  "gamerule.cobblemon.do_pokemon_spawning": "ให้โปเกมอนเกิด",
+  "gamerule.cobblemon.do_pokemon_loot": "ดรอปโปเกมอนลูท",
+  "gamerule.cobblemon.mob_target_in_battle": "ม็อบเล็งเป้าระหว่างการแบตเทิล",
+  "gamerule.cobblemon.do_shiny_starters": "โปเกมอนเริ่มต้นจะมีสีแตกต่าง"
 }

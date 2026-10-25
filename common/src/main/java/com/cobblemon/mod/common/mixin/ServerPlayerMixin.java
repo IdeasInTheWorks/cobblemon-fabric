@@ -38,7 +38,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class ServerPlayerMixin implements PlayerSpawnerAccessor {
 
     @Shadow
-    public abstract ServerLevel serverLevel();
+    public abstract ServerLevel level();
 
     @Shadow
     @Final
@@ -136,10 +136,10 @@ public abstract class ServerPlayerMixin implements PlayerSpawnerAccessor {
     @Unique
     private boolean cobblemon$canSpawn() {
         return Cobblemon.config.getEnableSpawning() &&
-                this.serverLevel().getGameRules().getBoolean(CobblemonGameRules.DO_POKEMON_SPAWNING) &&
+                this.level().getGameRules().get(CobblemonGameRules.DO_POKEMON_SPAWNING) &&
                 // intentionally last as this is a more expensive check, even with all the caching
                 !Cobblemon.config.getWorldSpawningBlocklist().contains(
-                        ((ServerLevelDuck) this.serverLevel()).cobblemon$getLevelResourceLocation()
+                        ((ServerLevelDuck) this.level()).cobblemon$getLevelResourceLocation()
                 );
     }
 }

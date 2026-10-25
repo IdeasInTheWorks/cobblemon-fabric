@@ -41,7 +41,6 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.fabricmc.fabric.api.event.player.UseBlockCallback
 import net.fabricmc.fabric.api.event.player.UseEntityCallback
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
@@ -75,7 +74,7 @@ import net.minecraft.stats.Stats
 import net.minecraft.tags.TagKey
 import net.minecraft.util.profiling.ProfilerFiller
 import net.minecraft.world.InteractionResult
-import net.minecraft.world.level.gamerules.GameRules
+import net.minecraft.world.level.gamerules.GameRule
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.biome.Biome
 import net.minecraft.world.level.levelgen.GenerationStep
@@ -255,6 +254,7 @@ object CobblemonFabric : CobblemonImplementation {
         EntityDataSerializers.registerSerializer(NPCPlayerTextureSerializer)
         EntityDataSerializers.registerSerializer(RideBoostsDataSerializer)
         EntityDataSerializers.registerSerializer(OptionalUuidDataSerializer.INSTANCE)
+        EntityDataSerializers.registerSerializer(ShoulderTagDataSerializer.INSTANCE)
     }
 
     override fun registerItems() {
@@ -336,7 +336,8 @@ object CobblemonFabric : CobblemonImplementation {
         ArgumentTypeRegistry.registerArgumentType(identifier, argumentClass.java, serializer)
     }
 
-    override fun <T : GameRules.Value<T>> registerGameRule(name: String, category: GameRules.Category, type: GameRules.Type<T>): GameRules.Key<T> = GameRuleRegistry.register(name, category, type)
+    override fun <T : Any> registerGameRule(identifier: Identifier, rule: GameRule<T>): GameRule<T> =
+        Registry.register(BuiltInRegistries.GAME_RULE, identifier, rule)
 
     override fun registerCriteria() {
         CobblemonCriteria.register { id, obj ->

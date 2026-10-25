@@ -6604,5 +6604,9 @@
     "item.cobblemon.razor_fang.tooltip_2": "Entwickelt Skorgla zu Skorgro, wenn es nachts beim Levelaufstieg getragen wird",
     "item.cobblemon.rocky_helmet.tooltip": "Fügt einem Pokémon, das direkten Kontakt mit dem Träger herstellt, Schaden zu",
     "item.cobblemon.room_service.tooltip_1": "Senkt die Initiative des Trägers, wenn Bizarroraum aktiv ist",
-    "item.cobblemon.scope_lens.tooltip": "Erhöht die Volltrefferquote des Trägers"
+    "item.cobblemon.scope_lens.tooltip": "Erhöht die Volltrefferquote des Trägers",
+  "gamerule.cobblemon.battle_invulnerability": "Kampf Unverwundbarkeit",
+  "gamerule.cobblemon.do_pokemon_spawning": "Pokémon spawnen",
+  "gamerule.cobblemon.do_pokemon_loot": "Pokémonausbeute fallen lassen",
+  "gamerule.cobblemon.do_shiny_starters": "Starter-Pokémon werden schillernd sein"
 }

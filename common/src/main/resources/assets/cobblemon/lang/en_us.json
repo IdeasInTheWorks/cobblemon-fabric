@@ -9602,5 +9602,11 @@
   "stat.cobblemon.reel_ins": "PokéRod Catches",
   "stat.cobblemon.riding_land": "Distance by Pokémon on Land",
   "stat.cobblemon.riding_air": "Distance by Pokémon in Air",
-  "stat.cobblemon.riding_liquid": "Distance by Pokémon in Liquid"
+  "stat.cobblemon.riding_liquid": "Distance by Pokémon in Liquid",
+  "gamerule.cobblemon.battle_invulnerability": "Battle Invulnerability",
+  "gamerule.cobblemon.do_pokemon_spawning": "Spawn Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Drop Pokémon Loot",
+  "gamerule.cobblemon.mob_target_in_battle": "Mobs target during battles",
+  "gamerule.cobblemon.do_shiny_starters": "Starters will be shiny",
+  "gamerule.cobblemon.healers_heal_pc": "Heal Pokémon in PC when using a Healing Machine"
 }

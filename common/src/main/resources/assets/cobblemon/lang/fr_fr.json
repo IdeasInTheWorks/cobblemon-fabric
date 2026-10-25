@@ -9212,5 +9212,11 @@
     "stat.cobblemon.riding_air": "Distance parcourue par Pokémon dans les airs",
     "stat.cobblemon.riding_liquid": "Distance parcourue par Pokémon dans un liquide",
     "effect.cobblemon.cleanse_all": "Nettoyage des effets",
-    "effect.cobblemon.cleanse_negative": "Nettoyage des effets négatifs"
+    "effect.cobblemon.cleanse_negative": "Nettoyage des effets négatifs",
+  "gamerule.cobblemon.battle_invulnerability": "Invulnérabilité au combat",
+  "gamerule.cobblemon.do_pokemon_spawning": "Apparition de Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Butins des Pokémon",
+  "gamerule.cobblemon.mob_target_in_battle": "Les mobs ciblent pendant le combat",
+  "gamerule.cobblemon.do_shiny_starters": "Les Pokémon de départ seront chromatiques",
+  "gamerule.cobblemon.healers_heal_pc": "Soigne les Pokémon du PC lors de l'utilisation d'une Machine de soin"
 }

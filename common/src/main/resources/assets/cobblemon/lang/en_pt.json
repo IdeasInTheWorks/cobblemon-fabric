@@ -2600,5 +2600,8 @@
     "item.cobblemon.kelpsy_berry.tooltip_1": "Drops a monster's power evs by 10, and boons allyship",
     "item.cobblemon.kelpsy_berry.tooltip_2": "Not eaten during battles",
     "item.cobblemon.pomeg_berry.tooltip_1": "Drops a monster's health evs by 10, and boons allyship",
-    "item.cobblemon.tamato_berry.tooltip_2": "Not eaten during battles"
+    "item.cobblemon.tamato_berry.tooltip_2": "Not eaten during battles",
+  "gamerule.cobblemon.do_pokemon_spawning": "Spawn monsters",
+  "gamerule.cobblemon.do_pokemon_loot": "Drop monster loot",
+  "gamerule.cobblemon.do_shiny_starters": "First mates will be sparkled"
 }

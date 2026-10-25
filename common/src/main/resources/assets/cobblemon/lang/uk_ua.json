@@ -7348,5 +7348,10 @@
     "cobblemon.mark.ribbon_day_downcast.desc": "Стрічка на згадку про почуття смутку, що додали життю барв.",
     "cobblemon.mark.ribbon_day_downcast.title": "Приголомшений %1$s",
     "cobblemon.mark.ribbon_day_relax": "Стрічка відпочинку",
-    "cobblemon.mark.ribbon_day_relax.title": "%1$s відпочив"
+    "cobblemon.mark.ribbon_day_relax.title": "%1$s відпочив",
+  "gamerule.cobblemon.battle_invulnerability": "Невразливість у бою",
+  "gamerule.cobblemon.do_pokemon_spawning": "Спавнити Покемонів",
+  "gamerule.cobblemon.do_pokemon_loot": "Випадіння луту з Покемонів",
+  "gamerule.cobblemon.mob_target_in_battle": "Ціль для мобів під час бою",
+  "gamerule.cobblemon.do_shiny_starters": "Стартери будуть сяйними"
 }

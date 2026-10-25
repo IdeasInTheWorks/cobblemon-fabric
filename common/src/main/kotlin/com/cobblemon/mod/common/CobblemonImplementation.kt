@@ -21,7 +21,7 @@ import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.tags.TagKey
 import net.minecraft.world.inventory.MenuType
-import net.minecraft.world.level.gamerules.GameRules
+import net.minecraft.world.level.gamerules.GameRule
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.biome.Biome
 import net.minecraft.world.level.levelgen.GenerationStep
@@ -154,7 +154,7 @@ interface CobblemonImplementation {
      * @param type
      * @return
      */
-    fun <T : GameRules.Value<T>> registerGameRule(name: String, category: GameRules.Category, type: GameRules.Type<T>): GameRules.Key<T>
+    fun <T : Any> registerGameRule(identifier: Identifier, rule: GameRule<T>): GameRule<T>
 
     /**
      * TODO

@@ -8,14 +8,14 @@
 
 package com.cobblemon.mod.common.mixin.invoker;
 
-import net.minecraft.world.level.gamerules.GameRules;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.gen.Invoker;
+import com.cobblemon.mod.common.world.gamerules.CobblemonGameRuleDefinitions;
+import net.minecraft.world.level.gamerules.GameRule;
+import net.minecraft.world.level.gamerules.GameRuleCategory;
 
-@Mixin(GameRules.BooleanValue.class)
+/** @deprecated Native rules are values; use CobblemonGameRuleDefinitions instead. */
+@Deprecated
 public interface BooleanRuleInvoker {
-    @Invoker("create")
-    static GameRules.Type<GameRules.BooleanValue> cobblemon$create(boolean initialValue) {
-        throw new UnsupportedOperationException();
+    static GameRule<Boolean> cobblemon$create(boolean initialValue) {
+        return CobblemonGameRuleDefinitions.booleanRule(GameRuleCategory.MISC, initialValue);
     }
 }

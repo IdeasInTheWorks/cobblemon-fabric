@@ -5477,5 +5477,8 @@
     "cobblemon.species.basculegion.name": "Basculegion",
     "cobblemon.species.sneasler.name": "Sneasler",
     "cobblemon.species.overqwil.name": "Overqwil",
-    "cobblemon.species.enamorus.name": "Enamorus"
+    "cobblemon.species.enamorus.name": "Enamorus",
+  "gamerule.cobblemon.do_pokemon_spawning": "Generazione dei Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Ottieni Loot Pokémon",
+  "gamerule.cobblemon.do_shiny_starters": "Gli Startes saranno shiny"
 }

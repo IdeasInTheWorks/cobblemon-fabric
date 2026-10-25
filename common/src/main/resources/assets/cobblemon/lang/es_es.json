@@ -9674,5 +9674,11 @@
     "cobblemon.config.ui.world_spawning_blocklist": "Lista de mundos sin apariciones",
     "cobblemon.config.ui.world_spawning_blocklist.tooltip": "Mundos en los que la lógica de aparición de Pokémon estará deshabilitada.",
     "advancements.cobblemon.obtain_tm": "Muéstrame tus movimientos prohibidos",
-    "advancements.cobblemon.obtain_tm.description": "Encuentra o imprime una MT"
+    "advancements.cobblemon.obtain_tm.description": "Encuentra o imprime una MT",
+  "gamerule.cobblemon.battle_invulnerability": "Invulnerabilidad en combate",
+  "gamerule.cobblemon.do_pokemon_spawning": "Generar Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Soltar Botín Pokémon",
+  "gamerule.cobblemon.mob_target_in_battle": "Las criaturas persiguen durante el combate",
+  "gamerule.cobblemon.do_shiny_starters": "Los iniciales serán variocolor",
+  "gamerule.cobblemon.healers_heal_pc": "Curar Pokémon del PC cuando se usa una Máquina de curación"
 }

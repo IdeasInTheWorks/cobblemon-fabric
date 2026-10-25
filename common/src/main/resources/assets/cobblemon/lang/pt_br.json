@@ -9413,5 +9413,11 @@
     "cobblemon.ui.pokedex.info.form.tatsugiri-stretchymega": "Mega Tatsugiri Forma Estendida",
     "cobblemon.species.tatsugiri-stretchymega.desc": "Usando a energia da Mega Evolução, cria um prato onde repousar, permitindo com que se mova com mobilidade total até mesmo pelo ar.",
     "cobblemon.ui.pokedex.info.form.baxcalibur-mega": "Mega Baxcalibur",
-    "cobblemon.species.baxcalibur-mega.desc": "A lâmina dorsal de Baxcalibur ficou ainda maior graças à Mega Evolução. Esse Pokémon dispara feixes do cabo localizado em seu peito."
+    "cobblemon.species.baxcalibur-mega.desc": "A lâmina dorsal de Baxcalibur ficou ainda maior graças à Mega Evolução. Esse Pokémon dispara feixes do cabo localizado em seu peito.",
+  "gamerule.cobblemon.battle_invulnerability": "Invulnerabilidade em Batalha",
+  "gamerule.cobblemon.do_pokemon_spawning": "Gerar Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Largar itens de Pokémon",
+  "gamerule.cobblemon.mob_target_in_battle": "Criaturas atacam durante batalhas",
+  "gamerule.cobblemon.do_shiny_starters": "Os iniciais serão brilhante",
+  "gamerule.cobblemon.healers_heal_pc": "Cura os Pokémon no PC ao usar uma Máquina de Cura"
 }

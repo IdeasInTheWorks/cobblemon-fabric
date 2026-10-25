@@ -9203,5 +9203,11 @@
     "item.cobblemon.sweet_heart.tooltip": "Une friandise au chocolat sucrée",
     "item.cobblemon.technical_machine": "Capsule Technique",
     "item.cobblemon.blank_tm": "CT Vierge",
-    "block.cobblemon.deepslate_crystal_core": "Cœur Cristal de profondoise"
+    "block.cobblemon.deepslate_crystal_core": "Cœur Cristal de profondoise",
+  "gamerule.cobblemon.battle_invulnerability": "Invulnérabilité au combat",
+  "gamerule.cobblemon.do_pokemon_spawning": "Apparaître des Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Butins des Pokémon",
+  "gamerule.cobblemon.mob_target_in_battle": "Les mobs ciblent durant le combat",
+  "gamerule.cobblemon.do_shiny_starters": "Les Pokémon de départ seront chromatiques",
+  "gamerule.cobblemon.healers_heal_pc": "Soigne les Pokémon du PC lors de l'utilisation d'une Machine de soin"
 }

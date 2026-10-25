@@ -9021,5 +9021,11 @@
     "cobblemon.config.ui.world_spawning_blocklist.tooltip": "Миры, в которых отключается принцип появления покемонов.",
     "advancements.cobblemon.obtain_tm.description": "Найдите или напечатайте ТМ",
     "cobblemon.species.victreebel-mega.desc": "В результате Мега эволюции объём кислоты у этого покемона увеличился, заполняя весь его рот. Если он не будет осторожен, кислота переполнится и выльется наружу.",
-    "cobblemon.ui.pokedex.info.form.victreebel-mega": "Мега Виктрибелл"
+    "cobblemon.ui.pokedex.info.form.victreebel-mega": "Мега Виктрибелл",
+  "gamerule.cobblemon.battle_invulnerability": "Неуязвимость в битве",
+  "gamerule.cobblemon.do_pokemon_spawning": "Появление Покемонов",
+  "gamerule.cobblemon.do_pokemon_loot": "Выпадение ресурсов с Покемонов",
+  "gamerule.cobblemon.mob_target_in_battle": "Атака ванильных сущностей в битве",
+  "gamerule.cobblemon.do_shiny_starters": "Начальные Покемоны будут шайни",
+  "gamerule.cobblemon.healers_heal_pc": "Лечит Покемонов в ПК, используя лечебную машину"
 }

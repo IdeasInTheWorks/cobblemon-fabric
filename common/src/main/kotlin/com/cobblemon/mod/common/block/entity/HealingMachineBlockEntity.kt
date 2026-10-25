@@ -137,7 +137,7 @@ class HealingMachineBlockEntity(
         if (player != null) {
             val party = player.party()
             party.heal()
-            val healPC = player.level().gameRules.getBoolean(CobblemonGameRules.HEALERS_HEAL_PC);
+            val healPC = player.level().gameRules.get(CobblemonGameRules.HEALERS_HEAL_PC);
             if (healPC){
                 player.pc().forEach {it.heal()}
             }

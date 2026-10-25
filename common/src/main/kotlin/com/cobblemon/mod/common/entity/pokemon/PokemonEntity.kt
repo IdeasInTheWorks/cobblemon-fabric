@@ -630,6 +630,13 @@ open class PokemonEntity(
     }
 
 
+    var legacyWalkDistance = 0F
+        private set
+
+    fun recordLegacyWalkMovement(movement: Vec3) {
+        legacyWalkDistance += com.cobblemon.mod.common.util.LegacyMovement.walkIncrement(movement)
+    }
+
     override fun tick() {
         /* Addresses watchdog hanging that is completely bloody inexplicable. */
         yBodyRot = Mth.wrapDegrees(yBodyRot)
@@ -642,10 +649,11 @@ open class PokemonEntity(
         yHeadRotO = Mth.wrapDegrees(yHeadRotO)
         /* I'm sure it's not even us but something altering the logic of the loops in LivingEntity */
 
+        val previousWalkDistance = legacyWalkDistance
         super.tick()
 
         isPokemonFlying = flyDist - flyDistO > 0.005F
-        isPokemonWalking = walkDist - walkDistO > 0.005F
+        isPokemonWalking = legacyWalkDistance - previousWalkDistance > 0.005F
 
         if (passengers.isNotEmpty() && level().isClientSide) {
             rideSoundManager.tick()
@@ -1803,14 +1811,23 @@ open class PokemonEntity(
             pokemon.tetheringId = null
         }
         if (evolutionEntity != null) {
-            evolutionEntity!!.kill()
+            val helper = evolutionEntity!!
+            val world = helper.level()
+            if (world is ServerLevel) {
+                helper.kill(world)
+            } else {
+                // Preserve the old non-living Entity.kill body on the client too.
+                helper.remove(RemovalReason.KILLED)
+                helper.gameEvent(net.minecraft.world.level.gameevent.GameEvent.ENTITY_DIE)
+            }
             pokemon.entity?.evolutionEntity = null
         }
     }
 
     // Copy and paste of how vanilla checks it, unfortunately no util method you can only add then wait for the result
     fun hasRoomToMount(player: Player): Boolean {
-        return (player.shoulderEntityLeft.isEmpty || player.shoulderEntityRight.isEmpty)
+        return (com.cobblemon.mod.common.util.ShoulderData.get(player, true).isEmpty ||
+                com.cobblemon.mod.common.util.ShoulderData.get(player, false).isEmpty)
                 && !player.isPassenger
                 && player.onGround()
                 && !player.isInWater
@@ -1833,18 +1850,18 @@ open class PokemonEntity(
         }
     }
 
-    override fun dropExperience(attacker: Entity?) {
+    override fun dropExperience(world: ServerLevel, attacker: Entity?) {
         // Copied over the entire function because it's the simplest way to switch out the gamerule check
         if (
-            level() is ServerLevel && !this.wasExperienceConsumed() &&
+            !this.wasExperienceConsumed() &&
             (isAlwaysExperienceDropper ||
-                    lastHurtByPlayerTime > 0 &&
+                    lastHurtByPlayerMemoryTime > 0 &&
                     shouldDropExperience() &&
-                    level().gameRules.getBoolean(
+                    world.gameRules.get(
                         CobblemonGameRules.DO_POKEMON_LOOT
                     ))
         ) {
-            ExperienceOrb.award(level() as ServerLevel, position(), baseExperienceReward)
+            ExperienceOrb.award(world, position(), getBaseExperienceReward(world))
         }
     }
 

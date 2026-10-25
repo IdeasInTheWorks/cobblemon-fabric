@@ -1099,5 +1099,7 @@
     "tag.item.cobblemon.poke_balls": "Poké Balls",
     "tag.item.cobblemon.protein_ingredients": "Protein Ingredients",
     "tag.item.cobblemon.zinc_ingredients": "Zinc Ingredients",
-    "tag.item.cobblemon.seeds": "Seeds"
+    "tag.item.cobblemon.seeds": "Seeds",
+  "gamerule.cobblemon.do_pokemon_spawning": "Spawn Pokémon",
+  "gamerule.cobblemon.do_shiny_starters": "Starters will be shiny"
 }

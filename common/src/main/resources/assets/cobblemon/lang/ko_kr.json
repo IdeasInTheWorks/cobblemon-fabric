@@ -9549,5 +9549,11 @@
     "cobblemon.config.ui.world_spawning_blocklist": "월드별 스폰 차단 목록",
     "cobblemon.config.ui.world_spawning_blocklist.tooltip": "포켓몬 생성 로직을 비활성화하는 월드입니다.",
     "advancements.cobblemon.obtain_tm": "기술을 보여줘!",
-    "advancements.cobblemon.obtain_tm.description": "TM을 찾거나 제작하세요"
+    "advancements.cobblemon.obtain_tm.description": "TM을 찾거나 제작하세요",
+  "gamerule.cobblemon.battle_invulnerability": "배틀 중 무적",
+  "gamerule.cobblemon.do_pokemon_spawning": "포켓몬 스폰",
+  "gamerule.cobblemon.do_pokemon_loot": "포켓몬 전리품 드롭 활성화",
+  "gamerule.cobblemon.mob_target_in_battle": "배틀 중 몹의 타겟 지정 여부",
+  "gamerule.cobblemon.do_shiny_starters": "스타팅 포켓몬이 색이 다른 포켓몬으로 등장",
+  "gamerule.cobblemon.healers_heal_pc": "회복 장치를 사용할 때 PC에 있는 포켓몬도 회복합니다"
 }

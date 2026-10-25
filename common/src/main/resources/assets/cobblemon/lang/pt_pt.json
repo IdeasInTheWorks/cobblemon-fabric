@@ -6501,5 +6501,10 @@
     "cobblemon.ui.edit.habitat.spawn.time_of_day.value": "Hora do Dia: %s",
     "cobblemon.ui.edit.habitat.spawn.modifiers": "Modificadores (ex.: shiny gender=male)",
     "cobblemon.ui.edit.habitat.spawn.bucket": "Raridade: %s",
-    "cobblemon.ui.moves.level": "Subir de Nível"
+    "cobblemon.ui.moves.level": "Subir de Nível",
+  "gamerule.cobblemon.battle_invulnerability": "Invulnerabilidade em Batalha",
+  "gamerule.cobblemon.do_pokemon_spawning": "Gerar Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Dropar o Loot de Pokémon",
+  "gamerule.cobblemon.do_shiny_starters": "Iniciais serão brilhantes",
+  "gamerule.cobblemon.healers_heal_pc": "Curar Pokémon no PC ao usar uma Máquina de Cura"
 }

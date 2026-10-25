@@ -149,7 +149,7 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
         headPitch: Float,
         pLeftShoulder: Boolean
     ) {
-        val compoundTag = if (pLeftShoulder) livingEntity.shoulderEntityLeft else livingEntity.shoulderEntityRight
+        val compoundTag = com.cobblemon.mod.common.util.ShoulderData.get(livingEntity, pLeftShoulder)
         if (compoundTag.isPokemonEntity()) {
             livingEntity.level().profiler.push("shoulder_render_".plus(if (pLeftShoulder) "left" else "right"))
             val cache = playerCache.getOrPut(livingEntity.uuid) { ShoulderCache() }

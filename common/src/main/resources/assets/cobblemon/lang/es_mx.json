@@ -2574,5 +2574,10 @@
     "item.cobblemon.courage_candy": "Dulce Coraje",
     "item.cobblemon.courage_candy.tooltip_1": "Aumenta el IV de Defensa Especial del Pokémon en 1",
     "item.cobblemon.quick_candy": "Dulce Rapidez",
-    "item.cobblemon.quick_candy.tooltip_1": "Aumenta el IV de VElocidad del Pokémon en 1"
+    "item.cobblemon.quick_candy.tooltip_1": "Aumenta el IV de VElocidad del Pokémon en 1",
+  "gamerule.cobblemon.battle_invulnerability": "Invulnerabilidad de combate",
+  "gamerule.cobblemon.do_pokemon_spawning": "Generar Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Los pokémon sueltan objetos",
+  "gamerule.cobblemon.mob_target_in_battle": "Los mobs apuntan durante las batallas",
+  "gamerule.cobblemon.do_shiny_starters": "Los iniciales serán shiny"
 }

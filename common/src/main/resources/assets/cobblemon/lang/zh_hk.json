@@ -4402,5 +4402,6 @@
     "cobblemon.species.basculegion.name": "幽尾玄魚",
     "cobblemon.species.sneasler.name": "大狃拉",
     "cobblemon.species.overqwil.name": "萬針魚",
-    "cobblemon.species.enamorus.name": "眷戀雲"
+    "cobblemon.species.enamorus.name": "眷戀雲",
+  "gamerule.cobblemon.do_pokemon_spawning": "生成寶可夢"
 }

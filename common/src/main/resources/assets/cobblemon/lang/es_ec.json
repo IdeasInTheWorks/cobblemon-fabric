@@ -8908,5 +8908,11 @@
     "stat.cobblemon.reel_ins": "Capturas con la Poké Caña",
     "stat.cobblemon.riding_land": "Distancia Recorrida sobre Pokémon en Tierra",
     "stat.cobblemon.riding_air": "Distancia Recorrida sobre Pokémon en el Aire",
-    "stat.cobblemon.riding_liquid": "Distancia Recorrida sobre Pokémon en el Agua"
+    "stat.cobblemon.riding_liquid": "Distancia Recorrida sobre Pokémon en el Agua",
+  "gamerule.cobblemon.battle_invulnerability": "Invulnerabilidad en Combate",
+  "gamerule.cobblemon.do_pokemon_spawning": "Generar Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Soltar Botín de Pokémon",
+  "gamerule.cobblemon.mob_target_in_battle": "Las criaturas atacan durante los combates",
+  "gamerule.cobblemon.do_shiny_starters": "Los iniciales serán brillante",
+  "gamerule.cobblemon.healers_heal_pc": "Curar Pokémon en el PC al usar una Máquina Curativa"
 }

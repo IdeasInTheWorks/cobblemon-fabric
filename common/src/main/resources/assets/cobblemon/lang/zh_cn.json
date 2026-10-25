@@ -9677,5 +9677,11 @@
     "cobblemon.config.ui.world_spawning_blocklist": "维度生成黑名单",
     "cobblemon.config.ui.world_spawning_blocklist.tooltip": "禁用宝可梦生成逻辑的维度。",
     "advancements.cobblemon.obtain_tm": "让我看看你的招式",
-    "advancements.cobblemon.obtain_tm.description": "发现或刻写一个招式学习器"
+    "advancements.cobblemon.obtain_tm.description": "发现或刻写一个招式学习器",
+  "gamerule.cobblemon.battle_invulnerability": "对战时无敌",
+  "gamerule.cobblemon.do_pokemon_spawning": "生成宝可梦",
+  "gamerule.cobblemon.do_pokemon_loot": "宝可梦能掉落战利品",
+  "gamerule.cobblemon.mob_target_in_battle": "对战时不会成为怪物目标（如若已被锁定无法解除）",
+  "gamerule.cobblemon.do_shiny_starters": "最初的伙伴将会为异色",
+  "gamerule.cobblemon.healers_heal_pc": "使用治疗机时，治疗电脑中的宝可梦"
 }

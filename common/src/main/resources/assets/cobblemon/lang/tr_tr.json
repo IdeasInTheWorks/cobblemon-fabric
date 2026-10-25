@@ -717,5 +717,6 @@
     "cobblemon.ability.wimpout.desc": "Pokémon, HP'si yarı yarıya veya daha az olduğunda korkakça değişir.",
     "cobblemon.ability.wonderguard.desc": "Gizemli gücü, yalnızca süper etkili hareketlerin Pokémon'a çarpmasına izin verir.",
     "cobblemon.ability.wonderskin.desc": "Durum hareketlerinin kaçırılma olasılığını artırır.",
-    "cobblemon.ability.zenmode.desc": "HP yarı veya daha az olduğunda Pokémon'un şeklini değiştirir."
+    "cobblemon.ability.zenmode.desc": "HP yarı veya daha az olduğunda Pokémon'un şeklini değiştirir.",
+  "gamerule.cobblemon.do_pokemon_spawning": "Pokémon spawnla"
 }

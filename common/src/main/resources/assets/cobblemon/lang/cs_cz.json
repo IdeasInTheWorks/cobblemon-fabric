@@ -1533,5 +1533,8 @@
     "tag.item.cobblemon.type_gems": "Type Gems",
     "tag.item.cobblemon.feathers": "Feathers",
     "tag.item.cobblemon.ability_changers": "Ability Changers",
-    "tag.item.cobblemon.held.is_friendship_booster": "Friendship Boosters"
+    "tag.item.cobblemon.held.is_friendship_booster": "Friendship Boosters",
+  "gamerule.cobblemon.do_pokemon_spawning": "Objevení Pokémona",
+  "gamerule.cobblemon.do_pokemon_loot": "Drop Pokémon Loot",
+  "gamerule.cobblemon.do_shiny_starters": "Starters will be shiny"
 }

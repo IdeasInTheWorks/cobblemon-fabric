@@ -7182,5 +7182,10 @@
     "block.cobblemon.campfire_pot_green": "Nồi Lửa Trại Lục",
     "block.cobblemon.campfire_pot_pink": "Nồi Lửa Trại Hồng",
     "block.cobblemon.campfire_pot_white": "Nồi Lửa Trại Trắng",
-    "block.cobblemon.campfire_pot_yellow": "Nồi Lửa Trại Vàng"
+    "block.cobblemon.campfire_pot_yellow": "Nồi Lửa Trại Vàng",
+  "gamerule.cobblemon.battle_invulnerability": "Bất tử trong Trận đấu",
+  "gamerule.cobblemon.do_pokemon_spawning": "Sinh ra Pokémon",
+  "gamerule.cobblemon.do_pokemon_loot": "Rơi Phần Thưởng Pokémon",
+  "gamerule.cobblemon.mob_target_in_battle": "Mob tấn công mục tiêu trong Trận đấu",
+  "gamerule.cobblemon.do_shiny_starters": "Người mới bắt đầu sẽ sáng bóng"
 }
