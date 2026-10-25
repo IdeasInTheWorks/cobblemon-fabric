@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 58,
+  "generation": 59,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -305,8 +305,8 @@
       "epoch": 1,
       "status": "active",
       "acquired_at": "2026-10-25T16:13:02Z",
-      "heartbeat_at": "2026-10-25T16:53:32Z",
-      "expires_at": "2026-10-25T18:23:32Z",
+      "heartbeat_at": "2026-10-25T16:57:14Z",
+      "expires_at": "2026-10-25T18:27:14Z",
       "minutes": 90,
       "checkpoint": ""
     }
@@ -885,6 +885,16 @@
     {
       "generation": 58,
       "at": "2026-10-25T16:53:32Z",
+      "kind": "heartbeat",
+      "work_id": "S11-R023-BLOCKERS",
+      "owner": "codex-sprint11-01a16f8a",
+      "lease_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
+      "epoch": 1,
+      "checkpoint": ""
+    },
+    {
+      "generation": 59,
+      "at": "2026-10-25T16:57:14Z",
       "kind": "heartbeat",
       "work_id": "S11-R023-BLOCKERS",
       "owner": "codex-sprint11-01a16f8a",
