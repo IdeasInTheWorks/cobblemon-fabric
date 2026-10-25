@@ -55,10 +55,10 @@ import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.DataKeys
 import com.cobblemon.mod.common.util.getBattleState
 import com.cobblemon.mod.common.util.getPlayer
-import com.cobblemon.mod.common.util.makeEmptyBrainDynamic
 import com.cobblemon.mod.common.util.withNPCValue
 import com.mojang.authlib.GameProfile
 import com.mojang.authlib.ProfileLookupCallback
+import com.cobblemon.mod.common.util.ScriptedBrain
 import com.mojang.serialization.Dynamic
 import java.net.URI
 import java.util.UUID
@@ -260,9 +260,6 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
 
     var actionEffect: ActionEffectContext? = null
 
-    /** Essentially a cached form of what was serialized to make memory reloads still work despite dynamic brain activities on class change. */
-    private var brainDynamic: Dynamic<*>? = null
-
 
     /* TODO NPC Valuables to add:
      *
@@ -318,7 +315,7 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
         const val COMMAND_ANIMATION = "command"
     }
 
-    override fun brainProvider() = Brain.provider<NPCEntity>(emptySet(), emptySet())
+    fun brainProvider() = Brain.provider<NPCEntity>(emptySet(), emptySet()) { emptyList() }
     override fun getBreedOffspring(world: ServerLevel, entity: AgeableMob) = null // No lovemaking! Unless...
     override fun getCurrentPoseType() = this.entityData.get(POSE_TYPE)
 
@@ -347,32 +344,35 @@ class NPCEntity(world: Level) : AgeableMob(CobblemonEntities.NPC, world), Posabl
     ) as Packet<ClientGamePacketListener>
 
     override fun remakeBrain() {
-        makeBrain(this.brainDynamic ?: makeEmptyBrainDynamic())
+        makeBrain(ScriptedBrain.snapshot(brain))
     }
 
     override fun assignNewBrainWithMemoriesAndSensors(
-        dynamic: Dynamic<*>,
+        packedBrain: Brain.Packed,
         memories: Set<MemoryModuleType<*>>,
         sensors: Set<SensorType<*>>
     ): Brain<out NPCEntity> {
         val allSensors = BuiltInRegistries.SENSOR_TYPE.toSet().filterIsInstance<SensorType<Sensor<in NPCEntity>>>()
-        val brain = Brain.provider(
+        val brain = ScriptedBrain<NPCEntity>(
             memories.toSet(),
-            allSensors.filter { it in sensors }.toSet()
-        ).makeBrain(dynamic)
+            allSensors.filter { it in sensors }.toSet(),
+            packedBrain, random
+        )
         this.brain = brain
         return brain
     }
 
-    override fun makeBrain(dynamic: Dynamic<*>): Brain<out NPCEntity> {
-        this.brainDynamic = dynamic
-        val brain = brainProvider().makeBrain(dynamic)
-        this.brain = brain
+    override fun makeBrain(packedBrain: Brain.Packed): Brain<out NPCEntity> {
+        this.brain = brainProvider().makeBrain(this, packedBrain)
         if (npc != null) {
-            NPCBrain.configure(this, npc, dynamic)
+            NPCBrain.configure(this, npc, packedBrain)
         }
-        return brain
+        // Configuration installs a new scripted brain; return that final instance to vanilla.
+        return getBrain()
     }
+
+    fun makeBrain(dynamic: Dynamic<*>): Brain<out NPCEntity> =
+        makeBrain(ScriptedBrain.read(dynamic, registryAccess()))
 
     override fun doHurtTarget(target: Entity): Boolean {
         val source = this.damageSources().mobAttack(this)

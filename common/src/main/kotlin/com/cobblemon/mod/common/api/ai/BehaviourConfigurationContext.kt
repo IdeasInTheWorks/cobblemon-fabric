@@ -32,7 +32,7 @@ import net.minecraft.world.entity.ai.behavior.BehaviorControl
 import net.minecraft.world.entity.ai.memory.MemoryModuleType
 import net.minecraft.world.entity.ai.sensing.SensorType
 import net.minecraft.world.entity.schedule.Activity
-import net.minecraft.world.entity.schedule.Schedule
+import net.minecraft.world.attribute.EnvironmentAttribute
 
 class BehaviourConfigurationContext {
     val runtime = MoLangRuntime().setup()
@@ -42,7 +42,8 @@ class BehaviourConfigurationContext {
     var defaultActivity = Activity.IDLE
     var coreActivities = setOf(Activity.CORE)
     val activities = mutableListOf<ActivityConfigurationContext>()
-    val schedule = Schedule.EMPTY
+    // Legacy Schedule.EMPTY selected no automatic activity; null retains that behavior.
+    var schedule: EnvironmentAttribute<Activity>? = null
     val memories = mutableSetOf<MemoryModuleType<*>>()
     val sensors = mutableSetOf<SensorType<*>>()
 
@@ -72,7 +73,10 @@ class BehaviourConfigurationContext {
         onAdd.add(script)
     }
 
-    fun apply(entity: LivingEntity, behaviourConfigs: List<BehaviourConfig>, dynamic: Dynamic<*>) {
+    fun apply(entity: LivingEntity, behaviourConfigs: List<BehaviourConfig>, dynamic: Dynamic<*>) =
+        apply(entity, behaviourConfigs, com.cobblemon.mod.common.util.ScriptedBrain.read(dynamic, entity.registryAccess()))
+
+    fun apply(entity: LivingEntity, behaviourConfigs: List<BehaviourConfig>, packedBrain: net.minecraft.world.entity.ai.Brain.Packed) {
         runtime.withQueryValue("entity", entity.asMostSpecificMoLangValue())
         runtime.withQueryValue("brain", createBrainStruct(entity, this))
 
@@ -88,13 +92,13 @@ class BehaviourConfigurationContext {
         var brain = entity.brain
         // Apply the brain config
         if (entity is MoLangScriptingEntity) {
-            brain = entity.assignNewBrainWithMemoriesAndSensors(dynamic, memories, sensors)
+            brain = entity.assignNewBrainWithMemoriesAndSensors(packedBrain, memories, sensors)
             onAdd.forEach { runtime.resolve(it) }
         }
         activities.forEach { it.apply(entity) }
         brain.setCoreActivities(coreActivities)
         brain.setDefaultActivity(defaultActivity)
-        brain.schedule = schedule
+        schedule?.let(brain::setSchedule)
         brain.setActiveActivityIfPossible(defaultActivity)
     }
 

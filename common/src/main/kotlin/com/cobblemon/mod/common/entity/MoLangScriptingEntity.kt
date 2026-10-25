@@ -66,10 +66,19 @@ interface MoLangScriptingEntity {
      * doesn't require this function, wow me. - Hiro
      */
     fun assignNewBrainWithMemoriesAndSensors(
-        dynamic: Dynamic<*>,
+        packedBrain: Brain.Packed,
         memories: Set<MemoryModuleType<*>>,
         sensors: Set<SensorType<*>>
     ): Brain<out LivingEntity>
+
+    // Preserve callers of the legacy data API; live rebuilds use Packed without a codec round trip.
+    fun assignNewBrainWithMemoriesAndSensors(
+        dynamic: Dynamic<*>,
+        memories: Set<MemoryModuleType<*>>,
+        sensors: Set<SensorType<*>>
+    ): Brain<out LivingEntity> = assignNewBrainWithMemoriesAndSensors(
+        com.cobblemon.mod.common.util.ScriptedBrain.read(dynamic, (this as LivingEntity).registryAccess()), memories, sensors
+    )
 
     fun registerVariables(brainVariables: Collection<MoLangConfigVariable>) {
         registeredVariables.clear()
@@ -85,8 +94,8 @@ interface MoLangScriptingEntity {
     fun saveScriptingToNBT(nbt: CompoundTag) {
         nbt.putBoolean(DataKeys.SCRIPTED_BEHAVIOURS_ARE_CUSTOM, behavioursAreCustom)
         nbt.put(DataKeys.SCRIPTED_BEHAVIOURS, ListTag().also { it.addAll(behaviours.map { StringTag.valueOf(it.toString()) }) })
-        nbt.put(DataKeys.SCRIPTED_DATA, MoLangFunctions.writeMoValueToNBT(data))
-        nbt.put(DataKeys.SCRIPTED_CONFIG, MoLangFunctions.writeMoValueToNBT(config))
+        nbt.put(DataKeys.SCRIPTED_DATA, requireNotNull(MoLangFunctions.writeMoValueToNBT(data)) { "Scripted data must encode as an NBT compound" })
+        nbt.put(DataKeys.SCRIPTED_CONFIG, requireNotNull(MoLangFunctions.writeMoValueToNBT(config)) { "Scripted config must encode as an NBT compound" })
     }
 
     fun loadScriptingFromNBT(nbt: CompoundTag) {

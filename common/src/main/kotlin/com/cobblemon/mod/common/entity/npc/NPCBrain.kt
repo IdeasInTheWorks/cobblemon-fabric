@@ -18,7 +18,10 @@ import com.cobblemon.mod.common.api.npc.NPCClass
 import com.mojang.serialization.Dynamic
 
 object NPCBrain {
-    fun configure(npcEntity: NPCEntity, npcClass: NPCClass, dynamic: Dynamic<*>) {
+    fun configure(npcEntity: NPCEntity, npcClass: NPCClass, dynamic: Dynamic<*>) =
+        configure(npcEntity, npcClass, com.cobblemon.mod.common.util.ScriptedBrain.read(dynamic, npcEntity.registryAccess()))
+
+    fun configure(npcEntity: NPCEntity, npcClass: NPCClass, packedBrain: net.minecraft.world.entity.ai.Brain.Packed) {
         var behaviourConfigurations: List<BehaviourConfig> = CobblemonBehaviours.autoNPCBehaviours.flatMap { it.configurations } + npcClass.behaviours
         if (npcEntity.behavioursAreCustom) {
             behaviourConfigurations = listOf(ApplyBehaviours().apply { behaviours.addAll(npcEntity.behaviours) })
@@ -28,7 +31,7 @@ object NPCBrain {
         val ctx = BehaviourConfigurationContext()
         ctx.addMemories(CobblemonMemories.DIALOGUES)
         ctx.addMemories(CobblemonMemories.NPC_BATTLING)
-        ctx.apply(npcEntity, behaviourConfigurations, dynamic)
+        ctx.apply(npcEntity, behaviourConfigurations, packedBrain)
         npcEntity.behaviours.clear()
         npcEntity.behaviours.addAll(ctx.appliedBehaviours)
     }

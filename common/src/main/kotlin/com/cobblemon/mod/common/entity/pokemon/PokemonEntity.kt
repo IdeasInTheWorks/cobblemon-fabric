@@ -111,6 +111,7 @@ import com.cobblemon.mod.common.util.math.geometry.toRadians
 import com.cobblemon.mod.common.world.gamerules.CobblemonGameRules
 import com.google.common.collect.UnmodifiableIterator
 import com.mojang.serialization.Codec
+import com.cobblemon.mod.common.util.ScriptedBrain
 import com.mojang.serialization.Dynamic
 import net.minecraft.client.Minecraft
 import net.minecraft.core.BlockPos
@@ -248,9 +249,6 @@ open class PokemonEntity(
         get() = pokemon.form
     val behaviour: FormPokemonBehaviour
         get() = form.behaviour
-
-    /** Essentially a cached form of what was serialized to make memory reloads still work despite dynamic brain activities. */
-    private var brainDynamic: Dynamic<*>? = null
 
     var pokemon: Pokemon = pokemon
         set(value) {
@@ -1086,33 +1084,34 @@ open class PokemonEntity(
     override fun getNavigation() = navigation as OmniPathNavigation
     override fun createNavigation(world: Level) = OmniPathNavigation(world, this)
 
-    override fun makeBrain(dynamic: Dynamic<*>): Brain<PokemonEntity> {
-        this.brainDynamic = dynamic
+    override fun makeBrain(packedBrain: Brain.Packed): Brain<PokemonEntity> {
         val target = pokemon
-        if (target != null) {
-            PokemonBrain.applyBrain(this, target, dynamic)
-            return getBrain()
+        return if (target != null) {
+            PokemonBrain.applyBrain(this, target, packedBrain)
+            getBrain()
         } else {
-            // Look around, nobody cares.
-            val brain = brainProvider().makeBrain(dynamic)
-            return brain
+            brainProvider().makeBrain(this, packedBrain)
         }
     }
 
+    fun makeBrain(dynamic: Dynamic<*>): Brain<PokemonEntity> =
+        makeBrain(ScriptedBrain.read(dynamic, registryAccess()))
+
     override fun remakeBrain() {
-        brain = makeBrain(brainDynamic ?: makeEmptyBrainDynamic())
+        brain = makeBrain(ScriptedBrain.snapshot(brain))
     }
 
     override fun assignNewBrainWithMemoriesAndSensors(
-        dynamic: Dynamic<*>,
+        packedBrain: Brain.Packed,
         memories: Set<MemoryModuleType<*>>,
         sensors: Set<SensorType<*>>
     ): Brain<PokemonEntity> {
         val allSensors = BuiltInRegistries.SENSOR_TYPE.toSet().filterIsInstance<SensorType<Sensor<in PokemonEntity>>>()
-        val brain = Brain.provider(
+        val brain = ScriptedBrain<PokemonEntity>(
             memories,
-            allSensors.filter { it in sensors }.toSet()
-        ).makeBrain(dynamic)
+            allSensors.filter { it in sensors }.toSet(),
+            packedBrain, random
+        )
         this.brain = brain
         return brain
     }
@@ -1121,7 +1120,7 @@ open class PokemonEntity(
     override fun getBrain(): Brain<PokemonEntity> = super.getBrain() as Brain<PokemonEntity>
 
     // Won't be the final call but Mojang is very confident we'll use their same structure. Think again, bucko.
-    override fun brainProvider(): Brain.Provider<PokemonEntity> = Brain.provider(PokemonBrain.MEMORY_MODULES, PokemonBrain.SENSORS)
+    fun brainProvider(): Brain.Provider<PokemonEntity> = Brain.provider(PokemonBrain.MEMORY_MODULES, PokemonBrain.SENSORS) { emptyList() }
 
     override fun onPathfindingDone() {
         super.onPathfindingDone()
