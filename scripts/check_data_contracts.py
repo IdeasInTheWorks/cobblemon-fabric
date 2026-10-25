@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import zipfile
 import os
 from pathlib import Path
 import subprocess
@@ -12,6 +13,7 @@ def main():
     parser.add_argument("--game-jar", type=Path, required=True)
     parser.add_argument("--gradle-cache", type=Path, required=True)
     parser.add_argument("--javac", type=Path, required=True)
+    parser.add_argument("--fabric-api-jar", type=Path)
     parser.add_argument("--legacy-game-jar", type=Path)
     parser.add_argument("--legacy-version-json", type=Path)
     parser.add_argument("--report", type=Path, default=Path("porting/logs/data-contracts.json"))
@@ -33,11 +35,28 @@ def main():
     for coordinate in evidence["target"]["libraries"]:
         group, artifact, version, *_ = coordinate.split(":")
         libraries.extend((args.gradle_cache / "caches/modules-2/files-2.1" / group / artifact / version).rglob("*.jar"))
+    fabric_info = None
+    if args.fabric_api_jar:
+        with zipfile.ZipFile(args.fabric_api_jar) as aggregate:
+            metadata = json.loads(aggregate.read("fabric.mod.json"))
+            if metadata["id"] != "fabric-api" or metadata["version"] != "0.165.0+26.3":
+                raise SystemExit("Fabric fixture requires the pinned 0.165.0+26.3 aggregate")
+            directory = root / "build/data-contracts/fabric-api"
+            directory.mkdir(parents=True, exist_ok=True)
+            for entry in metadata["jars"]:
+                name = entry["file"]
+                target = directory / Path(name).name
+                target.write_bytes(aggregate.read(name))
+                libraries.append(target)
+            fabric_info = {"version": metadata["version"], "sha256": hashlib.sha256(args.fabric_api_jar.read_bytes()).hexdigest()}
     classpath = os.pathsep.join(str(p.resolve()) for p in [args.game_jar, *libraries])
     out = root / "build/data-contracts"
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
-    sources = [root / "common/src/main/java/com/cobblemon/mod/common/entity/boat/BoatDropItem.java",
+    sources = [root / "common/src/main/java/com/cobblemon/mod/common/client/model/StandaloneModelKey.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/LegacyItemModels.java",
+               root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263ModelContracts.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/entity/boat/BoatDropItem.java",
                root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263VehicleContracts.java",
                root / "common/src/main/java/com/cobblemon/mod/common/util/HiveOccupants.java",
                root / "common/src/main/java/com/cobblemon/mod/common/entity/ai/LegacyRandomPos.java",
@@ -58,6 +77,9 @@ def main():
                root / "common/src/main/java/com/cobblemon/mod/common/item/CobblemonConsumables.java",
                root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java",
                root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft121RandomContracts.java"]
+    if fabric_info:
+        sources.extend([root / "fabric/src/main/java/com/cobblemon/mod/fabric/client/model/StandaloneModels.java",
+                        root / "fabric/src/test/java/com/cobblemon/mod/fabric/porting/Minecraft263FabricModelContracts.java"])
     argfile = out / "javac.args"
     argfile.write_text("\n".join(["--release", "25", "-proc:none", "-classpath", quoted(classpath),
                                   "-d", quoted(out), *map(quoted, sources)]), encoding="utf-8")
@@ -90,6 +112,18 @@ def main():
                        "legacy_random_stdout": run.stdout, "legacy_random_stderr": run.stderr})
         if code == 0:
             report["legacy_random_result"] = json.loads(run.stdout.strip().splitlines()[-1])
+    if code == 0 and fabric_info:
+        fabric_args = out / "fabric-java.args"
+        fabric_args.write_text("\n".join(["-classpath", quoted(str(out) + os.pathsep + classpath),
+                                         "com.cobblemon.mod.fabric.porting.Minecraft263FabricModelContracts"]), encoding="utf-8")
+        run = subprocess.run([str(args.javac.with_name("java.exe" if os.name == "nt" else "java")),
+                              "@" + str(fabric_args)], capture_output=True, text=True)
+        code = run.returncode
+        report.update({"passed": code == 0, "fabric_api": fabric_info,
+                       "fabric_stdout": run.stdout, "fabric_stderr": run.stderr})
+        if code == 0:
+            result_line = next(line for line in reversed(run.stdout.splitlines()) if '{"passed":' in line)
+            report["fabric_result"] = json.loads(result_line[result_line.index('{"passed":'):])
     (root / args.report).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
     return code

@@ -52,7 +52,7 @@ import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.minecraft.client.Minecraft
 import net.minecraft.client.color.block.BlockColor
-import net.minecraft.client.color.item.ItemColor
+import com.cobblemon.mod.common.client.model.LegacyItemModels.ItemColor
 import net.minecraft.client.model.geom.ModelLayerLocation
 import net.minecraft.client.model.geom.builders.LayerDefinition
 import net.minecraft.client.particle.ParticleProvider
@@ -79,18 +79,13 @@ class CobblemonFabricClient: ClientModInitializer, CobblemonClientImplementation
     override fun onInitializeClient() {
         registerParticleFactory(CobblemonParticles.SNOWSTORM_PARTICLE_TYPE, SnowstormParticleType::Factory)
         CobblemonClient.initialize(this)
-        ModelLoadingPlugin.register {
-            PokeBalls.all().forEach { pokeBall -> it.addModels(pokeBall.model3d) }
-            PokedexType.entries.toList().forEach { pokedex ->
-                it.addModels(
-                    pokedex.getItemModelPath(),
-                    pokedex.getItemModelPath("scanning"),
-                    pokedex.getItemModelPath("flat"),
-                    pokedex.getItemModelPath("flat_off"),
-                    pokedex.getItemModelPath("off")
-                )
+        val standaloneModels = com.cobblemon.mod.fabric.client.model.StandaloneModels()
+        ModelLoadingPlugin.register { context ->
+            com.cobblemon.mod.common.client.CobblemonBakingOverrides.models.forEach { model ->
+                val lookup = standaloneModels.declare(model.modelIdentifier, model.modelLocation)
+                model.bindModelLookup { lookup.get() }
             }
-            CobblemonItems.wearables.forEach { wearable -> it.addModels(wearable.getModel3d()) }
+            standaloneModels.initialize(context)
         }
 
         CobblemonFabric.networkManager.registerClientHandlers()
@@ -187,7 +182,7 @@ class CobblemonFabricClient: ClientModInitializer, CobblemonClientImplementation
     }
 
     override fun registerItemColors(provider: ItemColor, vararg items: Item) {
-        ColorProviderRegistry.ITEM.register(provider, *items)
+        com.cobblemon.mod.common.client.model.LegacyItemModels.registerColors(provider, *items)
     }
 
     override fun registerBlockColors(provider: BlockColor, vararg blocks: Block) {

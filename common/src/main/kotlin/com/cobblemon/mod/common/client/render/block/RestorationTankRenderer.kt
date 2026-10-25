@@ -62,7 +62,7 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
         val cutoutBuffer = vertexConsumers.getBuffer(RenderType.cutout())
         if (connectionDir != null) {
             matrices.pushPose()
-            CONNECTOR_MODEL.getQuads(entity.blockState, null, entity.level?.random).forEach { quad ->
+            CONNECTOR_MODEL.getModel().getQuads(entity.blockState, null, entity.level?.random).forEach { quad ->
                 cutoutBuffer.putBulkData(matrices.last(), quad, 0.75f, 0.75f, 0.75f, 1f, light, OverlayTexture.NO_OVERLAY)
             }
             matrices.popPose()
@@ -79,9 +79,9 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
         matrices.pushPose()
         val transparentBuffer = vertexConsumers.getBuffer(RenderType.translucent())
 
-        val fluidModel = if (struct.isRunning()) FLUID_MODELS[8]
+        val fluidModel = (if (struct.isRunning()) FLUID_MODELS[8]
         else if (struct.hasCreatedPokemon) FLUID_MODELS[7]
-        else FLUID_MODELS[fillLevel.coerceAtMost(FLUID_MODELS.size - 1) - 1]
+        else FLUID_MODELS[fillLevel.coerceAtMost(FLUID_MODELS.size - 1) - 1]).getModel()
         fluidModel.getQuads(entity.blockState, null, entity.level!!.random).forEach { quad ->
             transparentBuffer.putBulkData(matrices.last(), quad, 0.75f, 0.75f, 0.75f, 1f, light, OverlayTexture.NO_OVERLAY)
         }
@@ -194,18 +194,18 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
 
     companion object {
         val FLUID_MODELS = listOf(
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_1.getModel(),
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_2.getModel(),
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_3.getModel(),
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_4.getModel(),
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_5.getModel(),
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_6.getModel(),
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_7.getModel(),
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_8.getModel(),
-            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_BUBBLING.getModel()
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_1,
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_2,
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_3,
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_4,
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_5,
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_6,
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_7,
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_CHUNKED_8,
+            CobblemonBakingOverrides.RESTORATION_TANK_FLUID_BUBBLING
         )
 
-        val CONNECTOR_MODEL = CobblemonBakingOverrides.RESTORATION_TANK_CONNECTOR.getModel()
+        val CONNECTOR_MODEL = CobblemonBakingOverrides.RESTORATION_TANK_CONNECTOR
 
         val EMBRYO_IDENTIFIERS = listOf(
             cobblemonResource("embryo_stage1"),

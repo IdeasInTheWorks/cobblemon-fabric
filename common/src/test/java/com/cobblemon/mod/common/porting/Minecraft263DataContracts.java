@@ -648,6 +648,7 @@ final class Minecraft263DataContracts {
             check(!particleBuffer.isReadable(), "held-item particle frame consumes its complete payload");
         } finally { particleBuffer.release(); }
         checks += Minecraft263VehicleContracts.run(vanilla);
+        checks += Minecraft263ModelContracts.run();
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }
