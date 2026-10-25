@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 28,
+  "generation": 29,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -169,6 +169,34 @@
       "minutes": 90,
       "checkpoint": "a77051e78d2c3237566e1657ec61b8226cf4b5b1 pushed and verified in three commits;170 focused assertions and20 tooling tests pass; local common compile6088/952, AW54 fails, common/Fabric headers pass. R019/R020 original acceptance remains open; no Minecraft gameplay or JAR. See porting/RESUME.md and same Sheet for estimates, remaining scopes, actual CI and handoff.",
       "closed_at": "2026-10-25T00:56:01Z"
+    },
+    "S07-R019": {
+      "work_id": "S07-R019",
+      "owner": "codex-sprint07-01a16f8a",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "README.md",
+        "UPSTREAM.md",
+        "common/src",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "d3082f1d-53c0-4940-8ed8-851578e20202",
+      "operation_id": "d3082f1d-53c0-4940-8ed8-851578e20202",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-25T01:10:41Z",
+      "heartbeat_at": "2026-10-25T01:10:41Z",
+      "expires_at": "2026-10-25T02:40:41Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -451,6 +479,16 @@
       "lease_id": "ae6ea849-6414-4550-a964-9c39a8ae0caf",
       "epoch": 1,
       "checkpoint": "a77051e78d2c3237566e1657ec61b8226cf4b5b1 pushed and verified in three commits;170 focused assertions and20 tooling tests pass; local common compile6088/952, AW54 fails, common/Fabric headers pass. R019/R020 original acceptance remains open; no Minecraft gameplay or JAR. See porting/RESUME.md and same Sheet for estimates, remaining scopes, actual CI and handoff."
+    },
+    {
+      "generation": 29,
+      "at": "2026-10-25T01:10:41Z",
+      "kind": "acquire",
+      "work_id": "S07-R019",
+      "owner": "codex-sprint07-01a16f8a",
+      "lease_id": "d3082f1d-53c0-4940-8ed8-851578e20202",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
