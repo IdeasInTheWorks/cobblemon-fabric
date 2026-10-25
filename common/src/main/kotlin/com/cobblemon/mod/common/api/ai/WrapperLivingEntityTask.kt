@@ -35,6 +35,7 @@ class WrapperLivingEntityTask<T : LivingEntity>(val task: BehaviorControl<T>, va
     }
 
     override fun debugString() = task.debugString()
+    override fun getRequiredMemories() = task.requiredMemories
     override fun tickOrStop(level: ServerLevel, entity: LivingEntity, gameTime: Long) {
         task.tickOrStop(level, entity as T, gameTime)
     }

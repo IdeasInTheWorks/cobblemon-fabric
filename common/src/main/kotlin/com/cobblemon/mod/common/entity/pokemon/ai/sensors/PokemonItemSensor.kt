@@ -31,8 +31,8 @@ class PokemonItemSensor(
         const val PICKUP_ITEMS = "pickup_items"
     }
 
-    override fun requires(): MutableSet<MemoryModuleType<*>?> {
-        return ImmutableSet.of<MemoryModuleType<*>?>(MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM)
+    override fun requires(): MutableSet<MemoryModuleType<*>> {
+        return ImmutableSet.of<MemoryModuleType<*>>(MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM)
     }
 
     override fun doTick(level: ServerLevel, entity: PokemonEntity) {

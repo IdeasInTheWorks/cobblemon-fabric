@@ -38,6 +38,8 @@ import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
 import net.minecraft.resources.Identifier
 import net.minecraft.server.level.ServerEntity
+import net.minecraft.server.level.ServerLevel
+import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.Pose
 import net.minecraft.world.level.Level
@@ -129,7 +131,10 @@ class GenericBedrockEntity(world: Level) : Entity(CobblemonEntities.GENERIC_BEDR
     }
 
     override fun isPickable() = true
-    override fun canBeCollidedWith() = true
+    override fun canBeCollidedWith(entity: Entity?) = true
+
+    // Non-living model helpers inherited Entity.hurt's false result on 1.21.1.
+    override fun hurtServer(world: ServerLevel, source: DamageSource, amount: Float) = false
 
     override fun shouldBeSaved() = super.shouldBeSaved() && this.savesToWorld
     override fun getDimensions(pose: Pose) = EntityDimensions.scalable(colliderWidth, colliderHeight).scale(scale)

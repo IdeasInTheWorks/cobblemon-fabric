@@ -12,6 +12,8 @@ import com.cobblemon.mod.common.api.serialization.StringIdentifiedObjectAdapter
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import net.minecraft.world.entity.ai.targeting.TargetingConditions
 import net.minecraft.world.phys.AABB
+import com.cobblemon.mod.common.entity.ai.LegacyEntityQueries
+import net.minecraft.server.level.ServerLevel
 
 /**
  * How deeply a Pokémon sleeps. This takes the current situation and decides if a Pokémon should fall asleep or wake.
@@ -30,11 +32,11 @@ interface SleepDepth {
 
         val normal = object : SleepDepth {
             override fun canSleep(pokemonEntity: PokemonEntity): Boolean {
-                return pokemonEntity.level().getNearbyPlayers(TargetingConditions.forNonCombat(), pokemonEntity, AABB.ofSize(pokemonEntity.position(), 16.0, 16.0, 16.0)).isEmpty()
+                return LegacyEntityQueries.nearbyPlayers(pokemonEntity.level() as ServerLevel, pokemonEntity, AABB.ofSize(pokemonEntity.position(), 16.0, 16.0, 16.0), TargetingConditions.forNonCombat()).isEmpty()
             }
 
             override fun shouldWake(pokemonEntity: PokemonEntity): Boolean {
-                val nearbyPlayers = pokemonEntity.level().getNearbyPlayers(TargetingConditions.forNonCombat(), pokemonEntity, AABB.ofSize(pokemonEntity.position(), 16.0, 16.0, 16.0))
+                val nearbyPlayers = LegacyEntityQueries.nearbyPlayers(pokemonEntity.level() as ServerLevel, pokemonEntity, AABB.ofSize(pokemonEntity.position(), 16.0, 16.0, 16.0), TargetingConditions.forNonCombat())
                 return nearbyPlayers.any { !it.isShiftKeyDown }
             }
         }
