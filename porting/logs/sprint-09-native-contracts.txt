@@ -1,0 +1,434 @@
+S09 contracts: javap -p -c against official checksum-verified clients.
+Target26.3 SHA1 e877b6a07acd633fb3bb475002175cec036e7b87
+Legacy1.21.1 SHA1 30c73b1c5da787909b2f73340419fdf13b9def88
+No game process or actual world migration was executed.
+
+SOURCE build/s09-native-bytecode.txt
+  public net.minecraft.world.entity.vehicle.boat.AbstractBoat(net.minecraft.world.entity.EntityType<? extends net.minecraft.world.entity.vehicle.boat.AbstractBoat>, net.minecraft.world.level.Level, java.util.function.Supplier<net.minecraft.world.item.Item>);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: invokespecial #5                  // Method net/minecraft/world/entity/vehicle/VehicleEntity."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;)V
+         6: aload_0
+         7: iconst_2
+         8: newarray       float
+        10: putfield      #11                 // Field paddlePositions:[F
+        13: aload_0
+        14: aload_3
+        15: putfield      #17                 // Field dropItem:Ljava/util/function/Supplier;
+        18: aload_0
+        19: iconst_1
+        20: putfield      #21                 // Field blocksBuilding:Z
+        23: return
+
+  protected final net.minecraft.world.item.Item getDropItem();
+    Code:
+         0: aload_0
+         1: getfield      #17                 // Field dropItem:Ljava/util/function/Supplier;
+         4: invokeinterface #939,  1          // InterfaceMethod java/util/function/Supplier.get:()Ljava/lang/Object;
+         9: checkcast     #943                // class net/minecraft/world/item/Item
+        12: areturn
+
+  public void destroy(net.minecraft.server.level.ServerLevel, net.minecraft.world.damagesource.DamageSource);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_0
+         3: invokevirtual #40                 // Method getDropItem:()Lnet/minecraft/world/item/Item;
+         6: invokevirtual #44                 // Method destroy:(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/Item;)V
+         9: aload_0
+        10: aload_2
+        11: aload_1
+        12: aload_0
+        13: invokevirtual #48                 // Method chestVehicleDestroyed:(Lnet/minecraft/world/damagesource/DamageSource;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/Entity;)V
+        16: return
+
+  public void stopOpen(net.minecraft.world.entity.ContainerUser);
+    Code:
+         0: aload_0
+         1: invokevirtual #52                 // Method level:()Lnet/minecraft/world/level/Level;
+         4: getstatic     #187                // Field net/minecraft/world/level/gameevent/GameEvent.CONTAINER_CLOSE:Lnet/minecraft/core/Holder$Reference;
+         7: aload_0
+         8: invokevirtual #190                // Method position:()Lnet/minecraft/world/phys/Vec3;
+        11: aload_1
+        12: invokeinterface #194,  1          // InterfaceMethod net/minecraft/world/entity/ContainerUser.getLivingEntity:()Lnet/minecraft/world/entity/LivingEntity;
+        17: invokestatic  #200                // Method net/minecraft/world/level/gameevent/GameEvent$Context.of:(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/level/gameevent/GameEvent$Context;
+        20: invokevirtual #206                // Method net/minecraft/world/level/Level.gameEvent:(Lnet/minecraft/core/Holder;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/level/gameevent/GameEvent$Context;)V
+        23: return
+}
+Compiled from "VehicleEntity.java"
+public abstract class net.minecraft.world.entity.vehicle.VehicleEntity extends net.minecraft.world.entity.Entity {
+  public void destroy(net.minecraft.server.level.ServerLevel, net.minecraft.world.item.Item);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokevirtual #113                // Method kill:(Lnet/minecraft/server/level/ServerLevel;)V
+         5: aload_1
+         6: invokevirtual #92                 // Method net/minecraft/server/level/ServerLevel.getGameRules:()Lnet/minecraft/world/level/gamerules/GameRules;
+         9: getstatic     #117                // Field net/minecraft/world/level/gamerules/GameRules.ENTITY_DROPS:Lnet/minecraft/world/level/gamerules/GameRule;
+        12: invokevirtual #104                // Method net/minecraft/world/level/gamerules/GameRules.get:(Lnet/minecraft/world/level/gamerules/GameRule;)Ljava/lang/Object;
+        15: checkcast     #108                // class java/lang/Boolean
+        18: invokevirtual #110                // Method java/lang/Boolean.booleanValue:()Z
+        21: ifne          25
+        24: return
+        25: new           #120                // class net/minecraft/world/item/ItemStack
+        28: dup
+        29: aload_2
+        30: invokespecial #122                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+        33: astore_3
+        34: aload_3
+        35: getstatic     #125                // Field net/minecraft/core/component/DataComponents.CUSTOM_NAME:Lnet/minecraft/core/component/DataComponentType;
+        38: aload_0
+        39: invokevirtual #131                // Method getCustomName:()Lnet/minecraft/network/chat/Component;
+        42: invokevirtual #135                // Method net/minecraft/world/item/ItemStack.set:(Lnet/minecraft/core/component/DataComponentType;Ljava/lang/Object;)Ljava/lang/Object;
+        45: pop
+        46: aload_0
+        47: aload_1
+        48: aload_3
+        49: invokevirtual #139                // Method spawnAtLocation:(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/entity/item/ItemEntity;
+        52: pop
+        53: return
+
+  protected void destroy(net.minecraft.server.level.ServerLevel, net.minecraft.world.damagesource.DamageSource);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_0
+         3: invokevirtual #188                // Method getDropItem:()Lnet/minecraft/world/item/Item;
+         6: invokevirtual #192                // Method destroy:(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/Item;)V
+         9: return
+
+  protected abstract net.minecraft.world.item.Item getDropItem();
+
+  public default void addChestVehicleSaveData(net.minecraft.world.level.storage.ValueOutput);
+    Code:
+         0: aload_0
+         1: invokeinterface #7,  1            // InterfaceMethod getContainerLootTable:()Lnet/minecraft/resources/ResourceKey;
+         6: ifnull        57
+         9: aload_1
+        10: ldc           #11                 // String LootTable
+        12: aload_0
+        13: invokeinterface #7,  1            // InterfaceMethod getContainerLootTable:()Lnet/minecraft/resources/ResourceKey;
+        18: invokevirtual #13                 // Method net/minecraft/resources/ResourceKey.identifier:()Lnet/minecraft/resources/Identifier;
+        21: invokevirtual #19                 // Method net/minecraft/resources/Identifier.toString:()Ljava/lang/String;
+        24: invokeinterface #25,  3           // InterfaceMethod net/minecraft/world/level/storage/ValueOutput.putString:(Ljava/lang/String;Ljava/lang/String;)V
+        29: aload_0
+        30: invokeinterface #31,  1           // InterfaceMethod getContainerLootTableSeed:()J
+        35: lconst_0
+        36: lcmp
+        37: ifeq          67
+        40: aload_1
+        41: ldc           #35                 // String LootTableSeed
+        43: aload_0
+        44: invokeinterface #31,  1           // InterfaceMethod getContainerLootTableSeed:()J
+        49: invokeinterface #37,  4           // InterfaceMethod net/minecraft/world/level/storage/ValueOutput.putLong:(Ljava/lang/String;J)V
+        54: goto          67
+        57: aload_1
+        58: aload_0
+        59: invokeinterface #41,  1           // InterfaceMethod getItemStacks:()Lnet/minecraft/core/NonNullList;
+        64: invokestatic  #45                 // Method net/minecraft/world/ContainerHelper.saveAllItems:(Lnet/minecraft/world/level/storage/ValueOutput;Lnet/minecraft/core/NonNullList;)V
+        67: return
+
+  public default void readChestVehicleSaveData(net.minecraft.world.level.storage.ValueInput);
+    Code:
+         0: aload_0
+         1: invokeinterface #51,  1           // InterfaceMethod clearItemStacks:()V
+         6: aload_1
+         7: ldc           #11                 // String LootTable
+         9: getstatic     #55                 // Field net/minecraft/world/level/storage/loot/LootTable.KEY_CODEC:Lcom/mojang/serialization/Codec;
+        12: invokeinterface #61,  3           // InterfaceMethod net/minecraft/world/level/storage/ValueInput.read:(Ljava/lang/String;Lcom/mojang/serialization/Codec;)Ljava/util/Optional;
+        17: aconst_null
+        18: invokevirtual #67                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+        21: checkcast     #14                 // class net/minecraft/resources/ResourceKey
+        24: astore_2
+        25: aload_0
+        26: aload_2
+        27: invokeinterface #73,  2           // InterfaceMethod setContainerLootTable:(Lnet/minecraft/resources/ResourceKey;)V
+        32: aload_0
+        33: aload_1
+        34: ldc           #35                 // String LootTableSeed
+        36: lconst_0
+        37: invokeinterface #77,  4           // InterfaceMethod net/minecraft/world/level/storage/ValueInput.getLongOr:(Ljava/lang/String;J)J
+        42: invokeinterface #81,  3           // InterfaceMethod setContainerLootTableSeed:(J)V
+        47: aload_2
+        48: ifnonnull     61
+        51: aload_1
+        52: aload_0
+        53: invokeinterface #41,  1           // InterfaceMethod getItemStacks:()Lnet/minecraft/core/NonNullList;
+        58: invokestatic  #85                 // Method net/minecraft/world/ContainerHelper.loadAllItems:(Lnet/minecraft/world/level/storage/ValueInput;Lnet/minecraft/core/NonNullList;)V
+        61: return
+
+  public default void dropLeash();
+    Code:
+         0: aload_0
+         1: checkcast     #26                 // class net/minecraft/world/entity/Entity
+         4: iconst_1
+         5: iconst_1
+         6: invokestatic  #51                 // InterfaceMethod dropLeash:(Lnet/minecraft/world/entity/Entity;ZZ)V
+         9: return
+
+  public default void removeLeash();
+    Code:
+         0: aload_0
+         1: checkcast     #26                 // class net/minecraft/world/entity/Entity
+         4: iconst_1
+         5: iconst_0
+         6: invokestatic  #51                 // InterfaceMethod dropLeash:(Lnet/minecraft/world/entity/Entity;ZZ)V
+         9: return
+
+  public static float sin(double);
+    Code:
+         0: getstatic     #13                 // Field SIN:[F
+         3: dload_0
+         4: ldc2_w        #17                 // double 10430.378350470453d
+         7: dmul
+         8: d2l
+         9: ldc2_w        #19                 // long 65535l
+        12: land
+        13: l2i
+        14: faload
+        15: freturn
+
+  public static float cos(double);
+    Code:
+         0: getstatic     #13                 // Field SIN:[F
+         3: dload_0
+         4: ldc2_w        #17                 // double 10430.378350470453d
+         7: dmul
+         8: ldc2_w        #21                 // double 16384.0d
+        11: dadd
+        12: d2l
+        13: ldc2_w        #19                 // long 65535l
+        16: land
+        17: l2i
+        18: faload
+        19: freturn
+
+
+SOURCE build/s09-native-extra-bytecode.txt
+  protected double rideHeight(net.minecraft.world.entity.EntityDimensions);
+    Code:
+         0: aload_1
+         1: invokevirtual #7                  // Method net/minecraft/world/entity/EntityDimensions.height:()F
+         4: ldc           #13                 // float 3.0f
+         6: fdiv
+         7: f2d
+         8: dreturn
+}
+Compiled from "Raft.java"
+public class net.minecraft.world.entity.vehicle.boat.Raft extends net.minecraft.world.entity.vehicle.boat.AbstractBoat {
+  protected double rideHeight(net.minecraft.world.entity.EntityDimensions);
+    Code:
+         0: aload_1
+         1: invokevirtual #7                  // Method net/minecraft/world/entity/EntityDimensions.height:()F
+         4: ldc           #13                 // float 0.8888889f
+         6: fmul
+         7: f2d
+         8: dreturn
+}
+Compiled from "ThrowableItemProjectile.java"
+public abstract class net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile extends net.minecraft.world.entity.projectile.ThrowableProjectile implements net.minecraft.world.entity.projectile.ItemSupplier {
+  public net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile(net.minecraft.world.entity.EntityType<? extends net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile>, net.minecraft.world.level.Level);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: invokespecial #1                  // Method net/minecraft/world/entity/projectile/ThrowableProjectile."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;)V
+         6: return
+
+  public net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile(net.minecraft.world.entity.EntityType<? extends net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile>, double, double, double, net.minecraft.world.level.Level, net.minecraft.world.item.ItemStack);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: dload_2
+         3: dload         4
+         5: dload         6
+         7: aload         8
+         9: invokespecial #7                  // Method net/minecraft/world/entity/projectile/ThrowableProjectile."<init>":(Lnet/minecraft/world/entity/EntityType;DDDLnet/minecraft/world/level/Level;)V
+        12: aload_0
+        13: aload         9
+        15: invokevirtual #10                 // Method setItem:(Lnet/minecraft/world/item/ItemStack;)V
+        18: return
+
+  public net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile(net.minecraft.world.entity.EntityType<? extends net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile>, net.minecraft.world.entity.LivingEntity, net.minecraft.world.level.Level, net.minecraft.world.item.ItemStack);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: invokevirtual #16                 // Method net/minecraft/world/entity/LivingEntity.getX:()D
+         6: aload_2
+         7: invokevirtual #22                 // Method net/minecraft/world/entity/LivingEntity.getEyeY:()D
+        10: ldc2_w        #25                 // double 0.10000000149011612d
+        13: dsub
+        14: aload_2
+        15: invokevirtual #27                 // Method net/minecraft/world/entity/LivingEntity.getZ:()D
+        18: aload_3
+        19: aload         4
+        21: invokespecial #30                 // Method "<init>":(Lnet/minecraft/world/entity/EntityType;DDDLnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;)V
+        24: aload_0
+        25: aload_2
+        26: invokevirtual #33                 // Method setOwner:(Lnet/minecraft/world/entity/Entity;)V
+        29: return
+
+  public void setOwner(net.minecraft.world.entity.Entity);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokespecial #856                // Method net/minecraft/world/entity/projectile/Projectile.setOwner:(Lnet/minecraft/world/entity/Entity;)V
+         5: aload_0
+         6: aload_0
+         7: invokevirtual #848                // Method updateOwnerInfo:(Lnet/minecraft/world/entity/projectile/FishingHook;)V
+        10: return
+
+  private void updateOwnerInfo(net.minecraft.world.entity.projectile.FishingHook);
+    Code:
+         0: aload_0
+         1: invokevirtual #274                // Method getPlayerOwner:()Lnet/minecraft/world/entity/player/Player;
+         4: astore_2
+         5: aload_2
+         6: ifnull        14
+         9: aload_2
+        10: aload_1
+        11: putfield      #857                // Field net/minecraft/world/entity/player/Player.fishing:Lnet/minecraft/world/entity/projectile/FishingHook;
+        14: return
+
+
+SOURCE build/s09-owner-bytecode.txt
+  public StoredEntityType getEntity(net.minecraft.world.level.entity.UUIDLookup<? extends net.minecraft.world.level.entity.UniquelyIdentifyable>, java.lang.Class<StoredEntityType>);
+    Code:
+         0: aload_0
+         1: getfield      #23                 // Field entity:Lcom/mojang/datafixers/util/Either;
+         4: invokevirtual #47                 // Method com/mojang/datafixers/util/Either.right:()Ljava/util/Optional;
+         7: astore_3
+         8: aload_3
+         9: invokevirtual #50                 // Method java/util/Optional.isPresent:()Z
+        12: ifeq          54
+        15: aload_3
+        16: invokevirtual #56                 // Method java/util/Optional.get:()Ljava/lang/Object;
+        19: checkcast     #60                 // class net/minecraft/world/level/entity/UniquelyIdentifyable
+        22: astore        4
+        24: aload         4
+        26: invokeinterface #62,  1           // InterfaceMethod net/minecraft/world/level/entity/UniquelyIdentifyable.isRemoved:()Z
+        31: ifeq          51
+        34: aload_0
+        35: aload         4
+        37: invokeinterface #65,  1           // InterfaceMethod net/minecraft/world/level/entity/UniquelyIdentifyable.getUUID:()Ljava/util/UUID;
+        42: invokestatic  #27                 // Method com/mojang/datafixers/util/Either.left:(Ljava/lang/Object;)Lcom/mojang/datafixers/util/Either;
+        45: putfield      #23                 // Field entity:Lcom/mojang/datafixers/util/Either;
+        48: goto          54
+        51: aload         4
+        53: areturn
+        54: aload_0
+        55: getfield      #23                 // Field entity:Lcom/mojang/datafixers/util/Either;
+        58: invokevirtual #69                 // Method com/mojang/datafixers/util/Either.left:()Ljava/util/Optional;
+        61: astore        4
+        63: aload         4
+        65: invokevirtual #50                 // Method java/util/Optional.isPresent:()Z
+        68: ifeq          119
+        71: aload_0
+        72: aload_1
+        73: aload         4
+        75: invokevirtual #56                 // Method java/util/Optional.get:()Ljava/lang/Object;
+        78: checkcast     #45                 // class java/util/UUID
+        81: invokeinterface #71,  2           // InterfaceMethod net/minecraft/world/level/entity/UUIDLookup.lookup:(Ljava/util/UUID;)Lnet/minecraft/world/level/entity/UniquelyIdentifyable;
+        86: aload_2
+        87: invokevirtual #77                 // Method resolve:(Lnet/minecraft/world/level/entity/UniquelyIdentifyable;Ljava/lang/Class;)Lnet/minecraft/world/level/entity/UniquelyIdentifyable;
+        90: astore        5
+        92: aload         5
+        94: ifnull        119
+        97: aload         5
+        99: invokeinterface #62,  1           // InterfaceMethod net/minecraft/world/level/entity/UniquelyIdentifyable.isRemoved:()Z
+       104: ifne          119
+       107: aload_0
+       108: aload         5
+       110: invokestatic  #17                 // Method com/mojang/datafixers/util/Either.right:(Ljava/lang/Object;)Lcom/mojang/datafixers/util/Either;
+       113: putfield      #23                 // Field entity:Lcom/mojang/datafixers/util/Either;
+       116: aload         5
+       118: areturn
+       119: aconst_null
+       120: areturn
+
+  public void store(net.minecraft.world.level.storage.ValueOutput, java.lang.String);
+    Code:
+         0: aload_1
+         1: aload_2
+         2: getstatic     #115                // Field net/minecraft/core/UUIDUtil.CODEC:Lcom/mojang/serialization/Codec;
+         5: aload_0
+         6: invokevirtual #110                // Method getUUID:()Ljava/util/UUID;
+         9: invokeinterface #118,  4          // InterfaceMethod net/minecraft/world/level/storage/ValueOutput.store:(Ljava/lang/String;Lcom/mojang/serialization/Codec;Ljava/lang/Object;)V
+        14: return
+
+  public static void store(net.minecraft.world.entity.EntityReference<?>, net.minecraft.world.level.storage.ValueOutput, java.lang.String);
+    Code:
+         0: aload_0
+         1: ifnull        10
+         4: aload_0
+         5: aload_1
+         6: aload_2
+         7: invokevirtual #124                // Method store:(Lnet/minecraft/world/level/storage/ValueOutput;Ljava/lang/String;)V
+        10: return
+
+  public static <StoredEntityType extends net.minecraft.world.level.entity.UniquelyIdentifyable> net.minecraft.world.entity.EntityReference<StoredEntityType> read(net.minecraft.world.level.storage.ValueInput, java.lang.String);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokestatic  #137                // Method codec:()Lcom/mojang/serialization/Codec;
+         5: invokeinterface #141,  3          // InterfaceMethod net/minecraft/world/level/storage/ValueInput.read:(Ljava/lang/String;Lcom/mojang/serialization/Codec;)Ljava/util/Optional;
+        10: aconst_null
+        11: invokevirtual #147                // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+        14: checkcast     #2                  // class net/minecraft/world/entity/EntityReference
+        17: areturn
+
+
+SOURCE build/s07-old-entity.txt
+  public void a(wz);
+    Code:
+         0: return
+
+
+Legacy cov (Boat) BAMBOO passenger height excerpt:
+        10: invokeinterface #220,  1          // InterfaceMethod java/util/List.size:()I
+        15: iconst_1
+        16: if_icmple     61
+        19: aload_0
+        20: invokevirtual #215                // Method cS:()Ljava/util/List;
+        23: aload_1
+        24: invokeinterface #224,  2          // InterfaceMethod java/util/List.indexOf:(Ljava/lang/Object;)I
+        29: istore        5
+        31: iload         5
+        33: ifne          43
+        36: ldc           #225                // float 0.2f
+        38: fstore        4
+        40: goto          47
+        43: ldc           #226                // float -0.6f
+        45: fstore        4
+        47: aload_1
+        48: instanceof    #228                // class cfe
+        51: ifeq          61
+        54: fload         4
+        56: ldc           #225                // float 0.2f
+        58: fadd
+        59: fstore        4
+        61: new           #232                // class exc
+        64: dup
+        65: dconst_0
+        66: aload_0
+        67: invokevirtual #236                // Method x:()Lcov$b;
+        70: getstatic     #238                // Field cov$b.i:Lcov$b;
+        73: if_acmpne     87
+        76: aload_2
+        77: invokevirtual #240                // Method bsu.b:()F
+        80: ldc           #241                // float 0.8888889f
+        82: fmul
+        83: f2d
+        84: goto          95
+        87: aload_2
+        88: invokevirtual #240                // Method bsu.b:()F
+        91: ldc           #242                // float 3.0f
+        93: fdiv
+        94: f2d
+        95: fload         4
+        97: f2d
+        98: invokespecial #244                // Method exc."<init>":(DDD)V
+       101: aload_0

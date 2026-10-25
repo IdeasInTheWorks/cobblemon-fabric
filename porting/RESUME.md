@@ -2,7 +2,27 @@
 
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
-## Sprint S08 checkpoint (2026-10-25)
+## Sprint S09 checkpoint (2026-10-25)
+
+Partial R021 work under `S09-R021`, owner `codex-sprint09-01a16f8a`, exclusive integration resource. Source milestones `aab41626335a3f726179096bb3b12a3d83fb69ac` and `0cf1b461330d4fa383ea5a0c21c354babda41de5`. Read the live registry before editing; saved leases and Sheet rows are snapshots. Release after this durable checkpoint is pushed; new work needs a fresh claim. Concurrent workers require separate worktrees/branches and nonoverlapping scopes, with one integration owner.
+
+Pokeball and fishing owners now resolve through native getOwner; setOwner retains native fishing owner bookkeeping. Capture notices target ServerPlayer (the old base Entity method was a no-op), the throw constructor carries the ball stack, server drops preserve creative/refund policy, and no-argument dropLeash retains true/true semantics. Capture calculation, battle events, party insertion and RNG call order remain in source. Fishing retains float expression ordering before promotion into native double-angle trig; precision can differ, so bit-exact trajectories are not claimed.
+
+Boats pass a late-bound supplier into the now-final drop getter, retaining dynamic normal/chest item selection after synchronized or saved variant changes. Removed BAMBOO vanilla variant behavior is replaced with the same0.8888889F ride-height arithmetic; custom X offsets remain. Accessors target the declaring AbstractBoat. Fall/destruction/drop calls use ServerLevel and typed gamerules. The pre-existing isPassenger fall guard is retained and needs runtime assessment. Chest boats retain27 slots, custom type, LootTable/LootTableSeed keys, spectator/menu rules, container sounds/events, drops and server piglin anger. Rod enchantability1/shared translation move into properties; bait predicates use typeHolder and replacement bait uses SERVER_ONLY drops.
+
+Executed results:
+
+- Three common Kotlin compiles fail at5819/893,5810/891,then **5804 diagnostic lines /889 files**;76 fewer (1.3%) thanS08. Counts include cascades. All six migrated Kotlin files have zero diagnostics in the final attempt; full Java/Fabric compilation still fails elsewhere.
+- **375 focused assertions pass**, including23 new owner/drop/container cases: owner UUID/save form, nullable resolution, removed cached owner and re-resolution, current variant supplier, sparse27-slot inventory/custom components and unopened loot-table/seed saves. Uses actual production Java helper/native classes and minimal inventory component fixtures, without a world/player. First fixture attempt fails on private CODEC access; the successful fixture uses public save/read methods. **810 actual legacy random cases /1620 checks still pass**; these are navigation checks, not fishing trajectory/game tests.
+- **20 tooling tests and common main/test plus Fabric headers pass**. **49 access-widener misses remain**. Full Java/mixin/JUnit, client/server/capture/fishing/boat/battle/multiplayer/world-migration tests are unexecuted; no JAR, release or completed-work PR.
+
+Evidence: `sprint-09-summary.json`, `sprint-09-compiler-summary.json`, `sprint-09-validation-summary.json`, `sprint-09-source-audit.json`, and `logs/sprint-09-*`. Exact commands are in BUILDING.md. Post-push CI and claim closure belong to Actions and the same native Sheet. All licences/assets retained; no upstream push or production-world changes.
+
+Remaining planning effort (low/likely/high engineering person-hours, Low confidence): R021 **12/24/48** (prior20/40/80); whole roadmap **550/1100/2208**. Actual hours unmeasured. **12/44 accepted tasks complete (27.3%),32/44 remaining (72.7%)**. These are equal task counts, not effort-weighted or gameplay completion; R021 original acceptance stays open.
+
+Next coherent sprint: R022 block/item model baking/definitions with R023 render extraction and AW49 reconciliation. R015 old-data/entity construction and R013 startup remain open. After successful build, execute real capture/cancel/creative/Showdown ownership, fishing bait/loot/reel/reconnect and all boat variant/riding/inventory/destruction cases. R019/R020 movement/hives, R016 commands/advancements, networking and integrations remain release gates. Retain the pinned26.3 target, architecture, features, validators and original acceptance rules.
+
+## Sprint S08 checkpoint (historical,2026-10-25)
 
 Partial R019/R020 and hive R015 migration under `S08-R019-R020`, owner `codex-sprint08-01a16f8a`, exclusive integration resource. Source milestones `4025e9180dbbb6098a15a5080f993f5f8043b924` and `986dbe35d1d0dfffb262fd767fdb58ec007cba9c`. Read the live registry before editing; saved leases and Sheet rows are snapshots. Release only after this checkpoint is pushed; reacquire a fresh scoped lease for later work. Concurrent workers need separate branches/worktrees and nonoverlapping leases, with one integration owner.
 

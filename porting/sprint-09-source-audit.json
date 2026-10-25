@@ -1,0 +1,56 @@
+{
+  "sprint": "S09",
+  "baseline": "7288e261932b0271530804bd4e9c3c4852be08a0",
+  "source_commit": "0cf1b461330d4fa383ea5a0c21c354babda41de5",
+  "main_source_files": 8,
+  "changed_main_source_paths": [
+    "common/src/main/java/com/cobblemon/mod/common/entity/boat/BoatDropItem.java",
+    "common/src/main/java/com/cobblemon/mod/common/mixin/accessor/BoatEntityAccessor.java",
+    "common/src/main/kotlin/com/cobblemon/mod/common/api/fishing/SpawnBaitEffects.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/boat/CobblemonBoatEntity.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/boat/CobblemonChestBoatEntity.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/fishing/PokeRodFishingBobberEntity.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokeball/EmptyPokeBallEntity.kt",
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PokerodItem.kt"
+  ],
+  "kotlin_final_diagnostics": {
+    "common/src/main/kotlin/com/cobblemon/mod/common/api/fishing/SpawnBaitEffects.kt": 0,
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/boat/CobblemonBoatEntity.kt": 0,
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/boat/CobblemonChestBoatEntity.kt": 0,
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/fishing/PokeRodFishingBobberEntity.kt": 0,
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokeball/EmptyPokeBallEntity.kt": 0,
+    "common/src/main/kotlin/com/cobblemon/mod/common/item/interactive/PokerodItem.kt": 0
+  },
+  "source_retention_checks": {
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/fishing/PokeRodFishingBobberEntity.kt": {
+      "random_call_source_order_unchanged": true,
+      "captureFuture_calls_retained": true,
+      "party_add_calls_retained": true
+    },
+    "common/src/main/kotlin/com/cobblemon/mod/common/entity/pokeball/EmptyPokeBallEntity.kt": {
+      "random_call_source_order_unchanged": true,
+      "captureFuture_calls_retained": true,
+      "party_add_calls_retained": true
+    }
+  },
+  "deleted_paths": [],
+  "changed_resource_paths": [],
+  "contracts": [
+    "Resolve native projectile EntityReference through getOwner; setOwner preserves fishing hook owner bookkeeping",
+    "Throw constructor receives actual ball ItemStack; server drop calls retain creative and failed-capture policy",
+    "Only ServerPlayer receives capture notices, preserving old Entity default no-op; battle/capture events and party insertion retained",
+    "No-argument dropLeash delegates native true/true as before",
+    "Custom final boat drop getter uses late-bound dynamic supplier; loaded/synchronized variants choose current normal/chest item",
+    "Removed vanilla BAMBOO variant replaced by same float0.8888889 passenger ride height; custom X offsets retained",
+    "Boat accessor targets actual declaring AbstractBoat; original fall guard and three-plank/two-stick policy retained",
+    "Container27 slots, LootTable/LootTableSeed/type keys, native item saves, spectator/menu/open/close/destruction rules retained",
+    "Rod enchantability1 and shared description become properties; bait matching uses native typeHolder; replaced bait drops SERVER_ONLY"
+  ],
+  "limits": [
+    "No full Java module/mixin transformation/JUnit or Minecraft processes executed",
+    "Fixture tests production BoatDropItem and actual native reference/container save helpers with minimal inventory components; no Player/Level instantiated",
+    "Boat fall guard was pre-existing and retained; regular fall/drops/riding require game tests",
+    "Fishing retains original float-expression evaluation then promotes inputs to native double-angle trig; native lookup precision may differ, no bit-exact fishing trajectory claim",
+    "Capture/Showdown integration, fishing loot/bait/cancellation, tracking/reconnect, variant drops/inventory destruction and copied-world migration remain untested"
+  ]
+}

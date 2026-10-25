@@ -1,0 +1,77 @@
+{
+  "sprint": "S09",
+  "baseline_commit": "7288e261932b0271530804bd4e9c3c4852be08a0",
+  "work_id": "S09-R021",
+  "owner": "codex-sprint09-01a16f8a",
+  "lease_id": "c0034cd5-19fe-413b-95c2-009b98fc0cbd",
+  "source_status": "Partial R021 migration; original runtime acceptance stays open",
+  "source_commits": [
+    {
+      "sha": "aab41626335a3f726179096bb3b12a3d83fb69ac",
+      "subject": "Migrate capture ownership and preserve custom boat drop and container contracts"
+    },
+    {
+      "sha": "0cf1b461330d4fa383ea5a0c21c354babda41de5",
+      "subject": "Port rod and bait metadata and test native owner and vehicle data contracts"
+    }
+  ],
+  "compile": {
+    "passed": false,
+    "diagnostics": 5804,
+    "files": 889,
+    "baseline_diagnostics": 5880,
+    "reduction": 76
+  },
+  "focused_assertions": 375,
+  "legacy_random_cases": 810,
+  "legacy_random_assertions": 1620,
+  "tooling_tests": 20,
+  "aw_missing": 49,
+  "source_headers": "common main/test and Fabric passed",
+  "minecraft_runtime_tests_executed": 0,
+  "junit_wrapper_executed": false,
+  "jar_produced": false,
+  "upstream_pushes": 0,
+  "roadmap": {
+    "total": 44,
+    "accepted_done": 12,
+    "remaining": 32,
+    "accepted_proportion": 0.2727272727272727,
+    "remaining_proportion": 0.7272727272727273,
+    "interpretation": "Equal task counts, not effort-weighted or gameplay completion"
+  },
+  "remaining_estimates_engineering_hours": {
+    "R021": {
+      "previous": [
+        20,
+        40,
+        80
+      ],
+      "remaining": [
+        12,
+        24,
+        48
+      ]
+    },
+    "whole_roadmap": [
+      550,
+      1100,
+      2208
+    ],
+    "confidence": "low",
+    "actual_person_hours": null
+  },
+  "next": [
+    "R022 block/item model baking and definitions; coordinate R023 render extraction and49 AW targets",
+    "R021 full Java/mixin construction then real capture/fishing/boats, cancellation/creative/inventory/drop/reconnect cases",
+    "R015 old-data/entity fixtures and R013 startup; live R019/R020 navigation/hives remain open",
+    "R016 commands/advancements, networking and integrations remain release blockers"
+  ],
+  "notes": [
+    "Three common compiles fail5819/893,5810/891,5804/889; first attempt exposes missing new helper and removed base Entity message method, fixed in second",
+    "First focused attempt fails on private native CODEC access in fixture; corrected to public save/read with malformed/missing-owner tests;375 assertions then pass",
+    "23 new focused owner/drop/container checks;810 existing actual legacy random cases/1620 assertions also pass;20 tooling tests pass",
+    "All six migrated Kotlin source files have zero diagnostics in final attempt; no entire Java/Fabric build success",
+    "Read live registry before new edits; post-push CI/closure recorded in same native Sheet/Actions; no JAR/release/production data changes"
+  ]
+}

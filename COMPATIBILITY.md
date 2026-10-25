@@ -19,7 +19,7 @@ Original pins are preserved in Git history. Target configuration and resolved ve
 | Baseline build/tests (1.21.1) | Stopped after build-logic compilation to focus on target; no baseline build/test pass | `porting/logs/baseline-build.txt` |
 | Gradle 9.6 build-logic compilation | Passed after licence-plugin and Kotlin DSL fixes | `porting/logs/target-build-04.txt` |
 | Target build/tests (26.3) | Failed: 54 missing access-widener targets; mod tests did not run | `porting/logs/target-build-04.txt`, `porting/access-widener-blockers.json` |
-| Common Kotlin source compilation | Failed: S08 attempt05 has5,880 diagnostic lines /895 files, down125 (2.1%) from S07; includes cascades | `porting/logs/sprint-08-common-compile-05.txt`, `porting/sprint-08-compiler-summary.json` |
+| Common Kotlin source compilation | Failed: S09 attempt03 has5,804 diagnostic lines /889 files, down76 (1.3%) from S08; includes cascades | `porting/logs/sprint-09-common-compile-03.txt`, `porting/sprint-09-compiler-summary.json` |
 | Block entity registration migration | All 26 diagnostics in CobblemonBlockEntities.kt from attempt 05 are absent after constructor migration in attempt 06; runtime untested | Comparison in `porting/compiler-summary.json` |
 | Fabric source-header checks | Passed in target build attempt 04 | `:fabric:checkLicenses` in build log |
 | Package validator regression tests | 6 passed locally and on GitHub Actions; synthetic ZIP fixtures only | `porting/logs/package-validator-tests-02.txt` |
@@ -52,6 +52,9 @@ Original pins are preserved in Git history. Target configuration and resolved ve
 | S08 AI/entity/hive | Native clocks, schedule contexts, task memories, targeting/combat, nullable random paths and typed hive snapshots/legacy-placeholder conversion. AI directories/generic/NPC delegate zero Kotlin diagnostics;14 Saccharine worldgen diagnostics remain | `porting/sprint-08-source-audit.json` |
 | S08 focused checks |352 assertions plus810 actual old/random cases (1620 assertions) pass;20 tooling tests pass. Full Java/mixins/JUnit/gameplay unexecuted | `porting/logs/sprint-08-data-contracts-03.json` |
 | S08 widener/headers |49 missing targets unchanged; common main/test and Fabric headers pass | `porting/sprint-08-validation-summary.json` |
+| S09 capture/fishing/boats | Resolved owner references, typed server drops, dynamic boat drop supplier, native vehicle container/interaction callbacks and rod/bait metadata. All six migrated Kotlin files zero diagnostics; full Java/runtime untested | `porting/sprint-09-source-audit.json` |
+| S09 focused checks |375 assertions (23 new owner/drop/container cases),810 actual old navigation cases/1620 checks and20 tooling tests pass. First fixture fails on private CODEC access; corrected public APIs pass | `porting/logs/sprint-09-data-contracts-02.json` |
+| S09 widener/headers |49 misses unchanged; common main2997/test18 and Fabric22 header checks pass | `porting/sprint-09-validation-summary.json` |
 | S03 JUnit regression wrapper | Added to common tests; not executed because common compilation fails. The same fixture executed through the standalone runner | `common/src/test/java/com/cobblemon/mod/common/porting/` |
 | GitHub Actions (S05 baseline) | 20 tooling tests/Fabric headers pass; AW54 stops before common source diagnostics/JUnit, package skipped. Inspect Actions at S06 published head and current Sheet for new outcome | [Run40145668023](https://github.com/IdeasInTheWorks/cobblemon-fabric/actions/runs/40145668023) |
 | JAR validation | Not executed; no target JAR | Pending |
@@ -76,6 +79,8 @@ Minecraft 26.x changes vanilla world storage paths, and 26.3 changes feature reg
 Release gates require client and dedicated server launches, two simultaneous players, wild/PvP battles, capture, ownership, PC and party sync, disconnect/reconnect, restart/reload and log review. Every unexecuted test remains an outstanding issue.
 
 ## Current technical blockers
+
+S09 advances R021 while keeping its original runtime acceptance open. Native owner references retain UUIDs through nullable lookup/unload/reload. Boat drop selection remains dynamic across normal/chest variants; native container callbacks retain27 slots and original save keys. The old BAMBOO passenger-height arithmetic is retained, as is the pre-existing boat fall guard. Native double-angle trig can differ in lookup precision; exact fishing trajectories are unverified. Full Java/mixin construction, capture/Showdown/ownership, bait/loot/reel/cancellation, riding/drops/inventory/destruction/reconnect and copied-world migration need actual game tests. No production data has been touched. See S09 evidence and the same native Sheet for actual CI, not an assumed pass.
 
 S08 advances R019/R020 and hive R015 without closing original acceptance. Typed hive snapshots preserve root exclusions, nested ownership and nectar residence. Both historical placeholder IDs normalize before native registry decode; malformed properties are refused. This cannot restore fields already discarded by an earlier upgrade. Keep untouched backups and test copied worlds. Native helper fixtures use vanilla BEE and string typed-ID codecs; real Pokemon registration, full Java/mixin application, hive release/aggro, sleep, movement, combat and migration remain untested. Two existing navigation bugs (discarded scores and solid/fluid predicate results) are fixed deliberately; actual path safety still needs game tests. Broader Saccharine worldgen remains blocked. See S08 audit/logs and the native roadmap for latest CI/estimates.
 

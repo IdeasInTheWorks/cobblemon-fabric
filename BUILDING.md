@@ -117,3 +117,9 @@ python3 scripts/check_data_contracts.py --game-jar /path/to/minecraft-26.3-clien
 ```
 
 The optional inputs must be paired. The runner verifies both game checksums and the old metadata version, then compares810 cases/1620 assertions including null candidates and subsequent RNG draws. It launches Java fixtures, not Minecraft. Hive fixtures use real vanilla registry entries and native codecs, not full Pokemon construction. S08 final common compile still fails5880/895;49 widener misses remain,20 tooling tests and headers pass. See `porting/sprint-08-summary.json`; use the same isolated-build-logic command above for local OneDrive output locks.
+
+## S09 owner and vehicle contracts
+
+The same standalone data-contract command above now compiles production BoatDropItem and a native reference/container fixture. S09 passes375 assertions (23 new cases) plus the optional810 actual legacy navigation cases/1620 checks. The fixture covers owner UUID saves and unload/reload lookup, current variant drop selection, sparse27-slot chest contents/custom components and unopened loot-table/seed saves. It deliberately throws if save/load unexpectedly requests a world or menu. This does not construct real boats, players or Pokemon, transform mixins, execute JUnit or validate capture/fishing/gameplay. First fixture attempt fails on private CODEC access; the public save/read replacement passes. See committed `porting/logs/sprint-09-data-contracts-02.json`.
+
+Final S09 Kotlin compile5804/889 andAW49 still fail;20 tooling tests and normal common/Fabric headers pass. Use the existing official wrapper/init-script commands, without suppressing validation. See `porting/sprint-09-summary.json` and the same native roadmap for CI, estimates and continuation.
