@@ -17,7 +17,7 @@ import com.cobblemon.mod.common.item.PokedexItem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.resources.model.ModelResourceLocation
@@ -32,7 +32,7 @@ class LecternBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Blo
     @Unique
     private val MODEL_PATH = if (Cobblemon.implementation.modAPI == ModAPI.FABRIC) "fabric_resource" else "standalone"
 
-    override fun render(blockEntity: LecternBlockEntity, tickDelta: Float, poseStack: PoseStack, multiBufferSource: MultiBufferSource, light: Int, overlay: Int ) {
+    override fun render(blockEntity: LecternBlockEntity, tickDelta: Float, poseStack: PoseStack, multiBufferSource: ModelBufferSource, light: Int, overlay: Int ) {
         if (blockEntity !is LecternBlockEntity) return
         if (!blockEntity.isEmpty()) {
             val blockState = if (blockEntity.level != null) blockEntity.blockState
@@ -41,8 +41,8 @@ class LecternBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Blo
 
             poseStack.pushPose()
             poseStack.translate(0.5, 1.17, 0.5)
-            poseStack.mulPose(Axis.YP.rotationDegrees(-yRot))
-            poseStack.mulPose(Axis.XP.rotationDegrees(22.5F))
+            poseStack.rotate(Axis.YP.rotationDegrees(-yRot))
+            poseStack.rotate(Axis.XP.rotationDegrees(22.5F))
             poseStack.translate(0.0, 0.0, 0.13)
 
             if (blockEntity.getItemStack().item is PokedexItem) {

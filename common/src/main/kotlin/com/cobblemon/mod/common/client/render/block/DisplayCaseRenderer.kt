@@ -18,7 +18,7 @@ import com.cobblemon.mod.common.item.PokedexItem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.core.Direction
@@ -38,7 +38,7 @@ class DisplayCaseRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntit
         entity: DisplayCaseBlockEntity,
         tickDelta: Float,
         matrices: PoseStack,
-        vertexConsumers: MultiBufferSource,
+        vertexConsumers: ModelBufferSource,
         light: Int,
         overlay: Int
     ) {
@@ -74,8 +74,8 @@ class DisplayCaseRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntit
         matrices.scale(posType.scaleX, posType.scaleY, posType.scaleZ)
         matrices.translate(posType.transX, posType.transY, posType.transZ)
 
-        matrices.mulPose(Axis.YP.rotationDegrees(-yRot))
-        matrices.mulPose(Axis.YP.rotationDegrees(posType.rotY))
+        matrices.rotate(Axis.YP.rotationDegrees(-yRot))
+        matrices.rotate(Axis.YP.rotationDegrees(posType.rotY))
 
         Minecraft.getInstance().itemRenderer.renderStatic(
             stack,
@@ -94,7 +94,7 @@ class DisplayCaseRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntit
     /*
     private fun renderPokemon(
         matrices: PoseStack,
-        vertexConsumers: MultiBufferSource,
+        vertexConsumers: ModelBufferSource,
         light: Int,
         stack: ItemStack,
         yRot: Float

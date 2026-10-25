@@ -13,7 +13,7 @@ import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
 import net.minecraft.client.model.player.PlayerModel
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.entity.RenderLayerParent
 import net.minecraft.client.renderer.entity.layers.RenderLayer
 import net.minecraft.world.entity.HumanoidArm
@@ -27,7 +27,7 @@ class PlayerRecallBallRenderer<T : Player>(
 
     override fun render(
         matrixStack: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         packedLight: Int,
         player: T,
         limbSwing: Float,
@@ -43,12 +43,12 @@ class PlayerRecallBallRenderer<T : Player>(
 
         matrixStack.pushPose()
         getParentModel().translateToHand(HumanoidArm.RIGHT, matrixStack)
-        matrixStack.mulPose(Axis.XP.rotationDegrees(-90F))
-        matrixStack.mulPose(Axis.YP.rotationDegrees(180F))
+        matrixStack.rotate(Axis.XP.rotationDegrees(-90F))
+        matrixStack.rotate(Axis.YP.rotationDegrees(180F))
         matrixStack.translate(0.0625, 0.125, -0.625)
         matrixStack.scale(0.54F, -0.54F, -0.54F)
         matrixStack.translate(0.0, 0.5, 0.0)
-        matrixStack.mulPose(Axis.YP.rotationDegrees(180F))
+        matrixStack.rotate(Axis.YP.rotationDegrees(180F))
 
         RecallArmAnimationTracker.renderBall(anim, matrixStack, buffer, packedLight, partialTicks)
 

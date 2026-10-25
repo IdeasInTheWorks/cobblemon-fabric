@@ -146,8 +146,8 @@ object MountedPlayerRenderer {
         val rootOffset = Vec3(-root.x.toDouble(), root.y.toDouble() + RIDING_SITTING_OFFSET, root.z.toDouble()).scale(1/16.0)
         val rotation = Vec3(root.xRot.toDouble(), root.yRot.toDouble(), root.zRot.toDouble())
         stack.translate(rootOffset.x.toFloat(), rootOffset.y.toFloat(), rootOffset.z.toFloat())
-        stack.mulPose(Axis.ZP.rotation(rotation.z.toFloat()))
-        stack.mulPose(Axis.YP.rotation(rotation.y.toFloat()))
-        stack.mulPose(Axis.XP.rotation(rotation.x.toFloat()))
+        stack.rotate(Axis.ZP.rotation(rotation.z.toFloat()))
+        stack.rotate(Axis.YP.rotation(rotation.y.toFloat()))
+        stack.rotate(Axis.XP.rotation(rotation.x.toFloat()))
     }
 }

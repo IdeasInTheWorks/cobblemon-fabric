@@ -14,7 +14,7 @@ import com.cobblemon.mod.common.block.multiblock.FossilMultiblockStructure
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.core.Direction
@@ -29,7 +29,7 @@ class FossilAnalyzerRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEn
         entity: FossilAnalyzerBlockEntity,
         tickDelta: Float,
         matrices: PoseStack,
-        vertexConsumers: MultiBufferSource,
+        vertexConsumers: ModelBufferSource,
         light: Int,
         overlay: Int
     ) {
@@ -54,9 +54,9 @@ class FossilAnalyzerRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEn
                 else -> Vec3.ZERO
             }
             matrices.translate(0.5 + dirOffset.x,0.4 + (index * 0.1) + dirOffset.y, 0.5 + dirOffset.z)
-            matrices.mulPose(Axis.YP.rotationDegrees(yRot))
-            matrices.mulPose(Axis.ZP.rotationDegrees(180F))
-            matrices.mulPose(Axis.XP.rotationDegrees(90F))
+            matrices.rotate(Axis.YP.rotationDegrees(yRot))
+            matrices.rotate(Axis.ZP.rotationDegrees(180F))
+            matrices.rotate(Axis.XP.rotationDegrees(90F))
             matrices.scale(0.7F, 0.7F, 0.7F)
 
             Minecraft.getInstance().itemRenderer.renderStatic(fossilStack, ItemDisplayContext.NONE, light, overlay, matrices, vertexConsumers, entity.level, 0)

@@ -30,6 +30,7 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.renderer.GameRenderer
 import net.minecraft.client.renderer.LightTexture
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
@@ -241,7 +242,7 @@ fun drawPosablePortrait(
         context.put(RenderContext.POSABLE_STATE, state)
         context.put(RenderContext.DO_QUIRKS, doQuirks)
 
-        val renderType = RenderType.entityCutout(texture)
+        val renderType = RenderTypes.entityCutoutCull(texture)
 
         val quaternion1 = Axis.YP.rotationDegrees(-32F * if (reversed) -1F else 1F)
         val quaternion2 = Axis.XP.rotationDegrees(5F)
@@ -258,8 +259,8 @@ fun drawPosablePortrait(
             model.portraitTranslation.z - 4
         )
         matrixStack.scale(model.portraitScale, model.portraitScale, 1 / model.portraitScale)
-        matrixStack.mulPose(quaternion1)
-        matrixStack.mulPose(quaternion2)
+        matrixStack.rotate(quaternion1)
+        matrixStack.rotate(quaternion2)
 
         val light1 = Vector3f(0.2F, 1.0F, -1.0F)
         val light2 = Vector3f(0.1F, 0.0F, 8.0F)
@@ -312,7 +313,7 @@ fun drawProfile(
         context.put(RenderContext.POSABLE_STATE, state)
         state.currentModel = model
 
-        val renderType = RenderType.entityCutout(texture)//model.getLayer(texture)
+        val renderType = RenderTypes.entityCutoutCull(texture)//model.getLayer(texture)
 
         state.setPoseToFirstSuitable(PoseType.PORTRAIT)
         state.updatePartialTicks(partialTicks)
@@ -326,8 +327,8 @@ fun drawProfile(
 //    matrixStack.multiply(rotation)
         val quaternion1 = Axis.YP.rotationDegrees(-32F * if (false) -1F else 1F)
         val quaternion2 = Axis.XP.rotationDegrees(5F)
-        matrixStack.mulPose(quaternion1)
-        matrixStack.mulPose(quaternion2)
+        matrixStack.rotate(quaternion1)
+        matrixStack.rotate(quaternion2)
         Lighting.setupForEntityInInventory()
         val entityRenderDispatcher = Minecraft.getInstance().entityRenderDispatcher
         entityRenderDispatcher.setRenderShadow(true)

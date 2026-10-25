@@ -20,7 +20,7 @@ import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.LightTexture
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.entity.ItemRenderer
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.world.entity.LivingEntity
@@ -47,7 +47,7 @@ class HeldItemRenderer {
         item: ItemStack,
         state: PosableState,
         poseStack: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         light: Int = LightTexture.pack(11, 7),
         frontLight: Boolean = false,
         entity: LivingEntity? = null
@@ -61,7 +61,7 @@ class HeldItemRenderer {
         state: PosableState,
         entity: LivingEntity?,
         poseStack: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         light: Int,
         seed: Int,
         frontLight: Boolean = false,
@@ -85,18 +85,18 @@ class HeldItemRenderer {
         when (displayContext) {
             ItemDisplayContext.FIXED -> {
                 poseStack.setOriginAndScale(0f,.5f,0f, .5f)
-                poseStack.mulPose(Axis.XP.rotationDegrees(90.0f))
+                poseStack.rotate(Axis.XP.rotationDegrees(90.0f))
             }
             ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, ItemDisplayContext.THIRD_PERSON_LEFT_HAND -> {
                 //For Minecraft player models
                 if (state is NPCClientDelegate) {
-                    poseStack.mulPose(Axis.XP.rotationDegrees(-90.0f))
+                    poseStack.rotate(Axis.XP.rotationDegrees(-90.0f))
                     poseStack.translate(0.025f * if (isLeft) 1 else -1 , 0.0f, 0.0f)
                 }
                 //for T-Posing Models
                 else if (state is PokemonClientDelegate || state is FloatingState) {
-                    poseStack.mulPose(Axis.YP.rotationDegrees(-90.0f * if (isLeft) -1f else 1f))
-                    poseStack.mulPose(Axis.ZP.rotationDegrees(90.0f * if (isLeft) -1f else 1f))
+                    poseStack.rotate(Axis.YP.rotationDegrees(-90.0f * if (isLeft) -1f else 1f))
+                    poseStack.rotate(Axis.ZP.rotationDegrees(90.0f * if (isLeft) -1f else 1f))
                     poseStack.translate(0.0f,0.0f,-0.0625f) // offset item by -1/16 to recenter item onto the locator
                 }
             }

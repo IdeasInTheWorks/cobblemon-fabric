@@ -214,64 +214,40 @@ class AnimatedModelTextureSupplier(
 
     fun interpolatedTexture(state: PosableState): DynamicTexture? {
         val resourceManager = Minecraft.getInstance().resourceManager
-
         val frameIndex = floor(state.animationSeconds * fps).toInt()
-        try {
+        return try {
+            fun image(id: Identifier): NativeImage = resourceManager.getResourceOrThrow(id).open().use { NativeImage.read(it) }
             if (frameIndex >= frames.size && !loop) {
-                return DynamicTexture(NativeImage.read(resourceManager.getResourceOrThrow(frames.last()).open()))
-            }
-        } catch (e : Exception) {
-            return null
-        }
-        val o = frameIndex % frames.size
-        val i = state.animationSeconds * fps - frameIndex
-
-        val texture1 : NativeImage
-        val texture2 : NativeImage
-
-        try { //Try getting images of the frames so we can use them to make a new one
-            texture1 = NativeImage.read(resourceManager.getResourceOrThrow(frames[o]).open())
-            val s = if (o == frames.size - 1) 0 else o + 1
-            texture2 = NativeImage.read(resourceManager.getResourceOrThrow(frames[s]).open())
-        } catch (e : Exception) {
-            return null
-        }
-
-        for (x in 0..<texture1.width) {
-            for (y in 0..<texture1.height) {
-                val color1 = texture1.getPixelRGBA(x,y).toRGBA()
-                val color2 = texture2.getPixelRGBA(x,y).toRGBA()
-
-                var newRed : Int
-                var newGreen : Int
-                var newBlue : Int
-                var newAlpha : Int
-
-                //Usually full transparent pixel is black, so this makes it copy the other texture colours to look better, however considering if we should allow to disable this feature
-                if (color1.w == 0F && color2.w == 1F) {
-                    newRed = floor(color2.x * 255).toInt()
-                    newGreen = floor(color2.y * 255).toInt()
-                    newBlue = floor(color2.z * 255).toInt()
-                } else if (color1.w == 1F && color2.w == 0F) {
-                    newRed = floor(color1.x * 255).toInt()
-                    newGreen = floor(color1.y * 255).toInt()
-                    newBlue = floor(color1.z * 255).toInt()
-                } else {
-                    newRed = floor((color1.x + (color2.x - color1.x) * i) * 255).toInt()
-                    newGreen = floor((color1.y + (color2.y - color1.y) * i) * 255).toInt()
-                    newBlue = floor((color1.z + (color2.z - color1.z) * i) * 255).toInt()
+                val last = image(frames.last())
+                try {
+                    DynamicTexture({ "Cobblemon final animation frame" }, last)
+                } catch (error: Throwable) {
+                    last.close()
+                    throw error
                 }
-
-                newAlpha = floor((color1.w + (color2.w - color1.w) * i) * 255).toInt()
-
-                val finalColor = (newAlpha shl 24) or (newRed shl 16) or (newGreen shl 8) or newBlue
-
-                texture1.setPixelRGBA(x,y,finalColor) //We aren't using texture 1 anymore so it's easier to override it
+            } else {
+                val index = frameIndex % frames.size
+                val fraction = state.animationSeconds * fps - frameIndex
+                val first = image(frames[index])
+                try {
+                    image(frames[if (index == frames.size - 1) 0 else index + 1]).use { second ->
+                        require(first.width == second.width && first.height == second.height) { "Animation frame sizes differ" }
+                        for (x in 0 until first.width) {
+                            for (y in 0 until first.height) {
+                                first.setPixel(x, y, com.cobblemon.mod.common.client.model.TextureInterpolation.blend(
+                                    first.getPixel(x, y), second.getPixel(x, y), fraction))
+                            }
+                        }
+                    }
+                    DynamicTexture({ "Cobblemon interpolated animation frame" }, first)
+                } catch (error: Throwable) {
+                    first.close()
+                    throw error
+                }
             }
+        } catch (error: Exception) {
+            null
         }
-        val newTexture = DynamicTexture(texture1)
-        newTexture.setFilter(false, false)
-        return newTexture
     }
 }
 

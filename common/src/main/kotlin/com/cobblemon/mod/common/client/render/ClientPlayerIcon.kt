@@ -98,7 +98,7 @@ abstract class ClientPlayerIcon(expiryTime: Int? = null) {
 
         // billboard
         val entityRenderDispatcher = Minecraft.getInstance().entityRenderDispatcher
-        poseStack.mulPose(Axis.YP.rotationDegrees((180f - entityRenderDispatcher.camera.yRot)))
+        poseStack.rotate(Axis.YP.rotationDegrees((180f - entityRenderDispatcher.camera.yRot)))
         poseStack.scale(SCALE, -SCALE, SCALE)
     }
 

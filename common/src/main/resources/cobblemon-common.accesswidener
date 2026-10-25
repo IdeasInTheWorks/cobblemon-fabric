@@ -26,8 +26,8 @@ transitive-accessible field net/minecraft/client/model/geom/builders/LayerDefini
 transitive-accessible field net/minecraft/client/model/geom/builders/PartDefinition cubes Ljava/util/List;
 transitive-accessible field net/minecraft/client/model/geom/builders/PartDefinition partPose Lnet/minecraft/client/model/geom/PartPose;
 transitive-accessible field net/minecraft/client/model/geom/builders/PartDefinition children Ljava/util/Map;
-transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition origin Lorg/joml/Vector3f;
-transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition dimensions Lorg/joml/Vector3f;
+transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition origin Lorg/joml/Vector3fc;
+transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition dimensions Lorg/joml/Vector3fc;
 transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition texCoord Lnet/minecraft/client/model/geom/builders/UVPair;
 transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition texScale Lnet/minecraft/client/model/geom/builders/UVPair;
 transitive-accessible field net/minecraft/client/model/geom/builders/CubeDefinition grow Lnet/minecraft/client/model/geom/builders/CubeDeformation;
@@ -51,44 +51,16 @@ transitive-accessible method net/minecraft/client/renderer/LevelRenderer calcula
 transitive-accessible method net/minecraft/client/particle/ParticleEngine register (Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration;)V
 transitive-accessible field net/minecraft/client/particle/ParticleEngine textureAtlas Lnet/minecraft/client/renderer/texture/TextureAtlas;
 transitive-accessible field net/minecraft/client/renderer/LevelRenderer cullingFrustum Lnet/minecraft/client/renderer/culling/Frustum;
-transitive-accessible class net/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType
-transitive-accessible class net/minecraft/client/renderer/rendertype/RenderType$CompositeState
-transitive-accessible method net/minecraft/client/renderer/rendertype/RenderType create (Ljava/lang/String;Lcom/mojang/renderpearl/api/vertex/VertexFormat;Lcom/mojang/renderpearl/api/vertex/VertexFormat$Mode;IZZLnet/minecraft/client/renderer/rendertype/RenderType$CompositeState;)Lnet/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType;
-transitive-accessible class net/minecraft/client/renderer/RenderStateShard$TransparencyStateShard
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_TRANSLUCENT_EMISSIVE_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_TRANSLUCENT_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_TRANSLUCENT_CULL_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_ENTITY_CUTOUT_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
-transitive-accessible class net/minecraft/client/renderer/RenderStateShard$TextureStateShard
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard TRANSLUCENT_TRANSPARENCY Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard NO_TRANSPARENCY Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;
-transitive-accessible class net/minecraft/client/renderer/RenderStateShard$CullStateShard
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard CULL Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;
-transitive-accessible class net/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard COLOR_DEPTH_WRITE Lnet/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard;
-transitive-accessible class net/minecraft/client/renderer/RenderStateShard$OverlayStateShard
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard OVERLAY Lnet/minecraft/client/renderer/RenderStateShard$OverlayStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard RENDERTYPE_CUTOUT_SHADER Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard LIGHTMAP Lnet/minecraft/client/renderer/RenderStateShard$LightmapStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard NO_CULL Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard COLOR_WRITE Lnet/minecraft/client/renderer/RenderStateShard$WriteMaskStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard NO_DEPTH_TEST Lnet/minecraft/client/renderer/RenderStateShard$DepthTestStateShard;
-transitive-accessible class net/minecraft/client/renderer/RenderStateShard$DepthTestStateShard
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard LEQUAL_DEPTH_TEST Lnet/minecraft/client/renderer/RenderStateShard$DepthTestStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard GLINT_TRANSPARENCY Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;
-transitive-accessible field net/minecraft/client/renderer/RenderStateShard ADDITIVE_TRANSPARENCY Lnet/minecraft/client/renderer/RenderStateShard$TransparencyStateShard;
 
 
 #transitive-accessible field  net/minecraft/recipe/BrewingRecipeRegistry ITEM_RECIPES Ljava/util/List;
 #transitive-accessible field  net/minecraft/recipe/BrewingRecipeRegistry POTION_RECIPES Ljava/util/List;
 #transitive-accessible field  net/minecraft/recipe/BrewingRecipeRegistry POTION_TYPES Ljava/util/List;
-transitive-accessible class net/minecraft/world/item/alchemy/PotionBrewing$Mix
 
 transitive-accessible class net/minecraft/util/datafix/fixes/ItemStackComponentizationFix$ItemStackData
 
 accessible field net/minecraft/server/network/ServerCommonPacketListenerImpl connection Lnet/minecraft/network/Connection;
 transitive-accessible method net/minecraft/world/level/block/state/properties/WoodType register (Lnet/minecraft/world/level/block/state/properties/WoodType;)Lnet/minecraft/world/level/block/state/properties/WoodType;
-transitive-accessible field com/mojang/blaze3d/systems/RenderSystem shaderLightDirections [Lorg/joml/Vector3f;
 transitive-accessible class net/minecraft/world/inventory/BrewingStandMenu$PotionSlot
 transitive-accessible class net/minecraft/world/level/biome/Biome$ClimateSettings
 accessible field net/minecraft/client/gui/components/toasts/AdvancementToast BACKGROUND_SPRITE Lnet/minecraft/resources/Identifier;
@@ -106,8 +78,6 @@ transitive-accessible field net/minecraft/world/level/levelgen/structure/pools/S
 transitive-accessible class net/minecraft/world/level/levelgen/structure/pools/JigsawPlacement$Placer
 transitive-accessible class net/minecraft/world/level/levelgen/structure/pools/JigsawPlacement$PieceState
 transitive-accessible field net/minecraft/world/level/levelgen/structure/pools/JigsawPlacement$PieceState piece Lnet/minecraft/world/level/levelgen/structure/PoolElementStructurePiece;
-transitive-accessible method net/minecraft/client/resources/TextureAtlasHolder getSprite (Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;
-transitive-accessible field net/minecraft/client/resources/TextureAtlasHolder textureAtlas Lnet/minecraft/client/renderer/texture/TextureAtlas;
 transitive-accessible field net/minecraft/client/renderer/texture/TextureAtlas width I
 transitive-accessible field net/minecraft/client/renderer/texture/TextureAtlas height I
 transitive-accessible class net/minecraft/client/gui/components/AbstractSelectionList$Entry
@@ -127,8 +97,6 @@ transitive-extendable method net/minecraft/world/entity/LivingEntity getDimensio
 transitive-accessible field net/minecraft/world/level/material/MapColor MATERIAL_COLORS [Lnet/minecraft/world/level/material/MapColor;
 
 transitive-accessible field net/minecraft/client/Minecraft textureManager Lnet/minecraft/client/renderer/texture/TextureManager;
-transitive-accessible class net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard
-transitive-accessible class net/minecraft/client/renderer/RenderStateShard$LightmapStateShard
 
 transitive-accessible field net/minecraft/world/entity/LivingEntity jumping Z
 transitive-accessible field net/minecraft/world/entity/Entity FLAG_SHIFT_KEY_DOWN I
@@ -161,3 +129,7 @@ transitive-accessible method net/minecraft/client/model/HumanoidModel poseRightA
 transitive-accessible method net/minecraft/client/model/HumanoidModel poseLeftArm (Lnet/minecraft/world/entity/LivingEntity;)V
 
 transitive-accessible method net/minecraft/world/level/block/BaseEntityBlock createTickerHelper (Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/world/level/block/entity/BlockEntityTicker;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker;
+
+# Native custom model material creation and shader discovery replace CompositeState.
+transitive-accessible method net/minecraft/client/renderer/rendertype/RenderType create (Ljava/lang/String;Lnet/minecraft/client/renderer/rendertype/RenderSetup;)Lnet/minecraft/client/renderer/rendertype/RenderType;
+transitive-accessible method net/minecraft/client/renderer/RenderPipelines register (Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;)Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;

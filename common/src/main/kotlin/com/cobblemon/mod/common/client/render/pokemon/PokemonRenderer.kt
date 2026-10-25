@@ -49,8 +49,9 @@ import net.minecraft.ChatFormatting
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.Font.DisplayMode
 import net.minecraft.client.renderer.LightTexture
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.client.renderer.entity.ItemRenderer
 import net.minecraft.client.renderer.entity.MobRenderer
@@ -101,7 +102,7 @@ class PokemonRenderer(
         entityYaw: Float,
         partialTicks: Float,
         poseMatrix: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         packedLight: Int
     ) {
         val clientDelegate = entity.delegate as PokemonClientDelegate
@@ -185,7 +186,7 @@ class PokemonRenderer(
         entityYaw: Float,
         partialTicks: Float,
         poseMatrix: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         packedLight: Int
     ) {
         val rollable = entity as? OrientationControllable ?: return
@@ -222,7 +223,7 @@ class PokemonRenderer(
         entity: PokemonEntity,
         partialTicks: Float,
         poseMatrix: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         packedLight: Int,
         clientDelegate: PokemonClientDelegate
     ) {
@@ -274,13 +275,13 @@ class PokemonRenderer(
         }
         val dir = beamSourcePosition.subtract(entity.position()).normalize()
         val angle = Mth.atan2(dir.z, dir.x) - PI / 2
-        poseMatrix.mulPose(Axis.YP.rotation(-angle.toFloat() + (180 * Math.PI / 180).toFloat()))
+        poseMatrix.rotate(Axis.YP.rotation(-angle.toFloat() + (180 * Math.PI / 180).toFloat()))
 
         if (beamMode == 1 && !clientDelegate.ballDone){
             if(entity.pokemon.caughtBall.name.toString().contains("beast")){
                 // get rotation angle on x-axis for facingDir
                 val xAngleFacingDir = Mth.atan2(facingDir.y, sqrt(facingDir.x * facingDir.x + facingDir.z * facingDir.z))
-                poseMatrix.mulPose(Axis.XP.rotation(-xAngleFacingDir.toFloat()))
+                poseMatrix.rotate(Axis.XP.rotation(-xAngleFacingDir.toFloat()))
             }
             drawPokeBall(
                 ClientBallDisplay(entity.pokemon.caughtBall, setOf()),
@@ -315,7 +316,7 @@ class PokemonRenderer(
      * @param colour The colour of the beam.
      * @param buffer The vertex consumer provider.
      */
-    fun renderBeam(matrixStack: PoseStack, partialTicks: Float, entity: PokemonEntity, beamTarget: Entity, buffer: MultiBufferSource, offset: Vec3) {
+    fun renderBeam(matrixStack: PoseStack, partialTicks: Float, entity: PokemonEntity, beamTarget: Entity, buffer: ModelBufferSource, offset: Vec3) {
         val clientDelegate = entity.delegate as PokemonClientDelegate
         val pokemonPosition = entity.position().add(0.0, entity.bbHeight / 2.0 * clientDelegate.activeSendoutScale.toDouble(), 0.0)
         val recallBallOrigin = (beamTarget as? Player)?.let { RecallArmAnimationTracker.get(it.uuid)?.beamOrigin }
@@ -377,7 +378,7 @@ class PokemonRenderer(
         val dot = direction.dot(yAxis)
         val cross = yAxis.cross(direction)
         val q = Quaternionf(cross.x, cross.y, cross.z, 1 + dot).normalize()
-        matrixStack.mulPose(q)
+        matrixStack.rotate(q)
 
         renderBeaconBeam(
             matrixStack = matrixStack,
@@ -422,7 +423,7 @@ class PokemonRenderer(
         entity: PokemonEntity,
         text: Component,
         matrices: PoseStack,
-        vertexConsumers: MultiBufferSource,
+        vertexConsumers: ModelBufferSource,
         light: Int,
         tickDelta: Float
     ) {
@@ -484,7 +485,7 @@ class PokemonRenderer(
         scale: Float = 5F,
         partialTicks: Float,
         reversed: Boolean = false,
-        buff: MultiBufferSource,
+        buff: ModelBufferSource,
         packedLight: Int,
         ball: PokeBall,
         distance: Int
@@ -499,9 +500,9 @@ class PokemonRenderer(
             matrixStack.translate(0.0, -0.2, 0.0)
             val rot = 360F * distance
             if(ball.name.toString().contains("beast")){
-                matrixStack.mulPose(Axis.ZN.rotationDegrees(Math.lerp(0F, rot, scale)))
+                matrixStack.rotate(Axis.ZN.rotationDegrees(Math.lerp(0F, rot, scale)))
             } else {
-                matrixStack.mulPose(Axis.XN.rotationDegrees(Math.lerp(0F, rot, scale)))
+                matrixStack.rotate(Axis.XN.rotationDegrees(Math.lerp(0F, rot, scale)))
             }
             matrixStack.translate(0.0, 0.2, 0.0)
         }
@@ -511,7 +512,7 @@ class PokemonRenderer(
         ballContext.put(RenderContext.POSABLE_STATE, state)
         model.applyAnimations(null, state, 0F, 0F, 0F, 0F, 0F)
 //        model.animateModel(null, 0f, 0F, 0F)
-        val buffer = ItemRenderer.getFoilBufferDirect(buff, RenderType.entityCutout(texture), false, false)
+        val buffer = ItemRenderer.getFoilBufferDirect(buff, RenderTypes.entityCutoutCull(texture), false, false)
 //        matrixStack.scale(scale, scale, scale)
         model.render(ballContext, matrixStack, buffer, packedLight, OverlayTexture.NO_OVERLAY, -0x1)
         model.green = 1f
@@ -525,16 +526,16 @@ class PokemonRenderer(
             matrixStack: PoseStack,
             entity: PokemonEntity,
             scale: Float = 1F,
-            buff: MultiBufferSource,
+            buff: ModelBufferSource,
             packedLight: Int,
             ) {
         val (modelResource, textureResource) = PlatformType.getModelWithTexture(entity.platform)
         val model = MiscModelRepository.modelOf(modelResource) ?: return
         matrixStack.pushPose()
-        matrixStack.mulPose(Axis.ZP.rotationDegrees(180f))
+        matrixStack.rotate(Axis.ZP.rotationDegrees(180f))
         matrixStack.rotateAround(Axis.YP.rotationDegrees(entity.entityData.get(SPAWN_DIRECTION)), 0.0f, 0f, 0.0f)
         matrixStack.scale(scale, scale, scale)
-        val buffer = ItemRenderer.getFoilBufferDirect(buff, RenderType.entityCutout(textureResource), false, false)
+        val buffer = ItemRenderer.getFoilBufferDirect(buff, RenderTypes.entityCutoutCull(textureResource), false, false)
         model.render(matrixStack, buffer, packedLight, OverlayTexture.NO_OVERLAY, -0x1)
 
         matrixStack.popPose()

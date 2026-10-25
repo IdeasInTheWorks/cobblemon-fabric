@@ -31,8 +31,9 @@ import com.mojang.blaze3d.vertex.PoseStack
 import java.util.UUID
 import net.minecraft.client.Minecraft
 import net.minecraft.client.model.player.PlayerModel
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.entity.LivingEntityRenderer
 import net.minecraft.client.renderer.entity.RenderLayerParent
 import net.minecraft.client.renderer.entity.layers.RenderLayer
@@ -63,7 +64,7 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
 
     override fun render(
         matrixStack: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         packedLight: Int,
         livingEntity: T,
         limbSwing: Float,
@@ -138,7 +139,7 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
 
     private fun render(
         matrixStack: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         packedLight: Int,
         livingEntity: T,
         limbSwing: Float,
@@ -203,7 +204,7 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
             context.put(RenderContext.POSABLE_STATE, state)
             state.currentModel = model
             val vertexConsumer = buffer.getBuffer(
-                RenderType.entityCutout(
+                RenderTypes.entityCutoutCull(
                     VaryingModelRepository.getTexture(
                         shoulderData.species.resourceIdentifier,
                         state

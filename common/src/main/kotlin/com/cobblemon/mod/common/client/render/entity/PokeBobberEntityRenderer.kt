@@ -19,8 +19,9 @@ import net.fabricmc.api.Environment
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import com.mojang.blaze3d.vertex.VertexConsumer
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.entity.EntityRenderer
 import net.minecraft.client.renderer.entity.EntityRendererProvider
 import com.mojang.blaze3d.vertex.PoseStack
@@ -36,7 +37,7 @@ import org.joml.Quaternionf
 @Environment(value = EnvType.CLIENT)
 class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : EntityRenderer<PokeRodFishingBobberEntity>(context) {
 
-    override fun render(fishingBobberEntity: PokeRodFishingBobberEntity, elapsedPartialTicks: Float, tickDelta: Float, matrixStack: PoseStack, vertexConsumerProvider: MultiBufferSource, light: Int) {
+    override fun render(fishingBobberEntity: PokeRodFishingBobberEntity, elapsedPartialTicks: Float, tickDelta: Float, matrixStack: PoseStack, vertexConsumerProvider: ModelBufferSource, light: Int) {
         var playerPosXWorld: Double
         val eyeHeightOffset: Float
         val playerPosZWorld: Double
@@ -95,11 +96,11 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
         }
 
         // Apply random pitch and yaw before rendering the Poke Ball
-        matrixStack.mulPose(Axis.XN.rotationDegrees(fishingBobberEntity.randomPitch))
-        matrixStack.mulPose(Axis.YN.rotationDegrees(fishingBobberEntity.randomYaw))
+        matrixStack.rotate(Axis.XN.rotationDegrees(fishingBobberEntity.randomPitch))
+        matrixStack.rotate(Axis.YN.rotationDegrees(fishingBobberEntity.randomYaw))
 
         // Apply rotation based on last spin angle
-        matrixStack.mulPose(Axis.YN.rotationDegrees(fishingBobberEntity.lastSpinAngle))
+        matrixStack.rotate(Axis.YN.rotationDegrees(fishingBobberEntity.lastSpinAngle))
 
         // Scale down the Poke Ball to 70% of its original size
         matrixStack.scale(0.7f, 0.7f, 0.7f) // Apply the scaling transformation
@@ -160,7 +161,7 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
 
         // Rotate the bait 90 degrees around the Y-axis
         val rotation = Quaternionf().rotateY(Math.toRadians(0.0).toFloat())
-        matrixStack.mulPose(rotation)
+        matrixStack.rotate(rotation)
 
 
         // render the bait
@@ -239,7 +240,7 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
 
     companion object {
         private val TEXTURE = cobblemonResource("textures/item/fishing/bobber_hook.png")
-        private val LAYER = RenderType.entityCutout(TEXTURE)
+        private val LAYER = RenderTypes.entityCutoutCull(TEXTURE)
 
         private fun vertex(buffer: VertexConsumer, entry: PoseStack.Pose, light: Int, x: Float, y: Float, u: Int, v: Int) {
             buffer

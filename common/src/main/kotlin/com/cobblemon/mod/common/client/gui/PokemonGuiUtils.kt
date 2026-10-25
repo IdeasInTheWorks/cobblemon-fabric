@@ -24,6 +24,7 @@ import com.mojang.blaze3d.vertex.PoseStack
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.LightTexture
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.resources.Identifier
 import net.minecraft.util.Mth
@@ -117,7 +118,7 @@ fun drawProfilePokemon(
 
         state.currentModel = model
 
-        val renderType = RenderType.entityCutout(texture)
+        val renderType = RenderTypes.entityCutoutCull(texture)
 
         state.setPoseToFirstSuitable(poseType)
         state.updatePartialTicks(partialTicks)
@@ -154,7 +155,7 @@ fun drawProfilePokemon(
             matrixStack.scale(profileScale, profileScale, 1 / profileScale)
         }
 
-        matrixStack.mulPose(rotation)
+        matrixStack.rotate(rotation)
 
         model.applyAnimations(null, state, 0F, 0F, 0F, headYaw, headPitch)
 

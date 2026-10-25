@@ -53,6 +53,7 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.screens.ChatScreen
 import net.minecraft.client.renderer.LightTexture
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.util.Mth.ceil
@@ -491,7 +492,7 @@ class BattleOverlay : Gui(Minecraft.getInstance()), Schedulable {
         val context = RenderContext()
         val model = VaryingModelRepository.getPoser(state.pokeBall.name, state)
         val texture = VaryingModelRepository.getTexture(state.pokeBall.name, state)
-        val renderType = RenderType.entityCutout(texture)//model.getLayer(texture)
+        val renderType = RenderTypes.entityCutoutCull(texture)//model.getLayer(texture)
 
         RenderSystem.applyModelViewMatrix()
         val quaternion1 = Axis.YP.rotationDegrees(-32F * if (reversed) -1F else 1F)
@@ -508,8 +509,8 @@ class BattleOverlay : Gui(Minecraft.getInstance()), Schedulable {
 
         matrixStack.scale(scale * state.scale, scale * state.scale, 0.1F)
 
-        matrixStack.mulPose(quaternion1)
-        matrixStack.mulPose(quaternion2)
+        matrixStack.rotate(quaternion1)
+        matrixStack.rotate(quaternion2)
 
         val light1 = Vector3f(2.2F, 4.0F, -4.0F)
         val light2 = Vector3f(1.1F, -4.0F, 7.0F)

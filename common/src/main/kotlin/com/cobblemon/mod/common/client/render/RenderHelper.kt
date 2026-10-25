@@ -22,8 +22,9 @@ import net.minecraft.util.Util
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.Font
 import net.minecraft.client.gui.GuiGraphics
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.network.chat.Component
@@ -290,7 +291,7 @@ fun drawScaledTextJustifiedRight(
 
 fun renderBeaconBeam(
     matrixStack: PoseStack,
-    buffer: MultiBufferSource,
+    buffer: ModelBufferSource,
     textureLocation: Identifier = CobblemonResources.PHASE_BEAM,
     partialTicks: Float,
     totalLevelTime: Long,
@@ -307,12 +308,12 @@ fun renderBeaconBeam(
     val i = yOffset + height
     val beamRotation = Math.floorMod(totalLevelTime, 40).toFloat() + partialTicks
     matrixStack.pushPose()
-    matrixStack.mulPose(Axis.YP.rotationDegrees(beamRotation * 2.25f - 45.0f))
+    matrixStack.rotate(Axis.YP.rotationDegrees(beamRotation * 2.25f - 45.0f))
     var f9 = -beamRadius
     val f12 = -beamRadius
     renderPart(
         matrixStack,
-        buffer.getBuffer(RenderType.beaconBeam(textureLocation, false)),
+        buffer.getBuffer(RenderTypes.beaconBeam(textureLocation, false)),
         red,
         green,
         blue,
@@ -336,7 +337,7 @@ fun renderBeaconBeam(
     f9 = -glowRadius
     renderPart(
         matrixStack,
-        buffer.getBuffer(RenderType.beaconBeam(textureLocation, true)),
+        buffer.getBuffer(RenderTypes.beaconBeam(textureLocation, true)),
         red,
         green,
         blue,

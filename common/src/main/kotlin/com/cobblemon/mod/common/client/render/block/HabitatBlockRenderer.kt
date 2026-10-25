@@ -25,7 +25,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.client.multiplayer.ClientLevel
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.LevelRenderer
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
@@ -79,7 +79,7 @@ class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnti
         entity: HabitatBlockEntity,
         partialTicks: Float,
         poseStack: PoseStack,
-        bufferSource: MultiBufferSource,
+        bufferSource: ModelBufferSource,
         packedLight: Int,
         packedOverlay: Int
     ) {
@@ -116,7 +116,7 @@ class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnti
         habitatEntity: HabitatBlockEntity,
         partialTicks: Float,
         poseStack: PoseStack,
-        bufferSource: MultiBufferSource,
+        bufferSource: ModelBufferSource,
         packedLight: Int
     ) {
         val level = habitatEntity.level as? ClientLevel ?: return
@@ -148,9 +148,9 @@ class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnti
         poseStack.translate(0.5, VISUAL_Y_OFFSET + MODEL_Y_ADJUST, 0.5)
         val scale = computeFittedModelScale(pokemonEntity)
         poseStack.translate(0.0, 0.4, 0.0)
-        poseStack.mulPose(Axis.YP.rotationDegrees(interpolatedSpin))
+        poseStack.rotate(Axis.YP.rotationDegrees(interpolatedSpin))
         poseStack.translate(0.0, -0.2, 0.0)
-        poseStack.mulPose(Axis.XP.rotationDegrees(SPAWNER_X_TILT_DEGREES))
+        poseStack.rotate(Axis.XP.rotationDegrees(SPAWNER_X_TILT_DEGREES))
         poseStack.scale(scale, scale, scale)
 
         val dispatcher = Minecraft.getInstance().entityRenderDispatcher

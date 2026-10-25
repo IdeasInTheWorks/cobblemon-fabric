@@ -17,8 +17,9 @@ import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.LevelRenderer
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.core.Direction
@@ -52,7 +53,7 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
         entity: DiscShelfBlockEntity,
         partialTicks: Float,
         poseStack: PoseStack,
-        buffer: MultiBufferSource,
+        buffer: ModelBufferSource,
         light: Int,
         overlay: Int
     ) {
@@ -72,7 +73,7 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
 
         poseStack.pushPose()
         poseStack.translate(0.5, 0.5, 0.5)
-        poseStack.mulPose(Axis.YP.rotationDegrees(rotation))
+        poseStack.rotate(Axis.YP.rotationDegrees(rotation))
         poseStack.translate(-0.5, -0.5, -0.5)
 
         val slotWidth = slotWidthPixels / textureSize
@@ -135,7 +136,7 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
 
     private fun renderSlotQuad(
             poseStack: PoseStack,
-            buffer: MultiBufferSource,
+            buffer: ModelBufferSource,
             texture: Identifier,
             color: Int,
             light: Int,
@@ -144,7 +145,7 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
             tint: Boolean,
             useTextRenderType: Boolean
     ) {
-        val renderType = if (useTextRenderType) RenderType.text(texture) else RenderType.entityCutout(texture)
+        val renderType = if (useTextRenderType) RenderTypes.text(texture) else RenderTypes.entityCutoutCull(texture)
         val consumer: VertexConsumer = buffer.getBuffer(renderType)
         val matrix: Matrix4f = poseStack.last().pose()
 

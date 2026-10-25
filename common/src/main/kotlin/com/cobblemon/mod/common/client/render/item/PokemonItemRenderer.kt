@@ -19,8 +19,9 @@ import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.blaze3d.vertex.VertexMultiConsumer
 import net.minecraft.client.renderer.LightTexture
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.core.component.DataComponents
 import net.minecraft.world.item.ItemDisplayContext
@@ -34,7 +35,7 @@ class PokemonItemRenderer : CobblemonBuiltinItemRenderer {
         it.put(RenderContext.DO_QUIRKS, false)
     }
 
-    override fun render(stack: ItemStack, mode: ItemDisplayContext, matrices: PoseStack, vertexConsumers: MultiBufferSource, light: Int, overlay: Int) {
+    override fun render(stack: ItemStack, mode: ItemDisplayContext, matrices: PoseStack, vertexConsumers: ModelBufferSource, light: Int, overlay: Int) {
         val pokemonItem = stack.item as? PokemonItem ?: return
         val (species, aspects) = pokemonItem.getSpeciesAndAspects(stack) ?: return
         val state = FloatingState()
@@ -62,10 +63,10 @@ class PokemonItemRenderer : CobblemonBuiltinItemRenderer {
         matrices.scale(model.profileScale, model.profileScale, 0.15F)
 
         val rotation = Quaternionf().fromEulerXYZDegrees(Vector3f(transformations.rotation.x, transformations.rotation.y, transformations.rotation.z))
-        matrices.mulPose(rotation)
+        matrices.rotate(rotation)
         rotation.conjugate()
 
-        val renderLayer = RenderType.entityCutout(VaryingModelRepository.getTexture(species.resourceIdentifier, state))
+        val renderLayer = RenderTypes.entityCutoutCull(VaryingModelRepository.getTexture(species.resourceIdentifier, state))
         val isEnchanted = stack.get(DataComponents.ENCHANTMENTS)?.isEmpty == false
         val vertexConsumer: VertexConsumer =
             if (isEnchanted) {

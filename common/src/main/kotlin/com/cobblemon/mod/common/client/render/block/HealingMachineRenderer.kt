@@ -13,7 +13,7 @@ import com.cobblemon.mod.common.block.entity.HealingMachineBlockEntity
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.core.Direction
@@ -35,7 +35,7 @@ class HealingMachineRenderer<T: BlockEntity>(ctx: BlockEntityRendererProvider.Co
         )
     }
 
-    override fun render(blockEntity: T, tickDelta: Float, poseStack: PoseStack, multiBufferSource: MultiBufferSource, light: Int, overlay: Int) {
+    override fun render(blockEntity: T, tickDelta: Float, poseStack: PoseStack, multiBufferSource: ModelBufferSource, light: Int, overlay: Int) {
         if (blockEntity !is HealingMachineBlockEntity) return
 
         poseStack.pushPose()
@@ -47,7 +47,7 @@ class HealingMachineRenderer<T: BlockEntity>(ctx: BlockEntityRendererProvider.Co
         // Position Poké Balls
         poseStack.translate(0.5, 0.5, 0.5)
 
-        poseStack.mulPose(Axis.YP.rotationDegrees(-yRot))
+        poseStack.rotate(Axis.YP.rotationDegrees(-yRot))
         poseStack.scale(0.65F, 0.65F, 0.65F)
 
         blockEntity.pokeBalls().forEach { (index, pokeBall) ->

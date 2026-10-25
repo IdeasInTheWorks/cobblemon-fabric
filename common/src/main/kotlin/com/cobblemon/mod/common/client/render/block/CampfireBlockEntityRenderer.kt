@@ -17,7 +17,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.ItemBlockRenderTypes
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.texture.OverlayTexture
@@ -44,7 +44,7 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
         blockEntity: CampfireBlockEntity,
         tickDelta: Float,
         poseStack: PoseStack,
-        multiBufferSource: MultiBufferSource,
+        multiBufferSource: ModelBufferSource,
         light: Int,
         overlay: Int
     ) {
@@ -63,7 +63,7 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
         }
 
         poseStack.translate(0.5, 0.5, 0.5)
-        poseStack.mulPose(Axis.YP.rotationDegrees(rotationAngle))
+        poseStack.rotate(Axis.YP.rotationDegrees(rotationAngle))
         poseStack.translate(-0.5, -0.5, -0.5)
 
         renderPot(campfirePotItem, blockEntity, tickDelta, poseStack, multiBufferSource, light, overlay)
@@ -78,7 +78,7 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
         blockEntity: CampfireBlockEntity,
         tickDelta: Float,
         poseStack: PoseStack,
-        multiBufferSource: MultiBufferSource,
+        multiBufferSource: ModelBufferSource,
         light: Int,
         overlay: Int
     ) {
@@ -119,7 +119,7 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
         blockEntity: CampfireBlockEntity,
         tickDelta: Float,
         poseStack: PoseStack,
-        multiBufferSource: MultiBufferSource,
+        multiBufferSource: ModelBufferSource,
         light: Int,
         overlay: Int
     ) {
@@ -140,7 +140,7 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
             val jumpOffset = sin(gameTime * JUMP_SPEED + index * 2) * JUMP_AMPLITUDE
             poseStack.translate(1F + xOffset, 1.24F + jumpOffset, 1F + zOffset)
             val lookAtDirection = Vector3f(1f + xOffset - 1F, 0F, 1F + zOffset - 1F)
-            poseStack.mulPose(Axis.YP.rotationDegrees((-Math.toDegrees(
+            poseStack.rotate(Axis.YP.rotationDegrees((-Math.toDegrees(
                 atan2(
                     lookAtDirection.z().toDouble(),
                     lookAtDirection.x().toDouble()
@@ -148,7 +148,7 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
             )).toFloat() + 90))
 
             poseStack.pushPose()
-            poseStack.mulPose(Axis.XP.rotationDegrees(22.5F))
+            poseStack.rotate(Axis.XP.rotationDegrees(22.5F))
 
             Minecraft.getInstance().itemRenderer.renderStatic(
                 seasoning,

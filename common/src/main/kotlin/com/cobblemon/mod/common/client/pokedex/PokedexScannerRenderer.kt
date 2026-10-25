@@ -252,7 +252,7 @@ class PokedexScannerRenderer {
         poseStack.translate(centerX.toFloat(), centerY.toFloat(), 0.0f)
 
         poseStack.pushPose()
-        poseStack.mulPose(Quaternionf().rotateZ(Math.toRadians((-rotation) * 0.5).toFloat()))
+        poseStack.rotate(Quaternionf().rotateZ(Math.toRadians((-rotation) * 0.5).toFloat()))
         blitk(matrixStack = poseStack, texture = SCAN_RING_OUTER, x = -(SCAN_RING_OUTER_DIAMETER / 2), y = -(SCAN_RING_OUTER_DIAMETER / 2), width = SCAN_RING_OUTER_DIAMETER, height = SCAN_RING_OUTER_DIAMETER, alpha = opacity)
         poseStack.popPose()
 
@@ -270,13 +270,13 @@ class PokedexScannerRenderer {
         for (i in 0 until segments) {
             val rotationQuaternion = Quaternionf().rotateZ(Math.toRadians((i * 4.5) + (rotation * 0.5)).toFloat())
             poseStack.pushPose()
-            poseStack.mulPose(rotationQuaternion)
+            poseStack.rotate(rotationQuaternion)
             blitk(matrixStack = poseStack, texture = SCAN_RING_MIDDLE, x = -(SCAN_RING_MIDDLE_WIDTH / 2), y = -(SCAN_RING_MIDDLE_HEIGHT.toFloat() / 2F), width = SCAN_RING_MIDDLE_WIDTH, height = SCAN_RING_MIDDLE_HEIGHT, alpha = progressOpacity)
             poseStack.popPose()
         }
 
         poseStack.pushPose()
-        poseStack.mulPose(Quaternionf().rotateZ(Math.toRadians(-usageContext.innerRingRotation.toDouble()).toFloat()))
+        poseStack.rotate(Quaternionf().rotateZ(Math.toRadians(-usageContext.innerRingRotation.toDouble()).toFloat()))
         blitk(matrixStack = poseStack, texture = SCAN_RING_INNER, x = -(SCAN_RING_INNER_DIAMETER / 2), y = -(SCAN_RING_INNER_DIAMETER / 2), width = SCAN_RING_INNER_DIAMETER, height = SCAN_RING_INNER_DIAMETER, alpha = opacity)
         poseStack.popPose()
 

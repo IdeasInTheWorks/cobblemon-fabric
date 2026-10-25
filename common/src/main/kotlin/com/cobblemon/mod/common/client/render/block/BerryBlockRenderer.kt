@@ -20,8 +20,9 @@ import com.cobblemon.mod.common.util.toVec3d
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.world.phys.AABB
@@ -48,7 +49,7 @@ class BerryBlockRenderer(private val context: BlockEntityRendererProvider.Contex
                 && Minecraft.getInstance().levelRenderer.cullingFrustum.isVisible(AABB.ofSize(pos, 2.0, 4.0, 2.0))
     }
 
-    override fun render(entity: BerryBlockEntity, tickDelta: Float, matrices: PoseStack, vertexConsumers: MultiBufferSource, light: Int, overlay: Int) {
+    override fun render(entity: BerryBlockEntity, tickDelta: Float, matrices: PoseStack, vertexConsumers: ModelBufferSource, light: Int, overlay: Int) {
         if (!shouldRender(entity, entity.blockPos.toVec3d())) return
         val blockState = entity.blockState
         if (entity.renderState == null) {
@@ -57,7 +58,7 @@ class BerryBlockRenderer(private val context: BlockEntityRendererProvider.Contex
 
         // RenderType.entityCutoutNoCull for shading, as shading is absent in RenderType CobblemonRenderLayers.BERRY_LAYER
         val buffer = vertexConsumers.getBuffer(
-            RenderType.entityCutoutNoCull(BERRY_SPRITE_ATLAS.textureAtlas.location())
+            RenderTypes.entityCutout(BERRY_SPRITE_ATLAS.textureAtlas.location())
         )
 
         val renderState = entity.renderState as BerryBlockEntityRenderState
@@ -85,7 +86,7 @@ class BerryBlockRenderer(private val context: BlockEntityRendererProvider.Contex
 
     private fun drawMulch(
         matrices: PoseStack,
-        vertexConsumers: MultiBufferSource,
+        vertexConsumers: ModelBufferSource,
         entity: BerryBlockEntity,
         light: Int,
         overlay: Int

@@ -14,8 +14,9 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Varyi
 import com.cobblemon.mod.common.pokeball.PokeBall
 import com.mojang.blaze3d.vertex.PoseStack
 import java.util.UUID
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.entity.ItemRenderer
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.util.Mth
@@ -56,7 +57,7 @@ object RecallArmAnimationTracker {
         return minOf(riseIn, fallOut)
     }
 
-    fun renderBall(anim: RecallAnim, poseStack: PoseStack, buffer: MultiBufferSource, packedLight: Int, partialTicks: Float) {
+    fun renderBall(anim: RecallAnim, poseStack: PoseStack, buffer: ModelBufferSource, packedLight: Int, partialTicks: Float) {
         val state = anim.ballState
         val model = VaryingModelRepository.getPoser(anim.ball.name, state)
         val texture = VaryingModelRepository.getTexture(anim.ball.name, state)
@@ -65,7 +66,7 @@ object RecallArmAnimationTracker {
         ballContext.put(RenderContext.ASPECTS, state.aspects)
         ballContext.put(RenderContext.POSABLE_STATE, state)
         model.applyAnimations(null, state, 0F, 0F, 0F, 0F, 0F)
-        val consumer = ItemRenderer.getFoilBufferDirect(buffer, RenderType.entityCutout(texture), false, false)
+        val consumer = ItemRenderer.getFoilBufferDirect(buffer, RenderTypes.entityCutoutCull(texture), false, false)
         model.render(ballContext, poseStack, consumer, packedLight, OverlayTexture.NO_OVERLAY, -0x1)
         model.resetLayerContext()
     }

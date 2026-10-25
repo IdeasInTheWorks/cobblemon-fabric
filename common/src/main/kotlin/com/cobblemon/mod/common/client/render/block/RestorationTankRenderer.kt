@@ -23,32 +23,55 @@ import com.cobblemon.mod.common.util.cobblemonResource
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import kotlin.math.pow
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.core.Direction
 import net.minecraft.world.level.block.HorizontalDirectionalBlock
 
-class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<RestorationTankBlockEntity> {
+class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<RestorationTankBlockEntity, RestorationTankRenderer.State> {
+    class State : net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState() {
+        var geometry = ModelBufferSource.Snapshot.EMPTY
+    }
+
+    override fun createRenderState() = State()
+
+    override fun extractRenderState(entity: RestorationTankBlockEntity, state: State, tickDelta: Float,
+                                    cameraPosition: net.minecraft.world.phys.Vec3,
+                                    crumbling: net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay?) {
+        net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState.extractBase(entity, state, crumbling)
+        // Empty states must replace prior geometry when the tank is broken or disconnected.
+        state.geometry = ModelBufferSource.Snapshot.EMPTY
+        val buffers = ModelBufferSource()
+        capture(entity, tickDelta, PoseStack(), buffers, state.lightCoords, OverlayTexture.NO_OVERLAY)
+        state.geometry = buffers.snapshot()
+    }
+
+    override fun submit(state: State, matrices: PoseStack, collector: net.minecraft.client.renderer.SubmitNodeCollector,
+                        cameraState: net.minecraft.client.renderer.state.level.CameraRenderState) {
+        state.geometry.submit(matrices, collector)
+    }
+
     val context = RenderContext().also {
         it.put(RenderContext.DO_QUIRKS, true)
         it.put(RenderContext.RENDER_STATE, RenderContext.RenderState.RESURRECTION_MACHINE)
     }
 
-    override fun render(
+    private fun capture(
         entity: RestorationTankBlockEntity,
         tickDelta: Float,
         matrices: PoseStack,
-        vertexConsumers: MultiBufferSource,
+        vertexConsumers: ModelBufferSource,
         light: Int,
         overlay: Int
     ) {
         if (entity.multiblockStructure == null) {
             return
         }
-        val struct = entity.multiblockStructure as FossilMultiblockStructure
+        val struct = entity.multiblockStructure as? FossilMultiblockStructure ?: return
         val connectionDir = struct.tankConnectorDirection
         // FYI, rendering models this way ignores the pivots set in the model, so set the pivots manually
         when (connectionDir) {
@@ -59,12 +82,11 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
             else -> {}
         }
 
-        val cutoutBuffer = vertexConsumers.getBuffer(RenderType.cutout())
+        val cutoutBuffer = vertexConsumers.getBuffer(RenderTypes.cutoutMovingBlock())
         if (connectionDir != null) {
             matrices.pushPose()
-            CONNECTOR_MODEL.getModel().getQuads(entity.blockState, null, entity.level?.random).forEach { quad ->
-                cutoutBuffer.putBulkData(matrices.last(), quad, 0.75f, 0.75f, 0.75f, 1f, light, OverlayTexture.NO_OVERLAY)
-            }
+            com.cobblemon.mod.common.client.model.BlockModelGeometry.capture(CONNECTOR_MODEL.getModel(),
+                entity.level?.random ?: return, matrices, cutoutBuffer, 0xFFBFBFBF.toInt(), light, OverlayTexture.NO_OVERLAY)
             matrices.popPose()
         }
         val fillLevel = struct.fillLevel
@@ -77,14 +99,13 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
         }
 
         matrices.pushPose()
-        val transparentBuffer = vertexConsumers.getBuffer(RenderType.translucent())
+        val transparentBuffer = vertexConsumers.getBuffer(RenderTypes.translucentMovingBlock())
 
         val fluidModel = (if (struct.isRunning()) FLUID_MODELS[8]
         else if (struct.hasCreatedPokemon) FLUID_MODELS[7]
         else FLUID_MODELS[fillLevel.coerceAtMost(FLUID_MODELS.size - 1) - 1]).getModel()
-        fluidModel.getQuads(entity.blockState, null, entity.level!!.random).forEach { quad ->
-            transparentBuffer.putBulkData(matrices.last(), quad, 0.75f, 0.75f, 0.75f, 1f, light, OverlayTexture.NO_OVERLAY)
-        }
+        com.cobblemon.mod.common.client.model.BlockModelGeometry.capture(fluidModel,
+            entity.level?.random ?: return, matrices, transparentBuffer, 0xFFBFBFBF.toInt(), light, OverlayTexture.NO_OVERLAY)
 
         matrices.popPose()
     }
@@ -93,7 +114,7 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
         entity: RestorationTankBlockEntity,
         tickDelta: Float,
         matrices: PoseStack,
-        vertexConsumers: MultiBufferSource,
+        vertexConsumers: ModelBufferSource,
         light: Int,
         overlay: Int
     ) {
@@ -141,7 +162,7 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
             val texture = VaryingModelRepository.getTexture(identifier, state)
 
             if (scale > 0F) {
-                val vertexConsumer = vertexConsumers.getBuffer(RenderType.entityCutout(texture))
+                val vertexConsumer = vertexConsumers.getBuffer(RenderTypes.entityCutoutCull(texture))
                 state.currentModel = model
                 state.setPoseToFirstSuitable()
 
@@ -153,13 +174,13 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
 
                 matrices.pushPose()
                 matrices.translate(0.5, 1.0 + fossilFetusModel.yTranslation,  0.5);
-                matrices.mulPose(Axis.ZP.rotationDegrees(180F))
+                matrices.rotate(Axis.ZP.rotationDegrees(180F))
                 if (tankDirection.getCounterClockWise(Direction.Axis.Y) == connectionDir) {
-                    matrices.mulPose(Axis.YP.rotationDegrees(-90F))
+                    matrices.rotate(Axis.YP.rotationDegrees(-90F))
                 } else if (tankDirection == connectionDir) {
-                    matrices.mulPose(Axis.YP.rotationDegrees(180F))
+                    matrices.rotate(Axis.YP.rotationDegrees(180F))
                 } else if (tankDirection.opposite != connectionDir) {
-                    matrices.mulPose(Axis.YP.rotationDegrees(90F))
+                    matrices.rotate(Axis.YP.rotationDegrees(90F))
                 }
 
                 model.context = context

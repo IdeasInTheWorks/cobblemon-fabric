@@ -15,11 +15,12 @@ import net.minecraft.client.model.object.boat.BoatModel
 import net.minecraft.client.model.ChestBoatModel
 import net.minecraft.client.model.geom.ModelLayerLocation
 import net.minecraft.client.renderer.rendertype.RenderType
+import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.client.renderer.entity.EntityRenderer
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
-import net.minecraft.client.renderer.MultiBufferSource
+import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.resources.Identifier
 import net.minecraft.util.Mth
@@ -38,27 +39,27 @@ class CobblemonBoatRenderer(ctx: EntityRendererProvider.Context, private val has
 
     override fun getTextureLocation(entity: CobblemonBoatEntity): Identifier = this.boatModels[entity.boatType]!!.first
 
-    override fun render(entity: CobblemonBoatEntity, yaw: Float, tickDelta: Float, matrices: PoseStack, vertexConsumers: MultiBufferSource, light: Int) {
+    override fun render(entity: CobblemonBoatEntity, yaw: Float, tickDelta: Float, matrices: PoseStack, vertexConsumers: ModelBufferSource, light: Int) {
         matrices.pushPose()
         matrices.translate(0F, 0.375F, 0F)
-        matrices.mulPose(Axis.YP.rotationDegrees(180F - yaw))
+        matrices.rotate(Axis.YP.rotationDegrees(180F - yaw))
         val h = entity.hurtTime - tickDelta
         val j = (entity.damage - tickDelta).coerceAtLeast(0F)
         if (h > 0F) {
-            matrices.mulPose(Axis.XP.rotationDegrees(Mth.sin(h) * h * j / 10F * entity.hurtDir))
+            matrices.rotate(Axis.XP.rotationDegrees(Mth.sin(h) * h * j / 10F * entity.hurtDir))
         }
         val k = entity.getBubbleAngle(tickDelta)
         if (!Mth.equal(k, 0F)) {
-            matrices.mulPose(Quaternionf().setAngleAxis(entity.getBubbleAngle(tickDelta) * 0.017453292F, 1F, 0F, 1F))
+            matrices.rotate(Quaternionf().setAngleAxis(entity.getBubbleAngle(tickDelta) * 0.017453292F, 1F, 0F, 1F))
         }
         val (identifier, entityModel) = this.boatModels[entity.boatType]!!
         matrices.scale(-1F, -1F, 1F)
-        matrices.mulPose(Axis.YP.rotationDegrees(90F))
+        matrices.rotate(Axis.YP.rotationDegrees(90F))
         entityModel.setupAnim(entity, tickDelta, 0F, -0.1F, 0F, 0F)
         val vertexConsumer = vertexConsumers.getBuffer(entityModel.renderType(identifier))
         entityModel.renderToBuffer(matrices, vertexConsumer, light, OverlayTexture.NO_OVERLAY, -0x1)
         if (!entity.isUnderWater) {
-            val vertexConsumer2 = vertexConsumers.getBuffer(RenderType.waterMask())
+            val vertexConsumer2 = vertexConsumers.getBuffer(RenderTypes.waterMask())
             entityModel.waterPatch().render(matrices, vertexConsumer2, light, OverlayTexture.NO_OVERLAY)
         }
         matrices.popPose()

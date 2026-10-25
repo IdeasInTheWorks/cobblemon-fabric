@@ -136,6 +136,7 @@ object CobblemonClient {
     }
 
     fun initialize(implementation: CobblemonClientImplementation) {
+        com.cobblemon.mod.common.client.model.NativeRenderSetups.register { net.minecraft.client.renderer.RenderPipelines.register(it) }
         LOGGER.info("Initializing Cobblemon client")
         this.implementation = implementation
 

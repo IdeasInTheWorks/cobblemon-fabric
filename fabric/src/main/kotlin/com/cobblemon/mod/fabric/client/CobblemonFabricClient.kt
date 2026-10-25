@@ -79,6 +79,9 @@ class CobblemonFabricClient: ClientModInitializer, CobblemonClientImplementation
     override fun onInitializeClient() {
         registerParticleFactory(CobblemonParticles.SNOWSTORM_PARTICLE_TYPE, SnowstormParticleType::Factory)
         CobblemonClient.initialize(this)
+        CobblemonAtlases.atlases.forEach {
+            com.cobblemon.mod.fabric.client.model.AtlasReloadListener.registerAtlas(it.atlasId, it.sourcePath)
+        }
         val standaloneModels = com.cobblemon.mod.fabric.client.model.StandaloneModels()
         ModelLoadingPlugin.register { context ->
             com.cobblemon.mod.common.client.CobblemonBakingOverrides.models.forEach { model ->
@@ -90,28 +93,10 @@ class CobblemonFabricClient: ClientModInitializer, CobblemonClientImplementation
 
         CobblemonFabric.networkManager.registerClientHandlers()
 
-        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(object : IdentifiableResourceReloadListener {
-            override fun reload(
-                synchronizer: PreparableReloadListener.PreparationBarrier,
-                manager: ResourceManager,
-                prepareProfiler: ProfilerFiller,
-                applyProfiler: ProfilerFiller,
-                prepareExecutor: Executor,
-                applyExecutor: Executor
-            ): CompletableFuture<Void> {
-                val atlasFutures = mutableListOf<CompletableFuture<Void>>()
-                CobblemonAtlases.atlases.forEach {
-                    atlasFutures.add(it.reload(synchronizer, manager, prepareProfiler, applyProfiler, prepareExecutor, applyExecutor))
-                }
-                val result = CompletableFuture.allOf(*atlasFutures.toTypedArray()).thenRun {
-                    reloadCodedAssets(manager)
-                }
-                return result
-            }
-
-            override fun getFabricId() = cobblemonResource("atlases")
-
-        })
+        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(
+            com.cobblemon.mod.fabric.client.model.AtlasReloadListener(cobblemonResource("atlases")) { manager ->
+                reloadCodedAssets(manager)
+            })
 
         // Register the HUD render callback for Pokédex
         HudRenderCallback.EVENT.register { graphics, tickDelta ->
