@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 60,
+  "generation": 61,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -310,6 +310,26 @@
       "minutes": 90,
       "checkpoint": "7da74a7f435cc9528eefbe89e73f3de8f8aae435; S11 native materials/immutable fossil geometry/atlas ownership preserved in three commits;2723 core+19 Fabric/810 legacy cases/20 tool tests pass;common4556/548 and AW13 fail;next native entrypoints/mixins/remaining widener callers;porting/RESUME.md;same native Sheet;no game/JAR",
       "closed_at": "2026-10-25T16:57:51Z"
+    },
+    "HANDOFF-RED01-20261027": {
+      "work_id": "HANDOFF-RED01-20261027",
+      "owner": "codex-handoff-red01-01a16f8a",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "porting"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "8a624fc8-51d0-4b78-a4e0-730aa769730d",
+      "operation_id": "8a624fc8-51d0-4b78-a4e0-730aa769730d",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-27T18:53:19Z",
+      "heartbeat_at": "2026-10-27T18:53:19Z",
+      "expires_at": "2026-10-27T19:23:19Z",
+      "minutes": 30,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -912,6 +932,16 @@
       "lease_id": "ec50a5d6-b86b-46f9-93cf-0c89c2fec75b",
       "epoch": 1,
       "checkpoint": "7da74a7f435cc9528eefbe89e73f3de8f8aae435; S11 native materials/immutable fossil geometry/atlas ownership preserved in three commits;2723 core+19 Fabric/810 legacy cases/20 tool tests pass;common4556/548 and AW13 fail;next native entrypoints/mixins/remaining widener callers;porting/RESUME.md;same native Sheet;no game/JAR"
+    },
+    {
+      "generation": 61,
+      "at": "2026-10-27T18:53:19Z",
+      "kind": "acquire",
+      "work_id": "HANDOFF-RED01-20261027",
+      "owner": "codex-handoff-red01-01a16f8a",
+      "lease_id": "8a624fc8-51d0-4b78-a4e0-730aa769730d",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
