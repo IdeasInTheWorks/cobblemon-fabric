@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 69,
+  "generation": 70,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -351,12 +351,13 @@
       "lease_id": "cd1e6776-9933-4e2b-ace7-d06ac85a4c1b",
       "operation_id": "cd1e6776-9933-4e2b-ace7-d06ac85a4c1b",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-27T21:30:04Z",
       "heartbeat_at": "2026-10-27T22:04:17Z",
       "expires_at": "2026-10-27T23:34:17Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "Published e3943fe1da7a9f82832b1f82216c7bf556750c8b; source137e6b67bd5bc516289da24559db78da3641b935; AW0/headers,2788 core+19 Fabric/810 legacy cases/20 tooling pass; common4297/527 and CI40591914161 fail; partial R023, remaining living/boat/locator/block/GUI/mixins; see porting/RESUME.md and same native Sheet. No game or installable JAR.",
+      "closed_at": "2026-10-27T22:07:34Z"
     }
   },
   "events": [
@@ -1049,6 +1050,16 @@
       "lease_id": "cd1e6776-9933-4e2b-ace7-d06ac85a4c1b",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 70,
+      "at": "2026-10-27T22:07:34Z",
+      "kind": "release",
+      "work_id": "S12-R023-AW13",
+      "owner": "codex-red01-s12-01a17ebd",
+      "lease_id": "cd1e6776-9933-4e2b-ace7-d06ac85a4c1b",
+      "epoch": 1,
+      "checkpoint": "Published e3943fe1da7a9f82832b1f82216c7bf556750c8b; source137e6b67bd5bc516289da24559db78da3641b935; AW0/headers,2788 core+19 Fabric/810 legacy cases/20 tooling pass; common4297/527 and CI40591914161 fail; partial R023, remaining living/boat/locator/block/GUI/mixins; see porting/RESUME.md and same native Sheet. No game or installable JAR."
     }
   ]
 }
