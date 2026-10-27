@@ -1,5 +1,11 @@
 # Development checkpoint
 
+## Red01 takeover prepared (2026-10-27)
+
+Read [RED01_HANDOFF.md](RED01_HANDOFF.md) and use [RED01_AGENT_PROMPT.md](RED01_AGENT_PROMPT.md) in a new Codex chat on Red01. Machine checkpoint: [handoff-red01.json](handoff-red01.json). This is documentation only; code remains at S11 commit `7da74a7f435cc9528eefbe89e73f3de8f8aae435`. Fetch the latest branch including this handoff. Red01 has not been provisioned or contacted.
+
+S11 publication and lease release were verified on 2026-10-27. Its historical instruction below to close the lease is superseded. Never reuse S11 or the documentation-handoff lease; inspect the live registry and acquire a fresh scoped lease before editing. Check the same Sheet Claims/Handoff for the documentation publication/closure snapshot. No new runtime tests or completion/effort changes are claimed.
+
 This is an incomplete migration, not an installable mod. Work is on `feature/latest-minecraft-fabric`; GitHub `main` remains the original 1.8.2 release. No release or completed-work pull request has been created because build/gameplay release gates have not passed.
 
 ## Sprint S11 checkpoint (2026-10-25)

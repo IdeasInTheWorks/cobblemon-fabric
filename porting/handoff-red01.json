@@ -1,0 +1,26 @@
+{
+  "prepared_date": "2026-10-27",
+  "type": "documentation-only takeover",
+  "destination": "Red01; environment and authentication not verified",
+  "repository": "https://github.com/IdeasInTheWorks/cobblemon-fabric",
+  "branch": "feature/latest-minecraft-fabric",
+  "code_checkpoint": "7da74a7f435cc9528eefbe89e73f3de8f8aae435",
+  "guide": "porting/RED01_HANDOFF.md",
+  "prompt": "porting/RED01_AGENT_PROMPT.md",
+  "google_doc": "https://docs.google.com/document/d/1PZvGYMJDkSd7qwaF90AyzBFDRwRX5EA3bkMvUIsk6G8/edit",
+  "roadmap": "https://docs.google.com/spreadsheets/d/1_H2BdYlb3f3CnsmP99R2GqlGeuOwax2-3NvjWuVqOQE/edit",
+  "historical_s11": {
+    "executed_date": "2026-10-25",
+    "common_kotlin_diagnostic_lines": 4556,
+    "affected_files": 548,
+    "access_widener_misses": 13,
+    "installable_jar": false,
+    "runtime_gameplay_verified": false
+  },
+  "accepted_tasks": {"done": 12, "total": 44, "remaining": 32},
+  "remaining_effort_person_hours": {"low": 518, "likely": 1036, "high": 2080, "confidence": "Low", "actuals": null},
+  "handoff_claim": "HANDOFF-RED01-20261027",
+  "next_agent_requires_fresh_claim": true,
+  "source_changes_in_this_handoff": false,
+  "game_tests_executed_in_this_handoff": false
+}
