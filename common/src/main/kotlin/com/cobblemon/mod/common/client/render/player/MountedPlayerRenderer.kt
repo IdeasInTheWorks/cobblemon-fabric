@@ -27,14 +27,6 @@ import net.minecraft.world.phys.Vec3
  * @author landonjw
  */
 object MountedPlayerRenderer {
-    @JvmField
-    var shouldApplyRootAnimation = false
-
-    @JvmField
-    val relevantPartsByName = mutableMapOf(
-        "body" to ModelPart(emptyList(), emptyMap()),
-    )
-
     val defaultAnimations = listOf(
         RidingAnimation(
             fileName = "player",
@@ -42,26 +34,16 @@ object MountedPlayerRenderer {
         )
     )
 
-    fun animate(
-        model: HumanoidModel<AbstractClientPlayer>,
-        pokemonEntity: PokemonEntity,
-        player: AbstractClientPlayer,
-        headYaw: Float,
-        headPitch: Float,
-        ageInTicks: Float,
-        limbSwing: Float,
-        limbSwingAmount: Float
-    ) {
-        // We need to reset the root because it's a synthetic part, Minecraft won't do this for us.
-        val root = relevantPartsByName["body"] ?: return
-        root.x = 0F
-        root.y = 0F
-        root.z = 0F
-        root.xRot = 0F
-        root.yRot = 0F
-        root.zRot = 0F
-
-        val seat = pokemonEntity.getSeatForPassenger(player) ?: return
+    fun capture(pokemonEntity: PokemonEntity, player: AbstractClientPlayer,
+                renderState: net.minecraft.client.renderer.entity.state.AvatarRenderState): com.cobblemon.mod.common.client.model.RiderPose {
+        val headYaw = renderState.yRot
+        val headPitch = renderState.xRot
+        val ageInTicks = renderState.ageInTicks
+        val limbSwing = renderState.walkAnimationPos
+        val limbSwingAmount = renderState.walkAnimationSpeed
+        val relevantPartsByName = listOf("body", "arm_left", "arm_right", "leg_left", "leg_right", "head", "hat", "torso")
+            .associateWith { ModelPart(emptyList(), emptyMap()) }
+        val seat = pokemonEntity.getSeatForPassenger(player) ?: return com.cobblemon.mod.common.client.model.RiderPose.EMPTY
         val animations = seat.poseAnimations
             ?.firstOrNull { it.poseTypes.isEmpty() || it.poseTypes.contains(pokemonEntity.getCurrentPoseType()) }?.animations
             ?: defaultAnimations
@@ -96,58 +78,8 @@ object MountedPlayerRenderer {
             )
         }
 
-        applyRegularAnimation(model, player, ageInTicks)
-    }
-
-    /**
-     * This does what Minecraft would typically do for various additional body part
-     * rendering thingies. It's largely copy paste.
-     */
-    fun applyRegularAnimation(
-        model: HumanoidModel<AbstractClientPlayer>,
-        player: AbstractClientPlayer,
-        ageInTicks: Float
-    ) {
-        val rightHanded = player.mainArm == HumanoidArm.RIGHT
-        if (player.isUsingItem) {
-            val usingMainHand = player.usedItemHand == InteractionHand.MAIN_HAND
-            if (usingMainHand == rightHanded) {
-                model.poseRightArm(player)
-            } else {
-                model.poseLeftArm(player)
-            }
-        } else {
-            val offHandIsTwoHanded: Boolean = if (rightHanded) model.leftArmPose.isTwoHanded else model.rightArmPose.isTwoHanded
-            if (rightHanded != offHandIsTwoHanded) {
-                model.poseLeftArm(player)
-                model.poseRightArm(player)
-            } else {
-                model.poseRightArm(player)
-                model.poseLeftArm(player)
-            }
-        }
-
-        model.setupAttackAnimation(player, ageInTicks)
-
-        if (model.rightArmPose != HumanoidModel.ArmPose.SPYGLASS) {
-            AnimationUtils.bobModelPart(model.rightArm, ageInTicks, 1.0F);
-        }
-
-        if (model.leftArmPose != HumanoidModel.ArmPose.SPYGLASS) {
-            AnimationUtils.bobModelPart(model.leftArm, ageInTicks, -1.0F);
-        }
-
-        model.hat.copyFrom(model.head)
-    }
-
-    const val RIDING_SITTING_OFFSET = -10.0
-    fun animateRoot(stack: PoseStack) {
-        val root = relevantPartsByName["body"] ?: return
-        val rootOffset = Vec3(-root.x.toDouble(), root.y.toDouble() + RIDING_SITTING_OFFSET, root.z.toDouble()).scale(1/16.0)
-        val rotation = Vec3(root.xRot.toDouble(), root.yRot.toDouble(), root.zRot.toDouble())
-        stack.translate(rootOffset.x.toFloat(), rootOffset.y.toFloat(), rootOffset.z.toFloat())
-        stack.rotate(Axis.ZP.rotation(rotation.z.toFloat()))
-        stack.rotate(Axis.YP.rotation(rotation.y.toFloat()))
-        stack.rotate(Axis.XP.rotation(rotation.x.toFloat()))
+        return com.cobblemon.mod.common.client.model.RiderPose(relevantPartsByName.mapValues {
+            com.cobblemon.mod.common.client.model.RiderPose.Part.capture(it.value)
+        })
     }
 }

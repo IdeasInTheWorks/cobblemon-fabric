@@ -37,11 +37,17 @@ object CobblemonVillagerProfessions: PlatformRegistry<Registry<VillagerProfessio
         else -> null
     }
 
+    fun nurseTradeSet(level: Int): ResourceKey<net.minecraft.world.item.trading.TradeSet> =
+        ResourceKey.create(Registries.TRADE_SET, com.cobblemon.mod.common.util.cobblemonResource("nurse/$level"))
+
     private fun profession(resourceKey: ResourceKey<PoiType>, soundEvent: SoundEvent?): VillagerProfession =
-        create(resourceKey.location().path, VillagerProfession(
-            resourceKey.location().toString(),
+        create(resourceKey.identifier().path, VillagerProfession(
+            net.minecraft.network.chat.Component.translatable("entity.minecraft.villager.${resourceKey.identifier().namespace}.${resourceKey.identifier().path}"),
             { holder: Holder<PoiType> -> holder.`is`(resourceKey) },
             { holder: Holder<PoiType> -> holder.`is`(resourceKey) },
-            ImmutableSet.of(), ImmutableSet.of(), soundEvent
+            ImmutableSet.of(), ImmutableSet.of(), soundEvent,
+            it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap<net.minecraft.resources.ResourceKey<net.minecraft.world.item.trading.TradeSet>>().also { sets ->
+                (1..5).forEach { level -> sets.put(level, nurseTradeSet(level)) }
+            }
         ))
 }

@@ -5,42 +5,27 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+// Additional compatibility work Copyright (C) 2026 Cobblemon Contributors and IdeasInTheWorks.
 
 package com.cobblemon.mod.common.mixin.client;
 
-import com.cobblemon.mod.common.client.render.player.MountedPlayerRenderer;
+import com.cobblemon.mod.common.client.model.RiderModelAccess;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.AgeableListModel;
-import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.Model;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * This mixin adds to the head of the renderToBuffer function and allows us to detect if it is a HumanoidModel and
- * is being rendered as part of a player in the world who is riding a PokemonEntity. If so we need to obey any
- * root animations that have been applied earlier.
- *
- * @author Hiroku
- * @since May 16, 2025
- */
-@Mixin(AgeableListModel.class)
-public class AgeableListModelMixin {
-    @Inject(method = "renderToBuffer", at = @At("HEAD"))
-    private void cobblemon$renderToBuffer(
-        PoseStack poseStack,
-        VertexConsumer vertexConsumer,
-        int packedLight,
-        int packedOverlay,
-        int colour,
-        CallbackInfo ci
-    ) {
-        Model model = (Model) (Object) this;
-        if (model instanceof HumanoidModel<?> && MountedPlayerRenderer.shouldApplyRootAnimation) {
-            MountedPlayerRenderer.INSTANCE.animateRoot(poseStack);
-        }
+/** Apply only the pose associated with this model's extracted state; always balance the stack. */
+@Mixin(Model.class)
+public abstract class AgeableListModelMixin {
+    @WrapMethod(method = "renderToBuffer")
+    private void cobblemon$renderRoot(PoseStack pose, VertexConsumer vertices, int light, int overlay, int color, Operation<Void> original) {
+        pose.pushPose();
+        try {
+            if ((Object)this instanceof RiderModelAccess rider) rider.cobblemon$getRiderPose().applyRoot(pose);
+            original.call(pose, vertices, light, overlay, color);
+        } finally { pose.popPose(); }
     }
 }

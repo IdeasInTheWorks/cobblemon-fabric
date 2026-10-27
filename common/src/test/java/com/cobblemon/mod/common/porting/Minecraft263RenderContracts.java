@@ -44,7 +44,7 @@ final class Minecraft263RenderContracts {
         factory.setAccessible(true); // Test only: production uses the validated access widener.
         var pipelines = new ArrayList<RenderPipeline>();
         NativeRenderSetups.register(pipelines::add);
-        check(pipelines.size() == 21, "all eight model variants, four OIT triples and berries are registered");
+        check(pipelines.size() == 25, "model, OIT, berry and four Snowstorm pipelines are registered");
         var names = new HashSet<Identifier>();
         for (var pipeline : pipelines) check(names.add(pipeline.getLocation()), "pipeline locations are unique");
         for (int key = 0; key < 8; key++) {
@@ -74,6 +74,19 @@ final class Minecraft263RenderContracts {
         check(berryType.outline().isPresent(), "berries retain outline participation");
         check(field(berry, "useLightmap").equals(true), "berries use lightmap");
         check(field(berry, "useOverlay").equals(false), "berries do not use entity overlay");
+
+        for (int material = 0; material < 4; material++) {
+            var setup = NativeRenderSetups.particle(material);
+            var type = (RenderType)factory.invoke(null, "snowstorm", setup);
+            check(type.pipeline().isCull() == (material == 0 || material == 3), "Snowstorm material culling retained");
+            check(type.pipeline().getDepthStencilState().writeDepth(), "Snowstorm retains depth writes");
+            check(type.format() == net.minecraft.client.renderer.RenderPipelines.TRANSLUCENT_PARTICLE.getVertexFormatBindings().getFirst(), "native particle vertex format retained");
+            var blend = type.pipeline().getColorTargetStates().getFirst().blendFunction().orElseThrow();
+            var expectedSource = material == 3 ? com.mojang.renderpearl.api.pipeline.BlendFactor.SRC_COLOR : com.mojang.renderpearl.api.pipeline.BlendFactor.SRC_ALPHA;
+            var expectedDest = material == 1 ? com.mojang.renderpearl.api.pipeline.BlendFactor.ONE : material == 3 ? com.mojang.renderpearl.api.pipeline.BlendFactor.ZERO : com.mojang.renderpearl.api.pipeline.BlendFactor.ONE_MINUS_SRC_ALPHA;
+            check(blend.equals(new com.mojang.renderpearl.api.pipeline.BlendFunction(expectedSource, expectedDest)), "Snowstorm color/alpha blending retained");
+            check(field(setup, "useLightmap").equals(true), "Snowstorm uses environment lightmap");
+        }
 
         var buffers = new ModelBufferSource();
         var input = buffers.getBuffer(berryType);
@@ -115,6 +128,73 @@ final class Minecraft263RenderContracts {
         check(buffers.snapshot().batches().getFirst().vertices().get(1).attributes() == 2, "omitted attributes do not leak from the prior vertex");
         try { new ModelBufferSource.Recorder().setUv(0, 0); throw new AssertionError("attribute before vertex accepted"); }
         catch (IllegalStateException expected) { checks++; }
+        var phases = new net.minecraft.client.renderer.SubmitNodeCollection(false,
+                new net.minecraft.client.renderer.feature.phase.TranslucentFeatureRenderPhase());
+        var decalPose = new PoseStack().last();
+        snapshot.submit(new PoseStack(), phases,
+                new net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay(3, decalPose), null);
+        var phaseNodes = new ArrayList<net.minecraft.client.renderer.feature.submit.SubmitNode>();
+        phases.solid.sortInto((node, flag) -> phaseNodes.add(node));
+        check(phaseNodes.size() == 2, "solid geometry and fossil breaking overlay use the native solid phase");
+        var breaking = phaseNodes.stream().map(node -> (net.minecraft.client.renderer.feature.CustomFeatureRenderer.Submit)node)
+                .filter(node -> node.renderType() == net.minecraft.client.resources.model.ModelBakery.DESTROY_TYPES.get(3)).findFirst().orElseThrow();
+        check(breaking.renderType() == net.minecraft.client.resources.model.ModelBakery.DESTROY_TYPES.get(3), "native break progress selects correct decal material");
+        var beforeMutation = new ModelBufferSource.Recorder(); breaking.customGeometryRenderer().render(new PoseStack().last(), beforeMutation);
+        decalPose.translate(50, 60, 70);
+        var afterMutation = new ModelBufferSource.Recorder(); breaking.customGeometryRenderer().render(new PoseStack().last(), afterMutation);
+        check(beforeMutation.snapshot().equals(afterMutation.snapshot()), "breaking decal camera pose is captured rather than retained live");
+        var translucentType = (RenderType)factory.invoke(null, "translucent-fixture", NativeRenderSetups.entity(id, false, true, false));
+        var translucentBuffers = new ModelBufferSource();
+        translucentBuffers.getBuffer(translucentType).addVertex(0, 0, 0).setColor(-1).setUv(0, 0).setNormal(0, 1, 0);
+        var transparentPhases = new net.minecraft.client.renderer.SubmitNodeCollection(true,
+                new net.minecraft.client.renderer.feature.phase.TranslucentFeatureRenderPhase());
+        translucentBuffers.snapshot().submit(new PoseStack(), transparentPhases,
+                new net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay(6, new PoseStack().last()), null, true);
+        var overlayNodes = new ArrayList<net.minecraft.client.renderer.feature.submit.SubmitNode>();
+        transparentPhases.breakingOverlay.sortInto((node, flag) -> overlayNodes.add(node));
+        check(overlayNodes.size() == 2, "native improved-transparency phase contains both base geometry and decal");
+        check(overlayNodes.stream().map(node -> (net.minecraft.client.renderer.feature.CustomFeatureRenderer.Submit)node)
+                .anyMatch(node -> node.renderType() == net.minecraft.client.resources.model.ModelBakery.DESTROY_TYPES_OIT.get(6)), "improved transparency retains native OIT decal companion");
+
+        var unlitBuffers = new ModelBufferSource();
+        unlitBuffers.getBuffer(berryType).addVertex(2, 3, 4).setColor(-1).setUv(0.5F, 0.25F).setUv2(0, 0);
+        var unlit = unlitBuffers.snapshot();
+        submissions.clear();
+        unlit.submit(new PoseStack(), collector, null, net.minecraft.util.LightCoordsUtil.pack(11, 7));
+        var relit = new ModelBufferSource.Recorder(); submissions.getFirst().render(new PoseStack().last(), relit);
+        check(relit.snapshot().getFirst().lightU() == (11 << 4) && relit.snapshot().getFirst().lightV() == (7 << 4), "special-item submission resolves native draw light after CPU capture");
+        var builtin = com.cobblemon.mod.common.client.model.NativeBuiltinItemModel.model((stack, display) -> unlit);
+        var itemState = new net.minecraft.client.renderer.item.ItemStackRenderState();
+        builtin.update(itemState, new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.STONE), null,
+                net.minecraft.world.item.ItemDisplayContext.GUI, null, null, 0);
+        check(!itemState.isEmpty() && itemState.isAnimated(), "special item update creates a native animated layer");
+        check(!itemState.usesBlockLight(), "GUI special item requests native flat item lighting");
+
+        var fullMaterial = new net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo(null, null, berryType, null, null, 0, null, 0);
+        var fullQuad = new net.minecraft.client.resources.model.geometry.BakedQuad(new org.joml.Vector3f(0, 0, 0),
+                new org.joml.Vector3f(1, 0, 0), new org.joml.Vector3f(1, 1, 0), new org.joml.Vector3f(0, 1, 0),
+                0, 0, 0, 0, net.minecraft.core.Direction.SOUTH, fullMaterial);
+        var faceQueries = new HashSet<net.minecraft.core.Direction>();
+        var allFacesModel = new net.minecraft.client.renderer.block.dispatch.BlockStateModel() {
+            public void collectParts(net.minecraft.util.RandomSource random, List<net.minecraft.client.renderer.block.dispatch.BlockStateModelPart> parts) {
+                parts.add(new net.minecraft.client.renderer.block.dispatch.BlockStateModelPart() {
+                    public List<net.minecraft.client.resources.model.geometry.BakedQuad> getQuads(net.minecraft.core.Direction face) {
+                        faceQueries.add(face); return face == null || face == net.minecraft.core.Direction.NORTH ? List.of(fullQuad) : List.of();
+                    }
+                    public boolean useAmbientOcclusion() { return false; }
+                    public net.minecraft.client.resources.model.sprite.Material.Baked particleMaterial() { return null; }
+                    public int materialFlags() { return 0; }
+                });
+            }
+            public net.minecraft.client.resources.model.sprite.Material.Baked particleMaterial() { return null; }
+            public int materialFlags() { return 0; }
+        };
+        var fullBuffers = new ModelBufferSource();
+        BlockModelGeometry.captureAll(allFacesModel, net.minecraft.util.RandomSource.create(42), new PoseStack(), fullBuffers, 0xFF112233, 7, 9);
+        check(faceQueries.size() == 7, "pot/candle capture includes all six face lists and unculled geometry");
+        check(fullBuffers.snapshot().batches().getFirst().vertices().size() == 8, "culled and unculled quads are both retained");
+        check(fullBuffers.snapshot().batches().getFirst().vertices().getFirst().color() == 0xFF112233, "broth tint retained for tint-indexed geometry");
+
         var material = new net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo(null, null, null, null, null, -1, null, 0);
         var quad = new net.minecraft.client.resources.model.geometry.BakedQuad(new org.joml.Vector3f(0, 0, 0),
                 new org.joml.Vector3f(1, 0, 0), new org.joml.Vector3f(1, 1, 0), new org.joml.Vector3f(0, 1, 0),

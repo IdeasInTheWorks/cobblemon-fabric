@@ -31,4 +31,19 @@ public final class BlockModelGeometry {
         instance.setOverlayCoords(overlay);
         for (var part : parts) for (var quad : part.getQuads(null)) target.putBakedQuad(pose.last(), quad, instance);
     }
+    public static void captureAll(BlockStateModel model, RandomSource random, PoseStack pose,
+                                  ModelBufferSource buffers, int tint, int light, int overlay) {
+        var parts = new ArrayList<BlockStateModelPart>();
+        model.collectParts(random, parts);
+        var faces = new ArrayList<net.minecraft.core.Direction>();
+        faces.add(null); faces.addAll(java.util.List.of(net.minecraft.core.Direction.values()));
+        for (var part : parts) for (var face : faces) for (var quad : part.getQuads(face)) {
+            var material = quad.materialInfo();
+            var instance = new QuadInstance();
+            instance.setColor(material.isTinted() ? tint : -1);
+            instance.setLightCoords(light); instance.setOverlayCoords(overlay);
+            buffers.getBuffer(material.itemRenderType()).putBakedQuad(pose.last(), quad, instance);
+        }
+    }
+
 }

@@ -212,7 +212,7 @@ class BerryBlock(private val berryIdentifier: Identifier, settings: Properties) 
             treeEntity.setMulch(MulchVariant.NONE, world, state, pos)
             treeEntity.setChanged()
             world.playSound(null, pos, CobblemonSounds.MULCH_REMOVE, SoundSource.BLOCKS, 0.6F, 1F)
-            this.spawnDestroyParticles(world, player, pos, state.setValue(AGE, 0))
+            this.spawnDestroyParticles(world, pos, state.setValue(AGE, 0))
             return InteractionResult.SUCCESS
         }
 

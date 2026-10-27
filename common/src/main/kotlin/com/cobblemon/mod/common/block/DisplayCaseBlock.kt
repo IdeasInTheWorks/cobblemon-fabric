@@ -29,7 +29,7 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING
 import net.minecraft.world.level.block.RenderShape
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
-import net.minecraft.world.level.block.state.properties.DirectionProperty
+import net.minecraft.world.level.block.state.properties.EnumProperty
 import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 
@@ -132,7 +132,7 @@ class DisplayCaseBlock(settings: Properties) : BaseEntityBlock(settings) {
 
     companion object {
         val CODEC = simpleCodec(::DisplayCaseBlock)
-        val ITEM_DIRECTION = DirectionProperty.create("item_facing")
+        val ITEM_DIRECTION = EnumProperty.create("item_facing", Direction::class.java)
     }
 
 }

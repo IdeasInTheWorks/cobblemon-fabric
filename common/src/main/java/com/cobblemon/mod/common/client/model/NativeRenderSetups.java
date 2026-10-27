@@ -27,6 +27,7 @@ import net.minecraft.resources.Identifier;
 /** Native descriptors for the old custom model layers; no immediate GPU state changes. */
 public final class NativeRenderSetups {
     private static final List<RenderPipeline> PIPELINES = new ArrayList<>();
+    private static final RenderPipeline[] PARTICLES = new RenderPipeline[4];
     private static final RenderPipeline[] ENTITY = new RenderPipeline[8];
     private static final OitPipelineSet[] OIT = new OitPipelineSet[8];
     private static final RenderPipeline BERRIES = copy(RenderPipelines.CUTOUT_BLOCK, "berries", false, null);
@@ -49,6 +50,22 @@ public final class NativeRenderSetups {
                         copy(source.transmittancePipeline(), "entity_" + key + "_transmittance", true, null),
                         copy(source.accumulatePipeline(), "entity_" + key + "_accumulate", true, null));
             }
+        }
+        for (int key = 0; key < 4; key++) {
+            var source = RenderPipelines.TRANSLUCENT_PARTICLE;
+            // Preserve the old blendFunc for color AND alpha, including SRC_COLOR/ZERO for OPAQUE.
+            var src = key == 3 ? com.mojang.renderpearl.api.pipeline.BlendFactor.SRC_COLOR
+                    : com.mojang.renderpearl.api.pipeline.BlendFactor.SRC_ALPHA;
+            var dst = key == 1 ? com.mojang.renderpearl.api.pipeline.BlendFactor.ONE
+                    : key == 3 ? com.mojang.renderpearl.api.pipeline.BlendFactor.ZERO
+                    : com.mojang.renderpearl.api.pipeline.BlendFactor.ONE_MINUS_SRC_ALPHA;
+            PARTICLES[key] = RenderPipeline.builder(snippet(source, key == 0 || key == 3))
+                    .withLocation(Identifier.fromNamespaceAndPath("cobblemon", "pipeline/snowstorm_material_" + key))
+                    .withColorTargetState(new ColorTargetState(new com.mojang.renderpearl.api.pipeline.BlendFunction(src, dst)))
+                    .withDepthStencilState(new DepthStencilState(source.getDepthStencilState().depthTest(), true,
+                            source.getDepthStencilState().depthBiasScaleFactor(), source.getDepthStencilState().depthBiasConstant()))
+                    .build();
+            PIPELINES.add(PARTICLES[key]);
         }
     }
 
@@ -76,13 +93,24 @@ public final class NativeRenderSetups {
         return builder.createRenderSetup();
     }
 
-    private static RenderPipeline copy(RenderPipeline source, String name, boolean cull, Boolean translucent) {
+    public static RenderSetup particle(int material) {
+        return RenderSetup.builder(PARTICLES[material])
+                .withTexture("Sampler0", net.minecraft.client.renderer.texture.TextureAtlas.LOCATION_PARTICLES,
+                    () -> RenderSystem.getSamplerCache().getRepeat(FilterMode.NEAREST, false))
+                .useLightmap().createRenderSetup();
+    }
+
+    private static RenderPipeline.Snippet snippet(RenderPipeline source, boolean cull) {
         var colors = source.getColorTargetStates().toArray(ColorTargetState[]::new);
-        var snippet = new RenderPipeline.Snippet(source.getShaders(), Optional.of(source.getShaderDefines()),
+        return new RenderPipeline.Snippet(source.getShaders(), Optional.of(source.getShaderDefines()),
                 Optional.of(source.getBindGroupLayouts()), colors, colors.length,
                 Optional.ofNullable(source.getDepthStencilState()), Optional.of(source.getPolygonMode()),
                 Optional.of(cull), source.getVertexFormatBindings().toArray(VertexFormat[]::new),
                 Optional.of(source.getPrimitiveTopology()), source.pushConstantSize());
+    }
+
+    private static RenderPipeline copy(RenderPipeline source, String name, boolean cull, Boolean translucent) {
+        var snippet = snippet(source, cull);
         var builder = RenderPipeline.builder(snippet).withLocation(Identifier.fromNamespaceAndPath("cobblemon", "pipeline/" + name));
         if (translucent != null) {
             if (!translucent) builder.withColorTargetState(ColorTargetState.DEFAULT);

@@ -28,8 +28,8 @@ import net.minecraft.core.Direction
 import net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.LIT
 
-open class PokeSnackBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<PokeSnackBlockEntity> {
-    override fun render(blockEntity: PokeSnackBlockEntity, partialTick: Float, poseStack: PoseStack, bufferSource: ModelBufferSource, packedLight: Int, packedOverlay: Int) {
+open class PokeSnackBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : com.cobblemon.mod.common.client.model.CapturedBlockEntityRenderer<PokeSnackBlockEntity>() {
+    override fun capture(blockEntity: PokeSnackBlockEntity, partialTick: Float, poseStack: PoseStack, bufferSource: ModelBufferSource, packedLight: Int, packedOverlay: Int) {
         poseStack.pushPose()
 
         val facing = blockEntity.blockState.getValue(FACING)
@@ -59,13 +59,10 @@ open class PokeSnackBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context
 
             poseStack.pushPose()
             poseStack.translate(0.0, PokeSnackBlock.CAKE_HEIGHT, 0.0)
-            Minecraft.getInstance().blockRenderer.renderSingleBlock(
-                candleBlock.defaultBlockState().setValue(LIT, blockEntity.blockState.getValue(LIT)),
-                poseStack,
-                bufferSource,
-                packedLight,
-                packedOverlay
-            )
+            val state = candleBlock.defaultBlockState().setValue(LIT, blockEntity.blockState.getValue(LIT))
+            val model = Minecraft.getInstance().modelManager.blockStateModelSet.get(state)
+            com.cobblemon.mod.common.client.model.BlockModelGeometry.captureAll(model,
+                net.minecraft.util.RandomSource.create(42), poseStack, bufferSource, -1, packedLight, packedOverlay)
             poseStack.popPose()
             return true
         }

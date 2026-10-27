@@ -11,22 +11,7 @@ package com.cobblemon.mod.common.util
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.item.ItemStack
 import java.util.function.Predicate
-import java.util.stream.Collectors
 
 fun Inventory.removeAmountIf(amount: Int, rule: Predicate<ItemStack>) {
-    this.compartments.forEach {
-        var index = 0
-        val matches = it.stream()
-            .map { a -> Pair(index++, a) }
-            .filter { rule.test(it.second) }
-            .collect(Collectors.toList())
-
-        var remaining = amount
-        while (remaining > 0) {
-            val element = matches.removeFirstOrNull() ?: return@forEach
-
-            val result = this.removeItem(element.first, amount)
-            remaining -= result.count
-        }
-    }
+    InventoryRemoval.removeMatching(this, amount, rule)
 }

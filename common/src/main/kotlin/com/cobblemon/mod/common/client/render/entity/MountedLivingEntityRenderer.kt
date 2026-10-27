@@ -21,6 +21,12 @@ import org.joml.AxisAngle4f
 import org.joml.Vector3f
 
 object MountedLivingEntityRenderer {
+    fun capture(entity: LivingEntity, pokemon: PokemonEntity, partialTicks: Float, bodyRot: Float): org.joml.Matrix4f {
+        val pose = PoseStack()
+        render(entity, pokemon, pose, 0F, bodyRot, partialTicks, 1F)
+        return org.joml.Matrix4f(pose.last().pose())
+    }
+
     fun render(
         entity: LivingEntity,
         pokemon: PokemonEntity,

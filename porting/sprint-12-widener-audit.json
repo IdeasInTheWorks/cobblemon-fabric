@@ -1,0 +1,31 @@
+{
+  "baseline_missing": 13,
+  "retired_targets": [
+    "accessible method net/minecraft/world/level/block/state/BlockBehaviour codec ()Lcom/mojang/serialization/MapCodec;",
+    "transitive-accessible field net/minecraft/world/entity/player/Inventory compartments Ljava/util/List;",
+    "transitive-accessible method net/minecraft/client/renderer/LevelRenderer calculateParticleLevel (Z)Lnet/minecraft/server/level/ParticleStatus;",
+    "transitive-accessible method net/minecraft/client/particle/ParticleEngine register (Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration;)V",
+    "transitive-accessible field net/minecraft/client/particle/ParticleEngine textureAtlas Lnet/minecraft/client/renderer/texture/TextureAtlas;",
+    "transitive-accessible field net/minecraft/client/renderer/LevelRenderer cullingFrustum Lnet/minecraft/client/renderer/culling/Frustum;",
+    "transitive-accessible class net/minecraft/world/item/trading/VillagerTrades$ItemsForEmeralds",
+    "transitive-accessible class net/minecraft/client/gui/Font$StringRenderOutput",
+    "transitive-accessible field net/minecraft/stats/RecipeBookSettings states Ljava/util/Map;",
+    "transitive-accessible method net/minecraft/world/level/block/Block spawnDestroyParticles (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V",
+    "transitive-accessible method net/minecraft/client/model/HumanoidModel setupAttackAnimation (Lnet/minecraft/world/entity/LivingEntity;F)V",
+    "transitive-accessible method net/minecraft/client/model/HumanoidModel poseRightArm (Lnet/minecraft/world/entity/LivingEntity;)V",
+    "transitive-accessible method net/minecraft/client/model/HumanoidModel poseLeftArm (Lnet/minecraft/world/entity/LivingEntity;)V"
+  ],
+  "replacements": {
+    "block_codec": "No source consumers; target BlockBehaviour has no codec method. No mod codec removed.",
+    "inventory": "InventoryRemoval uses native Container slot IDs across inventory/equipment with one removal budget.",
+    "particle_level_and_registration": "No source consumers; factory registration already uses pinned Fabric ParticleFactoryRegistry.",
+    "particle_atlas": "AtlasManager.getAtlasOrThrow(AtlasIds.PARTICLES), resolving the applied atlas during extraction. The texture binding still uses TextureAtlas.LOCATION_PARTICLES.",
+    "frustum": "Camera.getCullFrustum, plus native particle-group extraction culling.",
+    "trades": "Native VillagerTrade and TradeSet augmentation before native random selection; preserves native amount/duplicates/sequence.",
+    "font": "PreparedTextBuilder.accept(int,Style,int); nesting/exception-safe text clipping.",
+    "recipe_settings": "Per-instance cooking TypeSettings with get/set/copy/replace hooks; native fixed-four wire codec unchanged.",
+    "destroy_particles": "Native public three-argument block callback, retaining honey/mimic/mulch behavior.",
+    "humanoid": "Immutable RiderPose extraction; native setupAnim continuation retains arm/attack/bob callbacks once, without access widening."
+  },
+  "validation": "Normal :fabric:validateAccessWidener :common:checkLicenses :fabric:checkLicenses passes in sprint-12-validation-02.txt; all 13 misses eliminated without disabling gates."
+}

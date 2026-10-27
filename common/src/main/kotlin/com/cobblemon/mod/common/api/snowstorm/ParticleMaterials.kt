@@ -8,71 +8,18 @@
 
 package com.cobblemon.mod.common.api.snowstorm
 
-import com.mojang.blaze3d.platform.GlStateManager
-import com.mojang.blaze3d.systems.RenderSystem
-import com.mojang.blaze3d.vertex.BufferBuilder
-import com.mojang.blaze3d.vertex.DefaultVertexFormat
-import com.mojang.blaze3d.vertex.Tesselator
-import com.mojang.renderpearl.api.vertex.VertexFormat
 import net.minecraft.client.particle.ParticleRenderType
-import net.minecraft.client.renderer.GameRenderer
-import net.minecraft.client.renderer.texture.TextureAtlas
-import net.minecraft.client.renderer.texture.TextureManager
+import net.minecraft.client.renderer.rendertype.RenderType
+import com.cobblemon.mod.common.client.model.NativeRenderSetups
 
+/** Group identities are separate from immutable native pipeline/material descriptors. */
 object ParticleMaterials {
-    val ALPHA = object : ParticleRenderType {
-        override fun begin(tessellator: Tesselator, textureManager: TextureManager): BufferBuilder {
-            RenderSystem.enableBlend()
-            RenderSystem.enableCull()
-            RenderSystem.depthMask(true)
-            RenderSystem.setShader { GameRenderer.getParticleShader() }
-            RenderSystem.setShaderTexture(0, TextureAtlas.LOCATION_PARTICLES)
-            RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA)
-            return tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE)
-        }
-
-        override fun toString() = "ALPHA"
-    }
-
-    val ADD = object : ParticleRenderType {
-        override fun begin(tessellator: Tesselator, textureManager: TextureManager): BufferBuilder {
-            RenderSystem.enableBlend()
-            RenderSystem.disableCull()
-            RenderSystem.depthMask(true)
-            RenderSystem.setShader { GameRenderer.getParticleShader() }
-            RenderSystem.setShaderTexture(0, TextureAtlas.LOCATION_PARTICLES)
-            RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE)
-            return tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE)
-        }
-
-        override fun toString() = "ADD"
-    }
-
-    val BLEND = object : ParticleRenderType {
-        override fun begin(tessellator: Tesselator, textureManager: TextureManager): BufferBuilder {
-            RenderSystem.enableBlend()
-            RenderSystem.disableCull()
-            RenderSystem.depthMask(true)
-            RenderSystem.setShader { GameRenderer.getParticleShader() }
-            RenderSystem.setShaderTexture(0, TextureAtlas.LOCATION_PARTICLES)
-            RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA)
-            return tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE)
-        }
-
-        override fun toString() = "BLEND"
-    }
-
-    val OPAQUE = object : ParticleRenderType {
-        override fun begin(tessellator: Tesselator, textureManager: TextureManager): BufferBuilder {
-            RenderSystem.enableBlend()
-            RenderSystem.enableCull()
-            RenderSystem.depthMask(true)
-            RenderSystem.setShader { GameRenderer.getParticleShader() }
-            RenderSystem.setShaderTexture(0, TextureAtlas.LOCATION_PARTICLES)
-            RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_COLOR, GlStateManager.DestFactor.ZERO)
-            return tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE)
-        }
-
-        override fun toString() =  "OPAQUE"
-    }
+    val ALPHA = ParticleRenderType("COBBLEMON_ALPHA", "CA")
+    val ADD = ParticleRenderType("COBBLEMON_ADD", "CD")
+    val BLEND = ParticleRenderType("COBBLEMON_BLEND", "CB")
+    val OPAQUE = ParticleRenderType("COBBLEMON_OPAQUE", "CO")
+    private val groups = listOf(ALPHA, ADD, BLEND, OPAQUE)
+    private val materials by lazy { groups.indices.map { RenderType.create("cobblemon_snowstorm_$it", NativeRenderSetups.particle(it)) } }
+    fun isSnowstorm(group: ParticleRenderType) = group in groups
+    fun material(group: ParticleRenderType): RenderType = materials[groups.indexOf(group)]
 }

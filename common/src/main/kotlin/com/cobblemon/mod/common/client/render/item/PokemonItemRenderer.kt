@@ -14,11 +14,9 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Varyi
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.util.math.fromEulerXYZDegrees
-import com.mojang.blaze3d.platform.Lighting
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
-import com.mojang.blaze3d.vertex.VertexMultiConsumer
-import net.minecraft.client.renderer.LightTexture
+import net.minecraft.util.LightCoordsUtil
 import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
 import net.minecraft.client.renderer.rendertype.RenderTypes
@@ -51,9 +49,6 @@ class PokemonItemRenderer : CobblemonBuiltinItemRenderer {
 
         val transformations = positions[mode]!!
 
-        if (mode == ItemDisplayContext.GUI) {
-            Lighting.setupForFlatItems()
-        }
 
         matrices.scale(transformations.scale.x, transformations.scale.y, transformations.scale.z)
         matrices.translate(transformations.translation.x, transformations.translation.y, transformations.translation.z)
@@ -66,21 +61,14 @@ class PokemonItemRenderer : CobblemonBuiltinItemRenderer {
         matrices.rotate(rotation)
         rotation.conjugate()
 
-        val renderLayer = RenderTypes.entityCutoutCull(VaryingModelRepository.getTexture(species.resourceIdentifier, state))
-        val isEnchanted = stack.get(DataComponents.ENCHANTMENTS)?.isEmpty == false
-        val vertexConsumer: VertexConsumer =
-            if (isEnchanted) {
-                VertexMultiConsumer.create(
-                    vertexConsumers.getBuffer(RenderType.entityGlintDirect()),
-                    vertexConsumers.getBuffer(renderLayer),
-                )
-            } else {
-                vertexConsumers.getBuffer(renderLayer)
-            }
+        val texture = VaryingModelRepository.getTexture(species.resourceIdentifier, state)
+        val isEnchanted = stack.hasFoil()
+        val renderLayer = if (isEnchanted) RenderTypes.itemCutoutGlint(texture) else RenderTypes.entityCutoutCull(texture)
+        val vertexConsumer: VertexConsumer = vertexConsumers.getBuffer(renderLayer)
 
         matrices.pushPose()
         val packedLight = if (mode == ItemDisplayContext.GUI) {
-            LightTexture.pack(13, 13)
+            LightCoordsUtil.pack(13, 13)
         } else {
             light
         }
@@ -100,9 +88,6 @@ class PokemonItemRenderer : CobblemonBuiltinItemRenderer {
         matrices.popPose()
         matrices.popPose()
 
-        if (mode == ItemDisplayContext.GUI) {
-            Lighting.setupFor3DItems()
-        }
     }
 
     companion object {

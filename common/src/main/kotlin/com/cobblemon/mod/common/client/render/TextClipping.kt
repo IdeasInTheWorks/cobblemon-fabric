@@ -25,10 +25,16 @@ object TextClipping {
 
     @JvmStatic
     fun doWithMaxCharacters(maxCharacters: Int, action: Runnable) {
+        val previousLimit = acceptableRenderCount
+        val previousCount = renderedCount
         acceptableRenderCount = maxCharacters
-        action.run()
-        acceptableRenderCount = -1
         renderedCount = 0
+        try {
+            action.run()
+        } finally {
+            acceptableRenderCount = previousLimit
+            renderedCount = previousCount
+        }
     }
 
     @JvmStatic

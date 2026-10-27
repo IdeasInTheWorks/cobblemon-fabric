@@ -16,14 +16,12 @@ import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.ItemBlockRenderTypes
 import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.texture.OverlayTexture
-import net.minecraft.client.resources.model.BakedModel
 import net.minecraft.core.Direction
-import net.minecraft.util.FastColor
+import net.minecraft.util.ARGB
 import net.minecraft.world.item.ItemDisplayContext
 import net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING
 import org.joml.Vector3f
@@ -31,7 +29,7 @@ import kotlin.math.atan2
 import kotlin.math.cos
 import kotlin.math.sin
 
-class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<CampfireBlockEntity> {
+class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : com.cobblemon.mod.common.client.model.CapturedBlockEntityRenderer<CampfireBlockEntity>() {
 
     companion object {
         const val CIRCLE_RADIUS = 0.4F
@@ -40,7 +38,7 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
         const val JUMP_SPEED = 0.1F
     }
 
-    override fun render(
+    override fun capture(
         blockEntity: CampfireBlockEntity,
         tickDelta: Float,
         poseStack: PoseStack,
@@ -89,28 +87,13 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
         poseStack.pushPose()
         poseStack.translate(0.0, 0.4375, 0.0)
 
-        val blockRenderer = Minecraft.getInstance().blockRenderer
         val state = campfirePotItem.block.defaultBlockState()
             .setValue(CampfirePotBlock.OPEN, isLidOpen)
             .setValue(FACING, Direction.fromYRot(yRot.toDouble()))
             .setValue(CampfirePotBlock.OCCUPIED, (!blockEntity.getSeasonings().isEmpty() || !blockEntity.getIngredients().isEmpty()))
-        val bakedModel: BakedModel = blockRenderer.getBlockModel(state)
-
-        val red = FastColor.ARGB32.red(blockEntity.brothColor) / 255F
-        val green = FastColor.ARGB32.green(blockEntity.brothColor) / 255F
-        val blue = FastColor.ARGB32.blue(blockEntity.brothColor) / 255F
-
-        blockRenderer.modelRenderer.renderModel(
-            poseStack.last(),
-            multiBufferSource.getBuffer(ItemBlockRenderTypes.getRenderType(state, false)),
-            state,
-            bakedModel,
-            red,
-            green,
-            blue,
-            light,
-            overlay
-        )
+        val model = Minecraft.getInstance().modelManager.blockStateModelSet.get(state)
+        com.cobblemon.mod.common.client.model.BlockModelGeometry.captureAll(model,
+            net.minecraft.util.RandomSource.create(42), poseStack, multiBufferSource, blockEntity.brothColor or (0xFF shl 24), light, overlay)
 
         poseStack.popPose()
     }
@@ -150,7 +133,7 @@ class CampfireBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Bl
             poseStack.pushPose()
             poseStack.rotate(Axis.XP.rotationDegrees(22.5F))
 
-            Minecraft.getInstance().itemRenderer.renderStatic(
+            com.cobblemon.mod.common.client.model.NativeItemCapture.capture(
                 seasoning,
                 ItemDisplayContext.GROUND,
                 light,

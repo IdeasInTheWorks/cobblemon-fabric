@@ -22,6 +22,15 @@ object CobblemonBuiltinItemRendererRegistry {
 
     fun register(item: Item, renderer: CobblemonBuiltinItemRenderer) {
         this.renderers[item] = renderer
+        val modelId = net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(item).withPath { "item/$it" }
+        com.cobblemon.mod.common.client.model.LegacyItemModels.registerBuiltin(modelId) { transform ->
+            com.cobblemon.mod.common.client.model.NativeBuiltinItemModel.model({ stack, display ->
+                val buffers = com.cobblemon.mod.common.client.model.ModelBufferSource()
+                renderer.render(stack, display, com.mojang.blaze3d.vertex.PoseStack(), buffers, 0,
+                    net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY)
+                buffers.snapshot()
+            }, transform)
+        }
     }
 
     fun rendererOf(item: Item): CobblemonBuiltinItemRenderer? = this.renderers[item]

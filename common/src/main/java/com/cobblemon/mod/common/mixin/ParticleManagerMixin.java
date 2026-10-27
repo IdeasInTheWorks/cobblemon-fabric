@@ -17,6 +17,9 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import com.cobblemon.mod.common.client.model.SnowstormParticleGroup;
+import net.minecraft.client.particle.ParticleGroup;
 
 import java.util.List;
 import net.minecraft.client.particle.ParticleEngine;
@@ -28,6 +31,12 @@ final class ParticleManagerMixin {
     @Final
     @Shadow
     private static List<ParticleRenderType> RENDER_ORDER;
+
+    @Inject(method = "createParticleGroup", at = @At("HEAD"), cancellable = true, require = 1)
+    private void cobblemon$createGroup(ParticleRenderType type, CallbackInfoReturnable<ParticleGroup<?>> cir) {
+        if (ParticleMaterials.INSTANCE.isSnowstorm(type))
+            cir.setReturnValue(new SnowstormParticleGroup((ParticleEngine)(Object)this, type));
+    }
 
     @Inject(at = @At("RETURN"), method = "<clinit>")
     private static void lodestone$addTypes(CallbackInfo ci) {

@@ -20,18 +20,17 @@ import net.minecraft.client.renderer.rendertype.RenderType
 import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.entity.EntityRenderer
 import net.minecraft.client.renderer.entity.EntityRendererProvider
-import net.minecraft.client.renderer.entity.ItemRenderer
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.resources.Identifier
 
-class PokeBallRenderer(context: EntityRendererProvider.Context) : EntityRenderer<EmptyPokeBallEntity>(context) {
+class PokeBallRenderer(context: EntityRendererProvider.Context) : com.cobblemon.mod.common.client.model.CapturedEntityRenderer<EmptyPokeBallEntity>(context) {
     val model = PosablePokeBallModel()
 
-    override fun getTextureLocation(pEntity: EmptyPokeBallEntity): Identifier {
+    fun getTextureLocation(pEntity: EmptyPokeBallEntity): Identifier {
         return VaryingModelRepository.getTexture(pEntity.pokeBall.name, pEntity.delegate as EmptyPokeBallClientDelegate)
     }
 
-    override fun render(entity: EmptyPokeBallEntity, yaw: Float, partialTicks: Float, poseStack: PoseStack, buffer: ModelBufferSource, packedLight: Int) {
+    override fun capture(entity: EmptyPokeBallEntity, yaw: Float, partialTicks: Float, poseStack: PoseStack, buffer: ModelBufferSource, packedLight: Int) {
         val state = entity.delegate as EmptyPokeBallClientDelegate
         this.model.context.put(RenderContext.POSABLE_STATE, state)
         this.model.context.put(RenderContext.ASPECTS, entity.aspects)
@@ -44,7 +43,7 @@ class PokeBallRenderer(context: EntityRendererProvider.Context) : EntityRenderer
         poseStack.pushPose()
         poseStack.rotate(Axis.YP.rotationDegrees(yaw))
         poseStack.scale(0.7F, -0.7F, -0.7F)
-        val vertexConsumer = ItemRenderer.getFoilBufferDirect(buffer, RenderTypes.entityCutoutCull(getTextureLocation(entity)), false, false)
+        val vertexConsumer = buffer.getBuffer(RenderTypes.entityCutoutCull(getTextureLocation(entity)))
         state.updatePartialTicks(partialTicks)
         model.setLayerContext(buffer, state, VaryingModelRepository.getLayers(entity.pokeBall.name, state))
         this.model.setupAnim(entity, 0f, 0f, entity.tickCount + partialTicks, 0F, 0F)
@@ -57,6 +56,5 @@ class PokeBallRenderer(context: EntityRendererProvider.Context) : EntityRenderer
         model.resetLayerContext()
 
         poseStack.popPose()
-        super.render(entity, yaw, partialTicks, poseStack, buffer, packedLight)
     }
 }

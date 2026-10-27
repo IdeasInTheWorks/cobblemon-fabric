@@ -53,7 +53,16 @@ def main():
     out = root / "build/data-contracts"
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
-    sources = [root / "common/src/main/java/com/cobblemon/mod/common/client/model/BlockModelGeometry.java",
+    sources = [root / "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedEntityRenderer.java",
+               root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint12Contracts.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBuiltinItemModel.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/RiderPose.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/RiderRenderData.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/NativeItemCapture.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedBlockEntityRenderer.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/util/InventoryRemoval.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/util/NativeTrades.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/BlockModelGeometry.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/ModelBufferSource.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/NativeRenderSetups.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/FrameResources.java",

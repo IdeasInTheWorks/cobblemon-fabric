@@ -1,0 +1,71 @@
+{
+  "host_alias_note": "/etc/hosts resolves Red01 to this codex-gpu01 host at 10.0.80.2; local execution, no SSH bypass",
+  "jdk": "System OpenJDK25 installed by user before retry",
+  "github_identity": "IdeasInTheWorks verified by successful work_claims.py CLI (GET /user enforced) and gh auth status with network access",
+  "commands": [
+    {
+      "command": [
+        "hostname"
+      ],
+      "exit_code": 0,
+      "output": "codex-gpu01\n"
+    },
+    {
+      "command": [
+        "getent",
+        "hosts",
+        "Red01"
+      ],
+      "exit_code": 0,
+      "output": "10.0.80.2       codex-gpu01 Red01 red01\n"
+    },
+    {
+      "command": [
+        "java",
+        "-version"
+      ],
+      "exit_code": 0,
+      "output": "openjdk version \"25.0.4.1\" 2026-08-18\nOpenJDK Runtime Environment (build 25.0.4.1+1-1-24.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 25.0.4.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)\n"
+    },
+    {
+      "command": [
+        "javac",
+        "-version"
+      ],
+      "exit_code": 0,
+      "output": "javac 25.0.4.1\n"
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "origin\thttps://github.com/IdeasInTheWorks/cobblemon-fabric.git (fetch)\norigin\thttps://github.com/IdeasInTheWorks/cobblemon-fabric.git (push)\nupstream\thttps://gitlab.com/cable-mc/cobblemon.git (fetch)\nupstream\tDISABLED (push)\n"
+    },
+    {
+      "command": [
+        "git",
+        "config",
+        "--get",
+        "core.hooksPath"
+      ],
+      "exit_code": 0,
+      "output": ".githooks\n"
+    },
+    {
+      "command": [
+        "git",
+        "config",
+        "--get",
+        "cobblemon.claimPython"
+      ],
+      "exit_code": 0,
+      "output": "/usr/bin/python3\n"
+    }
+  ],
+  "target_client_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "gradle_version": "9.6.0; wrapper checksum validated on download",
+  "clone_crlf_note": "gradlew.bat raw bytes equal HEAD blob. Local .git/info/attributes sets -text for this existing misnormalized blob; tracked bytes unchanged."
+}

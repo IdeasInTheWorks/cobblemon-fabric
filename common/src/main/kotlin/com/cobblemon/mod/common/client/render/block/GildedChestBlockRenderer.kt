@@ -22,12 +22,12 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 
-class GildedChestBlockRenderer(context: BlockEntityRendererProvider.Context) : BlockEntityRenderer<GildedChestBlockEntity> {
+class GildedChestBlockRenderer(context: BlockEntityRendererProvider.Context) : com.cobblemon.mod.common.client.model.CapturedBlockEntityRenderer<GildedChestBlockEntity>() {
     val context = RenderContext().also {
         it.put(RenderContext.RENDER_STATE, RenderContext.RenderState.BLOCK)
         it.put(RenderContext.DO_QUIRKS, true)
     }
-    override fun render(
+    override fun capture(
         entity: GildedChestBlockEntity,
         tickDelta: Float,
         matrices: PoseStack,

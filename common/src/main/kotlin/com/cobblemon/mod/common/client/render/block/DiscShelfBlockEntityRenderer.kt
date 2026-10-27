@@ -25,14 +25,14 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.core.Direction
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.Identifier
-import net.minecraft.util.FastColor
+import net.minecraft.util.ARGB
 import net.minecraft.world.item.ItemStack
 import net.minecraft.client.renderer.block.BlockAndTintGetter
 import net.minecraft.world.level.block.HorizontalDirectionalBlock
 import org.joml.Matrix4f
 
 class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
-        BlockEntityRenderer<DiscShelfBlockEntity> {
+        com.cobblemon.mod.common.client.model.CapturedBlockEntityRenderer<DiscShelfBlockEntity>() {
 
     private val slotWidthPixels = 6
     private val slotHeightPixels = 2
@@ -49,7 +49,7 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
 
     private val musicDiscUnknownTexture = cobblemonResource("textures/block/disc_shelf/music_disc_unknown.png")
 
-    override fun render(
+    override fun capture(
         entity: DiscShelfBlockEntity,
         partialTicks: Float,
         poseStack: PoseStack,
@@ -68,7 +68,7 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
 
         val lightGetter = entity.level as? BlockAndTintGetter
         val packedLight = lightGetter?.let {
-            LevelRenderer.getLightColor(it, entity.blockPos.relative(facing))
+            net.minecraft.util.LightCoordsUtil.getLightCoords(it, entity.blockPos.relative(facing))
         } ?: if (light != 0) light else 0xF000F0
 
         poseStack.pushPose()
@@ -151,9 +151,9 @@ class DiscShelfBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) :
 
         val (rBase, gBase, bBase, a) = if (tint) {
             listOf(
-                    FastColor.ARGB32.red(color) / 255f,
-                    FastColor.ARGB32.green(color) / 255f,
-                    FastColor.ARGB32.blue(color) / 255f,
+                    ARGB.red(color) / 255f,
+                    ARGB.green(color) / 255f,
+                    ARGB.blue(color) / 255f,
                     1.0f
             )
         } else listOf(1f, 1f, 1f, 1f)

@@ -21,10 +21,10 @@ import net.minecraft.client.renderer.entity.EntityRenderer
 import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.client.renderer.texture.OverlayTexture
 
-class GenericBedrockRenderer(context: EntityRendererProvider.Context) : EntityRenderer<GenericBedrockEntity>(context) {
+class GenericBedrockRenderer(context: EntityRendererProvider.Context) : com.cobblemon.mod.common.client.model.CapturedEntityRenderer<GenericBedrockEntity>(context) {
     val model = PosableGenericEntityModel()
-    override fun getTextureLocation(entity: GenericBedrockEntity) = VaryingModelRepository.getTexture(entity.category, (entity.delegate as GenericBedrockClientDelegate))
-    override fun render(entity: GenericBedrockEntity, yaw: Float, partialTicks: Float, poseStack: PoseStack, buffer: ModelBufferSource, packedLight: Int) {
+    fun getTextureLocation(entity: GenericBedrockEntity) = VaryingModelRepository.getTexture(entity.category, (entity.delegate as GenericBedrockClientDelegate))
+    override fun capture(entity: GenericBedrockEntity, yaw: Float, partialTicks: Float, poseStack: PoseStack, buffer: ModelBufferSource, packedLight: Int) {
         if (entity.isInvisible) {
             return
         }
@@ -53,6 +53,5 @@ class GenericBedrockRenderer(context: EntityRendererProvider.Context) : EntityRe
         model.resetLayerContext()
 
         poseStack.popPose()
-        super.render(entity, yaw, partialTicks, poseStack, buffer, packedLight)
     }
 }

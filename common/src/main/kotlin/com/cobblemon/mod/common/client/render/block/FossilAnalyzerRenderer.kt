@@ -23,9 +23,9 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.Vec3
 
-class FossilAnalyzerRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<FossilAnalyzerBlockEntity> {
+class FossilAnalyzerRenderer(ctx: BlockEntityRendererProvider.Context) : com.cobblemon.mod.common.client.model.CapturedBlockEntityRenderer<FossilAnalyzerBlockEntity>() {
 
-    override fun render(
+    override fun capture(
         entity: FossilAnalyzerBlockEntity,
         tickDelta: Float,
         matrices: PoseStack,
@@ -59,7 +59,7 @@ class FossilAnalyzerRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEn
             matrices.rotate(Axis.XP.rotationDegrees(90F))
             matrices.scale(0.7F, 0.7F, 0.7F)
 
-            Minecraft.getInstance().itemRenderer.renderStatic(fossilStack, ItemDisplayContext.NONE, light, overlay, matrices, vertexConsumers, entity.level, 0)
+            com.cobblemon.mod.common.client.model.NativeItemCapture.capture(fossilStack, ItemDisplayContext.NONE, light, overlay, matrices, vertexConsumers, entity.level, 0)
 
             matrices.popPose()
         }

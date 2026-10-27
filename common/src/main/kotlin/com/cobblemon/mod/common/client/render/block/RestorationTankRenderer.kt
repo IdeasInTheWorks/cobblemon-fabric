@@ -35,6 +35,7 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock
 class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<RestorationTankBlockEntity, RestorationTankRenderer.State> {
     class State : net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState() {
         var geometry = ModelBufferSource.Snapshot.EMPTY
+        var improvedTransparency = false
     }
 
     override fun createRenderState() = State()
@@ -45,6 +46,7 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
         net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState.extractBase(entity, state, crumbling)
         // Empty states must replace prior geometry when the tank is broken or disconnected.
         state.geometry = ModelBufferSource.Snapshot.EMPTY
+        state.improvedTransparency = net.minecraft.client.Minecraft.getInstance().gameRenderer.useImprovedTransparency()
         val buffers = ModelBufferSource()
         capture(entity, tickDelta, PoseStack(), buffers, state.lightCoords, OverlayTexture.NO_OVERLAY)
         state.geometry = buffers.snapshot()
@@ -52,7 +54,7 @@ class RestorationTankRenderer(ctx: BlockEntityRendererProvider.Context) : BlockE
 
     override fun submit(state: State, matrices: PoseStack, collector: net.minecraft.client.renderer.SubmitNodeCollector,
                         cameraState: net.minecraft.client.renderer.state.level.CameraRenderState) {
-        state.geometry.submit(matrices, collector)
+        state.geometry.submit(matrices, collector, state.breakProgress, null, state.improvedTransparency)
     }
 
     val context = RenderContext().also {

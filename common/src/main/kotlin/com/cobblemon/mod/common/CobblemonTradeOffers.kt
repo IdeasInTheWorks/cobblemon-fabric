@@ -13,7 +13,9 @@ import net.minecraft.util.RandomSource
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.npc.villager.VillagerData
 import net.minecraft.world.entity.npc.villager.VillagerProfession
-import net.minecraft.world.item.trading.VillagerTrades
+import net.minecraft.world.item.trading.VillagerTrade
+import com.cobblemon.mod.common.util.NativeTrades
+import net.minecraft.world.level.ItemLike
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.trading.ItemCost
@@ -44,27 +46,27 @@ object CobblemonTradeOffers {
             // Novice = 1, Apprentice = 2, Journeyman = 3, Expert = 4, Master = 5
             VillagerTradeOffer(CobblemonVillagerProfessions.NURSE, 1, listOf(
                 // i = emeraldCost, j = numberOfItems, k = maxUses, l = villagerXp, f = priceMultiplier
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.ORAN_BERRY, 4, 1, 16, 1),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.PERSIM_BERRY, 4, 1, 16, 1),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.ENERGY_ROOT, 4, 1, 12, 1),
+                itemsForEmeralds(CobblemonItems.ORAN_BERRY, 4, 1, 16, 1),
+                itemsForEmeralds(CobblemonItems.PERSIM_BERRY, 4, 1, 16, 1),
+                itemsForEmeralds(CobblemonItems.ENERGY_ROOT, 4, 1, 12, 1),
                 TradeOffer(ItemCost(CobblemonItems.MEDICINAL_LEEK, 24), ItemStack(Items.EMERALD, 1), 12, 2)
             )),
             VillagerTradeOffer(CobblemonVillagerProfessions.NURSE, 2, listOf(
                 TradeOffer(ItemCost(Items.EMERALD, 8), ItemStack(CobblemonItems.MEDICINAL_BREW), 8, 5, Optional.of<ItemCost>(ItemCost(Items.GLASS_BOTTLE))),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.BLUE_MINT_LEAF, 2, 1, 8, 5),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.CYAN_MINT_LEAF, 2, 1, 8, 5),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.GREEN_MINT_LEAF, 2, 1, 8, 5),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.PINK_MINT_LEAF, 2, 1, 8, 5),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.RED_MINT_LEAF, 2, 1, 8, 5),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.WHITE_MINT_LEAF, 2, 1, 8, 5)
+                itemsForEmeralds(CobblemonItems.BLUE_MINT_LEAF, 2, 1, 8, 5),
+                itemsForEmeralds(CobblemonItems.CYAN_MINT_LEAF, 2, 1, 8, 5),
+                itemsForEmeralds(CobblemonItems.GREEN_MINT_LEAF, 2, 1, 8, 5),
+                itemsForEmeralds(CobblemonItems.PINK_MINT_LEAF, 2, 1, 8, 5),
+                itemsForEmeralds(CobblemonItems.RED_MINT_LEAF, 2, 1, 8, 5),
+                itemsForEmeralds(CobblemonItems.WHITE_MINT_LEAF, 2, 1, 8, 5)
             )),
             VillagerTradeOffer(CobblemonVillagerProfessions.NURSE, 3, listOf(
                 TradeOffer(ItemCost(CobblemonItems.MULCH_BASE, 4), ItemStack(Items.EMERALD, 2), 16, 20),
-                VillagerTrades.ItemsForEmeralds(Items.GLASS_BOTTLE, 1, 1, 16, 10)
+                itemsForEmeralds(Items.GLASS_BOTTLE, 1, 1, 16, 10)
             )),
             VillagerTradeOffer(CobblemonVillagerProfessions.NURSE, 4, listOf(
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.REVIVAL_HERB, 8, 1, 16, 15),
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.VIVICHOKE_SEEDS, 24, 1, 4, 15)
+                itemsForEmeralds(CobblemonItems.REVIVAL_HERB, 8, 1, 16, 15),
+                itemsForEmeralds(CobblemonItems.VIVICHOKE_SEEDS, 24, 1, 4, 15)
             )),
             VillagerTradeOffer(CobblemonVillagerProfessions.NURSE, 5, listOf(
                 TradeOffer(ItemCost(Items.EMERALD, 10), ItemStack(CobblemonItems.ANTIDOTE, 1), 12, 30, Optional.of<ItemCost>(ItemCost(Items.GLASS_BOTTLE))),
@@ -75,9 +77,9 @@ object CobblemonTradeOffers {
                 TradeOffer(ItemCost(Items.EMERALD, 22), ItemStack(CobblemonItems.VIVICHOKE_DIP, 1), 4, 30, Optional.of<ItemCost>(ItemCost(Items.BOWL)))
             ))
         )
-        VillagerProfession.FISHERMAN -> listOf(
-            VillagerTradeOffer(VillagerProfession.FISHERMAN, 5, listOf(
-                VillagerTrades.ItemsForEmeralds(CobblemonItems.POKEROD_SMITHING_TEMPLATE, 12, 1, 3, 30)
+        BuiltInRegistries.VILLAGER_PROFESSION.getValue(VillagerProfession.FISHERMAN) -> listOf(
+            VillagerTradeOffer(BuiltInRegistries.VILLAGER_PROFESSION.getValue(VillagerProfession.FISHERMAN)!!, 5, listOf(
+                itemsForEmeralds(CobblemonItems.POKEROD_SMITHING_TEMPLATE, 12, 1, 3, 30)
             ))
         )
         else -> emptyList()
@@ -90,12 +92,12 @@ object CobblemonTradeOffers {
      */
     fun resolveWanderingTradeOffers(): List<WandererTradeOffer> = listOf(
         WandererTradeOffer(false, listOf(
-            VillagerTrades.ItemsForEmeralds(CobblemonItems.VIVICHOKE_SEEDS, 6, 1, 1, 6),
-            VillagerTrades.ItemsForEmeralds(CobblemonItems.SACCHARINE_SAPLING, 5, 1, 4, 1),
-            VillagerTrades.ItemsForEmeralds(CobblemonItems.HEARTY_GRAINS, 1, 1, 12, 1),
+            itemsForEmeralds(CobblemonItems.VIVICHOKE_SEEDS, 6, 1, 1, 6),
+            itemsForEmeralds(CobblemonItems.SACCHARINE_SAPLING, 5, 1, 4, 1),
+            itemsForEmeralds(CobblemonItems.HEARTY_GRAINS, 1, 1, 12, 1),
 
-            VillagerTrades.ItemsForEmeralds(CobblemonItems.CHIPPED_POT, 5, 1, 1, 2),
-            VillagerTrades.ItemsForEmeralds(CobblemonItems.MASTERPIECE_TEACUP, 5, 1, 1, 2)
+            itemsForEmeralds(CobblemonItems.CHIPPED_POT, 5, 1, 1, 2),
+            itemsForEmeralds(CobblemonItems.MASTERPIECE_TEACUP, 5, 1, 1, 2)
         ))
     )
 
@@ -106,7 +108,7 @@ object CobblemonTradeOffers {
         /**
          * The list of the possible [TradeOffers.Factory].
          */
-        val tradeOffers: List<VillagerTrades.ItemListing>
+        val tradeOffers: List<VillagerTrade>
     }
 
     /**
@@ -121,7 +123,7 @@ object CobblemonTradeOffers {
     data class VillagerTradeOffer(
         val profession: VillagerProfession,
         val requiredLevel: Int,
-        override val tradeOffers: List<VillagerTrades.ItemListing>
+        override val tradeOffers: List<VillagerTrade>
     ): TradeOfferHolder {
 
         init {
@@ -140,7 +142,7 @@ object CobblemonTradeOffers {
      */
     data class WandererTradeOffer(
         val isRareTrade: Boolean,
-        override val tradeOffers: List<VillagerTrades.ItemListing>
+        override val tradeOffers: List<VillagerTrade>
     ): TradeOfferHolder
 
     /**
@@ -153,14 +155,15 @@ object CobblemonTradeOffers {
      * @property optionalOfferedItem The optional, secondary item cost offered to the villager.
      * @property priceMultiplier The amount multiplier of how much the item cost can rise and fall by depending on discounts and penalties
      */
-    class TradeOffer(
-        private val offeredItem: ItemCost,
-        private val receivedItem: ItemStack,
-        private val maxUses: Int,
-        private val villagerXp: Int = 1,
-        private val optionalOfferedItem: Optional<ItemCost> = Optional.empty(),
-        private val priceMultiplier: Float = 0.05F
-    ): VillagerTrades.ItemListing {
-        override fun getOffer(entity: Entity?, randomSource: RandomSource?): MerchantOffer = MerchantOffer(offeredItem, optionalOfferedItem, receivedItem, maxUses, villagerXp, priceMultiplier)
-    }
+    fun TradeOffer(
+        offeredItem: ItemCost,
+        receivedItem: ItemStack,
+        maxUses: Int,
+        villagerXp: Int = 1,
+        optionalOfferedItem: Optional<ItemCost> = Optional.empty(),
+        priceMultiplier: Float = 0.05F
+    ): VillagerTrade = NativeTrades.offer(offeredItem, receivedItem, maxUses, villagerXp, optionalOfferedItem, priceMultiplier)
+
+    private fun itemsForEmeralds(item: ItemLike, emeralds: Int, count: Int, uses: Int, xp: Int): VillagerTrade =
+        TradeOffer(ItemCost(Items.EMERALD, emeralds), ItemStack(item, count), uses, xp)
 }

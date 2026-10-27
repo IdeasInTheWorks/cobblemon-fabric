@@ -47,7 +47,8 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
-import net.fabricmc.fabric.api.`object`.builder.v1.trade.TradeOfferHelper
+import com.cobblemon.mod.common.util.NativeTrades
+import net.minecraft.world.item.trading.TradeSets
 import net.fabricmc.fabric.api.`object`.builder.v1.world.poi.PointOfInterestHelper
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry
 import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper
@@ -301,9 +302,15 @@ object CobblemonFabric : CobblemonImplementation {
     override fun registerVillagers() {
         CobblemonVillagerProfessions.register { identifier, profession -> Registry.register(CobblemonVillagerProfessions.registry, identifier, profession) }
 
-        CobblemonTradeOffers.tradeOffersForAll().forEach { tradeOffer -> TradeOfferHelper.registerVillagerOffers(tradeOffer.profession, tradeOffer.requiredLevel) { factories -> factories.addAll(tradeOffer.tradeOffers) } }
-        // 1 = common trades, 2 = rare, it has no concept of levels
-        CobblemonTradeOffers.resolveWanderingTradeOffers().forEach { tradeOffer -> TradeOfferHelper.registerWanderingTraderOffers(if (tradeOffer.isRareTrade) 2 else 1) { factories -> factories.addAll(tradeOffer.tradeOffers) } }
+        CobblemonTradeOffers.tradeOffersForAll().forEach { offer ->
+            val key = if (offer.profession == CobblemonVillagerProfessions.NURSE)
+                CobblemonVillagerProfessions.nurseTradeSet(offer.requiredLevel)
+            else offer.profession.getTrades(offer.requiredLevel)
+            if (key != null) NativeTrades.register(key, offer.tradeOffers)
+        }
+        CobblemonTradeOffers.resolveWanderingTradeOffers().forEach { offer ->
+            NativeTrades.register(if (offer.isRareTrade) TradeSets.WANDERING_TRADER_UNCOMMON else TradeSets.WANDERING_TRADER_COMMON, offer.tradeOffers)
+        }
     }
 
     override fun registerRecipeSerializers() {

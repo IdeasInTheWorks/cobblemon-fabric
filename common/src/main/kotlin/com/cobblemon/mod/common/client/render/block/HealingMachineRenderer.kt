@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 
 @Suppress("UNUSED_PARAMETER")
-class HealingMachineRenderer<T: BlockEntity>(ctx: BlockEntityRendererProvider.Context): BlockEntityRenderer<T> {
+class HealingMachineRenderer<T: BlockEntity>(ctx: BlockEntityRendererProvider.Context): com.cobblemon.mod.common.client.model.CapturedBlockEntityRenderer<T>() {
     companion object {
         private val offsets = listOf(
             0.2 to 0.385,
@@ -35,7 +35,7 @@ class HealingMachineRenderer<T: BlockEntity>(ctx: BlockEntityRendererProvider.Co
         )
     }
 
-    override fun render(blockEntity: T, tickDelta: Float, poseStack: PoseStack, multiBufferSource: ModelBufferSource, light: Int, overlay: Int) {
+    override fun capture(blockEntity: T, tickDelta: Float, poseStack: PoseStack, multiBufferSource: ModelBufferSource, light: Int, overlay: Int) {
         if (blockEntity !is HealingMachineBlockEntity) return
 
         poseStack.pushPose()
@@ -54,7 +54,7 @@ class HealingMachineRenderer<T: BlockEntity>(ctx: BlockEntityRendererProvider.Co
             poseStack.pushPose()
             val offset = offsets[index]
             poseStack.translate(offset.first, 0.4, offset.second)
-            Minecraft.getInstance().itemRenderer.renderStatic(pokeBall.stack(), ItemDisplayContext.GROUND, light, overlay, poseStack, multiBufferSource, blockEntity.level, 0)
+            com.cobblemon.mod.common.client.model.NativeItemCapture.capture(pokeBall.stack(), ItemDisplayContext.GROUND, light, overlay, poseStack, multiBufferSource, blockEntity.level, 0)
             poseStack.popPose()
         }
         poseStack.popPose()

@@ -11,39 +11,46 @@ package com.cobblemon.mod.fabric.mixin;
 import com.cobblemon.mod.common.CobblemonRecipeBookTypes;
 import net.minecraft.stats.RecipeBookSettings;
 import net.minecraft.world.inventory.RecipeBookType;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.Arrays;
-import java.util.Map;
-
+/** Keeps the cooking UI setting separate from the fixed four-type vanilla wire codec. */
 @Mixin(RecipeBookSettings.class)
 public class RecipeBookSettingsMixin {
+    @Unique private RecipeBookSettings.TypeSettings cobblemon$cookingPot = new RecipeBookSettings.TypeSettings(true, true);
 
-    @Shadow
-    @Final
-    public Map<RecipeBookType, RecipeBookSettings.TypeSettings> states;
-
-    @Inject(method = "<init>(Ljava/util/Map;)V", at = @At("TAIL"))
-    private void cobblemon$init(CallbackInfo ci) {
-        // if you change or add any of these, neoforge uses a separate mechanism
-        // check enumextensions.json and `CobblemonEnumExtensions`
-        states.put(CobblemonRecipeBookTypes.INSTANCE.getCOOKING_POT(), new RecipeBookSettings.TypeSettings(true, true));
+    @Inject(method = "getSettings", at = @At("HEAD"), cancellable = true)
+    private void cobblemon$getSettings(RecipeBookType type, CallbackInfoReturnable<RecipeBookSettings.TypeSettings> cir) {
+        if (type == CobblemonRecipeBookTypes.INSTANCE.getCOOKING_POT()) cir.setReturnValue(cobblemon$cookingPot);
     }
 
-    // this fixes a disconnect issue with vanilla servers where the network sync relies on the enum we modify in a common mixin to be the same on both sides
-    @Redirect( method = "read(Lnet/minecraft/network/FriendlyByteBuf;)Lnet/minecraft/stats/RecipeBookSettings;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/RecipeBookType;values()[Lnet/minecraft/world/inventory/RecipeBookType;"))
-    private static RecipeBookType[] cobblemon$valuesReadRedirect() {
-        return Arrays.stream(RecipeBookType.values()).filter( recipeBookType -> !CobblemonRecipeBookTypes.INSTANCE.getCOOKING_POT().equals(recipeBookType) ).toArray(RecipeBookType[]::new);
+    @Inject(method = "setOpen", at = @At("HEAD"), cancellable = true)
+    private void cobblemon$setOpen(RecipeBookType type, boolean open, CallbackInfo ci) {
+        if (type == CobblemonRecipeBookTypes.INSTANCE.getCOOKING_POT()) {
+            cobblemon$cookingPot = cobblemon$cookingPot.setOpen(open);
+            ci.cancel();
+        }
     }
 
-    @Redirect( method = "write(Lnet/minecraft/network/FriendlyByteBuf;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/RecipeBookType;values()[Lnet/minecraft/world/inventory/RecipeBookType;"))
-    private RecipeBookType[] cobblemon$valuesWriteRedirect() {
-        return Arrays.stream(RecipeBookType.values()).filter( recipeBookType -> !CobblemonRecipeBookTypes.INSTANCE.getCOOKING_POT().equals(recipeBookType) ).toArray(RecipeBookType[]::new);
+    @Inject(method = "setFiltering", at = @At("HEAD"), cancellable = true)
+    private void cobblemon$setFiltering(RecipeBookType type, boolean filtering, CallbackInfo ci) {
+        if (type == CobblemonRecipeBookTypes.INSTANCE.getCOOKING_POT()) {
+            cobblemon$cookingPot = cobblemon$cookingPot.setFiltering(filtering);
+            ci.cancel();
+        }
+    }
+
+    @Inject(method = "copy", at = @At("RETURN"))
+    private void cobblemon$copy(CallbackInfoReturnable<RecipeBookSettings> cir) {
+        ((RecipeBookSettingsMixin)(Object)cir.getReturnValue()).cobblemon$cookingPot = cobblemon$cookingPot;
+    }
+
+    @Inject(method = "replaceFrom", at = @At("TAIL"))
+    private void cobblemon$replaceFrom(RecipeBookSettings other, CallbackInfo ci) {
+        cobblemon$cookingPot = ((RecipeBookSettingsMixin)(Object)other).cobblemon$cookingPot;
     }
 }

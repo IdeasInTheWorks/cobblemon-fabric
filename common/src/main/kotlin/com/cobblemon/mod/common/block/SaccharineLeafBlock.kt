@@ -356,8 +356,8 @@ class SaccharineLeafBlock(settings: Properties) : LeavesBlock(net.minecraft.worl
         }
     }
 
-    override fun spawnDestroyParticles(level: Level, player: Player, pos: BlockPos, state: BlockState) {
+    override fun spawnDestroyParticles(level: Level, pos: BlockPos, state: BlockState) {
         spawnDestroyHoneyParticles(level, pos, state)
-        super.spawnDestroyParticles(level, player, pos, state.setValue(AGE, state.getValue(AGE)))
+        super.spawnDestroyParticles(level, pos, state.setValue(AGE, state.getValue(AGE)))
     }
 }

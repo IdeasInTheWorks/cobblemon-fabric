@@ -35,9 +35,9 @@ import net.minecraft.world.item.ItemDisplayContext
 import org.joml.Quaternionf
 
 @Environment(value = EnvType.CLIENT)
-class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : EntityRenderer<PokeRodFishingBobberEntity>(context) {
+class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : com.cobblemon.mod.common.client.model.CapturedEntityRenderer<PokeRodFishingBobberEntity>(context) {
 
-    override fun render(fishingBobberEntity: PokeRodFishingBobberEntity, elapsedPartialTicks: Float, tickDelta: Float, matrixStack: PoseStack, vertexConsumerProvider: ModelBufferSource, light: Int) {
+    override fun capture(fishingBobberEntity: PokeRodFishingBobberEntity, elapsedPartialTicks: Float, tickDelta: Float, matrixStack: PoseStack, vertexConsumerProvider: ModelBufferSource, light: Int) {
         var playerPosXWorld: Double
         val eyeHeightOffset: Float
         val playerPosZWorld: Double
@@ -137,7 +137,7 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
         val ballItem = PokeBalls.getPokeBall(pokeRod?.pokeBallId!!)!!.item
 
         // render the pokebobber
-        Minecraft.getInstance().itemRenderer.renderStatic(
+        com.cobblemon.mod.common.client.model.NativeItemCapture.capture(
             ballItem.defaultInstance,
             ItemDisplayContext.GROUND,
             light,
@@ -165,7 +165,7 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
 
 
         // render the bait
-        Minecraft.getInstance().itemRenderer.renderStatic(
+        com.cobblemon.mod.common.client.model.NativeItemCapture.capture(
                 pokeBobberBaitItemStack,
                 ItemDisplayContext.GROUND,
                 light,
@@ -184,11 +184,11 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
         if ((item !is PokerodItem) || item.pokeRodId != pokeRodId) {
             armOffset = -armOffset
         }
-        val handSwingProgress = playerEntity.getAttackAnim(tickDelta)
-        val swingAngle = Mth.sin(Mth.sqrt(handSwingProgress) * Math.PI.toFloat())
+        val handSwingProgress = playerEntity.getSwingAnimation(tickDelta)
+        val swingAngle = Mth.sin((Mth.sqrt(handSwingProgress) * Math.PI.toFloat()).toDouble()).toFloat()
         val bodyYawRadians = Mth.lerp(tickDelta, playerEntity.yBodyRotO, playerEntity.yBodyRot) * (Math.PI.toFloat() / 180)
-        val sinBodyYaw = Mth.sin(bodyYawRadians).toDouble()
-        val cosBodyYaw = Mth.cos(bodyYawRadians).toDouble()
+        val sinBodyYaw = Mth.sin(bodyYawRadians.toDouble()).toDouble()
+        val cosBodyYaw = Mth.cos(bodyYawRadians.toDouble()).toDouble()
         val horizontalOffset = armOffset.toDouble() * 0.35
         if (!entityRenderDispatcher.options.cameraType.isFirstPerson || playerEntity != Minecraft.getInstance().player) {
             playerEyeYWorld = Mth.lerp(tickDelta.toDouble(), playerEntity.xo, playerEntity.x) - cosBodyYaw * horizontalOffset - sinBodyYaw * 0.8
@@ -197,7 +197,7 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
             eyeHeightOffset = if (playerEntity.isCrouching) -0.1875f else 0.0f
         } else {
             playerPosXWorld = 960.0 / entityRenderDispatcher.options.fov().get().toDouble()
-            var vec3d = entityRenderDispatcher.camera.nearPlane.getPointOnPlane(armOffset.toFloat() * 0.525f, -0.1f)
+            var vec3d = entityRenderDispatcher.camera!!.getNearPlane(entityRenderDispatcher.options.fov().get().toFloat()).getPointOnPlane(armOffset.toFloat() * 0.525f, -0.1f)
             vec3d = vec3d.scale(playerPosXWorld)
             vec3d = vec3d.yRot(swingAngle * 0.5f)
             vec3d = vec3d.xRot(-swingAngle * 0.7f)
@@ -214,20 +214,17 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
         val deltaX = (playerEyeYWorld - playerPosXWorld).toFloat()
         val deltaY = (playerPosYWorld - bobberPosY).toFloat() + eyeHeightOffset
         val deltaZ = (playerPosZWorld - bobberPosZ).toFloat()
-        val vertexConsumer2 = vertexConsumerProvider.getBuffer(RenderType.lineStrip())
+        val vertexConsumer2 = vertexConsumerProvider.getBuffer(RenderTypes.lines())
         val entry2 = matrixStack.last()
-        for (lineIndex in 0..16) {
+        for (lineIndex in 0 until 16) {
             renderFishingLine(pokeRod.lineColor, deltaX, deltaY, deltaZ, vertexConsumer2, entry2, percentage(lineIndex, 16), percentage(lineIndex + 1, 16))
+            renderFishingLine(pokeRod.lineColor, deltaX, deltaY, deltaZ, vertexConsumer2, entry2, percentage(lineIndex + 1, 16), percentage(lineIndex + 2, 16))
         }
 
         matrixStack.popPose() // close main rendering transforms
 
-        // Iris Shader Compatibility: Keeps Iris from connecting the fishing lines of multiple players' Pokerods.
-        // Iris performs a mixin into FishingHookRenderer to achieve the same result.
-        // So we mimic their fix here.
-        vertexConsumer2.addVertex(0f, 0f, 0f).setColor(0, 0, 0, 255).setNormal(0f, 0f, 0f);
+        // Native LINES stores independent vertex pairs; separate players' lines cannot join.
 
-        super.render(fishingBobberEntity, elapsedPartialTicks, tickDelta, matrixStack, vertexConsumerProvider, light)
     }
 
     fun adjustBerry(berryBait: ItemStack): Pair<Double, Double> {
@@ -294,7 +291,7 @@ class PokeBobberEntityRenderer(context: EntityRendererProvider.Context?) : Entit
         }
     }
 
-    override fun getTextureLocation(entity: PokeRodFishingBobberEntity): Identifier {
+    fun getTextureLocation(entity: PokeRodFishingBobberEntity): Identifier {
         return cobblemonResource("textures/item/fishing/bobber_hook.png")
     }
 

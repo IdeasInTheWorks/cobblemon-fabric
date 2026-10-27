@@ -5,31 +5,29 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+// Additional compatibility work Copyright (C) 2026 Cobblemon Contributors and IdeasInTheWorks.
 
 package com.cobblemon.mod.common.mixin;
 
-import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRenderer;
-import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry;
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.world.item.ItemDisplayContext;
-import net.minecraft.world.item.ItemStack;
+import com.cobblemon.mod.common.client.model.LegacyItemModels;
+import net.minecraft.client.renderer.item.CuboidItemModelWrapper;
+import net.minecraft.client.renderer.item.ItemModel;
+import net.minecraft.resources.Identifier;
+import org.joml.Matrix4fc;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(BlockEntityWithoutLevelRenderer.class)
-public class BuiltinModelItemRendererMixin {
-
-    @Inject(method = "renderByItem", at = @At("HEAD"), cancellable = true)
-    private void cobblemon$useDynamicItemRenderer(ItemStack stack, ItemDisplayContext mode, PoseStack matrices, MultiBufferSource vertexConsumers, int light, int overlay, CallbackInfo ci) {
-        CobblemonBuiltinItemRenderer renderer = CobblemonBuiltinItemRendererRegistry.INSTANCE.rendererOf(stack.getItem());
-        if (renderer != null) {
-            renderer.render(stack, mode, matrices, vertexConsumers, light, overlay);
-            ci.cancel();
-        }
+/** Supports explicit native cuboid definitions pointing at a registered legacy builtin model. */
+@Mixin(CuboidItemModelWrapper.Unbaked.class)
+public abstract class BuiltinModelItemRendererMixin {
+    @Shadow public abstract Identifier model();
+    @Shadow public abstract java.util.Optional<com.mojang.math.Transformation> transformation();
+    @Inject(method = "bake", at = @At("HEAD"), cancellable = true, require = 1)
+    private void cobblemon$nativeBuiltin(ItemModel.BakingContext context, Matrix4fc transform, CallbackInfoReturnable<ItemModel> cir) {
+        var builtin = LegacyItemModels.builtin(model(), com.mojang.math.Transformation.compose(transform, transformation()));
+        if (builtin != null) cir.setReturnValue(builtin);
     }
-
 }

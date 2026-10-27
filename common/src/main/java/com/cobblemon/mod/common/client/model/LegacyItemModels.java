@@ -36,6 +36,11 @@ public final class LegacyItemModels {
     @FunctionalInterface public interface ItemColor {
         int getColor(ItemStack stack, int tintIndex);
     }
+    private static final Map<Identifier, java.util.function.Function<Matrix4fc, ItemModel>> BUILTINS = new ConcurrentHashMap<>();
+    public static void registerBuiltin(Identifier model, java.util.function.Function<Matrix4fc, ItemModel> factory) { BUILTINS.put(model, factory); }
+    public static ItemModel builtin(Identifier model, Matrix4fc transform) {
+        var factory = BUILTINS.get(model); return factory == null ? null : factory.apply(transform);
+    }
     private static final Map<Item, Map<Identifier, PredicateFunction>> PREDICATES = new ConcurrentHashMap<>();
     private static final Map<Item, ItemColor> COLORS = new ConcurrentHashMap<>();
     private static final Identifier CUSTOM_DATA = Identifier.withDefaultNamespace("custom_model_data");
@@ -134,6 +139,8 @@ public final class LegacyItemModels {
         }
         @Override public ItemModel bake(ItemModel.BakingContext context, Matrix4fc transform) {
             return definition.bind(id -> {
+                var builtin = builtin(id, transform);
+                if (builtin != null) return builtin;
                 var baker = context.blockModelBaker(); var resolved = baker.getModel(id);
                 var geometry = resolved.bakeTopGeometry(resolved.getTopTextureSlots(), baker, BlockModelRotation.IDENTITY);
                 int maxTint = geometry.getAll().stream().mapToInt(quad -> quad.materialInfo().tintIndex()).max().orElse(-1);

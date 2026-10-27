@@ -27,6 +27,7 @@
     "client.GameRendererMixin",
     "client.FrameResourcesMixin",
     "client.HumanoidModelMixin",
+    "client.RiderRenderStateMixin",
     "client.ItemInHandLayerMixin",
     "client.ItemInHandRendererMixin",
     "client.ItemRendererMixin",
@@ -47,6 +48,7 @@
     "riding.JetMixin"
   ],
   "mixins": [
+    "AbstractVillagerTradeMixin",
     "AbstractArrowMixin",
     "BeeEntityMixin",
     "BeehiveBlockEntityMixin",

@@ -5,50 +5,37 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+// Additional compatibility work Copyright (C) 2026 Cobblemon Contributors and IdeasInTheWorks.
 
 package com.cobblemon.mod.common.mixin.client;
 
+import com.cobblemon.mod.common.client.model.*;
 import com.cobblemon.mod.common.client.render.ClientPlayerIcon;
+import com.cobblemon.mod.common.client.render.player.MountedPlayerRenderer;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.player.PlayerModel;
 import net.minecraft.client.player.AbstractClientPlayer;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.renderer.entity.player.PlayerRenderer;
+import net.minecraft.client.renderer.entity.player.AvatarRenderer;
+import net.minecraft.client.renderer.entity.state.AvatarRenderState;
+import net.minecraft.world.entity.Avatar;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(PlayerRenderer.class)
-public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> {
-
-    public PlayerRendererMixin(EntityRendererProvider.Context context, PlayerModel<AbstractClientPlayer> model, float shadowRadius) {
-        super(context, model, shadowRadius);
-    }
-
-    @Inject(method = "render", at = @At(value = "TAIL"))
-    public void renderPlayer(AbstractClientPlayer player, float f, float g, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, CallbackInfo ci) {
+@Mixin(AvatarRenderer.class)
+public abstract class PlayerRendererMixin {
+    @Inject(method = "extractRenderState(Lnet/minecraft/world/entity/Avatar;Lnet/minecraft/client/renderer/entity/state/AvatarRenderState;F)V", at = @At("TAIL"), require = 1)
+    private void cobblemon$extractPlayer(Avatar entity, AvatarRenderState state, float partialTick, CallbackInfo ci) {
+        if (!(entity instanceof AbstractClientPlayer player)) return;
+        var access = (RiderRenderStateAccess)state;
+        var data = access.cobblemon$getRiderData();
+        if (player.getVehicle() instanceof PokemonEntity pokemon) {
+            boolean headRotation = pokemon.ifRidingAvailableSupply(false,
+                    (behaviour, settings, rideState) -> behaviour.shouldRotateRiderHead(settings, rideState, pokemon));
+            if (!headRotation) { state.yRot = 0F; state.xRot = 0F; }
+            state.isCrouching = false;
+            access.cobblemon$setRiderData(new RiderRenderData(MountedPlayerRenderer.INSTANCE.capture(pokemon, player, state), data.seat(), 0F));
+        }
         ClientPlayerIcon.Companion.onRenderPlayer(player);
-    }
-
-    @WrapOperation(method = "getRenderOffset(Lnet/minecraft/client/player/AbstractClientPlayer;F)Lnet/minecraft/world/phys/Vec3;", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/AbstractClientPlayer;isCrouching()Z"))
-    private boolean cobblemon$disableCrouchOffset(AbstractClientPlayer instance, Operation<Boolean> original) {
-        if (instance.isPassenger() && instance.getVehicle() instanceof PokemonEntity) {
-            return false;
-        }
-        return original.call(instance);
-    }
-
-    @Inject(method = "setModelProperties", at = @At("TAIL"))
-    private void cobblemon$setModelProperties(AbstractClientPlayer player, CallbackInfo ci) {
-        if (player.isPassenger() && player.getVehicle() instanceof PokemonEntity) {
-            PlayerModel<AbstractClientPlayer> playerModel = this.getModel();
-            playerModel.crouching = false;
-        }
     }
 }

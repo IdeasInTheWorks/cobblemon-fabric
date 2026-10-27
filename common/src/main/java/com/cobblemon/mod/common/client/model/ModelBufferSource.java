@@ -20,6 +20,10 @@ import net.minecraft.client.renderer.rendertype.RenderType;
 
 /** CPU geometry capture for model code migrating from immediate buffers to native submission. */
 public final class ModelBufferSource {
+    private final List<NativeItemCapture.Submission> items = new ArrayList<>();
+
+    void addItem(NativeItemCapture.Submission item) { items.add(item); }
+
     private final Map<RenderType, Recorder> buffers = new LinkedHashMap<>();
 
     public VertexConsumer getBuffer(RenderType type) {
@@ -33,22 +37,58 @@ public final class ModelBufferSource {
             var vertices = recorder.snapshot();
             if (!vertices.isEmpty()) batches.add(new Batch(type, vertices));
         });
-        return new Snapshot(List.copyOf(batches));
+        return new Snapshot(List.copyOf(batches), items);
     }
 
     public record Batch(RenderType type, List<Vertex> vertices) {
         public Batch { vertices = List.copyOf(vertices); }
     }
 
-    public record Snapshot(List<Batch> batches) {
+    public record Snapshot(List<Batch> batches, List<NativeItemCapture.Submission> items) {
+        public Snapshot(List<Batch> batches) { this(batches, List.of()); }
         public static final Snapshot EMPTY = new Snapshot(List.of());
-        public Snapshot { batches = List.copyOf(batches); }
+        public Snapshot { batches = List.copyOf(batches); items = List.copyOf(items); }
 
         public void submit(PoseStack pose, OrderedSubmitNodeCollector collector) {
-            for (var batch : batches) collector.submitCustomGeometry(pose, batch.type(),
-                    (transform, consumer) -> {
-                        for (var vertex : batch.vertices()) vertex.replay(transform, consumer);
-                    });
+            submit(pose, collector, null, null);
+        }
+
+        public void submit(PoseStack pose, OrderedSubmitNodeCollector collector,
+                           net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay crumbling,
+                           Integer defaultLight) {
+            submit(pose, collector, crumbling, defaultLight, false);
+        }
+
+        public void submit(PoseStack pose, OrderedSubmitNodeCollector collector,
+                           net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay crumbling,
+                           Integer defaultLight, boolean improvedTransparency) {
+            for (var batch : batches) {
+                collector.submitCustomGeometry(pose, batch.type(), (transform, consumer) -> {
+                    for (var vertex : batch.vertices()) {
+                        vertex.replay(transform, consumer);
+                        if (defaultLight != null && vertex.lightU() == 0 && vertex.lightV() == 0)
+                            consumer.setLight(defaultLight);
+                    }
+                });
+                if (crumbling != null && batch.type().affectsCrumbling()) {
+                    var decalPose = crumbling.cameraPose().copy();
+                    var types = improvedTransparency && batch.type().hasBlending()
+                            ? net.minecraft.client.resources.model.ModelBakery.DESTROY_TYPES_OIT
+                            : net.minecraft.client.resources.model.ModelBakery.DESTROY_TYPES;
+                    var type = types.get(crumbling.progress());
+                    var ordered = collector instanceof net.minecraft.client.renderer.SubmitNodeCollector nativeCollector
+                            ? nativeCollector.order(0) : collector;
+                    if (!(ordered instanceof net.minecraft.client.renderer.SubmitNodeCollection collection))
+                        throw new IllegalArgumentException("Crumbling requires a native phase collection");
+                    var phase = batch.type().hasBlending() ? collection.breakingOverlay : collection.solid;
+                    phase.submit(new net.minecraft.client.renderer.feature.CustomFeatureRenderer.Submit(pose.last().copy(), type,
+                            (transform, consumer) -> {
+                                var decal = new com.mojang.blaze3d.vertex.SheetedDecalTextureGenerator(consumer, decalPose, 1F);
+                                for (var vertex : batch.vertices()) vertex.replay(transform, decal);
+                            }));
+                }
+            }
+            for (var item : items) item.submit(pose, collector);
         }
     }
 
