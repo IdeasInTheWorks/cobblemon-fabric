@@ -4,6 +4,12 @@ Status: **migration in progress; no validated Minecraft 26.3 build**.
 
 The imported Cobblemon 1.8.2 release supports Minecraft 1.21.1. This port targets stable Java Edition 26.3, verified against Mojang's manifest on 2026-10-24. It is an independent Fabric client and dedicated-server project. NeoForge, Forge and Quilt ports are outside scope. See [the assessment](porting/ASSESSMENT.md) for evidence and blockers.
 
+## S12 current evidence (2026-10-27)
+
+Red01 reproduces the historical4,556/548 baseline and AW13 failure. Native caller/render-state migrations reduce common Kotlin to4,297 diagnostic lines/527 files (includes cascades). Normal access-widener validation now passes with zero missing targets; common/Fabric licence headers and20 tooling tests pass. Focused report09 passes2,788 core/19 Fabric contracts plus810 actual legacy navigation cases/1,620 checks. These are native helper/codec/material/phase fixtures, not game tests. See `porting/sprint-12-summary.json` and `porting/logs/sprint-12-*`.
+
+The full requested build still fails in Kotlin, preventing full Java, mixin application, JUnit and packaging. Native Pokemon/NPC/boat/held-item/GUI and several block/layer entrypoints remain open. No actual atlas registration/stitch/bake/reload, GPU/visual parity, client/server/multiplayer/gameplay, copied-world migration or installable JAR validation has passed. R013/R015 original data requirements, assets and licences are preserved. Accepted completion remains12/44; partial work does not satisfy original acceptance.
+
 ## Dependencies and API migration
 
 Original pins are preserved in Git history. Target configuration and resolved versions are recorded in the version catalogue and [technical changelog](CHANGELOG.md). Java 25 is required by Minecraft 26.3. The migration must address unobfuscated game tooling, removed Fabric registries, feature and data-pack formats, rendering and SDL input, networking, codecs and world storage. A declared target version is not proof of compatibility.

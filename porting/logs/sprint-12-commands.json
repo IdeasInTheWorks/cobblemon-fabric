@@ -1,0 +1,339 @@
+{
+  "cwd": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric",
+  "commands": [
+    {
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "env": {
+        "GRADLE_USER_HOME": "<checkout>/.local-tools/gradle-home"
+      },
+      "log": "porting/logs/sprint-12-baseline-common-01.txt",
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "env": {
+        "GRADLE_USER_HOME": "<checkout>/.local-tools/gradle-home"
+      },
+      "log": "porting/logs/sprint-12-common-02.txt",
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "env": {
+        "GRADLE_USER_HOME": "<checkout>/.local-tools/gradle-home"
+      },
+      "log": "porting/logs/sprint-12-common-03.txt",
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        ":common:compileJava",
+        ":common:test",
+        ":fabric:build",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "env": {
+        "GRADLE_USER_HOME": "<checkout>/.local-tools/gradle-home"
+      },
+      "log": "porting/logs/sprint-12-full-build-04.txt",
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        ":common:compileJava",
+        ":common:test",
+        ":fabric:build",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "env": {
+        "GRADLE_USER_HOME": "<checkout>/.local-tools/gradle-home"
+      },
+      "log": "porting/logs/sprint-12-full-build-05.txt",
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":fabric:validateAccessWidener",
+        ":common:checkLicenses",
+        ":fabric:checkLicenses",
+        "--continue",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "env": {
+        "GRADLE_USER_HOME": "<checkout>/.local-tools/gradle-home"
+      },
+      "log": "porting/logs/sprint-12-baseline-validation-01.txt",
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":fabric:validateAccessWidener",
+        ":common:checkLicenses",
+        ":fabric:checkLicenses",
+        "--continue",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "env": {
+        "GRADLE_USER_HOME": "<checkout>/.local-tools/gradle-home"
+      },
+      "log": "porting/logs/sprint-12-validation-02.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":fabric:validateAccessWidener",
+        ":common:checkLicenses",
+        ":fabric:checkLicenses",
+        "--continue",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "env": {
+        "GRADLE_USER_HOME": "<checkout>/.local-tools/gradle-home"
+      },
+      "log": "porting/logs/sprint-12-validation-03.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--report",
+        "porting/logs/sprint-12-baseline-contracts-01.json"
+      ],
+      "report": "porting/logs/sprint-12-baseline-contracts-01.json",
+      "passed": true,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--report",
+        "porting/logs/sprint-12-data-contracts-02.json"
+      ],
+      "report": "porting/logs/sprint-12-data-contracts-02.json",
+      "passed": true,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--report",
+        "porting/logs/sprint-12-data-contracts-03.json"
+      ],
+      "report": "porting/logs/sprint-12-data-contracts-03.json",
+      "passed": true,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--report",
+        "porting/logs/sprint-12-data-contracts-04.json"
+      ],
+      "report": "porting/logs/sprint-12-data-contracts-04.json",
+      "passed": false,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--report",
+        "porting/logs/sprint-12-data-contracts-05.json"
+      ],
+      "report": "porting/logs/sprint-12-data-contracts-05.json",
+      "passed": false,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--report",
+        "porting/logs/sprint-12-data-contracts-06.json"
+      ],
+      "report": "porting/logs/sprint-12-data-contracts-06.json",
+      "passed": false,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--report",
+        "porting/logs/sprint-12-data-contracts-07.json"
+      ],
+      "report": "porting/logs/sprint-12-data-contracts-07.json",
+      "passed": true,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--legacy-game-jar",
+        ".local-tools/minecraft-1.21.1-client.jar",
+        "--legacy-version-json",
+        ".local-tools/minecraft-1.21.1-version.json",
+        "--report",
+        "porting/logs/sprint-12-data-contracts-08.json"
+      ],
+      "report": "porting/logs/sprint-12-data-contracts-08.json",
+      "passed": true,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--legacy-game-jar",
+        ".local-tools/minecraft-1.21.1-client.jar",
+        "--legacy-version-json",
+        ".local-tools/minecraft-1.21.1-version.json",
+        "--report",
+        "porting/logs/sprint-12-data-contracts-09.json"
+      ],
+      "report": "porting/logs/sprint-12-data-contracts-09.json",
+      "passed": true,
+      "game_process_started": false
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "log": "porting/logs/sprint-12-tool-tests-01.txt",
+      "exit_code": 0
+    }
+  ],
+  "notes": [
+    "All named Gradle logs combine stdout/stderr; companion .exit files record shell exits.",
+    "CFR inspection logs contain no game source. Tools/game JARs stay ignored under .local-tools.",
+    "Initial preflight failure precedes user provisioning; network-enabled Git auth and claim CLI succeeded."
+  ]
+}

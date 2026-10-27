@@ -1,0 +1,39 @@
+{
+  "baseline_missing": 13,
+  "attempts": [
+    {
+      "log": "porting/logs/sprint-12-baseline-validation-01.txt",
+      "exit_code": 1,
+      "missing_targets": 13,
+      "headers": [
+        "All license header checks passed (24 files).",
+        "All license header checks passed (1 files).",
+        "All license header checks passed (20 files).",
+        "All license header checks passed (3005 files)."
+      ]
+    },
+    {
+      "log": "porting/logs/sprint-12-validation-02.txt",
+      "exit_code": 0,
+      "missing_targets": 0,
+      "headers": [
+        "All license header checks passed (3017 files).",
+        "All license header checks passed (20 files).",
+        "All license header checks passed (24 files).",
+        "All license header checks passed (1 files)."
+      ]
+    },
+    {
+      "log": "porting/logs/sprint-12-validation-03.txt",
+      "exit_code": 0,
+      "missing_targets": 0,
+      "headers": [
+        "All license header checks passed (26 files).",
+        "All license header checks passed (3 files)."
+      ]
+    }
+  ],
+  "final_missing_targets": 0,
+  "validator_retained": true,
+  "game_tests_executed": false
+}

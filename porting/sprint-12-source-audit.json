@@ -1,0 +1,288 @@
+{
+  "sprint": "S12",
+  "baseline": "d476d918576be5d03d4a12af46edb6926a57eabd",
+  "code_commit": "137e6b67bd5bc516289da24559db78da3641b935",
+  "hashes_source": "Archive working tree; includes the subsequent fixture output-label correction",
+  "changed_sources": [
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/BlockModelGeometry.java",
+      "sha256": "bb863f19bdc028db5f1504cee98be4f98ea5424cd4f14dceb653c3765d3a1b0b"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedBlockEntityRenderer.java",
+      "sha256": "69d7e0f6bcc97e00e4d919d42a0a25351e437c3099834a13b03f7469fc0b27cd"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedEntityRenderer.java",
+      "sha256": "6ff5fc0a8b27cf6d9a0101d08abf3cccaaf256eeddcccffc1c570c8f38670313"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/LegacyItemModels.java",
+      "sha256": "b8cdb5f1f0ed4691ba15ee8cb40fefb9a0b4f71ba31bef6de1819c64f72f2ba3"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/ModelBufferSource.java",
+      "sha256": "f6a835cc16937f7efa35f1b59843cae1059f28ca86fcf2aa7ade2f52dc7fbe47"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBuiltinItemModel.java",
+      "sha256": "d79a77a7d2236ead6d8109ca0a8bb4bc1bdc1b2d767248c6ce7cb3d6d8bdafc8"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeItemCapture.java",
+      "sha256": "ec39903a8900197e00ed9745f8a2f8924e8665c8cc880bfc8a5fdce9251281ad"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeRenderSetups.java",
+      "sha256": "10bbc67da3b87648b28269d8bd08ec56f484cd15393a1e386df697e93ea67c3d"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/RiderModelAccess.java",
+      "sha256": "b9d812c92245b735047028848935f07948df030e17c647c1c0688284d21b9184"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/RiderPose.java",
+      "sha256": "d3533006cf51df3883ab9c2cc818578e248173209e79b2f0b12ab9022fa503c9"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/RiderRenderData.java",
+      "sha256": "cdf0ea5c5cff0bacd3ce05ee65b2a844dcec588fdf56b85a1865caf5badad273"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/RiderRenderStateAccess.java",
+      "sha256": "ad5d3128b154debc42db2f5ba244f0ed5d393bf6dc94cbfaa589b5cfb672cf0c"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/SnowstormParticleGroup.java",
+      "sha256": "e52f934bce201a7aff95eea100bc5f6904ed3930bcd12264e544008443a8f7a5"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/AbstractVillagerTradeMixin.java",
+      "sha256": "0bf7f24f761073ffcf0d4c913e6be8b5c37f5c18838844ac720b85f8ca1d05fa"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/BuiltinModelItemRendererMixin.java",
+      "sha256": "6e51b4122ab1e3f181ed0bfdfe9ea45c265b50727083c2c94175af952f85ff02"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/ParticleManagerMixin.java",
+      "sha256": "b211be223e651e0c39c02e63d948a51f3b789f9f07d9bb22d4318cb7044c32db"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/AgeableListModelMixin.java",
+      "sha256": "dec21207b2ce32620808d0b8062353ddee3ddb225c8d954692df878f5e966a51"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/HumanoidModelMixin.java",
+      "sha256": "2c67c083dd1cc627594b4b256d3ebc91a3937cfcdf4d45d0e16ea02de52a5b35"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/LivingEntityRendererMixin.java",
+      "sha256": "b63e7f64dcae4cc7195b55709ad6e07eaf9334a5f3246888a382f24d59299835"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/PlayerRendererMixin.java",
+      "sha256": "e4783246e6c74e5c164ac0df7794c637fb89395c99e417a9100a2ab61a74c4be"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/RiderRenderStateMixin.java",
+      "sha256": "4229c233309fb5664b1eddcced67a1ddb1ca5cc5c78e70064e0176ac56675d9b"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/StringRenderOutputMixin.java",
+      "sha256": "7e883a5ab386abe02ac43407342948a4c12d5ceefbcd58df26bb13a0214e9f87"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/util/InventoryRemoval.java",
+      "sha256": "61be2dd29cf8e5918281f1ea6d7fc95ca092bc20f1a1a5f4e030119a59232cfb"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/util/NativeTrades.java",
+      "sha256": "3ebd443c8ddc976f353eca1ced31f23405f8c7dd3a021a6d25b945e619714fc8"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonTradeOffers.kt",
+      "sha256": "6b4edc309d647aef951d5e7ac6a820e620ab67d9de58b2356831d0af36bc563d"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/CobblemonVillagerProfessions.kt",
+      "sha256": "a651716057636d833819faba536c8b42fc6908f7f2916b51e1876ea38615b99a"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/api/snowstorm/ParticleMaterials.kt",
+      "sha256": "b23bcbbd216a1c44e71c97f20cf7fa63aeda31ab62f00ef6828ba6dd1bead419"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/BerryBlock.kt",
+      "sha256": "998bb760520f51564fb11c42575489afe027b84c248c1781e187ceda9c2ecfe1"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/DisplayCaseBlock.kt",
+      "sha256": "e336dfef8df1eefafbfc5ce090c079f6cced5cf32096a2b4490144392e849e93"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/SaccharineLeafBlock.kt",
+      "sha256": "e72c617f5d3ab4a5970e7e29473bca9328eecdbc47828ab8527c0a65cd897ab5"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/campfirepot/CampfireBlock.kt",
+      "sha256": "d133635a11e8940c78725dd025c7e7d5dbc4e69a79a64185a713ab8d98a5823d"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/block/habitat/HabitatBlock.kt",
+      "sha256": "808250c5d5455d169ad44e2c5b6f8f40be64fff5c3fb3916e75781cc3841870e"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/SnowstormParticle.kt",
+      "sha256": "f0e0369bfd8b6c51113674a3ebfd0b65f255f2adb85bc90852be3ed3ce3e8c19"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/TextClipping.kt",
+      "sha256": "008a4aca91be81c5b5d00c6ee46a5901bd6a9b9a6d049ed79b0a651be1da7a84"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/BerryBlockEntityRenderState.kt",
+      "sha256": "c594c942e2f681b1b6ec2e550c402e733626742eefdc69df4b75ec8def6bf5f2"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/BerryBlockRenderer.kt",
+      "sha256": "d9f7d9cb75b9560e32aca36cb7149eaf7b129b8dd2cbb2852c4576017d91807e"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/CampfireBlockEntityRenderer.kt",
+      "sha256": "261239610abe6b50579728ab713e70f26f91c74562e0c541758d8a73a6d0b872"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DiscShelfBlockEntityRenderer.kt",
+      "sha256": "8a125f55392718dbcc629298f7f2bf24d75ee55c3b183834fb796097a7612ee4"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/DisplayCaseRenderer.kt",
+      "sha256": "cc03efeae7e6ec24db079c30be1fac98d79cf1888244f91c2207a092d44dc142"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/FossilAnalyzerRenderer.kt",
+      "sha256": "58f2a91481c40fbe140962180629c6c9d31286f20522c6a86f9a3b0341610d24"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/GildedChestBlockRenderer.kt",
+      "sha256": "cd6574b2d9f025d223cbb5c5cd021194edf8d49b4d3aca09b716c928cd198d20"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HealingMachineRenderer.kt",
+      "sha256": "1e2b03051709040ba67b1e32c22423a83d55425d78bf97a539d0e52ecc4c4251"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/PokeSnackBlockEntityRenderer.kt",
+      "sha256": "8a679b36e71315ffde7c48a3968cf548fd2c958035665c8b2d06f07524299837"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/RestorationTankRenderer.kt",
+      "sha256": "2f0635a2a2336fa307e544ea76548b7ea03e549550d415ad7f6068a327c07a01"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/entity/MountedLivingEntityRenderer.kt",
+      "sha256": "c977936289e97188701854646fc9fa50b6431c730285608a7db440586589d066"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/entity/PokeBobberEntityRenderer.kt",
+      "sha256": "47d1c678e66132cfdd358d989634507a8ef5dfd946d87e1620fbcf468271e236"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/generic/GenericBedrockRenderer.kt",
+      "sha256": "0c63ceb08cd401e589c7132b68b8c87e3485af81b8bb39a40c2a6593bc090e6b"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/CobblemonBuiltinItemRendererRegistry.kt",
+      "sha256": "8ded3c76f50910883120ec60ca038b42eefcdec7170c61f8584d9bf508608388"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/PokemonItemRenderer.kt",
+      "sha256": "a73a15a38006dbc3713f28bd6487297c9ab1cdcf8d8f164cdbb1cf254ccc1996"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel.kt",
+      "sha256": "ae0a1c3678939100bcf4872dc692637f800a28e611087df51eb960264756de57"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/MountedPlayerRenderer.kt",
+      "sha256": "a3673753323adf1fa7311e45f1a273cd733f552ba6360301c933047b61395514"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokeball/PokeBallRenderer.kt",
+      "sha256": "8f5850c4336c8cfea30bc63eb43fe11266e05e982b4534df6a7c55986358f8a7"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/particle/SnowstormParticleType.kt",
+      "sha256": "96967e4871af95de169a926c3c3a6695d89a2de6df51308cbed49fdbe9b7018a"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/util/PlayerInventoryExtensions.kt",
+      "sha256": "c60087450a432ea4d5763f2b9f11f083fcaee1d25d65eec03c5c97157af57005"
+    },
+    {
+      "path": "common/src/main/resources/cobblemon-common.accesswidener",
+      "sha256": "773b61747f6e61ea387c4b9c88a5a2edce1f70f71072147633a51f2498538d81"
+    },
+    {
+      "path": "common/src/main/resources/mixins.cobblemon-common.json",
+      "sha256": "cbef8a9ffbfb4a2235277dc9f9702d94c9fa193e416210b6640a59a9ac7afc62"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java",
+      "sha256": "b6cc589b6e97fa35826f1abdb6b6b32ef6fe08bc566cfc43d4cce2770aedaf3d"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263ModelContracts.java",
+      "sha256": "260401478952a3c1a2a60b87398e635ba66ee877e9d42737e8e91a44e12e4a13"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263RenderContracts.java",
+      "sha256": "3897091262cdd8a0c545a67357387b9081462881a2be3dc36dec5f237240fb15"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint12Contracts.java",
+      "sha256": "97f4facd86cc9a0a4cfdb12e64172608ba8836c1944f7c9f4e1b82d15d53b8d6"
+    },
+    {
+      "path": "fabric/src/main/java/com/cobblemon/mod/fabric/mixin/RecipeBookSettingsMixin.java",
+      "sha256": "4b607bd9817ca4e3af26fda41ff0ea1ed9f904ceb7e38696ef6579b150d2e1be"
+    },
+    {
+      "path": "fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt",
+      "sha256": "f9f1ee8b7deb02a996f5b650c50d3a8c0075d2f0cccaf530ab47b7c17f348ae6"
+    }
+  ],
+  "preserved_source_and_assets": {
+    "common/src/main/resources/assets": true,
+    "common/src/main/resources/data": true,
+    "LICENSE": true,
+    "common/src/main/java/com/cobblemon/mod/common/util/LegacyNbt.java": true,
+    "common/src/main/java/com/cobblemon/mod/common/util/RegistrationProperties.java": true,
+    "common/src/main/java/com/cobblemon/mod/common/util/HiveOccupants.java": true
+  },
+  "deleted_paths": [],
+  "unchanged_emerald_sale_argument_tuples": 18,
+  "state_names": "Two item_facing enum properties retain their names and six Direction values. No storage/NBT/owner field keys changed.",
+  "native_callbacks": [
+    "Entity extraction: generic Bedrock entities, empty PokeBalls, PokeRod bobbers",
+    "Block extraction: berries/mulch, pot/seasonings, disc shelf, display case, fossil analyzer, healing machine, gilded chest, PokeSnack/candle",
+    "Restoration tank: copied decal camera pose, native solid/breaking-overlay phases and OIT decal types",
+    "Native special item: pokemon_model legacy bake and native cuboid wrappers, copied stack, display-aware geometry, draw light, glint and transforms",
+    "Rider: Living/Avatar/Humanoid/Model hooks capture immutable pose/seat/recall data and run native arm/attack/bob continuation once",
+    "Snowstorm: native particle groups and four blend/cull/depth descriptors, applied particles atlas lookup",
+    "Trade sets: append offers before native selection; retain native amount/duplicates/random sequence and all offer fields"
+  ],
+  "remaining_entrypoints": [
+    "PokemonRenderer.kt and NPCRenderer.kt: native living body/name-tag extraction",
+    "CobblemonBoatRenderer.kt: native boat model/state",
+    "HabitatBlockRenderer.kt and LecternBlockEntityRenderer.kt",
+    "HeldItemRenderer.kt: locator item extraction and front-light policy",
+    "Remaining shoulder/recall/player layers, GUI/deferred renderer and Java mixins"
+  ],
+  "unexecuted": [
+    "Full Java, actual mixin transformation and JUnit blocked by Kotlin compilation",
+    "Real model baking/atlas registration/stitch/reload/GPU/visual parity and snapshot allocation profiling",
+    "Client/server/multiplayer/gameplay/copied-world migration and installable package validation"
+  ]
+}

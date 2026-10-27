@@ -1,0 +1,77 @@
+{
+  "utc": "2026-10-27T19:03:24.755431+00:00",
+  "status": "BLOCKED_BEFORE_IMPLEMENTATION",
+  "checks": [
+    {
+      "command": [
+        "hostname"
+      ],
+      "exit_code": 0,
+      "output": "codex-gpu01\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "output": "d476d918576be5d03d4a12af46edb6926a57eabd\n"
+    },
+    {
+      "command": [
+        "gh",
+        "auth",
+        "status"
+      ],
+      "exit_code": 1,
+      "output": "You are not logged into any GitHub hosts. To log in, run: gh auth login\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/work_claims.py",
+        "status"
+      ],
+      "exit_code": 1,
+      "output": "Work claim refused: Existing IdeasInTheWorks Git authentication is required; no credentials are logged\n"
+    },
+    {
+      "command": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit_code": 1,
+      "output": "\nERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.\n\nPlease set the JAVA_HOME variable in your environment to match the\nlocation of your Java installation.\n\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "test_complete_structural_fixture (test_validate_jar.PackageValidationTests.test_complete_structural_fixture) ... ok\ntest_missing_asset_licence_is_rejected (test_validate_jar.PackageValidationTests.test_missing_asset_licence_is_rejected) ... ok\ntest_missing_battle_engine_is_rejected (test_validate_jar.PackageValidationTests.test_missing_battle_engine_is_rejected) ... ok\ntest_missing_runtime_dependency_is_rejected (test_validate_jar.PackageValidationTests.test_missing_runtime_dependency_is_rejected) ... ok\ntest_unsupported_classfile_is_rejected (test_validate_jar.PackageValidationTests.test_unsupported_classfile_is_rejected) ... ok\ntest_wrong_minecraft_is_rejected (test_validate_jar.PackageValidationTests.test_wrong_minecraft_is_rejected) ... ok\ntest_close_requires_checkpoint (test_work_claims.WorkClaimsTests.test_close_requires_checkpoint) ... ok\ntest_closed_claim_is_not_valid_for_push (test_work_claims.WorkClaimsTests.test_closed_claim_is_not_valid_for_push) ... ok\ntest_disjoint_paths_and_resources_can_run_concurrently (test_work_claims.WorkClaimsTests.test_disjoint_paths_and_resources_can_run_concurrently) ... ok\ntest_expired_lease_cannot_heartbeat (test_work_claims.WorkClaimsTests.test_expired_lease_cannot_heartbeat) ... ok\ntest_expiry_takeover_fences_old_holder (test_work_claims.WorkClaimsTests.test_expiry_takeover_fences_old_holder) ... ok\ntest_idempotent_acquire_and_input_state_not_mutated (test_work_claims.WorkClaimsTests.test_idempotent_acquire_and_input_state_not_mutated) ... ok\ntest_parent_child_scope_collision (test_work_claims.WorkClaimsTests.test_parent_child_scope_collision) ... ok\ntest_path_prefix_without_separator_does_not_collide (test_work_claims.WorkClaimsTests.test_path_prefix_without_separator_does_not_collide) ... ok\ntest_public_lease_id_does_not_transfer_ownership (test_work_claims.WorkClaimsTests.test_public_lease_id_does_not_transfer_ownership) ... ok\ntest_push_outside_scope_is_rejected (test_work_claims.WorkClaimsTests.test_push_outside_scope_is_rejected) ... ok\ntest_reject_traversal_and_absolute_scopes (test_work_claims.WorkClaimsTests.test_reject_traversal_and_absolute_scopes) ... ok\ntest_replayed_expired_operation_cannot_reuse_fencing_id (test_work_claims.WorkClaimsTests.test_replayed_expired_operation_cannot_reuse_fencing_id) ... ok\ntest_shared_branch_requires_integration_lease (test_work_claims.WorkClaimsTests.test_shared_branch_requires_integration_lease) ... ok\ntest_wrong_branch_or_owner_is_rejected (test_work_claims.WorkClaimsTests.test_wrong_branch_or_owner_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.009s\n\nOK\n"
+    }
+  ],
+  "red01_ssh_result": "ssh -o BatchMode=yes -o ConnectTimeout=10 Red01 hostname: exit 255; Could not resolve hostname red01: Temporary failure in name resolution",
+  "connector_identity": "IdeasInTheWorks",
+  "registry_snapshot_generation": 63,
+  "registry_snapshot_active_claims": 0,
+  "lease_acquired": false,
+  "source_edits": false,
+  "published_milestone": null,
+  "game_tests_executed": false,
+  "clone_note": "Fresh clone shows gradlew.bat line-ending-only difference (git diff --ignore-space-at-eol is empty); preserved without editing."
+}

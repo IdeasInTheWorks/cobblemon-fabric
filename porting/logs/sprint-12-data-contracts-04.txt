@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "game_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "compile_exit": 1,
+  "compile_stdout": "",
+  "compile_stderr": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric/common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263RenderContracts.java:141: error: cannot find symbol\n        var beforeMutation = new ModelBufferSource.Recorder(); breaking.customRenderer().render(new PoseStack().last(), beforeMutation);\n                                                                       ^\n  symbol:   method customRenderer()\n  location: variable breaking of type Submit\n/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric/common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263RenderContracts.java:143: error: cannot find symbol\n        var afterMutation = new ModelBufferSource.Recorder(); breaking.customRenderer().render(new PoseStack().last(), afterMutation);\n                                                                      ^\n  symbol:   method customRenderer()\n  location: variable breaking of type Submit\nNote: Some input files use or override a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n2 errors\n",
+  "inventory_fixture": "Only missing MAX_STACK_SIZE components are bound for two test items; game/datapack defaults and gameplay are not tested"
+}

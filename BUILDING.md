@@ -1,5 +1,15 @@
 # Building the independent Fabric port
 
+## S12 Red01 reproduction
+
+Red01 is the local codex-gpu01 host alias (10.0.80.2). Java/javac 25.0.4.1 and IdeasInTheWorks Git credentials are verified. Use the pinned wrapper and a writable ignored cache, e.g. `GRADLE_USER_HOME="$PWD/.local-tools/gradle-home"`. Exact argv/env is retained in `porting/logs/sprint-12-commands.json`.
+
+Normal `:fabric:validateAccessWidener :common:checkLicenses :fabric:checkLicenses --continue --stacktrace --console=plain` passes. The full normal build fails in common Kotlin: 4,297 lines / 527 files. No validator was disabled and there is no installable JAR.
+
+Focused report09 uses the existing runner, pinned Fabric aggregate and checksum-verified official 26.3 client with JDK25 javac and the resolved cache. Optional 1.21.1 inputs are supplied together (client SHA1 `30c73b1c5da787909b2f73340419fdf13b9def88`; official metadata SHA1 `018296bcb207bea6fd25b05f08eee3942dcec406`). The runner verifies them. It passes 2,788 core, 19 Fabric and 810 legacy cases / 1,620 checks. It compiles production Java helpers and inspects native phase queues, without applying mixins or launching a game/GPU. Full Java/JUnit/renderer bootstrap, actual bake/reload/atlas and world/gameplay remain separate gates. Failed attempts04-06 remain archived.
+
+`.local-tools` is excluded locally in `.git/info/exclude`; never commit caches, game JARs or tools. A local-only `gradlew.bat -text` attribute avoids a dirty status for the pre-existing CRLF blob; raw tracked bytes were identical and were not edited. No OneDrive output workaround is needed here.
+
 ## S11 native rendering checkpoint
 
 The latest common compile fails at 4,556 diagnostic lines / 548 files; normal widener validation still fails on 13 targets. These commands preserve all normal gates. No release JAR has been produced.

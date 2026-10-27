@@ -1,3 +1,11 @@
+# S12 Red01 published implementation checkpoint (2026-10-27)
+
+Red01 now resolves locally to codex-gpu01 at 10.0.80.2. Java25/GitHub IdeasInTheWorks and a fresh S12 lease/integration resource were verified. Source milestone `137e6b67bd5bc516289da24559db78da3641b935` is published through the normal push hook. Read the S12 section in [RESUME.md](RESUME.md), sprint-12-summary.json, exact command ledger and current native Sheet first. The older documentation handoff below is historical.
+
+Normal widener validation now passes (13 -> 0), as do source headers. Common Kotlin fails 4,297/527, independently reproduced by CI40590974021. Core2,788 + Fabric19 contracts,810 legacy cases/1,620 checks and20 tooling tests pass; none are game tests. CI fails compilation and skips packaging. No installable JAR. Several living/boat/block/locator/GUI and Java entrypoints remain; R013/R015 original data/serialization and runtime gates stay open. Accepted completion stays12/44; remaining514/1,028/2,064 engineering person-hours, Low confidence, actuals unmeasured.
+
+Release the partial S12 claim only after the archive is published; verify closure in the registry and refresh the same Sheet. Future work needs a fresh lease; never reuse the S11, documentation or released S12 lease. Keep the integration resource requirement and all release safeguards.
+
 # Red01 takeover — 27 October 2026
 
 This documentation-only handoff preserves S11. No code or gameplay test was executed for this handoff. Red01 has not been provisioned or contacted; start a new Codex chat there using [RED01_AGENT_PROMPT.md](RED01_AGENT_PROMPT.md).

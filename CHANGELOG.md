@@ -1,5 +1,11 @@
 # Changelog
 
+## S12 - Reconcile AW13 and extract native renderer snapshots (2026-10-27)
+
+All 13 access-widener misses are reconciled with callers; normal validation/headers pass. Native container slots, trade-set augmentation, recipe/text/block/atlas/frustum APIs and rider animation replace removed members. Native block/entity/special-item/particle extraction captures copied geometry/items/poses before submission; fossil decal routing uses native phases and OIT materials. Assets, serialized state names and legacy data helpers are retained. The container removal helper also corrects its prior amount/slot accounting bug.
+
+Fresh Kotlin baseline 4,556/548 falls to 4,297/527 (259 fewer, 5.7%; cascades included), reproduced by CI 40590974021. Final 2,788 core + 19 Fabric contracts, 810 legacy cases / 1,620 checks and 20 tooling tests pass. Full Java/mixins/JUnit/package/game/visual tests remain blocked or unexecuted. Pokemon/NPC/boat/habitat/lectern/locator/GUI and other Java entrypoints still need migration; source retention is not gameplay validation. See porting/RESUME.md and S12 logs, including failed fixture attempts.
+
 ## S11 - Native render materials, immutable fossil geometry and atlas ownership (2026-10-25)
 
 Partial R022/R023. Four common compiles end at 4,556 diagnostics / 548 files (289 fewer, 6.0%); widener misses fall 47 -> 13 (34 reconciled). 2,723 core checks, 19 Fabric contracts, 810 legacy cases and 20 tooling tests pass; headers pass. Focused atlas registry initialization fails on Fabric's required accessor mixin in attempt03; attempt04 covers descriptors and controlled reload ordering. No game/GPU/actual atlas reload, full Java/mixins/JUnit or installable build has passed. Original models, assets, licences and tracked paths are retained.

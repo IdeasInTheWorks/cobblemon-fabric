@@ -1,0 +1,115 @@
+{
+  "sprint": "S12",
+  "recorded_utc": "2026-10-27T22:00:24.337412+00:00",
+  "work_id": "S12-R023-AW13",
+  "owner": "codex-red01-s12-01a17ebd",
+  "lease_id": "cd1e6776-9933-4e2b-ace7-d06ac85a4c1b",
+  "branch": "feature/latest-minecraft-fabric",
+  "baseline": "d476d918576be5d03d4a12af46edb6926a57eabd",
+  "code_commit": "137e6b67bd5bc516289da24559db78da3641b935",
+  "outcome": "Partial R023 migration; all AW13 blockers resolved. Full build fails; no installable JAR or game validation.",
+  "toolchain": "Red01 resolves to local codex-gpu01 at 10.0.80.2. IdeasInTheWorks Git auth/JDK25 verified; pinned wrapper/dependencies used.",
+  "compilation": [
+    {
+      "log": "porting/logs/sprint-12-baseline-common-01.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4556,
+      "files": 548,
+      "caveat": "Kotlin cascades, not independent bugs. Java/mixins/JUnit/package/gameplay have not passed."
+    },
+    {
+      "log": "porting/logs/sprint-12-common-02.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4370,
+      "files": 541,
+      "caveat": "Kotlin cascades, not independent bugs. Java/mixins/JUnit/package/gameplay have not passed."
+    },
+    {
+      "log": "porting/logs/sprint-12-common-03.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4308,
+      "files": 530,
+      "caveat": "Kotlin cascades, not independent bugs. Java/mixins/JUnit/package/gameplay have not passed."
+    },
+    {
+      "log": "porting/logs/sprint-12-full-build-04.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4297,
+      "files": 527,
+      "caveat": "Kotlin cascades, not independent bugs. Java/mixins/JUnit/package/gameplay have not passed."
+    },
+    {
+      "log": "porting/logs/sprint-12-full-build-05.txt",
+      "exit_code": 1,
+      "diagnostic_lines": 4297,
+      "files": 527,
+      "caveat": "Kotlin cascades, not independent bugs. Java/mixins/JUnit/package/gameplay have not passed."
+    }
+  ],
+  "access_widener": {
+    "baseline_missing": 13,
+    "final_missing": 0,
+    "normal_validation": "passed",
+    "licence_headers": "passed"
+  },
+  "focused_contracts": {
+    "core_checks": 2788,
+    "fabric_checks": 19,
+    "legacy_cases": 810,
+    "legacy_checks": 1620,
+    "latest_report": "porting/logs/sprint-12-data-contracts-09.json",
+    "scope": "Production Java/native helper, codec, immutable pose/material/phase contracts, without game/GPU/mixin application. Failed fixture attempts04-06 retained."
+  },
+  "tool_tests": {
+    "passed": 20,
+    "scope": "14 coordination + 6 synthetic package tests"
+  },
+  "acceptance": {
+    "done": 12,
+    "total": 44,
+    "remaining": 32,
+    "complete_percent": 27.272727272727273,
+    "basis": "Equal accepted packages. R013/R015/R022/R023 original acceptance stays open."
+  },
+  "remaining_person_hours": {
+    "R022": [
+      18,
+      36,
+      72
+    ],
+    "R023": [
+      26,
+      52,
+      104
+    ],
+    "whole": [
+      514,
+      1028,
+      2064
+    ],
+    "confidence": "Low",
+    "actuals": null,
+    "basis": "Conservative R023 decrement4/8/16 for AW closure and snapshot entrypoints. Living/boat/locator/GUI/mixins and real-game validation still dominate."
+  },
+  "next": [
+    "PokemonRenderer.kt and NPCRenderer.kt: native living body/name-tag extraction",
+    "CobblemonBoatRenderer.kt: native boat model/state",
+    "HabitatBlockRenderer.kt and LecternBlockEntityRenderer.kt",
+    "HeldItemRenderer.kt: locator item extraction and front-light policy",
+    "Remaining shoulder/recall/player layers, GUI/deferred renderer and Java mixins",
+    "Full Java, actual mixin transformation and JUnit blocked by Kotlin compilation",
+    "Real model baking/atlas registration/stitch/reload/GPU/visual parity and snapshot allocation profiling",
+    "Client/server/multiplayer/gameplay/copied-world migration and installable package validation"
+  ],
+  "publication": "Source milestone pushed through normal hook and remote SHA readback. Archive/Actions/claim closure recorded separately.",
+  "actions": {
+    "source_run": 40590974021,
+    "conclusion": "failure",
+    "common_diagnostic_lines": 4297,
+    "affected_files": 527,
+    "access_widener": "passed",
+    "tool_guards": "passed",
+    "package_validation_and_upload": "skipped",
+    "runtime_tests_executed": false
+  }
+}

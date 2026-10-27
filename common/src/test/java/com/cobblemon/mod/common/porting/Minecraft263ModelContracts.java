@@ -122,7 +122,7 @@ final class Minecraft263ModelContracts {
                 if(asset.has("parent")&&asset.get("parent").getAsString().endsWith("builtin/entity"))builtin++;
             }
         }
-        System.out.println("{\"model_assets_parsed\":"+models+",\"legacy_overrides_parsed\":"+overrides+",\"builtin_entity_roots_pending_special_renderer\":"+builtin+",\"scope\":\"production model discovery, selection and tint adapters; no bake/GPU/reload\"}");
+        System.out.println("{\"model_assets_parsed\":"+models+",\"legacy_overrides_parsed\":"+overrides+",\"builtin_entity_roots_requiring_game_validation\":"+builtin+",\"scope\":\"production model discovery, selection and tint adapters; no bake/GPU/reload\"}");
         return checks;
     }
 }

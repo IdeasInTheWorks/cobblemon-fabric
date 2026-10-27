@@ -1,10 +1,10 @@
 {
   "prepared_date": "2026-10-27",
-  "type": "documentation-only takeover",
-  "destination": "Red01; environment and authentication not verified",
+  "type": "S12 partial implementation checkpoint",
+  "destination": "Red01 verified as local codex-gpu01 alias at 10.0.80.2",
   "repository": "https://github.com/IdeasInTheWorks/cobblemon-fabric",
   "branch": "feature/latest-minecraft-fabric",
-  "code_checkpoint": "7da74a7f435cc9528eefbe89e73f3de8f8aae435",
+  "code_checkpoint": "137e6b67bd5bc516289da24559db78da3641b935",
   "guide": "porting/RED01_HANDOFF.md",
   "prompt": "porting/RED01_AGENT_PROMPT.md",
   "google_doc": "https://docs.google.com/document/d/1PZvGYMJDkSd7qwaF90AyzBFDRwRX5EA3bkMvUIsk6G8/edit",
@@ -17,10 +17,33 @@
     "installable_jar": false,
     "runtime_gameplay_verified": false
   },
-  "accepted_tasks": {"done": 12, "total": 44, "remaining": 32},
-  "remaining_effort_person_hours": {"low": 518, "likely": 1036, "high": 2080, "confidence": "Low", "actuals": null},
-  "handoff_claim": "HANDOFF-RED01-20261027",
+  "accepted_tasks": {
+    "done": 12,
+    "total": 44,
+    "remaining": 32
+  },
+  "remaining_effort_person_hours": {
+    "low": 514,
+    "likely": 1028,
+    "high": 2064,
+    "confidence": "Low",
+    "actuals": null
+  },
+  "handoff_claim": "S12-R023-AW13",
   "next_agent_requires_fresh_claim": true,
-  "source_changes_in_this_handoff": false,
-  "game_tests_executed_in_this_handoff": false
+  "source_changes_in_this_handoff": true,
+  "game_tests_executed_in_this_handoff": false,
+  "latest_sprint": "S12",
+  "current_results": {
+    "common_kotlin_diagnostic_lines": 4297,
+    "affected_files": 527,
+    "access_widener_misses": 0,
+    "normal_validation_passed": true,
+    "core_contracts": 2788,
+    "fabric_contracts": 19,
+    "legacy_cases": 810,
+    "tool_tests": 20,
+    "installable_jar": false,
+    "runtime_gameplay_verified": false
+  }
 }
