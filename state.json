@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 62,
+  "generation": 63,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -324,12 +324,13 @@
       "lease_id": "8a624fc8-51d0-4b78-a4e0-730aa769730d",
       "operation_id": "8a624fc8-51d0-4b78-a4e0-730aa769730d",
       "epoch": 1,
-      "status": "active",
+      "status": "completed",
       "acquired_at": "2026-10-27T18:53:19Z",
       "heartbeat_at": "2026-10-27T18:58:03Z",
       "expires_at": "2026-10-27T19:28:03Z",
       "minutes": 30,
-      "checkpoint": ""
+      "checkpoint": "Published d476d918576be5d03d4a12af46edb6926a57eabd; Red01 guide/prompt/checkpoint prepared; code unchanged from S11; Google Doc verified private; new agent requires fresh claim; no game tests or installable JAR.",
+      "closed_at": "2026-10-27T18:58:42Z"
     }
   },
   "events": [
@@ -952,6 +953,16 @@
       "lease_id": "8a624fc8-51d0-4b78-a4e0-730aa769730d",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 63,
+      "at": "2026-10-27T18:58:42Z",
+      "kind": "complete",
+      "work_id": "HANDOFF-RED01-20261027",
+      "owner": "codex-handoff-red01-01a16f8a",
+      "lease_id": "8a624fc8-51d0-4b78-a4e0-730aa769730d",
+      "epoch": 1,
+      "checkpoint": "Published d476d918576be5d03d4a12af46edb6926a57eabd; Red01 guide/prompt/checkpoint prepared; code unchanged from S11; Google Doc verified private; new agent requires fresh claim; no game tests or installable JAR."
     }
   ]
 }
