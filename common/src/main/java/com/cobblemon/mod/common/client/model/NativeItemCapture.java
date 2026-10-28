@@ -37,11 +37,14 @@ public final class NativeItemCapture {
             this.state = state; this.transform = transform; this.light = light; this.overlay = overlay;
         }
         public void submit(PoseStack pose, OrderedSubmitNodeCollector collector) {
+            submit(pose, collector, 0);
+        }
+        public void submit(PoseStack pose, OrderedSubmitNodeCollector collector, int outline) {
             pose.pushPose();
             try {
                 pose.mulPose(transform);
                 // ItemStackRenderState requires the native collector (all production callers supply it).
-                state.submit(pose, (SubmitNodeCollector)collector, light, overlay, 0);
+                state.submit(pose, (SubmitNodeCollector)collector, light, overlay, outline);
             } finally { pose.popPose(); }
         }
     }

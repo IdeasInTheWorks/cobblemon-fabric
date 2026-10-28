@@ -1,0 +1,22 @@
+{
+  "recorded_utc": "2026-10-28T00:48:30Z",
+  "hostname": "codex-gpu01",
+  "red01_hosts": [
+    "10.0.80.2 codex-gpu01 Red01 red01"
+  ],
+  "java": "openjdk version \"25.0.4.1\" 2026-08-18\nOpenJDK Runtime Environment (build 25.0.4.1+1-1-24.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 25.0.4.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)\n",
+  "javac": "javac 25.0.4.1",
+  "python": "/usr/bin/python3",
+  "game_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "git_config": {
+    "remote.origin.url": "https://github.com/IdeasInTheWorks/cobblemon-fabric.git",
+    "remote.upstream.url": "https://gitlab.com/cable-mc/cobblemon.git",
+    "remote.upstream.pushurl": "DISABLED",
+    "core.hooksPath": ".githooks",
+    "cobblemon.claimPython": "/usr/bin/python3",
+    "remote.pushDefault": "origin",
+    "push.default": "current",
+    "user.name": "IdeasInTheWorks",
+    "user.email": "323719890+IdeasInTheWorks@users.noreply.github.com"
+  }
+}

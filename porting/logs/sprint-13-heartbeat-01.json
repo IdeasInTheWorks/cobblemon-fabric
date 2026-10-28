@@ -1,0 +1,30 @@
+{
+  "work_id": "S13-R023-LIVING",
+  "owner": "codex-red01-s13-20261028-01a17ebd",
+  "branch": "feature/latest-minecraft-fabric",
+  "scopes": [
+    "BUILDING.md",
+    "CHANGELOG.md",
+    "COMPATIBILITY.md",
+    "common/src/main/java",
+    "common/src/main/kotlin/com/cobblemon/mod/common/client",
+    "common/src/main/resources/cobblemon-common.accesswidener",
+    "common/src/main/resources/mixins.cobblemon-common.json",
+    "common/src/test",
+    "fabric/src",
+    "porting",
+    "scripts"
+  ],
+  "resources": [
+    "integration:feature/latest-minecraft-fabric"
+  ],
+  "lease_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
+  "operation_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
+  "epoch": 1,
+  "status": "active",
+  "acquired_at": "2026-10-28T00:31:31Z",
+  "heartbeat_at": "2026-10-28T00:42:13Z",
+  "expires_at": "2026-10-28T02:12:13Z",
+  "minutes": 90,
+  "checkpoint": ""
+}

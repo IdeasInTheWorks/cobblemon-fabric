@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "game_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "compile_exit": 1,
+  "compile_stdout": "",
+  "compile_stderr": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric/common/src/main/java/com/cobblemon/mod/common/client/model/CapturedLabel.java:30: error: no suitable method found for mulPose(Quaternionf)\n            pose.mulPose(camera.orientation);\n                ^\n    method PoseStack.mulPose(Matrix4fc) is not applicable\n      (argument mismatch; Quaternionf cannot be converted to Matrix4fc)\n    method PoseStack.mulPose(Transformation) is not applicable\n      (argument mismatch; Quaternionf cannot be converted to Transformation)\nNote: Some input files use or override a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n",
+  "inventory_fixture": "Only missing MAX_STACK_SIZE components are bound for two test items; game/datapack defaults and gameplay are not tested"
+}

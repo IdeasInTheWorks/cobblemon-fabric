@@ -1,0 +1,150 @@
+{
+  "baseline": "e3943fe1da7a9f82832b1f82216c7bf556750c8b",
+  "changed_sources": [
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedLabel.java",
+      "sha256": "51933e59a64c3ded1b45d19cde52443067ccb1123167bd4ca284918d4fa52558"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedLivingEntityRenderer.java",
+      "sha256": "1b87e55bf318f8215eafba6293a852c1c5d1062a5fec53f64bae4b1e4dbb47ef"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedPlayerLayer.java",
+      "sha256": "64a7ac4ebfcbc592166a9f9c83eb8c885867039512fbf9f2bd6b451c536f262b"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/FirstPersonRenderData.java",
+      "sha256": "7afe095aea939e68b679fed79e012c744cdb7faafa3966fc09bbae3178dcfe2c"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/FirstPersonRenderStateAccess.java",
+      "sha256": "89dd82233eb0daf0cb30d12ca411591eee48e0be08ec8534d31899bf6bac063b"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/ModelBufferSource.java",
+      "sha256": "38421ad51edbbf6d71b3216e711479ee5dee86fde771942cf5c53017da244d40"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeItemCapture.java",
+      "sha256": "e834e1cef3f14c57be366fef00b9b353c80bac72649fdf0b0639b8d1e8042b78"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/PlayerLayerRenderStateAccess.java",
+      "sha256": "ce0226d7485525360ae8b8985746a3dba21d8c3b228046225a632cc407b5d9d0"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/RiderRenderData.java",
+      "sha256": "a322de6e644336a73534e09dafe6ac140dd4f3f7a217a0e7f97e67eb7a8e86f0"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/EntityRenderDispatcherMixin.java",
+      "sha256": "67dfbbe9a2df0c1c81648082cd5b45b015c89940b0df465a395b33ea8bd4eb82"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/EntityHitboxDebugRendererMixin.java",
+      "sha256": "acea177c9f0cabe588b88478981c2f576f8d2febc2c689972cf62e80bd5b1422"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/FirstPersonHandsAndItemsMixin.java",
+      "sha256": "19adc21163a76edd5ef159de87872d9f84b162c3229512dff614ce3633050e97"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/FirstPersonRenderStateMixin.java",
+      "sha256": "8aa3b0027bd5949b06b887b722d7f6d4e0d434fd027e36bd85b4d8268f20c446"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemInHandLayerMixin.java",
+      "sha256": "1cb17a78de7ef4538b4994211c76352a824e6f65f8ba5a709f0725566e82183c"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemInHandRendererMixin.java",
+      "sha256": "8ff0974cea3876e25f4fee51d4af505eb5699949b8fe53c058bfe425bea3a298"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/LivingEntityRendererMixin.java",
+      "sha256": "835bb616838547decc2c8249b99f4f58b60a120cece1a7c09c9896829acad3bd"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/PlayerLayerRenderStateMixin.java",
+      "sha256": "262d7361c7d85bb831184f6abe3ae9ed8e16280b686b4fa35f43a283e5630658"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/PlayerRendererMixin.java",
+      "sha256": "5be264baac1c85572c9dc4372c94373b2089a08e841c397febe830e34e2ddec3"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "sha256": "7ed9afb5623adeece6f106b6b072bab8c3e5bdf0255391e02597827728ae5788"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PlayerRecallBallRenderer.kt",
+      "sha256": "d9149a45eb174efce3cd60c83959d71cd55272fc84f4c41d9c1a8f91e8bef258"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/layer/PokemonOnShoulderRenderer.kt",
+      "sha256": "bb23d2f35758b3b5626870e3bf7e7b1e92678b0687f33865cb270f007ce96e6a"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/npc/NPCRenderer.kt",
+      "sha256": "b5ae83ba9f92a9d9cf1409086754f5dfeea0b70cd399e2664dfc1bffc0980777"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/player/RecallArmAnimationTracker.kt",
+      "sha256": "bb7f8778daa7f962e684ac023b32f1e04e8904128d93a27f5d02fac14a9df5cb"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt",
+      "sha256": "a128dcc9d0b8c69f929410182a30a8eddbda4ebccc92a67fe1cc36e2890a0552"
+    },
+    {
+      "path": "common/src/main/resources/mixins.cobblemon-common.json",
+      "sha256": "58c7f06c90e36ca7872f5805832b1967b7a40b95b7327bfd61d2eb748caaad90"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java",
+      "sha256": "c7c5dfa23f3df330b469c428ca2572c0079cd84db7ccc6443aa389e8068dd64e"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint13Contracts.java",
+      "sha256": "4dec7d820580329a88c3ec01a38a68b44451829d3a38244c89fe4aa6cf3f32fe"
+    },
+    {
+      "path": "scripts/check_data_contracts.py",
+      "sha256": "cb8e646696e3a2751e5ea6908016089222c5d6144baa9bcb2f08b1016a5d3533"
+    }
+  ],
+  "preserved_paths": {
+    "common/src/main/resources/assets": true,
+    "common/src/main/resources/data": true,
+    "LICENSE": true,
+    "common/src/main/java/com/cobblemon/mod/common/util/LegacyNbt.java": true,
+    "common/src/main/java/com/cobblemon/mod/common/util/ShoulderData.java": true,
+    "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/RestorationTankRenderer.kt": true,
+    "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBuiltinItemModel.java": true
+  },
+  "deleted_paths": [],
+  "shoulder_serialized_extraction_text_unchanged": true,
+  "native_entrypoints": [
+    "CapturedLivingEntityRenderer.extractRenderState/submit",
+    "CapturedPlayerLayer.extract/submit",
+    "FirstPersonHandsAndItems.extractRenderState",
+    "FirstPersonHandsAndItemsRenderer.submitArmWithItem/submitHandsWithItems",
+    "ItemInHandLayer.submitArmWithItem",
+    "EntityHitboxDebugRenderer.showHitboxes",
+    "EntityRenderDispatcher.onResourceManagerReload"
+  ],
+  "preserved_behaviors": [
+    "Pokemon freeze-frame/sendout/beams/platforms/riding/alpha trails/scanner labels and held-item calls",
+    "NPC animations/modelScale/renderScale/name gate and held-item calls",
+    "Shoulder species/form/aspects/UUID/item data readers; chest armour tag and blacklist; native partial ticks",
+    "Recall ball poses/beam origins; suppression copied during extraction, including zero-rise endpoint",
+    "Fossil solid/breaking-overlay/OIT queues unchanged and covered by existing contracts"
+  ],
+  "remaining": [
+    "HeldItemRenderer old renderStatic/global shader-light path still fails; world/UI locator capture is not completed",
+    "Boat, habitat/lectern, GUI/deferred/ClientPlayerIcon and other Java mixins",
+    "Full Java/mixin application/JUnit and actual atlas/bake/reload/GPU/game/multiplayer/copied-world migration"
+  ],
+  "validation_scope": "Source/API and helper/native CPU contracts only; retention does not prove runtime serialization/gameplay compatibility."
+}

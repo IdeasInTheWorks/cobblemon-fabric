@@ -48,13 +48,13 @@ import com.mojang.math.Axis
 import net.minecraft.ChatFormatting
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.Font.DisplayMode
-import net.minecraft.client.renderer.LightTexture
 import com.cobblemon.mod.common.client.model.ModelBufferSource
+import com.cobblemon.mod.common.client.model.CapturedLivingEntityRenderer
+import com.cobblemon.mod.common.client.model.CapturedLabel
 import net.minecraft.client.renderer.rendertype.RenderType
 import net.minecraft.client.renderer.rendertype.RenderTypes
 import net.minecraft.client.renderer.entity.EntityRendererProvider
-import net.minecraft.client.renderer.entity.ItemRenderer
-import net.minecraft.client.renderer.entity.MobRenderer
+import net.minecraft.client.renderer.entity.LivingEntityRenderer
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
@@ -69,7 +69,7 @@ import kotlin.math.*
 
 class PokemonRenderer(
     context: EntityRendererProvider.Context
-) : MobRenderer<PokemonEntity, PosablePokemonEntityModel>(context, PosablePokemonEntityModel(), 0.5f) {
+) : CapturedLivingEntityRenderer<PokemonEntity>(context, 0.5f) {
     companion object {
         val recallBeamColour = Vector4f(1F, 0.1F, 0.1F, 1F)
         fun ease(x: Double): Double {
@@ -93,24 +93,29 @@ class PokemonRenderer(
 
     private val heldItemRenderer = HeldItemRenderer()
 
-    override fun getTextureLocation(entity: PokemonEntity): Identifier {
+    private val poserModel = PosablePokemonEntityModel()
+
+    private fun textureOf(entity: PokemonEntity): Identifier {
         return VaryingModelRepository.getTexture(entity.pokemon.species.resourceIdentifier, entity.delegate as PokemonClientDelegate)
     }
 
-    override fun render(
+    override fun capture(
         entity: PokemonEntity,
-        entityYaw: Float,
+        state: State,
         partialTicks: Float,
         poseMatrix: PoseStack,
-        buffer: ModelBufferSource,
-        packedLight: Int
+        buffer: ModelBufferSource
     ) {
+        val packedLight = state.lightCoords
+        state.texture = textureOf(entity)
+        state.modelScale = entity.pokemon.form.baseScale * entity.pokemon.effectiveScale *
+            (entity.delegate as PokemonClientDelegate).activeSendoutScale
         val clientDelegate = entity.delegate as PokemonClientDelegate
         shadowRadius = (min((entity.boundingBox.maxX - entity.boundingBox.minX), (entity.boundingBox.maxZ) - (entity.boundingBox.minZ)).toFloat() / 1.5F * (entity.delegate as PokemonClientDelegate).activeSendoutScale)/entity.scale
-        model.posableModel = VaryingModelRepository.getPoser(entity.pokemon.species.resourceIdentifier, clientDelegate)
-        model.posableModel.context = model.context
-        model.setupEntityTypeContext(entity)
-        val modelNow = model.posableModel
+        poserModel.posableModel = VaryingModelRepository.getPoser(entity.pokemon.species.resourceIdentifier, clientDelegate)
+        poserModel.posableModel.context = poserModel.context
+        poserModel.setupEntityTypeContext(entity)
+        val modelNow = poserModel.posableModel
 
         val freezeFrame = entity.entityData.get(PokemonEntity.FREEZE_FRAME)
         if (freezeFrame != -1F) {
@@ -141,16 +146,17 @@ class PokemonRenderer(
                 packedLight,
             )
             // keeps the pokemon's root on the raft
-            poseMatrix.translate(0.0, 0.25 * (entity.delegate as PokemonClientDelegate).activeSendoutScale, 0.0)
+            state.extrasOffsetY = 0.25F * clientDelegate.activeSendoutScale
+            poseMatrix.translate(0F, state.extrasOffsetY, 0F)
         }
 
         modelNow.setLayerContext(buffer, clientDelegate, VaryingModelRepository.getLayers(entity.pokemon.species.resourceIdentifier, clientDelegate))
 
 
         if (entity.passengers.isNotEmpty()) {
-            renderRiding(entity, entityYaw, partialTicks, poseMatrix, buffer, packedLight)
+            renderRiding(entity, state, partialTicks, poseMatrix, buffer, packedLight)
         } else {
-            super.render(entity, entityYaw, partialTicks, poseMatrix, buffer, packedLight)
+            captureBody(entity, state, poseMatrix, buffer, packedLight)
         }
 
         // Call rendering for alpha eye trail
@@ -165,7 +171,7 @@ class PokemonRenderer(
         modelNow.blue = 1F
         modelNow.resetLayerContext()
         if (this.shouldRenderLabel(entity)) {
-            this.renderNameTag(entity, entity.effectiveName(), poseMatrix, buffer, packedLight, partialTicks)
+            state.label = captureLabel(entity, state.distanceToCameraSq, state.extrasOffsetY)
         }
 //        Minecraft.getInstance().bufferBuilders.entityVertexConsumers.draw()
 
@@ -181,9 +187,9 @@ class PokemonRenderer(
         )
     }
 
-    fun renderRiding(
+    private fun renderRiding(
         entity: PokemonEntity,
-        entityYaw: Float,
+        state: State,
         partialTicks: Float,
         poseMatrix: PoseStack,
         buffer: ModelBufferSource,
@@ -213,7 +219,7 @@ class PokemonRenderer(
             matrix.mul(transformationMatrix)
         }
 
-        super.render(entity, entityYaw, partialTicks, poseMatrix, buffer, packedLight)
+        captureBody(entity, state, poseMatrix, buffer, packedLight)
         poseMatrix.popPose()
     }
 
@@ -301,10 +307,23 @@ class PokemonRenderer(
         }
     }
 
-    override fun scale(pEntity: PokemonEntity, pPoseStack: PoseStack, pPartialTickTime: Float) {
-        val scale = pEntity.pokemon.form.baseScale * pEntity.pokemon.effectiveScale * (pEntity.delegate as PokemonClientDelegate).activeSendoutScale
-        pPoseStack.scale(scale, scale, scale)
+    private fun captureBody(entity: PokemonEntity, state: State, pose: PoseStack, buffers: ModelBufferSource, light: Int) {
+        poserModel.young = state.isBaby
+        poserModel.riding = entity.isPassenger
+        poserModel.attackTime = entity.getSwingAnimation(state.ageInTicks - entity.tickCount)
+        poserModel.setupAnim(entity, state.walkAnimationPos, state.walkAnimationSpeed, state.ageInTicks, state.yRot, state.xRot)
+        val type = bodyRenderType(state, poserModel.renderType(state.texture)) ?: return
+        pose.pushPose()
+        try {
+            transformBody(state, pose)
+            poserModel.renderToBuffer(pose, buffers.getBuffer(type), light,
+                LivingEntityRenderer.getOverlayCoords(state, 0F), bodyColor(state))
+        } finally {
+            pose.popPose()
+        }
     }
+
+    override fun getShadowRadius(state: State): Float = super.getShadowRadius(state) * state.ageScale
 
     /**
      * Renders a beam between the Cobblemon and the target.
@@ -398,14 +417,15 @@ class PokemonRenderer(
         matrixStack.popPose()
     }
 
-    override fun getFlipDegrees(entity: PokemonEntity): Float = 0F
+    override fun getFlipDegrees(): Float = 0F
 
     // At some point vanilla does something to tha matrix.
     // We want to prevent it from rendering there and instead do it ourselves here.
-    override fun shouldShowName(entity: PokemonEntity): Boolean = false
+    override fun shouldShowName(entity: PokemonEntity, distance: Double): Boolean = false
 
     private fun shouldRenderLabel(entity: PokemonEntity): Boolean {
-        if (!super.shouldShowName(entity)) {
+        if (!super.shouldShowName(entity, entityRenderDispatcher.distanceToSqr(entity)) ||
+            !(entity.shouldShowName() || (entity.hasCustomName() && entity == entityRenderDispatcher.crosshairPickEntity))) {
             return false
         }
         if (entity.entityData.get(PokemonEntity.HIDE_LABEL)) {
@@ -419,56 +439,24 @@ class PokemonRenderer(
                 !CobblemonClient.pokedexUsageContext.scanningGuiOpen
     }
 
-    override fun renderNameTag(
-        entity: PokemonEntity,
-        text: Component,
-        matrices: PoseStack,
-        vertexConsumers: ModelBufferSource,
-        light: Int,
-        tickDelta: Float
-    ) {
-        if (entity.isInvisible) {
-            return
+    private fun captureLabel(entity: PokemonEntity, distance: Double, platformOffset: Float): CapturedLabel? {
+        if (entity.isInvisible || distance > 4096.0) return null
+        val player = Minecraft.getInstance().player ?: return null
+        val scale = min(1.5, max(0.65, distance.remap(DoubleRange(-16.0, 96.0), DoubleRange(0.0, 1.0))))
+        val sizeScale = Mth.lerp(scale.remap(DoubleRange(0.65, 1.5), DoubleRange(0.0, 1.0)), 0.5, 1.0)
+        val offsetScale = Mth.lerp(scale.remap(DoubleRange(0.65, 1.5), DoubleRange(0.0, 1.0)), 0.0, 1.0)
+        val label = resolveBaseLabel(entity)
+        if (ServerSettings.displayEntityLevelLabel && entity.labelLevel() > 0) {
+            if (ServerSettings.displayEntityNameLabel) label.append(SPACE)
+            label.append(lang("label.lv", entity.labelLevel()).setStyle(LEVEL_LABEL_STYLE))
         }
-        val player = Minecraft.getInstance().player ?: return
-        val d = this.entityRenderDispatcher.distanceToSqr(entity)
-        if (d <= 4096.0){
-            val scale = min(1.5, max(0.65, d.remap(DoubleRange(-16.0, 96.0), DoubleRange(0.0, 1.0))))
-            val sizeScale = Mth.lerp(scale.remap(DoubleRange(0.65, 1.5), DoubleRange(0.0,1.0)), 0.5, 1.0)
-            val offsetScale = Mth.lerp(scale.remap(DoubleRange(0.65, 1.5), DoubleRange(0.0,1.0)), 0.0,1.0)
-            val entityHeight = entity.boundingBox.ysize + 0.5f
-            matrices.pushPose()
-            matrices.translate(0.0, entityHeight, 0.0)
-            matrices.mulPose(this.entityRenderDispatcher.cameraOrientation())
-            matrices.translate(0.0, 0.0 + (offsetScale / 2), -(scale + offsetScale))
-            matrices.scale((0.025 * sizeScale).toFloat(), (-0.025 * sizeScale).toFloat(), (1 * sizeScale).toFloat())
-            val matrix4f = matrices.last().pose()
-            val opacity = (Minecraft.getInstance().options.getBackgroundOpacity(0.25F) * 255.0F).toInt() shl 24
-            val label = this.resolveBaseLabel(entity)
-            if (ServerSettings.displayEntityLevelLabel && entity.labelLevel() > 0) {
-                if (ServerSettings.displayEntityNameLabel) {
-                    label.append(SPACE)
-                }
-                // This a Style.EMPTY with a lot of effects set to false and color set to white, renderer inherits these from nick otherwise
-                val levelLabel = lang("label.lv", entity.labelLevel())
-                    .setStyle(LEVEL_LABEL_STYLE)
-                label.append(levelLabel)
-            }
-            var h = (-this.font.width(label) / 2).toFloat()
-            val y = 0F
-            val packedLight = LightTexture.pack(15, 15)
-            this.font.drawInBatch(label, h, y, 0x20FFFFFF, false, matrix4f, vertexConsumers, DisplayMode.SEE_THROUGH, opacity, packedLight)
-            this.font.drawInBatch(label, h, y, -1, false, matrix4f, vertexConsumers, DisplayMode.NORMAL, 0, packedLight)
-
-            if (CobblemonClient.clientPlayerData.showChallengeLabel && entity.canBattle(player)) {
-                val sendOutBinding = PartySendBinding.boundKey().displayName
-                val battlePrompt = lang("challenge_label", sendOutBinding)
-                h = (-this.font.width(battlePrompt) / 2).toFloat()
-                this.font.drawInBatch(battlePrompt, h, y + 10, 0x20FFFFFF, false, matrix4f, vertexConsumers, DisplayMode.SEE_THROUGH, opacity, packedLight)
-                this.font.drawInBatch(battlePrompt, h, y + 10, -1, false, matrix4f, vertexConsumers, DisplayMode.NORMAL, 0, packedLight)
-            }
-            matrices.popPose()
+        val lines = mutableListOf(CapturedLabel.Line(label, (-font.width(label) / 2).toFloat(), 0F))
+        if (CobblemonClient.clientPlayerData.showChallengeLabel && entity.canBattle(player)) {
+            val prompt = lang("challenge_label", PartySendBinding.boundKey().displayName)
+            lines += CapturedLabel.Line(prompt, (-font.width(prompt) / 2).toFloat(), 10F)
         }
+        val opacity = (Minecraft.getInstance().options.getBackgroundOpacity(0.25F) * 255F).toInt() shl 24
+        return CapturedLabel(entity.boundingBox.ysize + 0.5 + platformOffset, scale, sizeScale, offsetScale, opacity, lines)
     }
 
     private fun resolveBaseLabel(entity: PokemonEntity): MutableComponent {
@@ -512,7 +500,7 @@ class PokemonRenderer(
         ballContext.put(RenderContext.POSABLE_STATE, state)
         model.applyAnimations(null, state, 0F, 0F, 0F, 0F, 0F)
 //        model.animateModel(null, 0f, 0F, 0F)
-        val buffer = ItemRenderer.getFoilBufferDirect(buff, RenderTypes.entityCutoutCull(texture), false, false)
+        val buffer = buff.getBuffer(RenderTypes.entityCutoutCull(texture))
 //        matrixStack.scale(scale, scale, scale)
         model.render(ballContext, matrixStack, buffer, packedLight, OverlayTexture.NO_OVERLAY, -0x1)
         model.green = 1f
@@ -535,7 +523,7 @@ class PokemonRenderer(
         matrixStack.rotate(Axis.ZP.rotationDegrees(180f))
         matrixStack.rotateAround(Axis.YP.rotationDegrees(entity.entityData.get(SPAWN_DIRECTION)), 0.0f, 0f, 0.0f)
         matrixStack.scale(scale, scale, scale)
-        val buffer = ItemRenderer.getFoilBufferDirect(buff, RenderTypes.entityCutoutCull(textureResource), false, false)
+        val buffer = buff.getBuffer(RenderTypes.entityCutoutCull(textureResource))
         model.render(matrixStack, buffer, packedLight, OverlayTexture.NO_OVERLAY, -0x1)
 
         matrixStack.popPose()

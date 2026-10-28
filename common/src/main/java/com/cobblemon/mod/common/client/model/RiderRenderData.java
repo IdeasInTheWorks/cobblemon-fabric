@@ -17,10 +17,15 @@ public final class RiderRenderData {
     private final RiderPose pose;
     private final Matrix4f seat;
     private final float recall;
+    private final boolean recalling;
     public RiderRenderData(RiderPose pose, Matrix4fc seat, float recall) {
-        this.pose = pose; this.seat = new Matrix4f(seat); this.recall = recall;
+        this(pose, seat, recall, recall > 0F);
+    }
+    public RiderRenderData(RiderPose pose, Matrix4fc seat, float recall, boolean recalling) {
+        this.pose = pose; this.seat = new Matrix4f(seat); this.recall = recall; this.recalling = recalling;
     }
     public RiderPose pose() { return pose; }
     public Matrix4f seat() { return new Matrix4f(seat); }
+    public boolean recalling() { return recalling; }
     public float recall() { return recall; }
 }

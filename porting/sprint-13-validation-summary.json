@@ -1,0 +1,14 @@
+{
+  "normal_validation_log": "porting/logs/sprint-13-validation.txt",
+  "access_widener_missing": 0,
+  "access_widener_validator_retained": true,
+  "licence_headers": "passed",
+  "focused_report": "porting/logs/sprint-13-data-contracts-05.json",
+  "core_checks": 2818,
+  "fabric_checks": 19,
+  "legacy_cases": 810,
+  "legacy_checks": 1620,
+  "tool_tests": 20,
+  "game_tests_executed": 0,
+  "mixin_application_tested": false
+}

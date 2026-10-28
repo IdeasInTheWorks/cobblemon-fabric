@@ -534,15 +534,12 @@ object CobblemonClient {
         rideControlsOverlay.render(context, partialDeltaTicks)
     }
 
-    @Suppress("UNCHECKED_CAST")
-    fun onAddLayer(skinMap: Map<PlayerSkin.Model, EntityRenderer<out Player>>?) {
-        var renderer: LivingEntityRenderer<Player, PlayerModel<Player>>? =
-            skinMap?.get(PlayerSkin.Model.WIDE) as LivingEntityRenderer<Player, PlayerModel<Player>>
-        renderer?.addLayer(PokemonOnShoulderRenderer(renderer))
-        renderer?.addLayer(PlayerRecallBallRenderer(renderer))
-        renderer = skinMap[PlayerSkin.Model.SLIM] as LivingEntityRenderer<Player, PlayerModel<Player>>?
-        renderer?.addLayer(PokemonOnShoulderRenderer(renderer))
-        renderer?.addLayer(PlayerRecallBallRenderer(renderer))
+    fun onAddLayer(skinMap: Map<net.minecraft.world.entity.player.PlayerModelType,
+        net.minecraft.client.renderer.entity.player.AvatarRenderer<net.minecraft.client.player.AbstractClientPlayer>>) {
+        skinMap.values.forEach { renderer ->
+            renderer.addLayer(PokemonOnShoulderRenderer(renderer))
+            renderer.addLayer(PlayerRecallBallRenderer(renderer))
+        }
     }
 
     private fun registerMenuScreens() {

@@ -45,11 +45,16 @@ import net.minecraft.nbt.Tag
 import net.minecraft.resources.Identifier
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.ArmorItem
+import net.minecraft.tags.ItemTags
+import net.minecraft.util.profiling.Profiler
+import net.minecraft.client.player.AbstractClientPlayer
+import net.minecraft.client.renderer.entity.state.AvatarRenderState
+import com.cobblemon.mod.common.client.model.CapturedPlayerLayer
+import org.joml.Matrix4fc
 import net.minecraft.world.item.ItemStack
 
-class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent<T, PlayerModel<T>>) :
-    RenderLayer<T, PlayerModel<T>>(renderLayerParent) {
+class PokemonOnShoulderRenderer(renderLayerParent: RenderLayerParent<AvatarRenderState, PlayerModel>) :
+    CapturedPlayerLayer(renderLayerParent, "cobblemon:shoulders") {
 
     val context = RenderContext().also {
         it.put(RenderContext.RENDER_STATE, RenderContext.RenderState.WORLD)
@@ -62,47 +67,13 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
     var rightState = FloatingState()
     var lastRenderedRight: ShoulderData? = null
 
-    override fun render(
-        matrixStack: PoseStack,
-        buffer: ModelBufferSource,
-        packedLight: Int,
-        livingEntity: T,
-        limbSwing: Float,
-        limbSwingAmount: Float,
-        partialTicks: Float,
-        ageInTicks: Float,
-        netHeadYaw: Float,
-        headPitch: Float
-    ) {
-        // It's unclear why Minecraft's providing a partial ticks based on 60FPS regardless of the real FPS.
-        // Whatever - the delta manager works correctly.
-        val realPartialTicks = Minecraft.getInstance().timer.realtimeDeltaTicks
-        this.render(
-            matrixStack,
-            buffer,
-            packedLight,
-            livingEntity,
-            limbSwing,
-            limbSwingAmount,
-            realPartialTicks,
-            ageInTicks,
-            netHeadYaw,
-            headPitch,
-            true
-        )
-        this.render(
-            matrixStack,
-            buffer,
-            packedLight,
-            livingEntity,
-            limbSwing,
-            limbSwingAmount,
-            realPartialTicks,
-            ageInTicks,
-            netHeadYaw,
-            headPitch,
-            false
-        )
+    override fun capture(player: AbstractClientPlayer, renderState: AvatarRenderState, partialTicks: Float,
+                         matrixStack: PoseStack, buffer: ModelBufferSource, worldBody: Matrix4fc) {
+        for (left in listOf(true, false)) {
+            render(matrixStack, buffer, renderState.lightCoords, player,
+                renderState.walkAnimationPos, renderState.walkAnimationSpeed, partialTicks,
+                renderState.ageInTicks, renderState.yRot, renderState.xRot, left, renderState)
+        }
     }
 
     fun configureState(
@@ -141,24 +112,25 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
         matrixStack: PoseStack,
         buffer: ModelBufferSource,
         packedLight: Int,
-        livingEntity: T,
+        livingEntity: AbstractClientPlayer,
         limbSwing: Float,
         limbSwingAmount: Float,
         partialTicks: Float,
         ageInTicks: Float,
         netHeadYaw: Float,
         headPitch: Float,
-        pLeftShoulder: Boolean
+        pLeftShoulder: Boolean,
+        renderState: AvatarRenderState
     ) {
         val compoundTag = com.cobblemon.mod.common.util.ShoulderData.get(livingEntity, pLeftShoulder)
         if (compoundTag.isPokemonEntity()) {
-            livingEntity.level().profiler.push("shoulder_render_".plus(if (pLeftShoulder) "left" else "right"))
+            Profiler.get().push("shoulder_render_".plus(if (pLeftShoulder) "left" else "right"))
             val cache = playerCache.getOrPut(livingEntity.uuid) { ShoulderCache() }
             val shoulderData = shoulderDataFrom(compoundTag)
             if (pLeftShoulder) cache.lastKnownLeft = shoulderData else cache.lastKnownRight = shoulderData
 
             if (shoulderData == null) {
-                // Nothing to do
+                Profiler.get().pop()
                 return
             }
 
@@ -174,7 +146,7 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
             val heightOffset = -1.5 * scale
             val widthOffset = width / 2 - 0.7
             val chestItem = livingEntity.getItemBySlot(EquipmentSlot.CHEST)
-            val armorHeightOffset = if (chestItem.item is ArmorItem && !isArmorOffsetBlacklisted(chestItem)) {
+            val armorHeightOffset = if (chestItem.`is`(ItemTags.CHEST_ARMOR) && !isArmorOffsetBlacklisted(chestItem)) {
                 ARMOR_HEIGHT_OFFSET
             } else {
                 0F
@@ -211,7 +183,7 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
                     )
                 )
             )
-            val i = LivingEntityRenderer.getOverlayCoords(livingEntity, 0.0f)
+            val i = LivingEntityRenderer.getOverlayCoords(renderState, 0.0f)
 
             model.applyAnimations(
                 entity = null,
@@ -241,7 +213,7 @@ class PokemonOnShoulderRenderer<T : Player>(renderLayerParent: RenderLayerParent
 
             model.setDefault()
             matrixStack.popPose()
-            livingEntity.level().profiler.pop()
+            Profiler.get().pop()
         } else {
             val entry = playerCache.getOrPut(livingEntity.uuid) { ShoulderCache() }
             if (pLeftShoulder) entry.lastKnownLeft = null else entry.lastKnownRight = null

@@ -1,0 +1,272 @@
+{
+  "cwd": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric",
+  "gradle_environment": {
+    "GRADLE_USER_HOME": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric/.local-tools/gradle-home"
+  },
+  "host_network_required_for_gradle": true,
+  "persistent_terminal_required_after_clients01_02_terminated": true,
+  "commands": [
+    {
+      "log": "porting/logs/sprint-13-baseline-compile-02.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 1,
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+    },
+    {
+      "log": "porting/logs/sprint-13-baseline-compile.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 1,
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+    },
+    {
+      "log": "porting/logs/sprint-13-full-build-02.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        ":common:compileJava",
+        ":common:test",
+        ":fabric:build",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 1,
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+    },
+    {
+      "log": "porting/logs/sprint-13-full-build.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        ":common:compileJava",
+        ":common:test",
+        ":fabric:build",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 1,
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+    },
+    {
+      "log": "porting/logs/sprint-13-renderers-compile-01.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 143,
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+    },
+    {
+      "log": "porting/logs/sprint-13-renderers-compile-02.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 143,
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+    },
+    {
+      "log": "porting/logs/sprint-13-renderers-compile-03.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 1,
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+    },
+    {
+      "log": "porting/logs/sprint-13-renderers-compile-04.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":common:compileKotlin",
+        "-Pkotlin.incremental=false",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 1,
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+    },
+    {
+      "log": "porting/logs/sprint-13-data-contracts-01.json",
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--legacy-game-jar",
+        ".local-tools/minecraft-1.21.1-client.jar",
+        "--legacy-version-json",
+        ".local-tools/minecraft-1.21.1-version.json",
+        "--report",
+        "porting/logs/sprint-13-data-contracts-01.json"
+      ],
+      "passed": false,
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+    },
+    {
+      "log": "porting/logs/sprint-13-data-contracts-02.json",
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--legacy-game-jar",
+        ".local-tools/minecraft-1.21.1-client.jar",
+        "--legacy-version-json",
+        ".local-tools/minecraft-1.21.1-version.json",
+        "--report",
+        "porting/logs/sprint-13-data-contracts-02.json"
+      ],
+      "passed": true,
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+    },
+    {
+      "log": "porting/logs/sprint-13-data-contracts-03.json",
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--legacy-game-jar",
+        ".local-tools/minecraft-1.21.1-client.jar",
+        "--legacy-version-json",
+        ".local-tools/minecraft-1.21.1-version.json",
+        "--report",
+        "porting/logs/sprint-13-data-contracts-03.json"
+      ],
+      "passed": true,
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+    },
+    {
+      "log": "porting/logs/sprint-13-data-contracts-04.json",
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--legacy-game-jar",
+        ".local-tools/minecraft-1.21.1-client.jar",
+        "--legacy-version-json",
+        ".local-tools/minecraft-1.21.1-version.json",
+        "--report",
+        "porting/logs/sprint-13-data-contracts-04.json"
+      ],
+      "passed": true,
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+    },
+    {
+      "log": "porting/logs/sprint-13-data-contracts-05.json",
+      "argv": [
+        "python3",
+        "scripts/check_data_contracts.py",
+        "--game-jar",
+        ".local-tools/minecraft-26.3-client.jar",
+        "--gradle-cache",
+        ".local-tools/gradle-home",
+        "--javac",
+        "/usr/bin/javac",
+        "--fabric-api-jar",
+        ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+        "--legacy-game-jar",
+        ".local-tools/minecraft-1.21.1-client.jar",
+        "--legacy-version-json",
+        ".local-tools/minecraft-1.21.1-version.json",
+        "--report",
+        "porting/logs/sprint-13-data-contracts-05.json"
+      ],
+      "passed": true,
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+    },
+    {
+      "log": "porting/logs/sprint-13-validation.txt",
+      "argv": [
+        "bash",
+        "./gradlew",
+        ":fabric:validateAccessWidener",
+        ":common:checkLicenses",
+        ":fabric:checkLicenses",
+        "--continue",
+        "--stacktrace",
+        "--console=plain"
+      ],
+      "exit": 0
+    },
+    {
+      "log": "porting/logs/sprint-13-tool-tests.txt",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit": 0
+    }
+  ]
+}

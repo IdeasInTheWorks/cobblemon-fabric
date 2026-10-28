@@ -1,3 +1,9 @@
+# S13 Red01 implementation checkpoint (2026-10-28)
+
+Read the current S13 section in RESUME.md, RED01_AGENT_PROMPT.md, sprint-13-summary.json and compiler/validation/source audits first. The S12 and older handoffs below are historical. Native Pokémon/NPC bodies/labels, shoulder/recall layers, hand/reload/locator-debug mixins are migrated in source; final Kotlin still fails4,215/522. AW0/headers,2,818 core+19 Fabric contracts,810 legacy cases/1,620 checks and20 tooling tests pass. These are contracts, not actual game/mixin/GPU tests. No installable JAR.
+
+Next: native held-item locator/front-light path (still failing), boats, habitat/lectern, GUI/deferred/ClientPlayerIcon and other mixins. Preserve fossil/OIT, pokemon_model and R013/R015 original data/runtime requirements. Accepted12/44 unchanged; whole remaining512/1,024/2,056 engineering person-hours, Low confidence, actuals unmeasured. Publish and release partial S13 only after a durable archive; verify live closure and update the same Sheet. Never reuse a closed lease.
+
 # S12 Red01 published implementation checkpoint (2026-10-27)
 
 Red01 now resolves locally to codex-gpu01 at 10.0.80.2. Java25/GitHub IdeasInTheWorks and a fresh S12 lease/integration resource were verified. Source milestone `137e6b67bd5bc516289da24559db78da3641b935` is published through the normal push hook. Read the S12 section in [RESUME.md](RESUME.md), sprint-12-summary.json, exact command ledger and current native Sheet first. The older documentation handoff below is historical.

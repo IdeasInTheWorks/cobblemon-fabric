@@ -53,6 +53,27 @@ public final class ModelBufferSource {
             submit(pose, collector, null, null);
         }
 
+        /** Custom geometry needs an explicit outline submission; native model submissions do this internally. */
+        public void submitWithOutline(PoseStack pose, OrderedSubmitNodeCollector collector, int outlineColor) {
+            for (var batch : batches) {
+                if (!batch.type().isOutline() || outlineColor == 0) {
+                    collector.submitCustomGeometry(pose, batch.type(), (transform, consumer) -> {
+                        for (var vertex : batch.vertices()) vertex.replay(transform, consumer);
+                    });
+                }
+                if (outlineColor != 0) {
+                    var outline = batch.type().isOutline() ? java.util.Optional.of(batch.type()) : batch.type().outline();
+                    outline.ifPresent(type -> collector.submitCustomGeometry(pose, type, (transform, consumer) -> {
+                        for (var vertex : batch.vertices()) {
+                            vertex.replay(transform, consumer);
+                            consumer.setColor(outlineColor);
+                        }
+                    }));
+                }
+            }
+            for (var item : items) item.submit(pose, collector, outlineColor);
+        }
+
         public void submit(PoseStack pose, OrderedSubmitNodeCollector collector,
                            net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay crumbling,
                            Integer defaultLight) {

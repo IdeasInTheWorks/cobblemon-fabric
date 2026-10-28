@@ -1,5 +1,11 @@
 # Changelog
 
+## S13 - Extract Pokemon/NPC bodies and player render layers (2026-10-28)
+
+Native living-state/geometry capture retains animated models, transforms, transparency, outlines, Pokemon effects/platforms/riding, NPC scale and copied custom label text. Native shoulder/recall layers, first/third-person hand suppression and locator-debug/reload mixins consume extracted snapshots/flags. Native chest-armour tags retain the armour offset/blacklist and exclude elytra. Serialized shoulder readers, assets/data, fossil/OIT and pokemon_model paths remain.
+
+Final Kotlin4,215/522 (82 fewer,1.9%; cascades); AW0/headers pass;2,818 core+19 Fabric contracts,810 legacy cases/1,620 checks,20 tooling pass. No full Java/mixin/JUnit/package/game/GPU validation or installable JAR. Shared held-item/front-light, boat/block/GUI/deferred and other mixin work remains. See porting/RESUME.md and all S13 failed/intermediate logs.
+
 ## S12 - Reconcile AW13 and extract native renderer snapshots (2026-10-27)
 
 All 13 access-widener misses are reconciled with callers; normal validation/headers pass. Native container slots, trade-set augmentation, recipe/text/block/atlas/frustum APIs and rider animation replace removed members. Native block/entity/special-item/particle extraction captures copied geometry/items/poses before submission; fossil decal routing uses native phases and OIT materials. Assets, serialized state names and legacy data helpers are retained. The container removal helper also corrects its prior amount/slot accounting bug.

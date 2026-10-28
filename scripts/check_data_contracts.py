@@ -53,7 +53,14 @@ def main():
     out = root / "build/data-contracts"
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
-    sources = [root / "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedEntityRenderer.java",
+    sources = [root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint13Contracts.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedPlayerLayer.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/PlayerLayerRenderStateAccess.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/FirstPersonRenderData.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/FirstPersonRenderStateAccess.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedLivingEntityRenderer.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedLabel.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedEntityRenderer.java",
                root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint12Contracts.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBuiltinItemModel.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/RiderPose.java",

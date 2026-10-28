@@ -17,7 +17,6 @@ import java.util.UUID
 import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
 import net.minecraft.client.renderer.rendertype.RenderTypes
-import net.minecraft.client.renderer.entity.ItemRenderer
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.util.Mth
 import net.minecraft.world.phys.Vec3
@@ -66,7 +65,7 @@ object RecallArmAnimationTracker {
         ballContext.put(RenderContext.ASPECTS, state.aspects)
         ballContext.put(RenderContext.POSABLE_STATE, state)
         model.applyAnimations(null, state, 0F, 0F, 0F, 0F, 0F)
-        val consumer = ItemRenderer.getFoilBufferDirect(buffer, RenderTypes.entityCutoutCull(texture), false, false)
+        val consumer = buffer.getBuffer(RenderTypes.entityCutoutCull(texture))
         model.render(ballContext, poseStack, consumer, packedLight, OverlayTexture.NO_OVERLAY, -0x1)
         model.resetLayerContext()
     }

@@ -20,29 +20,23 @@ import net.minecraft.world.entity.HumanoidArm
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.phys.Vec3
 import org.joml.Vector3f
+import org.joml.Matrix4fc
+import net.minecraft.client.player.AbstractClientPlayer
+import net.minecraft.client.renderer.entity.state.AvatarRenderState
+import com.cobblemon.mod.common.client.model.CapturedPlayerLayer
 
-class PlayerRecallBallRenderer<T : Player>(
-    renderLayerParent: RenderLayerParent<T, PlayerModel<T>>
-) : RenderLayer<T, PlayerModel<T>>(renderLayerParent) {
-
-    override fun render(
-        matrixStack: PoseStack,
-        buffer: ModelBufferSource,
-        packedLight: Int,
-        player: T,
-        limbSwing: Float,
-        limbSwingAmount: Float,
-        partialTicks: Float,
-        ageInTicks: Float,
-        netHeadYaw: Float,
-        headPitch: Float
-    ) {
+class PlayerRecallBallRenderer(
+    parent: RenderLayerParent<AvatarRenderState, PlayerModel>
+) : CapturedPlayerLayer(parent, "cobblemon:recall") {
+    override fun capture(player: AbstractClientPlayer, state: AvatarRenderState, partialTicks: Float,
+                         matrixStack: PoseStack, buffer: ModelBufferSource, worldBody: Matrix4fc) {
+        val packedLight = state.lightCoords
         val anim = RecallArmAnimationTracker.get(player.uuid) ?: return
         val mc = Minecraft.getInstance()
         if (player === mc.player && mc.options.cameraType.isFirstPerson) return
 
         matrixStack.pushPose()
-        getParentModel().translateToHand(HumanoidArm.RIGHT, matrixStack)
+        getParentModel().translateToHand(state, HumanoidArm.RIGHT, matrixStack)
         matrixStack.rotate(Axis.XP.rotationDegrees(-90F))
         matrixStack.rotate(Axis.YP.rotationDegrees(180F))
         matrixStack.translate(0.0625, 0.125, -0.625)
@@ -57,7 +51,7 @@ class PlayerRecallBallRenderer<T : Player>(
             matrixStack.mulPose(beam.matrix)
             val offset = matrixStack.last().pose().transformPosition(Vector3f(0F, 0.18F, -0.3F))
             matrixStack.popPose()
-            anim.beamOrigin = mc.gameRenderer.mainCamera.position.add(Vec3(offset))
+            anim.beamOrigin = Vec3(worldBody.transformPosition(offset))
         }
         matrixStack.popPose()
     }

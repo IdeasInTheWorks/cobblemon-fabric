@@ -32,7 +32,7 @@ public abstract class LivingEntityRendererMixin {
                 ? MountedLivingEntityRenderer.INSTANCE.capture(entity, pokemon, partialTick, state.bodyRot) : new Matrix4f();
         float recall = entity instanceof AbstractClientPlayer && !(entity.getVehicle() instanceof PokemonEntity)
                 ? RecallArmAnimationTracker.INSTANCE.raiseFactor(entity.getUUID()) : 0F;
-        ((RiderRenderStateAccess)state).cobblemon$setRiderData(new RiderRenderData(RiderPose.EMPTY, seat, recall));
+        ((RiderRenderStateAccess)state).cobblemon$setRiderData(new RiderRenderData(RiderPose.EMPTY, seat, recall, entity instanceof AbstractClientPlayer && RecallArmAnimationTracker.INSTANCE.isRecalling(entity.getUUID())));
     }
 
     @Inject(method = "setupRotations(Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;FF)V", at = @At("HEAD"), require = 1)
