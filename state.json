@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 81,
+  "generation": 82,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -415,8 +415,8 @@
       "epoch": 1,
       "status": "active",
       "acquired_at": "2026-10-28T02:00:55Z",
-      "heartbeat_at": "2026-10-28T02:19:02Z",
-      "expires_at": "2026-10-28T03:49:02Z",
+      "heartbeat_at": "2026-10-28T02:29:01Z",
+      "expires_at": "2026-10-28T03:59:01Z",
       "minutes": 90,
       "checkpoint": ""
     }
@@ -1225,6 +1225,16 @@
     {
       "generation": 81,
       "at": "2026-10-28T02:19:02Z",
+      "kind": "heartbeat",
+      "work_id": "S14-R023-NATIVE",
+      "owner": "codex-red01-s14-20261028-01a17ebd",
+      "lease_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
+      "epoch": 1,
+      "checkpoint": ""
+    },
+    {
+      "generation": 82,
+      "at": "2026-10-28T02:29:01Z",
       "kind": "heartbeat",
       "work_id": "S14-R023-NATIVE",
       "owner": "codex-red01-s14-20261028-01a17ebd",
