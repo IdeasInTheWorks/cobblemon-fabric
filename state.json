@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 78,
+  "generation": 79,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -389,6 +389,36 @@
       "minutes": 90,
       "checkpoint": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680 published archive; source940ced7b1e; partial R023 native living/player/hand/debug migration. Kotlin4215/522 local and CI40611669671 fail; AW0,2818core+19Fabric,810legacy/1620checks,20tools pass. No fullJava/mixins/JUnit/package/game/GPU/JAR. Next held-item/front-light, boat/block/GUI/deferred/mixins; see porting/RESUME.md.",
       "closed_at": "2026-10-28T00:58:39Z"
+    },
+    "S14-R023-NATIVE": {
+      "work_id": "S14-R023-NATIVE",
+      "owner": "codex-red01-s14-20261028-01a17ebd",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "common/src/main/java",
+        "common/src/main/kotlin/com/cobblemon/mod/common/client",
+        "common/src/main/resources/cobblemon-common.accesswidener",
+        "common/src/main/resources/mixins.cobblemon-common.json",
+        "common/src/test",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
+      "operation_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-28T02:00:55Z",
+      "heartbeat_at": "2026-10-28T02:00:55Z",
+      "expires_at": "2026-10-28T03:30:55Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -1171,6 +1201,16 @@
       "lease_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
       "epoch": 1,
       "checkpoint": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680 published archive; source940ced7b1e; partial R023 native living/player/hand/debug migration. Kotlin4215/522 local and CI40611669671 fail; AW0,2818core+19Fabric,810legacy/1620checks,20tools pass. No fullJava/mixins/JUnit/package/game/GPU/JAR. Next held-item/front-light, boat/block/GUI/deferred/mixins; see porting/RESUME.md."
+    },
+    {
+      "generation": 79,
+      "at": "2026-10-28T02:00:55Z",
+      "kind": "acquire",
+      "work_id": "S14-R023-NATIVE",
+      "owner": "codex-red01-s14-20261028-01a17ebd",
+      "lease_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
