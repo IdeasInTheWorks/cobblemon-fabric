@@ -30,6 +30,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(AvatarRenderer.class)
 public abstract class PlayerRendererMixin {
+    @Inject(method = "submitNameDisplay(Lnet/minecraft/client/renderer/entity/state/AvatarRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V", at = @At("TAIL"), require = 1)
+    private void cobblemon$submitIcon(AvatarRenderState state, PoseStack pose, net.minecraft.client.renderer.SubmitNodeCollector collector,
+            net.minecraft.client.renderer.state.level.CameraRenderState camera, CallbackInfo ci) {
+        ((PlayerLayerRenderStateAccess)state).cobblemon$layerSnapshots()
+                .getOrDefault("cobblemon:icon", ModelBufferSource.Snapshot.EMPTY).submit(pose, collector);
+    }
+
     @Shadow @Final protected List<RenderLayer<AvatarRenderState, PlayerModel>> layers;
     @Shadow protected abstract void setupRotations(AvatarRenderState state, PoseStack pose, float yaw, float scale);
     @Shadow protected abstract void scale(AvatarRenderState state, PoseStack pose);
@@ -62,6 +69,7 @@ public abstract class PlayerRendererMixin {
         worldBody.translate(0F, -1.501F, 0F);
         for (var layer : layers) if (layer instanceof CapturedPlayerLayer captured)
             captured.extract(player, state, partialTick, worldBody.last().pose());
-        ClientPlayerIcon.Companion.onRenderPlayer(player);
+        ((PlayerLayerRenderStateAccess)state).cobblemon$layerSnapshots().put("cobblemon:icon",
+                ClientPlayerIcon.Companion.onRenderPlayer(player, partialTick, ((AvatarRenderer<?>)(Object)this).getRenderOffset(state)));
     }
 }

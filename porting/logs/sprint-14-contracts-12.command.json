@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "python3",
+    "scripts/check_data_contracts.py",
+    "--game-jar",
+    ".local-tools/minecraft-26.3-client.jar",
+    "--gradle-cache",
+    ".local-tools/gradle-home",
+    "--javac",
+    "/usr/bin/javac",
+    "--fabric-api-jar",
+    ".local-tools/gradle-home/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-api/0.165.0+26.3/8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2/fabric-api-0.165.0+26.3.jar",
+    "--legacy-game-jar",
+    ".local-tools/minecraft-1.21.1-client.jar",
+    "--legacy-version-json",
+    ".local-tools/minecraft-1.21.1-version.json",
+    "--report",
+    "porting/logs/sprint-14-contracts-12.json"
+  ],
+  "cwd": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric",
+  "start_utc": "2026-10-28T02:38:07.490186+00:00",
+  "GRADLE_USER_HOME": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric/.local-tools/gradle-home",
+  "head": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680",
+  "exit": 0,
+  "end_utc": "2026-10-28T02:38:24.276184+00:00"
+}

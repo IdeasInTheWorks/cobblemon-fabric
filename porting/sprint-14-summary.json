@@ -1,0 +1,91 @@
+{
+  "sprint": "S14",
+  "recorded_utc": "2026-10-28T02:41:51.590026+00:00",
+  "work_id": "S14-R023-NATIVE",
+  "owner": "codex-red01-s14-20261028-01a17ebd",
+  "lease_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
+  "baseline": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680",
+  "code_commit": null,
+  "outcome": "Partial R023 native world/item/scene/camera migration; no installable JAR or gameplay validation.",
+  "compilation": {
+    "baseline": [
+      4215,
+      522
+    ],
+    "final": [
+      4077,
+      510
+    ],
+    "fewer_lines": 138,
+    "reduction_percent": 3.2740213523131674,
+    "principal_renderer_files_with_zero_diagnostics": [
+      "HeldItemRenderer",
+      "CobblemonBoatRenderer",
+      "HabitatBlockRenderer",
+      "LecternBlockEntityRenderer",
+      "ClientPlayerIcon",
+      "AlphaEyeRenderer",
+      "MountedCameraRenderer"
+    ],
+    "caveat": "Kotlin cascades; full Java/mixins/JUnit/package blocked."
+  },
+  "checks": {
+    "AW_missing": 0,
+    "licences": "passed",
+    "core_contracts": 2960,
+    "fabric_contracts": 19,
+    "legacy_cases": 810,
+    "legacy_checks": 1620,
+    "tool_tests": 20,
+    "actual_game_tests": 0,
+    "actual_gpu_tests": 0
+  },
+  "acceptance": {
+    "done": 12,
+    "total": 44,
+    "remaining": 32,
+    "percent": 27.27272727272727,
+    "basis": "Original acceptance, not diagnostic reduction; R013/R015/R022/R023 remain open."
+  },
+  "remaining_person_hours": {
+    "R022": [
+      18,
+      36,
+      72
+    ],
+    "R023": [
+      20,
+      40,
+      80
+    ],
+    "whole": [
+      508,
+      1016,
+      2040
+    ],
+    "confidence": "Low",
+    "actuals": null,
+    "basis": "Conservative R023 decrement4/8/16 for remaining world/item entrypoints and camera hooks; GUI/native Java startup and actual validation remain. No calendar ETA inferred from diagnostics."
+  },
+  "failures_retained": [
+    "02 camera getter compile failure",
+    "04 fixture native waterMask requires Minecraft graphics services",
+    "05 native Lighting std140 size mismatch",
+    "06 native sortInto consumes phase queues; shared see-through transfer also corrected",
+    "07 fixture assumed CustomFeatureRenderer.Submit implements TranslucentSubmit"
+  ],
+  "contracts_scope": "Production Java helper/native CPU/queue/layout/codec contracts. Null renderer services and substitute water-mask material isolate boat queue tests; no native water-mask service, mixin bootstrap, actual atlas/bake/reload/GPU or game validation.",
+  "next": [
+    "Migrate GUI shared drawing/2D poses/native GuiGraphicsExtractor and picture-in-picture model widgets",
+    "Migrate remaining screens/widgets/input and Java mixins; fix remaining common/Fabric APIs",
+    "Run full Java/JUnit/package then actual client/server/GPU/atlas/reload/game/multiplayer and copied-world R013/R015 acceptance"
+  ],
+  "publication": {
+    "source": "pending normal hooked push",
+    "archive": "pending after source CI",
+    "claim": "Release partial work only after durable published archive and verify authoritative closure/closed-lease refusal."
+  },
+  "contracts_report": "porting/logs/sprint-14-contracts-13.json",
+  "final_build_log": "porting/logs/sprint-14-full-build-04.txt",
+  "source_files_changed": 36
+}

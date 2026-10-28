@@ -30,7 +30,7 @@ public final class NativeBuiltinItemModel {
         var frozenTransform = new org.joml.Matrix4f(transform);
         return (output, stack, resolver, display, level, owner, seed) -> {
             var snapshot = capture.capture(stack.copy(), display);
-            if (snapshot.batches().isEmpty() && snapshot.items().isEmpty()) return;
+            if (snapshot.batches().isEmpty() && snapshot.items().isEmpty() && snapshot.scenes().isEmpty()) return;
             output.appendModelIdentityElement(snapshot);
             output.setAnimated();
             var layer = output.newLayer();

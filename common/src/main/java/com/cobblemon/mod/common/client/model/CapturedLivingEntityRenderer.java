@@ -56,6 +56,7 @@ public abstract class CapturedLivingEntityRenderer<T extends LivingEntity>
     }
     @Override public final void extractRenderState(T entity, State state, float partialTick) {
         super.extractRenderState(entity, state, partialTick);
+        state.lightCoords = NativeSceneCapture.light(state.lightCoords);
         state.geometry = ModelBufferSource.Snapshot.EMPTY;
         state.texture = null;
         state.label = null;

@@ -33,6 +33,8 @@ public abstract class ItemRendererMixin {
             target = "Lnet/minecraft/world/item/ItemStack;get(Lnet/minecraft/core/component/DataComponentType;)Ljava/lang/Object;"), require = 1)
     private Object cobblemon$selectItemModel(Object original, ItemStackRenderState state, ItemStack stack,
             ItemDisplayContext display, Level level, ItemOwner owner, int seed) {
+        var requested = com.cobblemon.mod.common.client.model.NativeItemCapture.requestedModel(stack);
+        if (requested != null) return requested;
         Identifier model = null;
         var entity = owner == null ? null : owner.asLivingEntity();
         boolean flat = display == ItemDisplayContext.GUI || display == ItemDisplayContext.FIXED;

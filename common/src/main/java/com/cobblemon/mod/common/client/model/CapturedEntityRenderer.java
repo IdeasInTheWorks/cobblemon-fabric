@@ -27,6 +27,7 @@ public abstract class CapturedEntityRenderer<T extends Entity> extends EntityRen
     @Override public final State createRenderState() { return new State(); }
     @Override public final void extractRenderState(T entity, State state, float partialTick) {
         super.extractRenderState(entity, state, partialTick);
+        state.lightCoords = NativeSceneCapture.light(state.lightCoords);
         state.geometry = ModelBufferSource.Snapshot.EMPTY;
         var buffers = new ModelBufferSource();
         capture(entity, Mth.rotLerp(partialTick, entity.yRotO, entity.getYRot()), partialTick,

@@ -62,13 +62,13 @@ object MountedCameraRenderer {
         val delegate = vehicle.delegate as? PokemonClientDelegate ?: return null
 
         val entityPos = Vec3(
-            Mth.lerp(instance.partialTickTime.toDouble(), vehicle.xOld, vehicle.x),
-            Mth.lerp(instance.partialTickTime.toDouble(), vehicle.yOld, vehicle.y),
-            Mth.lerp(instance.partialTickTime.toDouble(), vehicle.zOld, vehicle.z)
+            Mth.lerp(instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker).toDouble(), vehicle.xOld, vehicle.x),
+            Mth.lerp(instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker).toDouble(), vehicle.yOld, vehicle.y),
+            Mth.lerp(instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker).toDouble(), vehicle.zOld, vehicle.z)
         )
 
         // Sets up the pokemon's locators so when the camera and pokemon are calculated for rendering they use the same partialTickTime.
-        MountedPokemonAnimationRenderController.setup(vehicle, instance.partialTickTime)
+        MountedPokemonAnimationRenderController.setup(vehicle, instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker))
         val rollable = vehicle as OrientationControllable
         val vehicleController = rollable.getOrientationController()
 
@@ -79,7 +79,7 @@ object MountedCameraRenderer {
         val locator = delegate.locatorStates[locatorName] ?: return null
 
         // Get additional offset from poser and add to the eyeHeight offset
-        val currEyeHeight: Double = Mth.lerp(instance.partialTickTime.toDouble(), eyeHeight, eyeHeightOld)
+        val currEyeHeight: Double = Mth.lerp(instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker).toDouble(), eyeHeight, eyeHeightOld)
         var offset = Vec3(0.0, currEyeHeight - (driver.bbHeight / 2), 0.0)
         var eyeOffset = Vec3(0.0, currEyeHeight - (driver.bbHeight / 2), 0.0)
 
@@ -98,9 +98,9 @@ object MountedCameraRenderer {
         )
 
         val rotation =
-            if (vehicleController.isActive()) vehicleController.getRenderOrientation(instance.partialTickTime)
+            if (vehicleController.isActive()) vehicleController.getRenderOrientation(instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker))
             else Quaternionf()
-                .rotateY((Math.PI.toFloat() - Mth.lerp(instance.partialTickTime, vehicle.yRotO, vehicle.yRot).toRadians()))
+                .rotateY((Math.PI.toFloat() - Mth.lerp(instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker), vehicle.yRotO, vehicle.yRot).toRadians()))
 
         offset = rotation.transform(Vector3d(offset.x, offset.y, offset.z)).let { Vec3(it.x, it.y, it.z) }
         eyeOffset = rotation.transform(Vector3d(eyeOffset.x, eyeOffset.y, eyeOffset.z)).let { Vec3(it.x, it.y, it.z) }
@@ -190,7 +190,7 @@ object MountedCameraRenderer {
         var newRotation = if (isDriving) {
              vehicleController.orientation!!.normal(Matrix3f()).getNormalizedRotation(Quaternionf())
         } else {
-            vehicleController.getRenderOrientation(instance.partialTickTime)
+            vehicleController.getRenderOrientation(instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker))
         }
 
         // Unroll the current rotation if no roll is requested and not currently freelooking
@@ -211,7 +211,7 @@ object MountedCameraRenderer {
             val pitchDeg = vehicleController.pitch
             // ConsiderPitch to be already 90 if within the deadzone around it.
             val cutoffPitch = min(1.0, (Mth.abs(pitchDeg) / (90.0f - pitchDeadzoneDeg))) * 90.0f * sign(pitchDeg)
-            val lerpRateMod = Mth.cos(Math.toRadians(cutoffPitch).toFloat())
+            val lerpRateMod = Mth.cos((Math.toRadians(cutoffPitch.toDouble()).toFloat()).toDouble())
 
             // Apply smoothing from the cameras current yaw to the yaw of the velocity
             // vector of the ride
@@ -299,7 +299,7 @@ object MountedCameraRenderer {
                 resetDriverRotations(instance, entity)
                 return false
             }
-            returnTimer += instance.partialTickTime * (1.0f / 20.0f)
+            returnTimer += instance.getCameraEntityPartialTicks(Minecraft.getInstance().deltaTracker) * (1.0f / 20.0f)
             return true
         } else {
             returnTimer = 1f
@@ -369,7 +369,7 @@ object MountedCameraRenderer {
                     vec32,
                     ClipContext.Block.VISUAL,
                     ClipContext.Fluid.NONE,
-                    instance.entity
+                    instance.entity() ?: return maxZoom
                 )
             )
             if (hitResult.type != HitResult.Type.MISS) {

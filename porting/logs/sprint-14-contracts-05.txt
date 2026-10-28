@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "game_sha1": "e877b6a07acd633fb3bb475002175cec036e7b87",
+  "compile_exit": 0,
+  "compile_stdout": "",
+  "compile_stderr": "Note: Some input files use or override a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n",
+  "inventory_fixture": "Only missing MAX_STACK_SIZE components are bound for two test items; game/datapack defaults and gameplay are not tested",
+  "runtime_stdout": "[02:18:20] [main/INFO]: [STDOUT]: {\"model_assets_parsed\":1153,\"legacy_overrides_parsed\":287,\"builtin_entity_roots_requiring_game_validation\":1,\"scope\":\"production model discovery, selection and tint adapters; no bake/GPU/reload\"}\n[02:18:20] [main/INFO]: [STDERR]: java.lang.AssertionError: native std140 Lighting block size\n[02:18:20] [main/INFO]: [STDERR]: \tat com.cobblemon.mod.common.porting.Minecraft263Sprint14Contracts.check(Minecraft263Sprint14Contracts.java:34)\n[02:18:20] [main/INFO]: [STDERR]: \tat com.cobblemon.mod.common.porting.Minecraft263Sprint14Contracts.run(Minecraft263Sprint14Contracts.java:96)\n[02:18:20] [main/INFO]: [STDERR]: \tat com.cobblemon.mod.common.porting.Minecraft263DataContracts.main(Minecraft263DataContracts.java:655)\n",
+  "runtime_stderr": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.joml.MemUtil$MemUtilUnsafe (file:/home/frazzle/Documents/ChatGPT/Minecraft%20Mods/cobblemon-fabric/.local-tools/gradle-home/caches/modules-2/files-2.1/org.joml/joml/1.10.9/438e036486bad66b189bff385dd07dea4f74a146/joml-1.10.9.jar)\nWARNING: Please consider reporting this to the maintainers of class org.joml.MemUtil$MemUtilUnsafe\nWARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release\nException in thread \"main\" "
+}

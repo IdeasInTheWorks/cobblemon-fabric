@@ -30,13 +30,14 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class CameraMixin implements CameraDuck {
     @Shadow private float eyeHeight;
     @Shadow private float eyeHeightOld;
-    @Shadow private BlockGetter level;
+    @Shadow private net.minecraft.world.level.Level level;
     @Shadow private Entity entity;
     @Final @Shadow private Vector3f forwards;
     @Final @Shadow private Vector3f up;
     @Final @Shadow private Vector3f left;
     @Shadow private float yRot;
     @Shadow private float xRot;
+    @Shadow private int matrixPropertiesDirty;
 
     @Shadow protected abstract void setPosition(Vec3 pos);
 
@@ -54,15 +55,17 @@ public abstract class CameraMixin implements CameraDuck {
 
     @Override public Vector3f cobblemon$getLeft() { return left; }
 
+    // Native DIRTY_VIEW_ROT(1) | DIRTY_VIEW_ROT_PROJ(2); mounted quaternion writes must invalidate both caches.
     @Override public float cobblemon$getXRot() { return xRot; }
-    @Override public void cobblemon$setXRot(float xRot) { this.xRot = xRot; }
+    @Override public void cobblemon$setXRot(float xRot) { this.xRot = xRot; matrixPropertiesDirty |= 3; }
 
     @Override public float cobblemon$getYRot() { return yRot; }
-    @Override public void cobblemon$setYRot(float yRot) { this.yRot = yRot; }
+    @Override public void cobblemon$setYRot(float yRot) { this.yRot = yRot; matrixPropertiesDirty |= 3; }
 
-    @WrapOperation(method = "setup", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;setPosition(DDD)V"))
-    public void cobblemon$positionCamera(Camera instance, double x, double y, double z, Operation<Void> original, @Local(ordinal = 1, argsOnly = true) boolean thirdPersonReverse) {
-        Entity entity = instance.getEntity();
+    @WrapOperation(method = "alignWithEntity(F)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;setPosition(DDD)V"))
+    public void cobblemon$positionCamera(Camera instance, double x, double y, double z, Operation<Void> original) {
+        Entity entity = instance.entity();
+        boolean thirdPersonReverse = net.minecraft.client.Minecraft.getInstance().options.getCameraType().isMirrored();
         Entity vehicle = entity.getVehicle();
         MountedPokemonAnimationRenderController.INSTANCE.reset();
 

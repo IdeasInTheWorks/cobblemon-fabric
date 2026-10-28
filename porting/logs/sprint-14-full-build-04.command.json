@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "bash",
+    "./gradlew",
+    ":fabric:validateAccessWidener",
+    ":common:checkLicenses",
+    ":fabric:checkLicenses",
+    ":common:compileKotlin",
+    ":common:compileJava",
+    ":common:test",
+    ":fabric:build",
+    "-Pkotlin.incremental=false",
+    "-Pkotlin.compiler.execution.strategy=in-process",
+    "--stacktrace",
+    "--console=plain"
+  ],
+  "cwd": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric",
+  "start_utc": "2026-10-28T02:45:17.819182+00:00",
+  "GRADLE_USER_HOME": "/home/frazzle/Documents/ChatGPT/Minecraft Mods/cobblemon-fabric/.local-tools/gradle-home",
+  "head": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680",
+  "exit": 1,
+  "end_utc": "2026-10-28T02:46:55.824743+00:00"
+}

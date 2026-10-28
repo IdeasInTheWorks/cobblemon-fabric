@@ -1,5 +1,11 @@
 # Changelog
 
+## S14 - Native held items, world scenes and camera hooks (2026-10-28)
+
+Native queued held-item states preserve locator/use/hand context and scoped front lighting, original feature payloads/tint/glint/order/OIT. Native boats retain hull/chest variants, rowing/hurt/bubble state and water patch. Lectern flat/off models, habitat mimic AO/tint/light and display Pokemon, player icon snapshots and native camera/picking/FOV/scroll hooks replace old entrypoints. Offhand habitat activation and level-switch cache handling are corrected; invisible mimics skip missing models. Assets/data/fossil/serialization helpers remain.
+
+Kotlin4215/522 ->4077/510 (138 fewer,3.3%; cascades). AW0/headers;2960core+19Fabric,810legacy/1620checks,20tools pass. Fixtures do not apply mixins/start a game or GPU; native water-mask material is outside boat queue fixture scope. No full Java/JUnit/package/runtime pass or JAR. GUI/native input and other APIs remain. See S14 evidence and RESUME.
+
 ## S13 - Extract Pokemon/NPC bodies and player render layers (2026-10-28)
 
 Native living-state/geometry capture retains animated models, transforms, transparency, outlines, Pokemon effects/platforms/riding, NPC scale and copied custom label text. Native shoulder/recall layers, first/third-person hand suppression and locator-debug/reload mixins consume extracted snapshots/flags. Native chest-armour tags retain the armour offset/blacklist and exclude elytra. Serialized shoulder readers, assets/data, fossil/OIT and pokemon_model paths remain.

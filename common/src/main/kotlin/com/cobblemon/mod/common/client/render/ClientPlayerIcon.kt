@@ -13,7 +13,9 @@ import com.cobblemon.mod.common.client.requests.ClientPlayerActionRequest
 import com.cobblemon.mod.common.client.ClientMultiBattleTeamMember
 import com.cobblemon.mod.common.platform.events.RenderEvent
 import com.cobblemon.mod.common.util.cobblemonResource
-import com.mojang.blaze3d.systems.RenderSystem
+import com.cobblemon.mod.common.client.model.ModelBufferSource
+import net.minecraft.client.renderer.rendertype.RenderTypes
+import net.minecraft.world.phys.Vec3
 import com.mojang.blaze3d.vertex.*
 import com.mojang.math.Axis
 import net.minecraft.client.Camera
@@ -74,64 +76,30 @@ abstract class ClientPlayerIcon(expiryTime: Int? = null) {
         alpha = Mth.lerp(fadeCount.toFloat()/fadeDuration, startAlpha, finalAlpha)
     }
 
-    fun render(player: Player) {
-        if (CobblemonClient.battle != null) return
-        DeferredRenderer.enqueue(RenderEvent.Stage.TRANSLUCENT) { event ->
-            val poseStack = event.poseStack
-            val partialTicks = event.tickCounter.getGameTimeDeltaPartialTick(!tickRateManager.isEntityFrozen(player))
-            val camera = event.camera
-
-            poseStack.pushPose()
-            positionTag(player, poseStack, camera, partialTicks)
-            drawTag(poseStack)
-            poseStack.popPose()
-        }
+    private fun capture(player: Player, partialTicks: Float, renderOffset: Vec3): ModelBufferSource.Snapshot {
+        if (CobblemonClient.battle != null) return ModelBufferSource.Snapshot.EMPTY
+        val poseStack = PoseStack()
+        poseStack.translate(-renderOffset.x, -renderOffset.y, -renderOffset.z)
+        positionTag(player, poseStack, Minecraft.getInstance().gameRenderer.mainCamera(), partialTicks)
+        val output = ModelBufferSource()
+        buildTag(poseStack.last().pose(), output.getBuffer(RenderTypes.text(texture)))
+        return output.snapshot()
     }
 
-    /** Offsets and billboards the quad above the player. */
+    /** Extraction produces coordinates relative to the native player renderer; camera/entity reads end here. */
     protected open fun positionTag(player: Player, poseStack: PoseStack, camera: Camera, partialTicks: Float) {
-        // position
-        val vec3 = player.attachments.getNullable(EntityAttachment.NAME_TAG, 0, player.getViewYRot(partialTicks))
-        poseStack.translate(player.getPosition(partialTicks).x, player.getPosition(partialTicks).y, player.getPosition(partialTicks).z)
-        poseStack.translate(vec3!!.x, vec3.y + Y_OFFSET, vec3.z)
-        poseStack.translate(-camera.position.x, -camera.position.y, -camera.position.z) // event posestack does not have PlayerRenderer context
-
-        // billboard
-        val entityRenderDispatcher = Minecraft.getInstance().entityRenderDispatcher
-        poseStack.rotate(Axis.YP.rotationDegrees((180f - entityRenderDispatcher.camera.yRot)))
+        val attachment = player.attachments.getNullable(EntityAttachment.NAME_TAG, 0, player.getViewYRot(partialTicks)) ?: return
+        poseStack.translate(attachment.x, attachment.y + Y_OFFSET, attachment.z)
+        poseStack.rotate(Axis.YP.rotationDegrees(180F - camera.yRot()))
         poseStack.scale(SCALE, -SCALE, SCALE)
     }
 
     /** Constructs the vertices for the rendered quad. */
     protected open fun buildTag(model: Matrix4f, vertices: VertexConsumer) {
-        vertices.addVertex(model, -0.5f, 0f, 0f).setUv(0f, 0f).setColor(1f, 1f, 1f, 1f)
-        vertices.addVertex(model, -0.5f, 1f, 0f).setUv(0f, 1f).setColor(1f, 1f, 1f, 1f)
-        vertices.addVertex(model, 0.5f, 1f, 0f).setUv(1f, 1f).setColor(1f, 1f, 1f, 1f)
-        vertices.addVertex(model, 0.5f, 0f, 0f).setUv(1f, 0f).setColor(1f, 1f, 1f, 1f)
-    }
-
-    /** Sets the shading and gl states of the quad then queues for drawing. */
-    private fun drawTag(poseStack: PoseStack) {
-        // texture
-        RenderSystem.setShader { GameRenderer.getPositionTexColorShader() }
-        RenderSystem.setShaderTexture(0, texture)
-        RenderSystem.setShaderColor(1f, 1f, 1f, alpha)
-
-        // gl states
-        RenderSystem.enableBlend()
-        RenderSystem.defaultBlendFunc()
-        RenderSystem.enableDepthTest()
-
-        // TODO worth making a custom rendertype and getting buffer from multiBufferSource?
-        val model = poseStack.last().pose()
-        val buffer = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR)
-        buildTag(model, buffer)
-        BufferUploader.drawWithShader(buffer.buildOrThrow())
-
-        // undo
-        RenderSystem.disableBlend()
-        RenderSystem.disableDepthTest()
-        RenderSystem.setShaderColor(1f, 1f, 1f, 1f)
+        vertices.addVertex(model, -0.5f, 0f, 0f).setUv(0f, 0f).setColor(1f, 1f, 1f, alpha).setLight(0xF000F0)
+        vertices.addVertex(model, -0.5f, 1f, 0f).setUv(0f, 1f).setColor(1f, 1f, 1f, alpha).setLight(0xF000F0)
+        vertices.addVertex(model, 0.5f, 1f, 0f).setUv(1f, 1f).setColor(1f, 1f, 1f, alpha).setLight(0xF000F0)
+        vertices.addVertex(model, 0.5f, 0f, 0f).setUv(1f, 0f).setColor(1f, 1f, 1f, alpha).setLight(0xF000F0)
     }
 
     companion object {
@@ -159,6 +127,7 @@ abstract class ClientPlayerIcon(expiryTime: Int? = null) {
 
         fun clear() = trackedIcons.clear()
 
-        fun onRenderPlayer(player: Player) = trackedIcons[player.uuid]?.render(player)
+        fun onRenderPlayer(player: Player, partialTicks: Float, renderOffset: Vec3): ModelBufferSource.Snapshot =
+            trackedIcons[player.uuid]?.capture(player, partialTicks, renderOffset) ?: ModelBufferSource.Snapshot.EMPTY
     }
 }

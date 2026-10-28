@@ -42,7 +42,6 @@ import static net.minecraft.util.Mth.lerp;
 
 @Mixin(MouseHandler.class)
 public abstract class MouseHandlerMixin {
-    @Shadow private double accumulatedScrollY;
     @Shadow @Final private Minecraft minecraft;
 
     @Unique SmoothDouble xMouseSmoother = new SmoothDouble();
@@ -67,50 +66,24 @@ public abstract class MouseHandlerMixin {
 
     @Unique private double cobblemon$timeDelta;
 
-    @Inject(
-            method = "onScroll",
-            at = @At(
-                    value = "FIELD",
-                    target="Lnet/minecraft/client/MouseHandler;accumulatedScrollY:D",
-                    opcode = Opcodes.PUTFIELD,
-                    ordinal = 2,
-                    shift = At.Shift.BEFORE
-            ),
-            cancellable = true
-    )
-    public void cobblemon$scrollParty(long window, double horizontal, double vertical, CallbackInfo ci) {
-        if (PartySendBinding.INSTANCE.getWasDown()) {
-            int i = (int) accumulatedScrollY;
-            if (i > 0) {
-                accumulatedScrollY -= i;
-                CobblemonClient.INSTANCE.getStorage().shiftSelected(false);
-                ci.cancel();
-                PartySendBinding.INSTANCE.actioned();
-                PartyTutorialToasts.INSTANCE.onHoldKeyScrollSwitchedSlot();
-            } else if (i < 0) {
-                accumulatedScrollY -= i;
-                CobblemonClient.INSTANCE.getStorage().shiftSelected(true);
-                ci.cancel();
-                PartySendBinding.INSTANCE.actioned();
-                PartyTutorialToasts.INSTANCE.onHoldKeyScrollSwitchedSlot();
-            }
+    // Native ScrollWheelHandler owns fractional accumulation. Consume its integer Y steps at the hotbar boundary.
+    @com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation(method = "onScroll(JDD)V",
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;setSelectedSlot(I)V"), require = 1)
+    private void cobblemon$scrollPartyOrScanner(net.minecraft.world.entity.player.Inventory inventory, int slot,
+            com.llamalad7.mixinextras.injector.wrapoperation.Operation<Void> original,
+            @Local org.joml.Vector2i wheelXY, @Local(argsOnly = true, ordinal = 1) double vertical) {
+        if (PartySendBinding.INSTANCE.getWasDown() && wheelXY.y != 0) {
+            CobblemonClient.INSTANCE.getStorage().shiftSelected(wheelXY.y < 0);
+            PartySendBinding.INSTANCE.actioned();
+            PartyTutorialToasts.INSTANCE.onHoldKeyScrollSwitchedSlot();
+            return;
         }
-    }
-
-    @Inject(
-        method = "onScroll",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/world/entity/player/Inventory;swapPaint(D)V"
-        ),
-        cancellable = true
-    )
-    public void cobblemon$doPokedexZoom(long window, double horizontal, double vertical, CallbackInfo ci) {
         PokedexUsageContext usageContext = CobblemonClient.INSTANCE.getPokedexUsageContext();
         if (usageContext.getScanningGuiOpen()) {
             usageContext.adjustZoom(vertical);
-            ci.cancel();
+            return;
         }
+        original.call(inventory, slot);
     }
 
     @WrapWithCondition(
@@ -136,7 +109,7 @@ public abstract class MouseHandlerMixin {
             var spyglassSensitivity = Math.pow(defaultSensitivity, 3);
             var lookSensitivity = spyglassSensitivity * 8.0;
             var sensitivity = lerp(usageContext.getFovMultiplier(), spyglassSensitivity, lookSensitivity);
-            var yRotationFlip = this.minecraft.options.invertYMouse().get() ? -1 : 1;
+            var yRotationFlip = this.minecraft.options.invertMouseY().get() ? -1 : 1;
             player.turn(this.accumulatedDX * sensitivity, (this.accumulatedDY * sensitivity * yRotationFlip));
             returnValue = false;
         }

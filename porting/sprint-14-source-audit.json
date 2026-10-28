@@ -1,0 +1,183 @@
+{
+  "baseline": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680",
+  "changed_sources": [
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedEntityRenderer.java",
+      "sha256": "54ec74d27f14a2f84c9ff60ade83ba3a80714d0bc80f3d1a0d537fb8e8e349a3"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedLivingEntityRenderer.java",
+      "sha256": "65a8b03148f025c78e3f5512552e3514d9e44dda0a076e9a89ed9e161fb67380"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/FrontLitFeatures.java",
+      "sha256": "7967fdf77befd660cbd80955a33de2977f6c80ff3495a0c6a783a482727cd502"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/ModelBufferSource.java",
+      "sha256": "dc0eba26ad32e5f76fa560aaf8affe8490430c8bd5b4b5566c4c0430d4dfb577"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBlockCapture.java",
+      "sha256": "ae4894e48e59fdcecc48522cdf56b90b2fcb3b4cd7d1de9418cb5f1d0569344e"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBoatRenderer.java",
+      "sha256": "9bdf7baad23f17b59fbeb9fe6fb03fc1ce69e863404afd0000a28d3a5647f900"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBuiltinItemModel.java",
+      "sha256": "4e995e19e3aaab4ede9575c69b86bcfa32cf80fbf3425b95a0e89ff4933704a8"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeItemCapture.java",
+      "sha256": "d629a1cb7e2c7e40fa00bf6b43814a44918e367a86eac0047e0621bceeac77cc"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/client/model/NativeSceneCapture.java",
+      "sha256": "859758d21b2630596211a4c076c8878acfeffdeea234f6bea026638e5a746005"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/AbstractClientPlayerMixin.java",
+      "sha256": "663e4d362306e6f0ccb2a1cd9637bdd5b90bf3dd8d511762e2ea1d1868098655"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/CameraMixin.java",
+      "sha256": "d725f1203fb6c17daffc55707078d30a84bbbfe54bbef101a0576304d3e71482"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/FeatureRendererMapMixin.java",
+      "sha256": "c161e86a3265994b442d416072d3857b45bf57fe8c773c6ad157cca7838d06ba"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/GameRendererMixin.java",
+      "sha256": "0a911ea89e09ebcc4c3528e2c5becef91698fcc8c3d7276f78ffad2835906219"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/ItemRendererMixin.java",
+      "sha256": "9536a369b01f240e1467b5f2f5293e7b925760001d2027a4322aa46acb537f2f"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/LocalPlayerPickingMixin.java",
+      "sha256": "297c82075c42c4eb5ded2673b9c7681180ca3859f2b96566159ebcb61fdfb25d"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/MouseHandlerMixin.java",
+      "sha256": "499aa0e5114f43b8e00388b24c7c5aad32d4526ebf1b36662cfdb4dfc1ec4e70"
+    },
+    {
+      "path": "common/src/main/java/com/cobblemon/mod/common/mixin/client/PlayerRendererMixin.java",
+      "sha256": "9b1798b6561c14b760f5b67735ad4988784efe922c5d50d2c18bd991dfd6ce18"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/CobblemonClient.kt",
+      "sha256": "50ca6276331c6715d353125296df0ce530c73b26ed383e66f994e5fc746d7c44"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/PokemonGuiUtils.kt",
+      "sha256": "20bc91574719bb7c9ad21acc432140bf33290c3431fa36df0c9b5064d2952e90"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/gui/battle/BattleOverlay.kt",
+      "sha256": "eaca62986dbd740e0470001d3d337819d795d8484c4bb2a6958bbb325d1ccb0f"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/ClientPlayerIcon.kt",
+      "sha256": "d528a0ed4d355971b35e1dc22e45e4320c9af8bcc2a50d66a478b9a14bc92275"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/HabitatBlockRenderer.kt",
+      "sha256": "8d661770b88ae7c3c0053d1b18893c124dd93d5b7790eb28c9e3ef2f84747a4c"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/LecternBlockEntityRenderer.kt",
+      "sha256": "ff422664b4d41ba9321a4f1517f42e7813c84a4c25aae2c6f99fc15669729a05"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/boat/CobblemonBoatRenderer.kt",
+      "sha256": "b3f30c7f2baaf5d189317fbe903feeec9abde225f296fba80e50a5167d77760a"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/camera/MountedCameraRenderer.kt",
+      "sha256": "e35f25373fe48847e0c07b53622e9e5535f192c43449c715ccffbd8b83e1a140"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/item/HeldItemRenderer.kt",
+      "sha256": "40605c3ee2f45af782e98db9db259e14bb6415bd54ae9b5bf535e725e55a3f9c"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/animation/BimanualSwingAnimation.kt",
+      "sha256": "e0098bbdc743895fbaa259385aab37d1b270648f8a301b2935a91781ff170438"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/animation/BipedWalkAnimation.kt",
+      "sha256": "c6d0870d0c80a421603f1f5638de6f043c71fd621e1f0fb28fc92894157eb67c"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/animation/PunchAnimation.kt",
+      "sha256": "0d908ed9cbd775bcc3ad9820d5573b40f5a7dab756b652c43c64164bbd502406"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/animation/QuadrupedWalkAnimation.kt",
+      "sha256": "b56ea6c597482b4864af3561b48862f1b7c9e9aa545d895674790d1efa54bae9"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/models/blockbench/bedrock/animation/BedrockAnimation.kt",
+      "sha256": "d607216ac238ee10c68baa598d3816c2792ab07fe4bc0f64d1778a285993ded1"
+    },
+    {
+      "path": "common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/AlphaEyeRenderer.kt",
+      "sha256": "ea88e8b074d66ab9cfa00b3ad026f085484649285be0215a7b576dd5816aad16"
+    },
+    {
+      "path": "common/src/main/resources/mixins.cobblemon-common.json",
+      "sha256": "8432f691d4eb2a801385accdfdb2517934038c05a29bfd8157af54007ae1b628"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263DataContracts.java",
+      "sha256": "7e18889e4373286373398783eb7627648602df689c9108d7c1ed6dd5baa88a60"
+    },
+    {
+      "path": "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint14Contracts.java",
+      "sha256": "d5901adc42cf2b6ace89b5e5db222020097f729ad0af80853bc177b82d0c580c"
+    },
+    {
+      "path": "scripts/check_data_contracts.py",
+      "sha256": "b8679f19fc342cfed57b2c55032a8afc662c88f4e393ae1dcad68f37bbc00683"
+    }
+  ],
+  "preserved_paths": {
+    "common/src/main/resources/assets": true,
+    "common/src/main/resources/data": true,
+    "LICENSE": true,
+    "common/src/main/java/com/cobblemon/mod/common/util/LegacyNbt.java": true,
+    "common/src/main/java/com/cobblemon/mod/common/util/ShoulderData.java": true,
+    "common/src/main/kotlin/com/cobblemon/mod/common/client/render/block/RestorationTankRenderer.kt": true
+  },
+  "deleted_paths": [],
+  "runtime_unexecuted": [
+    "Fabric/mixin bootstrap",
+    "actual native water-mask material selection",
+    "actual model/atlas bake/reload",
+    "GPU lighting and lifetimes",
+    "visual parity/performance",
+    "gameplay/client/server/multiplayer",
+    "R013/R015 copied-data migration"
+  ],
+  "new_source_behaviors": [
+    "Native queued boats preserve variant textures, hull/chest meshes, rowing/hurt/bubble/water patch",
+    "Held-item locators resolve native living/hand/use contexts; GUI front lights use native feature payloads and scoped render-pass bindings",
+    "Lectern flat/flat_off selection uses stack-scoped explicit native model lookup",
+    "Habitat captures native AO/tint/light/material geometry and nested Pokemon states, with no draw-time world callback",
+    "Habitat offhand activation corrected; renderer caches clear when client level changes; invisible mimics skip missing-model lookup",
+    "Player icons freeze alpha/attachment/quad state; camera and picking hooks use native26.3 targets; mounted quaternion changes invalidate native caches",
+    "Float animation arguments retain Float arithmetic before explicit native Double trig calls",
+    "Scanner/rider FOV uses native boolean/scale descriptor; scroll party/zoom interception uses native fractional ScrollWheelHandler at hotbar slot update; original priorities retained",
+    "Front lighting follows the destination GUI/world phase graph and native device uniform alignment; both native uniform overloads retain scoped binding."
+  ],
+  "limitations": [
+    "Arbitrary addon native feature types must register a front-light binding before dispatcher construction",
+    "Boat fixture substitutes only the water-mask material to test native submission cardinality; actual native water-mask service/GPU is untested",
+    "Full Java/mixin/JUnit/package tests blocked at Kotlin; contract passes do not establish gameplay/data compatibility"
+  ]
+}

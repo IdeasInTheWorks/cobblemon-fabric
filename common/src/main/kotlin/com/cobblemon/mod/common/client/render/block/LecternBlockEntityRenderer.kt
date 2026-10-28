@@ -20,19 +20,17 @@ import net.minecraft.client.Minecraft
 import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
-import net.minecraft.client.resources.model.ModelResourceLocation
+import com.cobblemon.mod.common.client.model.NativeItemCapture
+import com.cobblemon.mod.common.client.model.CapturedBlockEntityRenderer
 import net.minecraft.core.Direction
 import net.minecraft.world.item.*
 import net.minecraft.world.level.block.HorizontalDirectionalBlock
 import net.minecraft.world.level.block.state.BlockState
 import org.spongepowered.asm.mixin.Unique
 
-class LecternBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<LecternBlockEntity> {
+class LecternBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : CapturedBlockEntityRenderer<LecternBlockEntity>() {
 
-    @Unique
-    private val MODEL_PATH = if (Cobblemon.implementation.modAPI == ModAPI.FABRIC) "fabric_resource" else "standalone"
-
-    override fun render(blockEntity: LecternBlockEntity, tickDelta: Float, poseStack: PoseStack, multiBufferSource: ModelBufferSource, light: Int, overlay: Int ) {
+    override fun capture(blockEntity: LecternBlockEntity, tickDelta: Float, poseStack: PoseStack, multiBufferSource: ModelBufferSource, light: Int, overlay: Int ) {
         if (blockEntity !is LecternBlockEntity) return
         if (!blockEntity.isEmpty()) {
             val blockState = if (blockEntity.level != null) blockEntity.blockState
@@ -47,10 +45,10 @@ class LecternBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Blo
 
             if (blockEntity.getItemStack().item is PokedexItem) {
                 val resourceLocation = (blockEntity.getItemStack().item as PokedexItem).type.getItemModelPath(if (blockEntity.hasViewer()) "flat" else "flat_off")
-                val model = Minecraft.getInstance().itemRenderer.itemModelShaper.getModelManager().getModel(ModelResourceLocation(resourceLocation, MODEL_PATH))
-                Minecraft.getInstance().itemRenderer.render(blockEntity.getItemStack(), ItemDisplayContext.GROUND, false, poseStack, multiBufferSource, light, overlay, model)
+                NativeItemCapture.captureExplicit(blockEntity.getItemStack(), resourceLocation, ItemDisplayContext.GROUND,
+                    light, overlay, poseStack, multiBufferSource, blockEntity.level, 0)
             } else {
-                Minecraft.getInstance().itemRenderer.renderStatic(blockEntity.getItemStack(), ItemDisplayContext.GROUND, light, overlay, poseStack, multiBufferSource, blockEntity.level, 0)
+                NativeItemCapture.capture(blockEntity.getItemStack(), ItemDisplayContext.GROUND, light, overlay, poseStack, multiBufferSource, blockEntity.level, 0)
             }
 
             poseStack.popPose()

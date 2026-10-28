@@ -1,0 +1,17 @@
+{
+  "normal_validation": "passed",
+  "access_widener_missing": 0,
+  "validator_retained": true,
+  "licence_headers": "passed",
+  "validation_log": "porting/logs/sprint-14-validation.txt",
+  "focused_report": "porting/logs/sprint-14-contracts-13.json",
+  "core_checks": 2960,
+  "fabric_checks": 19,
+  "legacy_cases": 810,
+  "legacy_checks": 1620,
+  "tool_tests": 20,
+  "mixin_application_tested": false,
+  "game_tests_executed": 0,
+  "gpu_tests_executed": 0,
+  "full_java_junit_package": "Blocked by Kotlin"
+}

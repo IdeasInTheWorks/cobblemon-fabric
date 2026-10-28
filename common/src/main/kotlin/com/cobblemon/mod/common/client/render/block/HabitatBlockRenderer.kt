@@ -23,7 +23,9 @@ import kotlin.math.pow
 import kotlin.math.sin
 import net.minecraft.client.Minecraft
 import net.minecraft.client.multiplayer.ClientLevel
-import net.minecraft.client.renderer.ItemBlockRenderTypes
+import com.cobblemon.mod.common.client.model.NativeBlockCapture
+import com.cobblemon.mod.common.client.model.NativeSceneCapture
+import com.cobblemon.mod.common.client.model.CapturedBlockEntityRenderer
 import net.minecraft.client.renderer.LevelRenderer
 import com.cobblemon.mod.common.client.model.ModelBufferSource
 import net.minecraft.client.renderer.rendertype.RenderType
@@ -34,7 +36,7 @@ import net.minecraft.resources.Identifier
 import net.minecraft.util.Mth
 import net.minecraft.world.level.block.state.BlockState
 
-class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<HabitatBlockEntity> {
+class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : CapturedBlockEntityRenderer<HabitatBlockEntity>() {
     private companion object {
         const val SPECIES_CYCLE_TICKS = 60L
         const val VISUAL_Y_OFFSET = 0.22
@@ -66,6 +68,8 @@ class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnti
         var lastTick: Long = Long.MIN_VALUE
     )
 
+    private var cachedLevel: ClientLevel? = null
+
     private val cachedDisplayPokemon = mutableMapOf<Long, CachedDisplayPokemon>()
     private val spinStateByPos = mutableMapOf<Long, SpawnerSpinState>()
     private val lastParticleGameTimeByPos = mutableMapOf<Long, Long>()
@@ -75,7 +79,7 @@ class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnti
         return (chunkRenderDistance + 1) * 16
     }
 
-    override fun render(
+    override fun capture(
         entity: HabitatBlockEntity,
         partialTicks: Float,
         poseStack: PoseStack,
@@ -84,28 +88,17 @@ class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnti
         packedOverlay: Int
     ) {
         val player = Minecraft.getInstance().player
-        val viewerHoldingHabitatBlock = (player?.mainHandItem ?: player?.offhandItem)?.item == CobblemonItems.HABITAT_BLOCK
+        val viewerHoldingHabitatBlock = player?.mainHandItem?.item == CobblemonItems.HABITAT_BLOCK ||
+            player?.offhandItem?.item == CobblemonItems.HABITAT_BLOCK
         val stateToRender: BlockState = if (viewerHoldingHabitatBlock) entity.blockState else entity.mimickedState
-        val level = entity.level ?: return
-        val isSolidRender = if (viewerHoldingHabitatBlock) false else stateToRender.isSolidRender(level, entity.blockPos)
-        val renderType = if (viewerHoldingHabitatBlock) {
-            RenderType.cutout()
-        } else {
-            runCatching { ItemBlockRenderTypes.getChunkRenderType(stateToRender) }
-                .getOrElse { if (isSolidRender) RenderType.solid() else RenderType.translucent() }
+        val level = entity.level as? ClientLevel ?: return
+        if (cachedLevel !== level) {
+            cachedDisplayPokemon.clear()
+            spinStateByPos.clear()
+            lastParticleGameTimeByPos.clear()
+            cachedLevel = level
         }
-
-        poseStack.pushPose()
-        Minecraft.getInstance().blockRenderer.renderBatched(
-            stateToRender,
-            entity.blockPos,
-            level,
-            poseStack,
-            bufferSource.getBuffer(renderType),
-            false,
-            level.random
-        )
-        poseStack.popPose()
+        NativeBlockCapture.capture(stateToRender, level, entity.blockPos, poseStack, bufferSource)
 
         if (viewerHoldingHabitatBlock) {
             renderSpawnerVisuals(entity, partialTicks, poseStack, bufferSource, packedLight)
@@ -142,7 +135,7 @@ class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnti
             habitatEntity.blockPos.y + VISUAL_Y_OFFSET + MODEL_Y_ADJUST + 0.4,
             habitatEntity.blockPos.z + 0.5
         )
-        val entityLight = LevelRenderer.getLightColor(level, habitatEntity.blockPos.above())
+        val entityLight = net.minecraft.util.LightCoordsUtil.getLightCoords(level, habitatEntity.blockPos.above())
 
         poseStack.pushPose()
         poseStack.translate(0.5, VISUAL_Y_OFFSET + MODEL_Y_ADJUST, 0.5)
@@ -153,10 +146,7 @@ class HabitatBlockRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnti
         poseStack.rotate(Axis.XP.rotationDegrees(SPAWNER_X_TILT_DEGREES))
         poseStack.scale(scale, scale, scale)
 
-        val dispatcher = Minecraft.getInstance().entityRenderDispatcher
-        dispatcher.setRenderShadow(false)
-        dispatcher.render(pokemonEntity, 0.0, 0.0, 0.0, 0F, partialTicks, poseStack, bufferSource, entityLight)
-        dispatcher.setRenderShadow(true)
+        NativeSceneCapture.capture(pokemonEntity, partialTicks, poseStack, bufferSource, entityLight)
         poseStack.popPose()
 
         emitSpawnerParticles(level, posKey, habitatEntity.blockPos.x, habitatEntity.blockPos.y, habitatEntity.blockPos.z)

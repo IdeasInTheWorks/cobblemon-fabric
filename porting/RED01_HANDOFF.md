@@ -1,3 +1,9 @@
+# S14 Red01 implementation checkpoint (2026-10-28)
+
+Read the S14 section in RESUME.md, current RED01_AGENT_PROMPT.md and sprint-14 summary/compiler/validation/source audits first; older sections below are historical. Native held items/front lighting, boats, habitat/lectern, icons and camera/picking/FOV/scroll hooks migrate in source. Final Kotlin4,077/510 fails (138 fewer,3.3%); AW0/headers,2,960 core+19 Fabric,810 legacy/1,620 checks,20 tools pass. No full Java/mixin/JUnit/package/game/GPU validation or installable JAR. Boat queue fixtures substitute the water-mask material; actual native material/graphics bootstrap is untested.
+
+Next shared GUI extraction/2D poses/PIP models, screens/widgets/input and remaining Java/common APIs, then actual R013/R015 startup/copied-data and all runtime gates. Preserve fossil/OIT, pokemon_model, assets/data/licences and ownership. Accepted12/44; remaining508/1,016/2,040 engineering hours Low confidence, actuals unmeasured. Publish archive before releasing partial S14, verify closure/closed-lease refusal and update the same Sheet. Never reuse a closed lease.
+
 # S13 Red01 implementation checkpoint (2026-10-28)
 
 S13 source milestone `940ced7b1e30f0559d6ca937cd3a70fa63ae95ac` is published through the normal live-lease hook. Completed Actions40611669671 independently reproduces4,215/522; guards/AW pass, package validation/upload are skipped. Exact log/status are archived and linked from sprint-13-summary.json. The latest archive, not this source SHA alone, is the resume point.

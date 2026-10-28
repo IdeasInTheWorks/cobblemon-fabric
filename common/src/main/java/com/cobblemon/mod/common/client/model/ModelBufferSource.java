@@ -21,6 +21,8 @@ import net.minecraft.client.renderer.rendertype.RenderType;
 /** CPU geometry capture for model code migrating from immediate buffers to native submission. */
 public final class ModelBufferSource {
     private final List<NativeItemCapture.Submission> items = new ArrayList<>();
+    private final List<NativeSceneCapture.Submission> scenes = new ArrayList<>();
+    void addScene(NativeSceneCapture.Submission scene) { scenes.add(scene); }
 
     void addItem(NativeItemCapture.Submission item) { items.add(item); }
 
@@ -37,17 +39,18 @@ public final class ModelBufferSource {
             var vertices = recorder.snapshot();
             if (!vertices.isEmpty()) batches.add(new Batch(type, vertices));
         });
-        return new Snapshot(List.copyOf(batches), items);
+        return new Snapshot(List.copyOf(batches), items, scenes);
     }
 
     public record Batch(RenderType type, List<Vertex> vertices) {
         public Batch { vertices = List.copyOf(vertices); }
     }
 
-    public record Snapshot(List<Batch> batches, List<NativeItemCapture.Submission> items) {
+    public record Snapshot(List<Batch> batches, List<NativeItemCapture.Submission> items, List<NativeSceneCapture.Submission> scenes) {
+        public Snapshot(List<Batch> batches, List<NativeItemCapture.Submission> items) { this(batches, items, List.of()); }
         public Snapshot(List<Batch> batches) { this(batches, List.of()); }
         public static final Snapshot EMPTY = new Snapshot(List.of());
-        public Snapshot { batches = List.copyOf(batches); items = List.copyOf(items); }
+        public Snapshot { batches = List.copyOf(batches); items = List.copyOf(items); scenes = List.copyOf(scenes); }
 
         public void submit(PoseStack pose, OrderedSubmitNodeCollector collector) {
             submit(pose, collector, null, null);
@@ -72,6 +75,7 @@ public final class ModelBufferSource {
                 }
             }
             for (var item : items) item.submit(pose, collector, outlineColor);
+            for (var scene : scenes) scene.submit(pose, collector);
         }
 
         public void submit(PoseStack pose, OrderedSubmitNodeCollector collector,
@@ -110,6 +114,7 @@ public final class ModelBufferSource {
                 }
             }
             for (var item : items) item.submit(pose, collector);
+            for (var scene : scenes) scene.submit(pose, collector);
         }
     }
 

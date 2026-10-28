@@ -652,6 +652,7 @@ final class Minecraft263DataContracts {
         checks += Minecraft263RenderContracts.run();
         checks += Minecraft263Sprint12Contracts.run(vanilla);
         checks += Minecraft263Sprint13Contracts.run();
+        checks += Minecraft263Sprint14Contracts.run();
         System.out.println("{\"passed\":true,\"checks\":" + checks + ",\"scope\":\"production migration helpers with real target classes and minimal inventory component fixtures; no game launch\"}");
     }
 }

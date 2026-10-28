@@ -15,22 +15,18 @@ import com.cobblemon.mod.common.client.entity.NPCClientDelegate
 import com.cobblemon.mod.common.client.entity.PokemonClientDelegate
 import com.cobblemon.mod.common.client.render.models.blockbench.FloatingState
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
-import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.LightTexture
+import net.minecraft.util.LightCoordsUtil
+import com.cobblemon.mod.common.client.model.NativeItemCapture
 import com.cobblemon.mod.common.client.model.ModelBufferSource
-import net.minecraft.client.renderer.entity.ItemRenderer
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.ItemDisplayContext
 import net.minecraft.world.item.ItemStack
-import org.joml.Vector3f
 
 class HeldItemRenderer {
-    private val itemRenderer: ItemRenderer = Minecraft.getInstance().itemRenderer
-    private var displayContext: ItemDisplayContext = ItemDisplayContext.FIXED
 
     companion object {
         const val ITEM_FACE = "item_face"
@@ -48,7 +44,7 @@ class HeldItemRenderer {
         state: PosableState,
         poseStack: PoseStack,
         buffer: ModelBufferSource,
-        light: Int = LightTexture.pack(11, 7),
+        light: Int = LightCoordsUtil.pack(11, 7),
         frontLight: Boolean = false,
         entity: LivingEntity? = null
     ) {
@@ -73,9 +69,9 @@ class HeldItemRenderer {
         if (item.isEmpty || !state.locatorStates.containsKey(targetLocator)) return
 
         poseStack.pushPose()
-        RenderSystem.applyModelViewMatrix()
+        try {
 
-        displayContext = state.currentModel?.getLocatorDisplayContext(targetLocator)?:
+        val displayContext = state.currentModel?.getLocatorDisplayContext(targetLocator)?:
             if ((item.`is`(WEARABLE_FACE_ITEMS) && targetLocator==ITEM_FACE) || (item.`is`(WEARABLE_HAT_ITEMS) && targetLocator== ITEM_HAT)) ItemDisplayContext.HEAD
             else ItemDisplayContext.FIXED
 
@@ -113,13 +109,10 @@ class HeldItemRenderer {
             else -> {}
         }
 
-        //Render front lighting for UI Models
-        if (frontLight) {
-            RenderSystem.setShaderLights(Vector3f(0F,0F,1F), Vector3f(0F,0F,1F))
-        }
-
-        itemRenderer.renderStatic(entity, item, displayContext, isLeft, poseStack, buffer, null, light, OverlayTexture.NO_OVERLAY, seed)
-
+        NativeItemCapture.captureLiving(item, displayContext, light, OverlayTexture.NO_OVERLAY,
+            poseStack, buffer, entity, seed, frontLight)
+        } finally {
         poseStack.popPose()
+        }
     }
 }

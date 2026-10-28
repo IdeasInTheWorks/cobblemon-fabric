@@ -78,8 +78,7 @@ import net.minecraft.client.color.block.BlockColor
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.screens.MenuScreens
 import net.minecraft.client.gui.screens.Screen
-import net.minecraft.client.model.object.boat.BoatModel
-import net.minecraft.client.model.ChestBoatModel
+import net.minecraft.client.model.`object`.boat.BoatModel
 import net.minecraft.client.model.player.PlayerModel
 import net.minecraft.client.renderer.rendertype.RenderType
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer
@@ -625,11 +624,11 @@ object CobblemonClient {
         CobblemonBoatType.entries.forEach { type ->
             this.implementation.registerLayer(
                 CobblemonBoatRenderer.createBoatModelLayer(type, false),
-                BoatModel::createBodyModel
+                BoatModel::createBoatModel
             )
             this.implementation.registerLayer(
                 CobblemonBoatRenderer.createBoatModelLayer(type, true),
-                ChestBoatModel::createBodyModel
+                BoatModel::createChestBoatModel
             )
         }
     }

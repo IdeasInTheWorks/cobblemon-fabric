@@ -53,7 +53,12 @@ def main():
     out = root / "build/data-contracts"
     out.mkdir(parents=True, exist_ok=True)
     quoted = lambda value: '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
-    sources = [root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint13Contracts.java",
+    sources = [root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint14Contracts.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBlockCapture.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/NativeSceneCapture.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/NativeBoatRenderer.java",
+               root / "common/src/main/java/com/cobblemon/mod/common/client/model/FrontLitFeatures.java",
+               root / "common/src/test/java/com/cobblemon/mod/common/porting/Minecraft263Sprint13Contracts.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/CapturedPlayerLayer.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/PlayerLayerRenderStateAccess.java",
                root / "common/src/main/java/com/cobblemon/mod/common/client/model/FirstPersonRenderData.java",
