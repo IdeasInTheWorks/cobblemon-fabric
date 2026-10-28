@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 85,
+  "generation": 86,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -413,12 +413,13 @@
       "lease_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
       "operation_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-28T02:00:55Z",
       "heartbeat_at": "2026-10-28T02:55:16Z",
       "expires_at": "2026-10-28T04:25:16Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "Partial R023: source046b3590dd and archive533372e834045cc47b3257ad2fffa93d7ff33b9d published through normal integration hook; final4077/510 fails; AW0;2960core+19Fabric contracts and20tools pass; no JAR/game. Resume porting/RESUME.md with fresh integration lease.",
+      "closed_at": "2026-10-28T02:57:44Z"
     }
   },
   "events": [
@@ -1271,6 +1272,16 @@
       "lease_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 86,
+      "at": "2026-10-28T02:57:44Z",
+      "kind": "release",
+      "work_id": "S14-R023-NATIVE",
+      "owner": "codex-red01-s14-20261028-01a17ebd",
+      "lease_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
+      "epoch": 1,
+      "checkpoint": "Partial R023: source046b3590dd and archive533372e834045cc47b3257ad2fffa93d7ff33b9d published through normal integration hook; final4077/510 fails; AW0;2960core+19Fabric contracts and20tools pass; no JAR/game. Resume porting/RESUME.md with fresh integration lease."
     }
   ]
 }
