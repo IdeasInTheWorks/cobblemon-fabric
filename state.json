@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 70,
+  "generation": 71,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -358,6 +358,36 @@
       "minutes": 90,
       "checkpoint": "Published e3943fe1da7a9f82832b1f82216c7bf556750c8b; source137e6b67bd5bc516289da24559db78da3641b935; AW0/headers,2788 core+19 Fabric/810 legacy cases/20 tooling pass; common4297/527 and CI40591914161 fail; partial R023, remaining living/boat/locator/block/GUI/mixins; see porting/RESUME.md and same native Sheet. No game or installable JAR.",
       "closed_at": "2026-10-27T22:07:34Z"
+    },
+    "S13-R023-LIVING": {
+      "work_id": "S13-R023-LIVING",
+      "owner": "codex-red01-s13-20261028-01a17ebd",
+      "branch": "feature/latest-minecraft-fabric",
+      "scopes": [
+        "BUILDING.md",
+        "CHANGELOG.md",
+        "COMPATIBILITY.md",
+        "common/src/main/java",
+        "common/src/main/kotlin/com/cobblemon/mod/common/client",
+        "common/src/main/resources/cobblemon-common.accesswidener",
+        "common/src/main/resources/mixins.cobblemon-common.json",
+        "common/src/test",
+        "fabric/src",
+        "porting",
+        "scripts"
+      ],
+      "resources": [
+        "integration:feature/latest-minecraft-fabric"
+      ],
+      "lease_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
+      "operation_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
+      "epoch": 1,
+      "status": "active",
+      "acquired_at": "2026-10-28T00:31:31Z",
+      "heartbeat_at": "2026-10-28T00:31:31Z",
+      "expires_at": "2026-10-28T02:01:31Z",
+      "minutes": 90,
+      "checkpoint": ""
     }
   },
   "events": [
@@ -1060,6 +1090,16 @@
       "lease_id": "cd1e6776-9933-4e2b-ace7-d06ac85a4c1b",
       "epoch": 1,
       "checkpoint": "Published e3943fe1da7a9f82832b1f82216c7bf556750c8b; source137e6b67bd5bc516289da24559db78da3641b935; AW0/headers,2788 core+19 Fabric/810 legacy cases/20 tooling pass; common4297/527 and CI40591914161 fail; partial R023, remaining living/boat/locator/block/GUI/mixins; see porting/RESUME.md and same native Sheet. No game or installable JAR."
+    },
+    {
+      "generation": 71,
+      "at": "2026-10-28T00:31:31Z",
+      "kind": "acquire",
+      "work_id": "S13-R023-LIVING",
+      "owner": "codex-red01-s13-20261028-01a17ebd",
+      "lease_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
+      "epoch": 1,
+      "checkpoint": ""
     }
   ]
 }
