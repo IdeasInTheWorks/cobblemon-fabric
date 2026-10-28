@@ -5,7 +5,7 @@
   "owner": "codex-red01-s14-20261028-01a17ebd",
   "lease_id": "6ff6a3db-0d72-4a8e-995a-d121f4e69042",
   "baseline": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680",
-  "code_commit": null,
+  "code_commit": "046b3590dd142dd8fba2b3425e0e58fcfe48e930",
   "outcome": "Partial R023 native world/item/scene/camera migration; no installable JAR or gameplay validation.",
   "compilation": {
     "baseline": [
@@ -81,11 +81,27 @@
     "Run full Java/JUnit/package then actual client/server/GPU/atlas/reload/game/multiplayer and copied-world R013/R015 acceptance"
   ],
   "publication": {
-    "source": "pending normal hooked push",
-    "archive": "pending after source CI",
-    "claim": "Release partial work only after durable published archive and verify authoritative closure/closed-lease refusal."
+    "source": "046b3590dd142dd8fba2b3425e0e58fcfe48e930",
+    "archive": "This archive follows the published implementation and contains completed source CI. Resolve latest integration HEAD; verify subsequent partial release in coordination registry and same Sheet.",
+    "claim": "Release partial work only after durable published archive and verify authoritative closure/closed-lease refusal.",
+    "source_verified_remote": true,
+    "hook": "Work lease verified for push"
   },
   "contracts_report": "porting/logs/sprint-14-contracts-13.json",
   "final_build_log": "porting/logs/sprint-14-full-build-04.txt",
-  "source_files_changed": 36
+  "source_files_changed": 36,
+  "actions": {
+    "source_run": 40623158939,
+    "url": "https://github.com/IdeasInTheWorks/cobblemon-fabric/actions/runs/40623158939",
+    "status": "completed",
+    "conclusion": "failure",
+    "head_sha": "046b3590dd142dd8fba2b3425e0e58fcfe48e930",
+    "diagnostic_lines": 4077,
+    "files": 510,
+    "package_validation": "skipped",
+    "package_upload": "skipped",
+    "diagnostics_upload": "success",
+    "tool_guards": "success",
+    "log": "porting/logs/sprint-14-source-actions-failed.txt"
+  }
 }

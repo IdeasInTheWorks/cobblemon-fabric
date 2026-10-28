@@ -530,6 +530,29 @@
       "head": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680",
       "exit": 0,
       "end_utc": "2026-10-28T02:29:23.349961+00:00"
+    },
+    {
+      "argv": [
+        "gh",
+        "run",
+        "view",
+        "40623158939",
+        "--log-failed"
+      ],
+      "log": "porting/logs/sprint-14-source-actions-failed.txt",
+      "exit": 0
+    },
+    {
+      "argv": [
+        "gh",
+        "run",
+        "view",
+        "40623158939",
+        "--json",
+        "status,conclusion,headSha,url,jobs"
+      ],
+      "log": "porting/logs/sprint-14-source-actions.json",
+      "exit": 0
     }
   ]
 }

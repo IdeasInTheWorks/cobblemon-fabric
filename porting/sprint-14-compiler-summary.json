@@ -4185,5 +4185,15 @@
       }
     }
   ],
-  "caveat": "Cascading Kotlin diagnostics, not independent defects. Full Java/mixin/JUnit/package/gameplay gates remain blocked."
+  "caveat": "Cascading Kotlin diagnostics, not independent defects. Full Java/mixin/JUnit/package/gameplay gates remain blocked.",
+  "independent_source_ci": {
+    "run": 40623158939,
+    "source": "046b3590dd142dd8fba2b3425e0e58fcfe48e930",
+    "diagnostics": 4077,
+    "files": 510,
+    "conclusion": "failure",
+    "log": "porting/logs/sprint-14-source-actions-failed.txt",
+    "package_validation": "skipped",
+    "package_upload": "skipped"
+  }
 }

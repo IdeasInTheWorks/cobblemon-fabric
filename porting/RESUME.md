@@ -1,5 +1,7 @@
 # Development checkpoint
 
+S14 source `046b3590dd142dd8fba2b3425e0e58fcfe48e930` is published through the normal live integration-lease hook. Completed source Actions40623158939 independently reproduces4,077/510; package validation/upload are skipped. Exact CI logs/status are archived. Subsequent verified partial-claim closure is authoritative in the live registry and same Sheet. Fetch latest; do not reset to the source SHA alone.
+
 ## Sprint S14 on Red01 (2026-10-28)
 
 Continues from `9c9e654484a8c7afd7c7dc72f06e2e20f458e680`. Red01/codex-gpu01, system Java/javac25.0.4.1, pinned wrapper/cache, IdeasInTheWorks authentication and upstream push DISABLED were reverified. Fresh scoped integration lease `S14-R023-NATIVE`, owner `codex-red01-s14-20261028-01a17ebd`, ID `6ff6a3db-0d72-4a8e-995a-d121f4e69042` was acquired and remotely verified before editing. Closed S13 was not reused. The live registry controls ownership; Sheet rows are snapshots.

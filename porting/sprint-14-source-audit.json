@@ -179,5 +179,6 @@
     "Arbitrary addon native feature types must register a front-light binding before dispatcher construction",
     "Boat fixture substitutes only the water-mask material to test native submission cardinality; actual native water-mask service/GPU is untested",
     "Full Java/mixin/JUnit/package tests blocked at Kotlin; contract passes do not establish gameplay/data compatibility"
-  ]
+  ],
+  "code_commit": "046b3590dd142dd8fba2b3425e0e58fcfe48e930"
 }
