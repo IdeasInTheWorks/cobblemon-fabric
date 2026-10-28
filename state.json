@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generation": 77,
+  "generation": 78,
   "claims": {
     "RACE-23263caf2384": {
       "work_id": "RACE-23263caf2384",
@@ -382,12 +382,13 @@
       "lease_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
       "operation_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
       "epoch": 1,
-      "status": "active",
+      "status": "released",
       "acquired_at": "2026-10-28T00:31:31Z",
       "heartbeat_at": "2026-10-28T00:57:53Z",
       "expires_at": "2026-10-28T02:27:53Z",
       "minutes": 90,
-      "checkpoint": ""
+      "checkpoint": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680 published archive; source940ced7b1e; partial R023 native living/player/hand/debug migration. Kotlin4215/522 local and CI40611669671 fail; AW0,2818core+19Fabric,810legacy/1620checks,20tools pass. No fullJava/mixins/JUnit/package/game/GPU/JAR. Next held-item/front-light, boat/block/GUI/deferred/mixins; see porting/RESUME.md.",
+      "closed_at": "2026-10-28T00:58:39Z"
     }
   },
   "events": [
@@ -1160,6 +1161,16 @@
       "lease_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
       "epoch": 1,
       "checkpoint": ""
+    },
+    {
+      "generation": 78,
+      "at": "2026-10-28T00:58:39Z",
+      "kind": "release",
+      "work_id": "S13-R023-LIVING",
+      "owner": "codex-red01-s13-20261028-01a17ebd",
+      "lease_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
+      "epoch": 1,
+      "checkpoint": "9c9e654484a8c7afd7c7dc72f06e2e20f458e680 published archive; source940ced7b1e; partial R023 native living/player/hand/debug migration. Kotlin4215/522 local and CI40611669671 fail; AW0,2818core+19Fabric,810legacy/1620checks,20tools pass. No fullJava/mixins/JUnit/package/game/GPU/JAR. Next held-item/front-light, boat/block/GUI/deferred/mixins; see porting/RESUME.md."
     }
   ]
 }
