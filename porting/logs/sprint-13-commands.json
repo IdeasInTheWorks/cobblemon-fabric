@@ -18,7 +18,8 @@
         "--console=plain"
       ],
       "exit": 1,
-      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction.",
+      "log_modified_utc": "2026-10-28T00:35:32.361634+00:00"
     },
     {
       "log": "porting/logs/sprint-13-baseline-compile.txt",
@@ -32,7 +33,8 @@
         "--console=plain"
       ],
       "exit": 1,
-      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction.",
+      "log_modified_utc": "2026-10-28T00:33:27.093396+00:00"
     },
     {
       "log": "porting/logs/sprint-13-full-build-02.txt",
@@ -49,7 +51,8 @@
         "--console=plain"
       ],
       "exit": 1,
-      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction.",
+      "log_modified_utc": "2026-10-28T00:51:40.119223+00:00"
     },
     {
       "log": "porting/logs/sprint-13-full-build.txt",
@@ -66,7 +69,8 @@
         "--console=plain"
       ],
       "exit": 1,
-      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction.",
+      "log_modified_utc": "2026-10-28T00:49:53.686796+00:00"
     },
     {
       "log": "porting/logs/sprint-13-renderers-compile-01.txt",
@@ -80,7 +84,8 @@
         "--console=plain"
       ],
       "exit": 143,
-      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction.",
+      "log_modified_utc": "2026-10-28T00:38:22.425633+00:00"
     },
     {
       "log": "porting/logs/sprint-13-renderers-compile-02.txt",
@@ -94,7 +99,8 @@
         "--console=plain"
       ],
       "exit": 143,
-      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction.",
+      "log_modified_utc": "2026-10-28T00:41:45.491477+00:00"
     },
     {
       "log": "porting/logs/sprint-13-renderers-compile-03.txt",
@@ -108,7 +114,8 @@
         "--console=plain"
       ],
       "exit": 1,
-      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction.",
+      "log_modified_utc": "2026-10-28T00:44:29.504564+00:00"
     },
     {
       "log": "porting/logs/sprint-13-renderers-compile-04.txt",
@@ -122,7 +129,8 @@
         "--console=plain"
       ],
       "exit": 1,
-      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction."
+      "note": "First baseline attempt sandbox network primitives refused; compile clients01/02 terminated143, partial logs retained. Final full02 follows chest-armour correction.",
+      "log_modified_utc": "2026-10-28T00:47:17.148645+00:00"
     },
     {
       "log": "porting/logs/sprint-13-data-contracts-01.json",
@@ -145,7 +153,8 @@
         "porting/logs/sprint-13-data-contracts-01.json"
       ],
       "passed": false,
-      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game.",
+      "log_modified_utc": "2026-10-28T00:37:27.580583+00:00"
     },
     {
       "log": "porting/logs/sprint-13-data-contracts-02.json",
@@ -168,7 +177,8 @@
         "porting/logs/sprint-13-data-contracts-02.json"
       ],
       "passed": true,
-      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game.",
+      "log_modified_utc": "2026-10-28T00:40:22.177458+00:00"
     },
     {
       "log": "porting/logs/sprint-13-data-contracts-03.json",
@@ -191,7 +201,8 @@
         "porting/logs/sprint-13-data-contracts-03.json"
       ],
       "passed": true,
-      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game.",
+      "log_modified_utc": "2026-10-28T00:44:05.873475+00:00"
     },
     {
       "log": "porting/logs/sprint-13-data-contracts-04.json",
@@ -214,7 +225,8 @@
         "porting/logs/sprint-13-data-contracts-04.json"
       ],
       "passed": true,
-      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game.",
+      "log_modified_utc": "2026-10-28T00:45:09.032789+00:00"
     },
     {
       "log": "porting/logs/sprint-13-data-contracts-05.json",
@@ -237,7 +249,8 @@
         "porting/logs/sprint-13-data-contracts-05.json"
       ],
       "passed": true,
-      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game."
+      "note": "01 fails native quaternion method;02 before S13 cases;03/04=2812;05=2818 including native body comparisons. None launch game.",
+      "log_modified_utc": "2026-10-28T00:47:53.664226+00:00"
     },
     {
       "log": "porting/logs/sprint-13-validation.txt",
@@ -251,7 +264,8 @@
         "--stacktrace",
         "--console=plain"
       ],
-      "exit": 0
+      "exit": 0,
+      "log_modified_utc": "2026-10-28T00:48:03.412393+00:00"
     },
     {
       "log": "porting/logs/sprint-13-tool-tests.txt",
@@ -266,7 +280,58 @@
         "test_*.py",
         "-v"
       ],
+      "exit": 0,
+      "log_modified_utc": "2026-10-28T00:44:44.672480+00:00"
+    },
+    {
+      "argv": [
+        "gh",
+        "run",
+        "watch",
+        "40611669671",
+        "--interval",
+        "15",
+        "--exit-status"
+      ],
+      "log": "porting/logs/sprint-13-source-actions-watch.txt",
+      "exit": 1
+    },
+    {
+      "argv": [
+        "gh",
+        "run",
+        "view",
+        "40611669671",
+        "--log-failed"
+      ],
+      "log": "porting/logs/sprint-13-source-actions-failed.txt",
       "exit": 0
+    },
+    {
+      "argv": [
+        "gh",
+        "run",
+        "view",
+        "40611669671",
+        "--json",
+        "status,conclusion,headSha,url,jobs"
+      ],
+      "log": "porting/logs/sprint-13-source-actions.json",
+      "exit": 0
+    }
+  ],
+  "coordination_initial_errors": [
+    {
+      "command": "python3 scripts/work_claims.py verify --resource integration:feature/latest-minecraft-fabric",
+      "exit": 1,
+      "stderr": "Work claim refused: A unique agent/session owner label is required",
+      "resolution": "Explicit owner/lease verify succeeded before editing."
+    },
+    {
+      "command": "python3 scripts/work_claims.py heartbeat --work-id S13-R023-LIVING --owner codex-red01-s13-20261028-01a17ebd --lease-id 3f634cb4-1844-4131-b8e5-9c611744b61c --minutes 90 --save",
+      "exit": 2,
+      "stderr": "work_claims.py: error: --save is only supported for acquire",
+      "resolution": "Retried without --save; live heartbeat verified."
     }
   ]
 }

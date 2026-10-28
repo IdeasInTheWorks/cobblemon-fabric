@@ -2695,5 +2695,14 @@
   "reduction": 82,
   "reduction_percent": 1.9083081219455436,
   "full_java_mixin_junit_package_validation": "blocked by Kotlin",
-  "game_tests_executed": 0
+  "game_tests_executed": 0,
+  "independent_source_ci": {
+    "run": 40611669671,
+    "source": "940ced7b1e30f0559d6ca937cd3a70fa63ae95ac",
+    "diagnostics": 4215,
+    "files": 522,
+    "conclusion": "failure",
+    "log": "porting/logs/sprint-13-source-actions-failed.txt",
+    "scope": "Actual hosted compile; full Java/JUnit/package validation/upload skipped, no game test."
+  }
 }

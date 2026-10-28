@@ -1,0 +1,83 @@
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* feature/latest-minecraft-fabric Fabric build and package checks · 40611669671
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 122564418517)
+  ✓ Set up job
+  ✓ Check out source and history
+  ✓ Install Java 25
+  ✓ Set up Gradle cache and validate wrapper
+  ✓ Test package and work-claim guards
+  * Compile Fabric and execute automated tests
+  * Validate installable package structure
+  * Upload compiled package after structural checks
+  * Preserve build diagnostics and test reports
+  * Post Set up Gradle cache and validate wrapper
+  * Post Install Java 25
+  * Post Check out source and history
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* feature/latest-minecraft-fabric Fabric build and package checks · 40611669671
+Triggered via push about 2 minutes ago
+
+JOBS
+* build (ID 122564418517)
+  ✓ Set up job
+  ✓ Check out source and history
+  ✓ Install Java 25
+  ✓ Set up Gradle cache and validate wrapper
+  ✓ Test package and work-claim guards
+  * Compile Fabric and execute automated tests
+  * Validate installable package structure
+  * Upload compiled package after structural checks
+  * Preserve build diagnostics and test reports
+  * Post Set up Gradle cache and validate wrapper
+  * Post Install Java 25
+  * Post Check out source and history
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* feature/latest-minecraft-fabric Fabric build and package checks · 40611669671
+Triggered via push about 2 minutes ago
+
+JOBS
+* build (ID 122564418517)
+  ✓ Set up job
+  ✓ Check out source and history
+  ✓ Install Java 25
+  ✓ Set up Gradle cache and validate wrapper
+  ✓ Test package and work-claim guards
+  X Compile Fabric and execute automated tests
+  - Validate installable package structure
+  - Upload compiled package after structural checks
+  ✓ Preserve build diagnostics and test reports
+  * Post Set up Gradle cache and validate wrapper
+  * Post Install Java 25
+  * Post Check out source and history
+X feature/latest-minecraft-fabric Fabric build and package checks · 40611669671
+Triggered via push about 2 minutes ago
+
+JOBS
+X build in 2m29s (ID 122564418517)
+  ✓ Set up job
+  ✓ Check out source and history
+  ✓ Install Java 25
+  ✓ Set up Gradle cache and validate wrapper
+  ✓ Test package and work-claim guards
+  X Compile Fabric and execute automated tests
+  - Validate installable package structure
+  - Upload compiled package after structural checks
+  ✓ Preserve build diagnostics and test reports
+  ✓ Post Set up Gradle cache and validate wrapper
+  ✓ Post Install Java 25
+  ✓ Post Check out source and history
+  ✓ Complete job
+
+ANNOTATIONS
+X Process completed with exit code 1.
+build: .github#5156
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+

@@ -6,7 +6,7 @@
   "lease_id": "3f634cb4-1844-4131-b8e5-9c611744b61c",
   "branch": "feature/latest-minecraft-fabric",
   "baseline": "e3943fe1da7a9f82832b1f82216c7bf556750c8b",
-  "code_commit": null,
+  "code_commit": "940ced7b1e30f0559d6ca937cd3a70fa63ae95ac",
   "outcome": "Partial R023: native Pokemon/NPC body and name entrypoints, frozen shoulder/recall layers and hand/debug mixins. No installable JAR or game validation.",
   "compilation": {
     "baseline": [
@@ -2757,11 +2757,24 @@
     "Full build and actual client/server/mixin/atlas/bake/reload/GPU/multiplayer/copied-world R013/R015 acceptance"
   ],
   "publication": {
-    "source": "pending normal hooked push",
-    "closure": "Release partial work only after archive publication; live registry and Sheet carry closure."
+    "source": "940ced7b1e30f0559d6ca937cd3a70fa63ae95ac",
+    "source_verified_remote": true,
+    "source_hook": "Work lease verified for push",
+    "archive": "This archival checkpoint follows the published source milestone; resolve latest integration HEAD. Release partial claim after push and verify via coordination registry/Sheet.",
+    "closure": "Release partial work only after archive publication; verify authoritative coordination registry and refresh same Sheet."
   },
   "actions": {
-    "source_run": null,
-    "status": "not yet published"
+    "source_run": 40611669671,
+    "url": "https://github.com/IdeasInTheWorks/cobblemon-fabric/actions/runs/40611669671",
+    "status": "completed",
+    "conclusion": "failure",
+    "head_sha": "940ced7b1e30f0559d6ca937cd3a70fa63ae95ac",
+    "diagnostic_lines": 4215,
+    "files": 522,
+    "package_validation": "skipped",
+    "package_upload": "skipped",
+    "diagnostics_upload": "success",
+    "tool_guards": "success",
+    "log": "porting/logs/sprint-13-source-actions-failed.txt"
   }
 }

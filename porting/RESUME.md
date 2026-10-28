@@ -1,5 +1,7 @@
 # Development checkpoint
 
+S13 source milestone `940ced7b1e30f0559d6ca937cd3a70fa63ae95ac` is published through the normal live-lease hook. Completed Actions40611669671 independently reproduces4,215/522; guards/AW pass, package validation/upload are skipped. Exact log/status are archived and linked from sprint-13-summary.json. The latest archive, not this source SHA alone, is the resume point.
+
 ## Sprint S13 on Red01 (2026-10-28)
 
 This sprint continues from published archive `e3943fe1da7a9f82832b1f82216c7bf556750c8b`; fetch latest and never reset newer work. Java/javac25.0.4.1, pinned wrapper/dependencies, Red01/codex-gpu01 alias and GitHub IdeasInTheWorks were reverified. Fresh scoped integration lease `S13-R023-LIVING`, owner `codex-red01-s13-20261028-01a17ebd`, ID `3f634cb4-1844-4131-b8e5-9c611744b61c` was remotely acquired/verified before editing. The lease is valid only while live in the coordination registry; do not reuse it after closure.

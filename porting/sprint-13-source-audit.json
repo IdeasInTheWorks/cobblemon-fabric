@@ -146,5 +146,7 @@
     "Boat, habitat/lectern, GUI/deferred/ClientPlayerIcon and other Java mixins",
     "Full Java/mixin application/JUnit and actual atlas/bake/reload/GPU/game/multiplayer/copied-world migration"
   ],
-  "validation_scope": "Source/API and helper/native CPU contracts only; retention does not prove runtime serialization/gameplay compatibility."
+  "validation_scope": "Source/API and helper/native CPU contracts only; retention does not prove runtime serialization/gameplay compatibility.",
+  "code_commit": "940ced7b1e30f0559d6ca937cd3a70fa63ae95ac",
+  "source_whitespace_check": "Code/doc diff clean; raw Gradle logs retain original whitespace/EOF for exact evidence."
 }
